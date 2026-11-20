@@ -1,0 +1,32 @@
+# TCJAP 独立复现的准入记录
+
+## 执行依据
+
+以本次指定的 README、AGENTS、十五阶段流程和 TCJAP 复盘四份原件为科研判断依据。前三份规定问题来源、推导顺序、证据标准和准入，第四份提供原项目的经验与反例。历史授权按所属项目和日期理解。本次目标直接指定 DATE 2026 会议论文；十五阶段原件第 2 步允许正式顶会，复盘也明确采用了这篇论文。出版类型登记为会议。派生技能仅辅助执行。
+
+四份原件的 SHA-256 按上述顺序为：
+
+    6eb08f18c41a660e14e004e6bc6ca5cbb881d0ffa0e932728c852d03a7069d96
+    6754db2e7971f85ecca2c652d5786a6ddd8dfc405002b1796731bfb9df2a2900
+    b071feeaab3d34a08dd610e15d8366a61e62d1b55d2887a87c2db47217362d4e
+    20c87cb13657010d43232061fdb482133a62e419756d6ca7158d4f32586903be
+
+## 阶段 8 驻留，阶段 9 未准入
+
+- 第 5 阶段的补证。DATE 原文第 V 节第 6 页明确指出 “runtime remains a significant challenge”。原团队截至 2026-11-20 的 main 相比锁定版只多两个提交，唯一改动文件为 .github/workflows/clang-tidy.yml。该次版本比较未发现对求解路径的修改。TCJAP 第 4–5 节与公开核心已经给出了目标条件联合支持和提前排除机制；本项目可以检验其相对 DATE 的区别和重建效果。原文缺口的存在、作者后续公开成果和我们能主张的贡献应分别记录。
+- 第 9 阶段的比较依据。DATE 的 SAT 编码包含电路拓扑、逐行功能约束、单门计数与总活动度约束。Compact-Table 在给定表上做广义弧一致性，解释式约束传播把推理理由交给 SAT 求解器。这些推理原则已有文献。TCJAP 给出了针对活动度任务的联合关系、剩余预算和一端已选时的连接排除。复现其结果按复现贡献登记；任何独立新意仍需给出不同规则、反例及最近工作证据。
+- 正确性证据。两个基线实例有逐行电路核验和独立的最优值下界。直接枚举实现通过 855 个窗口的有序向量比对。
+- 性能证据缺口。首对 0189 测量分别使用 300 秒和 60 秒上限，均在 15 秒内完成。它们用于诊断。需要在同一核与相同预算下反转顺序，判断局部收益能否重复。
+- 第二道准入的待办。写出目标、预算和部分拓扑怎样共同推出一个可证伪的连接排除，用 TCJAP 公开依据和最近工作标注已有部分。分别判断相对于 DATE 的方法差异、相对于 TCJAP 的独立贡献。实现前登记推导与可推翻的条件。第三道准入仍开放。
+
+原始依据：
+
+- [DATE 作者全文](https://www.cda.cit.tum.de/files/eda/2026_date_exact_synthesis_with_optimal_switching_activity.pdf)；[正式会议记录](https://date26.date-conference.com/programme)
+- [作者源码变更范围](https://github.com/cda-tum/ext-pexact/compare/7253861c224e7c9de2c802e61c86f89338253544...dbe8d86699dd704d285e83ac1d8228d14d354817)；[TCJAP 公开代码来源及缺失材料](https://github.com/qmkkk/TCJAP/blob/59e5a0e954d6a0a6711b2bdc9898db875ede6889/CORE_PROVENANCE.json)
+- [Haaswijk 等，SAT 精确综合编码与拓扑](https://si2.epfl.ch/demichel/publications/archive/2020/winston-exact.pdf)；[Demeulenaere 等，Compact-Table](https://arxiv.org/abs/1604.06641)；[Ohrimenko 等，解释式传播](https://people.eng.unimelb.edu.au/pstuckey/papers/cp07a.pdf)
+
+## 实验登记 E08-R
+
+主张为工程清理可在同一 0189 最优值下稳定缩短完整求解时间。只比较固定作者版 A 和直接枚举版 B。两组顺序依次为 AB、BA，四次均用同一逻辑 CPU、60 秒、模式 2 和相同宿主配置。记录启动到结束的墙钟时间、状态、真值、活动度。两组均验证 304 且 B 均快于 A 时，冻结为这一实例上的可重复收益。发生不一致则保留记录并检查原因。这四次测量不能外推全体 208 类。
+
+E08-R 已完成。Windows 逻辑 CPU 2，原版两次分别 13.793 和 13.827 秒，工程版分别 3.195 和 3.200 秒。四次返回的真值均为 0189，活动度均为 304。相反顺序下结果一致。此实例的配对时间几何平均比为 4.319，分母为一个函数的两组配对。保留直接枚举作为后续工程对照。逐次记录在 evidence/e08r-summary.json，本地原始输出在 .local/e08r/。
