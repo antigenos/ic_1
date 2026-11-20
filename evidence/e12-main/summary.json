@@ -1,0 +1,32 @@
+{
+  "totals": {
+    "author": {
+      "completed": 1,
+      "capped_s": 103.76268269999855
+    },
+    "support": {
+      "completed": 1,
+      "capped_s": 92.4659998000061
+    },
+    "both": {
+      "completed": 1,
+      "capped_s": 91.6842026000013
+    }
+  },
+  "baseline_over_both": {
+    "author": {
+      "common": 1,
+      "gm": 8.171631310857691,
+      "ratios": {
+        "0189": 8.171631310857691
+      }
+    },
+    "support": {
+      "common": 1,
+      "gm": 1.4641942721167869,
+      "ratios": {
+        "0189": 1.4641942721167869
+      }
+    }
+  }
+}

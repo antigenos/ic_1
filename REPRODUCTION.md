@@ -33,3 +33,31 @@ Run `python tools/lower_bound.py evidence/baseline-0189/result.json` to test the
 **Engineering checkpoint.** Build `python tools/build_variant.py compositions variants/compositions.patch`. The same C enumeration routine used in the solver matched a brute-force mixed-radix enumerator vector-for-vector across 855 windows (2, 3 and 4 inputs, including single-value and empty windows). Reproduce that check by compiling and running `tools/check_histograms.c`. Direct enumeration produced verified activities 304 and 32 on 0189 and 96. The first uninstrumented 0189 run took 4.213 s, compared with the earlier 14.435 s author run. These single, sequential development observations justify retaining the change for larger comparisons. They do not establish a population-wide speedup.
 
 **Next control.** A charged gate at zero-based position i in the topological order can depend on at most i+2 primary inputs: its connected transitive fan-in has at most i+1 two-input gates and at most i+2 leaves. A Boolean function depending on at most d of k inputs has a ones count divisible by 2^(k−d), as does its folded count. Restrict impossible folded counts at the first two four-input gates, leaving the original activity intervals and SAT objective intact. Check against independent truth enumeration and test separately from the composition change.
+
+## Rebuild the strong control and the integrated reconstruction
+
+From the repository root, after preparing the three pinned archives and building ABC, run the following commands. Keep the original executable and its linked objects in place.
+
+```text
+python tools/build_variant.py support variants/compositions.patch variants/support.patch
+python tools/build_variant.py joint variants/compositions.patch variants/support.patch variants/joint-trail.patch --sat-patch variants/sat-trail.patch
+python tools/check_support.py
+python tools/check_early_witness.py --output .local/early-check.json
+python tools/function_family.py
+```
+
+All three comparison binaries use the author's mode 2 and its initial step of 75. The public MIT core supplies the target-conditioned local relation. The two changed compilation units in the joint build connect this evaluator to bounded pexact queries and the original BSAT propagation trail. Source attribution and license texts remain in the pinned archives restored by the preparation command. The C kernel is compiled directly from the TCJAP archive. The project-specific patches and integration are in this repository.
+
+The joint executable defaults to both rules with residual budget filtering. Set `REPLAY_RULES` to `off`, `counts`, `early` or `both` to select deductions. Set `REPLAY_BUDGET=0` to remove budget filtering from the local evaluator while retaining the original SAT activity bound. Set `REPLAY_TRACE=1` to print every emitted reason and per-query counters. Diagnostic runs and timed cohorts have separate directories. To audit a reason trace, run `python tools/audit_trail.py PATH/solver.log --output .local/reason-check.json`. The checker interprets the emitted SAT literals, reconstructs their domains and partial truth tables, and tests them by a separate row dynamic program.
+
+## Run paired comparisons
+
+```text
+python tools/compare.py .local/example-main --cohort main --cases 0189 018b 016f 07b4 --cpus 2 4 6 8 --seconds 30
+python tools/compare.py .local/example-ablation --cohort ablation --cases 0189 018b --cpus 2 4 --seconds 30
+python tools/export_batch.py .local/example-main .local/example-main-export
+```
+
+Choose available CPU IDs on the comparison host. Each function stays on the same CPU, its methods execute sequentially, and their order rotates across functions. A fixed directory records the manifest and hashes, allocates one exclusive directory per invocation, preserves each log and returns the verified result or the timeout. Reissuing a matching manifest reuses finished cases. An incomplete case requires inspection of the existing worker and its output before recovery. Use `--cases essential --seconds 300` for the primary four-input family. The family generator checks disjoint input/output phase and permutation orbits covering all 65,536 truth tables and identifies 208 full-support representatives plus 14 lower-support classes.
+
+The main cohort contains the pinned original executable, the engineering control and the reconstruction. The ablation uses one binary with the rule flags described above. Its off variant also includes the host hook compiled into BSAT. Each exported method file has one JSON record per case, including its original solver output, external wall clock, per-run CPU, configuration, SHA-256 and independent witness replay. Timeout receives its full cap. Paired geometric means use only jointly completed cases. The circuit replay establishes feasibility and recomputes activity; independent optimality proofs for the two small examples are stored separately.
