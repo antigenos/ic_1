@@ -1,0 +1,60 @@
+{
+  "checked_runs": 624,
+  "verified_witnesses": 219,
+  "functions": 208,
+  "distinct_values_agree": true,
+  "comparisons": {
+    "author": {
+      "completed_only_by_reconstruction": [
+        "011b",
+        "017e",
+        "0180",
+        "01ea",
+        "0358",
+        "035e",
+        "0369",
+        "036c",
+        "03c1",
+        "03d6",
+        "07bc",
+        "07e9",
+        "1696",
+        "16e9"
+      ],
+      "completed_only_by_control": [
+        "018b"
+      ],
+      "slower_on_jointly_finished": {
+        "0007": 0.7868289421402093,
+        "0001": 0.9495150365929906
+      }
+    },
+    "support": {
+      "completed_only_by_reconstruction": [
+        "011b",
+        "01ea",
+        "0358",
+        "035e",
+        "036c",
+        "03c1",
+        "07bc",
+        "07e9",
+        "16e9"
+      ],
+      "completed_only_by_control": [
+        "018b"
+      ],
+      "slower_on_jointly_finished": {
+        "001e": 0.648581535657751,
+        "1ee1": 0.761976391017006,
+        "0069": 0.7909122054310943,
+        "0369": 0.8088418959804864,
+        "0018": 0.9206914020868405,
+        "0007": 0.9215946024367695,
+        "036f": 0.9252054066078238,
+        "07f8": 0.9733049240642122,
+        "07f0": 0.998024771858973
+      }
+    }
+  }
+}
