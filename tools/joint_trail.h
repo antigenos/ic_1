@@ -10,7 +10,7 @@ typedef struct {
 
 typedef struct {
     PexaMan_t *p;
-    int rows, bound, use_budget, trace;
+    int rows, bound, use_budget, trace, counts_enabled, early_enabled;
     unsigned target;
     unsigned long long visits, checks, counts, edges;
 } ReplayQuery;
@@ -124,6 +124,13 @@ static int replay_pair(ReplayQuery *q, ReplaySignal *signals, int total_min, uns
     ++q->checks;
     if (p9_joint_support(q->rows, q->target, ops, zeros, ones, domains, cap, charged, &result))
         abort();
+    if (unselected_pin >= 0) {
+        if (result.supported[0]) return 0;
+        int selector = p->VarMarks[p->nObjs - 1][unselected_pin][obj[unselected_pin]];
+        if (!replay_explain(q, obj, unselected_pin, selector, signals)) return 0;
+        ++q->edges;
+        return 1;
+    }
     for (int k = 0; k < 2; ++k) {
         if (!(charged & (1u << k))) continue;
         unsigned missing = domains[k] & ~result.supported[k];
@@ -151,7 +158,9 @@ static int replay_visit(sat_solver *s)
                 obj[k] = j;
                 break;
             }
-    if (obj[0] < 0 || obj[1] < 0) return 0;
+    if (obj[0] < 0 && obj[1] < 0) return 0;
+    int open = obj[0] < 0 ? 0 : (obj[1] < 0 ? 1 : -1);
+    if (open < 0 ? !q->counts_enabled : !q->early_enabled) return 0;
     ReplaySignal signals[MAJ_NOBJS];
     int total_min = 0;
     for (int j = 0; j < out; ++j) {
@@ -159,7 +168,16 @@ static int replay_visit(sat_solver *s)
         if (!signals[j].domain) return 0;
         total_min += signals[j].min_cost;
     }
-    return replay_pair(q, signals, total_min, replay_ops(p), obj, -1);
+    unsigned ops = replay_ops(p);
+    if (open < 0) return replay_pair(q, signals, total_min, ops, obj, -1);
+    for (int j = 0; j < out - open; ++j) {
+        obj[open] = j;
+        if (obj[0] <= obj[1]) continue;
+        int var = p->VarMarks[out][open][j];
+        if (sat_solver_get_var_value(s, var) != l_Undef) continue;
+        if (replay_pair(q, signals, total_min, ops, obj, open)) return 1;
+    }
+    return 0;
 }
 
 static int replay_solve(PexaMan_t *p, int bound)
@@ -167,9 +185,12 @@ static int replay_solve(PexaMan_t *p, int bound)
     const char *rules = getenv("REPLAY_RULES");
     if (rules && !strcmp(rules, "off"))
         return sat_solver_solve(p->pSat, NULL, NULL, 0, 0, 0, 0);
-    if (rules && strcmp(rules, "counts")) abort();
+    if (!rules) rules = "both";
     ReplayQuery *q = &replay_query;
     memset(q, 0, sizeof(*q));
+    q->counts_enabled = !strcmp(rules, "counts") || !strcmp(rules, "both");
+    q->early_enabled = !strcmp(rules, "early") || !strcmp(rules, "both");
+    if (!q->counts_enabled && !q->early_enabled) abort();
     q->p = p;
     q->rows = 1 << p->nVars;
     q->target = (unsigned)p->pTruth[0] & ((1u << q->rows) - 1);
