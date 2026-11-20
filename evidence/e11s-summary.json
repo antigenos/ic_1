@@ -1,0 +1,90 @@
+[
+  {
+    "order": 1,
+    "label": "A",
+    "logical_cpu": 2,
+    "start_utc": "2026-11-20T11:18:13.131099+00:00",
+    "binary_sha256": "0e0f0479a6e17082a911aa5fbd7b862c4162a04a9b73e39c9590e982f9a5958d",
+    "command": [
+      "abc.exe",
+      "-c",
+      "pexact -I 4 -M 2 0189"
+    ],
+    "timeout_s": 60,
+    "returncode": 0,
+    "wall_s": 3.2092875000016647,
+    "capped_wall_s": 3.2092875000016647,
+    "witness": {
+      "truth": "0189",
+      "activity": 304,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "order": 2,
+    "label": "B",
+    "logical_cpu": 2,
+    "start_utc": "2026-11-20T11:18:16.392096+00:00",
+    "binary_sha256": "4d51dd9598010d0b234c0b3f61276f239f843f9a9e397ab95bb52477e7c879dc",
+    "command": [
+      "abc.exe",
+      "-c",
+      "pexact -I 4 -M 2 0189"
+    ],
+    "timeout_s": 60,
+    "returncode": 0,
+    "wall_s": 2.45561959999759,
+    "capped_wall_s": 2.45561959999759,
+    "witness": {
+      "truth": "0189",
+      "activity": 304,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "order": 3,
+    "label": "B",
+    "logical_cpu": 2,
+    "start_utc": "2026-11-20T11:18:18.893328+00:00",
+    "binary_sha256": "4d51dd9598010d0b234c0b3f61276f239f843f9a9e397ab95bb52477e7c879dc",
+    "command": [
+      "abc.exe",
+      "-c",
+      "pexact -I 4 -M 2 0189"
+    ],
+    "timeout_s": 60,
+    "returncode": 0,
+    "wall_s": 2.4808819999961997,
+    "capped_wall_s": 2.4808819999961997,
+    "witness": {
+      "truth": "0189",
+      "activity": 304,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "order": 4,
+    "label": "A",
+    "logical_cpu": 2,
+    "start_utc": "2026-11-20T11:18:21.423754+00:00",
+    "binary_sha256": "0e0f0479a6e17082a911aa5fbd7b862c4162a04a9b73e39c9590e982f9a5958d",
+    "command": [
+      "abc.exe",
+      "-c",
+      "pexact -I 4 -M 2 0189"
+    ],
+    "timeout_s": 60,
+    "returncode": 0,
+    "wall_s": 3.224590799996804,
+    "capped_wall_s": 3.224590799996804,
+    "witness": {
+      "truth": "0189",
+      "activity": 304,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness"
+  }
+]
