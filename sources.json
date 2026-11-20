@@ -1,0 +1,17 @@
+{
+  "abc": {
+    "repository": "allen1236/abc",
+    "commit": "c851fce40d9dde1aaf32b087a0f449751ea070dc",
+    "archive_sha256": "429976b38bbb15fcc2b78bb30d09fafa075783598714a1894fd01ae7a98deafd"
+  },
+  "pexact": {
+    "repository": "cda-tum/ext-pexact",
+    "commit": "7253861c224e7c9de2c802e61c86f89338253544",
+    "archive_sha256": "a8ae0d4886154e61c943ec8dc74fd9a9c9d56e74a19231cbe9ffe2c83937174e"
+  },
+  "tcjap": {
+    "repository": "qmkkk/TCJAP",
+    "commit": "59e5a0e954d6a0a6711b2bdc9898db875ede6889",
+    "archive_sha256": "838936449f40336cd6ca36e70951a6296277dec5cec1d91f338b6d5d173cc385"
+  }
+}
