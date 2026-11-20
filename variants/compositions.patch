@@ -1,0 +1,74 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -8,6 +8,7 @@
+  */
+ 
+ #include "pexact.h"
++#include "histograms.h"
+ 
+ #include "math.h"
+ #include "misc/extra/extra.h"
+@@ -2306,6 +2307,18 @@
+ }
+ 
+ 
++struct BddHistogramContext {
++    DdManager *dd;
++    DdNode **result;
++    int bins, gates;
++};
++
++static bool add_histogram_bdd(const int *counts, void *data)
++{
++    struct BddHistogramContext *ctx = data;
++    return CalculateBddCuddSmallerThanMinInner(ctx->dd, counts, ctx->bins, ctx->gates, ctx->result);
++}
++
+ /**
+  * @brief Computes a BDD for the given activity window.
+  *
+@@ -2350,38 +2363,12 @@
+         wP[i] = 2 * ( i + 1 ) * ( ( int )pow( 2, k ) - ( i + 1 ) );
+     }
+ 
+-    long long combs = ( long long )pow( r + 1, nP );
+-    if ( combs > PEXACT_LLONG_MAX )
+-    {
+-        printf( "Error: Number of combinations exceeds limits for r=%d.\n", r );
+-        free( combi );
+-        free( wP );
+-        Cudd_RecursiveDeref( dd, orNode );
+-        return Cudd_ReadLogicZero( dd );
+-    }
+-
+-    for ( long long c = 0; c < combs; c++ )
+-    {
+-        int sum = 0;
+-        int sumB = 0;
+-        ConvertBaseIntLong( r + 1, c, nP, combi );
+-
+-        for ( int j = 0; j < nP; j++ )
+-        {
+-            sumB += combi[j];
+-            sum += wP[j] * combi[j];
+-        }
+-
+-        if ( sum <= act && sum >= actMin && sumB == r )
+-        {
+-            if ( !CalculateBddCuddSmallerThanMinInner( dd, combi, nP, r, &orNode ) )
+-            {
+-                free( combi );
+-                free( wP );
+-                Cudd_RecursiveDeref( dd, orNode );
+-                return Cudd_ReadLogicZero( dd );
+-            }
+-        }
++    struct BddHistogramContext ctx = { dd, &orNode, nP, r };
++    if (!visit_histograms(nP - 1, r, 0, actMin, act, wP, combi, add_histogram_bdd, &ctx)) {
++        Cudd_RecursiveDeref(dd, orNode);
++        free(combi);
++        free(wP);
++        return Cudd_ReadLogicZero(dd);
+     }
+ 
+     free( combi );
