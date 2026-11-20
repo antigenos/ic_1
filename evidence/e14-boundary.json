@@ -1,0 +1,370 @@
+[
+  {
+    "truth": "0000",
+    "essential_inputs": [],
+    "reduced": "0x0",
+    "normalized": "0x0",
+    "output_phase": 0,
+    "construction": "constant",
+    "reduced_optimum": 0,
+    "lifted_witness_activity": 0
+  },
+  {
+    "truth": "0003",
+    "essential_inputs": [
+      1,
+      2,
+      3
+    ],
+    "reduced": "0x1",
+    "normalized": "0xfe",
+    "output_phase": 1,
+    "reduced_runs": {
+      "author": {
+        "witness": {
+          "truth": "01",
+          "activity": 24,
+          "gates": 2
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 01\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 3-input function using 2 two-input gates complementary=1:\n04 = 4'b0001( a 03 )\n03 = 4'b1110( b c )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:00111111\ni=4:10000000\n\n\nSwitching Activity=24\nNumber of Gates: r=2\nTotal runtime =     0.14 sec\n"
+      },
+      "joint": {
+        "witness": {
+          "truth": "01",
+          "activity": 24,
+          "gates": 2
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 01\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=12 r=1.\nRealization of given 3-input function using 2 two-input gates complementary=1:\n04 = 4'b0001( a 03 )\n03 = 4'b1110( b c )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:00111111\ni=4:10000000\n\n\nSwitching Activity=24\nNumber of Gates: r=2\nTotal runtime =     0.14 sec\n"
+      }
+    },
+    "strict_bound_states": 1,
+    "reduced_optimum": 24,
+    "lifted_witness_activity": 96
+  },
+  {
+    "truth": "000f",
+    "essential_inputs": [
+      2,
+      3
+    ],
+    "reduced": "0x1",
+    "normalized": "0xe",
+    "output_phase": 1,
+    "construction": "single output gate",
+    "reduced_optimum": 0,
+    "lifted_witness_activity": 0
+  },
+  {
+    "truth": "003c",
+    "essential_inputs": [
+      1,
+      2,
+      3
+    ],
+    "reduced": "0x6",
+    "normalized": "0x6",
+    "output_phase": 0,
+    "reduced_runs": {
+      "author": {
+        "witness": {
+          "truth": "06",
+          "activity": 32,
+          "gates": 2
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 06\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 3-input function using 2 two-input gates complementary=0:\n04 = 4'b0010( c 03 )\n03 = 4'b0110( a b )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:01100110\ni=4:01100000\n\n\nSwitching Activity=32\nNumber of Gates: r=2\nTotal runtime =     0.16 sec\n"
+      },
+      "joint": {
+        "witness": {
+          "truth": "06",
+          "activity": 32,
+          "gates": 2
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 06\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=0 r=1.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=24 r=2.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=28 r=1.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=28 r=2.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=30 r=1.\nRealization of given 3-input function using 2 two-input gates complementary=0:\n04 = 4'b0010( c 03 )\n03 = 4'b0110( a b )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:01100110\ni=4:01100000\n\n\nSwitching Activity=32\nNumber of Gates: r=2\nTotal runtime =     0.17 sec\n"
+      }
+    },
+    "strict_bound_states": 13,
+    "reduced_optimum": 32,
+    "lifted_witness_activity": 128
+  },
+  {
+    "truth": "003f",
+    "essential_inputs": [
+      1,
+      2,
+      3
+    ],
+    "reduced": "0x7",
+    "normalized": "0xf8",
+    "output_phase": 1,
+    "reduced_runs": {
+      "author": {
+        "witness": {
+          "truth": "07",
+          "activity": 24,
+          "gates": 2
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 07\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 3-input function using 2 two-input gates complementary=1:\n04 = 4'b0001( c 03 )\n03 = 4'b1000( a b )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:00010001\ni=4:11100000\n\n\nSwitching Activity=24\nNumber of Gates: r=2\nTotal runtime =     0.14 sec\n"
+      },
+      "joint": {
+        "witness": {
+          "truth": "07",
+          "activity": 24,
+          "gates": 2
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 07\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=12 r=1.\nRealization of given 3-input function using 2 two-input gates complementary=1:\n04 = 4'b0001( c 03 )\n03 = 4'b1000( a b )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:00010001\ni=4:11100000\n\n\nSwitching Activity=24\nNumber of Gates: r=2\nTotal runtime =     0.14 sec\n"
+      }
+    },
+    "strict_bound_states": 1,
+    "reduced_optimum": 24,
+    "lifted_witness_activity": 96
+  },
+  {
+    "truth": "00ff",
+    "essential_inputs": [
+      3
+    ],
+    "reduced": "0x1",
+    "normalized": "0x2",
+    "output_phase": 1,
+    "construction": "literal",
+    "reduced_optimum": 0,
+    "lifted_witness_activity": 0
+  },
+  {
+    "truth": "033c",
+    "essential_inputs": [
+      1,
+      2,
+      3
+    ],
+    "reduced": "0x16",
+    "normalized": "0x16",
+    "output_phase": 0,
+    "reduced_runs": {
+      "author": {
+        "witness": {
+          "truth": "16",
+          "activity": 78,
+          "gates": 4
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 16\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 3-input function using 4 two-input gates complementary=0:\n06 = 4'b0110( 04 05 )\n05 = 4'b1110( a 03 )\n04 = 4'b1110( b c )\n03 = 4'b1000( b c )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:00000011\ni=4:00111111\ni=5:01010111\ni=6:01101000\n\n\nSwitching Activity=78\nNumber of Gates: r=4\nTotal runtime =     0.16 sec\n"
+      },
+      "joint": {
+        "witness": {
+          "truth": "16",
+          "activity": 78,
+          "gates": 4
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 16\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=0 r=5.\nRealization of given 3-input function using 4 two-input gates complementary=0:\n06 = 4'b0110( 03 05 )\n05 = 4'b1110( a 04 )\n04 = 4'b1000( b c )\n03 = 4'b1110( b c )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:00111111\ni=4:00000011\ni=5:01010111\ni=6:01101000\n\n\nSwitching Activity=78\nNumber of Gates: r=4\nTotal runtime =     0.27 sec\n"
+      }
+    },
+    "strict_bound_states": 1280,
+    "reduced_optimum": 78,
+    "lifted_witness_activity": 312
+  },
+  {
+    "truth": "033f",
+    "essential_inputs": [
+      1,
+      2,
+      3
+    ],
+    "reduced": "0x17",
+    "normalized": "0xe8",
+    "output_phase": 1,
+    "reduced_runs": {
+      "author": {
+        "witness": {
+          "truth": "17",
+          "activity": 78,
+          "gates": 4
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 17\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 3-input function using 4 two-input gates complementary=1:\n06 = 4'b0001( 04 05 )\n05 = 4'b1000( a b )\n04 = 4'b1000( c 03 )\n03 = 4'b1110( a b )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:01110111\ni=4:00000111\ni=5:00010001\ni=6:11101000\n\n\nSwitching Activity=78\nNumber of Gates: r=4\nTotal runtime =     0.18 sec\n"
+      },
+      "joint": {
+        "witness": {
+          "truth": "17",
+          "activity": 78,
+          "gates": 4
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 17\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=0 r=5.\nRealization of given 3-input function using 4 two-input gates complementary=1:\n06 = 4'b0001( 04 05 )\n05 = 4'b1000( b c )\n04 = 4'b1000( a 03 )\n03 = 4'b1110( b c )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:00111111\ni=4:00010101\ni=5:00000011\ni=6:11101000\n\n\nSwitching Activity=78\nNumber of Gates: r=4\nTotal runtime =     0.14 sec\n"
+      }
+    },
+    "strict_bound_states": 1280,
+    "reduced_optimum": 78,
+    "lifted_witness_activity": 312
+  },
+  {
+    "truth": "03c0",
+    "essential_inputs": [
+      1,
+      2,
+      3
+    ],
+    "reduced": "0x18",
+    "normalized": "0x18",
+    "output_phase": 0,
+    "reduced_runs": {
+      "author": {
+        "witness": {
+          "truth": "18",
+          "activity": 64,
+          "gates": 3
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 18\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 3-input function using 3 two-input gates complementary=0:\n05 = 4'b0010( 03 04 )\n04 = 4'b0110( a c )\n03 = 4'b0110( a b )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:01100110\ni=4:01011010\ni=5:00011000\n\n\nSwitching Activity=64\nNumber of Gates: r=3\nTotal runtime =     0.25 sec\n"
+      },
+      "joint": {
+        "witness": {
+          "truth": "18",
+          "activity": 64,
+          "gates": 3
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 18\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=0 r=2.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=32 r=3.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=48 r=4.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=56 r=4.\nRealization of given 3-input function using 3 two-input gates complementary=0:\n05 = 4'b0100( 03 04 )\n04 = 4'b0110( a b )\n03 = 4'b0110( b c )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:00111100\ni=4:01100110\ni=5:00011000\n\n\nSwitching Activity=64\nNumber of Gates: r=3\nTotal runtime =     0.25 sec\n"
+      }
+    },
+    "strict_bound_states": 442,
+    "reduced_optimum": 64,
+    "lifted_witness_activity": 256
+  },
+  {
+    "truth": "03c3",
+    "essential_inputs": [
+      1,
+      2,
+      3
+    ],
+    "reduced": "0x19",
+    "normalized": "0xe6",
+    "output_phase": 1,
+    "reduced_runs": {
+      "author": {
+        "witness": {
+          "truth": "19",
+          "activity": 54,
+          "gates": 3
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 19\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 3-input function using 3 two-input gates complementary=1:\n05 = 4'b1001( a 04 )\n04 = 4'b0100( b 03 )\n03 = 4'b1000( a c )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:00000101\ni=4:00110010\ni=5:10011000\n\n\nSwitching Activity=54\nNumber of Gates: r=3\nTotal runtime =     0.27 sec\n"
+      },
+      "joint": {
+        "witness": {
+          "truth": "19",
+          "activity": 54,
+          "gates": 3
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 19\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=0 r=2.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=41 r=3.\nRealization of given 3-input function using 3 two-input gates complementary=1:\n05 = 4'b1001( b 04 )\n04 = 4'b0100( a 03 )\n03 = 4'b1000( b c )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:00000011\ni=4:01010100\ni=5:10011000\n\n\nSwitching Activity=54\nNumber of Gates: r=3\nTotal runtime =     0.14 sec\n"
+      }
+    },
+    "strict_bound_states": 118,
+    "reduced_optimum": 54,
+    "lifted_witness_activity": 216
+  },
+  {
+    "truth": "03cf",
+    "essential_inputs": [
+      1,
+      2,
+      3
+    ],
+    "reduced": "0x1b",
+    "normalized": "0xe4",
+    "output_phase": 1,
+    "reduced_runs": {
+      "author": {
+        "witness": {
+          "truth": "1b",
+          "activity": 48,
+          "gates": 3
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 1b\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 3-input function using 3 two-input gates complementary=1:\n05 = 4'b1101( 03 04 )\n04 = 4'b1110( a b )\n03 = 4'b0100( a c )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:01010000\ni=4:01110111\ni=5:11011000\n\n\nSwitching Activity=48\nNumber of Gates: r=3\nTotal runtime =     0.18 sec\n"
+      },
+      "joint": {
+        "witness": {
+          "truth": "1b",
+          "activity": 48,
+          "gates": 3
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 1b\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=24 r=2.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=36 r=3.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=42 r=3.\nRealization of given 3-input function using 3 two-input gates complementary=1:\n05 = 4'b1101( 03 04 )\n04 = 4'b1110( a b )\n03 = 4'b0100( a c )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:01010000\ni=4:01110111\ni=5:11011000\n\n\nSwitching Activity=48\nNumber of Gates: r=3\nTotal runtime =     0.20 sec\n"
+      }
+    },
+    "strict_bound_states": 40,
+    "reduced_optimum": 48,
+    "lifted_witness_activity": 192
+  },
+  {
+    "truth": "03fc",
+    "essential_inputs": [
+      1,
+      2,
+      3
+    ],
+    "reduced": "0x1e",
+    "normalized": "0x1e",
+    "output_phase": 0,
+    "reduced_runs": {
+      "author": {
+        "witness": {
+          "truth": "1e",
+          "activity": 24,
+          "gates": 2
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 1e\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 3-input function using 2 two-input gates complementary=0:\n04 = 4'b0110( c 03 )\n03 = 4'b1110( a b )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:01110111\ni=4:01111000\n\n\nSwitching Activity=24\nNumber of Gates: r=2\nTotal runtime =     0.16 sec\n"
+      },
+      "joint": {
+        "witness": {
+          "truth": "1e",
+          "activity": 24,
+          "gates": 2
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 1e\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=12 r=1.\nRealization of given 3-input function using 2 two-input gates complementary=0:\n04 = 4'b0110( c 03 )\n03 = 4'b1110( a b )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:01110111\ni=4:01111000\n\n\nSwitching Activity=24\nNumber of Gates: r=2\nTotal runtime =     0.17 sec\n"
+      }
+    },
+    "strict_bound_states": 1,
+    "reduced_optimum": 24,
+    "lifted_witness_activity": 96
+  },
+  {
+    "truth": "0ff0",
+    "essential_inputs": [
+      2,
+      3
+    ],
+    "reduced": "0x6",
+    "normalized": "0x6",
+    "output_phase": 0,
+    "construction": "single output gate",
+    "reduced_optimum": 0,
+    "lifted_witness_activity": 0
+  },
+  {
+    "truth": "3cc3",
+    "essential_inputs": [
+      1,
+      2,
+      3
+    ],
+    "reduced": "0x69",
+    "normalized": "0x96",
+    "output_phase": 1,
+    "reduced_runs": {
+      "author": {
+        "witness": {
+          "truth": "69",
+          "activity": 32,
+          "gates": 2
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 69\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 3-input function using 2 two-input gates complementary=1:\n04 = 4'b1001( b 03 )\n03 = 4'b0110( a c )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:01011010\ni=4:10010110\n\n\nSwitching Activity=32\nNumber of Gates: r=2\nTotal runtime =     0.14 sec\n"
+      },
+      "joint": {
+        "witness": {
+          "truth": "69",
+          "activity": 32,
+          "gates": 2
+        },
+        "solver_output": "ABC command line: \"pexact -I 3 -M 2 69\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=0 r=1.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=24 r=2.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=28 r=1.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=28 r=2.\nError adding root constraint for node 0\nError adding CNF clauses for BDD with act=30 r=1.\nRealization of given 3-input function using 2 two-input gates complementary=1:\n04 = 4'b1001( b 03 )\n03 = 4'b0110( a c )\nPrinting overall Truth Table...\ni=0:01010101\ni=1:00110011\ni=2:00001111\ni=3:01011010\ni=4:10010110\n\n\nSwitching Activity=32\nNumber of Gates: r=2\nTotal runtime =     0.14 sec\n"
+      }
+    },
+    "strict_bound_states": 13,
+    "reduced_optimum": 32,
+    "lifted_witness_activity": 128
+  }
+]
