@@ -11,3 +11,11 @@ This branch reconstructs the DATE 2026 experiment and the later TCJAP algorithm 
 5. Residual problem for this reproduction. TCJAP already reports improvements to this task. Its public artifact provides local support calculations and aggregate results, but the complete solver, explanations, per-instance logs and construction history are private. An independently checkable reconstruction against the pinned baseline remains necessary. This admits baseline reproduction and diagnosis. No new research novelty is asserted.
 
 **Stage 6 acceptance.** Build and identify the executable, time separate author calls and replay each returned gate on every truth-table row. Check the DATE Figure 7 reference S=304 on 0189 and inspect any difference before interpreting timings. Record a solver's optimality claim separately from any independently established lower bound.
+
+## Build and exercise the pinned baseline
+
+Run `python tools/prepare.py` from this repository (Python 3.12+). On Linux with the ABC build dependencies, run `make -C .local/abc -j8`. On Windows, use MSYS2 UCRT64 GCC/G++, MSYS GNU make 4.4.1 and `make -C .local/abc -f ../../tools/windows.mk -j12 abc.exe` with the UCRT64 and MSYS bin directories on PATH. Keep the toolchain and options fixed for all comparisons.
+
+The Windows build uses the standard-width integer interface, a gnu11 C dialect, and MinGW libraries. `giaMan.c` includes `math.h` inside a function. Pre-including that header for this translation unit allows the MinGW inline definitions at file scope. The host build does not change the author's synthesis code.
+
+For the first witness, run `python tools/run_case.py .local/abc/abc.exe 96 evidence/baseline-xor3 --inputs 3 --mode 0 --seconds 30`. The three-input parity circuit has an internal two-input XOR and a free output XOR. Then use `python tools/run_case.py .local/abc/abc.exe 0189 evidence/baseline-0189 --mode 2 --seconds 300`. On Linux use the executable without the .exe suffix. Each run directory is exclusive to one invocation.
