@@ -17,10 +17,14 @@ def compile_variant(kind):
     search_hooks = {"partition": ("partition.h", "ff_partition"),
                     "xor-proof": ("xor_proof.h", "ff_xor_search"),
                     "cofactor": ("cofactor_hook.h", "ff_cofactor_search")}
-    if kind == "prefix":
-        for file in ("seed_hook.h", "cofactor.h", "prefix.h"):
+    initial_hooks = {"prefix": ("seed_hook.h", "seed.patch"), "bounded": ("bounded_hook.h", "bounded.patch")}
+    if kind in initial_hooks:
+        initial_header, _ = initial_hooks[kind]
+        for file in (initial_header, "cofactor.h", "prefix.h"):
             (dest / file).write_bytes((HERE / file).read_bytes())
-        header += '\n#include "seed_hook.h"\n'
+        if kind == "bounded":
+            (dest / "bounded.h").write_bytes((HERE / "bounded.h").read_bytes())
+        header += f'\n#include "{initial_header}"\n'
     elif kind in search_hooks:
         hook = "static int replay_solve(PexaMan_t *p, int bound)"
         original = "int result = sat_solver_solve(p->pSat, NULL, NULL, 0, 0, 0, 0);"
@@ -75,9 +79,10 @@ def compile_variant(kind):
         path.write_bytes((ROOT / "variants" / path.name).read_bytes().replace(b"\r\n", b"\n"))
         patches.append(path)
     plugin_patches = patches[:-1]
-    if kind == "prefix":
-        patch = dest / "seed.patch"
-        patch.write_bytes((HERE / "seed.patch").read_bytes().replace(b"\r\n", b"\n"))
+    if kind in initial_hooks:
+        _, filename = initial_hooks[kind]
+        patch = dest / filename
+        patch.write_bytes((HERE / filename).read_bytes().replace(b"\r\n", b"\n"))
         plugin_patches.append(patch)
     build(name, plugin_patches, patches[-1])
 
@@ -85,5 +90,5 @@ def compile_variant(kind):
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("kind", choices=("base", "diagnostic", "candidate", "candidate-diagnostic",
-                                   "interval", "types", "types-diagnostic", "partition","xor-proof","cofactor","prefix"))
+                                   "interval", "types", "types-diagnostic", "partition","xor-proof","cofactor","prefix","bounded"))
     compile_variant(p.parse_args().kind)

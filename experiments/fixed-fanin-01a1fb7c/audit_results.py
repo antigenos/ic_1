@@ -72,11 +72,14 @@ def audit():
         plan["partition-"+case]=("base split-bit split-five split-five split-bit base",60)
         plan["cofactor-"+case]=("base cofactor-whole cofactor cofactor cofactor-whole base",60)
         plan["prefix-"+case]=("base seed-cofactor seed-prefix2 seed-prefix2 seed-cofactor base",60)
+        plan["bounded-"+case]=("base bounded-plain bounded-projected bounded-projected bounded-plain base",60)
     for case,cap in (("0189",60),("0198",180)):
         plan["xor-"+case]=("base xor-only xor-proof xor-proof xor-only base",cap)
     groups={}
     for path in sorted((HERE/"evidence").glob("*/summary.json")):
         name=path.parent.name
+        if name not in plan and name.startswith("holdout-"):
+            continue
         order,cap=plan[name]
         groups[name]=read_case(path.parent,order.split(),cap)
     assert groups.keys()==plan.keys()
