@@ -70,6 +70,7 @@ def audit():
         plan["interval-"+case]=("base interval interval base",60)
         plan["types-"+case]=("base types-only types types types-only base",60)
         plan["partition-"+case]=("base split-bit split-five split-five split-bit base",60)
+        plan["cofactor-"+case]=("base cofactor-whole cofactor cofactor cofactor-whole base",60)
     for case,cap in (("0189",60),("0198",180)):
         plan["xor-"+case]=("base xor-only xor-proof xor-proof xor-only base",cap)
     groups={}

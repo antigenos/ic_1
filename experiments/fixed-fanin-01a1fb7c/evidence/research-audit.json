@@ -1,12 +1,252 @@
 {
-  "timed_runs": 56,
-  "replayed_witnesses": 52,
+  "timed_runs": 68,
+  "replayed_witnesses": 64,
   "strict_optima": {
     "0189": 304,
     "0019": 310,
     "0198": 352
   },
   "groups": {
+    "cofactor-0019": {
+      "rows": [
+        {
+          "mode": "base",
+          "wall_s": 9.769963499995356,
+          "capped_s": 9.769963499995356,
+          "status": "solver_completed_verified_witness",
+          "activity": 310,
+          "cpu": 10,
+          "truth": "0019",
+          "cap": 60,
+          "binary": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+          "log_sha256": "249feb6d13c3af98f976d8ce66c433ea8412ec272f7abd7dc25554614abb96a0"
+        },
+        {
+          "mode": "cofactor-whole",
+          "wall_s": 10.344476099999156,
+          "capped_s": 10.344476099999156,
+          "status": "solver_completed_verified_witness",
+          "activity": 310,
+          "cpu": 10,
+          "truth": "0019",
+          "cap": 60,
+          "binary": "6ee4f5bccf5d2f7c6b5ad4974fcc3a056a90fda0313e1a54a567363b15d9347e",
+          "log_sha256": "d04b2abbbf28862e698eedca282b7064a5607b54011b18dab11d67422b2c1fcf"
+        },
+        {
+          "mode": "cofactor",
+          "wall_s": 9.651604799997585,
+          "capped_s": 9.651604799997585,
+          "status": "solver_completed_verified_witness",
+          "activity": 310,
+          "cpu": 10,
+          "truth": "0019",
+          "cap": 60,
+          "binary": "6ee4f5bccf5d2f7c6b5ad4974fcc3a056a90fda0313e1a54a567363b15d9347e",
+          "log_sha256": "8200db85f111c2e78dfc1a68b7a600ae293fd78f72b5aaf582ae29f447414a70"
+        },
+        {
+          "mode": "cofactor",
+          "wall_s": 9.056913799999165,
+          "capped_s": 9.056913799999165,
+          "status": "solver_completed_verified_witness",
+          "activity": 310,
+          "cpu": 10,
+          "truth": "0019",
+          "cap": 60,
+          "binary": "6ee4f5bccf5d2f7c6b5ad4974fcc3a056a90fda0313e1a54a567363b15d9347e",
+          "log_sha256": "5697454348df6a90cd0cb20d9dcf035552a9bec6e879ef97f9b0b6645e0dcf09"
+        },
+        {
+          "mode": "cofactor-whole",
+          "wall_s": 9.52774259999569,
+          "capped_s": 9.52774259999569,
+          "status": "solver_completed_verified_witness",
+          "activity": 310,
+          "cpu": 10,
+          "truth": "0019",
+          "cap": 60,
+          "binary": "6ee4f5bccf5d2f7c6b5ad4974fcc3a056a90fda0313e1a54a567363b15d9347e",
+          "log_sha256": "5697454348df6a90cd0cb20d9dcf035552a9bec6e879ef97f9b0b6645e0dcf09"
+        },
+        {
+          "mode": "base",
+          "wall_s": 9.392949399996724,
+          "capped_s": 9.392949399996724,
+          "status": "solver_completed_verified_witness",
+          "activity": 310,
+          "cpu": 10,
+          "truth": "0019",
+          "cap": 60,
+          "binary": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+          "log_sha256": "8200db85f111c2e78dfc1a68b7a600ae293fd78f72b5aaf582ae29f447414a70"
+        }
+      ],
+      "methods": {
+        "base": {
+          "completed": 2,
+          "attempts": 2,
+          "capped_total_s": 19.16291289999208,
+          "wall_s": [
+            9.769963499995356,
+            9.392949399996724
+          ],
+          "paired_ratios": [
+            1.0,
+            1.0
+          ],
+          "paired_gm": 1.0
+        },
+        "cofactor-whole": {
+          "completed": 2,
+          "attempts": 2,
+          "capped_total_s": 19.872218699994846,
+          "wall_s": [
+            10.344476099999156,
+            9.52774259999569
+          ],
+          "paired_ratios": [
+            0.944461894981434,
+            0.9858525565122815
+          ],
+          "paired_gm": 0.9649353209909359
+        },
+        "cofactor": {
+          "completed": 2,
+          "attempts": 2,
+          "capped_total_s": 18.70851859999675,
+          "wall_s": [
+            9.651604799997585,
+            9.056913799999165
+          ],
+          "paired_ratios": [
+            1.0122631108971432,
+            1.037102660731693
+          ],
+          "paired_gm": 1.0246076154665102
+        }
+      }
+    },
+    "cofactor-0189": {
+      "rows": [
+        {
+          "mode": "base",
+          "wall_s": 4.264844600002107,
+          "capped_s": 4.264844600002107,
+          "status": "solver_completed_verified_witness",
+          "activity": 304,
+          "cpu": 10,
+          "truth": "0189",
+          "cap": 60,
+          "binary": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+          "log_sha256": "1d2f8536be80730216b14cadb0a2437d29a839dc48864b24d10c0a862d728cb0"
+        },
+        {
+          "mode": "cofactor-whole",
+          "wall_s": 5.088398499996401,
+          "capped_s": 5.088398499996401,
+          "status": "solver_completed_verified_witness",
+          "activity": 304,
+          "cpu": 10,
+          "truth": "0189",
+          "cap": 60,
+          "binary": "6ee4f5bccf5d2f7c6b5ad4974fcc3a056a90fda0313e1a54a567363b15d9347e",
+          "log_sha256": "d2f0d462730f0265bbdad79f11127f21e15b2a3457c1da2735d4dbf0284e2f9a"
+        },
+        {
+          "mode": "cofactor",
+          "wall_s": 4.522433499994804,
+          "capped_s": 4.522433499994804,
+          "status": "solver_completed_verified_witness",
+          "activity": 304,
+          "cpu": 10,
+          "truth": "0189",
+          "cap": 60,
+          "binary": "6ee4f5bccf5d2f7c6b5ad4974fcc3a056a90fda0313e1a54a567363b15d9347e",
+          "log_sha256": "6ce197a5ee1b76a23410486e311b28a21bad952a1ea348f4cf90eaf6e4f51409"
+        },
+        {
+          "mode": "cofactor",
+          "wall_s": 4.808986000003642,
+          "capped_s": 4.808986000003642,
+          "status": "solver_completed_verified_witness",
+          "activity": 304,
+          "cpu": 10,
+          "truth": "0189",
+          "cap": 60,
+          "binary": "6ee4f5bccf5d2f7c6b5ad4974fcc3a056a90fda0313e1a54a567363b15d9347e",
+          "log_sha256": "d636dfdfc0a12c0834ce7ae20803abe7f307842c2af891913497740e0937da17"
+        },
+        {
+          "mode": "cofactor-whole",
+          "wall_s": 4.858767400000943,
+          "capped_s": 4.858767400000943,
+          "status": "solver_completed_verified_witness",
+          "activity": 304,
+          "cpu": 10,
+          "truth": "0189",
+          "cap": 60,
+          "binary": "6ee4f5bccf5d2f7c6b5ad4974fcc3a056a90fda0313e1a54a567363b15d9347e",
+          "log_sha256": "cc1400ce285fbc3e916d710c985163c3da42b9654007cf615069b90119f928bb"
+        },
+        {
+          "mode": "base",
+          "wall_s": 5.600759000000835,
+          "capped_s": 5.600759000000835,
+          "status": "solver_completed_verified_witness",
+          "activity": 304,
+          "cpu": 10,
+          "truth": "0189",
+          "cap": 60,
+          "binary": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+          "log_sha256": "c390e8a97810d049868d1a92ef91906e3590b085fe0ebfa6c03e5e466950054f"
+        }
+      ],
+      "methods": {
+        "base": {
+          "completed": 2,
+          "attempts": 2,
+          "capped_total_s": 9.865603600002942,
+          "wall_s": [
+            4.264844600002107,
+            5.600759000000835
+          ],
+          "paired_ratios": [
+            1.0,
+            1.0
+          ],
+          "paired_gm": 1.0
+        },
+        "cofactor-whole": {
+          "completed": 2,
+          "attempts": 2,
+          "capped_total_s": 9.947165899997344,
+          "wall_s": [
+            5.088398499996401,
+            4.858767400000943
+          ],
+          "paired_ratios": [
+            0.8381506676423088,
+            1.1527118997299084
+          ],
+          "paired_gm": 0.9829273871237167
+        },
+        "cofactor": {
+          "completed": 2,
+          "attempts": 2,
+          "capped_total_s": 9.331419499998447,
+          "wall_s": [
+            4.522433499994804,
+            4.808986000003642
+          ],
+          "paired_ratios": [
+            0.943041970657392,
+            1.1646444801454179
+          ],
+          "paired_gm": 1.0480022069020603
+        }
+      }
+    },
     "interval-0019": {
       "rows": [
         {
