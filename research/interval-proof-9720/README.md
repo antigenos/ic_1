@@ -87,3 +87,7 @@ python family.py run BASE --host-samples .local/host-resume-01
 活动度严格低于 432 的状态共 2,243,437 个。枚举给出的下界与冻结三版的全部 219 个返回见证相符，覆盖 81 个不同四输入目标，81 个最优值均已独立证明，其中 4 个位于界限 432。另有 8 个三版均超时的目标，其在放宽后的电路集合中能在严格界内出现；这项发现本身还没有给出作者门库下的合法电路。完整下界与按目标核验记录见 [208 类下界](evidence/family-bounds-432.json) 和 [冻结返回解的独立最优性核验](evidence/frozen-independent-optima.json)。原始三版 300 秒完成数仍为 67、72、80。
 
 构造性复核预登记。对活动度至多 432 的同一可达集合保留取得最低代价的内部信号，再从四个原始输入出发，逐一用作者允许的二输入门构造这些信号和免费输出。每份电路由独立见证检查器检查拓扑、每个输入与内部节点的使用、16 行真值、输出反相和实际活动度。先在活动度至多 304 的范围成功重建 24 个电路，再覆盖边界 432 本身及所有更低值。验收条件是实际合法电路的活动度等于枚举下界，逐个列出三版限时内没有返回的目标。这是一次跨函数共享的正确性枚举，耗时单列，任何额外构造的电路均不计入单实例 300 秒性能统计。
+
+独立构造的完整运行在一个核心用时 154.726 秒，进程 CPU 时间 133.828 秒。2,424,925 个状态给出 95 个四输入函数的最优电路，所有电路均通过重新读取后的检查。其中包括原三版的全部 81 个已完成函数，以及 14 个三版在本机 300 秒内均未完成的函数。在这 14 个函数中，8 个最优值低于 432，另 6 个恰为 432。例如 0016 的最优电路使用 6 个门、活动度 406，0017 使用 6 个门、活动度 400。另 113 类在本次搜索中取得活动度至少 433 的下界。DATE 论文列出的 11 个超时类与这 14 个本机超时类没有交集；“额外 14 个”的比较对象仅是本地限时复现。完整电路与界限可用 `python construct_bounds.py audit evidence/constructed-through-432.json` 复核。重新生成使用 `python construct_bounds.py build .local/repeat-constructed.json --cap 433 --cpu 0`。[95 份电路与逐类下界](evidence/constructed-through-432.json) · [实测时间与哈希](evidence/construct-432-timing.json) · [DATE 论文第 IV 节与脚注 3](https://www.cda.cit.tum.de/files/eda/2026_date_exact_synthesis_with_optimal_switching_activity.pdf)
+
+已有精确综合工作使用布尔链枚举求四输入函数的最少门数。这里核验的是内部信号活动度之和，穷举状态包含可共享的真值向量，限界以该目标的累计代价计算。本实验支持具体电路和数值证明；对枚举方法本身的通用原创性仍需另行论证。[Classifying Functions with Exact Synthesis，第 I 节](https://si2.epfl.ch/demichel/publications/archive/2017/07965003.pdf)

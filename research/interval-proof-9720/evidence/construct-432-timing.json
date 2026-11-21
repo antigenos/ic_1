@@ -1,0 +1,9 @@
+{
+  "start_utc": "2026-11-21T03:58:31.835714+00:00",
+  "wall_s": 154.7259617000018,
+  "process_cpu_s": 133.828125,
+  "logical_cpu": 0,
+  "strict_cap": 433,
+  "functions": 208,
+  "artifact_sha256": "f8e27756dd06c8509854f5e5d45180f91b9a69ff57ec02b8af0f0f18fea1228d"
+}
