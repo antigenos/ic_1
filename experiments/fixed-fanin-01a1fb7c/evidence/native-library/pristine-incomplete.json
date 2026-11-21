@@ -1,0 +1,25 @@
+[
+  {
+    "start_utc": "2026-11-21T04:26:27.584179+00:00",
+    "binary_sha256": "f28182ef67ce1a9a2af5922862736f9ca08cc312d29f965444cd4040492789d8",
+    "command": [
+      "abc.exe",
+      "-c",
+      "pexact -I 4 -M 2 0116"
+    ],
+    "timeout_s": 90,
+    "experiment": {
+      "cpu": 28,
+      "certificate": "6de650a900e7841b706069dc479489eab6fde1f9fa1414ca63be54b12f9ab5b6"
+    },
+    "pid": 3988,
+    "child_affinity": [
+      28
+    ],
+    "status": "timeout",
+    "returncode": 1,
+    "wall_s": 90.98726399999578,
+    "capped_wall_s": 90,
+    "solver_output": ""
+  }
+]

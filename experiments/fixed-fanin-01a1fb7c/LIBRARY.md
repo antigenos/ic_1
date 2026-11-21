@@ -4,6 +4,24 @@ DATE 原文第 IV-C 节报告在每类三天的预算下完成 222 个 NPN 类�
 
 ## 从单例检查到整族枚举
 
+在锁定的门库和活动度模型下，全部 208 个代表均已获得精确最优值及能逐门复算的电路。运行预算为 690，在一个逻辑核上从冷进程启动到导出全族电路用时 636.833 秒，遍历 28492360 个存储状态，最大一层为 9332282 个。该时间包含整族生成与电路导出，外部 Python 复算另行执行。这个结果覆盖依赖全部四个输入的 64594 张真值表。独立程序实测了 79872 个经输入变换的电路及其两种输出相位。[208 个电路、费用与层计数](evidence/leaves-690.json) · [全域复核](evidence/library-domain.json)
+
+| DATE 原文三天超时的代表 | 最优活动度 | 所给电路的门数（含输出） |
+|---|---:|---:|
+| 179a | 584 | 7 |
+| 177e | 576 | 6 |
+| 16ad | 552 | 6 |
+| 16ac | 572 | 8 |
+| 169b | 616 | 8 |
+| 1698 | 630 | 9 |
+| 1697 | 600 | 6 |
+| 168e | 612 | 8 |
+| 168b | 618 | 9 |
+| 1689 | 560 | 6 |
+| 1681 | 662 | 7 |
+
+表中的门数描述具体见证，主目标为内部活动度。最后一类 `1681` 的电路可以直接写为 `XNOR((d AND NOT c) OR (a AND b), (c AND NOT d) OR (a XOR b))`。六个内部门按存档次序分别贡献 96、128、96、120、96、126。其和是 662。660 档完整穷举仍未出现这个函数，而每个活动度贡献都是偶数，这又独立给出与 662 相等的下界。[660 档排除结果](evidence/leaves-660.json)
+
 原先为检查单例的末门活动度剪枝，需要一个独立的求解器。一个搜索状态保存已经付费、可供后续任意复用的布尔信号集合。这个集合给出所有可用连线，也确定已付活动度。因而同一个状态只需展开一次。遍历时可以给每种可实现的免费输出更新最小值，同一批状态随即成为整族共享的计算。已有布尔链研究使用 NPN 分类求四输入函数的最小门数。本实验沿用这一分类，在 DATE 的活动度目标、可共享 DAG 和免费末门条件下穷举，并恢复达到下界的具体电路。[Haaswijk 等，ISMVL 2017](https://msoeken.github.io/papers/2017_ismvl.pdf)
 
 对四输入信号 v，费用为 A(v) = 2p(16−p)，其中 p 是十六行中的 1 数。阶段 9 的算法区别与第 13 阶段的直接单例比较见[收费前缀研究记录](COFACTOR.md)。本页的整族枚举每次都重新生成状态，二进制的输入只有预算、运行选项和待导出的目标真值。已有解用于进程退出后的交叉核查。
@@ -21,6 +39,8 @@ DATE 原文第 IV-C 节报告在每类三天的预算下完成 222 个 NPN 类�
 
 另一个检查程序对每个可用电路实施全部 384 种带相位的输入置换。程序用四项真值表重编码每个门并重新计算整张电路，对两个输出相位检查结果，还独立用翻转单个输入的方式判定每张真值表的变量支持。检查时同时核对不同代表的轨道是否相交。此项验证电路在等价类内的可移植性。[域核验程序](audit_library_domain.py)
 
+在最终选出的 208 个电路中，129 个以完整 DATE 活动度窗口确认，79 个以固定拓扑的原生真值 CNF 和活动度读回确认。较低预算档可能为同一最优值选出不同连线，因此只有证书哈希相同的旧日志才会复用。全部 208 个原生输出都按门码、两端连线、真值和费用逐项核过。对 102 种门数和费用组合，共 572 个进入 BDD 构造器的有序直方图索引与独立多重集枚举逐项一致。原枚举和直接枚举在 0116 的 90 秒窗口超时日志都已保存。[逐例原生输出](evidence/native-library) · [窗口输入审计](evidence/native-windows.json)
+
 ### 复跑
 
 从仓库根目录执行。下面给出 PowerShell 命令，示例核 24 可以换成本机可分配的逻辑核。编译独立枚举器只需要支持 C++17 的 GNU C++ 和 Python 3.12。运行 DATE 原生核验时还需按[作者基线构建步骤](../../REPRODUCTION.md)准备已锁定的 ABC 和 pexact。
@@ -29,10 +49,11 @@ DATE 原文第 IV-C 节报告在每类三天的预算下完成 222 个 NPN 类�
 $study = 'experiments/fixed-fanin-01a1fb7c'
 New-Item -ItemType Directory -Force .local | Out-Null
 g++ -O2 -std=c++17 "$study/orbit_oracle.cpp" -o .local/orbit-replay.exe
-python "$study/library.py" .local/rebuilt-660.json --binary .local/orbit-replay.exe --cap 660 --terminal --layer-limit 6000000 --cpu 24 --previous "$study/evidence/leaves-630.json"
-python "$study/audit_library_domain.py" .local/rebuilt-660.json .local/transport-660-check.json
+python "$study/library.py" .local/rebuilt-690.json --binary .local/orbit-replay.exe --cap 690 --terminal --layer-limit 14000000 --cpu 24 --previous "$study/evidence/leaves-660.json"
+python "$study/audit_library_domain.py" .local/rebuilt-690.json .local/transport-690-check.json
 python "$study/build.py" library-check-fixed
-python "$study/native_audit.py" .local/rebuilt-660.json .local/check-fixed-660 --fixed --cpus 24
+python "$study/native_audit.py" .local/rebuilt-690.json .local/check-fixed-690 --fixed --cpus 24
+python "$study/native_audit.py" "$study/evidence/leaves-690.json" --verify-export "$study/evidence/native-library"
 ```
 
 单例冷启动的比较完整计入预处理和求解时间。整族枚举另报生成所有电路的总墙钟时间和核数。查表时间只适用于已经支付生成成本的使用情形。本文的最优值适用于均匀真值行和 DATE 的静态逻辑活动度模型，实测芯片功耗需要另外的物理模型与实验。
