@@ -1,0 +1,41 @@
+{
+  "witnesses_with_compatible_representative": 219,
+  "cohort": [
+    {
+      "difficulty": "fast",
+      "signed_stricter": false,
+      "cell_size": 20,
+      "truth": "0357"
+    },
+    {
+      "difficulty": "fast",
+      "signed_stricter": true,
+      "cell_size": 24,
+      "truth": "07f8"
+    },
+    {
+      "difficulty": "medium",
+      "signed_stricter": false,
+      "cell_size": 23,
+      "truth": "01eb"
+    },
+    {
+      "difficulty": "medium",
+      "signed_stricter": true,
+      "cell_size": 12,
+      "truth": "03dd"
+    },
+    {
+      "difficulty": "timeout",
+      "signed_stricter": false,
+      "cell_size": 74,
+      "truth": "011a"
+    },
+    {
+      "difficulty": "timeout",
+      "signed_stricter": true,
+      "cell_size": 53,
+      "truth": "06b6"
+    }
+  ]
+}
