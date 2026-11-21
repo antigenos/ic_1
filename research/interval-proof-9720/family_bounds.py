@@ -10,10 +10,21 @@ from zipfile import ZipFile
 from family import HERE, VERIFIED, pin, simulate
 
 
-def enumerate_bounds(truths, cap, optimal_states=None):
+def can_finish(target, signal, available):
+    for other in available:
+        if (signal ^ other) == target or (signal & other) == target or (signal | other) == target:
+            return True
+        if (signal & ~other) == target or (other & ~signal) == target:
+            return True
+    return False
+
+
+def enumerate_bounds(truths, cap, optimal_states=None, *, terminal=False):
     if not 0 < cap <= 65535:
         raise ValueError("A positive bound in 16-bit range is required")
     normalized = {int(t, 16) ^ (65535 if int(t, 16) & 1 else 0): t for t in truths}
+    if terminal and len(normalized) != 1:
+        raise ValueError("Terminal output matching requires one target")
     if len(normalized) != len(truths):
         raise ValueError("Representatives coincide after output normalization")
     primary = (0, 0xaaaa, 0xcccc, 0xf0f0, 0xff00)
@@ -29,6 +40,9 @@ def enumerate_bounds(truths, cap, optimal_states=None):
     stack = [((), 0)]
     seen = {b""}
     targets = set(normalized)
+    if terminal:
+        target, name_of_target = next(iter(normalized.items()))
+    terminal_edges = 0
     while stack:
         state, cost = stack.pop()
         by_cost[cost] += 1
@@ -47,14 +61,24 @@ def enumerate_bounds(truths, cap, optimal_states=None):
             following_cost = cost + weights[signal]
             if following_cost >= cap:
                 continue
+            if terminal and following_cost + 30 >= cap:
+                terminal_edges += 1
+                if following_cost < bounds[name_of_target] and can_finish(target, signal, available):
+                    bounds[name_of_target] = following_cost
+                    if optimal_states is not None:
+                        optimal_states[name_of_target] = tuple(sorted((*state, signal)))
+                continue
             following = tuple(sorted((*state, signal)))
             key = keys[len(following)].pack(*following)
             if key not in seen:
                 seen.add(key)
                 stack.append((following, following_cost))
     assert len(seen) == sum(by_cost.values())
-    return dict(inputs=4, strict_cap=cap, states=len(seen), states_by_cost=dict(sorted(by_cost.items())),
-                lower_bounds=dict(sorted(bounds.items())))
+    result = dict(inputs=4, strict_cap=cap, states=len(seen), states_by_cost=dict(sorted(by_cost.items())),
+                  lower_bounds=dict(sorted(bounds.items())))
+    if terminal:
+        result["terminal_edges"] = terminal_edges
+    return result
 
 
 def compare(bounds, cohort):

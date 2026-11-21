@@ -23,7 +23,7 @@ $previousBusy = $null
 do {
     $observed = @(Get-CimInstance Win32_Process -Filter "Name='python.exe' OR Name='abc.exe'")
     $owner = @($observed | Where-Object {
-        $_.ProcessId -eq $controllerId -and $_.CommandLine -match '(?:^|[/\\\s"])family\.py[" ]+run\b' -and
+        $_.ProcessId -eq $controllerId -and $_.CommandLine -match '(?:^|[/\\\s"])(?:family\.py[" ]+run\b|terminal_compare\.py(?=[" ]))' -and
         ([DateTimeOffset]$_.CreationDate).ToUnixTimeSeconds() -le $controller.started
     })
     if ($owner.Count -ne 1) {
@@ -33,6 +33,7 @@ do {
     $workerIds = @($observed | Where-Object { $_.Name -eq 'python.exe' -and $_.ParentProcessId -eq $controllerId } | ForEach-Object ProcessId)
     $busy = @{}
     $ourSolvers = @()
+    if ($owner[0].CommandLine -match 'terminal_compare\.py') { $ourSolvers = @($workerIds) }
     foreach ($item in @($observed | Where-Object Name -eq 'abc.exe')) {
         if ($workerIds -contains $item.ParentProcessId) {
             $ourSolvers += [int]$item.ProcessId
