@@ -1,0 +1,56 @@
+ABC command line: "pexact -I 4 -M 2 0189".
+
+Cannot open file "abc.rc".
+Cannot open file "..\abc.rc".
+Cannot open file "..\..\abc.rc".
+ORBIT target=fe76 high=1 low=0 op=2 truth=4444 keep=0
+ORBIT target=fe76 high=1 low=0 op=4 truth=2222 keep=1
+ORBIT target=fe76 high=1 low=0 op=6 truth=6666 keep=1
+ORBIT target=fe76 high=1 low=0 op=8 truth=8888 keep=1
+ORBIT target=fe76 high=1 low=0 op=14 truth=eeee keep=0
+ORBIT target=fe76 high=2 low=0 op=2 truth=5050 keep=0
+ORBIT target=fe76 high=2 low=0 op=4 truth=0a0a keep=1
+ORBIT target=fe76 high=2 low=0 op=6 truth=5a5a keep=0
+ORBIT target=fe76 high=2 low=0 op=8 truth=a0a0 keep=0
+ORBIT target=fe76 high=2 low=0 op=14 truth=fafa keep=0
+ORBIT target=fe76 high=2 low=1 op=2 truth=3030 keep=1
+ORBIT target=fe76 high=2 low=1 op=4 truth=0c0c keep=0
+ORBIT target=fe76 high=2 low=1 op=6 truth=3c3c keep=0
+ORBIT target=fe76 high=2 low=1 op=8 truth=c0c0 keep=0
+ORBIT target=fe76 high=2 low=1 op=14 truth=fcfc keep=0
+ORBIT target=fe76 high=3 low=0 op=2 truth=5500 keep=0
+ORBIT target=fe76 high=3 low=0 op=4 truth=00aa keep=1
+ORBIT target=fe76 high=3 low=0 op=6 truth=55aa keep=0
+ORBIT target=fe76 high=3 low=0 op=8 truth=aa00 keep=0
+ORBIT target=fe76 high=3 low=0 op=14 truth=ffaa keep=0
+ORBIT target=fe76 high=3 low=1 op=2 truth=3300 keep=1
+ORBIT target=fe76 high=3 low=1 op=4 truth=00cc keep=0
+ORBIT target=fe76 high=3 low=1 op=6 truth=33cc keep=1
+ORBIT target=fe76 high=3 low=1 op=8 truth=cc00 keep=0
+ORBIT target=fe76 high=3 low=1 op=14 truth=ffcc keep=0
+ORBIT target=fe76 high=3 low=2 op=2 truth=0f00 keep=0
+ORBIT target=fe76 high=3 low=2 op=4 truth=00f0 keep=1
+ORBIT target=fe76 high=3 low=2 op=6 truth=0ff0 keep=1
+ORBIT target=fe76 high=3 low=2 op=8 truth=f000 keep=1
+ORBIT target=fe76 high=3 low=2 op=14 truth=fff0 keep=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( 06 07 )
+07 = 4'b0010( d 04 )
+06 = 4'b1110( b 05 )
+05 = 4'b1110( a c )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0101111101011111
+i=6:0111111101111111
+i=7:0001000100000000
+i=8:1001000110000000
+
+
+Switching Activity=304
+Number of Gates: r=5
+Total runtime =     1.05 sec

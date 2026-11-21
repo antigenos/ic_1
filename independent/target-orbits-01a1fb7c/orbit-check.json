@@ -1,0 +1,1053 @@
+{
+  "three_inputs": {
+    "circuits": 22965,
+    "target_and_ordered_count_profiles": 657
+  },
+  "witnesses": 219,
+  "transformed_witnesses": 2450,
+  "first_trivial": "012d",
+  "inputs_with_reductions": 184,
+  "signed_strictly_stronger": 90,
+  "family": {
+    "0001": {
+      "group": 24,
+      "plain": 4,
+      "signed": 4
+    },
+    "0006": {
+      "group": 8,
+      "plain": 13,
+      "signed": 10
+    },
+    "0007": {
+      "group": 4,
+      "plain": 13,
+      "signed": 13
+    },
+    "0016": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "0017": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "0018": {
+      "group": 12,
+      "plain": 19,
+      "signed": 6
+    },
+    "0019": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "001b": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "001e": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "001f": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "003d": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "0069": {
+      "group": 24,
+      "plain": 9,
+      "signed": 5
+    },
+    "006b": {
+      "group": 6,
+      "plain": 19,
+      "signed": 9
+    },
+    "006f": {
+      "group": 4,
+      "plain": 19,
+      "signed": 14
+    },
+    "007e": {
+      "group": 12,
+      "plain": 9,
+      "signed": 6
+    },
+    "007f": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "0116": {
+      "group": 24,
+      "plain": 4,
+      "signed": 4
+    },
+    "0117": {
+      "group": 24,
+      "plain": 4,
+      "signed": 4
+    },
+    "0118": {
+      "group": 4,
+      "plain": 13,
+      "signed": 13
+    },
+    "0119": {
+      "group": 4,
+      "plain": 13,
+      "signed": 13
+    },
+    "011a": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "011b": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "011e": {
+      "group": 4,
+      "plain": 13,
+      "signed": 13
+    },
+    "011f": {
+      "group": 4,
+      "plain": 13,
+      "signed": 13
+    },
+    "012c": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "012d": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "012f": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "013c": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "013d": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "013e": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "013f": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "0168": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "0169": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "016a": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "016b": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "016e": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "016f": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "017e": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "017f": {
+      "group": 12,
+      "plain": 9,
+      "signed": 6
+    },
+    "0180": {
+      "group": 48,
+      "plain": 9,
+      "signed": 3
+    },
+    "0181": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "0182": {
+      "group": 8,
+      "plain": 19,
+      "signed": 8
+    },
+    "0183": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "0186": {
+      "group": 4,
+      "plain": 19,
+      "signed": 12
+    },
+    "0187": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "0189": {
+      "group": 4,
+      "plain": 19,
+      "signed": 12
+    },
+    "018b": {
+      "group": 2,
+      "plain": 30,
+      "signed": 18
+    },
+    "018f": {
+      "group": 4,
+      "plain": 19,
+      "signed": 12
+    },
+    "0196": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "0197": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "0198": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "0199": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "019a": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "019b": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "019e": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "019f": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "01a8": {
+      "group": 4,
+      "plain": 19,
+      "signed": 13
+    },
+    "01a9": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "01aa": {
+      "group": 4,
+      "plain": 19,
+      "signed": 13
+    },
+    "01ab": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "01ac": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "01ad": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "01ae": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "01af": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "01bc": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "01bd": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "01be": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "01bf": {
+      "group": 4,
+      "plain": 19,
+      "signed": 12
+    },
+    "01e8": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "01e9": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "01ea": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "01eb": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "01ee": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "01ef": {
+      "group": 4,
+      "plain": 19,
+      "signed": 13
+    },
+    "01fe": {
+      "group": 12,
+      "plain": 9,
+      "signed": 7
+    },
+    "033d": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "0356": {
+      "group": 8,
+      "plain": 8,
+      "signed": 8
+    },
+    "0357": {
+      "group": 8,
+      "plain": 8,
+      "signed": 8
+    },
+    "0358": {
+      "group": 2,
+      "plain": 18,
+      "signed": 18
+    },
+    "0359": {
+      "group": 2,
+      "plain": 18,
+      "signed": 18
+    },
+    "035a": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "035b": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "035e": {
+      "group": 2,
+      "plain": 18,
+      "signed": 18
+    },
+    "035f": {
+      "group": 4,
+      "plain": 18,
+      "signed": 11
+    },
+    "0368": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "0369": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "036a": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "036b": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "036c": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "036d": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "036e": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "036f": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "037c": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "037d": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "037e": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "03c1": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "03c5": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "03c6": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "03c7": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "03d4": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "03d5": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "03d6": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "03d7": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "03d8": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "03d9": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "03db": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "03dc": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "03dd": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "03de": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "0660": {
+      "group": 32,
+      "plain": 8,
+      "signed": 5
+    },
+    "0661": {
+      "group": 8,
+      "plain": 8,
+      "signed": 8
+    },
+    "0662": {
+      "group": 4,
+      "plain": 19,
+      "signed": 13
+    },
+    "0663": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "0666": {
+      "group": 8,
+      "plain": 13,
+      "signed": 10
+    },
+    "0667": {
+      "group": 4,
+      "plain": 13,
+      "signed": 13
+    },
+    "0669": {
+      "group": 8,
+      "plain": 13,
+      "signed": 10
+    },
+    "066b": {
+      "group": 4,
+      "plain": 19,
+      "signed": 13
+    },
+    "066f": {
+      "group": 16,
+      "plain": 13,
+      "signed": 7
+    },
+    "0672": {
+      "group": 2,
+      "plain": 18,
+      "signed": 18
+    },
+    "0673": {
+      "group": 2,
+      "plain": 18,
+      "signed": 18
+    },
+    "0676": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "0678": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "0679": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "067a": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "067b": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "067e": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "0690": {
+      "group": 16,
+      "plain": 19,
+      "signed": 7
+    },
+    "0691": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "0693": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "0696": {
+      "group": 4,
+      "plain": 19,
+      "signed": 14
+    },
+    "0697": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "069f": {
+      "group": 16,
+      "plain": 19,
+      "signed": 7
+    },
+    "06b0": {
+      "group": 4,
+      "plain": 30,
+      "signed": 13
+    },
+    "06b1": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "06b2": {
+      "group": 2,
+      "plain": 30,
+      "signed": 19
+    },
+    "06b3": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "06b4": {
+      "group": 2,
+      "plain": 30,
+      "signed": 19
+    },
+    "06b5": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "06b6": {
+      "group": 2,
+      "plain": 30,
+      "signed": 19
+    },
+    "06b7": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "06b9": {
+      "group": 2,
+      "plain": 30,
+      "signed": 19
+    },
+    "06bd": {
+      "group": 2,
+      "plain": 30,
+      "signed": 19
+    },
+    "06f0": {
+      "group": 8,
+      "plain": 19,
+      "signed": 10
+    },
+    "06f1": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "06f2": {
+      "group": 2,
+      "plain": 30,
+      "signed": 19
+    },
+    "06f6": {
+      "group": 8,
+      "plain": 19,
+      "signed": 10
+    },
+    "06f9": {
+      "group": 8,
+      "plain": 19,
+      "signed": 11
+    },
+    "0776": {
+      "group": 8,
+      "plain": 8,
+      "signed": 8
+    },
+    "0778": {
+      "group": 4,
+      "plain": 13,
+      "signed": 13
+    },
+    "0779": {
+      "group": 4,
+      "plain": 13,
+      "signed": 13
+    },
+    "077a": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "077e": {
+      "group": 4,
+      "plain": 13,
+      "signed": 13
+    },
+    "07b0": {
+      "group": 4,
+      "plain": 30,
+      "signed": 12
+    },
+    "07b1": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "07b4": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "07b5": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "07b6": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "07bc": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "07e0": {
+      "group": 8,
+      "plain": 19,
+      "signed": 9
+    },
+    "07e1": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "07e2": {
+      "group": 2,
+      "plain": 30,
+      "signed": 18
+    },
+    "07e3": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "07e6": {
+      "group": 4,
+      "plain": 19,
+      "signed": 12
+    },
+    "07e9": {
+      "group": 4,
+      "plain": 19,
+      "signed": 12
+    },
+    "07f0": {
+      "group": 4,
+      "plain": 19,
+      "signed": 13
+    },
+    "07f1": {
+      "group": 4,
+      "plain": 19,
+      "signed": 12
+    },
+    "07f2": {
+      "group": 2,
+      "plain": 30,
+      "signed": 20
+    },
+    "07f8": {
+      "group": 4,
+      "plain": 19,
+      "signed": 15
+    },
+    "1668": {
+      "group": 48,
+      "plain": 4,
+      "signed": 3
+    },
+    "1669": {
+      "group": 24,
+      "plain": 4,
+      "signed": 4
+    },
+    "166a": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "166b": {
+      "group": 12,
+      "plain": 9,
+      "signed": 6
+    },
+    "166e": {
+      "group": 4,
+      "plain": 13,
+      "signed": 13
+    },
+    "167e": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "1681": {
+      "group": 24,
+      "plain": 9,
+      "signed": 4
+    },
+    "1683": {
+      "group": 4,
+      "plain": 19,
+      "signed": 13
+    },
+    "1686": {
+      "group": 4,
+      "plain": 19,
+      "signed": 12
+    },
+    "1687": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "1689": {
+      "group": 6,
+      "plain": 19,
+      "signed": 9
+    },
+    "168b": {
+      "group": 2,
+      "plain": 30,
+      "signed": 19
+    },
+    "168e": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "1696": {
+      "group": 6,
+      "plain": 9,
+      "signed": 9
+    },
+    "1697": {
+      "group": 12,
+      "plain": 9,
+      "signed": 6
+    },
+    "1698": {
+      "group": 4,
+      "plain": 19,
+      "signed": 12
+    },
+    "1699": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "169a": {
+      "group": 1,
+      "plain": 30,
+      "signed": 30
+    },
+    "169b": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "169e": {
+      "group": 4,
+      "plain": 19,
+      "signed": 13
+    },
+    "16a9": {
+      "group": 4,
+      "plain": 19,
+      "signed": 13
+    },
+    "16ac": {
+      "group": 2,
+      "plain": 30,
+      "signed": 18
+    },
+    "16ad": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "16bc": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "16e9": {
+      "group": 12,
+      "plain": 9,
+      "signed": 7
+    },
+    "177e": {
+      "group": 24,
+      "plain": 4,
+      "signed": 4
+    },
+    "178e": {
+      "group": 8,
+      "plain": 19,
+      "signed": 9
+    },
+    "1796": {
+      "group": 12,
+      "plain": 9,
+      "signed": 6
+    },
+    "1798": {
+      "group": 2,
+      "plain": 19,
+      "signed": 19
+    },
+    "179a": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "17ac": {
+      "group": 2,
+      "plain": 30,
+      "signed": 17
+    },
+    "17e8": {
+      "group": 24,
+      "plain": 9,
+      "signed": 5
+    },
+    "18e7": {
+      "group": 24,
+      "plain": 19,
+      "signed": 5
+    },
+    "19e1": {
+      "group": 8,
+      "plain": 19,
+      "signed": 8
+    },
+    "19e3": {
+      "group": 4,
+      "plain": 30,
+      "signed": 11
+    },
+    "19e6": {
+      "group": 4,
+      "plain": 19,
+      "signed": 15
+    },
+    "1bd8": {
+      "group": 32,
+      "plain": 18,
+      "signed": 4
+    },
+    "1be4": {
+      "group": 8,
+      "plain": 30,
+      "signed": 10
+    },
+    "1ee1": {
+      "group": 16,
+      "plain": 13,
+      "signed": 9
+    },
+    "6996": {
+      "group": 384,
+      "plain": 4,
+      "signed": 2
+    }
+  }
+}
