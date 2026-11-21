@@ -1,0 +1,83 @@
+{
+  "limit": 12,
+  "selection": "first frozen sub-2s full-support cases in ABC order, excluding design and confirmation",
+  "runs": [
+    {
+      "result": {
+        "start_utc": "2026-11-21T00:45:52.407856+00:00",
+        "binary_sha256": "fc5ed237755b622bc28a98cd06ead36df17bfd5bf91a73c1840a6aa3a8e7c700",
+        "command": [
+          "abc.exe",
+          "-c",
+          "pexact -I 4 -M 2 0001"
+        ],
+        "timeout_s": 15,
+        "experiment": {
+          "cpu": 12,
+          "truth": "0001"
+        },
+        "pid": 7068,
+        "child_affinity": [
+          12
+        ],
+        "returncode": 0,
+        "wall_s": 1.0989027000032365,
+        "capped_wall_s": 1.0989027000032365,
+        "witness": {
+          "truth": "0001",
+          "activity": 152,
+          "gates": 3
+        },
+        "status": "solver_completed_verified_witness"
+      },
+      "certificate": {
+        "truth": "0001",
+        "activity": 152,
+        "strict_queries": 0,
+        "improved_incumbents": 0,
+        "remaining_cheaper_scores": 0
+      },
+      "solver_output": "ABC command line: \"pexact -I 4 -M 2 0001\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\nWINDOW r=1 lo=75 hi=150 state=-1 seconds=0.004000\r\nWINDOW r=1 lo=150 hi=225 state=skip seconds=0\r\nWINDOW r=2 lo=150 hi=225 state=1 seconds=0.005000\r\nINCUMBENT score=152 support=4\r\nCERTIFIED score=152\r\nRealization of given 4-input function using 3 two-input gates complementary=1:\r\n06 = 4'b0001( b 05 )\r\n05 = 4'b1110( d 04 )\r\n04 = 4'b1110( a c )\r\nPrinting overall Truth Table...\r\ni=0:0101010101010101\r\ni=1:0011001100110011\r\ni=2:0000111100001111\r\ni=3:0000000011111111\r\ni=4:0101111101011111\r\ni=5:0101111111111111\r\ni=6:1000000000000000\r\n\r\n\r\nSwitching Activity=152\r\nNumber of Gates: r=3\r\nTotal runtime =     0.01 sec\r\n",
+      "solver_log_sha256": "8032e190fdc725e23dd133cf54ed605c543b1d0c1e3e88cd1483e0efbd799883"
+    },
+    {
+      "result": {
+        "start_utc": "2026-11-21T00:45:53.624942+00:00",
+        "binary_sha256": "fc5ed237755b622bc28a98cd06ead36df17bfd5bf91a73c1840a6aa3a8e7c700",
+        "command": [
+          "abc.exe",
+          "-c",
+          "pexact -I 4 -M 2 0006"
+        ],
+        "timeout_s": 15,
+        "experiment": {
+          "cpu": 12,
+          "truth": "0006"
+        },
+        "pid": 40020,
+        "child_affinity": [
+          12
+        ],
+        "returncode": 0,
+        "wall_s": 1.1246001999970758,
+        "capped_wall_s": 1.1246001999970758,
+        "witness": {
+          "truth": "0006",
+          "activity": 208,
+          "gates": 4
+        },
+        "status": "solver_completed_verified_witness"
+      },
+      "certificate": {
+        "truth": "0006",
+        "activity": 208,
+        "strict_queries": 3,
+        "improved_incumbents": 1,
+        "remaining_cheaper_scores": 0
+      },
+      "solver_output": "ABC command line: \"pexact -I 4 -M 2 0006\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\nWINDOW r=1 lo=75 hi=150 state=-1 seconds=0.004000\r\nWINDOW r=1 lo=150 hi=225 state=skip seconds=0\r\nWINDOW r=2 lo=150 hi=225 state=1 seconds=0.006000\r\nINCUMBENT score=224 support=4\r\nSTRICT r=2 lo=152 hi=216 status=-1 score=-1\r\nSTRICT r=3 lo=182 hi=222 status=1 score=208\r\nSTRICT r=3 lo=182 hi=182 status=-1 score=-1\r\nCERTIFIED score=208\r\nRealization of given 4-input function using 4 two-input gates complementary=0:\r\n07 = 4'b0110( 05 06 )\r\n06 = 4'b1110( a 04 )\r\n05 = 4'b1110( b 04 )\r\n04 = 4'b1110( c d )\r\nPrinting overall Truth Table...\r\ni=0:0101010101010101\r\ni=1:0011001100110011\r\ni=2:0000111100001111\r\ni=3:0000000011111111\r\ni=4:0000111111111111\r\ni=5:0011111111111111\r\ni=6:0101111111111111\r\ni=7:0110000000000000\r\n\r\n\r\nSwitching Activity=208\r\nNumber of Gates: r=4\r\nTotal runtime =     0.10 sec\r\n",
+      "solver_log_sha256": "249b5ca17a3adc5b71e9e37f98496535b3e9be97c7398d337fea625613d7d4fe"
+    }
+  ],
+  "real_improvement_exercised": true
+}
