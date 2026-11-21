@@ -1,0 +1,19 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -3126,3 +3126,4 @@
+ #include "joint_trail.h"
+ #include "first_gate.h"
++#include "restriction_filter.h"
+ 
+@@ -3143,3 +3144,5 @@
+         PexaManFree( *p );
+         *p = next;
++        if (!restriction_window(*p, node.act + *delta, 0))
++            continue;
+         if ( !ExactPowerSynthesisCnfBddRange( pPars, *p, &node, *delta ) )
+@@ -3150,3 +3153,5 @@
+         if (!iso_filter(*p))
+             continue;
++        if (!restriction_window(*p, node.act + *delta, 1))
++            continue;
+         int status = replay_solve(*p, node.act + *delta);

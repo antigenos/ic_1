@@ -1,0 +1,19 @@
+{
+  "functions": 208,
+  "conditional_bounds": 31200,
+  "unconditional_bounds": 1040,
+  "threshold_tests": {
+    "global": {
+      "windows": 148,
+      "clauses": 0
+    },
+    "cost": {
+      "windows": 168,
+      "clauses": 1554
+    },
+    "size": {
+      "windows": 148,
+      "clauses": 1220
+    }
+  }
+}
