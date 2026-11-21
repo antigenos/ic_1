@@ -1,0 +1,23 @@
+{
+  "classes": 208,
+  "target_phases": 2,
+  "gate_counts": [
+    3,
+    7,
+    10
+  ],
+  "modes": {
+    "off": {
+      "checked_assignments": 37440,
+      "emitted_clauses": 0
+    },
+    "perm": {
+      "checked_assignments": 37440,
+      "emitted_clauses": 11754
+    },
+    "signed": {
+      "checked_assignments": 37440,
+      "emitted_clauses": 15942
+    }
+  }
+}

@@ -33,3 +33,7 @@ python independent/target-orbits-01a1fb7c/full.py
 条件前缀候选 03afb63 在 012d 上发现了原输入群以外的严格等价变换，独立核验 1632 条实际条件子句；0189 的两组配对均退化，012d 两版均超时。该版本与原始材料保存在 [独立候选分支](https://github.com/antigenos/ic_1/tree/codex/target-orbits-01a1fb7c-conditional/independent/target-orbits-01a1fb7c)，默认求解器只使用首门规则。
 
 阶段 14 最近方法对照。依 Haaswijk 第 2.3 节 S 规则，交换两个输入若保持目标，则要求较小输入的首次使用不迟于较大输入（同门使用合法）。在相同 TCJAP 模式 2 中单独实现该规则，比较首门版与 S。样本为 0189、6996，再加先前 20 个测试以外，历史完整时间在 [2,30) 秒、普通输入置换不能合并首门而带相位能合并的所有类；符合者为 03dd、07f2。各组 BSSB，同核，每次 60 秒。若 S 已取得同等优势，则收窄学术归因；局部时间结果不会改动已经登记的全族设置。[已有 S 规则的原始说明](https://si2.epfl.ch/~demichel/graduates/theses/winston.pdf)
+
+S 对照结果。03dd 的首门版两次为 7.29、7.67 秒，S 为 16.57、17.17 秒，均为 368。07f2 对应 15.83、16.65 秒与 20.64、20.65 秒，均为 344。0189、6996 的两次反序比较方向各不相同。208 类中有 41 类无单对输入交换对称性，但带相位的首门规则仍排除了候选。S 对照逐个验证了原始 219 个见证均可重编号后满足规则。另用原生候选头文件生成实际子句，将四输入全部代表、两种输出相位、三种门数下的 112320 项首门赋值逐项与 Python 轨道判定比较，三个开关全部相符。日志与复核分别见 evidence/order-control、evidence/order-check.json 和 evidence/native-orbit-audit.json。
+
+方法归属。输入与输出的相位对称、与置换组合的功能对称以及以重连利用对称的通用原理均有直接先例。2025 年的对称重映射研究则用变量变换及无关项引导构造逻辑链。本项目实证的是在固定目标的 pexact/TCJAP 算法中压缩首门功能、逐门保留活动度预算以及这项改动的完整计时效果。现有数据无法独立衡量与 TCJAP 相当的学术影响力。[已有相位与置换对称](https://web.eecs.umich.edu/~imarkov/pubs/jour/todaes07-rewire.pdf) · [对称重映射综合](https://si2.epfl.ch/demichel/publications/archive/2025/VLSID.pdf)
