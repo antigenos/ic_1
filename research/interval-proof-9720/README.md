@@ -75,3 +75,5 @@ python family.py run BASE --host-samples .local/host-resume-01
 # 在第二个终端中运行，控制器退出时观察器也会退出
 ./watch-host.ps1 -SampleDirectory .local/host-resume-01
 ```
+
+全族归档后可执行 `python audit_host.py evidence/family-300.zip .local/host-resume-01/samples.jsonl`。脚本先复核全部配对和官方式 300 秒比较，再计算两版均有完整采样的子集。子集要求每次运行有首尾相邻采样、采样间隔至多 45 秒、运行及紧邻采样中均未观测到相同物理核被另一 ABC 占用，并排除两版跨用户暂停的配对。没有在采样范围内的历史记录也会单列。输出包含子集分母、完成数、共同完成实例的配对加速比、截断总成本与排除原因。
