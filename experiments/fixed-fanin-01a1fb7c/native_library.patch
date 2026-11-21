@@ -1,0 +1,23 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -3176,3 +3176,5 @@
++#include "native_library.h"
++
+ int PexaManExactPowerSynthesisBasePowerBDDBinary( Bmc_EsPar_t * pPars, const int stepSize )
+ {
+     abctime clkTotal = Abc_Clock();
+@@ -3201,3 +3203,14 @@
+     int r = 0;
+     int act = 0;
++    const char *witness = getenv("FF_LIBRARY");
++    if (witness) {
++        int ok = ff_native_library(pPars, pTruth, &p, witness);
++        if (ok) {
++            printf("FF_ORIGINAL_CNF verified\n");
++            PexaManPrintSolution(p, fCompl, true);
++            Abc_PrintTime(1, "Total runtime", Abc_Clock() - clkTotal);
++        }
++        PexaManFree(p);
++        return ok ? 0 : 1;
++    }
+     int maxGateCount = MAJ_NOBJS - p->nVars;

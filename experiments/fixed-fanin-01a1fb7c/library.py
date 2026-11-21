@@ -41,11 +41,19 @@ def check(data, previous=None):
     assert [r["truth"] for r in data["circuits"]]==cases
     frozen=json.loads((HERE/"evidence/orbit-oracle.json").read_text())["results"]["480"]["optima"]
     prior={r["truth"]:r["activity"] for r in previous["circuits"]} if previous else {}
+    known={}
+    with ZipFile(HERE/"reproduction.zip") as archive:
+        for method in ("author","support","both"):
+            for raw in archive.read(f"evidence/e14-main/{method}.jsonl").splitlines():
+                w=json.loads(raw).get("witness")
+                if w: assert known.setdefault(w["truth"],w["activity"])==w["activity"]
     for row in data["circuits"]:
         t,activity=row["truth"],row["activity"]
         if frozen[t]>=0 or data["cap"]==480:
             assert activity==frozen[t]
-        if prior.get(t,-1)>=0:
+        if t in known:
+            assert activity==(known[t] if known[t]<=data["cap"] else -1), (t,known[t],activity)
+        if prior.get(t,-1)>=0 or (previous and previous["cap"]==data["cap"]):
             assert prior[t]==activity
         if activity<0:
             assert activity==-1 and not row["gates"]
@@ -62,6 +70,7 @@ if __name__=="__main__":
     p.add_argument("--cap",type=int,default=480)
     p.add_argument("--cpu",type=int,default=24)
     p.add_argument("--previous",type=Path)
+    p.add_argument("--terminal",action="store_true")
     args=p.parse_args()
     prev=json.loads(args.previous.read_text()) if args.previous else None
     if args.binary:
@@ -69,13 +78,15 @@ if __name__=="__main__":
         pin(args.cpu)
         binary=args.binary.resolve()
         start=time.perf_counter()
-        result=subprocess.run([str(binary),str(args.cap),"--circuits"],input="\n".join(family()),
+        command=[str(binary),str(args.cap),"--circuits"]
+        if args.terminal: command.append("--terminal")
+        result=subprocess.run(command,input="\n".join(family()),
                               capture_output=True,text=True,check=True)
         elapsed=time.perf_counter()-start
         first,*lines=result.stdout.splitlines()
         tag,*layers=first.split()
         assert tag=="layers" and layers[0]=="1"
-        data=dict(cap=args.cap,cpu=args.cpu,cold_wall_s=elapsed,binary_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(),
+        data=dict(cap=args.cap,cpu=args.cpu,cold_wall_s=elapsed,terminal=args.terminal,binary_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(),
                   states_by_depth=list(map(int,layers)),circuits=list(map(json.loads,lines)))
         data["verified"]=check(data,prev)
         args.output.write_text(json.dumps(data,ensure_ascii=True,separators=(",",":"))+"\n",encoding="utf-8")

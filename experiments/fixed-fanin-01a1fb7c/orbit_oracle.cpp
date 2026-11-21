@@ -21,6 +21,14 @@ std::array<int, functions> activity, minimum;
 struct FinalState { State wires{}; int depth=0; Word out=0; };
 std::array<FinalState, functions> final_states;
 
+void offer(unsigned g,const State &s,int depth,int cost,bool keep)
+{
+    unsigned cls=representative[g>>1]>>1;
+    if (cost>=minimum[cls]) return;
+    minimum[cls]=cost;
+    if (keep) final_states[cls]={s,depth,static_cast<Word>(g)};
+}
+
 Word normal(Word w) { return (w & 1u) ? static_cast<Word>(~w) : w; }
 
 void build_group()
@@ -154,9 +162,14 @@ void emit_circuit(unsigned target, int value)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2 && argc != 3) return 2;
-    bool circuits = argc==3 && std::string(argv[2])=="--circuits";
-    if (argc==3 && !circuits) return 2;
+    if (argc < 2) return 2;
+    bool circuits=false, terminal=false;
+    for (int i=2;i<argc;++i) {
+        std::string opt(argv[i]);
+        if (opt=="--circuits") circuits=true;
+        else if (opt=="--terminal") terminal=true;
+        else return 2;
+    }
     int cap = std::stoi(argv[1]);
     if (cap < 0 || cap > 30*max_paid) return 2;
     build_group();
@@ -183,16 +196,23 @@ int main(int argc, char **argv)
                     unsigned x = g >> 1;
                     if (marked[x] == stamp) continue;
                     marked[x] = stamp;
-                    int &best = minimum[representative[x] >> 1];
-                    if (paid < best) {
-                        best = paid;
-                        if (circuits) final_states[representative[x]>>1] = {s,depth,static_cast<Word>(g)};
-                    }
+                    offer(g,s,depth,paid,circuits);
                     if (!g || depth == max_paid || paid + activity[x] > cap) continue;
                     if (std::find(inputs.begin(),inputs.end(),g) != inputs.end() ||
                         std::binary_search(s.begin(),s.begin()+depth,g)) continue;
                     State child = s;
                     child[depth] = g;
+                    int new_cost=paid+activity[x];
+                    if (terminal && new_cost+30>cap) {
+                        // No further nonconstant paid gate can fit. Every new
+                        // free output must join g to an existing signal.
+                        for (int k=0;k<depth+4;++k) {
+                            unsigned h=wires[k];
+                            for (unsigned out : {g & ~h, h & ~g, g ^ h, g & h, g | h})
+                                offer(out,child,depth+1,new_cost,circuits);
+                        }
+                        continue;
+                    }
                     next.insert(canonical(child,depth+1));
                     if (next.size() > 2000000) {
                         std::cerr << " layer size limit; proof incomplete\n";

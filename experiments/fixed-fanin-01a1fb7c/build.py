@@ -13,6 +13,12 @@ def compile_variant(kind):
     name = "fixed-fanin-" + kind
     dest = ROOT / ".local/variants" / name
     dest.mkdir(parents=True, exist_ok=True)
+    if kind == "library-check":
+        (dest/"native_library.h").write_bytes((HERE/"native_library.h").read_bytes())
+        patch = dest/"native_library.patch"
+        patch.write_bytes((HERE/"native_library.patch").read_bytes().replace(b"\r\n", b"\n"))
+        build(name, [patch])
+        return
     header = (ROOT / "tools/joint_trail.h").read_text()
     search_hooks = {"partition": ("partition.h", "ff_partition"),
                     "xor-proof": ("xor_proof.h", "ff_xor_search"),
@@ -92,5 +98,5 @@ def compile_variant(kind):
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("kind", choices=("base", "diagnostic", "candidate", "candidate-diagnostic",
-                                   "interval", "types", "types-diagnostic", "partition","xor-proof","cofactor","prefix","bounded","tail"))
+                                   "interval", "types", "types-diagnostic", "partition","xor-proof","cofactor","prefix","bounded","tail","library-check"))
     compile_variant(p.parse_args().kind)
