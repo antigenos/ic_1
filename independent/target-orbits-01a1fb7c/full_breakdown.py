@@ -49,23 +49,33 @@ def breakdown(root,pause_record=None,occupancy=None):
         by_truth={t:[] for t in family}
         for r in rows:
             by_truth[r["experiment"]["truth"]].append(r)
-        def clear_in_samples(r):
+        def fixed_other_count(r):
             start=datetime.fromisoformat(r["start_utc"]).timestamp()
             left=bisect_right(stamps,start)-1
             right=bisect_left(stamps,start+r["wall_s"])
             if left<0 or right>=len(samples):
-                return False
+                return None
             core=r["experiment"]["cpu"]
-            return (all(stamps[i+1]-stamps[i]<=45 for i in range(left,right)) and
-                    all(core not in s["other_single_core"] and s["other_multicore_intersecting"]==0
-                        for s in samples[left:right+1]))
+            window=samples[left:right+1]
+            if any(stamps[i+1]-stamps[i]>45 for i in range(left,right)):
+                return None
+            if any(s["other_multicore_intersecting"] for s in window):
+                return None
+            counts={s["other_single_core"].count(core) for s in window}
+            return counts.pop() if len(counts)==1 else None
+        stable={}
+        for t,rs in by_truth.items():
+            left_count,right_count=map(fixed_other_count,rs)
+            if left_count is not None and left_count==right_count:
+                stable[t]=left_count
         report["host_sampling"]=dict(
             observations=len(samples),start_utc=samples[0]["utc"],end_utc=samples[-1]["utc"],
             cores_seen_with_other_pinned_abc=sorted(seen),
             observations_with_multicore_abc=sum(s["other_multicore_intersecting"]>0 for s in samples),
             excluding_cores_seen_shared=summarize({c["truth"] for c in manifest if c["cpu"] not in seen}),
-            both_runs_bracketed_without_observed_abc_overlap=summarize(
-                {t for t,rs in by_truth.items() if len(rs)==2 and all(clear_in_samples(r) for r in rs)}))
+            both_runs_bracketed_without_observed_abc_overlap=summarize({t for t,n in stable.items() if n==0}),
+            both_runs_with_same_constant_observed_count=summarize(set(stable)),
+            stable_counts_by_function=stable)
     return report
 
 
