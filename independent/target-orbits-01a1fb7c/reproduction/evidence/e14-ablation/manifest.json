@@ -1,0 +1,25 @@
+{
+  "cohort": "ablation",
+  "cases": [
+    "0189",
+    "016f",
+    "07b4"
+  ],
+  "methods": [
+    "off",
+    "counts",
+    "early",
+    "both",
+    "nobudget"
+  ],
+  "seconds": 300,
+  "cpus": [
+    2,
+    4,
+    6
+  ],
+  "platform": "Windows-11-10.0.26200-SP0",
+  "binary_sha256": {
+    "joint": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d"
+  }
+}

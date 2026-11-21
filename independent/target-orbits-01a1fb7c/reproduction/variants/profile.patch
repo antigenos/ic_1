@@ -1,0 +1,117 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -8,6 +8,7 @@
+  */
+ 
+ #include "pexact.h"
++#include "profile_times.h"
+ 
+ #include "math.h"
+ #include "misc/extra/extra.h"
+@@ -354,6 +355,7 @@
+     int k;
+     int iVar;
+ 
++    report_phases();
+     printf( "Realization of given %d-input function using %d two-input gates complementary=%d:\n", p->nVars, p->nNodes, fCompl );
+     for ( i = p->nObjs - 1; ( i >= p->nVars ) && ( i < MAJ_NOBJS ); i-- )
+     {
+@@ -887,7 +889,7 @@
+             continue;
+         }
+ 
+-        status = sat_solver_solve( p->pSat, NULL, NULL, 0, 0, 0, 0 );
++        status = MEASURE( SOLVE, sat_solver_solve( p->pSat, NULL, NULL, 0, 0, 0, 0 ) );
+         if ( status == 1 )
+         {
+             PexaManPrintSolution( p, fCompl, false );
+@@ -2360,6 +2362,7 @@
+         return Cudd_ReadLogicZero( dd );
+     }
+ 
++    histogram_vectors += combs;
+     for ( long long c = 0; c < combs; c++ )
+     {
+         int sum = 0;
+@@ -2374,7 +2377,7 @@
+ 
+         if ( sum <= act && sum >= actMin && sumB == r )
+         {
+-            if ( !CalculateBddCuddSmallerThanMinInner( dd, combi, nP, r, &orNode ) )
++            if ( !MEASURE( BDD_TERMS, CalculateBddCuddSmallerThanMinInner( dd, combi, nP, r, &orNode ) ) )
+             {
+                 free( combi );
+                 free( wP );
+@@ -2833,7 +2836,7 @@
+                 return 1;
+             }
+             pPars->nNodes = r + 1;
+-            if ( !CalculateCombArray( p->nVars, r, list ) )
++            if ( !MEASURE( QUEUE_COUNTS, CalculateCombArray( p->nVars, r, list ) ) )
+             {
+                 printf( "Error: could not calculate combination array.\n" );
+                 FreeCombList( list );
+@@ -2862,14 +2865,14 @@
+                 free( list );
+                 return 1;
+             }
+-            if ( !ExactPowerSynthesisCNF( pPars, p, node, list ) )
++            if ( !MEASURE( ENCODE, ExactPowerSynthesisCNF( pPars, p, node, list ) ) )
+             {
+                 printf( "Warning: CNF encoding failed for combination act=%d r=%d.\n", node->act, node->r );
+                 free( node->combi );
+                 free( node );
+                 continue;
+             }
+-            status = sat_solver_solve( p->pSat, NULL, NULL, 0, 0, 0, 0 );
++            status = MEASURE( SOLVE, sat_solver_solve( p->pSat, NULL, NULL, 0, 0, 0, 0 ) );
+             if ( status == 1 )
+             {
+                 free( node->combi );
+@@ -2938,7 +2941,7 @@
+         return 0;
+     }
+     //
+-    DdNode * f = CalculateBddCuddSmallerThanMin( dd, p, node->r, node->act, node->act );
++    DdNode * f = MEASURE( HISTOGRAM, CalculateBddCuddSmallerThanMin( dd, p, node->r, node->act, node->act ) );
+     int bddNodes = Cudd_DagSize( f );
+     if ( bddNodes == 1 )
+     {
+@@ -3002,7 +3005,7 @@
+         return 0;
+     }
+     //
+-    DdNode * f = CalculateBddCuddSmallerThanMin( dd, p, node->r, node->act + delta, node->act );
++    DdNode * f = MEASURE( HISTOGRAM, CalculateBddCuddSmallerThanMin( dd, p, node->r, node->act + delta, node->act ) );
+     int bddNodes = Cudd_DagSize( f );
+     if ( bddNodes == 1 )
+     {
+@@ -3086,12 +3089,12 @@
+                     printf( "Error: memory allocation failed for PexaMan_t.\n" );
+                     return 1;
+                 }
+-                if ( !ExactPowerSynthesisCnfBdd( pPars, p, &node ) )
++                if ( !MEASURE( ENCODE, ExactPowerSynthesisCnfBdd( pPars, p, &node ) ) )
+                 {
+                     continue;
+                 }
+ 
+-                status = sat_solver_solve( p->pSat, NULL, NULL, 0, 0, 0, 0 );
++                status = MEASURE( SOLVE, sat_solver_solve( p->pSat, NULL, NULL, 0, 0, 0, 0 ) );
+                 if ( status == 1 )
+                 {
+                     PexaManPrintSolution( p, fCompl, true );
+@@ -3141,11 +3144,11 @@
+         }
+         PexaManFree( *p );
+         *p = next;
+-        if ( !ExactPowerSynthesisCnfBddRange( pPars, *p, &node, *delta ) )
++        if ( !MEASURE( ENCODE, ExactPowerSynthesisCnfBddRange( pPars, *p, &node, *delta ) ) )
+         {
+             continue;
+         }
+-        int status = sat_solver_solve( ( *p )->pSat, NULL, NULL, 0, 0, 0, 0 );
++        int status = MEASURE( SOLVE, sat_solver_solve( ( *p )->pSat, NULL, NULL, 0, 0, 0, 0 ) );
+         if ( status == 1 )
+         {
+             int actSolution = PexaManGetAct( *p );

@@ -1,0 +1,34 @@
+{
+  "checked_runs": 15,
+  "verified_witnesses": 8,
+  "functions": 3,
+  "distinct_values_agree": true,
+  "comparisons": {
+    "off": {
+      "completed_only_by_reconstruction": [
+        "07b4"
+      ],
+      "completed_only_by_control": [],
+      "slower_on_jointly_finished": {}
+    },
+    "counts": {
+      "completed_only_by_reconstruction": [
+        "07b4"
+      ],
+      "completed_only_by_control": [],
+      "slower_on_jointly_finished": {}
+    },
+    "early": {
+      "completed_only_by_reconstruction": [],
+      "completed_only_by_control": [],
+      "slower_on_jointly_finished": {
+        "07b4": 0.7649521873453113
+      }
+    },
+    "nobudget": {
+      "completed_only_by_reconstruction": [],
+      "completed_only_by_control": [],
+      "slower_on_jointly_finished": {}
+    }
+  }
+}

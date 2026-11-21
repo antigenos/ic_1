@@ -1,0 +1,20 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -3125,6 +3125,8 @@
+  * @retval 0 if a solution was found.
+  * @retval 1 if no solution was found.
+  */
++#include "joint_trail.h"
++
+ int PexaManExactPowerSynthesisBasePowerBDDBinaryInner( Bmc_EsPar_t * pPars, PexaMan_t ** p, word * pTruth, const int r, const int * act, int * delta )
+ {
+     for ( int rIt = 1; rIt < r + 1; rIt++ )
+@@ -3145,7 +3147,7 @@
+         {
+             continue;
+         }
+-        int status = sat_solver_solve( ( *p )->pSat, NULL, NULL, 0, 0, 0, 0 );
++        int status = replay_solve(*p, node.act + *delta);
+         if ( status == 1 )
+         {
+             int actSolution = PexaManGetAct( *p );

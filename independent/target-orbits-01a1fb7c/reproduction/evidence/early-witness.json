@@ -1,0 +1,101 @@
+{
+  "target": "fe76",
+  "primary": "f0f0",
+  "rows": 16,
+  "operators": [
+    2,
+    4,
+    6,
+    8,
+    14
+  ],
+  "cases": [
+    {
+      "counts": [
+        4,
+        8
+      ],
+      "budget": 128,
+      "without_budget": [
+        0,
+        0
+      ],
+      "supported": [
+        0,
+        0
+      ],
+      "witnesses": []
+    },
+    {
+      "counts": [
+        4,
+        6,
+        8
+      ],
+      "budget": 128,
+      "without_budget": [
+        64,
+        256
+      ],
+      "supported": [
+        64,
+        256
+      ],
+      "witnesses": [
+        {
+          "op": 6,
+          "internal": "0e86",
+          "folded_count": 6
+        }
+      ]
+    },
+    {
+      "counts": [
+        4,
+        6,
+        8
+      ],
+      "budget": 120,
+      "without_budget": [
+        64,
+        256
+      ],
+      "supported": [
+        64,
+        256
+      ],
+      "witnesses": [
+        {
+          "op": 6,
+          "internal": "0e86",
+          "folded_count": 6
+        }
+      ]
+    },
+    {
+      "counts": [
+        4,
+        6,
+        8
+      ],
+      "budget": 119,
+      "without_budget": [
+        64,
+        256
+      ],
+      "supported": [
+        0,
+        0
+      ],
+      "witnesses": []
+    }
+  ],
+  "public_core_checks": {
+    "passed": true,
+    "valid_cases": 2738,
+    "invalid_cases": 2,
+    "reference": "Independent row-wise integer-pair DP; no closed-form helper reused.",
+    "source_sha256": "69384c16b93bb2de0293e82cbaf1f152aebca38a77539382fc82ee07d1d5e21c",
+    "scope": "Public local core correctness only; no complete SAT solver performance claim."
+  }
+}

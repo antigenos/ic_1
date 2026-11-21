@@ -1,0 +1,19 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -1441,6 +1441,16 @@
+         {
+             return 0;
+         }
++        /* A connected binary cone with g+1 gates has at most g+2 leaves. */
++        int g = i - p->nVars - 1;
++        int unused = p->nVars - (g + 2);
++        if (unused > 0) {
++            int stride = 1 << unused;
++            for (int count = 1; count < np; ++count) if (count % stride) {
++                int unit = Abc_Var2Lit(p->pMap[g * (np - 1) + count - 1].var, 1);
++                if (!sat_solver_addclause(p->pSat, &unit, &unit + 1)) return 0;
++            }
++        }
+     }
+     return 1;
+ }

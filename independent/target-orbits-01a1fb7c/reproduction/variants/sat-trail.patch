@@ -1,0 +1,19 @@
+--- a/satSolver.c
++++ b/satSolver.c
+@@ -645,6 +645,8 @@
+     }
+ }
+ 
++
++#include "trail_clause.h"
+ 
+ static inline int sat_solver_decision(sat_solver* s, lit l){
+     assert(s->qtail == s->qhead);
+@@ -1844,6 +1846,7 @@
+ 
+     for (;;){
+         int hConfl = sat_solver_propagate(s);
++        if (!hConfl && replay_at_fixpoint && replay_at_fixpoint(s)) continue;
+         if (hConfl != 0){
+             // CONFLICT
+             int blevel;

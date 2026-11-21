@@ -1,0 +1,14 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -3172,8 +3172,11 @@
+  * @return Returns 0 if synthesis was successful.
+  * @retval 1 if synthesis failed or no solution was found.
+  */
++#include "fixedpoint_probe.h"
+ int PexaManExactPowerSynthesisBasePowerBDDBinary( Bmc_EsPar_t * pPars, const int stepSize )
+ {
++    if ( getenv( "PEXACT_PROBE" ) )
++        return replay_fixedpoint( pPars );
+     abctime clkTotal = Abc_Clock();
+     PexaMan_t * p;
+     int fCompl = 0;

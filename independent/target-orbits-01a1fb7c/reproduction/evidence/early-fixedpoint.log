@@ -1,0 +1,7 @@
+ABC command line: "pexact -I 4 -M 2 0189".
+
+Cannot open file "abc.rc".
+Cannot open file "..\abc.rc".
+Cannot open file "..\..\abc.rc".
+REPLAY encoded=1 domain_premises=0 consistent=1 fixpoint=1 selected=1 candidate=0 domain=1fe zeros=0001 ones=0000 ops=1f bcp_with_candidate=0
+REPLAY encoded=1 domain_premises=1 consistent=1 fixpoint=1 selected=1 candidate=0 domain=110 zeros=0001 ones=0000 ops=1f bcp_with_candidate=0

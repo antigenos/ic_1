@@ -1,0 +1,27 @@
+{
+  "cohort": "main",
+  "cases": [
+    "0189",
+    "018b",
+    "016f",
+    "07b4"
+  ],
+  "methods": [
+    "author",
+    "support",
+    "both"
+  ],
+  "seconds": 30,
+  "cpus": [
+    2,
+    4,
+    6,
+    8
+  ],
+  "platform": "Windows-11-10.0.26200-SP0",
+  "binary_sha256": {
+    "author": "f95f2200f86b76b546e7d2c4b619c2fd207b18dd0658fe3847746493c1a2c6bf",
+    "joint": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+    "support": "4d51dd9598010d0b234c0b3f61276f239f843f9a9e397ab95bb52477e7c879dc"
+  }
+}

@@ -1,0 +1,63 @@
+# Exact synthesis with optimal switching activity
+
+This branch reconstructs the DATE 2026 experiment and the later TCJAP algorithm using the public artifacts. The pinned plugin and ABC fork come from the [TCJAP authors' source notice](https://github.com/qmkkk/TCJAP/blob/59e5a0e954d6a0a6711b2bdc9898db875ede6889/THIRD_PARTY_NOTICES.md). The public TCJAP core omits the integrated SAT solver. Any new integration here requires its own correctness checks and timing evidence.
+
+## Initial research record
+
+1. Scope and assets. Recover the exact truth table under the original two-input gate library and minimize activity of the internal gates. Measure time to finish that task. Freeze public inputs in `sources.json`.
+2. Source. [Walter, Feldmeier and Wille, DATE 2026](https://doi.org/10.23919/DATE69613.2026.11539139), [author PDF](https://www.cda.cit.tum.de/files/eda/2026_date_exact_synthesis_with_optimal_switching_activity.pdf). Section V explicitly identifies runtime. Section IV-C reports 211 of 222 classes within a three-day cutoff. The TCJAP comparison uses 208 full-support functions and 300 seconds per class. Preserve both protocols.
+3. Implementation. In the pinned plugin, `init.cpp::RunPexact` maps mode 0 to queue search, 1 to free search, and 2 to binary search with step 75. The truth table for the four-input Figure 7 example must be passed as `0189`. A leading 0 matters to the parser.
+4. Algorithm map. Section II defines the activity of a signal over N truth rows. For a rows with value one, its contribution is 2a(N−a). `pexact.c::PexaManGetAct` sums that value over internal gates, omitting the fixed output. `PexaManMarkup` assigns SAT variables for operations and predecessors. `PexaManEval` simulates the candidate. `PexaManAddPClausesBdd` and `PexaManAddCardinalityBdd` encode count constraints. Section III-D Algorithms 1, 2 and 3 enter at lines 2786, 3034 and 3176 of `pexact.c`. The binary mode's inner search starts at line 3128. Independent verification must recompute the printed circuit, including the complemented output, and distinguish witness validity from minimality.
+5. Residual problem for this reproduction. TCJAP already reports improvements to this task. Its public artifact provides local support calculations and aggregate results, but the complete solver, explanations, per-instance logs and construction history are private. An independently checkable reconstruction against the pinned baseline remains necessary. This admits baseline reproduction and diagnosis. No new research novelty is asserted.
+
+**Stage 6 acceptance.** Build and identify the executable, time separate author calls and replay each returned gate on every truth-table row. Check the DATE Figure 7 reference S=304 on 0189 and inspect any difference before interpreting timings. Record a solver's optimality claim separately from any independently established lower bound.
+
+## Build and exercise the pinned baseline
+
+Run `python tools/prepare.py` from this repository (Python 3.12+). On Linux with the ABC build dependencies, run `make -C .local/abc -j8`. On Windows, use MSYS2 UCRT64 GCC/G++, MSYS GNU make 4.4.1 and `make -C .local/abc -f ../../tools/windows.mk -j12 abc.exe` with the UCRT64 and MSYS bin directories on PATH. Keep the toolchain and options fixed for all comparisons.
+
+The Windows build uses the standard-width integer interface, a gnu11 C dialect, and MinGW libraries. `giaMan.c` includes `math.h` inside a function. Pre-including that header for this translation unit allows the MinGW inline definitions at file scope. The host build does not change the author's synthesis code.
+
+For the first witness, run `python tools/run_case.py .local/abc/abc.exe 96 evidence/baseline-xor3 --inputs 3 --mode 0 --seconds 30`. The three-input parity circuit has an internal two-input XOR and a free output XOR. Then use `python tools/run_case.py .local/abc/abc.exe 0189 evidence/baseline-0189 --mode 2 --seconds 300`. On Linux use the executable without the .exe suffix. Each run directory is exclusive to one invocation.
+
+**Stage 6 results.** On the Windows UCRT64 build (GCC 16.2.0, -O2), the original plugin returned a two-gate implementation of three-input parity with activity 32 in 0.162 s wall time. Four-input 0189 in binary mode took 14.435 s wall time and returned five gates with activity 304. The row-by-row witness checker replayed both truth tables. The executable digest, timeout, exact command, unedited solver output and external timing are in the corresponding evidence directories.
+
+Run `python tools/lower_bound.py evidence/baseline-0189/result.json` to test the strict bound independently of ABC. Starting from the primary signals and a free zero, enumerate every new truth signal obtainable by a legal two-input operation. Charge 2a(N−a) for an internal signal; test the final gate for free. Normalize the requested output by its row zero. Identical intermediate vectors can reuse the first occurrence without increasing cost. Hence states with the same set of internal vectors have identical available successors and accumulated cost. The enumeration allows unused internal signals, which enlarges the search when excluding cheaper circuits. At strict bounds 32 and 304 it exhausted 13 and 16,950 distinct states, respectively, with no feasible output. Together with the independently replayed witnesses, this establishes the two optima. A single measurement per case suffices for correctness, not a speed comparison.
+
+**Stages 7–8.** Keep the five-gate operation library (two-input truth encodings 2, 4, 6, 8 and 14), normalization and exact objective fixed. Count completed exact optimizations and end-to-end wall time under identical budgets. The pinned BDD-range builder scans (r+1)^8 count vectors for four inputs, keeping only vectors of sum r in the activity window. The next diagnostic measures time in that enumeration, BDD creation, encoding and SAT before selecting an engineering control.
+
+**Stage 8 measurement.** Build with `python tools/build_variant.py profile variants/profile.patch`. On 0189 mode 2, the diagnostic visited 345,222,227 candidate histogram vectors and built 385 BDD terms. It attributed 11.059 s to histogram enumeration excluding BDD terms, 0.030 s to the terms, 0.148 s to other encoding, and 2.987 s to 25 SAT calls. Independent replay still gave S=304. The external time was 14.582 s. These are diagnostic wall-clock intervals on Windows with a millisecond-resolution clock; formal runtimes use uninstrumented builds.
+
+**Decision for the engineering control.** Enumerate weak compositions of r directly in original radix order and prune a partial composition only if its remaining activity interval is disjoint from the requested window. Every admitted vector must still reach the same BDD builder in the same order. Validate the ordered list against brute force and measure an uninstrumented complete solve. This is an implementation improvement and will remain a separate checkpoint from support pruning and target-conditioned reasoning.
+
+**Engineering checkpoint.** Build `python tools/build_variant.py compositions variants/compositions.patch`. The same C enumeration routine used in the solver matched a brute-force mixed-radix enumerator vector-for-vector across 855 windows (2, 3 and 4 inputs, including single-value and empty windows). Reproduce that check by compiling and running `tools/check_histograms.c`. Direct enumeration produced verified activities 304 and 32 on 0189 and 96. The first uninstrumented 0189 run took 4.213 s, compared with the earlier 14.435 s author run. These single, sequential development observations justify retaining the change for larger comparisons. They do not establish a population-wide speedup.
+
+**Next control.** A charged gate at zero-based position i in the topological order can depend on at most i+2 primary inputs: its connected transitive fan-in has at most i+1 two-input gates and at most i+2 leaves. A Boolean function depending on at most d of k inputs has a ones count divisible by 2^(k−d), as does its folded count. Restrict impossible folded counts at the first two four-input gates, leaving the original activity intervals and SAT objective intact. Check against independent truth enumeration and test separately from the composition change.
+
+## Rebuild the strong control and the integrated reconstruction
+
+From the repository root, after preparing the three pinned archives and building ABC, run the following commands. Keep the original executable and its linked objects in place.
+
+```text
+python tools/build_variant.py support variants/compositions.patch variants/support.patch
+python tools/build_variant.py joint variants/compositions.patch variants/support.patch variants/joint-trail.patch --sat-patch variants/sat-trail.patch
+python tools/check_support.py
+python tools/check_early_witness.py --output .local/early-check.json
+python tools/function_family.py
+```
+
+All three comparison binaries use the author's mode 2 and its initial step of 75. The public MIT core supplies the target-conditioned local relation. The two changed compilation units in the joint build connect this evaluator to bounded pexact queries and the original BSAT propagation trail. Source attribution and license texts remain in the pinned archives restored by the preparation command. The C kernel is compiled directly from the TCJAP archive. The project-specific patches and integration are in this repository.
+
+The joint executable defaults to both rules with residual budget filtering. Set `REPLAY_RULES` to `off`, `counts`, `early` or `both` to select deductions. Set `REPLAY_BUDGET=0` to remove budget filtering from the local evaluator while retaining the original SAT activity bound. Set `REPLAY_TRACE=1` to print every emitted reason and per-query counters. Diagnostic runs and timed cohorts have separate directories. To audit a reason trace, run `python tools/audit_trail.py PATH/solver.log --output .local/reason-check.json`. The checker interprets the emitted SAT literals, reconstructs their domains and partial truth tables, and tests them by a separate row dynamic program.
+
+## Run paired comparisons
+
+```text
+python tools/compare.py .local/example-main --cohort main --cases 0189 018b 016f 07b4 --cpus 2 4 6 8 --seconds 30
+python tools/compare.py .local/example-ablation --cohort ablation --cases 0189 018b --cpus 2 4 --seconds 30
+python tools/export_batch.py .local/example-main .local/example-main-export
+```
+
+Choose available CPU IDs on the comparison host. Each function stays on the same CPU, its methods execute sequentially, and their order rotates across functions. A fixed directory records the manifest and hashes, allocates one exclusive directory per invocation, preserves each log and returns the verified result or the timeout. Reissuing a matching manifest reuses finished cases. An incomplete case requires inspection of the existing worker and its output before recovery. Use `--cases essential --seconds 300` for the primary four-input family. The family generator checks disjoint input/output phase and permutation orbits covering all 65,536 truth tables and identifies 208 full-support representatives plus 14 lower-support classes.
+
+The main cohort contains the pinned original executable, the engineering control and the reconstruction. The ablation uses one binary with the rule flags described above. Its off variant also includes the host hook compiled into BSAT. Each exported method file has one JSON record per case, including its original solver output, external wall clock, per-run CPU, configuration, SHA-256 and independent witness replay. Timeout receives its full cap. Paired geometric means use only jointly completed cases. The circuit replay establishes feasibility and recomputes activity; independent optimality proofs for the two small examples are stored separately.
