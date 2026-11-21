@@ -14,11 +14,16 @@ def compile_variant(kind):
     dest = ROOT / ".local/variants" / name
     dest.mkdir(parents=True, exist_ok=True)
     header = (ROOT / "tools/joint_trail.h").read_text()
-    if kind in ("partition","xor-proof"):
+    search_hooks = {"partition": ("partition.h", "ff_partition"),
+                    "xor-proof": ("xor_proof.h", "ff_xor_search"),
+                    "cofactor": ("cofactor_hook.h", "ff_cofactor_search")}
+    if kind in search_hooks:
         hook = "static int replay_solve(PexaMan_t *p, int bound)"
         original = "int result = sat_solver_solve(p->pSat, NULL, NULL, 0, 0, 0, 0);"
         assert header.count(hook) == header.count(original) == 1
-        filename, function = ("partition.h","ff_partition") if kind=="partition" else ("xor_proof.h","ff_xor_search")
+        filename, function = search_hooks[kind]
+        if kind == "cofactor":
+            (dest/"cofactor.h").write_bytes((HERE/"cofactor.h").read_bytes())
         if kind=="xor-proof":
             (dest/"xor_condition.h").write_bytes((HERE/"xor_condition.h").read_bytes())
         header = header.replace(hook,(HERE/filename).read_text()+"\n"+hook)
@@ -71,5 +76,5 @@ def compile_variant(kind):
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("kind", choices=("base", "diagnostic", "candidate", "candidate-diagnostic",
-                                   "interval", "types", "types-diagnostic", "partition","xor-proof"))
+                                   "interval", "types", "types-diagnostic", "partition","xor-proof","cofactor"))
     compile_variant(p.parse_args().kind)

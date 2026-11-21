@@ -1,0 +1,35 @@
+{
+  "three_input_normalized_optima": 128,
+  "restriction_partitions_checked": 2080,
+  "verified_circuits": 219,
+  "realized_primary_links": 77,
+  "omitted_links_at_frozen_fixpoint": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "example_bounds": {
+    "0189": [
+      192,
+      380,
+      380,
+      340,
+      340
+    ],
+    "0019": [
+      112,
+      270,
+      270,
+      282,
+      190
+    ],
+    "0198": [
+      192,
+      380,
+      380,
+      380,
+      340
+    ]
+  }
+}

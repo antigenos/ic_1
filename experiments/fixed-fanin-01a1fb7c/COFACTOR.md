@@ -15,3 +15,16 @@ TCJAP 的公开核按预算筛选计数。在一个主输入 H 被接到输出�
 DATE 第 III 节已有按门数和计数得到的下界。TCJAP 的公开核检查局部行、计数及剩余预算。电路复杂度中的变量限制与门消去已有先例，三输入真值分类亦已有先例。这些来源各自的目标、约束和此处的可检验区别不同。当前查新仅支持验证假设。方法能否作为原创贡献仍取决于直接比较、对既有方法的进一步核实及实际收益。[DATE 作者原文](https://www.cda.cit.tum.de/files/eda/2026_date_exact_synthesis_with_optimal_switching_activity.pdf) · [TCJAP 公开实现](https://github.com/qmkkk/TCJAP/blob/59e5a0e954d6a0a6711b2bdc9898db875ede6889/src/joint_relation.c) · [变量限制与门消去](https://arxiv.org/abs/2602.17942) · [按布尔链进行精确分类](https://msoeken.github.io/papers/2017_ismvl.pdf)
 
 先独立生成并核验全部三输入最优值，在已证明的四输入实例、实际电路以及邻近的可行预算上检查下界。出现过度排除即修正。若有实际预算能够排除原核保留的连线，再接入冻结版。核心比较预先固定为基线、仅全目标下界、全目标与连接下界，在 0189、0019 上同核正序及逆序各测一次，每次上限 60 秒。判断依据为完整成本、正确性和新增排除。遇到反向实例保留原记录，同时检查当前剩余的主要耗时。在核心实验证据支持独立作用后再在独立例确认。
+## 下界核验
+
+三输入 128 个输出相位归一真值表均由独立状态枚举验证了上界可行和严格下界无解。208 个函数的 2080 种限制由另一种按变量赋值的程序核对，219 个返回电路及其中 77 个实际输出主输入连接都满足相应下界。0189 在四个主输入连接下的下界为 380、380、340、340，冻结传播在预算 300 的同一查询中对四条连接均未发现冲突。0019 的四个下界为 270、270、282、190，均低于其最优值 310，因此可预期有的函数受益范围较小。对 0189 的完整诊断另行让原 SAT 核逐项验证了 93 次排除，再运行正常求解取得 304。
+
+从仓库根目录执行以下命令可复核下界和构建候选。数学核查和额外的 SAT 诊断各用独立进程。正式计时关闭诊断开关。
+
+```powershell
+$study = 'experiments/fixed-fanin-01a1fb7c'
+gcc -O2 -std=c11 "$study/verify_cofactor.c" -o .local/verify-cofactor.exe
+python "$study/audit_cofactor.py" .local/verify-cofactor.exe
+python "$study/build.py" cofactor
+python "$study/compare.py" 0189 .local/repeat-cofactor-0189 --cpu 10 --cap 60 --arms base cofactor-whole cofactor cofactor cofactor-whole base
+```
