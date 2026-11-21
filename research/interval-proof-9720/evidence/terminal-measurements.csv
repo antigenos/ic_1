@@ -1,0 +1,7 @@
+order,truth,method,strict_activity_cap,timeout_s,outcome,capped_elapsed_s,optimum,gates,expanded_states,terminal_edges
+1,0189,full_enumeration,305,300,completed,3.133576099993661,304,5,24006,
+2,0189,terminal_output_matching,305,300,completed,1.1216273000027286,304,5,5662,41592
+3,0189,terminal_output_matching,305,300,completed,2.642675799994322,304,5,5662,41592
+4,0189,full_enumeration,305,300,completed,2.5451800000009825,304,5,24006,
+5,0016,terminal_output_matching,433,300,completed,42.68040459999611,406,6,750725,4942144
+6,0016,full_enumeration,433,300,completed,133.51416990000143,406,6,2424925,

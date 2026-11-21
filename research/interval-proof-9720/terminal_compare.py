@@ -1,5 +1,6 @@
 """Run the registered cold comparisons for direct terminal output matching."""
 import argparse
+import csv
 from datetime import datetime, timezone
 from hashlib import sha256
 import json
@@ -47,12 +48,51 @@ def sources(work, arm):
     return dest, digests
 
 
+def export(source, destination):
+    rows = [json.loads(s) for s in source.read_bytes().splitlines()]
+    assert [(r["truth"], r["strict_cap"], r["arm"]) for r in rows] == PLAN
+    counts = json.loads((HERE / "evidence/constructed-through-432.json").read_bytes())["bounds"]["states_by_cost"]
+    public = []
+    for i, r in enumerate(rows, 1):
+        truth, cap, arm = PLAN[i-1]
+        assert r["order"] == i and r["timeout_s"] == 300
+        item = dict(order=i, truth=truth, method="terminal_output_matching" if arm == "T" else "full_enumeration",
+                    strict_activity_cap=cap, timeout_s=300, outcome=r["status"],
+                    capped_elapsed_s=min(300., r["wall_s"]), optimum="", gates="", expanded_states="", terminal_edges="")
+        if r["status"] == "completed":
+            assert r["exitcode"] == 0 and not r["stderr"] and 0 < r["wall_s"] <= 300
+            answer = json.loads(r["stdout"])
+            assert answer["truth"] == truth and answer["strict_cap"] == cap
+            witness = simulate(answer["circuit"], 4, int(truth, 16))
+            assert answer["status"] == "independently_optimal" and witness == answer["witness"]
+            assert witness["activity"] == answer["lower_bound"] == (304 if truth == "0189" else 406)
+            limit = cap-30 if arm == "T" else cap
+            assert answer["states"] == sum(n for cost, n in counts.items() if int(cost) < limit)
+            item.update(optimum=witness["activity"], gates=witness["gates"], expanded_states=answer["states"],
+                        terminal_edges=answer.get("terminal_edges", ""))
+        else:
+            assert r["status"] == "timeout" and r["wall_s"] >= 299.95
+        public.append(item)
+    with destination.open("x", encoding="utf8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(public[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(public)
+    return public
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("output", type=Path)
-    ap.add_argument("--cpu", type=int, required=True)
+    ap.add_argument("--cpu", type=int)
     ap.add_argument("--host-samples", type=Path)
+    ap.add_argument("--public-csv", type=Path, help="Verify a finished local run and export its scientific measurements")
     args = ap.parse_args()
+    if args.public_csv:
+        rows = export(args.output, args.public_csv)
+        print(json.dumps(dict(verified_trials=len(rows))))
+        return
+    if args.cpu is None:
+        ap.error("Running the trials requires --cpu")
     pin(args.cpu)
     work = HERE / ".local/terminal-comparisons" / args.output.stem
     if args.output.exists():

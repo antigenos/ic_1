@@ -1,0 +1,7 @@
+{
+  "single_target_bounds": 428,
+  "legal_positives": 22,
+  "strict_negative": 406,
+  "output_relation_tests": 4000,
+  "seed": 9720
+}
