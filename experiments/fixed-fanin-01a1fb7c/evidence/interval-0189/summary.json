@@ -1,0 +1,30 @@
+[
+  {
+    "mode": "base",
+    "wall_s": 1.7692597000022943,
+    "capped_s": 1.7692597000022943,
+    "status": "solver_completed_verified_witness",
+    "activity": 304
+  },
+  {
+    "mode": "interval",
+    "wall_s": 1.8378169999996317,
+    "capped_s": 1.8378169999996317,
+    "status": "solver_completed_verified_witness",
+    "activity": 304
+  },
+  {
+    "mode": "interval",
+    "wall_s": 2.2043371999970987,
+    "capped_s": 2.2043371999970987,
+    "status": "solver_completed_verified_witness",
+    "activity": 304
+  },
+  {
+    "mode": "base",
+    "wall_s": 1.9145716000020911,
+    "capped_s": 1.9145716000020911,
+    "status": "solver_completed_verified_witness",
+    "activity": 304
+  }
+]

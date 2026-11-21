@@ -14,7 +14,18 @@ def compile_variant(kind):
     dest = ROOT / ".local/variants" / name
     dest.mkdir(parents=True, exist_ok=True)
     header = (ROOT / "tools/joint_trail.h").read_text()
-    if kind != "base":
+    if kind == "interval":
+        (dest / "interval.h").write_bytes((HERE / "interval.h").read_bytes())
+        hook = "static int replay_pair("
+        original = "p9_joint_support(q->rows, q->target, ops, zeros, ones, domains, cap, charged, &result)"
+        marker = "    replay_at_fixpoint = replay_visit;"
+        done = "    replay_at_fixpoint = NULL;"
+        assert all(header.count(s) == 1 for s in (hook, original, marker, done))
+        header = header.replace(hook,(HERE / "interval_hook.h").read_text()+"\n"+hook)
+        header = header.replace(original, "ff_support(q, obj, ops, zeros, ones, domains, cap, charged, &result)")
+        header = header.replace(marker, "    ff_prepare(q);\n"+marker)
+        header = header.replace(done,done+'\n    if (ff_stats) printf("FF_CALLS %llu %llu\\n", ff_calls, q->checks);')
+    elif kind != "base":
         hook = "static int replay_solve(PexaMan_t *p, int bound)"
         marker = "    replay_at_fixpoint = replay_visit;"
         assert header.count(hook) == header.count(marker) == 1
@@ -44,5 +55,5 @@ def compile_variant(kind):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("kind", choices=("base", "diagnostic", "candidate", "candidate-diagnostic"))
+    p.add_argument("kind", choices=("base", "diagnostic", "candidate", "candidate-diagnostic", "interval"))
     compile_variant(p.parse_args().kind)

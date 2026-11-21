@@ -1,0 +1,22 @@
+{
+  "base": {
+    "reasons": 11015,
+    "queries": 25,
+    "binary_sha256": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+    "reason_sha256": "414b3477e425b2cd851590234d8dbc6b6d73808acc17f940bd17f6142164b6e8",
+    "statistics_sha256": "baf826262dccdc2fe39e75b14ed68416dfb1154efa11fbfc10a09fa98933304b"
+  },
+  "interval": {
+    "reasons": 11015,
+    "queries": 25,
+    "binary_sha256": "8e9b5eba96f2c0a7d35a8fba2af0e4eea52e835a6ce6c6ab46c60b3ebc9329d1",
+    "reason_sha256": "414b3477e425b2cd851590234d8dbc6b6d73808acc17f940bd17f6142164b6e8",
+    "statistics_sha256": "baf826262dccdc2fe39e75b14ed68416dfb1154efa11fbfc10a09fa98933304b",
+    "checked_fixed_calls": 15410,
+    "total_calls": 129628,
+    "independent_audit": {
+      "sel": 1521,
+      "count": 9494
+    }
+  }
+}
