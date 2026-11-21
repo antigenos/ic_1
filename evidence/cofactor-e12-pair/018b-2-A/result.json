@@ -1,0 +1,24 @@
+{
+  "start_utc": "2026-11-21T00:14:38.480480+00:00",
+  "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+  "command": [
+    "abc.exe",
+    "-c",
+    "pexact -I 4 -M 2 018b"
+  ],
+  "timeout_s": 300,
+  "experiment": {
+    "cpu": 2,
+    "arm": "A",
+    "truth": "018b",
+    "order": 2
+  },
+  "pid": 14356,
+  "child_affinity": [
+    2
+  ],
+  "status": "timeout",
+  "returncode": 1,
+  "wall_s": 300.0291393000007,
+  "capped_wall_s": 300
+}
