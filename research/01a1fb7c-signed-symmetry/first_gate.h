@@ -12,12 +12,15 @@ typedef struct {
     int hi, lo, op, keep;
 } IsoFirst;
 
+static int iso_colex_keys;
+
 static int iso_pair_key(const IsoFirst *g)
 {
-    return g->lo*4 + g->hi;
+    return iso_colex_keys ? g->hi*4 + g->lo : g->lo*4 + g->hi;
 }
 
 #include "pair_gate.h"
+#include "chain_order.h"
 
 static void iso_prepare(unsigned target, int signed_mode, int pair_first, int pair_mode, IsoFirst gates[30])
 {
@@ -44,7 +47,7 @@ static void iso_prepare(unsigned target, int signed_mode, int pair_first, int pa
                 unsigned row[16];
                 for (int i = 0; i < 16; ++i) row[i] = permuted[i] ^ phase;
                 if (iso_apply(target,row) != target) continue;
-                if (pair_mode==2) pair_update(gates,row);
+                if (pair_mode>=2) pair_update(gates,row,pair_mode==3);
                 for (int j = 0; j < n; ++j) {
                     if (!gates[j].keep) continue;
                     unsigned image = iso_apply(gates[j].function,row);
@@ -103,11 +106,15 @@ static int iso_filter(PexaMan_t *p)
     unsigned target = (unsigned)p->pTruth[0] & 65535u;
     if (target & 1) target ^= 65535u;
     int pair_mode = mode && !strcmp(mode,"orbit-prefix") ? 2 : (mode && !strcmp(mode,"sorted-prefix"));
-    int classical = pair_mode || (mode && (!strcmp(mode,"first-use") || !strcmp(mode,"combined")));
+    int chain = mode && (!strcmp(mode,"chain") || !strcmp(mode,"chain-first") || !strcmp(mode,"chain-orbit"));
+    iso_colex_keys=chain;
+    if (mode && !strcmp(mode,"chain-orbit")) pair_mode=3;
+    int classical = chain || pair_mode || (mode && (!strcmp(mode,"first-use") || !strcmp(mode,"combined")));
     if (classical && !iso_first_use(p,target)) return 0;
-    if (mode && !strcmp(mode,"first-use")) return 1;
-    int pair_first = pair_mode || (mode && (!strcmp(mode,"ordered") || !strcmp(mode,"combined")));
-    int cache_mode = signed_mode + 2*pair_first + 4*pair_mode;
+    if (chain && !iso_chain_order(p)) return 0;
+    if (mode && (!strcmp(mode,"first-use") || !strcmp(mode,"chain"))) return 1;
+    int pair_first = chain || pair_mode || (mode && (!strcmp(mode,"ordered") || !strcmp(mode,"combined")));
+    int cache_mode = signed_mode + 2*pair_first + 4*pair_mode + 16*chain;
     if (previous != (int)target || previous_mode != cache_mode) {
         iso_prepare(target,signed_mode,pair_first,pair_mode,gates);
         previous = (int)target;
@@ -124,5 +131,10 @@ static int iso_filter(PexaMan_t *p)
                    target,p->nNodes,gates[j].function,clause[0],clause[1],clause[2],clause[3],clause[4]);
         if (!sat_solver_addclause(p->pSat,clause,clause+5)) return 0;
     }
-    return !pair_mode || p->nNodes<3 || pair_filter(p,gates);
+    if (pair_mode) {
+        int end=pair_mode==3 ? p->nObjs-1 : (p->nNodes>=3 ? 6 : 5);
+        for (int obj=5; obj<end; ++obj)
+            if (!pair_filter(p,gates,obj)) return 0;
+    }
+    return 1;
 }
