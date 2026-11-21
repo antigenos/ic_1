@@ -1,0 +1,27 @@
+{
+  "pilots": {
+    "0189": {
+      "unsigned_transforms": 2,
+      "signed_transforms": 4,
+      "all_first": 30,
+      "unsigned_first": 19,
+      "signed_first": 12
+    },
+    "07b4": {
+      "unsigned_transforms": 1,
+      "signed_transforms": 1,
+      "all_first": 30,
+      "unsigned_first": 30,
+      "signed_first": 30
+    }
+  },
+  "checked_circuits": 219,
+  "transformed_circuits": 2450,
+  "primitive_phase_combinations": 20,
+  "actual_clauses": {
+    "decoded": 450,
+    "distinct_exclusions": {
+      "fe76": 18
+    }
+  }
+}
