@@ -1,0 +1,58 @@
+[
+  {
+    "mode": "base",
+    "wall_s": 1.9874463000014657,
+    "capped_s": 1.9874463000014657,
+    "status": "solver_completed_verified_witness",
+    "activity": 304
+  },
+  {
+    "mode": "ops",
+    "wall_s": 1.9008228000020608,
+    "capped_s": 1.9008228000020608,
+    "status": "solver_completed_verified_witness",
+    "activity": 304
+  },
+  {
+    "mode": "margins",
+    "wall_s": 1.8221672999970906,
+    "capped_s": 1.8221672999970906,
+    "status": "solver_completed_verified_witness",
+    "activity": 304
+  },
+  {
+    "mode": "all",
+    "wall_s": 1.8698363000003155,
+    "capped_s": 1.8698363000003155,
+    "status": "solver_completed_verified_witness",
+    "activity": 304
+  },
+  {
+    "mode": "all",
+    "wall_s": 1.9123810999990383,
+    "capped_s": 1.9123810999990383,
+    "status": "solver_completed_verified_witness",
+    "activity": 304
+  },
+  {
+    "mode": "margins",
+    "wall_s": 1.8408073999999033,
+    "capped_s": 1.8408073999999033,
+    "status": "solver_completed_verified_witness",
+    "activity": 304
+  },
+  {
+    "mode": "ops",
+    "wall_s": 1.9864568000011786,
+    "capped_s": 1.9864568000011786,
+    "status": "solver_completed_verified_witness",
+    "activity": 304
+  },
+  {
+    "mode": "base",
+    "wall_s": 1.7544078999999329,
+    "capped_s": 1.7544078999999329,
+    "status": "solver_completed_verified_witness",
+    "activity": 304
+  }
+]
