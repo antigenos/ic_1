@@ -5,7 +5,7 @@ from itertools import permutations
 import json
 from pathlib import Path
 import re
-from probe_prefix_budget import projected_bound, PINS
+from probe_prefix_budget import projected_bound
 from witness import GATE, simulate
 
 ROOT=Path(__file__).resolve().parents[1]

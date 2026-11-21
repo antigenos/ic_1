@@ -1,0 +1,9 @@
+{
+  "classes": 81,
+  "checks": {
+    "prefix_checked": 219,
+    "symmetry_checked": 219,
+    "witness_required_relabel": 44
+  },
+  "violations": 0
+}

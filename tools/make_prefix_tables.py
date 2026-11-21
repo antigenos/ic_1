@@ -32,7 +32,7 @@ def generate(dest):
     assert len(index)<=256
     with dest.open("w",encoding="ascii",newline="\n") as f:
         f.write("/* Generated from all legal nonconstant two-gate prefixes. */\n")
-        f.write("static const unsigned char prefix_opt[2][][128] = {\n".replace("[2][]",f"[2][{len(index)}]"))
+        f.write(f"static const unsigned char prefix_opt[2][{len(index)}][128] = {{\n")
         for mu in (0,20):
             f.write("{\n")
             for key in index:

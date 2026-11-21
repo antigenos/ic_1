@@ -1,6 +1,7 @@
 """Counterfactual explanation replay and out-of-fold algorithm selection."""
 from collections import Counter
 import hashlib
+import gzip
 import json
 import time
 from pathlib import Path
@@ -11,7 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def explanations(path):
     groups = {"count":[], "sel":[]}
-    for line in path.read_text().splitlines():
+    raw = gzip.decompress(path.read_bytes()).decode() if path.suffix==".gz" else path.read_text()
+    for line in raw.splitlines():
         if line.startswith("REASON "):
             tokens = line.split()
             kind = "count" if tokens[7] == "-1" else "sel"
@@ -92,5 +94,5 @@ def portfolio():
 
 
 if __name__=="__main__":
-    print(json.dumps(dict(explanations=explanations(ROOT/".local/e11j-both/0189/solver.log"),
+    print(json.dumps(dict(explanations=explanations(ROOT/"evidence/screen-traces/frozen-0189.log.gz"),
                           portfolio=portfolio()),indent=2))

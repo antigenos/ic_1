@@ -4,7 +4,7 @@ import shutil
 from build_variant import ROOT, build
 
 MODES = ("memo", "xor", "schedule", "guide", "short", "plain", "prefix", "symmetry","windows",
-         "interval","holes","exists")
+         "interval","holes","exists","combined")
 
 
 def replace_once(code, old, new):
@@ -94,17 +94,23 @@ def make(mode):
 """
         source=replace_once(source,"static int replay_solve(",wrapper+"\nstatic int replay_solve(")
         source=replace_once(source,"    replay_at_fixpoint = replay_visit;","    screen_sampled=0;\n    replay_at_fixpoint = screen_visit;")
-    elif mode in ("prefix","plain","symmetry"):
+    elif mode in ("prefix","plain","symmetry","combined"):
         if mode=="symmetry":
             include="#define SCREEN_SYMMETRY\n"
         else:
-            include=f'#define SCREEN_SHIFT {int(mode=="prefix")}\n#include "screen_prefix_table.h"\n'
+            include=f'#define SCREEN_SHIFT {int(mode!="plain")}\n#include "screen_prefix_table.h"\n'
+        if mode=="combined":
+            include+=('#define screen_structural screen_prefix_only\n#include "screen_structural.h"\n'
+                      '#undef screen_structural\n#define SCREEN_SYMMETRY\n')
         source = replace_once(source,"static int replay_solve(",include+'#include "screen_structural.h"\nstatic int replay_solve(')
         anchor='    const char *rules = getenv("REPLAY_RULES");'
-        source=replace_once(source,anchor,"    if (!screen_structural(p, bound)) return l_False;\n"+anchor)
+        filters="    if (!screen_structural(p, bound)) return l_False;\n"
+        if mode=="combined":
+            filters+="    if (!screen_prefix_only(p, bound)) return l_False;\n"
+        source=replace_once(source,anchor,filters+anchor)
     else:
         raise ValueError(mode)
-    if mode in ("plain","prefix"):
+    if mode in ("plain","prefix","combined"):
         shutil.copyfile(ROOT/".local/screen_prefix_table.h",dest/"screen_prefix_table.h")
     (dest / "joint_trail.h").write_text(source)
     patches = [ROOT / "variants" / (n + ".patch") for n in ("compositions","support","joint-trail")]

@@ -1,5 +1,7 @@
 /* Applied before the bounded search. Pin 0 is the larger-index input and
  * represents the low truth-table index bit for pexact's three operator variables. */
+#ifndef SCREEN_GATE_MISMATCH_DEFINED
+#define SCREEN_GATE_MISMATCH_DEFINED
 static int screen_gate_mismatch(PexaMan_t *p, int obj, int hi, int lo, int code, int *lits)
 {
     lits[0] = Abc_Var2Lit(p->VarMarks[obj][0][hi],1);
@@ -8,6 +10,7 @@ static int screen_gate_mismatch(PexaMan_t *p, int obj, int hi, int lo, int code,
         lits[2+b] = Abc_Var2Lit(1+3*(obj-p->nVars)+b,(code>>(1+b))&1);
     return 5;
 }
+#endif
 
 #ifdef SCREEN_SYMMETRY
 static unsigned screen_permute(unsigned f, const int map[4])

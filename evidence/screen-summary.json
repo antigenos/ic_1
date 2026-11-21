@@ -1,0 +1,477 @@
+{
+  "verified_paired_runs": 96,
+  "batches": {
+    "screen-0019": {
+      "shared": {
+        "seconds": [
+          3.7116132999981346,
+          3.707962699998461
+        ],
+        "mean_s": 3.709787999998298,
+        "paired_speedup": 1.047887763454219,
+        "both_orders_faster": true
+      },
+      "cone": {
+        "seconds": [
+          3.7921683999993547,
+          3.800358700002107
+        ],
+        "mean_s": 3.796263550000731,
+        "paired_speedup": 1.0240182722546887,
+        "both_orders_faster": false
+      },
+      "short": {
+        "seconds": [
+          3.7368008000012196,
+          3.8751391999976477
+        ],
+        "mean_s": 3.8059699999994336,
+        "paired_speedup": 1.0215748230355688,
+        "both_orders_faster": false
+      },
+      "guide": {
+        "seconds": [
+          3.568600200000219,
+          3.5171009000005142
+        ],
+        "mean_s": 3.5428505500003666,
+        "paired_speedup": 1.097292591178659,
+        "both_orders_faster": true
+      },
+      "schedule": {
+        "seconds": [
+          3.675677799998084,
+          3.6474596000007296
+        ],
+        "mean_s": 3.661568699999407,
+        "paired_speedup": 1.0616951800184815,
+        "both_orders_faster": true
+      },
+      "xor": {
+        "seconds": [
+          3.769574100002501,
+          3.869799800002511
+        ],
+        "mean_s": 3.819686950002506,
+        "paired_speedup": 1.0178257107557052,
+        "both_orders_faster": false
+      },
+      "memo": {
+        "seconds": [
+          3.7122922999988077,
+          4.206006699998397
+        ],
+        "mean_s": 3.9591494999986026,
+        "paired_speedup": 0.9838021019808341,
+        "both_orders_faster": false
+      },
+      "baseline": {
+        "seconds": [
+          3.722559199999523,
+          4.059625799996866
+        ],
+        "mean_s": 3.8910924999981944,
+        "paired_speedup": 1.0,
+        "both_orders_faster": false
+      }
+    },
+    "screen-0189": {
+      "baseline": {
+        "seconds": [
+          1.7169269000005443,
+          1.700574599999527
+        ],
+        "mean_s": 1.7087507500000356,
+        "paired_speedup": 1.0,
+        "both_orders_faster": false
+      },
+      "memo": {
+        "seconds": [
+          1.9027697000019543,
+          1.6865637000009883
+        ],
+        "mean_s": 1.7946667000014713,
+        "paired_speedup": 0.9538481872192124,
+        "both_orders_faster": false
+      },
+      "xor": {
+        "seconds": [
+          1.9982553999980155,
+          1.721938800001226
+        ],
+        "mean_s": 1.8600970999996207,
+        "paired_speedup": 0.9211691668405761,
+        "both_orders_faster": false
+      },
+      "schedule": {
+        "seconds": [
+          1.7960256000005757,
+          1.8090049000020372
+        ],
+        "mean_s": 1.8025152500013064,
+        "paired_speedup": 0.9479765919853649,
+        "both_orders_faster": false
+      },
+      "guide": {
+        "seconds": [
+          1.6643862999990233,
+          1.6855199999990873
+        ],
+        "mean_s": 1.6749531499990553,
+        "paired_speedup": 1.020186859529799,
+        "both_orders_faster": true
+      },
+      "short": {
+        "seconds": [
+          1.80058260000078,
+          1.867189500000677
+        ],
+        "mean_s": 1.8338860500007286,
+        "paired_speedup": 0.9319079653299533,
+        "both_orders_faster": false
+      },
+      "cone": {
+        "seconds": [
+          1.7206886999993003,
+          1.7273625000016182
+        ],
+        "mean_s": 1.7240256000004592,
+        "paired_speedup": 0.9911305201460126,
+        "both_orders_faster": false
+      },
+      "shared": {
+        "seconds": [
+          1.5583389999992505,
+          1.537459700000909
+        ],
+        "mean_s": 1.5478993500000797,
+        "paired_speedup": 1.1039283999688638,
+        "both_orders_faster": true
+      }
+    },
+    "screen-confirm-0696": {
+      "baseline": {
+        "seconds": [
+          5.157591800001683,
+          5.1192392999982985
+        ],
+        "mean_s": 5.138415549999991,
+        "paired_speedup": 1.0,
+        "both_orders_faster": false
+      },
+      "symmetry": {
+        "seconds": [
+          3.8753589000007196,
+          3.7792948999995133
+        ],
+        "mean_s": 3.8273269000001164,
+        "paired_speedup": 1.3426562683126109,
+        "both_orders_faster": true
+      },
+      "prefix": {
+        "seconds": [
+          1.3735682000005909,
+          1.3988831999995455
+        ],
+        "mean_s": 1.3862257000000682,
+        "paired_speedup": 3.7068956255140213,
+        "both_orders_faster": true
+      },
+      "guide": {
+        "seconds": [
+          6.951924700002564,
+          6.471786999998585
+        ],
+        "mean_s": 6.711855850000575,
+        "paired_speedup": 0.7660578400481827,
+        "both_orders_faster": false
+      }
+    },
+    "screen-cost-0019": {
+      "exists": {
+        "seconds": [
+          3.935889899999893,
+          3.739143700000568
+        ],
+        "mean_s": 3.8375168000002304,
+        "paired_speedup": 0.9640385770859403,
+        "both_orders_faster": false
+      },
+      "holes": {
+        "seconds": [
+          3.7388047999993432,
+          3.666305500002636
+        ],
+        "mean_s": 3.7025551500009897,
+        "paired_speedup": 0.9988982233494014,
+        "both_orders_faster": false
+      },
+      "interval": {
+        "seconds": [
+          4.062403200001427,
+          4.173353500002122
+        ],
+        "mean_s": 4.117878350001774,
+        "paired_speedup": 0.8981892697401541,
+        "both_orders_faster": false
+      },
+      "baseline": {
+        "seconds": [
+          3.6857980999993742,
+          3.7108412999987195
+        ],
+        "mean_s": 3.698319699999047,
+        "paired_speedup": 1.0,
+        "both_orders_faster": false
+      }
+    },
+    "screen-cost-0189": {
+      "baseline": {
+        "seconds": [
+          1.7807171999993443,
+          1.7018768999987515
+        ],
+        "mean_s": 1.7412970499990479,
+        "paired_speedup": 1.0,
+        "both_orders_faster": false
+      },
+      "interval": {
+        "seconds": [
+          1.6582692000010866,
+          1.639741300001333
+        ],
+        "mean_s": 1.6490052500012098,
+        "paired_speedup": 1.0557142013793708,
+        "both_orders_faster": true
+      },
+      "holes": {
+        "seconds": [
+          1.403508099996543,
+          1.3469307000013941
+        ],
+        "mean_s": 1.3752193999989686,
+        "paired_speedup": 1.266139217891535,
+        "both_orders_faster": true
+      },
+      "exists": {
+        "seconds": [
+          1.762620199999219,
+          1.712081900001067
+        ],
+        "mean_s": 1.737351050000143,
+        "paired_speedup": 1.0021204139248538,
+        "both_orders_faster": false
+      }
+    },
+    "screen-interaction-0019": {
+      "combined": {
+        "seconds": [
+          6.859220899998036,
+          6.290472699998645
+        ],
+        "mean_s": 6.57484679999834,
+        "paired_speedup": 1.1581931329201074,
+        "both_orders_faster": true
+      },
+      "prefix": {
+        "seconds": [
+          7.573167800001102,
+          7.232732600001327
+        ],
+        "mean_s": 7.402950200001214,
+        "paired_speedup": 1.0279453513357275,
+        "both_orders_faster": true
+      },
+      "symmetry": {
+        "seconds": [
+          7.055079199999454,
+          7.062698400000954
+        ],
+        "mean_s": 7.058888800000204,
+        "paired_speedup": 1.0777641765177732,
+        "both_orders_faster": true
+      },
+      "baseline": {
+        "seconds": [
+          7.625555599999643,
+          7.590118399999483
+        ],
+        "mean_s": 7.607836999999563,
+        "paired_speedup": 1.0,
+        "both_orders_faster": false
+      }
+    },
+    "screen-interaction-0189": {
+      "baseline": {
+        "seconds": [
+          2.0810068999999203,
+          1.7541153999991366
+        ],
+        "mean_s": 1.9175611499995284,
+        "paired_speedup": 1.0,
+        "both_orders_faster": false
+      },
+      "symmetry": {
+        "seconds": [
+          1.4322912999996333,
+          1.6217064000011305
+        ],
+        "mean_s": 1.526998850000382,
+        "paired_speedup": 1.2536146204518086,
+        "both_orders_faster": true
+      },
+      "prefix": {
+        "seconds": [
+          1.4663856999977725,
+          1.2178638000004867
+        ],
+        "mean_s": 1.3421247499991296,
+        "paired_speedup": 1.429691619964241,
+        "both_orders_faster": true
+      },
+      "combined": {
+        "seconds": [
+          1.0383719000019482,
+          1.239560199999687
+        ],
+        "mean_s": 1.1389660500008176,
+        "paired_speedup": 1.6840522643521478,
+        "both_orders_faster": true
+      }
+    },
+    "screen-interaction-0696": {
+      "symmetry": {
+        "seconds": [
+          4.592122800000652,
+          3.8522735000005923
+        ],
+        "mean_s": 4.222198150000622,
+        "paired_speedup": 1.3305375356315425,
+        "both_orders_faster": true
+      },
+      "combined": {
+        "seconds": [
+          1.3480734000004304,
+          1.3658539000025485
+        ],
+        "mean_s": 1.3569636500014894,
+        "paired_speedup": 4.124141341305339,
+        "both_orders_faster": true
+      },
+      "baseline": {
+        "seconds": [
+          5.7589731000007305,
+          5.438007699998707
+        ],
+        "mean_s": 5.598490399999719,
+        "paired_speedup": 1.0,
+        "both_orders_faster": false
+      },
+      "prefix": {
+        "seconds": [
+          1.4298357000006945,
+          1.4349782999997842
+        ],
+        "mean_s": 1.4324070000002393,
+        "paired_speedup": 3.9068496573844778,
+        "both_orders_faster": true
+      }
+    },
+    "screen-struct-0019": {
+      "symmetry": {
+        "seconds": [
+          3.6665083000007144,
+          3.352582399998937
+        ],
+        "mean_s": 3.5095453499998257,
+        "paired_speedup": 1.0555331531922547,
+        "both_orders_faster": true
+      },
+      "plain": {
+        "seconds": [
+          3.8174837000005937,
+          3.789434900001652
+        ],
+        "mean_s": 3.8034593000011228,
+        "paired_speedup": 0.9729983957990966,
+        "both_orders_faster": false
+      },
+      "prefix": {
+        "seconds": [
+          3.50528900000063,
+          3.4400706000014907
+        ],
+        "mean_s": 3.4726798000010604,
+        "paired_speedup": 1.065718125949443,
+        "both_orders_faster": true
+      },
+      "baseline": {
+        "seconds": [
+          3.7138931000008597,
+          3.6876228000000992
+        ],
+        "mean_s": 3.7007579500004795,
+        "paired_speedup": 1.0,
+        "both_orders_faster": false
+      }
+    },
+    "screen-struct-0189": {
+      "baseline": {
+        "seconds": [
+          1.9220289000004414,
+          1.66395520000151
+        ],
+        "mean_s": 1.7929920500009757,
+        "paired_speedup": 1.0,
+        "both_orders_faster": false
+      },
+      "prefix": {
+        "seconds": [
+          1.1724209999993036,
+          1.0419454000002588
+        ],
+        "mean_s": 1.1071831999997812,
+        "paired_speedup": 1.6180297262890688,
+        "both_orders_faster": true
+      },
+      "plain": {
+        "seconds": [
+          1.2605469999980414,
+          1.1470190000000002
+        ],
+        "mean_s": 1.2037829999990208,
+        "paired_speedup": 1.4872567334967128,
+        "both_orders_faster": true
+      },
+      "symmetry": {
+        "seconds": [
+          1.315855400000146,
+          1.3880956000029983
+        ],
+        "mean_s": 1.351975500001572,
+        "paired_speedup": 1.3232350593096218,
+        "both_orders_faster": true
+      }
+    }
+  },
+  "hard_018b": {
+    "baseline": {
+      "wall_s": 300.0291393000007,
+      "status": "timeout",
+      "timeout_s": 300,
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d"
+    },
+    "shared": {
+      "wall_s": 300.0633235999994,
+      "status": "timeout",
+      "timeout_s": 300,
+      "binary_sha256": "475643ea9868f6b090b4be05175b27fd3c9bf1342b00824d0c2bb2a22af65fc5"
+    },
+    "prefix": {
+      "wall_s": 300.1091529000005,
+      "status": "timeout",
+      "timeout_s": 300,
+      "binary_sha256": "e79cfda4cfe56795688fc913fcd93d0fa4575f549fbcf2a3fbb540cfb86f6495"
+    }
+  }
+}
