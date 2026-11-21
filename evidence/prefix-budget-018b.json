@@ -1,0 +1,164 @@
+{
+  "truth": "018b",
+  "gates": 7,
+  "budget": 411,
+  "shift": 20,
+  "admissible_count_pairs": 79,
+  "exact_tables": 392,
+  "result": [
+    {
+      "depth": 1,
+      "distinct_nonconstant": 30,
+      "counts": {
+        "syntactic": 30,
+        "structural_over_budget": 0,
+        "plain_over_budget": 0,
+        "previous_best_over_budget": 0,
+        "shifted_over_budget": 0,
+        "combined_over_budget": 0,
+        "shift_strict": 30
+      },
+      "witness": {
+        "prefix": [
+          "00aa"
+        ],
+        "structural": 246,
+        "ordinary": 248.0,
+        "shifted": 304.0
+      }
+    },
+    {
+      "depth": 2,
+      "distinct_nonconstant": 1260,
+      "counts": {
+        "syntactic": 1500,
+        "structural_over_budget": 0,
+        "plain_over_budget": 5,
+        "previous_best_over_budget": 5,
+        "shifted_over_budget": 530,
+        "combined_over_budget": 530,
+        "shift_strict": 1450,
+        "constant_prefix_gate": 48
+      },
+      "witness": {
+        "prefix": [
+          "00aa",
+          "fafa"
+        ],
+        "structural": 312,
+        "ordinary": 288.0,
+        "shifted": 344.0
+      }
+    }
+  ],
+  "examples": [
+    {
+      "prefix": [
+        "8888",
+        "6666"
+      ],
+      "structural": 344,
+      "ordinary": 368.0,
+      "shifted": 412.0
+    },
+    {
+      "prefix": [
+        "8888",
+        "5a5a"
+      ],
+      "structural": 344,
+      "ordinary": 368.0,
+      "shifted": 412.0
+    },
+    {
+      "prefix": [
+        "8888",
+        "55aa"
+      ],
+      "structural": 344,
+      "ordinary": 368.0,
+      "shifted": 412.0
+    },
+    {
+      "prefix": [
+        "8888",
+        "aaaa"
+      ],
+      "structural": 344,
+      "ordinary": 376.0,
+      "shifted": 412.0
+    },
+    {
+      "prefix": [
+        "8888",
+        "3c3c"
+      ],
+      "structural": 344,
+      "ordinary": 368.0,
+      "shifted": 412.0
+    },
+    {
+      "prefix": [
+        "8888",
+        "33cc"
+      ],
+      "structural": 344,
+      "ordinary": 368.0,
+      "shifted": 412.0
+    },
+    {
+      "prefix": [
+        "8888",
+        "cccc"
+      ],
+      "structural": 344,
+      "ordinary": 376.0,
+      "shifted": 412.0
+    },
+    {
+      "prefix": [
+        "8888",
+        "7878"
+      ],
+      "structural": 344,
+      "ordinary": 368.0,
+      "shifted": 412.0
+    },
+    {
+      "prefix": [
+        "8888",
+        "7788"
+      ],
+      "structural": 344,
+      "ordinary": 368.0,
+      "shifted": 412.0
+    },
+    {
+      "prefix": [
+        "2222",
+        "6666"
+      ],
+      "structural": 344,
+      "ordinary": 368.0,
+      "shifted": 412.0
+    },
+    {
+      "prefix": [
+        "2222",
+        "5a5a"
+      ],
+      "structural": 344,
+      "ordinary": 368.0,
+      "shifted": 412.0
+    },
+    {
+      "prefix": [
+        "2222",
+        "55aa"
+      ],
+      "structural": 344,
+      "ordinary": 368.0,
+      "shifted": 412.0
+    }
+  ]
+}
