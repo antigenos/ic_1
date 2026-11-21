@@ -1,0 +1,656 @@
+{
+  "generation_and_table_check_s": 14.180053200005204,
+  "checked_witnesses": 219,
+  "minimum_slack": 0,
+  "reduced_to_original_cells": 10240,
+  "cases": {
+    "0189": {
+      "changed": 22,
+      "strictly_joint": 20,
+      "most_conflicts": [
+        {
+          "gates": 5,
+          "budget": 303,
+          "conflicts": 3596,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 6,
+          "budget": 300,
+          "conflicts": 2983,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 5,
+          "budget": 375,
+          "conflicts": 2742,
+          "base_pairs": 60,
+          "separate_pairs": 60,
+          "joint_pairs": 41
+        },
+        {
+          "gates": 5,
+          "budget": 302,
+          "conflicts": 2681,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 5,
+          "budget": 304,
+          "conflicts": 2228,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 20
+        }
+      ],
+      "queries": [
+        {
+          "gates": 2,
+          "budget": 150,
+          "conflicts": 1,
+          "base_pairs": 0,
+          "separate_pairs": 0,
+          "joint_pairs": 0
+        },
+        {
+          "gates": 3,
+          "budget": 225,
+          "conflicts": 59,
+          "base_pairs": 0,
+          "separate_pairs": 0,
+          "joint_pairs": 0
+        },
+        {
+          "gates": 4,
+          "budget": 225,
+          "conflicts": 103,
+          "base_pairs": 5,
+          "separate_pairs": 1,
+          "joint_pairs": 1
+        },
+        {
+          "gates": 5,
+          "budget": 225,
+          "conflicts": 74,
+          "base_pairs": 5,
+          "separate_pairs": 1,
+          "joint_pairs": 1
+        },
+        {
+          "gates": 3,
+          "budget": 300,
+          "conflicts": 61,
+          "base_pairs": 0,
+          "separate_pairs": 0,
+          "joint_pairs": 0
+        },
+        {
+          "gates": 4,
+          "budget": 300,
+          "conflicts": 390,
+          "base_pairs": 55,
+          "separate_pairs": 22,
+          "joint_pairs": 13
+        },
+        {
+          "gates": 5,
+          "budget": 300,
+          "conflicts": 2021,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 6,
+          "budget": 300,
+          "conflicts": 2983,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 7,
+          "budget": 300,
+          "conflicts": 1487,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 4,
+          "budget": 375,
+          "conflicts": 402,
+          "base_pairs": 60,
+          "separate_pairs": 48,
+          "joint_pairs": 19
+        },
+        {
+          "gates": 5,
+          "budget": 375,
+          "conflicts": 2742,
+          "base_pairs": 60,
+          "separate_pairs": 60,
+          "joint_pairs": 41
+        },
+        {
+          "gates": 4,
+          "budget": 302,
+          "conflicts": 800,
+          "base_pairs": 55,
+          "separate_pairs": 22,
+          "joint_pairs": 13
+        },
+        {
+          "gates": 5,
+          "budget": 302,
+          "conflicts": 2681,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 6,
+          "budget": 302,
+          "conflicts": 677,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 7,
+          "budget": 302,
+          "conflicts": 22,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 8,
+          "budget": 302,
+          "conflicts": 390,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 4,
+          "budget": 304,
+          "conflicts": 1278,
+          "base_pairs": 55,
+          "separate_pairs": 22,
+          "joint_pairs": 15
+        },
+        {
+          "gates": 5,
+          "budget": 304,
+          "conflicts": 823,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 20
+        },
+        {
+          "gates": 4,
+          "budget": 303,
+          "conflicts": 809,
+          "base_pairs": 55,
+          "separate_pairs": 22,
+          "joint_pairs": 13
+        },
+        {
+          "gates": 5,
+          "budget": 303,
+          "conflicts": 3596,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 6,
+          "budget": 303,
+          "conflicts": 1,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 7,
+          "budget": 303,
+          "conflicts": 22,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 8,
+          "budget": 303,
+          "conflicts": 90,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 18
+        },
+        {
+          "gates": 4,
+          "budget": 304,
+          "conflicts": 289,
+          "base_pairs": 55,
+          "separate_pairs": 22,
+          "joint_pairs": 15
+        },
+        {
+          "gates": 5,
+          "budget": 304,
+          "conflicts": 2228,
+          "base_pairs": 55,
+          "separate_pairs": 44,
+          "joint_pairs": 20
+        }
+      ]
+    },
+    "03dd": {
+      "changed": 39,
+      "strictly_joint": 39,
+      "most_conflicts": [
+        {
+          "gates": 6,
+          "budget": 359,
+          "conflicts": 19892,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 6,
+          "budget": 367,
+          "conflicts": 17824,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 81
+        },
+        {
+          "gates": 6,
+          "budget": 351,
+          "conflicts": 14912,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 6,
+          "budget": 334,
+          "conflicts": 6257,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 62
+        },
+        {
+          "gates": 5,
+          "budget": 367,
+          "conflicts": 6167,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 81
+        }
+      ],
+      "queries": [
+        {
+          "gates": 2,
+          "budget": 150,
+          "conflicts": 5,
+          "base_pairs": 0,
+          "separate_pairs": 0,
+          "joint_pairs": 0
+        },
+        {
+          "gates": 3,
+          "budget": 225,
+          "conflicts": 49,
+          "base_pairs": 0,
+          "separate_pairs": 0,
+          "joint_pairs": 0
+        },
+        {
+          "gates": 4,
+          "budget": 225,
+          "conflicts": 93,
+          "base_pairs": 0,
+          "separate_pairs": 0,
+          "joint_pairs": 0
+        },
+        {
+          "gates": 5,
+          "budget": 225,
+          "conflicts": 3,
+          "base_pairs": 0,
+          "separate_pairs": 0,
+          "joint_pairs": 0
+        },
+        {
+          "gates": 3,
+          "budget": 300,
+          "conflicts": 132,
+          "base_pairs": 0,
+          "separate_pairs": 0,
+          "joint_pairs": 0
+        },
+        {
+          "gates": 4,
+          "budget": 300,
+          "conflicts": 538,
+          "base_pairs": 85,
+          "separate_pairs": 42,
+          "joint_pairs": 16
+        },
+        {
+          "gates": 5,
+          "budget": 300,
+          "conflicts": 1185,
+          "base_pairs": 85,
+          "separate_pairs": 56,
+          "joint_pairs": 21
+        },
+        {
+          "gates": 6,
+          "budget": 300,
+          "conflicts": 254,
+          "base_pairs": 85,
+          "separate_pairs": 56,
+          "joint_pairs": 21
+        },
+        {
+          "gates": 7,
+          "budget": 300,
+          "conflicts": 35,
+          "base_pairs": 85,
+          "separate_pairs": 56,
+          "joint_pairs": 21
+        },
+        {
+          "gates": 4,
+          "budget": 375,
+          "conflicts": 559,
+          "base_pairs": 85,
+          "separate_pairs": 68,
+          "joint_pairs": 28
+        },
+        {
+          "gates": 5,
+          "budget": 375,
+          "conflicts": 313,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 81
+        },
+        {
+          "gates": 4,
+          "budget": 334,
+          "conflicts": 652,
+          "base_pairs": 85,
+          "separate_pairs": 68,
+          "joint_pairs": 28
+        },
+        {
+          "gates": 5,
+          "budget": 334,
+          "conflicts": 3914,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 62
+        },
+        {
+          "gates": 6,
+          "budget": 334,
+          "conflicts": 6257,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 62
+        },
+        {
+          "gates": 7,
+          "budget": 334,
+          "conflicts": 775,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 62
+        },
+        {
+          "gates": 8,
+          "budget": 334,
+          "conflicts": 165,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 62
+        },
+        {
+          "gates": 9,
+          "budget": 334,
+          "conflicts": 41,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 62
+        },
+        {
+          "gates": 10,
+          "budget": 334,
+          "conflicts": 67,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 62
+        },
+        {
+          "gates": 4,
+          "budget": 368,
+          "conflicts": 622,
+          "base_pairs": 85,
+          "separate_pairs": 68,
+          "joint_pairs": 28
+        },
+        {
+          "gates": 5,
+          "budget": 368,
+          "conflicts": 2861,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 81
+        },
+        {
+          "gates": 4,
+          "budget": 351,
+          "conflicts": 587,
+          "base_pairs": 85,
+          "separate_pairs": 68,
+          "joint_pairs": 28
+        },
+        {
+          "gates": 5,
+          "budget": 351,
+          "conflicts": 4506,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 6,
+          "budget": 351,
+          "conflicts": 14912,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 7,
+          "budget": 351,
+          "conflicts": 4512,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 8,
+          "budget": 351,
+          "conflicts": 183,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 9,
+          "budget": 351,
+          "conflicts": 67,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 10,
+          "budget": 351,
+          "conflicts": 48,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 4,
+          "budget": 368,
+          "conflicts": 472,
+          "base_pairs": 85,
+          "separate_pairs": 68,
+          "joint_pairs": 28
+        },
+        {
+          "gates": 5,
+          "budget": 368,
+          "conflicts": 3465,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 81
+        },
+        {
+          "gates": 4,
+          "budget": 359,
+          "conflicts": 460,
+          "base_pairs": 85,
+          "separate_pairs": 68,
+          "joint_pairs": 28
+        },
+        {
+          "gates": 5,
+          "budget": 359,
+          "conflicts": 5844,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 6,
+          "budget": 359,
+          "conflicts": 19892,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 7,
+          "budget": 359,
+          "conflicts": 3031,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 8,
+          "budget": 359,
+          "conflicts": 248,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 9,
+          "budget": 359,
+          "conflicts": 66,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 72
+        },
+        {
+          "gates": 4,
+          "budget": 367,
+          "conflicts": 298,
+          "base_pairs": 85,
+          "separate_pairs": 68,
+          "joint_pairs": 28
+        },
+        {
+          "gates": 5,
+          "budget": 367,
+          "conflicts": 6167,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 81
+        },
+        {
+          "gates": 6,
+          "budget": 367,
+          "conflicts": 17824,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 81
+        },
+        {
+          "gates": 7,
+          "budget": 367,
+          "conflicts": 5857,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 81
+        },
+        {
+          "gates": 8,
+          "budget": 367,
+          "conflicts": 82,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 81
+        },
+        {
+          "gates": 9,
+          "budget": 367,
+          "conflicts": 47,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 81
+        },
+        {
+          "gates": 10,
+          "budget": 367,
+          "conflicts": 21,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 81
+        },
+        {
+          "gates": 4,
+          "budget": 375,
+          "conflicts": 544,
+          "base_pairs": 85,
+          "separate_pairs": 68,
+          "joint_pairs": 28
+        },
+        {
+          "gates": 5,
+          "budget": 375,
+          "conflicts": 762,
+          "base_pairs": 85,
+          "separate_pairs": 85,
+          "joint_pairs": 81
+        }
+      ]
+    }
+  }
+}
