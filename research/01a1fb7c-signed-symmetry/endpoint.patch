@@ -1,0 +1,19 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -3127,3 +3127,4 @@
+ #include "first_gate.h"
+ #include "restriction_filter.h"
++#include "endpoint_filter.h"
+ 
+@@ -3146,3 +3147,5 @@
+         if (!restriction_window(*p, node.act + *delta, 0))
+             continue;
++        if (!endpoint_window(*p, node.act + *delta, 0))
++            continue;
+         if ( !ExactPowerSynthesisCnfBddRange( pPars, *p, &node, *delta ) )
+@@ -3155,3 +3158,5 @@
+         if (!restriction_window(*p, node.act + *delta, 1))
+             continue;
++        if (!endpoint_window(*p, node.act + *delta, 1))
++            continue;
+         int status = replay_solve(*p, node.act + *delta);

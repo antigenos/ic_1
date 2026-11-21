@@ -18,6 +18,7 @@ def main():
                         help="checkout containing the pinned ABC objects and TCJAP core")
     parser.add_argument("--build-frozen",action="store_true",help="also build the unmodified joint executable in this checkout")
     parser.add_argument("--restriction",action="store_true",help="build the separate cofactor-bound experiment executable")
+    parser.add_argument("--endpoint",action="store_true",help="build the separate joint-endpoint executable")
     args = parser.parse_args()
     prepared = args.prepared.resolve()
     build_variant.ABC = prepared/".local/abc"
@@ -31,7 +32,7 @@ def main():
         dest.mkdir(parents=True,exist_ok=True)
         for name in ("joint_relation.c","joint_relation.h"):
             shutil.copyfile(src/name,dest/name)
-    name = "restriction-01a1fb7c" if args.restriction else "signed-symmetry-confirmed-01a1fb7c"
+    name = "endpoint-01a1fb7c" if args.endpoint else ("restriction-01a1fb7c" if args.restriction else "signed-symmetry-confirmed-01a1fb7c")
     out = ROOT/".local/variants"/name
     out.mkdir(parents=True,exist_ok=True)
     shutil.copyfile(HERE/"first_gate.h",out/"first_gate.h")
@@ -39,10 +40,14 @@ def main():
     shutil.copyfile(HERE/"chain_order.h",out/"chain_order.h")
     patches = [ROOT/"variants"/(s+".patch") for s in ("compositions","support","joint-trail")]
     study_patches = [HERE/"first-gate.patch"]
-    if args.restriction:
+    if args.restriction or args.endpoint:
         shutil.copyfile(HERE/"restriction_filter.h",out/"restriction_filter.h")
         subprocess.run([sys.executable,str(HERE/"restriction.py"),"--header",str(out/"restriction_table.h")],check=True)
         study_patches.append(HERE/"restriction.patch")
+    if args.endpoint:
+        shutil.copyfile(HERE/"endpoint_filter.h",out/"endpoint_filter.h")
+        subprocess.run([sys.executable,str(HERE/"endpoint.py"),"--header",str(out/"endpoint_table.h")],check=True)
+        study_patches.append(HERE/"endpoint.patch")
     patchdir = out/"patches"
     patchdir.mkdir(exist_ok=True)
     for patch in [*patches,*study_patches,ROOT/"variants/sat-trail.patch"]:

@@ -28,7 +28,8 @@ def main():
     modes = {"F":"off","O":"off","U":"unsigned","S":"signed","P":"first-use",
              "J":"combined","K":"ordered","R":"sorted-prefix","T":"orbit-prefix",
              "Q":"chain","H":"chain-unsigned","N":"chain-first","M":"chain-sorted","V":"chain-orbit",
-             "A":"chain-first","D":"chain-first","B":"chain-first","C":"chain-first"}
+             "A":"chain-first","D":"chain-first","B":"chain-first","C":"chain-first",
+             "I":"chain-first","L":"chain-first","E":"chain-first"}
     if set(args.order)-set(modes):
         p.error("Unknown method")
     pin(args.cpu)
@@ -54,11 +55,17 @@ def main():
             base = args.prepared.resolve()/".local/variants/joint" if key=="F" else ROOT/".local/variants/signed-symmetry-confirmed-01a1fb7c"
             if key in "ADBC":
                 base = ROOT/".local/variants/restriction-01a1fb7c"
+            if key in "ILE":
+                base = ROOT/".local/variants/endpoint-01a1fb7c"
             binary = base/("abc.exe" if os.name=="nt" else "abc")
             env = {k:v for k,v in os.environ.items() if not k.startswith("REPLAY_")}
             env["REPLAY_FIRST_SYMMETRY"] = modes[key]
             if key in "DBC":
                 env["REPLAY_RESTRICTION"] = {"D":"global","B":"size","C":"cost"}[key]
+            if key in "ILE":
+                env["REPLAY_RESTRICTION"] = "size"
+            if key in "LE":
+                env["REPLAY_ENDPOINT"] = "joint" if key=="E" else "margins"
             entry = run(binary,args.target,4,2,args.cap,dest,env=env,
                         metadata=dict(cpu=args.cpu,arm=key,order=i,truth=args.target))
             data = (dest/"solver.log").read_bytes()

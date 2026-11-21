@@ -1,0 +1,9 @@
+{
+  "targets": 208,
+  "matched_bound_cells": 81775,
+  "windows_per_mode": 296,
+  "matched_clauses": {
+    "margins": 932,
+    "joint": 5432
+  }
+}
