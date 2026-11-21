@@ -1,0 +1,20 @@
+{
+  "start_utc": "2026-11-21T00:33:50.078675+00:00",
+  "binary_sha256": "946886aa301e3e011181f4dfa59919192d1f492c3a9dfff7d30e788b6a8a89f1",
+  "command": [
+    "abc.exe",
+    "-c",
+    "pexact -I 4 -M 2 0189"
+  ],
+  "timeout_s": 30.0,
+  "pid": 46752,
+  "returncode": 0,
+  "wall_s": 1.8880787000016426,
+  "capped_wall_s": 1.8880787000016426,
+  "witness": {
+    "truth": "0189",
+    "activity": 304,
+    "gates": 5
+  },
+  "status": "solver_completed_verified_witness"
+}

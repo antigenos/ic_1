@@ -1,0 +1,14 @@
+{
+  "windows": 41,
+  "counts": {
+    "pending": 15,
+    "skipped": 0,
+    "empty_domain": 19,
+    "proved": 7
+  },
+  "window_cpu_seconds": {
+    "pending": 1.2409999999999999,
+    "empty_domain": 0.09400000000000003,
+    "proved": 0.279
+  }
+}
