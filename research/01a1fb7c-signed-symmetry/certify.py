@@ -36,7 +36,7 @@ def main():
     p.add_argument("--max-states",type=int,default=6000000)
     p.add_argument("--cpu",type=int,required=True)
     p.add_argument("--output",type=Path,required=True)
-    p.add_argument("--mode",choices=("raw","orbit"),help="recover actual circuits, optionally quotient the first gate")
+    p.add_argument("--mode",choices=("raw","orbit","prefix"),help="recover circuits with no, first or continuing symmetry")
     args=p.parse_args()
     if args.output.exists(): p.error("Use a new certificate file")
     pin(args.cpu)
@@ -57,7 +57,7 @@ def main():
         process_s=perf_counter()-start
     label,cap,states,seconds=rows[0].split()
     assert label=="C" and int(cap)==args.cap and len(rows)==209
-    if args.mode!="orbit" and args.cap in (302,366):
+    if args.mode in (None,"raw") and args.cap in (302,366):
         assert int(states)=={302:16950,366:196250}[args.cap]
     values={}
     circuits={}
@@ -83,6 +83,8 @@ def main():
     if args.mode:
         if args.cap in (302,366,440):
             assert values==json.loads((HERE/f"closure-{args.cap}.json").read_bytes())["certificates"]
+        if args.mode=="prefix" and args.cap==500:
+            assert values==json.loads((HERE/"orbit-500.json").read_bytes())["certificates"]
         report.update(mode=args.mode,verified_circuits=circuits)
     with args.output.open("x",encoding="utf-8") as f:
         json.dump(report,f,indent=2)

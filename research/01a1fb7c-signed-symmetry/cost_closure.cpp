@@ -36,6 +36,33 @@ static std::vector<Signal> images(Signal target) {
     return result;
 }
 
+struct SignalMap {
+    std::array<std::array<Signal,256>,2> byte{};
+    Signal apply(Signal x) const {
+        return normalized(byte[0][x&255u] | byte[1][x>>8]);
+    }
+};
+
+static std::vector<SignalMap> make_maps() {
+    std::vector<SignalMap> maps;
+    std::array<int,4> perm{0,1,2,3};
+    do {
+        for (unsigned ph=0;ph<16;++ph) {
+            std::array<Signal,16> single{};
+            for (unsigned i=0;i<16;++i) {
+                unsigned source=ph;
+                for (unsigned k=0;k<4;++k) source ^= ((i>>perm[k])&1u)<<k;
+                single[source]=static_cast<Signal>(1u<<i);
+            }
+            SignalMap transform;
+            for (int half=0;half<2;++half) for (unsigned v=1;v<256;++v)
+                transform.byte[half][v]=transform.byte[half][v&(v-1)]|single[half*8+__builtin_ctz(v)];
+            maps.push_back(transform);
+        }
+    } while (std::next_permutation(perm.begin(),perm.end()));
+    return maps;
+}
+
 struct StateHash {
     size_t operator()(const State& s) const noexcept {
         size_t h=1469598103934665603ULL;
@@ -48,6 +75,7 @@ class Closure {
     const int limit;
     const size_t maximum_states;
     const bool orbit;
+    std::vector<SignalMap> maps;
     std::vector<std::vector<Step>> solutions;
     std::vector<Step> path;
     std::unordered_set<State,StateHash> states;
@@ -57,7 +85,7 @@ class Closure {
     unsigned stamp=0;
     const State inputs{0,0xaaaa,0xcccc,0xf0f0,0xff00};
 
-    void visit(const State& s, int cost) {
+    void visit(const State& s, int cost, const std::vector<unsigned>& symmetries) {
         if (!states.insert(s).second) return;
         if (states.size()>maximum_states) throw std::runtime_error("state limit reached, no certificate");
         unsigned here=++stamp;
@@ -88,26 +116,43 @@ class Closure {
                 }
             }
         }
+        std::vector<unsigned> child_group;
         for (const Step& step : next) {
             Signal x=step.out;
+            bool restricted=symmetries.size()>1;
+            if (restricted) {
+                bool keep=true;
+                child_group.clear();
+                for (unsigned m:symmetries) {
+                    Signal y=maps[m].apply(x);
+                    if (!s.empty() && y<x) { keep=false; break; }
+                    if (y==x) child_group.push_back(m);
+                }
+                if (!keep) continue;
+            }
             State child=s;
             child.insert(std::lower_bound(child.begin(),child.end(),x),x);
             path.push_back(step);
-            visit(child,cost+charge[x/2]);
+            visit(child,cost+charge[x/2],restricted ? child_group : symmetries);
             path.pop_back();
         }
     }
 
 public:
-    Closure(int cap,size_t max_states,bool reduced=false,bool witnesses=false)
-        : limit(cap), maximum_states(max_states),orbit(reduced),solutions(witnesses ? 32768 : 0) {
+    Closure(int cap,size_t max_states,bool reduced=false,bool witnesses=false,bool refine=false)
+        : limit(cap), maximum_states(max_states),orbit(reduced),maps(refine ? make_maps() : std::vector<SignalMap>{}),
+          solutions(witnesses ? 32768 : 0) {
         best.fill(limit+1);
         for (int i=0;i<32768;++i) {
             int ones=__builtin_popcount(static_cast<unsigned>(2*i));
             charge[i]=2*ones*(16-ones);
         }
     }
-    void run() { visit({},0); }
+    void run() {
+        std::vector<unsigned> group;
+        for (unsigned i=0;i<maps.size();++i) group.push_back(i);
+        visit({},0,group);
+    }
     size_t total() const { return states.size(); }
     Signal representative(unsigned target) const {
         Signal original=normalized(target), chosen=original;
@@ -128,10 +173,11 @@ int main(int argc,char **argv) {
         int cap=std::stoi(argv[1]);
         size_t max_states=std::stoull(argv[2]);
         if (cap<0 || cap>1000 || !max_states || max_states>=UINT32_MAX) return 1;
-        bool orbit=argc==4 && std::string(argv[3])=="orbit";
+        bool refine=argc==4 && std::string(argv[3])=="prefix";
+        bool orbit=refine || (argc==4 && std::string(argv[3])=="orbit");
         bool witnesses=argc==4;
         if (witnesses && !orbit && std::string(argv[3])!="raw") return 1;
-        Closure closure(cap,max_states,orbit,witnesses);
+        Closure closure(cap,max_states,orbit,witnesses,refine);
         auto start=std::chrono::steady_clock::now();
         closure.run();
         double seconds=std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();
