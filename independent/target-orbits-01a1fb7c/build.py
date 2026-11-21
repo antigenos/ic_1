@@ -18,8 +18,15 @@ def lf_patch(source):
 if __name__ == "__main__":
     common = [lf_patch(ROOT / "variants" / (name+".patch")) for name in ("compositions","support","joint-trail")]
     trail = lf_patch(ROOT / "variants/sat-trail.patch")
-    build("orbit-control",common,trail)
-    directory = ROOT / ".local/variants/orbit-signed"
+    conditional = sys.argv[1:] == ["--conditional"]
+    if not conditional:
+        build("orbit-control",common,trail)
+    name = "orbit-conditional" if conditional else "orbit-signed"
+    directory = ROOT / ".local/variants" / name
     directory.mkdir(exist_ok=True)
     shutil.copyfile(HERE / "orbit_filter.h",directory / "orbit_filter.h")
-    build("orbit-signed",common+[lf_patch(HERE / "orbit.patch")],trail)
+    patches = common+[lf_patch(HERE / "orbit.patch")]
+    if conditional:
+        shutil.copyfile(HERE / "conditional_filter.h",directory / "conditional_filter.h")
+        patches.append(lf_patch(HERE / "conditional.patch"))
+    build(name,patches,trail)

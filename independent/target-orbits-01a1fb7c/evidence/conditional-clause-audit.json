@@ -1,0 +1,5 @@
+{
+  "actual_clauses": 1632,
+  "distinct_by_size_and_literals": 408,
+  "all_have_strict_row_transform": true
+}

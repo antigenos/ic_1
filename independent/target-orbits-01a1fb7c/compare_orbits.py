@@ -18,9 +18,12 @@ def run_group(truth, cpu, order, cap, dest):
     activities = set()
     suffix = ".exe" if os.name == "nt" else ""
     for i,arm in enumerate(order,1):
-        env = {k:v for k,v in os.environ.items() if not k.startswith(("PEXACT_ORBIT","REPLAY_"))}
-        variant = "orbit-control" if arm=="A" else "orbit-signed"
-        env["PEXACT_ORBIT"] = {"A":"off","B":"signed","P":"perm","X":"off"}[arm]
+        env = {k:v for k,v in os.environ.items() if not k.startswith(("PEXACT_ORBIT","PEXACT_PREFIX","REPLAY_"))}
+        variant = {"A":"orbit-control","B":"orbit-signed","P":"orbit-signed","X":"orbit-signed",
+                   "C":"orbit-conditional","Y":"orbit-conditional"}[arm]
+        env["PEXACT_ORBIT"] = {"A":"off","B":"signed","P":"perm","X":"off","C":"signed","Y":"signed"}[arm]
+        if arm=="Y":
+            env["PEXACT_PREFIX_OFF"]="1"
         binary = ROOT / ".local/variants" / variant / ("abc"+suffix)
         r = run(binary,truth,4,2,cap,dest/f"{i}-{arm}",env=env,
                 metadata=dict(cpu=cpu,truth=truth,arm=arm,order=i))

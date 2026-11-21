@@ -1,0 +1,14 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -3126,3 +3126,4 @@
+ #include "joint_trail.h"
+ #include "orbit_filter.h"
++#include "conditional_filter.h"
+ 
+@@ -3148,4 +3149,6 @@
+         if (!orbit_filter(*p))
+             continue;
++        if (!prefix_filter(*p))
++            continue;
+         int status = replay_solve(*p, node.act + *delta);
+         if ( status == 1 )

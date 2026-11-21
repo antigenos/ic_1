@@ -1,0 +1,120 @@
+{
+  "012d": {
+    "counts": {
+      "prefixes": 108,
+      "expanded_groups": 4,
+      "strict_prefixes": 4,
+      "additional_signal_exclusions": 48
+    },
+    "witness": {
+      "first_pins": [
+        0,
+        1
+      ],
+      "second_primary": 0,
+      "second_op": 8,
+      "columns": [
+        43690,
+        52428,
+        61680,
+        65280,
+        26214,
+        8738
+      ],
+      "required": [
+        2,
+        3,
+        5
+      ],
+      "row_permutation": [
+        0,
+        1,
+        3,
+        2,
+        4,
+        5,
+        7,
+        6,
+        8,
+        9,
+        11,
+        10,
+        12,
+        13,
+        15,
+        14
+      ],
+      "column_permutation": [
+        4,
+        1,
+        2,
+        3,
+        0,
+        5
+      ],
+      "third": 170,
+      "representative": 102,
+      "input_group": 1,
+      "boundary_group": 2
+    }
+  },
+  "0189": {
+    "counts": {
+      "prefixes": 54,
+      "expanded_groups": 4,
+      "strict_prefixes": 4,
+      "additional_signal_exclusions": 48
+    },
+    "witness": {
+      "first_pins": [
+        1,
+        3
+      ],
+      "second_primary": 1,
+      "second_op": 2,
+      "columns": [
+        43690,
+        52428,
+        61680,
+        65280,
+        13260,
+        52224
+      ],
+      "required": [
+        0,
+        2,
+        5
+      ],
+      "row_permutation": [
+        8,
+        9,
+        2,
+        3,
+        12,
+        13,
+        6,
+        7,
+        0,
+        1,
+        10,
+        11,
+        4,
+        5,
+        14,
+        15
+      ],
+      "column_permutation": [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5
+      ],
+      "third": 8840,
+      "representative": 170,
+      "input_group": 1,
+      "boundary_group": 2
+    }
+  }
+}
