@@ -1,5 +1,6 @@
 """Read the paired export and quantify where the first-gate rule changes outcomes."""
 import argparse
+from bisect import bisect_left, bisect_right
 from datetime import datetime
 import json
 from pathlib import Path
@@ -7,7 +8,7 @@ from pathlib import Path
 from audit_pairs import HERE, audit, historical
 
 
-def breakdown(root,pause_record=None):
+def breakdown(root,pause_record=None,occupancy=None):
     manifest=json.loads((root/"manifest.json").read_bytes())
     rows=[json.loads(s) for s in (root/"runs.jsonl").read_text().splitlines()]
     family=json.loads((HERE/"orbit-check.json").read_bytes())["family"]
@@ -40,6 +41,31 @@ def breakdown(root,pause_record=None):
         crossed={t for t in family if ((t,"A") in earlier)!=((t,"B") in earlier)}
         report["cross_pause_functions"]=sorted(crossed)
         report["same_session_pairs"]=summarize(set(family)-crossed)
+    if occupancy:
+        samples=[json.loads(s) for s in occupancy.read_text(encoding="utf-8-sig").splitlines()]
+        stamps=[datetime.fromisoformat(s["utc"].replace("Z","+00:00")).timestamp() for s in samples]
+        assert stamps==sorted(set(stamps)) and stamps
+        seen={core for s in samples for core in s["other_single_core"]}
+        by_truth={t:[] for t in family}
+        for r in rows:
+            by_truth[r["experiment"]["truth"]].append(r)
+        def clear_in_samples(r):
+            start=datetime.fromisoformat(r["start_utc"]).timestamp()
+            left=bisect_right(stamps,start)-1
+            right=bisect_left(stamps,start+r["wall_s"])
+            if left<0 or right>=len(samples):
+                return False
+            core=r["experiment"]["cpu"]
+            return (all(stamps[i+1]-stamps[i]<=45 for i in range(left,right)) and
+                    all(core not in s["other_single_core"] and s["other_multicore_intersecting"]==0
+                        for s in samples[left:right+1]))
+        report["host_sampling"]=dict(
+            observations=len(samples),start_utc=samples[0]["utc"],end_utc=samples[-1]["utc"],
+            cores_seen_with_other_pinned_abc=sorted(seen),
+            observations_with_multicore_abc=sum(s["other_multicore_intersecting"]>0 for s in samples),
+            excluding_cores_seen_shared=summarize({c["truth"] for c in manifest if c["cpu"] not in seen}),
+            both_runs_bracketed_without_observed_abc_overlap=summarize(
+                {t for t,rs in by_truth.items() if len(rs)==2 and all(clear_in_samples(r) for r in rs)}))
     return report
 
 
@@ -47,9 +73,10 @@ if __name__=="__main__":
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("data",type=Path)
     p.add_argument("--pause-record",type=Path)
+    p.add_argument("--occupancy",type=Path)
     p.add_argument("--output",type=Path)
     args=p.parse_args()
-    report=json.dumps(breakdown(args.data,args.pause_record),indent=2)
+    report=json.dumps(breakdown(args.data,args.pause_record,args.occupancy),indent=2)
     if args.output:
         args.output.write_text(report+"\n",encoding="utf-8")
     print(report)
