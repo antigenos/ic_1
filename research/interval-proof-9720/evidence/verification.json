@@ -1,0 +1,408 @@
+{
+  "frozen": {
+    "main": {
+      "checked_runs": 624,
+      "verified_witnesses": 219,
+      "functions": 208,
+      "distinct_values_agree": true
+    },
+    "ablation": {
+      "checked_runs": 15,
+      "verified_witnesses": 8,
+      "functions": 3,
+      "distinct_values_agree": true
+    }
+  },
+  "binary_sha256": {
+    "A": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+    "B": "6e8df650dea7acc432f810eb71735ffa1dea062833d90d92012a1b953f8b3988",
+    "C": "fc5ed237755b622bc28a98cd06ead36df17bfd5bf91a73c1840a6aa3a8e7c700"
+  },
+  "runs": {
+    "pilot-0189": [
+      {
+        "arm": "A",
+        "wall_s": 1.7342459999999846,
+        "capped_s": 1.7342459999999846,
+        "activity": 304
+      },
+      {
+        "arm": "B",
+        "wall_s": 1.364253200001258,
+        "capped_s": 1.364253200001258,
+        "activity": 304
+      },
+      {
+        "arm": "B",
+        "wall_s": 1.3831729000012274,
+        "capped_s": 1.3831729000012274,
+        "activity": 304
+      },
+      {
+        "arm": "A",
+        "wall_s": 1.7108167999977013,
+        "capped_s": 1.7108167999977013,
+        "activity": 304
+      }
+    ],
+    "pilot-001e": [
+      {
+        "arm": "B",
+        "wall_s": 0.24261059999844292,
+        "capped_s": 0.24261059999844292,
+        "activity": 224
+      },
+      {
+        "arm": "A",
+        "wall_s": 0.4285461999970721,
+        "capped_s": 0.4285461999970721,
+        "activity": 224
+      },
+      {
+        "arm": "A",
+        "wall_s": 0.24799669999993057,
+        "capped_s": 0.24799669999993057,
+        "activity": 224
+      },
+      {
+        "arm": "B",
+        "wall_s": 0.2677538000025379,
+        "capped_s": 0.2677538000025379,
+        "activity": 224
+      }
+    ],
+    "saved-pair-0189": [
+      {
+        "arm": "B",
+        "wall_s": 2.9244314999996277,
+        "capped_s": 2.9244314999996277,
+        "activity": 304
+      },
+      {
+        "arm": "C",
+        "wall_s": 2.483963999999105,
+        "capped_s": 2.483963999999105,
+        "activity": 304
+      },
+      {
+        "arm": "C",
+        "wall_s": 2.5156816999988223,
+        "capped_s": 2.5156816999988223,
+        "activity": 304
+      },
+      {
+        "arm": "B",
+        "wall_s": 2.876960000001418,
+        "capped_s": 2.876960000001418,
+        "activity": 304
+      }
+    ],
+    "saved-pair-001e": [
+      {
+        "arm": "C",
+        "wall_s": 0.4981355000018084,
+        "capped_s": 0.4981355000018084,
+        "activity": 224
+      },
+      {
+        "arm": "B",
+        "wall_s": 0.7440513000001374,
+        "capped_s": 0.7440513000001374,
+        "activity": 224
+      },
+      {
+        "arm": "B",
+        "wall_s": 0.47556640000038897,
+        "capped_s": 0.47556640000038897,
+        "activity": 224
+      },
+      {
+        "arm": "C",
+        "wall_s": 0.42447180000090157,
+        "capped_s": 0.42447180000090157,
+        "activity": 224
+      }
+    ],
+    "ablation-0189": [
+      {
+        "arm": "O",
+        "wall_s": 1.6856452000029094,
+        "capped_s": 1.6856452000029094,
+        "activity": 304
+      },
+      {
+        "arm": "D",
+        "wall_s": 1.724531300002127,
+        "capped_s": 1.724531300002127,
+        "activity": 304
+      },
+      {
+        "arm": "H",
+        "wall_s": 1.4641861000018253,
+        "capped_s": 1.4641861000018253,
+        "activity": 304
+      },
+      {
+        "arm": "B",
+        "wall_s": 1.3373928000000888,
+        "capped_s": 1.3373928000000888,
+        "activity": 304
+      },
+      {
+        "arm": "B",
+        "wall_s": 1.3685974999971222,
+        "capped_s": 1.3685974999971222,
+        "activity": 304
+      },
+      {
+        "arm": "H",
+        "wall_s": 1.480101700002706,
+        "capped_s": 1.480101700002706,
+        "activity": 304
+      },
+      {
+        "arm": "D",
+        "wall_s": 1.6517773999985366,
+        "capped_s": 1.6517773999985366,
+        "activity": 304
+      },
+      {
+        "arm": "O",
+        "wall_s": 1.7557286999981443,
+        "capped_s": 1.7557286999981443,
+        "activity": 304
+      }
+    ],
+    "hard-018b": [
+      {
+        "arm": "B",
+        "wall_s": 300.3720839999951,
+        "capped_s": 300,
+        "activity": null
+      },
+      {
+        "arm": "A",
+        "wall_s": 300.1486240000013,
+        "capped_s": 300,
+        "activity": null
+      }
+    ],
+    "hard-saved-018b": [
+      {
+        "arm": "C",
+        "wall_s": 300.1846512999982,
+        "capped_s": 300,
+        "activity": null
+      }
+    ],
+    "repeat-013d": [
+      {
+        "arm": "A",
+        "wall_s": 28.6894994999966,
+        "capped_s": 28.6894994999966,
+        "activity": 376
+      },
+      {
+        "arm": "C",
+        "wall_s": 29.078300400004082,
+        "capped_s": 29.078300400004082,
+        "activity": 376
+      }
+    ],
+    "confirmation-01ab": [
+      {
+        "arm": "A",
+        "wall_s": 1.9223222000000533,
+        "capped_s": 1.9223222000000533,
+        "activity": 248
+      },
+      {
+        "arm": "C",
+        "wall_s": 1.1646617999940645,
+        "capped_s": 1.1646617999940645,
+        "activity": 248
+      }
+    ],
+    "confirmation-01af": [
+      {
+        "arm": "C",
+        "wall_s": 3.268924199997855,
+        "capped_s": 3.268924199997855,
+        "activity": 312
+      },
+      {
+        "arm": "A",
+        "wall_s": 4.067702000000281,
+        "capped_s": 4.067702000000281,
+        "activity": 312
+      }
+    ],
+    "confirmation-035a": [
+      {
+        "arm": "A",
+        "wall_s": 4.7869978000017,
+        "capped_s": 4.7869978000017,
+        "activity": 312
+      },
+      {
+        "arm": "C",
+        "wall_s": 2.5855587999976706,
+        "capped_s": 2.5855587999976706,
+        "activity": 312
+      }
+    ],
+    "confirmation-013d": [
+      {
+        "arm": "C",
+        "wall_s": 29.02923269999883,
+        "capped_s": 29.02923269999883,
+        "activity": 376
+      },
+      {
+        "arm": "A",
+        "wall_s": 31.004558399996313,
+        "capped_s": 30,
+        "activity": null
+      }
+    ],
+    "confirmation-0696": [
+      {
+        "arm": "A",
+        "wall_s": 11.461119300001883,
+        "capped_s": 11.461119300001883,
+        "activity": 344
+      },
+      {
+        "arm": "C",
+        "wall_s": 4.783053800005291,
+        "capped_s": 4.783053800005291,
+        "activity": 344
+      }
+    ],
+    "confirmation-0359": [
+      {
+        "arm": "C",
+        "wall_s": 2.092608699997072,
+        "capped_s": 2.092608699997072,
+        "activity": 320
+      },
+      {
+        "arm": "A",
+        "wall_s": 5.122465000000375,
+        "capped_s": 5.122465000000375,
+        "activity": 320
+      }
+    ],
+    "confirmation-0018": [
+      {
+        "arm": "A",
+        "wall_s": 30.342570000000705,
+        "capped_s": 30,
+        "activity": null
+      },
+      {
+        "arm": "C",
+        "wall_s": 30.884856900003797,
+        "capped_s": 30,
+        "activity": null
+      }
+    ],
+    "confirmation-035e": [
+      {
+        "arm": "C",
+        "wall_s": 30.526110200000403,
+        "capped_s": 30,
+        "activity": null
+      },
+      {
+        "arm": "A",
+        "wall_s": 30.982016800000565,
+        "capped_s": 30,
+        "activity": null
+      }
+    ],
+    "confirmation-0778": [
+      {
+        "arm": "A",
+        "wall_s": 30.59902719999809,
+        "capped_s": 30,
+        "activity": null
+      },
+      {
+        "arm": "C",
+        "wall_s": 30.542094800002815,
+        "capped_s": 30,
+        "activity": null
+      }
+    ],
+    "confirmation-167e": [
+      {
+        "arm": "C",
+        "wall_s": 30.282273800003168,
+        "capped_s": 30,
+        "activity": null
+      },
+      {
+        "arm": "A",
+        "wall_s": 30.246496400002798,
+        "capped_s": 30,
+        "activity": null
+      }
+    ],
+    "confirmation-016f": [
+      {
+        "arm": "A",
+        "wall_s": 30.833097000002454,
+        "capped_s": 30,
+        "activity": null
+      },
+      {
+        "arm": "C",
+        "wall_s": 30.926228799995442,
+        "capped_s": 30,
+        "activity": null
+      }
+    ],
+    "confirmation-0017": [
+      {
+        "arm": "C",
+        "wall_s": 30.468095300006098,
+        "capped_s": 30,
+        "activity": null
+      },
+      {
+        "arm": "A",
+        "wall_s": 30.761140399998112,
+        "capped_s": 30,
+        "activity": null
+      }
+    ]
+  },
+  "confirmation": {
+    "total": 12,
+    "methods": {
+      "A": {
+        "completed": 5,
+        "capped_s": 237.3606063000043
+      },
+      "C": {
+        "completed": 6,
+        "capped_s": 222.92403999999078
+      }
+    },
+    "common": 5,
+    "paired_gm": 1.86070890335661,
+    "ratios": {
+      "01ab": 1.6505411270549528,
+      "01af": 1.244354947111637,
+      "035a": 1.8514364477056227,
+      "0696": 2.396192846500954,
+      "0359": 2.4478847861081445
+    },
+    "slower": [],
+    "gained": [
+      "013d"
+    ],
+    "lost": []
+  }
+}

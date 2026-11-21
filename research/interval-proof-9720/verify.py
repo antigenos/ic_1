@@ -41,7 +41,7 @@ def verify(final):
     designs={"pilot-0189":("0189","ABBA",20,30),"pilot-001e":("001e","BAAB",24,30),
              "saved-pair-0189":("0189","BCCB",20,30),"saved-pair-001e":("001e","CBBC",24,30),
              "ablation-0189":("0189","ODHBBHDO",20,30),"hard-018b":("018b","BA",28,300),
-             "hard-saved-018b":("018b","C",28,300)}
+             "hard-saved-018b":("018b","C",28,300),"repeat-013d":("013d","AC",16,30)}
     if final:
         designs.update({"confirmation-"+x["truth"]:(x["truth"],x["order"],x["cpu"],plan["cap"])
                         for x in plan["cases"]})
@@ -73,6 +73,7 @@ def verify(final):
                 w=None
             else:
                 assert row["status"]=="solver_completed_verified_witness" and row["returncode"]==0
+                assert wall<=cap, "Late completion requires separate timing review"
                 w=simulate(raw,4,int(truth,16))
                 assert w==row["witness"]
                 assert known.setdefault(truth,w["activity"])==w["activity"]
