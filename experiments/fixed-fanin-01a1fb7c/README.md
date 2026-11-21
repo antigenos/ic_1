@@ -2,9 +2,20 @@
 
 本目录基于远端复现提交 `afdbfca6d28e246b085e97d6da57f22ef0fd80b8`。上游版权和构建步骤见仓库根目录 THIRD_PARTY_NOTICES.md、licenses/ 和 REPRODUCTION.md。本对话的代码、实验和提交均以本目录为边界。独立复现的最终本地快照为 `365a8db35e39918d10e9a16cec1495611dd5e0d0`。
 
+## XOR 分支的验证结果
+
+在目标的每个输入方向上，若取 0 和取 1 后的两个余因子都非常数，输出门使用任一主输入就只剩 XOR 这一种合法操作。对一个有界查询，先证 XOR 分支不可行，即可一次排除输出的全部主输入连线。冻结版基线、仅拆出 XOR 的对照和显式排除连线的新版本在同一逻辑核串行运行，第二轮交换顺序。表中均为从启动到返回的完整秒数。
+
+| 函数 | 独立证明的最优活动度 | TCJAP 重建基线 | 仅拆分 XOR | 拆分并排除连线 | 基线时间 / 新版时间，配对几何平均 |
+|---|---:|---:|---:|---:|---:|
+| 0189（开发） | 304 | 1.825 / 1.891 | 2.922 / 2.752 | 2.656 / 2.630 | 0.703 |
+| 0198（预先指定的独立例） | 352 | 35.060 / 56.525 | 43.437 / 58.091 | 24.657 / 26.689 | 1.735 |
+
+在 0198 上，显式排除相对仅拆分 XOR 的配对几何平均加速为 1.958 倍。独立枚举 110342 个状态后排除了活动度严格低于 352 的电路。在 0189 上，拆分的额外开销大于排除连线的收益。两例各测两轮，主机负载有波动。此轮 56 次正式计时中，52 个返回电路通过真值表及活动度复算，4 次超时均来自 0369 的静态投影比较。原始计时、可执行文件标识、日志摘要和配对计算见 [独立实验审计](evidence/research-audit.json)。这两例不足以通过新方法的第 13 阶段整体贡献验收。早先 208 类的完成数只用于 DATE 至 TCJAP 的复现。
+
 ## 复核和运行
 
-从仓库根目录执行。以下 PowerShell 命令先公正地复核既有结果，再在新的输出目录运行。完整研究结果在 evidence/，用于重复计时的目录应取新名称。逻辑核编号可按主机配置选择；每个病例的各配置固定在同一核上。Linux 依赖与 Windows 的 MSYS2 UCRT64 工具链按根目录 REPRODUCTION.md 配置。
+从仓库根目录执行。前两个命令分别复核原复现数据和本次独立实验。完整结果在 evidence/，重复计时使用新目录。逻辑核编号可按主机配置选择，每个函数的各配置固定在同一核上。Linux 依赖与 Windows 的 MSYS2 UCRT64 工具链按根目录 REPRODUCTION.md 配置。
 
 ```powershell
 $study = 'experiments/fixed-fanin-01a1fb7c'
@@ -19,6 +30,8 @@ python "$study/build.py" types
 python "$study/build.py" partition
 python "$study/build.py" xor-proof
 python "$study/compare.py" 0189 .local/retest-0189 --cpu 10 --cap 60 --arms base split-bit split-bit base
+python "$study/compare.py" 0198 .local/retest-0198 --cpu 10 --cap 180 --arms base xor-only xor-proof xor-proof xor-only base
+python tools/lower_bound.py "$study/evidence/xor-0198/01-base/result.json"
 ```
 
 不需编译即可运行上面的两项审计。若本机的原始归档和构建源码已经准备好，可运行 `python "$study/audit_reproduction.py" .local/downloads` 同时核对三个上游归档及实际源文件。原始器件级功耗不在本次指标内；本研究复算的活动度按 DATE 论文的均匀输入模型定义。

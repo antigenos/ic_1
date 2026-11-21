@@ -9,10 +9,14 @@ HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
 sys.path.insert(0,str(ROOT/"tools"))
 from witness import simulate
+from lower_bound import cheaper_circuit
 
 
-def read_case(group):
+def read_case(group, planned, cap):
     brief=json.loads((group/"summary.json").read_text())
+    assert [s["mode"] for s in brief]==planned, group
+    actual_dirs={p.name for p in group.iterdir() if p.is_dir()}
+    assert actual_dirs=={f"{i:02}-{mode}" for i,mode in enumerate(planned,1)}, group
     rows=[]
     for k,s in enumerate(brief,1):
         mode=s["mode"]
@@ -28,14 +32,16 @@ def read_case(group):
         assert result["experiment"]["order"]==k and result["experiment"]["mode"]==mode
         assert (s["status"],s["wall_s"],s["capped_s"])==(
             result["status"],result["wall_s"],min(result["wall_s"],result["timeout_s"]))
-        assert s["wall_s"]<=result["timeout_s"]+3
-        log_bytes=(run/"solver.log").read_bytes()
+        assert result["timeout_s"]==cap and 0<s["wall_s"]<=cap+3
+        assert result["capped_wall_s"]==s["capped_s"]
+        assert t==group.name.split("-")[1]
+        log_bytes=(run/"solver.log").read_bytes().replace(b"\r\n",b"\n")
         if result["status"]=="solver_completed_verified_witness":
-            assert result["returncode"]==0
+            assert result["returncode"]==0 and b"Total runtime" in log_bytes
             check=simulate(log_bytes.decode(),4,int(t,16))
             assert check==result["witness"] and check["activity"]==s["activity"]
         else:
-            assert result["status"]=="timeout" and s["activity"] is None
+            assert result["status"]=="timeout" and s["activity"] is None and s["wall_s"]>=cap
         rows.append(dict(**s,cpu=result["experiment"]["cpu"],truth=t,cap=result["timeout_s"],
                          binary=result["binary_sha256"],log_sha256=hashlib.sha256(log_bytes).hexdigest()))
     assert len({(r["truth"],r["cpu"],r["cap"]) for r in rows})==1
@@ -55,12 +61,36 @@ def read_case(group):
 
 
 def audit():
+    plan={
+        "timing-0189": ("base ops margins all all margins ops base",60),
+        "timing-0369": ("base all",60),
+        "timing-0369-long": ("all base",300),
+    }
+    for case in ("0019","0189"):
+        plan["interval-"+case]=("base interval interval base",60)
+        plan["types-"+case]=("base types-only types types types-only base",60)
+        plan["partition-"+case]=("base split-bit split-five split-five split-bit base",60)
+    for case,cap in (("0189",60),("0198",180)):
+        plan["xor-"+case]=("base xor-only xor-proof xor-proof xor-only base",cap)
     groups={}
     for path in sorted((HERE/"evidence").glob("*/summary.json")):
-        groups[path.parent.name]=read_case(path.parent)
+        name=path.parent.name
+        order,cap=plan[name]
+        groups[name]=read_case(path.parent,order.split(),cap)
+    assert groups.keys()==plan.keys()
+    optima={"0189":304}
+    for case in ("0019","0198"):
+        proof=json.loads((HERE/"evidence"/("proof-"+case+".json")).read_text())
+        assert proof["truth"]==case and proof["cheaper_exists"] is False
+        assert cheaper_circuit(4,int(case,16),proof["strict_upper"])==(False,proof["states"])
+        optima[case]=proof["strict_upper"]
+    for group in groups.values():
+        for row in group["rows"]:
+            if row["activity"] is not None and row["truth"] in optima:
+                assert row["activity"]==optima[row["truth"]]
     counts=sum(len(v["rows"]) for v in groups.values())
     witnesses=sum(r["activity"] is not None for v in groups.values() for r in v["rows"])
-    return dict(timed_runs=counts,replayed_witnesses=witnesses,groups=groups)
+    return dict(timed_runs=counts,replayed_witnesses=witnesses,strict_optima=optima,groups=groups)
 
 
 if __name__=="__main__":
