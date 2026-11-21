@@ -1,0 +1,29 @@
+{
+  "start_utc": "2026-11-21T04:07:12.907527+00:00",
+  "binary_sha256": "4cee3ebc9f4616bd06262d9884f7ab588c3f8dcca3bab1724b37ed2bdf47f737",
+  "command": [
+    "abc.exe",
+    "-c",
+    "pexact -I 4 -M 2 0017"
+  ],
+  "timeout_s": 120,
+  "experiment": {
+    "cpu": 8,
+    "truth": "0017",
+    "mode": "wide-hightail",
+    "order": 2
+  },
+  "pid": 28652,
+  "child_affinity": [
+    8
+  ],
+  "returncode": 0,
+  "wall_s": 2.4454617999945185,
+  "capped_wall_s": 2.4454617999945185,
+  "witness": {
+    "truth": "0017",
+    "activity": 400,
+    "gates": 6
+  },
+  "status": "solver_completed_verified_witness"
+}

@@ -83,6 +83,8 @@ def audit():
     groups={}
     for path in sorted((HERE/"evidence").glob("*/summary.json")):
         name=path.parent.name
+        if name=="family-main":
+            continue  # The rotated 208-case export is checked by audit_family.py.
         order,cap=plan[name]
         groups[name]=read_case(path.parent,order.split(),cap)
     assert groups.keys()==plan.keys()

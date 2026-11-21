@@ -1,0 +1,30 @@
+[
+  {
+    "mode": "tail-plain360",
+    "wall_s": 0.7567800999968313,
+    "capped_s": 0.7567800999968313,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "tail-prune360",
+    "wall_s": 1.0602615999960108,
+    "capped_s": 1.0602615999960108,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "tail-prune360",
+    "wall_s": 1.7528462999980547,
+    "capped_s": 1.7528462999980547,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "tail-plain360",
+    "wall_s": 1.7296799999967334,
+    "capped_s": 1.7296799999967334,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  }
+]

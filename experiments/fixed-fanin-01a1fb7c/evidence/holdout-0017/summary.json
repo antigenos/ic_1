@@ -1,0 +1,30 @@
+[
+  {
+    "mode": "base",
+    "wall_s": 120.1334554999994,
+    "capped_s": 120,
+    "status": "timeout",
+    "activity": null
+  },
+  {
+    "mode": "bounded-projected",
+    "wall_s": 120.61031789999834,
+    "capped_s": 120,
+    "status": "timeout",
+    "activity": null
+  },
+  {
+    "mode": "bounded-projected",
+    "wall_s": 121.4364188000036,
+    "capped_s": 120,
+    "status": "timeout",
+    "activity": null
+  },
+  {
+    "mode": "base",
+    "wall_s": 121.0871582999971,
+    "capped_s": 120,
+    "status": "timeout",
+    "activity": null
+  }
+]

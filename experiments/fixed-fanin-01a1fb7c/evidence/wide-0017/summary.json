@@ -1,0 +1,30 @@
+[
+  {
+    "mode": "wide-highplain",
+    "wall_s": 5.00020349999977,
+    "capped_s": 5.00020349999977,
+    "status": "solver_completed_verified_witness",
+    "activity": 400
+  },
+  {
+    "mode": "wide-hightail",
+    "wall_s": 2.4454617999945185,
+    "capped_s": 2.4454617999945185,
+    "status": "solver_completed_verified_witness",
+    "activity": 400
+  },
+  {
+    "mode": "wide-hightail",
+    "wall_s": 2.5121928000007756,
+    "capped_s": 2.5121928000007756,
+    "status": "solver_completed_verified_witness",
+    "activity": 400
+  },
+  {
+    "mode": "wide-highplain",
+    "wall_s": 2.5379115999967325,
+    "capped_s": 2.5379115999967325,
+    "status": "solver_completed_verified_witness",
+    "activity": 400
+  }
+]
