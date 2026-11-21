@@ -91,6 +91,10 @@ def report(manifest,directory=OUT):
                         "activity":row.get("witness",{}).get("activity")} for arm,row in data[t].items()}
     result=outcomes(data)
     result["cases"]=by_case
+    result["by_signed_exclusion"]={}
+    for strict in (False,True):
+        group={r["truth"]:data[r["truth"]] for r in manifest if r["signed_stricter"]==strict}
+        result["by_signed_exclusion"]["strict" if strict else "identical"]=outcomes(group)
     recovery=directory/"pause-recovery.json"
     if recovery.exists():
         old=json.loads(recovery.read_text())

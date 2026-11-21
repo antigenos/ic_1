@@ -70,12 +70,15 @@ static void endpoint_code_literals(int *dest, int first_var, int op)
     for (int b=0; b<3; ++b) dest[b]=Abc_Var2Lit(first_var+b,(op>>(1+b))&1);
 }
 
+#include "endpoint_short.h"
+
 static int endpoint_window(PexaMan_t *p, int budget, int emit)
 {
     const char *mode=getenv("REPLAY_ENDPOINT");
     if (!mode || p->nVars!=4 || p->nNodes<2 || p->pPars->fOnlyAnd) return 1;
     int joint=!strcmp(mode,"joint");
-    if (!joint && strcmp(mode,"margins")) return 1;
+    int compact=!strcmp(mode,"short");
+    if (!joint && !compact && strcmp(mode,"margins")) return 1;
     const char *symmetry=getenv("REPLAY_FIRST_SYMMETRY");
     if (!symmetry || strcmp(symmetry,"chain-first")) return 1;
     endpoint_prepare((unsigned)p->pTruth[0] & 65535u);
@@ -88,6 +91,7 @@ static int endpoint_window(PexaMan_t *p, int budget, int emit)
     }
     if (!emit || !cols) return cols!=0;
     int output_var=1+3*(p->nNodes-1);
+    if (compact) return endpoint_short(p,rows,output_var);
     for (int j=0;j<5;++j) if (!(cols & (1<<j))) {
         int c[3];
         endpoint_code_literals(c,output_var,endpoint_ops[j]);

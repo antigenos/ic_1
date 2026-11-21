@@ -45,6 +45,7 @@ def check(include):
         assert next(lines,None) is None
         queries=[]
         cases=[]
+        legal_rows=[]
         for t in (0x0189,0x03dd):
             for n in range(2,9):
                 k=min(4,n-2)
@@ -66,6 +67,7 @@ def check(include):
                     extra=Counter(first[g]+last[o] for g in gs for o in ops if (g,o) not in ok)
                     queries.append((t,n,b))
                     cases.append((bool(ok),independent,extra))
+                    legal_rows.append([(frozenset(first[g]+last[o]),(g,o) in ok) for g,o in weights])
         totals={}
         for mode in ("margins","joint"):
             lines=iter(trace(queries,mode))
@@ -82,7 +84,26 @@ def check(include):
                 nclauses+=expected.total()
             assert next(lines,None) is None
             totals[mode]=nclauses
-    return dict(targets=len(targets),matched_bound_cells=cells,windows_per_mode=len(queries),matched_clauses=totals)
+        output=trace(queries,"short")
+        cursor=0
+        sizes=Counter()
+        checked=0
+        for (t,n,b),(passed,_,_),choices in zip(queries,cases,legal_rows):
+            assert output[cursor:cursor+2]==[f"Q {t:04x} {n} {b}",f"P {int(passed)}"]
+            cursor+=2
+            clauses=[]
+            while cursor<len(output) and output[cursor].startswith("C "):
+                lits=frozenset(map(int,output[cursor].split()[1:]))
+                assert 1<=len(lits)<=8
+                sizes[len(lits)]+=1
+                clauses.append(lits)
+                cursor+=1
+            for bits,allowed in choices:
+                assert (passed and not any(c<=bits for c in clauses))==allowed
+                checked+=1
+        assert cursor==len(output)
+    return dict(targets=len(targets),matched_bound_cells=cells,windows_per_mode=len(queries),matched_clauses=totals,
+                compact_validated_assignments=checked,compact_clause_lengths=dict(sorted(sizes.items())))
 
 
 if __name__=="__main__":

@@ -1,0 +1,530 @@
+{
+  "functions": 12,
+  "runs": 48,
+  "totals": {
+    "F": {
+      "solved": 6,
+      "capped_s": 1945.5414971000064
+    },
+    "Q": {
+      "solved": 7,
+      "capped_s": 1761.5363735000064
+    },
+    "H": {
+      "solved": 8,
+      "capped_s": 1720.3922246999864
+    },
+    "N": {
+      "solved": 8,
+      "capped_s": 1627.7633041999943
+    }
+  },
+  "relative_to_N": {
+    "F": {
+      "ratios": {
+        "011f": 2.296155859055449,
+        "036b": 1.682377098842131,
+        "035b": 1.0099894983690705,
+        "01ae": 1.2461406141373224,
+        "1be4": 2.1422765374891335,
+        "06f9": 2.0988623378038893
+      },
+      "common": 6,
+      "gm": 1.672160721460091,
+      "gained": [
+        "0187",
+        "036f"
+      ],
+      "lost": []
+    },
+    "Q": {
+      "ratios": {
+        "011f": 1.004895772443983,
+        "036b": 1.840118429628834,
+        "036f": 1.243330745593239,
+        "035b": 1.044683528118567,
+        "01ae": 0.7763757837832299,
+        "1be4": 1.2490764217683292,
+        "06f9": 1.6580036044035527
+      },
+      "common": 7,
+      "gm": 1.2129038714687626,
+      "gained": [
+        "0187"
+      ],
+      "lost": []
+    },
+    "H": {
+      "ratios": {
+        "0187": 1.0882987431258697,
+        "011f": 0.9654236245367613,
+        "036b": 1.7047110428834187,
+        "036f": 1.2338180002431005,
+        "035b": 1.0004515040051556,
+        "01ae": 0.6429866111307224,
+        "1be4": 1.1876297548482364,
+        "06f9": 1.590851057228819
+      },
+      "common": 8,
+      "gm": 1.1314479007569807,
+      "gained": [],
+      "lost": []
+    }
+  },
+  "cases": {
+    "019b": {
+      "F": {
+        "status": "timeout",
+        "wall_s": 300.216892299999,
+        "activity": null
+      },
+      "Q": {
+        "status": "timeout",
+        "wall_s": 300.04976980000356,
+        "activity": null
+      },
+      "N": {
+        "status": "timeout",
+        "wall_s": 300.05479970000306,
+        "activity": null
+      },
+      "H": {
+        "status": "timeout",
+        "wall_s": 300.9414684000003,
+        "activity": null
+      }
+    },
+    "0187": {
+      "Q": {
+        "status": "timeout",
+        "wall_s": 300.22623819999717,
+        "activity": null
+      },
+      "H": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 270.03861770000367,
+        "activity": 440
+      },
+      "F": {
+        "status": "timeout",
+        "wall_s": 300.055912900003,
+        "activity": null
+      },
+      "N": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 248.12912760000472,
+        "activity": 440
+      }
+    },
+    "066b": {
+      "H": {
+        "status": "timeout",
+        "wall_s": 300.1860421999954,
+        "activity": null
+      },
+      "N": {
+        "status": "timeout",
+        "wall_s": 300.05038539999805,
+        "activity": null
+      },
+      "Q": {
+        "status": "timeout",
+        "wall_s": 300.02310049999505,
+        "activity": null
+      },
+      "F": {
+        "status": "timeout",
+        "wall_s": 300.9853551999986,
+        "activity": null
+      }
+    },
+    "0693": {
+      "N": {
+        "status": "timeout",
+        "wall_s": 300.2306643999982,
+        "activity": null
+      },
+      "F": {
+        "status": "timeout",
+        "wall_s": 300.0215285999948,
+        "activity": null
+      },
+      "H": {
+        "status": "timeout",
+        "wall_s": 300.03677400000015,
+        "activity": null
+      },
+      "Q": {
+        "status": "timeout",
+        "wall_s": 300.912416799998,
+        "activity": null
+      }
+    },
+    "011f": {
+      "F": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 19.769995400005428,
+        "activity": 356
+      },
+      "Q": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 8.652193499998248,
+        "activity": 356
+      },
+      "N": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 8.610040699997626,
+        "activity": 356
+      },
+      "H": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 8.312336700000742,
+        "activity": 356
+      }
+    },
+    "036b": {
+      "Q": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 127.98482530000183,
+        "activity": 416
+      },
+      "H": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 118.56690389999858,
+        "activity": 416
+      },
+      "F": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 117.01352240000415,
+        "activity": 416
+      },
+      "N": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 69.55249360000016,
+        "activity": 416
+      }
+    },
+    "036f": {
+      "H": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 117.45715749999363,
+        "activity": 416
+      },
+      "N": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 95.19812280000042,
+        "activity": 416
+      },
+      "Q": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 118.36275300000125,
+        "activity": 416
+      },
+      "F": {
+        "status": "timeout",
+        "wall_s": 300.9772920999967,
+        "activity": null
+      }
+    },
+    "07bc": {
+      "N": {
+        "status": "timeout",
+        "wall_s": 300.2061962000007,
+        "activity": null
+      },
+      "F": {
+        "status": "timeout",
+        "wall_s": 301.15268639999704,
+        "activity": null
+      },
+      "H": {
+        "status": "timeout",
+        "wall_s": 300.06603280000127,
+        "activity": null
+      },
+      "Q": {
+        "status": "timeout",
+        "wall_s": 300.99252259999776,
+        "activity": null
+      }
+    },
+    "035b": {
+      "F": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 2.2738543000014033,
+        "activity": 320
+      },
+      "Q": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 2.3519632000025013,
+        "activity": 320
+      },
+      "N": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 2.251364299998386,
+        "activity": 320
+      },
+      "H": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 2.2523807999968994,
+        "activity": 320
+      }
+    },
+    "01ae": {
+      "Q": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 1.822595799996634,
+        "activity": 320
+      },
+      "H": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 1.5094555000032415,
+        "activity": 320
+      },
+      "F": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 2.925401200001943,
+        "activity": 320
+      },
+      "N": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 2.347569099998509,
+        "activity": 320
+      }
+    },
+    "1be4": {
+      "H": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 1.2036028999937116,
+        "activity": 320
+      },
+      "N": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 1.0134495999955107,
+        "activity": 320
+      },
+      "Q": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 1.265876000004937,
+        "activity": 320
+      },
+      "F": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 2.1710892999981297,
+        "activity": 320
+      }
+    },
+    "06f9": {
+      "N": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 0.6611364999989746,
+        "activity": 224
+      },
+      "F": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 1.387634499995329,
+        "activity": 224
+      },
+      "H": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 1.0517696999959298,
+        "activity": 224
+      },
+      "Q": {
+        "status": "solver_completed_verified_witness",
+        "wall_s": 1.0961667000010493,
+        "activity": 224
+      }
+    }
+  },
+  "by_signed_exclusion": {
+    "identical": {
+      "functions": 6,
+      "runs": 24,
+      "totals": {
+        "F": {
+          "solved": 4,
+          "capped_s": 741.9827733000129
+        },
+        "Q": {
+          "solved": 4,
+          "capped_s": 740.8115777999992
+        },
+        "H": {
+          "solved": 5,
+          "capped_s": 700.6796946000031
+        },
+        "N": {
+          "solved": 5,
+          "capped_s": 630.8905952999994
+        }
+      },
+      "relative_to_N": {
+        "F": {
+          "ratios": {
+            "011f": 2.296155859055449,
+            "036b": 1.682377098842131,
+            "035b": 1.0099894983690705,
+            "01ae": 1.2461406141373224
+          },
+          "common": 4,
+          "gm": 1.4849169175754868,
+          "gained": [
+            "0187"
+          ],
+          "lost": []
+        },
+        "Q": {
+          "ratios": {
+            "011f": 1.004895772443983,
+            "036b": 1.840118429628834,
+            "035b": 1.044683528118567,
+            "01ae": 0.7763757837832299
+          },
+          "common": 4,
+          "gm": 1.1066387681294554,
+          "gained": [
+            "0187"
+          ],
+          "lost": []
+        },
+        "H": {
+          "ratios": {
+            "0187": 1.0882987431258697,
+            "011f": 0.9654236245367613,
+            "036b": 1.7047110428834187,
+            "035b": 1.0004515040051556,
+            "01ae": 0.6429866111307224
+          },
+          "common": 5,
+          "gm": 1.028733681205041,
+          "gained": [],
+          "lost": []
+        }
+      }
+    },
+    "strict": {
+      "functions": 6,
+      "runs": 24,
+      "totals": {
+        "F": {
+          "solved": 2,
+          "capped_s": 1203.5587237999935
+        },
+        "Q": {
+          "solved": 3,
+          "capped_s": 1020.7247957000072
+        },
+        "H": {
+          "solved": 3,
+          "capped_s": 1019.7125300999833
+        },
+        "N": {
+          "solved": 3,
+          "capped_s": 996.8727088999949
+        }
+      },
+      "relative_to_N": {
+        "F": {
+          "ratios": {
+            "1be4": 2.1422765374891335,
+            "06f9": 2.0988623378038893
+          },
+          "common": 2,
+          "gm": 2.120458332931082,
+          "gained": [
+            "036f"
+          ],
+          "lost": []
+        },
+        "Q": {
+          "ratios": {
+            "036f": 1.243330745593239,
+            "1be4": 1.2490764217683292,
+            "06f9": 1.6580036044035527
+          },
+          "common": 3,
+          "gm": 1.3706304776753262,
+          "gained": [],
+          "lost": []
+        },
+        "H": {
+          "ratios": {
+            "036f": 1.2338180002431005,
+            "1be4": 1.1876297548482364,
+            "06f9": 1.590851057228819
+          },
+          "common": 3,
+          "gm": 1.3259299002189053,
+          "gained": [],
+          "lost": []
+        }
+      }
+    }
+  },
+  "all_four_after_resume": {
+    "functions": 9,
+    "runs": 36,
+    "totals": {
+      "F": {
+        "solved": 4,
+        "capped_s": 1508.7579792999968
+      },
+      "Q": {
+        "solved": 4,
+        "capped_s": 1506.5366017000051
+      },
+      "H": {
+        "solved": 5,
+        "capped_s": 1476.0558265999935
+      },
+      "N": {
+        "solved": 5,
+        "capped_s": 1454.402647099996
+      }
+    },
+    "relative_to_N": {
+      "F": {
+        "ratios": {
+          "035b": 1.0099894983690705,
+          "01ae": 1.2461406141373224,
+          "1be4": 2.1422765374891335,
+          "06f9": 2.0988623378038893
+        },
+        "common": 4,
+        "gm": 1.54236033780028,
+        "gained": [
+          "0187"
+        ],
+        "lost": []
+      },
+      "Q": {
+        "ratios": {
+          "035b": 1.044683528118567,
+          "01ae": 0.7763757837832299,
+          "1be4": 1.2490764217683292,
+          "06f9": 1.6580036044035527
+        },
+        "common": 4,
+        "gm": 1.1384338543001458,
+        "gained": [
+          "0187"
+        ],
+        "lost": []
+      },
+      "H": {
+        "ratios": {
+          "0187": 1.0882987431258697,
+          "035b": 1.0004515040051556,
+          "01ae": 0.6429866111307224,
+          "1be4": 1.1876297548482364,
+          "06f9": 1.590851057228819
+        },
+        "common": 5,
+        "gm": 1.057526692297862,
+        "gained": [],
+        "lost": []
+      }
+    }
+  }
+}

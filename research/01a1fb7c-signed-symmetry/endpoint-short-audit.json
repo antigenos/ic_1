@@ -1,0 +1,18 @@
+{
+  "targets": 208,
+  "matched_bound_cells": 81775,
+  "windows_per_mode": 296,
+  "matched_clauses": {
+    "margins": 932,
+    "joint": 5432
+  },
+  "compact_validated_assignments": 21260,
+  "compact_clause_lengths": {
+    "1": 236,
+    "2": 518,
+    "3": 600,
+    "4": 352,
+    "5": 62,
+    "6": 12
+  }
+}
