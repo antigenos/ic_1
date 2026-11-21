@@ -11,6 +11,7 @@ import os
 from pathlib import Path
 from statistics import mean
 import sys
+import time
 from zipfile import ZIP_DEFLATED, ZipFile
 
 HERE = Path(__file__).resolve().parent
@@ -104,7 +105,22 @@ def read_case(path):
     return row
 
 
-def run_lane(cpu,manifest,work,frozen):
+def wait_for_quiet_cpu(cpu, samples):
+    if samples is None:
+        return
+    while True:
+        try:
+            state = json.loads((samples / "latest.json").read_bytes())
+        except (FileNotFoundError, PermissionError):
+            state = None
+        if state is not None:
+            age = time.time() - state["epoch"]
+            if 0 <= age <= 45 and state["consecutive_free"][str(cpu)] >= 3:
+                return
+        time.sleep(5)
+
+
+def run_lane(cpu,manifest,work,frozen,samples):
     pin(cpu)
     bins=binary_paths(frozen)
     env={k:v for k,v in os.environ.items() if not k.startswith(("REPLAY_","OPTWIN_"))}
@@ -118,6 +134,7 @@ def run_lane(cpu,manifest,work,frozen):
                 if not (path/"result.json").exists():
                     if path.exists():
                         raise RuntimeError(f"Inspect incomplete existing solver before resuming: {path}")
+                    wait_for_quiet_cpu(cpu,samples)
                     run(bins[arm],t,4,2,CAP,path,env=env,
                         metadata=dict(truth=t,arm=arm,cpu=cpu,order=i,cohort="family-300"))
                 row=read_case(path)
@@ -136,10 +153,10 @@ def check_plan(m):
     assert all(c["order"] in ("AC","CA") for c in m["cases"])
 
 
-def guarded_lane(cpu,manifest,work,frozen):
+def guarded_lane(cpu,manifest,work,frozen,samples):
     error_path=work/f"error-{cpu}.json"
     try:
-        run_lane(cpu,manifest,work,frozen)
+        run_lane(cpu,manifest,work,frozen,samples)
     except Exception as exc:
         error_path.write_text(json.dumps(dict(cpu=cpu,error=repr(exc))),encoding="utf8")
         raise
@@ -189,6 +206,7 @@ def main():
     p.add_argument("--fresh",action="store_true",help="Plan all 416 invocations, including 018b")
     p.add_argument("--manifest",type=Path,default=HERE/"evidence/family-plan.json")
     p.add_argument("--work",type=Path,default=HERE/".local/full-300")
+    p.add_argument("--host-samples",type=Path,help="Wait for three quiet host samples on the assigned physical core before an invocation")
     p.add_argument("--archive",type=Path,default=HERE/"evidence/family-300.zip")
     args=p.parse_args()
     if args.action=="plan":
@@ -203,8 +221,13 @@ def main():
     if args.action=="run":
         assert {k:digest(v) for k,v in binary_paths(args.frozen.resolve()).items()}==m["binary_sha256"]
         work.mkdir(parents=True,exist_ok=True)
+        samples = args.host_samples.resolve() if args.host_samples else None
+        if samples is not None:
+            samples.mkdir(exist_ok=True,parents=True)
+            with (samples/"controller.json").open("x") as f:
+                json.dump(dict(pid=os.getpid(),started=time.time(),cpus=m["cpus"]),f)
         with ProcessPoolExecutor(max_workers=len(m["cpus"])) as pool:
-            tasks=[pool.submit(guarded_lane,c,m,work,args.frozen.resolve()) for c in m["cpus"]]
+            tasks=[pool.submit(guarded_lane,c,m,work,args.frozen.resolve(),samples) for c in m["cpus"]]
             for task in tasks:
                 task.result()
     elif args.action=="status":

@@ -61,3 +61,17 @@ python family.py audit BASE --manifest .local/repeat-plan.json --archive .local/
 ```
 
 本次正式任务使用 evidence/family-plan.json 与 .local/full-300。可用 `python family.py status BASE` 读取已验收数量和错误；两条既有长例单列。首批已读回五个子进程的 CPU 亲和性。机器在短面板运行时其他独立研究对话也使用过 CPU 16、20、24、28，因此相邻的反序复测与完整程序时间尤其重要。
+
+### 全族实验恢复记录
+
+用户暂停时已核验 14/416 项，其中包含此前的两条 018b 记录。5 项在运行中被中断。2026-11-21 03:40 UTC 首次恢复后，宿主进程表显示五个指定核心各被另一个 ABC 求解器同时占用。该次恢复的 5 个进程也已停止。两组调用均未生成结果文件，原始请求、进程回执和求解器输出留在 [中断记录](evidence/family-interruptions.jsonl)。它们不计入完成数、超时数或 416 项的截断成本。
+
+第二次恢复沿用原清单、二进制、顺序及每次 300 秒限时。主机为 16 物理核、32 逻辑核的 Ryzen 9 8945HX。经 Windows 的物理核心拓扑核对，逻辑 CPU 4、6、8、10、14 分别与 5、7、9、11、15 共享物理核。每 25 秒抽样外部 ABC 的亲和性；某条队列的物理核连续三次采样空闲，才会启动下一次求解。等待发生在求解计时前。观察器记录测量过程中外部 ABC 对这些核的占用，无法排除两次采样之间的短任务和其他类型的系统负载。结算时单列测量中观察到重叠、跨暂停和缺少采样的配对，并核对去掉这些配对后的结果。
+
+若需同样的共享主机检查，可在此目录用新的采样目录运行下列两个进程。观察器需要宿主机读取进程亲和性的权限。其他机器应按其实际物理拓扑传入 `-LaneCpus` 和 `-Siblings`。
+
+```powershell
+python family.py run BASE --host-samples .local/host-resume-01
+# 在第二个终端中运行，控制器退出时观察器也会退出
+./watch-host.ps1 -SampleDirectory .local/host-resume-01
+```
