@@ -50,3 +50,14 @@ python verify.py
 ```
 
 paired.py 的 A 为冻结 TCJAP，B 为允许分值加历史无解记录，C 在 B 上保留可行电路并证明严格下界，D/H/O 分别为仅分值、仅历史、关闭两个条件。统计实验均关闭详细跟踪。每次新进程自行承担构造可达分值集合及求解的全部成本。check_windows.py 与 check_saved.c 服务于正确性检查，求解时无需运行。confirm.py 读取已登记的编号和顺序，在预设三核心执行已登记面板；本文记录的原始行保存在 evidence 中。
+
+在已有结果的仓库中用 `python confirm.py BASE --run-id repeat1` 可另起一次完整面板。新主机可用实际可用的逻辑 CPU 建立新的全族计划。例如在本目录执行下列命令；此前构建产生 .local 目录。每个工作队列由操作系统文件锁保护，重复执行同一计划会核验并复用已结束记录。存在只有启动记录的试验时先核查其进程；确定停止后保留该次原始目录并从缺失项恢复。
+
+```text
+python family.py plan BASE --fresh --cpus 0 2 4 --manifest .local/repeat-plan.json
+python family.py run BASE --manifest .local/repeat-plan.json --work .local/repeat
+python family.py pack BASE --manifest .local/repeat-plan.json --work .local/repeat --archive .local/repeat.zip
+python family.py audit BASE --manifest .local/repeat-plan.json --archive .local/repeat.zip
+```
+
+本次正式任务使用 evidence/family-plan.json 与 .local/full-300。可用 `python family.py status BASE` 读取已验收数量和错误；两条既有长例单列。首批已读回五个子进程的 CPU 亲和性。机器在短面板运行时其他独立研究对话也使用过 CPU 16、20、24、28，因此相邻的反序复测与完整程序时间尤其重要。

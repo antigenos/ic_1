@@ -3,6 +3,7 @@ import argparse
 from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -31,12 +32,12 @@ def plan():
                 strata=["frozen <2s","2s to <15s","15s to completion","timeout at 300s"],cases=entries)
 
 
-def lane(cpu,cases,frozen,cap):
+def lane(cpu,cases,frozen,cap,run_id):
     for item in cases:
         if item["cpu"]!=cpu:
             continue
         t,order = item["truth"],item["order"]
-        tag = "confirmation-"+t
+        tag = "confirmation-"+t+("-"+run_id if run_id else "")
         existing = HERE/"evidence"/(tag+".jsonl")
         if existing.exists():
             saved = [json.loads(s) for s in existing.read_text().splitlines()]
@@ -55,7 +56,10 @@ if __name__=="__main__":
     ap=argparse.ArgumentParser()
     ap.add_argument("frozen",type=Path)
     ap.add_argument("--plan",action="store_true")
+    ap.add_argument("--run-id",default="",help="Use a new label to repeat the complete published panel")
     args=ap.parse_args()
+    if args.run_id and not re.fullmatch(r"[A-Za-z0-9-]+",args.run_id):
+        ap.error("--run-id must use letters, digits or hyphens")
     study=plan()
     if args.plan:
         with PLAN.open("x") as out:
@@ -64,7 +68,7 @@ if __name__=="__main__":
     else:
         assert json.loads(PLAN.read_text())==study
         with ThreadPoolExecutor(max_workers=3) as workers:
-            futures=[workers.submit(lane,cpu,study["cases"],args.frozen.resolve(),study["cap"])
+            futures=[workers.submit(lane,cpu,study["cases"],args.frozen.resolve(),study["cap"],args.run_id)
                      for cpu in sorted({r["cpu"] for r in study["cases"]})]
             for future in futures:
                 future.result()

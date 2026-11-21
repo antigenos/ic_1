@@ -43,11 +43,11 @@ def reused():
     return {"A":json.loads(a),"C":json.loads(c)}
 
 
-def plan(frozen,cpus):
+def plan(frozen,cpus,fresh=False):
     refs=original()
     hashes={k:digest(v) for k,v in binary_paths(frozen).items()}
     prior=reused()
-    reuse=all(v["binary_sha256"]==hashes[k] and v["timeout_s"]==CAP for k,v in prior.items())
+    reuse=not fresh and all(v["binary_sha256"]==hashes[k] and v["timeout_s"]==CAP for k,v in prior.items())
     loads={c:0.0 for c in cpus}
     index={r["experiment"]["truth"]:i for i,r in enumerate(refs)}
     picks=[]
@@ -186,13 +186,14 @@ def main():
     p.add_argument("action",choices=("plan","run","status","pack","audit"))
     p.add_argument("frozen",type=Path)
     p.add_argument("--cpus",nargs="+",type=int,default=[4,6,8,10,14])
+    p.add_argument("--fresh",action="store_true",help="Plan all 416 invocations, including 018b")
     p.add_argument("--manifest",type=Path,default=HERE/"evidence/family-plan.json")
     p.add_argument("--work",type=Path,default=HERE/".local/full-300")
     p.add_argument("--archive",type=Path,default=HERE/"evidence/family-300.zip")
     args=p.parse_args()
     if args.action=="plan":
         assert len(set(args.cpus))==len(args.cpus) and args.cpus
-        m=plan(args.frozen.resolve(),args.cpus)
+        m=plan(args.frozen.resolve(),args.cpus,args.fresh)
         with args.manifest.open("x") as f:
             json.dump(m,f,indent=2);f.write("\n")
         return
