@@ -1,0 +1,84 @@
+{
+  "cap": 30,
+  "selection": "first three by sha256(interval-9720-v1/ + four-digit truth) within stratum",
+  "strata": [
+    "frozen <2s",
+    "2s to <15s",
+    "15s to completion",
+    "timeout at 300s"
+  ],
+  "cases": [
+    {
+      "truth": "01ab",
+      "stratum": 0,
+      "cpu": 16,
+      "order": "AC"
+    },
+    {
+      "truth": "01af",
+      "stratum": 0,
+      "cpu": 20,
+      "order": "CA"
+    },
+    {
+      "truth": "035a",
+      "stratum": 0,
+      "cpu": 24,
+      "order": "AC"
+    },
+    {
+      "truth": "013d",
+      "stratum": 1,
+      "cpu": 16,
+      "order": "CA"
+    },
+    {
+      "truth": "0696",
+      "stratum": 1,
+      "cpu": 20,
+      "order": "AC"
+    },
+    {
+      "truth": "0359",
+      "stratum": 1,
+      "cpu": 24,
+      "order": "CA"
+    },
+    {
+      "truth": "0018",
+      "stratum": 2,
+      "cpu": 16,
+      "order": "AC"
+    },
+    {
+      "truth": "035e",
+      "stratum": 2,
+      "cpu": 20,
+      "order": "CA"
+    },
+    {
+      "truth": "0778",
+      "stratum": 2,
+      "cpu": 24,
+      "order": "AC"
+    },
+    {
+      "truth": "167e",
+      "stratum": 3,
+      "cpu": 16,
+      "order": "CA"
+    },
+    {
+      "truth": "016f",
+      "stratum": 3,
+      "cpu": 20,
+      "order": "AC"
+    },
+    {
+      "truth": "0017",
+      "stratum": 3,
+      "cpu": 24,
+      "order": "CA"
+    }
+  ]
+}
