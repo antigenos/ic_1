@@ -1,0 +1,23 @@
+{
+  "archive_sha256": "1d34c1a8d2fd5ccd82d55c3ead291f396da125a6e199a3eebcf43cf070109340",
+  "e14-main": {
+    "checked_runs": 624,
+    "verified_witnesses": 219,
+    "functions": 208,
+    "distinct_values_agree": true
+  },
+  "e14-ablation": {
+    "checked_runs": 15,
+    "verified_witnesses": 8,
+    "functions": 3,
+    "distinct_values_agree": true
+  },
+  "baseline-0189": {
+    "optimum": 304,
+    "strictly_cheaper_states": 16950
+  },
+  "baseline-xor3": {
+    "optimum": 32,
+    "strictly_cheaper_states": 13
+  }
+}

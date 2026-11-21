@@ -1,0 +1,21 @@
+{
+  "functions": 208,
+  "gate_counts": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    10
+  ],
+  "queries_per_mode": 1456,
+  "matched_clauses_by_mode": {
+    "off": 0,
+    "unsigned": 15169,
+    "signed": 20783,
+    "first-use": 18129,
+    "ordered": 20783,
+    "combined": 38912
+  }
+}
