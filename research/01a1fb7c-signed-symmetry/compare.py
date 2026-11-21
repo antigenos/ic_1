@@ -29,7 +29,8 @@ def main():
              "J":"combined","K":"ordered","R":"sorted-prefix","T":"orbit-prefix",
              "Q":"chain","H":"chain-unsigned","N":"chain-first","M":"chain-sorted","V":"chain-orbit",
              "A":"chain-first","D":"chain-first","B":"chain-first","C":"chain-first",
-             "I":"chain-first","L":"chain-first","E":"chain-first","W":"chain-first","Y":"chain-first","Z":"chain-first"}
+             "I":"chain-first","L":"chain-first","E":"chain-first","W":"chain-first","Y":"chain-first","Z":"chain-first",
+             "0":"chain-first","1":"chain-first","2":"chain-first"}
     if set(args.order)-set(modes):
         p.error("Unknown method")
     pin(args.cpu)
@@ -59,6 +60,8 @@ def main():
                 base = ROOT/".local/variants/endpoint-01a1fb7c"
             if key in "WYZ":
                 base = ROOT/".local/variants/endpoint-short-01a1fb7c"
+            if key in "012":
+                base = ROOT/".local/variants/closure-01a1fb7c"
             binary = base/("abc.exe" if os.name=="nt" else "abc")
             env = {k:v for k,v in os.environ.items() if not k.startswith("REPLAY_")}
             env["REPLAY_FIRST_SYMMETRY"] = modes[key]
@@ -70,6 +73,8 @@ def main():
                 env["REPLAY_ENDPOINT"] = "joint" if key=="E" else "margins"
             if key in "WYZ":
                 env["REPLAY_ENDPOINT"] = {"W":"margins","Y":"joint","Z":"short"}[key]
+            if key in "12":
+                env["REPLAY_COLD_CLOSURE"] = "lower" if key=="1" else "size"
             entry = run(binary,args.target,4,2,args.cap,dest,env=env,
                         metadata=dict(cpu=args.cpu,arm=key,order=i,truth=args.target))
             data = (dest/"solver.log").read_bytes()

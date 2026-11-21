@@ -121,6 +121,7 @@ public:
     const std::vector<Step>& witness(Signal x) const { return solutions.at(x/2); }
 };
 
+#ifndef STUDY_CLOSURE_LIBRARY
 int main(int argc,char **argv) {
     if (argc<3 || argc>4) return 1;
     try {
@@ -151,4 +152,6 @@ int main(int argc,char **argv) {
         std::cerr<<ex.what()<<"\n";
         return 2;
     }
+    return 0;
 }
+#endif
