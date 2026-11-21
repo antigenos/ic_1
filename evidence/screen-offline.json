@@ -1,0 +1,3487 @@
+{
+  "explanations": {
+    "count": {
+      "population": 9494,
+      "sample": 32,
+      "before": 831,
+      "after": 249,
+      "shorter": 32,
+      "total_calls": 735,
+      "wall_s": 0.09172359999865876,
+      "rows": [
+        {
+          "before": 20,
+          "after": 8,
+          "oracle_calls": 17
+        },
+        {
+          "before": 26,
+          "after": 10,
+          "oracle_calls": 23
+        },
+        {
+          "before": 14,
+          "after": 6,
+          "oracle_calls": 11
+        },
+        {
+          "before": 47,
+          "after": 6,
+          "oracle_calls": 44
+        },
+        {
+          "before": 24,
+          "after": 9,
+          "oracle_calls": 21
+        },
+        {
+          "before": 36,
+          "after": 9,
+          "oracle_calls": 33
+        },
+        {
+          "before": 17,
+          "after": 6,
+          "oracle_calls": 14
+        },
+        {
+          "before": 24,
+          "after": 9,
+          "oracle_calls": 21
+        },
+        {
+          "before": 20,
+          "after": 8,
+          "oracle_calls": 17
+        },
+        {
+          "before": 28,
+          "after": 6,
+          "oracle_calls": 25
+        },
+        {
+          "before": 15,
+          "after": 6,
+          "oracle_calls": 12
+        },
+        {
+          "before": 24,
+          "after": 7,
+          "oracle_calls": 21
+        },
+        {
+          "before": 30,
+          "after": 10,
+          "oracle_calls": 27
+        },
+        {
+          "before": 38,
+          "after": 8,
+          "oracle_calls": 35
+        },
+        {
+          "before": 20,
+          "after": 4,
+          "oracle_calls": 17
+        },
+        {
+          "before": 36,
+          "after": 7,
+          "oracle_calls": 33
+        },
+        {
+          "before": 8,
+          "after": 6,
+          "oracle_calls": 5
+        },
+        {
+          "before": 21,
+          "after": 6,
+          "oracle_calls": 18
+        },
+        {
+          "before": 44,
+          "after": 8,
+          "oracle_calls": 41
+        },
+        {
+          "before": 38,
+          "after": 11,
+          "oracle_calls": 35
+        },
+        {
+          "before": 11,
+          "after": 6,
+          "oracle_calls": 8
+        },
+        {
+          "before": 17,
+          "after": 6,
+          "oracle_calls": 14
+        },
+        {
+          "before": 18,
+          "after": 10,
+          "oracle_calls": 15
+        },
+        {
+          "before": 29,
+          "after": 8,
+          "oracle_calls": 26
+        },
+        {
+          "before": 16,
+          "after": 8,
+          "oracle_calls": 13
+        },
+        {
+          "before": 36,
+          "after": 8,
+          "oracle_calls": 33
+        },
+        {
+          "before": 25,
+          "after": 6,
+          "oracle_calls": 22
+        },
+        {
+          "before": 25,
+          "after": 6,
+          "oracle_calls": 22
+        },
+        {
+          "before": 40,
+          "after": 11,
+          "oracle_calls": 37
+        },
+        {
+          "before": 16,
+          "after": 6,
+          "oracle_calls": 13
+        },
+        {
+          "before": 39,
+          "after": 14,
+          "oracle_calls": 36
+        },
+        {
+          "before": 29,
+          "after": 10,
+          "oracle_calls": 26
+        }
+      ]
+    },
+    "sel": {
+      "population": 1521,
+      "sample": 32,
+      "before": 560,
+      "after": 254,
+      "shorter": 32,
+      "total_calls": 496,
+      "wall_s": 0.03965249999964726,
+      "rows": [
+        {
+          "before": 8,
+          "after": 3,
+          "oracle_calls": 6
+        },
+        {
+          "before": 17,
+          "after": 6,
+          "oracle_calls": 15
+        },
+        {
+          "before": 12,
+          "after": 5,
+          "oracle_calls": 10
+        },
+        {
+          "before": 20,
+          "after": 11,
+          "oracle_calls": 18
+        },
+        {
+          "before": 11,
+          "after": 9,
+          "oracle_calls": 9
+        },
+        {
+          "before": 16,
+          "after": 10,
+          "oracle_calls": 14
+        },
+        {
+          "before": 12,
+          "after": 8,
+          "oracle_calls": 10
+        },
+        {
+          "before": 24,
+          "after": 10,
+          "oracle_calls": 22
+        },
+        {
+          "before": 10,
+          "after": 8,
+          "oracle_calls": 8
+        },
+        {
+          "before": 6,
+          "after": 4,
+          "oracle_calls": 4
+        },
+        {
+          "before": 16,
+          "after": 8,
+          "oracle_calls": 14
+        },
+        {
+          "before": 19,
+          "after": 8,
+          "oracle_calls": 17
+        },
+        {
+          "before": 11,
+          "after": 3,
+          "oracle_calls": 9
+        },
+        {
+          "before": 21,
+          "after": 8,
+          "oracle_calls": 19
+        },
+        {
+          "before": 13,
+          "after": 5,
+          "oracle_calls": 11
+        },
+        {
+          "before": 24,
+          "after": 10,
+          "oracle_calls": 22
+        },
+        {
+          "before": 32,
+          "after": 7,
+          "oracle_calls": 30
+        },
+        {
+          "before": 37,
+          "after": 12,
+          "oracle_calls": 35
+        },
+        {
+          "before": 22,
+          "after": 12,
+          "oracle_calls": 20
+        },
+        {
+          "before": 6,
+          "after": 4,
+          "oracle_calls": 4
+        },
+        {
+          "before": 25,
+          "after": 11,
+          "oracle_calls": 23
+        },
+        {
+          "before": 8,
+          "after": 3,
+          "oracle_calls": 6
+        },
+        {
+          "before": 13,
+          "after": 9,
+          "oracle_calls": 11
+        },
+        {
+          "before": 18,
+          "after": 10,
+          "oracle_calls": 16
+        },
+        {
+          "before": 7,
+          "after": 3,
+          "oracle_calls": 5
+        },
+        {
+          "before": 21,
+          "after": 12,
+          "oracle_calls": 19
+        },
+        {
+          "before": 34,
+          "after": 11,
+          "oracle_calls": 32
+        },
+        {
+          "before": 20,
+          "after": 12,
+          "oracle_calls": 18
+        },
+        {
+          "before": 18,
+          "after": 9,
+          "oracle_calls": 16
+        },
+        {
+          "before": 31,
+          "after": 12,
+          "oracle_calls": 29
+        },
+        {
+          "before": 11,
+          "after": 3,
+          "oracle_calls": 9
+        },
+        {
+          "before": 17,
+          "after": 8,
+          "oracle_calls": 15
+        }
+      ]
+    }
+  },
+  "portfolio": {
+    "n": 208,
+    "selected": {
+      "both": 195,
+      "support": 13
+    },
+    "baseline": {
+      "capped_s": 42451.69065110003,
+      "solved": 80
+    },
+    "selected_out_of_fold": {
+      "capped_s": 42633.92451680002,
+      "solved": 79
+    },
+    "oracle_upper_bound": {
+      "capped_s": 42387.409320200044,
+      "solved": 81
+    },
+    "rows": [
+      {
+        "truth": "0001",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0006",
+          "0018",
+          "0180",
+          "0007",
+          "0181",
+          "0019",
+          "0118"
+        ]
+      },
+      {
+        "truth": "0006",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0180",
+          "0001",
+          "0181",
+          "0182",
+          "001b",
+          "0189",
+          "0017"
+        ]
+      },
+      {
+        "truth": "0007",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "support",
+        "peers": [
+          "0181",
+          "0017",
+          "001b",
+          "001e",
+          "0119",
+          "0189",
+          "0182"
+        ]
+      },
+      {
+        "truth": "0016",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0182",
+          "0181",
+          "0017",
+          "001b",
+          "001e",
+          "0069",
+          "0116"
+        ]
+      },
+      {
+        "truth": "0017",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "001b",
+          "0119",
+          "001e",
+          "0183",
+          "0007",
+          "0016",
+          "0019"
+        ]
+      },
+      {
+        "truth": "0018",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "support",
+        "peers": [
+          "0180",
+          "0001",
+          "0181",
+          "0182",
+          "001b",
+          "0189",
+          "0017"
+        ]
+      },
+      {
+        "truth": "0019",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0181",
+          "0182",
+          "0017",
+          "001b",
+          "001e",
+          "0119",
+          "011a"
+        ]
+      },
+      {
+        "truth": "001b",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0017",
+          "0183",
+          "0119",
+          "0189",
+          "01a8",
+          "0007",
+          "0016"
+        ]
+      },
+      {
+        "truth": "001e",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "support",
+        "peers": [
+          "0189",
+          "01a8",
+          "0183",
+          "0119",
+          "012c",
+          "0017",
+          "011a"
+        ]
+      },
+      {
+        "truth": "001f",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "003d",
+          "01aa",
+          "0017",
+          "001b",
+          "001e",
+          "006f",
+          "011f"
+        ]
+      },
+      {
+        "truth": "003d",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "006b",
+          "001f",
+          "0199",
+          "01a9",
+          "01ac",
+          "01e8",
+          "012d"
+        ]
+      },
+      {
+        "truth": "0069",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "support",
+        "peers": [
+          "0186",
+          "0198",
+          "0116",
+          "012c",
+          "0016",
+          "006b",
+          "016a"
+        ]
+      },
+      {
+        "truth": "006b",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "003d",
+          "012d",
+          "016a",
+          "011e",
+          "018b",
+          "0358",
+          "0662"
+        ]
+      },
+      {
+        "truth": "006f",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01ea",
+          "017f",
+          "001f",
+          "006b",
+          "007f",
+          "013f",
+          "017e"
+        ]
+      },
+      {
+        "truth": "007e",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "017f",
+          "01bf",
+          "01ea",
+          "006b",
+          "007f",
+          "013f",
+          "017e"
+        ]
+      },
+      {
+        "truth": "007f",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "006f",
+          "007e",
+          "017f",
+          "01ef",
+          "01ee",
+          "017e",
+          "01af"
+        ]
+      },
+      {
+        "truth": "0116",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "011a",
+          "0168",
+          "0069",
+          "0119",
+          "012c",
+          "0660",
+          "0690"
+        ]
+      },
+      {
+        "truth": "0117",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "018b",
+          "012d",
+          "0017",
+          "0116",
+          "0119",
+          "013d",
+          "0197"
+        ]
+      },
+      {
+        "truth": "0118",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0182",
+          "0181",
+          "0116",
+          "0119",
+          "011a",
+          "012c",
+          "0168"
+        ]
+      },
+      {
+        "truth": "0119",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0183",
+          "0189",
+          "01a8",
+          "0017",
+          "001e",
+          "001b",
+          "0116"
+        ]
+      },
+      {
+        "truth": "011a",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "012c",
+          "0183",
+          "0198",
+          "0116",
+          "0186",
+          "0189",
+          "01a8"
+        ]
+      },
+      {
+        "truth": "011b",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "018b",
+          "012d",
+          "0017",
+          "0116",
+          "0119",
+          "011a",
+          "013d"
+        ]
+      },
+      {
+        "truth": "011e",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "016a",
+          "019a",
+          "012d",
+          "0187",
+          "0358",
+          "0662",
+          "06b0"
+        ]
+      },
+      {
+        "truth": "011f",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01ab",
+          "013d",
+          "0119",
+          "019b",
+          "01ae",
+          "001f",
+          "003d"
+        ]
+      },
+      {
+        "truth": "012c",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "011a",
+          "0198",
+          "0186",
+          "0189",
+          "01a8",
+          "001e",
+          "0168"
+        ]
+      },
+      {
+        "truth": "012d",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0187",
+          "01a9",
+          "01ac",
+          "01e8",
+          "006b",
+          "011e",
+          "018b"
+        ]
+      },
+      {
+        "truth": "012f",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01ab",
+          "019b",
+          "01ae",
+          "013d",
+          "0183",
+          "01ad",
+          "01ea"
+        ]
+      },
+      {
+        "truth": "013c",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0199",
+          "0368",
+          "0691",
+          "016a",
+          "019a",
+          "033d",
+          "012c"
+        ]
+      },
+      {
+        "truth": "013d",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0197",
+          "01ab",
+          "01ad",
+          "011f",
+          "013e",
+          "016b",
+          "0356"
+        ]
+      },
+      {
+        "truth": "013e",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "016e",
+          "035a",
+          "019b",
+          "01ae",
+          "01bc",
+          "03c6",
+          "03d4"
+        ]
+      },
+      {
+        "truth": "013f",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01af",
+          "016f",
+          "019f",
+          "035b",
+          "003d",
+          "01bd",
+          "01eb"
+        ]
+      },
+      {
+        "truth": "0168",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0186",
+          "0198",
+          "0116",
+          "012c",
+          "0016",
+          "006b",
+          "0118"
+        ]
+      },
+      {
+        "truth": "0169",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0368",
+          "0691",
+          "016a",
+          "0196",
+          "019a",
+          "011e",
+          "0358"
+        ]
+      },
+      {
+        "truth": "016a",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "019a",
+          "011e",
+          "0662",
+          "0169",
+          "0199",
+          "01a9",
+          "01ac"
+        ]
+      },
+      {
+        "truth": "016b",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0197",
+          "06b2",
+          "019b",
+          "01e9",
+          "0359",
+          "177e",
+          "013d"
+        ]
+      },
+      {
+        "truth": "016e",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "013e",
+          "01bc",
+          "03c6",
+          "03d4",
+          "019e",
+          "01ad",
+          "01ea"
+        ]
+      },
+      {
+        "truth": "016f",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01eb",
+          "03d5",
+          "01af",
+          "013f",
+          "017e",
+          "01be",
+          "036e"
+        ]
+      },
+      {
+        "truth": "017e",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01be",
+          "01bd",
+          "01eb",
+          "01ee",
+          "016f",
+          "019f",
+          "06f1"
+        ]
+      },
+      {
+        "truth": "017f",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01bf",
+          "007e",
+          "006f",
+          "03dd",
+          "007f",
+          "013f",
+          "016f"
+        ]
+      },
+      {
+        "truth": "0180",
+        "fold": 3,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "0018",
+          "0006",
+          "0001",
+          "0118",
+          "0182",
+          "0016",
+          "0019"
+        ]
+      },
+      {
+        "truth": "0181",
+        "fold": 3,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "0019",
+          "0118",
+          "0182",
+          "0016",
+          "0007",
+          "0006",
+          "0018"
+        ]
+      },
+      {
+        "truth": "0182",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0118",
+          "0016",
+          "0181",
+          "0019",
+          "0006",
+          "0018",
+          "0116"
+        ]
+      },
+      {
+        "truth": "0183",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0119",
+          "0189",
+          "001e",
+          "011a",
+          "001b",
+          "012c",
+          "0017"
+        ]
+      },
+      {
+        "truth": "0186",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0168",
+          "0069",
+          "012c",
+          "0660",
+          "0690",
+          "011a",
+          "01a8"
+        ]
+      },
+      {
+        "truth": "0187",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "012d",
+          "011e",
+          "018b",
+          "016a",
+          "003d",
+          "0358",
+          "0662"
+        ]
+      },
+      {
+        "truth": "0189",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01a8",
+          "001e",
+          "0183",
+          "0119",
+          "012c",
+          "011a",
+          "001b"
+        ]
+      },
+      {
+        "truth": "018b",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "support",
+        "peers": [
+          "011b",
+          "0117",
+          "012d",
+          "0187",
+          "01a9",
+          "01ac",
+          "01e8"
+        ]
+      },
+      {
+        "truth": "018f",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01ab",
+          "01ad",
+          "01ea",
+          "0189",
+          "019b",
+          "01a8",
+          "01ae"
+        ]
+      },
+      {
+        "truth": "0196",
+        "fold": 3,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "0661",
+          "1681",
+          "0169",
+          "0368",
+          "0691",
+          "016a",
+          "0069"
+        ]
+      },
+      {
+        "truth": "0197",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "016b",
+          "0356",
+          "036a",
+          "013d",
+          "06b2",
+          "019b",
+          "0672"
+        ]
+      },
+      {
+        "truth": "0198",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "012c",
+          "011a",
+          "0168",
+          "0069",
+          "01a8",
+          "0660",
+          "0690"
+        ]
+      },
+      {
+        "truth": "0199",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03c1",
+          "013c",
+          "016a",
+          "019a",
+          "003d",
+          "01aa",
+          "0358"
+        ]
+      },
+      {
+        "truth": "019a",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "016a",
+          "011e",
+          "0358",
+          "0662",
+          "06b0",
+          "0169",
+          "0199"
+        ]
+      },
+      {
+        "truth": "019b",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01ad",
+          "013e",
+          "016b",
+          "012f",
+          "016e",
+          "0197",
+          "01ab"
+        ]
+      },
+      {
+        "truth": "019e",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "06b1",
+          "016e",
+          "0663",
+          "0693",
+          "06b4",
+          "013e",
+          "016b"
+        ]
+      },
+      {
+        "truth": "019f",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01eb",
+          "03d5",
+          "01af",
+          "013f",
+          "017e",
+          "01be",
+          "036e"
+        ]
+      },
+      {
+        "truth": "01a8",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0189",
+          "001e",
+          "0119",
+          "012c",
+          "011a",
+          "0198",
+          "001b"
+        ]
+      },
+      {
+        "truth": "01a9",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "012d",
+          "016a",
+          "003d",
+          "011e",
+          "018b",
+          "0358",
+          "0662"
+        ]
+      },
+      {
+        "truth": "01aa",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "001f",
+          "0199",
+          "011e",
+          "03c1",
+          "0119",
+          "0183",
+          "0189"
+        ]
+      },
+      {
+        "truth": "01ab",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "011f",
+          "012f",
+          "013d",
+          "018f",
+          "019b",
+          "01ae",
+          "0197"
+        ]
+      },
+      {
+        "truth": "01ac",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "012d",
+          "016a",
+          "003d",
+          "011e",
+          "018b",
+          "0358",
+          "0662"
+        ]
+      },
+      {
+        "truth": "01ad",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "019b",
+          "013d",
+          "016e",
+          "03c5",
+          "013e",
+          "018f",
+          "01bc"
+        ]
+      },
+      {
+        "truth": "01ae",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01ea",
+          "013e",
+          "012f",
+          "016e",
+          "01ab",
+          "035a",
+          "011f"
+        ]
+      },
+      {
+        "truth": "01af",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "013f",
+          "016f",
+          "019f",
+          "01bd",
+          "01eb",
+          "01ee",
+          "03c7"
+        ]
+      },
+      {
+        "truth": "01bc",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "016e",
+          "013e",
+          "03d4",
+          "019e",
+          "01ad",
+          "01ea",
+          "035a"
+        ]
+      },
+      {
+        "truth": "01bd",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01eb",
+          "017e",
+          "01be",
+          "03d5",
+          "01af",
+          "0676",
+          "06f2"
+        ]
+      },
+      {
+        "truth": "01be",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "017e",
+          "01bd",
+          "01ee",
+          "016f",
+          "019f",
+          "06f1",
+          "006f"
+        ]
+      },
+      {
+        "truth": "01bf",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "017f",
+          "01ef",
+          "03dd",
+          "007e",
+          "013f",
+          "016f",
+          "017e"
+        ]
+      },
+      {
+        "truth": "01e8",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "012d",
+          "016a",
+          "003d",
+          "011e",
+          "018b",
+          "0358",
+          "0662"
+        ]
+      },
+      {
+        "truth": "01e9",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "016b",
+          "0672",
+          "019e",
+          "01ad",
+          "06b2",
+          "06b4",
+          "019b"
+        ]
+      },
+      {
+        "truth": "01ea",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01ae",
+          "016e",
+          "006f",
+          "013e",
+          "018f",
+          "01bc",
+          "03c6"
+        ]
+      },
+      {
+        "truth": "01eb",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01bd",
+          "016f",
+          "019f",
+          "017e",
+          "01af",
+          "035b",
+          "03d9"
+        ]
+      },
+      {
+        "truth": "01ee",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "017e",
+          "01be",
+          "01af",
+          "03dc",
+          "013f",
+          "01eb",
+          "013e"
+        ]
+      },
+      {
+        "truth": "01ef",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01bf",
+          "01fe",
+          "03dd",
+          "007f",
+          "016f",
+          "017e",
+          "019f"
+        ]
+      },
+      {
+        "truth": "01fe",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01ef",
+          "017e",
+          "01ee",
+          "017f",
+          "03dd",
+          "18e7",
+          "007e"
+        ]
+      },
+      {
+        "truth": "033d",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "036d",
+          "03c7",
+          "013c",
+          "036b",
+          "037c",
+          "03d6",
+          "06b5"
+        ]
+      },
+      {
+        "truth": "0356",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0359",
+          "177e",
+          "0197",
+          "06b2",
+          "013d",
+          "03c5",
+          "0693"
+        ]
+      },
+      {
+        "truth": "0357",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "035b",
+          "018b",
+          "03d5",
+          "013d",
+          "016b",
+          "0197",
+          "019b"
+        ]
+      },
+      {
+        "truth": "0358",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0662",
+          "019a",
+          "011e",
+          "03c1",
+          "0169",
+          "0199",
+          "01a9"
+        ]
+      },
+      {
+        "truth": "0359",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0356",
+          "036a",
+          "06b2",
+          "016b",
+          "0672",
+          "013d",
+          "03c5"
+        ]
+      },
+      {
+        "truth": "035a",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "013e",
+          "03c6",
+          "016e",
+          "03c5",
+          "03d8",
+          "0693",
+          "019b"
+        ]
+      },
+      {
+        "truth": "035b",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03d5",
+          "036b",
+          "013f",
+          "01eb",
+          "0357",
+          "036e",
+          "0667"
+        ]
+      },
+      {
+        "truth": "035e",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "036e",
+          "0667",
+          "0673",
+          "077e",
+          "036b",
+          "0676",
+          "06f2"
+        ]
+      },
+      {
+        "truth": "035f",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "036f",
+          "03d7",
+          "03dd",
+          "013f",
+          "016f",
+          "019f",
+          "035b"
+        ]
+      },
+      {
+        "truth": "0368",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0169",
+          "0661",
+          "0662",
+          "1681",
+          "013c",
+          "0196",
+          "019a"
+        ]
+      },
+      {
+        "truth": "0369",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "support",
+        "peers": [
+          "0663",
+          "0693",
+          "036c",
+          "06b1",
+          "1698",
+          "019e",
+          "035a"
+        ]
+      },
+      {
+        "truth": "036a",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0359",
+          "177e",
+          "0197",
+          "06b2",
+          "013d",
+          "03c5",
+          "0693"
+        ]
+      },
+      {
+        "truth": "036b",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "035e",
+          "036e",
+          "0667",
+          "0673",
+          "06b3",
+          "077e",
+          "035b"
+        ]
+      },
+      {
+        "truth": "036c",
+        "fold": 0,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "03c6",
+          "0696",
+          "06f0",
+          "1683",
+          "016e",
+          "0369",
+          "03d8"
+        ]
+      },
+      {
+        "truth": "036d",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0697",
+          "03d6",
+          "067a",
+          "06b5",
+          "06b6",
+          "167e",
+          "168e"
+        ]
+      },
+      {
+        "truth": "036e",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "035e",
+          "0673",
+          "06b3",
+          "077e",
+          "036b",
+          "03d9",
+          "0676"
+        ]
+      },
+      {
+        "truth": "036f",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "support",
+        "peers": [
+          "03db",
+          "035f",
+          "037e",
+          "066f",
+          "069f",
+          "06b7",
+          "067e"
+        ]
+      },
+      {
+        "truth": "037c",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03dc",
+          "06b9",
+          "1687",
+          "169a",
+          "033d",
+          "03d6",
+          "067a"
+        ]
+      },
+      {
+        "truth": "037d",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "037e",
+          "07b5",
+          "07e3",
+          "01bc",
+          "03db",
+          "016e",
+          "03d8"
+        ]
+      },
+      {
+        "truth": "037e",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "037d",
+          "03de",
+          "07e3",
+          "03db",
+          "03dd",
+          "067b",
+          "07b5"
+        ]
+      },
+      {
+        "truth": "03c1",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0199",
+          "0358",
+          "06b0",
+          "016a",
+          "019a",
+          "003d",
+          "011e"
+        ]
+      },
+      {
+        "truth": "03c5",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "01ad",
+          "035a",
+          "06b2",
+          "013e",
+          "016b",
+          "0356",
+          "0359"
+        ]
+      },
+      {
+        "truth": "03c6",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03d4",
+          "016e",
+          "035a",
+          "013e",
+          "036c",
+          "06b1",
+          "019e"
+        ]
+      },
+      {
+        "truth": "03c7",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "035e",
+          "036e",
+          "0667",
+          "0673",
+          "06b3",
+          "077e",
+          "01af"
+        ]
+      },
+      {
+        "truth": "03d4",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03c6",
+          "016e",
+          "03d8",
+          "013e",
+          "01bc",
+          "019e",
+          "03c5"
+        ]
+      },
+      {
+        "truth": "03d5",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "016f",
+          "019f",
+          "035b",
+          "01bd",
+          "035e",
+          "036e",
+          "0667"
+        ]
+      },
+      {
+        "truth": "03d6",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "067a",
+          "06b5",
+          "06b6",
+          "167e",
+          "036d",
+          "0697",
+          "1798"
+        ]
+      },
+      {
+        "truth": "03d7",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03db",
+          "035f",
+          "037e",
+          "06b7",
+          "07b5",
+          "01ad",
+          "067e"
+        ]
+      },
+      {
+        "truth": "03d8",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03d4",
+          "016e",
+          "035a",
+          "06b4",
+          "013e",
+          "036c",
+          "06b1"
+        ]
+      },
+      {
+        "truth": "03d9",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0676",
+          "06f2",
+          "07b1",
+          "036e",
+          "0667",
+          "0673",
+          "077e"
+        ]
+      },
+      {
+        "truth": "03db",
+        "fold": 3,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "036f",
+          "03d7",
+          "037e",
+          "06b7",
+          "037d",
+          "03de",
+          "07e3"
+        ]
+      },
+      {
+        "truth": "03dc",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "037c",
+          "06f1",
+          "01ee",
+          "03c7",
+          "07b4",
+          "03d9",
+          "0676"
+        ]
+      },
+      {
+        "truth": "03dd",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "037e",
+          "01bf",
+          "07e3",
+          "07f1",
+          "017f",
+          "01ef",
+          "035f"
+        ]
+      },
+      {
+        "truth": "03de",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "037e",
+          "06bd",
+          "07e3",
+          "03db",
+          "07b5",
+          "07bc",
+          "067e"
+        ]
+      },
+      {
+        "truth": "0660",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0186",
+          "0198",
+          "0116",
+          "012c",
+          "0118",
+          "0182",
+          "0358"
+        ]
+      },
+      {
+        "truth": "0661",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "1681",
+          "0196",
+          "0368",
+          "0691",
+          "0169",
+          "0358",
+          "0662"
+        ]
+      },
+      {
+        "truth": "0662",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0358",
+          "06b0",
+          "016a",
+          "019a",
+          "011e",
+          "0368",
+          "0691"
+        ]
+      },
+      {
+        "truth": "0663",
+        "fold": 0,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "0693",
+          "019e",
+          "0369",
+          "06b2",
+          "013e",
+          "0359",
+          "03c6"
+        ]
+      },
+      {
+        "truth": "0666",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "06f0",
+          "07b0",
+          "07e0",
+          "01ae",
+          "03c6",
+          "1683",
+          "011e"
+        ]
+      },
+      {
+        "truth": "0667",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "035e",
+          "0673",
+          "06b3",
+          "077e",
+          "036b",
+          "03d9",
+          "0676"
+        ]
+      },
+      {
+        "truth": "0669",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "1668",
+          "1689",
+          "1683",
+          "0196",
+          "0661",
+          "0679",
+          "1669"
+        ]
+      },
+      {
+        "truth": "066b",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "036d",
+          "0697",
+          "16ac",
+          "19e1",
+          "0679",
+          "067a",
+          "06b5"
+        ]
+      },
+      {
+        "truth": "066f",
+        "fold": 1,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "067e",
+          "06b7",
+          "07e6",
+          "036f",
+          "06bd",
+          "03db",
+          "067b"
+        ]
+      },
+      {
+        "truth": "0672",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "06b2",
+          "01e9",
+          "0359",
+          "177e",
+          "0197",
+          "019e",
+          "03c5"
+        ]
+      },
+      {
+        "truth": "0673",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "035e",
+          "036e",
+          "0667",
+          "06b3",
+          "077e",
+          "036b",
+          "03d9"
+        ]
+      },
+      {
+        "truth": "0676",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03d9",
+          "06f2",
+          "035e",
+          "036e",
+          "0667",
+          "06b3",
+          "077e"
+        ]
+      },
+      {
+        "truth": "0678",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "1698",
+          "06b4",
+          "036c",
+          "06b1",
+          "0779",
+          "019e",
+          "0663"
+        ]
+      },
+      {
+        "truth": "0679",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "166a",
+          "06b9",
+          "1687",
+          "168b",
+          "066b",
+          "169a",
+          "16a9"
+        ]
+      },
+      {
+        "truth": "067a",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03d6",
+          "06b5",
+          "167e",
+          "168e",
+          "036d",
+          "1798",
+          "03d9"
+        ]
+      },
+      {
+        "truth": "067b",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "06bd",
+          "07b6",
+          "037e",
+          "06b7",
+          "067e",
+          "07e3",
+          "169b"
+        ]
+      },
+      {
+        "truth": "067e",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "066f",
+          "069f",
+          "06b7",
+          "06f6",
+          "07e6",
+          "178e",
+          "06bd"
+        ]
+      },
+      {
+        "truth": "0690",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0186",
+          "0198",
+          "0116",
+          "012c",
+          "0118",
+          "0182",
+          "0358"
+        ]
+      },
+      {
+        "truth": "0691",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0169",
+          "0661",
+          "0662",
+          "1681",
+          "013c",
+          "0196",
+          "019a"
+        ]
+      },
+      {
+        "truth": "0693",
+        "fold": 1,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "0663",
+          "06b1",
+          "019e",
+          "035a",
+          "0369",
+          "06b2",
+          "06b4"
+        ]
+      },
+      {
+        "truth": "0696",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "1686",
+          "036c",
+          "1689",
+          "03c6",
+          "03d4",
+          "1683",
+          "1697"
+        ]
+      },
+      {
+        "truth": "0697",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "036d",
+          "03d6",
+          "06b5",
+          "167e",
+          "168e",
+          "035e",
+          "066b"
+        ]
+      },
+      {
+        "truth": "069f",
+        "fold": 1,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "067e",
+          "06b7",
+          "07e6",
+          "036f",
+          "06bd",
+          "03db",
+          "067b"
+        ]
+      },
+      {
+        "truth": "06b0",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0662",
+          "019a",
+          "011e",
+          "03c1",
+          "0169",
+          "0199",
+          "01a9"
+        ]
+      },
+      {
+        "truth": "06b1",
+        "fold": 0,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "019e",
+          "0693",
+          "03c6",
+          "1683",
+          "016e",
+          "0369",
+          "03d8"
+        ]
+      },
+      {
+        "truth": "06b2",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "016b",
+          "0356",
+          "0359",
+          "036a",
+          "0672",
+          "177e",
+          "0197"
+        ]
+      },
+      {
+        "truth": "06b3",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "036e",
+          "0667",
+          "0673",
+          "077e",
+          "036b",
+          "0676",
+          "06f2"
+        ]
+      },
+      {
+        "truth": "06b4",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "019e",
+          "03d8",
+          "0678",
+          "0693",
+          "01bc",
+          "01e9",
+          "03c6"
+        ]
+      },
+      {
+        "truth": "06b5",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03d6",
+          "067a",
+          "06b6",
+          "167e",
+          "168e",
+          "036d",
+          "0697"
+        ]
+      },
+      {
+        "truth": "06b6",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03d6",
+          "06b5",
+          "167e",
+          "168e",
+          "036d",
+          "1798",
+          "03d9"
+        ]
+      },
+      {
+        "truth": "06b7",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "067e",
+          "03db",
+          "066f",
+          "067b",
+          "069f",
+          "0776",
+          "07e6"
+        ]
+      },
+      {
+        "truth": "06b9",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "1687",
+          "037c",
+          "0679",
+          "067a",
+          "06b5",
+          "06b6",
+          "06f1"
+        ]
+      },
+      {
+        "truth": "06bd",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "067b",
+          "179a",
+          "03de",
+          "067e",
+          "07b6",
+          "17ac",
+          "066f"
+        ]
+      },
+      {
+        "truth": "06f0",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0666",
+          "036c",
+          "07e0",
+          "01ea",
+          "01ae",
+          "03c6",
+          "03d4"
+        ]
+      },
+      {
+        "truth": "06f1",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "07b4",
+          "07e1",
+          "03dc",
+          "0676",
+          "06b9",
+          "06f2",
+          "07b1"
+        ]
+      },
+      {
+        "truth": "06f2",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03d9",
+          "0676",
+          "07b1",
+          "035e",
+          "036e",
+          "0667",
+          "0673"
+        ]
+      },
+      {
+        "truth": "06f6",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "178e",
+          "067e",
+          "07e6",
+          "06bd",
+          "17ac",
+          "03db",
+          "066f"
+        ]
+      },
+      {
+        "truth": "06f9",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "18e7",
+          "17ac",
+          "067b",
+          "179a",
+          "1be4",
+          "017e",
+          "0679"
+        ]
+      },
+      {
+        "truth": "0776",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "06b7",
+          "067e",
+          "07b6",
+          "01e9",
+          "03db",
+          "066f",
+          "0672"
+        ]
+      },
+      {
+        "truth": "0778",
+        "fold": 4,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "07b4",
+          "07e1",
+          "1699",
+          "07e2",
+          "169a",
+          "16a9",
+          "0369"
+        ]
+      },
+      {
+        "truth": "0779",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "169b",
+          "07e9",
+          "166e",
+          "1698",
+          "19e3",
+          "0678",
+          "077a"
+        ]
+      },
+      {
+        "truth": "077a",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "07bc",
+          "07f1",
+          "169b",
+          "1796",
+          "037e",
+          "0779",
+          "07b5"
+        ]
+      },
+      {
+        "truth": "077e",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "035e",
+          "036e",
+          "0667",
+          "0673",
+          "06b3",
+          "036b",
+          "03d9"
+        ]
+      },
+      {
+        "truth": "07b0",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0666",
+          "07e0",
+          "036c",
+          "01ea",
+          "03d8",
+          "0678",
+          "07f1"
+        ]
+      },
+      {
+        "truth": "07b1",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03d9",
+          "06f2",
+          "035e",
+          "036e",
+          "0667",
+          "06b3",
+          "077e"
+        ]
+      },
+      {
+        "truth": "07b4",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "07e1",
+          "06f1",
+          "0778",
+          "07e2",
+          "169a",
+          "03d9",
+          "03dc"
+        ]
+      },
+      {
+        "truth": "07b5",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "037d",
+          "07e3",
+          "037e",
+          "03d7",
+          "03d8",
+          "03de",
+          "077a"
+        ]
+      },
+      {
+        "truth": "07b6",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "067b",
+          "179a",
+          "06bd",
+          "169b",
+          "17ac",
+          "037e",
+          "0776"
+        ]
+      },
+      {
+        "truth": "07bc",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "077a",
+          "07f2",
+          "166e",
+          "03de",
+          "07e3",
+          "07f1",
+          "169b"
+        ]
+      },
+      {
+        "truth": "07e0",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "07b0",
+          "0666",
+          "06f0",
+          "07f1",
+          "036c",
+          "1698",
+          "0358"
+        ]
+      },
+      {
+        "truth": "07e1",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "07b4",
+          "06f1",
+          "0778",
+          "07e2",
+          "169a",
+          "03d9",
+          "0676"
+        ]
+      },
+      {
+        "truth": "07e2",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03d9",
+          "0676",
+          "06f2",
+          "07b1",
+          "035e",
+          "036e",
+          "0667"
+        ]
+      },
+      {
+        "truth": "07e3",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "037e",
+          "07b5",
+          "037d",
+          "03de",
+          "03db",
+          "03dd",
+          "067b"
+        ]
+      },
+      {
+        "truth": "07e6",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "067e",
+          "066f",
+          "069f",
+          "06b7",
+          "06f6",
+          "178e",
+          "1bd8"
+        ]
+      },
+      {
+        "truth": "07e9",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "166e",
+          "169b",
+          "0779",
+          "16ad",
+          "179a",
+          "06bd",
+          "077a"
+        ]
+      },
+      {
+        "truth": "07f0",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "support",
+        "peers": [
+          "0666",
+          "06f0",
+          "07b0",
+          "07e0",
+          "07f1",
+          "07f2",
+          "07f8"
+        ]
+      },
+      {
+        "truth": "07f1",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "07f2",
+          "077a",
+          "03dd",
+          "07bc",
+          "07e0",
+          "07b0",
+          "07e3"
+        ]
+      },
+      {
+        "truth": "07f2",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "07f1",
+          "07bc",
+          "077a",
+          "07f8",
+          "03dd",
+          "07e9",
+          "19e3"
+        ]
+      },
+      {
+        "truth": "07f8",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "support",
+        "peers": [
+          "07f2",
+          "07f1",
+          "03dc",
+          "06f1",
+          "0778",
+          "07e1",
+          "07f0"
+        ]
+      },
+      {
+        "truth": "1668",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0669",
+          "1698",
+          "066b",
+          "0679",
+          "1669",
+          "166a",
+          "1681"
+        ]
+      },
+      {
+        "truth": "1669",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0669",
+          "1668",
+          "166b",
+          "6996",
+          "166a",
+          "0679",
+          "16ac"
+        ]
+      },
+      {
+        "truth": "166a",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0679",
+          "169a",
+          "16a9",
+          "19e1",
+          "06b9",
+          "168b",
+          "066b"
+        ]
+      },
+      {
+        "truth": "166b",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "16ad",
+          "169b",
+          "16e9",
+          "066b",
+          "0679",
+          "1669",
+          "166a"
+        ]
+      },
+      {
+        "truth": "166e",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "07e9",
+          "19e3",
+          "16bc",
+          "0779",
+          "07bc",
+          "179a",
+          "06bd"
+        ]
+      },
+      {
+        "truth": "167e",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03d6",
+          "067a",
+          "06b5",
+          "06b6",
+          "168e",
+          "036d",
+          "0697"
+        ]
+      },
+      {
+        "truth": "1681",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0661",
+          "0196",
+          "0368",
+          "0691",
+          "0358",
+          "066b",
+          "06b0"
+        ]
+      },
+      {
+        "truth": "1683",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "036c",
+          "06b1",
+          "1698",
+          "019e",
+          "0663",
+          "0693",
+          "06b4"
+        ]
+      },
+      {
+        "truth": "1686",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0696",
+          "1689",
+          "036c",
+          "1697",
+          "03d8",
+          "0678",
+          "1796"
+        ]
+      },
+      {
+        "truth": "1687",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "06b9",
+          "169a",
+          "037c",
+          "03d6",
+          "0679",
+          "067a",
+          "06b5"
+        ]
+      },
+      {
+        "truth": "1689",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "1686",
+          "0669",
+          "0696",
+          "1698",
+          "06b4",
+          "0169",
+          "0196"
+        ]
+      },
+      {
+        "truth": "168b",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "16ac",
+          "19e1",
+          "0679",
+          "067a",
+          "06b5",
+          "06b6",
+          "167e"
+        ]
+      },
+      {
+        "truth": "168e",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "067a",
+          "06b5",
+          "06b6",
+          "167e",
+          "036d",
+          "0697",
+          "1798"
+        ]
+      },
+      {
+        "truth": "1696",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "1699",
+          "0696",
+          "1697",
+          "169e",
+          "1796",
+          "19e6",
+          "037c"
+        ]
+      },
+      {
+        "truth": "1697",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "169e",
+          "077a",
+          "1686",
+          "0696",
+          "07b5",
+          "07bc",
+          "16ad"
+        ]
+      },
+      {
+        "truth": "1698",
+        "fold": 3,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "0678",
+          "0779",
+          "1683",
+          "0369",
+          "06b4",
+          "1689",
+          "169b"
+        ]
+      },
+      {
+        "truth": "1699",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0778",
+          "169a",
+          "06b9",
+          "1687",
+          "07b4",
+          "07e1",
+          "166a"
+        ]
+      },
+      {
+        "truth": "169a",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "1687",
+          "07b4",
+          "07e1",
+          "166a",
+          "1699",
+          "1798",
+          "037c"
+        ]
+      },
+      {
+        "truth": "169b",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0779",
+          "07e9",
+          "19e3",
+          "077a",
+          "07b6",
+          "16bc",
+          "067b"
+        ]
+      },
+      {
+        "truth": "169e",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "1796",
+          "1697",
+          "16ad",
+          "077a",
+          "166e",
+          "036d",
+          "037c"
+        ]
+      },
+      {
+        "truth": "16a9",
+        "fold": 0,
+        "chosen": "support",
+        "oracle": "both",
+        "peers": [
+          "166a",
+          "0679",
+          "0778",
+          "169a",
+          "16ac",
+          "19e1",
+          "0369"
+        ]
+      },
+      {
+        "truth": "16ac",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "19e1",
+          "168b",
+          "066b",
+          "1798",
+          "03d6",
+          "0679",
+          "067a"
+        ]
+      },
+      {
+        "truth": "16ad",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "07e9",
+          "169e",
+          "19e3",
+          "166b",
+          "16bc",
+          "1796",
+          "0779"
+        ]
+      },
+      {
+        "truth": "16bc",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "166e",
+          "169b",
+          "0779",
+          "16ad",
+          "179a",
+          "06bd",
+          "077a"
+        ]
+      },
+      {
+        "truth": "16e9",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "166b",
+          "0679",
+          "166a",
+          "16ad",
+          "16bc",
+          "07e9",
+          "1668"
+        ]
+      },
+      {
+        "truth": "177e",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "0356",
+          "036a",
+          "06b2",
+          "016b",
+          "0672",
+          "013d",
+          "03c5"
+        ]
+      },
+      {
+        "truth": "178e",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "06f6",
+          "067e",
+          "06b7",
+          "07e6",
+          "06bd",
+          "17ac",
+          "03db"
+        ]
+      },
+      {
+        "truth": "1796",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "169e",
+          "077a",
+          "07bc",
+          "16ad",
+          "07e3",
+          "1686",
+          "169b"
+        ]
+      },
+      {
+        "truth": "1798",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "03d6",
+          "067a",
+          "06b5",
+          "06b6",
+          "168e",
+          "036d",
+          "0697"
+        ]
+      },
+      {
+        "truth": "179a",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "06bd",
+          "07b6",
+          "17ac",
+          "07e9",
+          "166e",
+          "19e3",
+          "067e"
+        ]
+      },
+      {
+        "truth": "17ac",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "179a",
+          "06bd",
+          "07b6",
+          "067b",
+          "06f6",
+          "06f9",
+          "07e6"
+        ]
+      },
+      {
+        "truth": "17e8",
+        "fold": 0,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "1be4",
+          "17ac",
+          "179a",
+          "18e7",
+          "07b4",
+          "07e1",
+          "166a"
+        ]
+      },
+      {
+        "truth": "18e7",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "06f9",
+          "06bd",
+          "17ac",
+          "067b",
+          "179a",
+          "17e8",
+          "1be4"
+        ]
+      },
+      {
+        "truth": "19e1",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "16ac",
+          "168b",
+          "066b",
+          "166a",
+          "1798",
+          "03d6",
+          "06b5"
+        ]
+      },
+      {
+        "truth": "19e3",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "166e",
+          "169b",
+          "0779",
+          "16ad",
+          "179a",
+          "06bd",
+          "077a"
+        ]
+      },
+      {
+        "truth": "19e6",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "1796",
+          "037c",
+          "06b9",
+          "1687",
+          "1696",
+          "1699",
+          "169a"
+        ]
+      },
+      {
+        "truth": "1bd8",
+        "fold": 3,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "07e6",
+          "06f6",
+          "0776",
+          "178e",
+          "179a",
+          "07e2",
+          "16ac"
+        ]
+      },
+      {
+        "truth": "1be4",
+        "fold": 2,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "17e8",
+          "17ac",
+          "06f9",
+          "179a",
+          "18e7",
+          "07e1",
+          "166a"
+        ]
+      },
+      {
+        "truth": "1ee1",
+        "fold": 1,
+        "chosen": "both",
+        "oracle": "support",
+        "peers": [
+          "0778",
+          "1699",
+          "16a9",
+          "16bc",
+          "07e9",
+          "19e3",
+          "07f8"
+        ]
+      },
+      {
+        "truth": "6996",
+        "fold": 4,
+        "chosen": "both",
+        "oracle": "both",
+        "peers": [
+          "1669",
+          "16e9",
+          "166b",
+          "16a9",
+          "1668",
+          "0669",
+          "16ad"
+        ]
+      }
+    ]
+  }
+}
