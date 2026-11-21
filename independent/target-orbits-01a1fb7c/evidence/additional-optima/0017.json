@@ -1,0 +1,13 @@
+{
+  "truth": "0017",
+  "witness": {
+    "truth": "0017",
+    "activity": 400,
+    "gates": 6
+  },
+  "strict_upper": 400,
+  "cheaper_exists": false,
+  "states": 609941,
+  "independent_wall_s": 27.20899410000129,
+  "cpu": 10
+}

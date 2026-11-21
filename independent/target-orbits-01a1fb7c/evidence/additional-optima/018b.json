@@ -1,0 +1,13 @@
+{
+  "truth": "018b",
+  "witness": {
+    "truth": "018b",
+    "activity": 412,
+    "gates": 7
+  },
+  "strict_upper": 412,
+  "cheaper_exists": false,
+  "states": 973669,
+  "independent_wall_s": 45.01852769999823,
+  "cpu": 10
+}
