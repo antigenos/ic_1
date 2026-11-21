@@ -18,7 +18,7 @@ def main():
     parser.add_argument("truth")
     parser.add_argument("--cpu",type=int,default=24)
     parser.add_argument("--output",type=Path,required=True)
-    parser.add_argument("--study",choices=("symmetry","endpoint"),default="symmetry")
+    parser.add_argument("--study",choices=("symmetry","holdout","endpoint"),default="symmetry")
     args=parser.parse_args()
     pin(args.cpu)
     variant="endpoint-01a1fb7c" if args.study=="endpoint" else "signed-symmetry-confirmed-01a1fb7c"
@@ -26,6 +26,8 @@ def main():
     records=[]
     metrics=("visits","checks","counts","edges","conflicts")
     modes=("I","L","E") if args.study=="endpoint" else ("chain","chain-unsigned","chain-first")
+    if args.study=="holdout":
+        modes=("chain-unsigned","chain-first")
     for mode in modes:
         dest=ROOT/".local"/HERE.name/args.output.stem/mode
         env={k:v for k,v in os.environ.items() if not k.startswith("REPLAY_")}
