@@ -37,6 +37,10 @@ python "$study/build.py" interval
 python "$study/build.py" types
 python "$study/build.py" partition
 python "$study/build.py" xor-proof
+python "$study/build.py" cofactor
+python "$study/build.py" prefix
+python "$study/build.py" bounded
+python "$study/build.py" tail
 python "$study/compare.py" 0189 .local/retest-0189 --cpu 10 --cap 60 --arms base split-bit split-bit base
 python "$study/compare.py" 0198 .local/retest-0198 --cpu 10 --cap 180 --arms base xor-only xor-proof xor-proof xor-only base
 python tools/lower_bound.py "$study/evidence/xor-0198/01-base/result.json"
@@ -57,6 +61,22 @@ python "$study/build.py" diagnostic
 python "$study/diagnose.py" 10 .local/retest-original-root
 python "$study/build.py" candidate-diagnostic
 python "$study/diagnose.py" 10 .local/retest-root-with-clauses all
+```
+
+独立验证最后两个扇入的费用下界，以及 360 预算下所有 208 类的精确覆盖：
+
+```powershell
+gcc -O2 -std=c11 "$study/verify_tail.c" -o .local/verify-tail.exe
+gcc -O2 -std=c11 "$study/verify_bounded.c" -o .local/verify-bounded.exe
+python "$study/audit_tail.py" .local/verify-tail.exe .local/verify-bounded.exe .local/tail-audit.json
+```
+
+正式全族比较用 `family.py`，从仓库根目录执行。前两条命令针对新的重跑目录，最后一条复核导出的原始日志。核编号按实际主机挑选并记录于清单。本轮实测主机为 AMD Ryzen 9 8945HX，Windows 11，GCC 16.2.0，Python 3.12.10。每个函数的三个进程依次绑定同一逻辑核，函数之间轮换方法顺序。
+
+```powershell
+python "$study/family.py" .local/retest-family --cpus 0 2 4 6 8 10 12 14 16 18 20 22 --cap 300
+python "$study/family.py" .local/retest-family --export .local/retest-family-export
+python "$study/audit_family.py" .local/retest-family-export
 ```
 
 ## 复现进度及证据
