@@ -25,6 +25,8 @@ def collect(truth, cpu, dest, arms, cap):
             kind = "types"
         if mode.startswith("split-"):
             kind = "partition"
+        if mode.startswith("xor-"):
+            kind = "xor-proof"
         binary = ROOT / ".local/variants" / ("fixed-fanin-" + kind) / ("abc.exe" if os.name == "nt" else "abc")
         result = run(binary, truth, 4, 2, cap, dest/f"{n:02}-{mode}", env=env,
                      metadata=dict(cpu=cpu, truth=truth, mode=mode, order=n))
@@ -47,7 +49,7 @@ if __name__ == "__main__":
     p.add_argument("--cpu",type=int,required=True)
     p.add_argument("--cap",type=int,default=60)
     p.add_argument("--arms",nargs="+",choices=("base","ops","margins","all","off","interval","types-only","types",
-                                               "split-bit","split-five"),
+                                               "split-bit","split-five","xor-proof","xor-only"),
                    default=("base","ops","margins","all","all","margins","ops","base"))
     args = p.parse_args()
     collect(args.truth,args.cpu,args.directory,args.arms,args.cap)

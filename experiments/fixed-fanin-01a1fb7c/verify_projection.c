@@ -1,6 +1,7 @@
 /* Compile standalone. Oracle enumerates actual partner truth tables and gate outputs. */
 #include <stdio.h>
 #include "projection.h"
+#include "xor_condition.h"
 
 static FfProjection oracle[65536];
 
@@ -34,6 +35,10 @@ int main(void)
                 if (app.zero != ref.zero || app.one != ref.one ||
                     app.counts != ref.counts || app.operators != ref.operators) {
                     fprintf(stderr,"Mismatch rows=%u input=%d target=%04x\n", n,i,t);
+                    return 1;
+                }
+                if (ff_only_xor(t,inputs) && (ref.operators & ~(1u<<2))) {
+                    fprintf(stderr,"Non-XOR counterexample rows=%u input=%d target=%04x\n",n,i,t);
                     return 1;
                 }
                 ++tests;

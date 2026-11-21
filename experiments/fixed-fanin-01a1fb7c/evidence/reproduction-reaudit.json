@@ -1,0 +1,44 @@
+{
+  "groups": {
+    "e14-main": {
+      "checked_runs": 624,
+      "verified_witnesses": 219,
+      "functions": 208,
+      "distinct_values_agree": true
+    },
+    "e14-ablation": {
+      "checked_runs": 15,
+      "verified_witnesses": 8,
+      "functions": 3,
+      "distinct_values_agree": true
+    }
+  },
+  "small_optima": {
+    "baseline-0189": {
+      "optimum": 304,
+      "states": 16950
+    },
+    "baseline-xor3": {
+      "optimum": 32,
+      "states": 13
+    }
+  },
+  "three_input_boundary_proofs": 10,
+  "sources": {
+    "abc": {
+      "commit": "c851fce40d9dde1aaf32b087a0f449751ea070dc",
+      "archive_sha256": "429976b38bbb15fcc2b78bb30d09fafa075783598714a1894fd01ae7a98deafd",
+      "component_sha256": "5e4138ff0a9db5c25a733cef0775cd8182430bfadaec1abb569d29a733f6a522"
+    },
+    "pexact": {
+      "commit": "7253861c224e7c9de2c802e61c86f89338253544",
+      "archive_sha256": "a8ae0d4886154e61c943ec8dc74fd9a9c9d56e74a19231cbe9ffe2c83937174e",
+      "component_sha256": "9fd662f352d0a9cbff76a857bc1f7a0efe6d8ae6328f4aaadc5b413b2488f4d1"
+    },
+    "tcjap": {
+      "commit": "59e5a0e954d6a0a6711b2bdc9898db875ede6889",
+      "archive_sha256": "838936449f40336cd6ca36e70951a6296277dec5cec1d91f338b6d5d173cc385",
+      "component_sha256": "69384c16b93bb2de0293e82cbaf1f152aebca38a77539382fc82ee07d1d5e21c"
+    }
+  }
+}

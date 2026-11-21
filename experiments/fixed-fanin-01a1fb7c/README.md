@@ -2,6 +2,42 @@
 
 本目录基于远端复现提交 `afdbfca6d28e246b085e97d6da57f22ef0fd80b8`。上游版权和构建步骤见仓库根目录 THIRD_PARTY_NOTICES.md、licenses/ 和 REPRODUCTION.md。本对话的代码、实验和提交均以本目录为边界。独立复现的最终本地快照为 `365a8db35e39918d10e9a16cec1495611dd5e0d0`。
 
+## 复核和运行
+
+从仓库根目录执行。以下 PowerShell 命令先公正地复核既有结果，再在新的输出目录运行。完整研究结果在 evidence/，用于重复计时的目录应取新名称。逻辑核编号可按主机配置选择；每个病例的各配置固定在同一核上。Linux 依赖与 Windows 的 MSYS2 UCRT64 工具链按根目录 REPRODUCTION.md 配置。
+
+```powershell
+$study = 'experiments/fixed-fanin-01a1fb7c'
+python "$study/audit_reproduction.py"
+python "$study/audit_results.py"
+python tools/prepare.py
+make -C .local/abc -f ../../tools/windows.mk -j12 abc.exe
+python "$study/build.py" base
+python "$study/build.py" candidate
+python "$study/build.py" interval
+python "$study/build.py" types
+python "$study/build.py" partition
+python "$study/build.py" xor-proof
+python "$study/compare.py" 0189 .local/retest-0189 --cpu 10 --cap 60 --arms base split-bit split-bit base
+```
+
+不需编译即可运行上面的两项审计。若本机的原始归档和构建源码已经准备好，可运行 `python "$study/audit_reproduction.py" .local/downloads` 同时核对三个上游归档及实际源文件。原始器件级功耗不在本次指标内；本研究复算的活动度按 DATE 论文的均匀输入模型定义。
+
+```powershell
+gcc -O2 -std=c11 "$study/verify_projection.c" -o .local/check-projection.exe
+.local/check-projection.exe
+gcc -O2 -std=c11 -I.local/reference/src "$study/verify_interval.c" .local/reference/src/joint_relation.c -o .local/check-interval.exe
+.local/check-interval.exe
+gcc -O2 -std=c11 "$study/verify_types.c" -o .local/check-types.exe
+.local/check-types.exe
+python "$study/check_partition.py" .local/retest-partition-oracle
+python "$study/verify_trace.py" .local/retest-full-traces .local/retest-trace-audit.json --cpu 10
+python "$study/build.py" diagnostic
+python "$study/diagnose.py" 10 .local/retest-original-root
+python "$study/build.py" candidate-diagnostic
+python "$study/diagnose.py" 10 .local/retest-root-with-clauses all
+```
+
 ## 复现进度及证据
 
 已复核 208 个四输入函数、每例 300 秒、三种方法共 624 次有效记录。作者原版、工程强化对照、TCJAP 独立集成的完成数依次为 67、72、80，计入超时的总秒数为 46100.71、43995.03、42451.69。219 个完成电路通过逐行真值和活动度复算。作者原版与集成共同完成 66 例，配对几何平均加速 4.386；强化版与集成共同完成 71 例，为 1.592。强化版完成而集成超时的 018b，以及集成慢于强化版的 9 个共同完成例，均计入记录。作者手稿报告的完成数为 71、73、94。已审计的两例独立最优性证明、说明和主比较记录可随本目录的 reproduction.zip 展开。通用电路见证检查只证明功能和活动度，完整优化结论另依赖作者搜索。
