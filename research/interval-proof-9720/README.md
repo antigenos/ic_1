@@ -68,6 +68,8 @@ python family.py audit BASE --manifest .local/repeat-plan.json --archive .local/
 
 完整断点保存在本机的 `.local/checkpoints/family-resume-checkpoint.zip`。核验命令为 `python snapshot_family.py verify .local/checkpoints/family-resume-checkpoint.zip`。将存档解包到新目录后，使用其中的 `manifest.json` 和 `records` 分别作为 `family.py` 的 `--manifest` 与 `--work`。公开数据导出命令为 `python public_family.py 本地存档 新结果.csv`。该命令对完整实验归档和阶段断点分别重做核验，只导出固定的科研结果字段。
 
+从公开表复算统计可执行 `python public_family.py evidence/family-checkpoint-024.csv --summary`。输出包含两版各自的分母和完成数、计入超时的总秒数、完整配对数、共同完成的时间几何平均比、仅一方完成及候选较慢的实例。阶段表有 24 条数据、11 个两版均已测量的函数，其中 5 个两版均已求解；`complete_family` 在全部 208 个函数都有两版记录后才为真。该入口也用冻结复现的强化版和重建版完整数据核对过，复得 71 个共同完成函数和配对几何平均比 1.591903908。
+
 用户暂停时已核验 14/416 项，其中包含此前的两条 018b 记录。5 项在运行中被中断。2026-11-21 03:40 UTC 首次恢复后，宿主进程表显示五个指定核心各被另一个 ABC 求解器同时占用。该次恢复的 5 个进程也已停止。两组调用均未生成结果文件，原始请求、进程回执和求解器输出留在 [中断记录](evidence/family-interruptions.jsonl)。它们不计入完成数、超时数或 416 项的截断成本。
 
 第二次恢复沿用原清单、二进制、顺序及每次 300 秒限时。主机为 16 物理核、32 逻辑核的 Ryzen 9 8945HX。经 Windows 的物理核心拓扑核对，逻辑 CPU 4、6、8、10、14 分别与 5、7、9、11、15 共享物理核。每 25 秒抽样外部 ABC 的亲和性；某条队列的物理核连续三次采样空闲，才会启动下一次求解。等待发生在求解计时前。观察器记录测量过程中外部 ABC 对这些核的占用，无法排除两次采样之间的短任务和其他类型的系统负载。结算时单列测量中观察到重叠、跨暂停和缺少采样的配对，并核对去掉这些配对后的结果。
