@@ -1,0 +1,11 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -3126,2 +3126,3 @@
+ #include "joint_trail.h"
++#include "cofactor_filter.h"
+ 
+@@ -3147,2 +3148,4 @@
++        if (!cone_filter(*p, node.act + *delta))
++            continue;
+         int status = replay_solve(*p, node.act + *delta);
+         if ( status == 1 )

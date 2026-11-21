@@ -1,0 +1,25 @@
+{
+  "split_identities": 81,
+  "subset": "all distinct fanin pairs; five operations; both output phases",
+  "stats": {
+    "exhaustive_gates": 114030,
+    "exhaustive_shared_ancestor": 3000,
+    "exhaustive_positive_lower": 34806,
+    "random_gates": 49152,
+    "random_shared_ancestor": 7220,
+    "random_positive_lower": 19461
+  },
+  "random_seed": 20261121,
+  "random_circuits": 4096,
+  "distinct_normalized_signals": 2458,
+  "exhaustive_by_depth": [
+    30,
+    1500,
+    112500
+  ],
+  "minimum_slack": {
+    "exhaustive": 0,
+    "random": 0
+  },
+  "counterexamples": 0
+}
