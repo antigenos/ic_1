@@ -1,0 +1,28 @@
+{
+  "target": "0189",
+  "cpu": 28,
+  "binary_sha256": "fc6b72db8b78af0c9791bf7d174d7a7ac286ef61d6f3afb1a5f2ca486855fb26",
+  "controls": {
+    "original": {
+      "accepted": true,
+      "certificate": "65142 304 5 1 0 8 4 3 4 1 0 14 6 2 14 7 5 4",
+      "returncode": 0,
+      "stdout": "ABC command line: \"pexact -I 4 -M 2 0189\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\nFF_ORIGINAL_CNF verified\nRealization of given 4-input function using 5 two-input gates complementary=1:\n08 = 4'b1101( 05 07 )\n07 = 4'b1110( c 06 )\n06 = 4'b1110( a b )\n05 = 4'b0010( d 04 )\n04 = 4'b1000( a b )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0001000100010001\ni=5:0001000100000000\ni=6:0111011101110111\ni=7:0111111101111111\ni=8:1001000110000000\n\n\nSwitching Activity=304\nNumber of Gates: r=5\nTotal runtime =     0.00 sec\n",
+      "stderr": ""
+    },
+    "wrong_activity": {
+      "accepted": false,
+      "certificate": "65142 306 5 1 0 8 4 3 4 1 0 14 6 2 14 7 5 4",
+      "returncode": 0,
+      "stdout": "ABC command line: \"pexact -I 4 -M 2 0189\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\n",
+      "stderr": ""
+    },
+    "wrong_output_gate": {
+      "accepted": false,
+      "certificate": "65142 304 5 1 0 8 4 3 4 1 0 14 6 2 14 7 5 14",
+      "returncode": 0,
+      "stdout": "ABC command line: \"pexact -I 4 -M 2 0189\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\n",
+      "stderr": ""
+    }
+  }
+}

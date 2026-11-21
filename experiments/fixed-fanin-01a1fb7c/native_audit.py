@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import subprocess
 import sys
 
 HERE=Path(__file__).resolve().parent
@@ -44,6 +45,44 @@ def previous_case(pristine, name):
         if (case/"result.json").is_file() and json.loads((case/"result.json").read_text())["status"]=="solver_completed_verified_witness":
             return case
     return None
+
+
+def negative_controls(binary, row, output, cpu):
+    """A legal but wrong output gate and a wrong cost must each be rejected."""
+    pin(cpu)
+    original = spec(row).split()
+    wrong_cost = original.copy()
+    wrong_cost[1] = str(row["activity"]+2)
+    wrong_gate = original.copy()
+    # Check the changed output on the actual predecessor signals before testing SAT.
+    wrong_gate[-1] = "8" if original[-1] == "14" else "14"
+    changed = dict(row, gates=[*row["gates"][:-1],[*row["gates"][-1][:2],int(wrong_gate[-1])]])
+    from library import replay
+    try:
+        replay(changed)
+    except ValueError as error:
+        assert "Computed truth=" in str(error)
+    else:
+        raise AssertionError("Choose a gate mutation that really changes the output")
+    observations = {}
+    env = {k:v for k,v in os.environ.items() if not k.startswith(("FF_", "REPLAY_"))}
+    for label, tokens in (("original",original), ("wrong_activity",wrong_cost), ("wrong_output_gate",wrong_gate)):
+        circuit = " ".join(tokens)
+        proc = subprocess.run([str(binary),"-c","pexact -I 4 -M 2 "+row["truth"]],
+                              env={**env,"FF_LIBRARY":circuit},capture_output=True,text=True,timeout=30)
+        assert proc.returncode in (0,1) and "FF_FIXED_TOPOLOGY_ACTIVITY" in proc.stdout
+        accepted = "FF_ORIGINAL_CNF verified" in proc.stdout
+        assert accepted == (label=="original")
+        if accepted:
+            verify(row, proc.stdout)
+        else:
+            assert "Realization of given" not in proc.stdout
+        observations[label] = dict(accepted=accepted, certificate=circuit, returncode=proc.returncode,
+                                   stdout=proc.stdout,stderr=proc.stderr)
+    result = dict(target=row["truth"],cpu=cpu,binary_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(),
+                  controls=observations)
+    output.write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8")
+    print("Confirmed the original witness and rejected both incorrect controls.")
 
 
 def work(rows, binary, dest, cpu, pristine=None):
@@ -134,10 +173,16 @@ if __name__=="__main__":
     p.add_argument("--reuse-pristine",type=Path,help="Reuse passed original runs and use the equivalent histogram generator for pending certificates")
     p.add_argument("--fixed",action="store_true",help="Use the original minterm CNF with pinned gates and its native activity readback for pending certificates")
     p.add_argument("--failed-enumerator",type=Path,help="Preserve unsuccessful full-window controls in the export")
+    p.add_argument("--negative-controls",type=Path,help="Run only paired positive and negative fixed-topology controls on 0189")
     args=p.parse_args()
     data=json.loads(args.library.read_text())
     assert check(data)==data["verified"]
     rows=[r for r in data["circuits"] if r["activity"]>=0]
+    if args.negative_controls:
+        if not args.cpus or len(args.cpus)!=1: p.error("Select one CPU for the controls")
+        binary=ROOT/".local/variants/fixed-fanin-library-check-fixed"/("abc.exe" if os.name=="nt" else "abc")
+        negative_controls(binary,next(r for r in rows if r["truth"]=="0189"),args.negative_controls,args.cpus[0])
+        sys.exit(0)
     if args.verify_export:
         verify_archive(rows,args.verify_export)
         sys.exit(0)
