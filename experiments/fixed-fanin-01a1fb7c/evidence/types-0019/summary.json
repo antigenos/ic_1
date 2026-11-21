@@ -1,0 +1,44 @@
+[
+  {
+    "mode": "base",
+    "wall_s": 8.55458890000591,
+    "capped_s": 8.55458890000591,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "types-only",
+    "wall_s": 12.481624499996542,
+    "capped_s": 12.481624499996542,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "types",
+    "wall_s": 11.929915799999435,
+    "capped_s": 11.929915799999435,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "types",
+    "wall_s": 12.360793899999408,
+    "capped_s": 12.360793899999408,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "types-only",
+    "wall_s": 12.324569600001269,
+    "capped_s": 12.324569600001269,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "base",
+    "wall_s": 12.472756600000139,
+    "capped_s": 12.472756600000139,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  }
+]

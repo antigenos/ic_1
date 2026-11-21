@@ -31,7 +31,11 @@ def compile_variant(kind):
         assert header.count(hook) == header.count(marker) == 1
         candidate = kind.startswith("candidate")
         units = ["candidate.h"] if candidate else []
-        if kind in ("diagnostic", "candidate-diagnostic"):
+        types = kind.startswith("types")
+        if types:
+            units.append("types.h")
+            (dest/"gate_clauses.h").write_bytes((HERE/"gate_clauses.h").read_bytes())
+        if kind.endswith("diagnostic"):
             units.append("diagnostic.h")
         if candidate:
             (dest / "projection.h").write_bytes((HERE / "projection.h").read_bytes())
@@ -42,6 +46,8 @@ def compile_variant(kind):
             replacement = marker
         if candidate:
             replacement = "    if (!ff_add_clauses(q)) return l_False;\n" + replacement
+        if types:
+            replacement = "    if (!ff_add_types(q)) return l_False;\n" + replacement
         header = header.replace(marker, replacement)
     (dest / "joint_trail.h").write_text(header)
     patches = []
@@ -55,5 +61,6 @@ def compile_variant(kind):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("kind", choices=("base", "diagnostic", "candidate", "candidate-diagnostic", "interval"))
+    p.add_argument("kind", choices=("base", "diagnostic", "candidate", "candidate-diagnostic",
+                                   "interval", "types", "types-diagnostic"))
     compile_variant(p.parse_args().kind)

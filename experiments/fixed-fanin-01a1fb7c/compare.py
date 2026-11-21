@@ -21,6 +21,8 @@ def collect(truth, cpu, dest, arms, cap):
         env = {k: v for k, v in os.environ.items() if not k.startswith(("FF_", "REPLAY_"))}
         env["FF_MODE"] = mode
         kind = mode if mode in ("base","interval") else "candidate"
+        if mode.startswith("types"):
+            kind = "types"
         binary = ROOT / ".local/variants" / ("fixed-fanin-" + kind) / ("abc.exe" if os.name == "nt" else "abc")
         result = run(binary, truth, 4, 2, cap, dest/f"{n:02}-{mode}", env=env,
                      metadata=dict(cpu=cpu, truth=truth, mode=mode, order=n))
@@ -42,7 +44,7 @@ if __name__ == "__main__":
     p.add_argument("directory",type=Path)
     p.add_argument("--cpu",type=int,required=True)
     p.add_argument("--cap",type=int,default=60)
-    p.add_argument("--arms",nargs="+",choices=("base","ops","margins","all","off","interval"),
+    p.add_argument("--arms",nargs="+",choices=("base","ops","margins","all","off","interval","types-only","types"),
                    default=("base","ops","margins","all","all","margins","ops","base"))
     args = p.parse_args()
     collect(args.truth,args.cpu,args.directory,args.arms,args.cap)

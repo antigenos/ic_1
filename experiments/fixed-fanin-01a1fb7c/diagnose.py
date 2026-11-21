@@ -16,6 +16,8 @@ def check(cpu, dest, mode):
     pin(cpu)
     dest.mkdir(parents=True, exist_ok=False)
     kind = "diagnostic" if mode == "base" else "candidate-diagnostic"
+    if mode.startswith("types"):
+        kind = "types-diagnostic"
     binary = ROOT / ".local/variants" / ("fixed-fanin-" + kind) / ("abc.exe" if os.name == "nt" else "abc")
     records = []
     for i in range(4):
