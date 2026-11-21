@@ -18,11 +18,19 @@ def compile_variant(kind):
         hook = "static int replay_solve(PexaMan_t *p, int bound)"
         marker = "    replay_at_fixpoint = replay_visit;"
         assert header.count(hook) == header.count(marker) == 1
-        header = header.replace(hook, (HERE / (kind + ".h")).read_text() + "\n" + hook)
-        if kind == "diagnostic":
+        candidate = kind.startswith("candidate")
+        units = ["candidate.h"] if candidate else []
+        if kind in ("diagnostic", "candidate-diagnostic"):
+            units.append("diagnostic.h")
+        if candidate:
+            (dest / "projection.h").write_bytes((HERE / "projection.h").read_bytes())
+        header = header.replace(hook, "\n".join((HERE / unit).read_text() for unit in units) + "\n" + hook)
+        if kind.endswith("diagnostic"):
             replacement = "    ff_diagnostic_setup(q);\n    replay_at_fixpoint = ff_diagnostic_visit;"
         else:
-            replacement = "    if (!ff_add_clauses(q)) return l_False;\n" + marker
+            replacement = marker
+        if candidate:
+            replacement = "    if (!ff_add_clauses(q)) return l_False;\n" + replacement
         header = header.replace(marker, replacement)
     (dest / "joint_trail.h").write_text(header)
     patches = []
@@ -36,5 +44,5 @@ def compile_variant(kind):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("kind", choices=("base", "diagnostic", "candidate"))
+    p.add_argument("kind", choices=("base", "diagnostic", "candidate", "candidate-diagnostic"))
     compile_variant(p.parse_args().kind)

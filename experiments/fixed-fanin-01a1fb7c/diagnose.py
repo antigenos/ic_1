@@ -12,14 +12,16 @@ sys.path.insert(0, str(ROOT / "tools"))
 from repeat_0189 import pin
 
 
-def check(cpu, dest):
+def check(cpu, dest, mode):
     pin(cpu)
     dest.mkdir(parents=True, exist_ok=False)
-    binary = ROOT / ".local/variants/fixed-fanin-diagnostic" / ("abc.exe" if os.name == "nt" else "abc")
+    kind = "diagnostic" if mode == "base" else "candidate-diagnostic"
+    binary = ROOT / ".local/variants" / ("fixed-fanin-" + kind) / ("abc.exe" if os.name == "nt" else "abc")
     records = []
     for i in range(4):
         env = {k: v for k, v in os.environ.items() if not k.startswith("REPLAY_")}
         env["FF_PRIMARY"] = str(i)
+        env["FF_MODE"] = mode
         result = subprocess.run([binary, "-c", "pexact -I 4 -M 2 0189"], env=env, cwd=dest,
                                 capture_output=True, timeout=60, check=True)
         (dest / f"primary-{i}.log").write_bytes(result.stdout + result.stderr)
@@ -40,11 +42,12 @@ def check(cpu, dest):
             record.update(partner=f"{g:04x}", forced_rows_missing=16-(z|o).bit_count(),
                           unsupported_counts_open=(int(raw["domain"],16) & ~(1<<folded)).bit_count())
         records.append(record)
-    output = dict(binary_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(), cpu=cpu,
+    output = dict(binary_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(), cpu=cpu, mode=mode,
                   normalized_target="fe76", gates=4, upper=300, records=records)
     (dest / "audit.json").write_text(json.dumps(output, indent=2)+"\n")
     return output
 
 
 if __name__ == "__main__":
-    print(json.dumps(check(int(sys.argv[1]), Path(sys.argv[2]).resolve()), indent=2))
+    print(json.dumps(check(int(sys.argv[1]), Path(sys.argv[2]).resolve(),
+                           sys.argv[3] if len(sys.argv) > 3 else "base"), indent=2))
