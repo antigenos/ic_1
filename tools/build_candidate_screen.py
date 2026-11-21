@@ -4,7 +4,7 @@ import shutil
 from build_variant import ROOT, build
 
 MODES = ("memo", "xor", "schedule", "guide", "short", "plain", "prefix", "symmetry","windows",
-         "interval","holes","exists","combined")
+         "interval","holes","exists","combined","ordered")
 
 
 def replace_once(code, old, new):
@@ -94,6 +94,10 @@ def make(mode):
 """
         source=replace_once(source,"static int replay_solve(",wrapper+"\nstatic int replay_solve(")
         source=replace_once(source,"    replay_at_fixpoint = replay_visit;","    screen_sampled=0;\n    replay_at_fixpoint = screen_visit;")
+    elif mode=="ordered":
+        source=replace_once(source,"static int replay_solve(",'#include "screen_ordered_inputs.h"\nstatic int replay_solve(')
+        anchor='    const char *rules = getenv("REPLAY_RULES");'
+        source=replace_once(source,anchor,"    if (!screen_input_order(p)) return l_False;\n"+anchor)
     elif mode in ("prefix","plain","symmetry","combined"):
         if mode=="symmetry":
             include="#define SCREEN_SYMMETRY\n"

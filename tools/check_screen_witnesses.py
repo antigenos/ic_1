@@ -68,6 +68,21 @@ def run():
             assert relabel(log,t,p,score)==w
             counts["symmetry_checked"]+=1
             counts["witness_required_relabel"]+=normalized!=signals[4]
+            first_use=[10**6]*4
+            for ident,_,left,right in GATE.findall(log.replace("\r","")):
+                for name in (left,right):
+                    if len(name)==1 and name in "abcd":
+                        var=ord(name)-97
+                        first_use[var]=min(first_use[var],int(ident))
+            swaps=[]
+            for perm in perms:
+                moved=[i for i in range(4) if perm[i]!=i]
+                if len(moved)==2:
+                    swaps.append(tuple(moved))
+            survivor=next(perm for perm in perms
+                          if all(first_use[perm[a]]<=first_use[perm[b]] for a,b in swaps))
+            assert relabel(log,t,survivor,score)==w
+            counts["ordered_checked"]+=1
             classes.add(t)
     return dict(classes=len(classes),checks=counts,violations=0)
 
