@@ -10,7 +10,7 @@ from zipfile import ZipFile
 from family import HERE, VERIFIED, pin, simulate
 
 
-def enumerate_bounds(truths, cap):
+def enumerate_bounds(truths, cap, optimal_states=None):
     if not 0 < cap <= 65535:
         raise ValueError("A positive bound in 16-bit range is required")
     normalized = {int(t, 16) ^ (65535 if int(t, 16) & 1 else 0): t for t in truths}
@@ -38,7 +38,10 @@ def enumerate_bounds(truths, cap):
             outputs.update((x & ~y, y & ~x, x ^ y, x & y, x | y))
         for truth in targets.intersection(outputs):
             name = normalized[truth]
-            bounds[name] = min(bounds[name], cost)
+            if cost < bounds[name]:
+                bounds[name] = cost
+                if optimal_states is not None:
+                    optimal_states[name] = state
         outputs.difference_update(available)
         for signal in outputs:
             following_cost = cost + weights[signal]
