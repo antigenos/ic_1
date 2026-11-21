@@ -1,0 +1,26 @@
+{
+  "cases": {
+    "0189": {
+      "syntactic": 900,
+      "sorted": 465,
+      "separate": 211,
+      "mixed": 181,
+      "full_orbit": 142,
+      "strict_example": {
+        "first": "5050",
+        "second": "0c0c",
+        "permuted_second": "0a0a"
+      }
+    },
+    "07b4": {
+      "syntactic": 900,
+      "sorted": 465,
+      "separate": 465,
+      "mixed": 465,
+      "full_orbit": 465,
+      "strict_example": null
+    }
+  },
+  "witnesses": 219,
+  "reorderable_witness_prefixes": 95
+}

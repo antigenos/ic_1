@@ -17,7 +17,9 @@ static int iso_pair_key(const IsoFirst *g)
     return g->lo*4 + g->hi;
 }
 
-static void iso_prepare(unsigned target, int signed_mode, int pair_first, IsoFirst gates[30])
+#include "pair_gate.h"
+
+static void iso_prepare(unsigned target, int signed_mode, int pair_first, int pair_mode, IsoFirst gates[30])
 {
     static const unsigned pins[4] = {0xaaaa,0xcccc,0xf0f0,0xff00};
     static const int codes[5] = {2,4,6,8,14};
@@ -28,6 +30,7 @@ static void iso_prepare(unsigned target, int signed_mode, int pair_first, IsoFir
         for (int j = 0; j < 5; ++j)
             gates[n++] = (IsoFirst){functions[j],hi,lo,codes[j],1};
     }
+    if (pair_mode) pair_start(gates);
     for (int a = 0; a < 4; ++a) for (int b = 0; b < 4; ++b) {
         if (a == b) continue;
         for (int c = 0; c < 4; ++c) {
@@ -41,6 +44,7 @@ static void iso_prepare(unsigned target, int signed_mode, int pair_first, IsoFir
                 unsigned row[16];
                 for (int i = 0; i < 16; ++i) row[i] = permuted[i] ^ phase;
                 if (iso_apply(target,row) != target) continue;
+                if (pair_mode==2) pair_update(gates,row);
                 for (int j = 0; j < n; ++j) {
                     if (!gates[j].keep) continue;
                     unsigned image = iso_apply(gates[j].function,row);
@@ -98,13 +102,14 @@ static int iso_filter(PexaMan_t *p)
     int signed_mode = !mode || strcmp(mode,"unsigned") != 0;
     unsigned target = (unsigned)p->pTruth[0] & 65535u;
     if (target & 1) target ^= 65535u;
-    int classical = mode && (!strcmp(mode,"first-use") || !strcmp(mode,"combined"));
+    int pair_mode = mode && !strcmp(mode,"orbit-prefix") ? 2 : (mode && !strcmp(mode,"sorted-prefix"));
+    int classical = pair_mode || (mode && (!strcmp(mode,"first-use") || !strcmp(mode,"combined")));
     if (classical && !iso_first_use(p,target)) return 0;
     if (mode && !strcmp(mode,"first-use")) return 1;
-    int pair_first = mode && (!strcmp(mode,"ordered") || !strcmp(mode,"combined"));
-    int cache_mode = signed_mode + 2*pair_first;
+    int pair_first = pair_mode || (mode && (!strcmp(mode,"ordered") || !strcmp(mode,"combined")));
+    int cache_mode = signed_mode + 2*pair_first + 4*pair_mode;
     if (previous != (int)target || previous_mode != cache_mode) {
-        iso_prepare(target,signed_mode,pair_first,gates);
+        iso_prepare(target,signed_mode,pair_first,pair_mode,gates);
         previous = (int)target;
         previous_mode = cache_mode;
     }
@@ -119,5 +124,5 @@ static int iso_filter(PexaMan_t *p)
                    target,p->nNodes,gates[j].function,clause[0],clause[1],clause[2],clause[3],clause[4]);
         if (!sat_solver_addclause(p->pSat,clause,clause+5)) return 0;
     }
-    return 1;
+    return !pair_mode || p->nNodes<3 || pair_filter(p,gates);
 }

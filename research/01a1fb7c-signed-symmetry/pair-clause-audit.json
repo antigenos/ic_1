@@ -1,0 +1,18 @@
+{
+  "functions": 208,
+  "gate_counts": [
+    2,
+    3,
+    7
+  ],
+  "modes": {
+    "sorted-prefix": {
+      "compressed_clauses": 15736,
+      "reachable_valuations_checked": 196260
+    },
+    "orbit-prefix": {
+      "compressed_clauses": 27050,
+      "reachable_valuations_checked": 196260
+    }
+  }
+}

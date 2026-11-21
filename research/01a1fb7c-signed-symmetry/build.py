@@ -28,10 +28,11 @@ def main():
         dest.mkdir(parents=True,exist_ok=True)
         for name in ("joint_relation.c","joint_relation.h"):
             shutil.copyfile(src/name,dest/name)
-    name = "signed-symmetry-order-01a1fb7c"
+    name = "signed-symmetry-pair-01a1fb7c"
     out = ROOT/".local/variants"/name
     out.mkdir(parents=True,exist_ok=True)
     shutil.copyfile(HERE/"first_gate.h",out/"first_gate.h")
+    shutil.copyfile(HERE/"pair_gate.h",out/"pair_gate.h")
     patches = [ROOT/"variants"/(s+".patch") for s in ("compositions","support","joint-trail")]
     patchdir = out/"patches"
     patchdir.mkdir(exist_ok=True)
