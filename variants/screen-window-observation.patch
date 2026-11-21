@@ -1,0 +1,6 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -3147,2 +3147,3 @@
++        screen_lower = node.act;
+         int status = replay_solve(*p, node.act + *delta);
+         if ( status == 1 )

@@ -1,8 +1,9 @@
 """Apply each small experiment independently to the frozen joint integration."""
 import argparse
+import shutil
 from build_variant import ROOT, build
 
-MODES = ("memo", "xor", "schedule", "guide", "short")
+MODES = ("memo", "xor", "schedule", "guide", "short", "plain", "prefix", "symmetry","windows")
 
 
 def replace_once(code, old, new):
@@ -53,13 +54,38 @@ def make(mode):
                               "selector, signals, result.without_budget[0] != 0))")
         source = replace_once(source, "var, signals))",
                               "var, signals, (result.without_budget[k] >> a) & 1u))")
+    elif mode == "windows":
+        source=replace_once(source,"static int replay_pair(",'#include "sample_joint_windows.h"\nstatic int replay_pair(')
+        source=replace_once(source,"    if (unselected_pin >= 0) {","    screen_observe(q,signals,obj,unselected_pin,ops,&result);\n    if (unselected_pin >= 0) {")
+        wrapper="""static int screen_visit(sat_solver *s)
+{
+    screen_sample[0]=0;
+    int changed=replay_visit(s);
+    if (!changed && screen_sample[0]) { puts(screen_sample); ++screen_sampled; }
+    return changed;
+}
+"""
+        source=replace_once(source,"static int replay_solve(",wrapper+"\nstatic int replay_solve(")
+        source=replace_once(source,"    replay_at_fixpoint = replay_visit;","    screen_sampled=0;\n    replay_at_fixpoint = screen_visit;")
+    elif mode in ("prefix","plain","symmetry"):
+        if mode=="symmetry":
+            include="#define SCREEN_SYMMETRY\n"
+        else:
+            include=f'#define SCREEN_SHIFT {int(mode=="prefix")}\n#include "screen_prefix_table.h"\n'
+        source = replace_once(source,"static int replay_solve(",include+'#include "screen_structural.h"\nstatic int replay_solve(')
+        anchor='    const char *rules = getenv("REPLAY_RULES");'
+        source=replace_once(source,anchor,"    if (!screen_structural(p, bound)) return l_False;\n"+anchor)
     else:
         raise ValueError(mode)
     name = "screen-" + mode
     dest = ROOT / ".local/variants" / name
     dest.mkdir(parents=True, exist_ok=True)
+    if mode in ("plain","prefix"):
+        shutil.copyfile(ROOT/".local/screen_prefix_table.h",dest/"screen_prefix_table.h")
     (dest / "joint_trail.h").write_text(source)
     patches = [ROOT / "variants" / (n + ".patch") for n in ("compositions","support","joint-trail")]
+    if mode=="windows":
+        patches.append(ROOT/"variants/screen-window-observation.patch")
     build(name, patches, ROOT / "variants/sat-trail.patch")
 
 

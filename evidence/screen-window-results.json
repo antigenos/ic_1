@@ -1,0 +1,65 @@
+{
+  "counts": {
+    "observations": 862,
+    "two_sides_new_pending_literals": 42,
+    "holes_new_pending_literals": 220,
+    "total_new_pending_literals": 262,
+    "two_sides_observations": 23,
+    "total_observations": 111,
+    "holes_observations": 104
+  },
+  "distinct_snapshots": 853,
+  "examples": {
+    "two_sides": {
+      "snapshot": "WINDOW 65142 3 225 300 5 4 -1 20 336 272 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 8433,7168,272,272 129,8304,336,336",
+      "old": [
+        336,
+        272
+      ],
+      "new": [
+        320,
+        256
+      ],
+      "remaining_sums": [
+        0
+      ],
+      "extra": 2
+    },
+    "total": {
+      "snapshot": "WINDOW 65142 3 225 300 5 4 -1 20 336 272 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 8433,7168,272,272 129,8304,336,336",
+      "old": [
+        336,
+        272
+      ],
+      "new": [
+        320,
+        256
+      ],
+      "remaining_sums": [
+        0
+      ],
+      "extra": 2
+    },
+    "holes": {
+      "snapshot": "WINDOW 65142 4 300 302 6 0 1 31 256 256 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 1,0,272,272 1,0,340,340 1,0,510,510",
+      "old": [
+        256,
+        256
+      ],
+      "new": [
+        0,
+        0
+      ],
+      "remaining_sums": [
+        152,
+        184,
+        192,
+        216,
+        224,
+        248,
+        256
+      ],
+      "extra": 1
+    }
+  }
+}

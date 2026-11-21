@@ -1,0 +1,16 @@
+{
+  "start_utc": "2026-11-21T00:30:14.405969+00:00",
+  "binary_sha256": "d53cfafe131411a39be6b9489630aa8970f3b18edec94d5caaeeabfda93fd7c0",
+  "command": [
+    "abc.exe",
+    "-c",
+    "pexact -I 4 -M 2 0189"
+  ],
+  "timeout_s": 30,
+  "experiment": {
+    "method": "schedule",
+    "truth": "0189",
+    "cpu": 4,
+    "order": 13
+  }
+}
