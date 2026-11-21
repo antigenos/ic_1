@@ -17,7 +17,7 @@ METHODS = ["base", "wide-highplain", "wide-hightail"]
 COMPLETED = "solver_completed_verified_witness"
 
 
-def audit(folder, full):
+def audit(folder, full, reference_library=None):
     plan = json.loads((folder/"manifest.json").read_text())
     summary = json.loads((folder/"summary.json").read_text())
     assert plan["modes"] == METHODS and plan["budget"]==480 and plan["proof_work"]==20000000
@@ -28,6 +28,8 @@ def audit(folder, full):
         assert len(plan["cases"]) == 208 and plan["cap"] == 300
     results, routes = {}, {}
     activities = {}
+    reference = {r["truth"]:r["activity"] for r in reference_library["circuits"]} if reference_library else {}
+    matched = 0
     for m, mode in enumerate(METHODS):
         rows, paths = [], Counter()
         for shard in sorted(folder.glob(mode+"-*.jsonl")):
@@ -51,6 +53,12 @@ def audit(folder, full):
             witness = simulate(message, 4, int(target,16))
             assert witness == row["witness"]
             assert activities.setdefault(target,witness["activity"])==witness["activity"]
+            if target in reference:
+                if reference[target]>=0:
+                    assert reference[target]==witness["activity"], (target,witness,reference[target])
+                    matched += 1
+                else:
+                    assert witness["activity"]>reference_library["cap"]
             if mode == "base":
                 paths["native_search"] += 1
                 continue
@@ -91,7 +99,8 @@ def audit(folder, full):
             assert p["paired_gm"] is None
         outcomes[mode]=dict(gained=gained,lost=lost,slower_on_jointly_completed={t:v for t,v in ratios.items() if v<1})
     return dict(checked_runs=3*len(plan["cases"]), verified_witnesses=sum(t["completed"] for t in summary["totals"].values()),
-                distinct_solved_targets=len(activities),routes=routes,comparisons=outcomes)
+                distinct_solved_targets=len(activities),independent_library_matches=matched,
+                routes=routes,comparisons=outcomes)
 
 
 if __name__ == "__main__":
@@ -99,8 +108,13 @@ if __name__ == "__main__":
     p.add_argument("folder",type=Path)
     p.add_argument("--small", action="store_true", help="Audit an explicitly smaller preflight")
     p.add_argument("--out",type=Path)
+    p.add_argument("--library",type=Path,help="Also check all witnesses against an independent orbit library")
     args=p.parse_args()
-    result=audit(args.folder, not args.small)
+    reference=json.loads(args.library.read_text()) if args.library else None
+    if reference:
+        from library import check
+        assert check(reference)==reference["verified"]
+    result=audit(args.folder, not args.small, reference)
     if args.out:
         args.out.write_text(json.dumps(result, indent=2)+"\n", encoding="utf-8")
     print(json.dumps({k:v for k,v in result.items() if k not in ("comparisons","routes")}))

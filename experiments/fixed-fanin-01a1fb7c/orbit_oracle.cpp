@@ -3,12 +3,14 @@
 #include <array>
 #include <cstdint>
 #include <iostream>
+#include <iomanip>
 #include <limits>
 #include <unordered_set>
 #include <vector>
 
 using Word = std::uint16_t;
-using State = std::array<Word, 16>;
+constexpr int max_paid = 24;
+using State = std::array<Word, max_paid>;
 constexpr unsigned functions = 32768;
 constexpr int symmetry_count = 24 * 16;
 constexpr std::array<Word, 4> inputs{0xaaaa, 0xcccc, 0xf0f0, 0xff00};
@@ -16,6 +18,8 @@ std::array<std::array<Word, functions>, symmetry_count> images;
 std::array<Word, functions> representative;
 std::array<std::vector<unsigned short>, functions> to_representative;
 std::array<int, functions> activity, minimum;
+struct FinalState { State wires{}; int depth=0; Word out=0; };
+std::array<FinalState, functions> final_states;
 
 Word normal(Word w) { return (w & 1u) ? static_cast<Word>(~w) : w; }
 
@@ -82,16 +86,79 @@ State canonical(const State &s, int n)
 struct Hash {
     std::size_t operator()(const State &s) const {
         std::size_t h = 1469598103934665603ull;
-        for (Word w : s) h = (h ^ w) * 1099511628211ull;
+        for (Word w : s) {
+            if (!w) break;
+            h = (h ^ w) * 1099511628211ull;
+        }
         return h;
     }
 };
 
+struct Gate { int hi, lo, code; };
+
+bool generate(Word goal, const std::vector<Word> &available, Gate &gate)
+{
+    constexpr std::array<int, 5> codes{4, 2, 6, 8, 14};
+    for (int i=1; i<static_cast<int>(available.size()); ++i) {
+        for (int j=0; j<i; ++j) {
+            unsigned a=available[i], b=available[j];
+            std::array<unsigned,5> outs{a & ~b, b & ~a, a ^ b, a & b, a | b};
+            for (int k=0; k<5; ++k) if (outs[k]==goal) {
+                gate={i,j,codes[k]};
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+void emit_circuit(unsigned target, int value)
+{
+    Word goal=normal(target);
+    std::vector<Word> available(inputs.begin(),inputs.end());
+    std::vector<Gate> gates;
+    int direct = -2;
+    if (value >= 0) {
+        auto it=std::find(available.begin(),available.end(),goal);
+        if (!goal) direct=-1;
+        else if (it!=available.end()) direct=static_cast<int>(it-available.begin());
+        else {
+            const auto &seed=final_states[representative[goal>>1]>>1];
+            int map=0;
+            while (map<symmetry_count && images[map][seed.out>>1]!=goal) ++map;
+            if (map==symmetry_count) throw std::logic_error("Missing output transformation");
+            std::vector<Word> pending;
+            for (int i=0;i<seed.depth;++i) pending.push_back(images[map][seed.wires[i]>>1]);
+            Gate g{};
+            while (!pending.empty()) {
+                auto ready=std::find_if(pending.begin(),pending.end(),[&](Word w){return generate(w,available,g);});
+                if (ready==pending.end()) throw std::logic_error("Unreachable transformed state");
+                available.push_back(*ready);
+                gates.push_back(g);
+                pending.erase(ready);
+            }
+            if (!generate(goal,available,g)) throw std::logic_error("Missing final operation");
+            gates.push_back(g);
+        }
+    }
+    std::cout << "{\"truth\":\"" << std::hex << std::setw(4) << std::setfill('0') << target
+              << "\",\"activity\":" << std::dec << value << ",\"complement\":" << (target&1)
+              << ",\"direct\":" << direct << ",\"gates\":[";
+    for (std::size_t i=0;i<gates.size();++i) {
+        const auto &g=gates[i];
+        if (i) std::cout << ",";
+        std::cout << "[" << g.hi << "," << g.lo << "," << g.code << "]";
+    }
+    std::cout << "]}\n";
+}
+
 int main(int argc, char **argv)
 {
-    if (argc != 2) return 2;
+    if (argc != 2 && argc != 3) return 2;
+    bool circuits = argc==3 && std::string(argv[2])=="--circuits";
+    if (argc==3 && !circuits) return 2;
     int cap = std::stoi(argv[1]);
-    if (cap < 0 || cap > 480) return 2;
+    if (cap < 0 || cap > 30*max_paid) return 2;
     build_group();
     minimum.fill(std::numeric_limits<int>::max());
     minimum[0] = 0;
@@ -105,7 +172,7 @@ int main(int argc, char **argv)
         std::unordered_set<State, Hash> next;
         for (const State &s : layer) {
             ++stamp;
-            std::array<Word, 20> wires{};
+            std::array<Word, 4+max_paid> wires{};
             std::copy(inputs.begin(),inputs.end(),wires.begin());
             std::copy_n(s.begin(),depth,wires.begin()+4);
             int paid = 0;
@@ -117,8 +184,11 @@ int main(int argc, char **argv)
                     if (marked[x] == stamp) continue;
                     marked[x] = stamp;
                     int &best = minimum[representative[x] >> 1];
-                    best = std::min(best, paid);
-                    if (!g || depth == 16 || paid + activity[x] > cap) continue;
+                    if (paid < best) {
+                        best = paid;
+                        if (circuits) final_states[representative[x]>>1] = {s,depth,static_cast<Word>(g)};
+                    }
+                    if (!g || depth == max_paid || paid + activity[x] > cap) continue;
                     if (std::find(inputs.begin(),inputs.end(),g) != inputs.end() ||
                         std::binary_search(s.begin(),s.begin()+depth,g)) continue;
                     State child = s;
@@ -138,6 +208,7 @@ int main(int argc, char **argv)
     while (std::cin >> std::hex >> target) {
         if (target > 65535) return 2;
         int value = minimum[representative[normal(target) >> 1] >> 1];
-        std::cout << std::hex << target << " " << std::dec << (value <= cap ? value : -1) << "\n";
+        if (circuits) emit_circuit(target, value <= cap ? value : -1);
+        else std::cout << std::hex << target << " " << std::dec << (value <= cap ? value : -1) << "\n";
     }
 }
