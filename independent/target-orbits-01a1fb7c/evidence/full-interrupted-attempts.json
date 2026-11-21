@@ -1,0 +1,218 @@
+{
+  "reason": "User-requested pause; no terminal record for these eight attempts.",
+  "retained": {
+    "solver_completed_verified_witness": 56,
+    "timeout": 39
+  },
+  "restart_first_request_utc": "2026-11-21T03:39:59.844913+00:00",
+  "attempts": [
+    {
+      "request": {
+        "start_utc": "2026-11-21T01:14:30.890647+00:00",
+        "binary_sha256": "77430c78990212ef5f51b1acda303eb5d27e1b1965f0e439c0732322f16c21d5",
+        "command": [
+          "abc.exe",
+          "-c",
+          "pexact -I 4 -M 2 016e"
+        ],
+        "timeout_s": 300,
+        "experiment": {
+          "cpu": 22,
+          "truth": "016e",
+          "arm": "B",
+          "order": 1
+        }
+      },
+      "launch": {
+        "pid": 19484,
+        "child_affinity": [
+          22
+        ]
+      },
+      "solver_output": "",
+      "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "request": {
+        "start_utc": "2026-11-21T01:13:27.032354+00:00",
+        "binary_sha256": "77430c78990212ef5f51b1acda303eb5d27e1b1965f0e439c0732322f16c21d5",
+        "command": [
+          "abc.exe",
+          "-c",
+          "pexact -I 4 -M 2 016f"
+        ],
+        "timeout_s": 300,
+        "experiment": {
+          "cpu": 24,
+          "truth": "016f",
+          "arm": "B",
+          "order": 2
+        }
+      },
+      "launch": {
+        "pid": 17680,
+        "child_affinity": [
+          24
+        ]
+      },
+      "solver_output": "",
+      "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "request": {
+        "start_utc": "2026-11-21T01:14:35.038280+00:00",
+        "binary_sha256": "99fba7de6559f69646d86d41e4fddf5680cfe24baad34625dd66ceeed983ce97",
+        "command": [
+          "abc.exe",
+          "-c",
+          "pexact -I 4 -M 2 0182"
+        ],
+        "timeout_s": 300,
+        "experiment": {
+          "cpu": 18,
+          "truth": "0182",
+          "arm": "A",
+          "order": 1
+        }
+      },
+      "launch": {
+        "pid": 36140,
+        "child_affinity": [
+          18
+        ]
+      },
+      "solver_output": "",
+      "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "request": {
+        "start_utc": "2026-11-21T01:14:32.912282+00:00",
+        "binary_sha256": "77430c78990212ef5f51b1acda303eb5d27e1b1965f0e439c0732322f16c21d5",
+        "command": [
+          "abc.exe",
+          "-c",
+          "pexact -I 4 -M 2 0183"
+        ],
+        "timeout_s": 300,
+        "experiment": {
+          "cpu": 20,
+          "truth": "0183",
+          "arm": "B",
+          "order": 1
+        }
+      },
+      "launch": {
+        "pid": 27636,
+        "child_affinity": [
+          20
+        ]
+      },
+      "solver_output": "",
+      "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "request": {
+        "start_utc": "2026-11-21T01:14:59.374698+00:00",
+        "binary_sha256": "99fba7de6559f69646d86d41e4fddf5680cfe24baad34625dd66ceeed983ce97",
+        "command": [
+          "abc.exe",
+          "-c",
+          "pexact -I 4 -M 2 0196"
+        ],
+        "timeout_s": 300,
+        "experiment": {
+          "cpu": 16,
+          "truth": "0196",
+          "arm": "A",
+          "order": 1
+        }
+      },
+      "launch": {
+        "pid": 44832,
+        "child_affinity": [
+          16
+        ]
+      },
+      "solver_output": "",
+      "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "request": {
+        "start_utc": "2026-11-21T01:11:53.062048+00:00",
+        "binary_sha256": "99fba7de6559f69646d86d41e4fddf5680cfe24baad34625dd66ceeed983ce97",
+        "command": [
+          "abc.exe",
+          "-c",
+          "pexact -I 4 -M 2 019f"
+        ],
+        "timeout_s": 300,
+        "experiment": {
+          "cpu": 30,
+          "truth": "019f",
+          "arm": "A",
+          "order": 2
+        }
+      },
+      "launch": {
+        "pid": 692,
+        "child_affinity": [
+          30
+        ]
+      },
+      "solver_output": "",
+      "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "request": {
+        "start_utc": "2026-11-21T01:14:08.001152+00:00",
+        "binary_sha256": "77430c78990212ef5f51b1acda303eb5d27e1b1965f0e439c0732322f16c21d5",
+        "command": [
+          "abc.exe",
+          "-c",
+          "pexact -I 4 -M 2 01ad"
+        ],
+        "timeout_s": 300,
+        "experiment": {
+          "cpu": 26,
+          "truth": "01ad",
+          "arm": "B",
+          "order": 2
+        }
+      },
+      "launch": {
+        "pid": 48300,
+        "child_affinity": [
+          26
+        ]
+      },
+      "solver_output": "",
+      "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "request": {
+        "start_utc": "2026-11-21T01:15:26.234343+00:00",
+        "binary_sha256": "77430c78990212ef5f51b1acda303eb5d27e1b1965f0e439c0732322f16c21d5",
+        "command": [
+          "abc.exe",
+          "-c",
+          "pexact -I 4 -M 2 0358"
+        ],
+        "timeout_s": 300,
+        "experiment": {
+          "cpu": 28,
+          "truth": "0358",
+          "arm": "B",
+          "order": 1
+        }
+      },
+      "launch": {
+        "pid": 14344,
+        "child_affinity": [
+          28
+        ]
+      },
+      "solver_output": "",
+      "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
