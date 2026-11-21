@@ -64,6 +64,10 @@ python family.py audit BASE --manifest .local/repeat-plan.json --archive .local/
 
 ### 全族实验恢复记录
 
+首个可恢复断点包含 24/416 项。10 份返回电路的活动度均与独立枚举所证的最优值相同，另有 14 次超时。公开表逐项给出方法、完成状态、300 秒截断耗时、活动度、门数与核验结论。表中的 A 为冻结的 TCJAP 重建，C 为保存见证并排除严格低价区间的改进版。本地完整存档包含 22 次新调用的原始记录，另有 2 条此前登记的 018b 记录。已在新目录实际解包，并使用正式检查器重读，恢复后可识别其余 392 项。[24 项阶段结果](evidence/family-checkpoint-024.csv)
+
+完整断点保存在本机的 `.local/checkpoints/family-resume-checkpoint.zip`。核验命令为 `python snapshot_family.py verify .local/checkpoints/family-resume-checkpoint.zip`。将存档解包到新目录后，使用其中的 `manifest.json` 和 `records` 分别作为 `family.py` 的 `--manifest` 与 `--work`。公开数据导出命令为 `python public_family.py 本地存档 新结果.csv`。该命令对完整实验归档和阶段断点分别重做核验，只导出固定的科研结果字段。
+
 用户暂停时已核验 14/416 项，其中包含此前的两条 018b 记录。5 项在运行中被中断。2026-11-21 03:40 UTC 首次恢复后，宿主进程表显示五个指定核心各被另一个 ABC 求解器同时占用。该次恢复的 5 个进程也已停止。两组调用均未生成结果文件，原始请求、进程回执和求解器输出留在 [中断记录](evidence/family-interruptions.jsonl)。它们不计入完成数、超时数或 416 项的截断成本。
 
 第二次恢复沿用原清单、二进制、顺序及每次 300 秒限时。主机为 16 物理核、32 逻辑核的 Ryzen 9 8945HX。经 Windows 的物理核心拓扑核对，逻辑 CPU 4、6、8、10、14 分别与 5、7、9、11、15 共享物理核。每 25 秒抽样外部 ABC 的亲和性；某条队列的物理核连续三次采样空闲，才会启动下一次求解。等待发生在求解计时前。观察器记录测量过程中外部 ABC 对这些核的占用，无法排除两次采样之间的短任务和其他类型的系统负载。结算时单列测量中观察到重叠、跨暂停和缺少采样的配对，并核对去掉这些配对后的结果。
