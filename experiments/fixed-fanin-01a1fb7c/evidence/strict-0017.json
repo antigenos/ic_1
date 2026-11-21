@@ -1,0 +1,51 @@
+{
+  "truth": "0017",
+  "strict_upper": 400,
+  "cheaper_exists": false,
+  "independent_states": 609941,
+  "seconds": 72.74076749999949,
+  "cpu": 4,
+  "candidate_certificate": {
+    "truth": "0017",
+    "cap": 480,
+    "projected": 2,
+    "work": 2000000,
+    "complete": 1,
+    "found": 1,
+    "cost": 400,
+    "visited": 1285948,
+    "pruned": 449474,
+    "chain": [
+      [
+        3,
+        0,
+        14
+      ],
+      [
+        3,
+        1,
+        14
+      ],
+      [
+        5,
+        4,
+        6
+      ],
+      [
+        6,
+        2,
+        2
+      ],
+      [
+        4,
+        1,
+        14
+      ],
+      [
+        8,
+        7,
+        2
+      ]
+    ]
+  }
+}

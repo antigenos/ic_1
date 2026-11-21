@@ -35,15 +35,20 @@ static int ff_certified_start(Bmc_EsPar_t *pars, word *truth, PexaMan_t **curren
     unsigned target = (unsigned)truth[0] & 65535u;
     if (pars->nVars != 4 || !ff_full_support(target)) return 0;
     const char *mode = getenv("FF_MODE");
-    int plain = mode && !strcmp(mode, "bounded-plain");
-    unsigned work = mode && !strcmp(mode, "bounded-unknown") ? 1 : FF_WORK;
-    FfCertificate r = ff_bounded(target, FF_BUDGET, work, !plain);
+    int wide = mode && !strncmp(mode, "wide-", 5);
+    int plain = mode && (!strcmp(mode, "bounded-plain") || !strcmp(mode, "wide-plain") || !strcmp(mode, "wide-highplain"));
+    int tail = mode && (!strcmp(mode, "bounded-tail") || !strcmp(mode, "wide-tail") || !strcmp(mode, "wide-hightail"));
+    int ceiling = wide ? FF_MAX_BUDGET : FF_BUDGET;
+    unsigned work = FF_WORK;
+    if (mode && !strncmp(mode, "wide-high", 9)) work = 20000000;
+    if (mode && !strcmp(mode, "bounded-unknown")) work = 1;
+    FfCertificate r = ff_bounded(target, ceiling, work, tail ? 2 : !plain);
     int stats = getenv("FF_BOUNDED_STATS") != NULL;
     if (stats) printf("FF_BOUND complete=%d found=%d paid=%d nodes=%u pruned=%u\n",
                       r.complete, r.found, r.found ? r.cost : -1, r.visited, r.pruned);
     if (!r.complete) return 0;
     if (!r.found) {
-        *act = FF_BUDGET + 2;
+        *act = ceiling + 2;
         return 0;
     }
     *act = r.cost;

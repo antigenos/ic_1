@@ -46,7 +46,8 @@ def read_case(group, planned, cap):
                          binary=result["binary_sha256"],log_sha256=hashlib.sha256(log_bytes).hexdigest()))
     assert len({(r["truth"],r["cpu"],r["cap"]) for r in rows})==1
     assert len({r["activity"] for r in rows if r["activity"] is not None})<=1
-    baseline=[r for r in rows if r["mode"]=="base"]
+    reference="base" if "base" in planned else planned[0]
+    baseline=[r for r in rows if r["mode"]==reference]
     summary={}
     for mode in dict.fromkeys(r["mode"] for r in rows):
         items=[r for r in rows if r["mode"]==mode]
@@ -57,7 +58,7 @@ def read_case(group, planned, cap):
             paired=[a["wall_s"]/b["wall_s"] for a,b in zip(baseline,items)]
             entry.update(paired_ratios=paired,paired_gm=exp(sum(log(x) for x in paired)/len(paired)))
         summary[mode]=entry
-    return dict(rows=rows,methods=summary)
+    return dict(rows=rows,methods=summary,reference=reference)
 
 
 def audit():
@@ -73,13 +74,15 @@ def audit():
         plan["cofactor-"+case]=("base cofactor-whole cofactor cofactor cofactor-whole base",60)
         plan["prefix-"+case]=("base seed-cofactor seed-prefix2 seed-prefix2 seed-cofactor base",60)
         plan["bounded-"+case]=("base bounded-plain bounded-projected bounded-projected bounded-plain base",60)
+        plan["tail-"+case]=("tail-plain360 tail-prune360 tail-prune360 tail-plain360",60)
+    for case in ("0016","0017"):
+        plan["holdout-"+case]=("base bounded-projected bounded-projected base",120)
+        plan["wide-"+case]=("wide-highplain wide-hightail wide-hightail wide-highplain",120)
     for case,cap in (("0189",60),("0198",180)):
         plan["xor-"+case]=("base xor-only xor-proof xor-proof xor-only base",cap)
     groups={}
     for path in sorted((HERE/"evidence").glob("*/summary.json")):
         name=path.parent.name
-        if name not in plan and name.startswith("holdout-"):
-            continue
         order,cap=plan[name]
         groups[name]=read_case(path.parent,order.split(),cap)
     assert groups.keys()==plan.keys()
@@ -88,6 +91,11 @@ def audit():
         proof=json.loads((HERE/"evidence"/("proof-"+case+".json")).read_text())
         assert proof["truth"]==case and proof["cheaper_exists"] is False
         assert cheaper_circuit(4,int(case,16),proof["strict_upper"])==(False,proof["states"])
+        optima[case]=proof["strict_upper"]
+    for case in ("0016", "0017"):
+        proof=json.loads((HERE/"evidence"/("strict-"+case+".json")).read_text())
+        assert proof["truth"]==case and proof["cheaper_exists"] is False
+        assert proof["candidate_certificate"]["cost"]==proof["strict_upper"]
         optima[case]=proof["strict_upper"]
     for group in groups.values():
         for row in group["rows"]:

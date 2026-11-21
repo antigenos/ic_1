@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include "prefix.h"
+#include "tail.h"
 
-enum { FF_PAID_LIMIT = 12, FF_BUDGET = 360, FF_WORK = 2000000 };
+enum { FF_PAID_LIMIT = 16, FF_BUDGET = 360, FF_MAX_BUDGET = 480, FF_WORK = 2000000 };
 typedef struct { unsigned char hi, lo, op; } FfGate;
 typedef struct {
     int complete, found, cost, gates;
@@ -15,8 +16,8 @@ typedef struct {
     FfGate chain[FF_PAID_LIMIT + 1];
     unsigned (*marks)[32768];
     FfPrefix relaxation;
-    int use_relaxation;
-    int ceiling;
+    FfTail tail;
+    int strategy;
     unsigned work;
     FfCertificate result;
 } FfSearch;
@@ -32,7 +33,7 @@ static unsigned ff_gate(unsigned a, unsigned b, int k)
     }
 }
 
-static void ff_visit(FfSearch *s, int depth, int paid, int inherited)
+static void ff_visit(FfSearch *s, int depth, int paid, int inherited, int tail_min)
 {
     static const unsigned char codes[] = {2, 4, 6, 8, 14};
     FfCertificate *r = &s->result;
@@ -58,7 +59,17 @@ static void ff_visit(FfSearch *s, int depth, int paid, int inherited)
         }
     }
     if (paid + 30 >= r->cost || depth >= FF_PAID_LIMIT) return;
-    if (s->use_relaxation && depth <= 2) {
+    if (s->strategy == 2) {
+        if (depth) {
+            int additional = ff_tail_price(&s->tail, s->signals[size - 1]);
+            if (additional < tail_min) tail_min = additional;
+        }
+        if (paid + tail_min >= r->cost) {
+            ++r->pruned;
+            return;
+        }
+    }
+    if (s->strategy == 1 && depth <= 2) {
         FfPrefix *p = &s->relaxation;
         p->depth_limit = depth;
         for (int i = 0; i < depth; ++i) p->wires[4+i] = s->signals[4+i];
@@ -86,34 +97,42 @@ static void ff_visit(FfSearch *s, int depth, int paid, int inherited)
                 s->marks[depth][g >> 1] = id;
                 s->signals[size] = g;
                 s->chain[depth] = (FfGate){i, j, codes[k]};
-                ff_visit(s, depth + 1, next, inherited);
+                ff_visit(s, depth + 1, next, inherited, tail_min);
             }
         }
     }
 }
 
-static FfCertificate ff_bounded(unsigned target, int ceiling, unsigned work, int projected)
+static FfCertificate ff_bounded(unsigned target, int ceiling, unsigned work, int strategy)
 {
     FfSearch s = {0};
-    s.ceiling = ceiling;
     s.work = work;
-    s.use_relaxation = projected;
+    s.strategy = strategy;
     s.relaxation.target = target;
     s.result.cost = ceiling + 1;
-    if (ceiling < 0 || ceiling > FF_BUDGET || (target & 1u)) return s.result;
+    if (ceiling < 0 || ceiling > FF_MAX_BUDGET || (target & 1u)) return s.result;
     for (int i = 0; i < 4; ++i) s.signals[i] = ff_primary(16, i);
     s.marks = calloc(FF_PAID_LIMIT, sizeof(*s.marks));
     if (!s.marks) return s.result;
     FfRestrictions cuts;
-    if (projected) {
+    if (strategy == 1) {
         ff_init_restrictions(&cuts);
         s.relaxation.cuts = &cuts;
         for (int cut = 0; cut < 10; ++cut)
             for (int side = 0; side < 2; ++side)
                 s.relaxation.target_slices[cut][side] = ff_slice(&cuts, target, cut, side);
     }
+    int tail_min = 0;
+    if (strategy == 2) {
+        ff_init_tail(&s.tail, 16, target);
+        tail_min = s.tail.pair;
+        for (int i = 0; i < 4; ++i) {
+            int price = ff_tail_price(&s.tail, s.signals[i]);
+            if (price < tail_min) tail_min = price;
+        }
+    }
     s.result.complete = 1;
-    ff_visit(&s, 0, 0, 0);
+    ff_visit(&s, 0, 0, 0, tail_min);
     free(s.marks);
     return s.result;
 }

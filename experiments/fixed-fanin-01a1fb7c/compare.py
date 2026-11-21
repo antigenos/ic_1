@@ -19,7 +19,7 @@ def collect(truth, cpu, dest, arms, cap):
     records = []
     for n, mode in enumerate(arms, 1):
         env = {k: v for k, v in os.environ.items() if not k.startswith(("FF_", "REPLAY_"))}
-        env["FF_MODE"] = mode
+        env["FF_MODE"] = {"tail-plain360":"bounded-plain", "tail-prune360":"bounded-tail"}.get(mode, mode)
         kind = mode if mode in ("base","interval") else "candidate"
         if mode.startswith("types"):
             kind = "types"
@@ -33,6 +33,8 @@ def collect(truth, cpu, dest, arms, cap):
             kind = "prefix"
         if mode.startswith("bounded-"):
             kind = "bounded"
+        if mode == "bounded-tail" or mode.startswith(("wide-","tail-")):
+            kind = "tail"
         binary = ROOT / ".local/variants" / ("fixed-fanin-" + kind) / ("abc.exe" if os.name == "nt" else "abc")
         result = run(binary, truth, 4, 2, cap, dest/f"{n:02}-{mode}", env=env,
                      metadata=dict(cpu=cpu, truth=truth, mode=mode, order=n))
@@ -57,7 +59,9 @@ if __name__ == "__main__":
     p.add_argument("--arms",nargs="+",choices=("base","ops","margins","all","off","interval","types-only","types",
                                                "split-bit","split-five","xor-proof","xor-only","cofactor","cofactor-whole",
                                                "seed-zero","seed-cofactor","seed-prefix1","seed-prefix2",
-                                               "bounded-plain","bounded-projected","bounded-unknown"),
+                                               "bounded-plain","bounded-projected","bounded-unknown",
+                                               "bounded-tail","wide-plain","wide-tail","wide-highplain","wide-hightail",
+                                               "tail-plain360","tail-prune360"),
                    default=("base","ops","margins","all","all","margins","ops","base"))
     args = p.parse_args()
     collect(args.truth,args.cpu,args.directory,args.arms,args.cap)

@@ -6,7 +6,7 @@ int main(void)
     unsigned truth, work;
     int ceiling, projected;
     while (scanf("%x %d %u %d", &truth, &ceiling, &work, &projected) == 4) {
-        if (truth > 65535 || ceiling < 0 || ceiling > FF_BUDGET) return 2;
+        if (truth > 65535 || ceiling < 0 || ceiling > FF_MAX_BUDGET || projected < 0 || projected > 2) return 2;
         unsigned norm = truth & 1u ? truth ^ 65535 : truth;
         FfCertificate r = ff_bounded(norm, ceiling, work, projected);
         printf("{\"truth\":\"%04x\",\"cap\":%d,\"projected\":%d,\"work\":%u,"
