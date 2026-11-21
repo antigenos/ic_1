@@ -1,0 +1,11 @@
+ABC command line: "pexact -I 4 -M 2 0189".
+
+Cannot open file "abc.rc".
+Cannot open file "..\abc.rc".
+Cannot open file "..\..\abc.rc".
+FF_SPLIT gates=5 bound=304 code=2 result=1
+FF_SPLIT gates=5 bound=304 code=4 result=1
+FF_SPLIT gates=5 bound=304 code=6 result=1
+FF_SPLIT gates=5 bound=304 code=8 result=-1
+FF_SPLIT gates=5 bound=304 code=14 result=-1
+FF_UNRESTRICTED result=1

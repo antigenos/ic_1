@@ -1,0 +1,16 @@
+{
+  "complete_internal_sequences_at_304": 181344,
+  "feasible_circuits_by_code": {
+    "2": 27,
+    "6": 54,
+    "4": 27
+  },
+  "solver_by_code": {
+    "2": 1,
+    "4": 1,
+    "6": 1,
+    "8": -1,
+    "14": -1
+  },
+  "unrestricted": "SAT"
+}

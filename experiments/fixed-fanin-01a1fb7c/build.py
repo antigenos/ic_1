@@ -14,7 +14,13 @@ def compile_variant(kind):
     dest = ROOT / ".local/variants" / name
     dest.mkdir(parents=True, exist_ok=True)
     header = (ROOT / "tools/joint_trail.h").read_text()
-    if kind == "interval":
+    if kind == "partition":
+        hook = "static int replay_solve(PexaMan_t *p, int bound)"
+        original = "int result = sat_solver_solve(p->pSat, NULL, NULL, 0, 0, 0, 0);"
+        assert header.count(hook) == header.count(original) == 1
+        header = header.replace(hook,(HERE/"partition.h").read_text()+"\n"+hook)
+        header = header.replace(original, "int result = ff_partition(q);")
+    elif kind == "interval":
         (dest / "interval.h").write_bytes((HERE / "interval.h").read_bytes())
         hook = "static int replay_pair("
         original = "p9_joint_support(q->rows, q->target, ops, zeros, ones, domains, cap, charged, &result)"
@@ -62,5 +68,5 @@ def compile_variant(kind):
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("kind", choices=("base", "diagnostic", "candidate", "candidate-diagnostic",
-                                   "interval", "types", "types-diagnostic"))
+                                   "interval", "types", "types-diagnostic", "partition"))
     compile_variant(p.parse_args().kind)
