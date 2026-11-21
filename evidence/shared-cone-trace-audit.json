@@ -1,0 +1,6 @@
+{
+  "source": "solver.log",
+  "decoded_clauses": 432,
+  "distinct_branches": 396,
+  "failures": 0
+}

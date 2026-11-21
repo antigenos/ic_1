@@ -1,0 +1,11 @@
+{
+  "checked": {
+    "exhaustive": 114000,
+    "random": 45056
+  },
+  "shared_first_gate": 74595,
+  "random_seed": 20261121,
+  "distinct_pairs": 13123,
+  "min_slack": 0,
+  "counterexamples": 0
+}

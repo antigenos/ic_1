@@ -1,0 +1,284 @@
+{
+  "truth": "018b",
+  "budget": 411,
+  "verified_feasible_witness": {
+    "truth": "018b",
+    "activity": 412,
+    "gates": 7
+  },
+  "first_signals": 30,
+  "forced_xor": 24,
+  "excluded": {
+    "simple_axes": 0,
+    "simple_all": 0,
+    "shared_axes": 2,
+    "shared_all": 6
+  },
+  "free_input_tables": 19,
+  "cases": [
+    {
+      "first": "00aa",
+      "forced_xor": true,
+      "forced_partner": "fede",
+      "simple_axes": 190,
+      "simple_all": 190,
+      "shared_axes": 286,
+      "shared_all": 286,
+      "feasible_witness": true
+    },
+    {
+      "first": "00cc",
+      "forced_xor": true,
+      "forced_partner": "feb8",
+      "simple_axes": 314,
+      "simple_all": 314,
+      "shared_axes": 350,
+      "shared_all": 350,
+      "feasible_witness": false
+    },
+    {
+      "first": "00f0",
+      "forced_xor": true,
+      "forced_partner": "fe84",
+      "simple_axes": 270,
+      "simple_all": 330,
+      "shared_axes": 366,
+      "shared_all": 426,
+      "feasible_witness": false
+    },
+    {
+      "first": "0a0a",
+      "forced_xor": true,
+      "forced_partner": "f47e",
+      "simple_axes": 286,
+      "simple_all": 286,
+      "shared_axes": 382,
+      "shared_all": 382,
+      "feasible_witness": false
+    },
+    {
+      "first": "0c0c",
+      "forced_xor": true,
+      "forced_partner": "f278",
+      "simple_axes": 282,
+      "simple_all": 282,
+      "shared_axes": 334,
+      "shared_all": 366,
+      "feasible_witness": false
+    },
+    {
+      "first": "0f00",
+      "forced_xor": true,
+      "forced_partner": "f174",
+      "simple_axes": 270,
+      "simple_all": 330,
+      "shared_axes": 366,
+      "shared_all": 426,
+      "feasible_witness": false
+    },
+    {
+      "first": "0ff0",
+      "forced_xor": true,
+      "forced_partner": "f184",
+      "simple_axes": 254,
+      "simple_all": 330,
+      "shared_axes": 366,
+      "shared_all": 430,
+      "feasible_witness": false
+    },
+    {
+      "first": "2222",
+      "forced_xor": true,
+      "forced_partner": "dc56",
+      "simple_axes": 234,
+      "simple_all": 378,
+      "shared_axes": 330,
+      "shared_all": 426,
+      "feasible_witness": false
+    },
+    {
+      "first": "3030",
+      "forced_xor": false
+    },
+    {
+      "first": "3300",
+      "forced_xor": true,
+      "forced_partner": "cd74",
+      "simple_axes": 390,
+      "simple_all": 390,
+      "shared_axes": 434,
+      "shared_all": 434,
+      "feasible_witness": false
+    },
+    {
+      "first": "33cc",
+      "forced_xor": true,
+      "forced_partner": "cdb8",
+      "simple_axes": 330,
+      "simple_all": 330,
+      "shared_axes": 398,
+      "shared_all": 410,
+      "feasible_witness": false
+    },
+    {
+      "first": "3c3c",
+      "forced_xor": true,
+      "forced_partner": "c248",
+      "simple_axes": 282,
+      "simple_all": 286,
+      "shared_axes": 350,
+      "shared_all": 382,
+      "feasible_witness": false
+    },
+    {
+      "first": "4444",
+      "forced_xor": false
+    },
+    {
+      "first": "5050",
+      "forced_xor": false
+    },
+    {
+      "first": "5500",
+      "forced_xor": true,
+      "forced_partner": "ab74",
+      "simple_axes": 282,
+      "simple_all": 330,
+      "shared_axes": 366,
+      "shared_all": 394,
+      "feasible_witness": false
+    },
+    {
+      "first": "55aa",
+      "forced_xor": true,
+      "forced_partner": "abde",
+      "simple_axes": 282,
+      "simple_all": 286,
+      "shared_axes": 350,
+      "shared_all": 382,
+      "feasible_witness": false
+    },
+    {
+      "first": "5a5a",
+      "forced_xor": true,
+      "forced_partner": "a42e",
+      "simple_axes": 330,
+      "simple_all": 330,
+      "shared_axes": 398,
+      "shared_all": 410,
+      "feasible_witness": false
+    },
+    {
+      "first": "6666",
+      "forced_xor": true,
+      "forced_partner": "9812",
+      "simple_axes": 282,
+      "simple_all": 394,
+      "shared_axes": 350,
+      "shared_all": 410,
+      "feasible_witness": false
+    },
+    {
+      "first": "8888",
+      "forced_xor": true,
+      "forced_partner": "76fc",
+      "simple_axes": 218,
+      "simple_all": 282,
+      "shared_axes": 314,
+      "shared_all": 350,
+      "feasible_witness": false
+    },
+    {
+      "first": "a0a0",
+      "forced_xor": true,
+      "forced_partner": "5ed4",
+      "simple_axes": 390,
+      "simple_all": 390,
+      "shared_axes": 434,
+      "shared_all": 434,
+      "feasible_witness": false
+    },
+    {
+      "first": "aa00",
+      "forced_xor": false
+    },
+    {
+      "first": "c0c0",
+      "forced_xor": true,
+      "forced_partner": "3eb4",
+      "simple_axes": 282,
+      "simple_all": 330,
+      "shared_axes": 366,
+      "shared_all": 394,
+      "feasible_witness": false
+    },
+    {
+      "first": "cc00",
+      "forced_xor": false
+    },
+    {
+      "first": "eeee",
+      "forced_xor": true,
+      "forced_partner": "109a",
+      "simple_axes": 218,
+      "simple_all": 282,
+      "shared_axes": 314,
+      "shared_all": 350,
+      "feasible_witness": false
+    },
+    {
+      "first": "f000",
+      "forced_xor": false
+    },
+    {
+      "first": "fafa",
+      "forced_xor": true,
+      "forced_partner": "048e",
+      "simple_axes": 314,
+      "simple_all": 314,
+      "shared_axes": 350,
+      "shared_all": 350,
+      "feasible_witness": false
+    },
+    {
+      "first": "fcfc",
+      "forced_xor": true,
+      "forced_partner": "0288",
+      "simple_axes": 190,
+      "simple_all": 190,
+      "shared_axes": 286,
+      "shared_all": 286,
+      "feasible_witness": false
+    },
+    {
+      "first": "ffaa",
+      "forced_xor": true,
+      "forced_partner": "01de",
+      "simple_axes": 282,
+      "simple_all": 282,
+      "shared_axes": 334,
+      "shared_all": 366,
+      "feasible_witness": false
+    },
+    {
+      "first": "ffcc",
+      "forced_xor": true,
+      "forced_partner": "01b8",
+      "simple_axes": 286,
+      "simple_all": 286,
+      "shared_axes": 382,
+      "shared_all": 382,
+      "feasible_witness": false
+    },
+    {
+      "first": "fff0",
+      "forced_xor": true,
+      "forced_partner": "0184",
+      "simple_axes": 190,
+      "simple_all": 254,
+      "shared_axes": 286,
+      "shared_all": 350,
+      "feasible_witness": false
+    }
+  ]
+}
