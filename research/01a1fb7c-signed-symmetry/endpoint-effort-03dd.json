@@ -1,0 +1,1112 @@
+[
+  {
+    "mode": "I",
+    "witness": {
+      "truth": "03dd",
+      "activity": 368,
+      "gates": 5
+    },
+    "binary_sha256": "36d9b61f13b59282d850afbe564b4181617bb0f3af69e363f023848fa711116a",
+    "measured_sat_calls": 39,
+    "totals": {
+      "visits": 198974,
+      "checks": 405768,
+      "counts": 17301,
+      "edges": 3792,
+      "conflicts": 108133
+    },
+    "queries": [
+      {
+        "gates": 4,
+        "bound": 300,
+        "visits": 1018,
+        "checks": 1976,
+        "counts": 140,
+        "edges": 26,
+        "conflicts": 538
+      },
+      {
+        "gates": 5,
+        "bound": 300,
+        "visits": 1914,
+        "checks": 2719,
+        "counts": 167,
+        "edges": 30,
+        "conflicts": 1185
+      },
+      {
+        "gates": 6,
+        "bound": 300,
+        "visits": 634,
+        "checks": 637,
+        "counts": 25,
+        "edges": 7,
+        "conflicts": 254
+      },
+      {
+        "gates": 7,
+        "bound": 300,
+        "visits": 220,
+        "checks": 220,
+        "counts": 14,
+        "edges": 8,
+        "conflicts": 35
+      },
+      {
+        "gates": 4,
+        "bound": 375,
+        "visits": 1241,
+        "checks": 2493,
+        "counts": 148,
+        "edges": 32,
+        "conflicts": 559
+      },
+      {
+        "gates": 5,
+        "bound": 375,
+        "visits": 794,
+        "checks": 1941,
+        "counts": 69,
+        "edges": 28,
+        "conflicts": 313
+      },
+      {
+        "gates": 4,
+        "bound": 334,
+        "visits": 1345,
+        "checks": 2647,
+        "counts": 175,
+        "edges": 41,
+        "conflicts": 652
+      },
+      {
+        "gates": 5,
+        "bound": 334,
+        "visits": 6630,
+        "checks": 11413,
+        "counts": 1062,
+        "edges": 110,
+        "conflicts": 3914
+      },
+      {
+        "gates": 6,
+        "bound": 334,
+        "visits": 11390,
+        "checks": 20333,
+        "counts": 625,
+        "edges": 203,
+        "conflicts": 6257
+      },
+      {
+        "gates": 7,
+        "bound": 334,
+        "visits": 2247,
+        "checks": 2251,
+        "counts": 25,
+        "edges": 8,
+        "conflicts": 775
+      },
+      {
+        "gates": 8,
+        "bound": 334,
+        "visits": 1476,
+        "checks": 1481,
+        "counts": 8,
+        "edges": 9,
+        "conflicts": 165
+      },
+      {
+        "gates": 9,
+        "bound": 334,
+        "visits": 355,
+        "checks": 355,
+        "counts": 14,
+        "edges": 10,
+        "conflicts": 41
+      },
+      {
+        "gates": 10,
+        "bound": 334,
+        "visits": 909,
+        "checks": 909,
+        "counts": 14,
+        "edges": 11,
+        "conflicts": 67
+      },
+      {
+        "gates": 4,
+        "bound": 368,
+        "visits": 1158,
+        "checks": 2501,
+        "counts": 87,
+        "edges": 59,
+        "conflicts": 622
+      },
+      {
+        "gates": 5,
+        "bound": 368,
+        "visits": 4871,
+        "checks": 9114,
+        "counts": 651,
+        "edges": 80,
+        "conflicts": 2861
+      },
+      {
+        "gates": 4,
+        "bound": 351,
+        "visits": 1135,
+        "checks": 2919,
+        "counts": 90,
+        "edges": 35,
+        "conflicts": 587
+      },
+      {
+        "gates": 5,
+        "bound": 351,
+        "visits": 7439,
+        "checks": 14219,
+        "counts": 1054,
+        "edges": 120,
+        "conflicts": 4506
+      },
+      {
+        "gates": 6,
+        "bound": 351,
+        "visits": 24211,
+        "checks": 71780,
+        "counts": 1426,
+        "edges": 676,
+        "conflicts": 14912
+      },
+      {
+        "gates": 7,
+        "bound": 351,
+        "visits": 9727,
+        "checks": 12738,
+        "counts": 182,
+        "edges": 79,
+        "conflicts": 4512
+      },
+      {
+        "gates": 8,
+        "bound": 351,
+        "visits": 1212,
+        "checks": 1217,
+        "counts": 8,
+        "edges": 9,
+        "conflicts": 183
+      },
+      {
+        "gates": 9,
+        "bound": 351,
+        "visits": 884,
+        "checks": 884,
+        "counts": 14,
+        "edges": 10,
+        "conflicts": 67
+      },
+      {
+        "gates": 10,
+        "bound": 351,
+        "visits": 321,
+        "checks": 321,
+        "counts": 14,
+        "edges": 11,
+        "conflicts": 48
+      },
+      {
+        "gates": 4,
+        "bound": 368,
+        "visits": 1111,
+        "checks": 2030,
+        "counts": 85,
+        "edges": 34,
+        "conflicts": 472
+      },
+      {
+        "gates": 5,
+        "bound": 368,
+        "visits": 5858,
+        "checks": 11741,
+        "counts": 842,
+        "edges": 90,
+        "conflicts": 3465
+      },
+      {
+        "gates": 4,
+        "bound": 359,
+        "visits": 1062,
+        "checks": 1967,
+        "counts": 86,
+        "edges": 38,
+        "conflicts": 460
+      },
+      {
+        "gates": 5,
+        "bound": 359,
+        "visits": 10199,
+        "checks": 20104,
+        "counts": 1590,
+        "edges": 160,
+        "conflicts": 5844
+      },
+      {
+        "gates": 6,
+        "bound": 359,
+        "visits": 29926,
+        "checks": 66055,
+        "counts": 2614,
+        "edges": 556,
+        "conflicts": 19892
+      },
+      {
+        "gates": 7,
+        "bound": 359,
+        "visits": 7327,
+        "checks": 8457,
+        "counts": 202,
+        "edges": 48,
+        "conflicts": 3031
+      },
+      {
+        "gates": 8,
+        "bound": 359,
+        "visits": 1573,
+        "checks": 1578,
+        "counts": 8,
+        "edges": 9,
+        "conflicts": 248
+      },
+      {
+        "gates": 9,
+        "bound": 359,
+        "visits": 861,
+        "checks": 861,
+        "counts": 14,
+        "edges": 10,
+        "conflicts": 66
+      },
+      {
+        "gates": 4,
+        "bound": 367,
+        "visits": 678,
+        "checks": 1390,
+        "counts": 8,
+        "edges": 23,
+        "conflicts": 298
+      },
+      {
+        "gates": 5,
+        "bound": 367,
+        "visits": 10847,
+        "checks": 25969,
+        "counts": 1821,
+        "edges": 284,
+        "conflicts": 6167
+      },
+      {
+        "gates": 6,
+        "bound": 367,
+        "visits": 30549,
+        "checks": 68257,
+        "counts": 3197,
+        "edges": 666,
+        "conflicts": 17824
+      },
+      {
+        "gates": 7,
+        "bound": 367,
+        "visits": 12622,
+        "checks": 24793,
+        "counts": 389,
+        "edges": 197,
+        "conflicts": 5857
+      },
+      {
+        "gates": 8,
+        "bound": 367,
+        "visits": 1274,
+        "checks": 1279,
+        "counts": 8,
+        "edges": 9,
+        "conflicts": 82
+      },
+      {
+        "gates": 9,
+        "bound": 367,
+        "visits": 773,
+        "checks": 779,
+        "counts": 8,
+        "edges": 10,
+        "conflicts": 47
+      },
+      {
+        "gates": 10,
+        "bound": 367,
+        "visits": 89,
+        "checks": 89,
+        "counts": 14,
+        "edges": 11,
+        "conflicts": 21
+      },
+      {
+        "gates": 4,
+        "bound": 375,
+        "visits": 1370,
+        "checks": 2031,
+        "counts": 176,
+        "edges": 16,
+        "conflicts": 544
+      },
+      {
+        "gates": 5,
+        "bound": 375,
+        "visits": 1724,
+        "checks": 3320,
+        "counts": 227,
+        "edges": 29,
+        "conflicts": 762
+      }
+    ]
+  },
+  {
+    "mode": "L",
+    "witness": {
+      "truth": "03dd",
+      "activity": 368,
+      "gates": 5
+    },
+    "binary_sha256": "36d9b61f13b59282d850afbe564b4181617bb0f3af69e363f023848fa711116a",
+    "measured_sat_calls": 39,
+    "totals": {
+      "visits": 198589,
+      "checks": 405680,
+      "counts": 17338,
+      "edges": 3758,
+      "conflicts": 107815
+    },
+    "queries": [
+      {
+        "gates": 4,
+        "bound": 300,
+        "visits": 882,
+        "checks": 2050,
+        "counts": 119,
+        "edges": 25,
+        "conflicts": 418
+      },
+      {
+        "gates": 5,
+        "bound": 300,
+        "visits": 1921,
+        "checks": 2681,
+        "counts": 167,
+        "edges": 55,
+        "conflicts": 1056
+      },
+      {
+        "gates": 6,
+        "bound": 300,
+        "visits": 479,
+        "checks": 482,
+        "counts": 11,
+        "edges": 7,
+        "conflicts": 167
+      },
+      {
+        "gates": 7,
+        "bound": 300,
+        "visits": 220,
+        "checks": 220,
+        "counts": 14,
+        "edges": 8,
+        "conflicts": 35
+      },
+      {
+        "gates": 4,
+        "bound": 375,
+        "visits": 915,
+        "checks": 1735,
+        "counts": 78,
+        "edges": 23,
+        "conflicts": 417
+      },
+      {
+        "gates": 5,
+        "bound": 375,
+        "visits": 794,
+        "checks": 1941,
+        "counts": 69,
+        "edges": 28,
+        "conflicts": 313
+      },
+      {
+        "gates": 4,
+        "bound": 334,
+        "visits": 1307,
+        "checks": 2532,
+        "counts": 175,
+        "edges": 36,
+        "conflicts": 595
+      },
+      {
+        "gates": 5,
+        "bound": 334,
+        "visits": 6630,
+        "checks": 11413,
+        "counts": 1062,
+        "edges": 110,
+        "conflicts": 3914
+      },
+      {
+        "gates": 6,
+        "bound": 334,
+        "visits": 11390,
+        "checks": 20333,
+        "counts": 625,
+        "edges": 203,
+        "conflicts": 6257
+      },
+      {
+        "gates": 7,
+        "bound": 334,
+        "visits": 2247,
+        "checks": 2251,
+        "counts": 25,
+        "edges": 8,
+        "conflicts": 775
+      },
+      {
+        "gates": 8,
+        "bound": 334,
+        "visits": 1476,
+        "checks": 1481,
+        "counts": 8,
+        "edges": 9,
+        "conflicts": 165
+      },
+      {
+        "gates": 9,
+        "bound": 334,
+        "visits": 355,
+        "checks": 355,
+        "counts": 14,
+        "edges": 10,
+        "conflicts": 41
+      },
+      {
+        "gates": 10,
+        "bound": 334,
+        "visits": 909,
+        "checks": 909,
+        "counts": 14,
+        "edges": 11,
+        "conflicts": 67
+      },
+      {
+        "gates": 4,
+        "bound": 368,
+        "visits": 1214,
+        "checks": 2733,
+        "counts": 133,
+        "edges": 39,
+        "conflicts": 564
+      },
+      {
+        "gates": 5,
+        "bound": 368,
+        "visits": 4871,
+        "checks": 9114,
+        "counts": 651,
+        "edges": 80,
+        "conflicts": 2861
+      },
+      {
+        "gates": 4,
+        "bound": 351,
+        "visits": 1589,
+        "checks": 3367,
+        "counts": 190,
+        "edges": 29,
+        "conflicts": 873
+      },
+      {
+        "gates": 5,
+        "bound": 351,
+        "visits": 7439,
+        "checks": 14219,
+        "counts": 1054,
+        "edges": 120,
+        "conflicts": 4506
+      },
+      {
+        "gates": 6,
+        "bound": 351,
+        "visits": 24211,
+        "checks": 71780,
+        "counts": 1426,
+        "edges": 676,
+        "conflicts": 14912
+      },
+      {
+        "gates": 7,
+        "bound": 351,
+        "visits": 9727,
+        "checks": 12738,
+        "counts": 182,
+        "edges": 79,
+        "conflicts": 4512
+      },
+      {
+        "gates": 8,
+        "bound": 351,
+        "visits": 1212,
+        "checks": 1217,
+        "counts": 8,
+        "edges": 9,
+        "conflicts": 183
+      },
+      {
+        "gates": 9,
+        "bound": 351,
+        "visits": 884,
+        "checks": 884,
+        "counts": 14,
+        "edges": 10,
+        "conflicts": 67
+      },
+      {
+        "gates": 10,
+        "bound": 351,
+        "visits": 321,
+        "checks": 321,
+        "counts": 14,
+        "edges": 11,
+        "conflicts": 48
+      },
+      {
+        "gates": 4,
+        "bound": 368,
+        "visits": 923,
+        "checks": 1758,
+        "counts": 109,
+        "edges": 27,
+        "conflicts": 415
+      },
+      {
+        "gates": 5,
+        "bound": 368,
+        "visits": 5858,
+        "checks": 11741,
+        "counts": 842,
+        "edges": 90,
+        "conflicts": 3465
+      },
+      {
+        "gates": 4,
+        "bound": 359,
+        "visits": 1128,
+        "checks": 2592,
+        "counts": 94,
+        "edges": 33,
+        "conflicts": 574
+      },
+      {
+        "gates": 5,
+        "bound": 359,
+        "visits": 10199,
+        "checks": 20104,
+        "counts": 1590,
+        "edges": 160,
+        "conflicts": 5844
+      },
+      {
+        "gates": 6,
+        "bound": 359,
+        "visits": 29926,
+        "checks": 66055,
+        "counts": 2614,
+        "edges": 556,
+        "conflicts": 19892
+      },
+      {
+        "gates": 7,
+        "bound": 359,
+        "visits": 7327,
+        "checks": 8457,
+        "counts": 202,
+        "edges": 48,
+        "conflicts": 3031
+      },
+      {
+        "gates": 8,
+        "bound": 359,
+        "visits": 1573,
+        "checks": 1578,
+        "counts": 8,
+        "edges": 9,
+        "conflicts": 248
+      },
+      {
+        "gates": 9,
+        "bound": 359,
+        "visits": 861,
+        "checks": 861,
+        "counts": 14,
+        "edges": 10,
+        "conflicts": 66
+      },
+      {
+        "gates": 4,
+        "bound": 367,
+        "visits": 678,
+        "checks": 1390,
+        "counts": 8,
+        "edges": 23,
+        "conflicts": 298
+      },
+      {
+        "gates": 5,
+        "bound": 367,
+        "visits": 10847,
+        "checks": 25969,
+        "counts": 1821,
+        "edges": 284,
+        "conflicts": 6167
+      },
+      {
+        "gates": 6,
+        "bound": 367,
+        "visits": 30549,
+        "checks": 68257,
+        "counts": 3197,
+        "edges": 666,
+        "conflicts": 17824
+      },
+      {
+        "gates": 7,
+        "bound": 367,
+        "visits": 12622,
+        "checks": 24793,
+        "counts": 389,
+        "edges": 197,
+        "conflicts": 5857
+      },
+      {
+        "gates": 8,
+        "bound": 367,
+        "visits": 1274,
+        "checks": 1279,
+        "counts": 8,
+        "edges": 9,
+        "conflicts": 82
+      },
+      {
+        "gates": 9,
+        "bound": 367,
+        "visits": 773,
+        "checks": 779,
+        "counts": 8,
+        "edges": 10,
+        "conflicts": 47
+      },
+      {
+        "gates": 10,
+        "bound": 367,
+        "visits": 89,
+        "checks": 89,
+        "counts": 14,
+        "edges": 11,
+        "conflicts": 21
+      },
+      {
+        "gates": 4,
+        "bound": 375,
+        "visits": 1245,
+        "checks": 1902,
+        "counts": 140,
+        "edges": 10,
+        "conflicts": 476
+      },
+      {
+        "gates": 5,
+        "bound": 375,
+        "visits": 1724,
+        "checks": 3320,
+        "counts": 227,
+        "edges": 29,
+        "conflicts": 762
+      }
+    ]
+  },
+  {
+    "mode": "E",
+    "witness": {
+      "truth": "03dd",
+      "activity": 368,
+      "gates": 5
+    },
+    "binary_sha256": "36d9b61f13b59282d850afbe564b4181617bb0f3af69e363f023848fa711116a",
+    "measured_sat_calls": 39,
+    "totals": {
+      "visits": 203253,
+      "checks": 398967,
+      "counts": 17112,
+      "edges": 3720,
+      "conflicts": 113498
+    },
+    "queries": [
+      {
+        "gates": 4,
+        "bound": 300,
+        "visits": 771,
+        "checks": 1818,
+        "counts": 131,
+        "edges": 22,
+        "conflicts": 383
+      },
+      {
+        "gates": 5,
+        "bound": 300,
+        "visits": 1731,
+        "checks": 2317,
+        "counts": 102,
+        "edges": 28,
+        "conflicts": 898
+      },
+      {
+        "gates": 6,
+        "bound": 300,
+        "visits": 479,
+        "checks": 482,
+        "counts": 11,
+        "edges": 7,
+        "conflicts": 167
+      },
+      {
+        "gates": 7,
+        "bound": 300,
+        "visits": 220,
+        "checks": 220,
+        "counts": 14,
+        "edges": 8,
+        "conflicts": 35
+      },
+      {
+        "gates": 4,
+        "bound": 375,
+        "visits": 945,
+        "checks": 1898,
+        "counts": 96,
+        "edges": 34,
+        "conflicts": 415
+      },
+      {
+        "gates": 5,
+        "bound": 375,
+        "visits": 794,
+        "checks": 1941,
+        "counts": 69,
+        "edges": 28,
+        "conflicts": 313
+      },
+      {
+        "gates": 4,
+        "bound": 334,
+        "visits": 1226,
+        "checks": 2289,
+        "counts": 135,
+        "edges": 37,
+        "conflicts": 553
+      },
+      {
+        "gates": 5,
+        "bound": 334,
+        "visits": 8147,
+        "checks": 15047,
+        "counts": 1029,
+        "edges": 123,
+        "conflicts": 5184
+      },
+      {
+        "gates": 6,
+        "bound": 334,
+        "visits": 16225,
+        "checks": 29406,
+        "counts": 657,
+        "edges": 210,
+        "conflicts": 11330
+      },
+      {
+        "gates": 7,
+        "bound": 334,
+        "visits": 2247,
+        "checks": 2251,
+        "counts": 25,
+        "edges": 8,
+        "conflicts": 775
+      },
+      {
+        "gates": 8,
+        "bound": 334,
+        "visits": 1477,
+        "checks": 1482,
+        "counts": 8,
+        "edges": 9,
+        "conflicts": 166
+      },
+      {
+        "gates": 9,
+        "bound": 334,
+        "visits": 355,
+        "checks": 355,
+        "counts": 14,
+        "edges": 10,
+        "conflicts": 41
+      },
+      {
+        "gates": 10,
+        "bound": 334,
+        "visits": 853,
+        "checks": 853,
+        "counts": 14,
+        "edges": 11,
+        "conflicts": 101
+      },
+      {
+        "gates": 4,
+        "bound": 368,
+        "visits": 1216,
+        "checks": 2567,
+        "counts": 130,
+        "edges": 39,
+        "conflicts": 556
+      },
+      {
+        "gates": 5,
+        "bound": 368,
+        "visits": 2907,
+        "checks": 6468,
+        "counts": 287,
+        "edges": 73,
+        "conflicts": 1565
+      },
+      {
+        "gates": 4,
+        "bound": 351,
+        "visits": 1439,
+        "checks": 2940,
+        "counts": 180,
+        "edges": 29,
+        "conflicts": 780
+      },
+      {
+        "gates": 5,
+        "bound": 351,
+        "visits": 8046,
+        "checks": 14371,
+        "counts": 1154,
+        "edges": 84,
+        "conflicts": 4883
+      },
+      {
+        "gates": 6,
+        "bound": 351,
+        "visits": 28345,
+        "checks": 76266,
+        "counts": 1719,
+        "edges": 784,
+        "conflicts": 18005
+      },
+      {
+        "gates": 7,
+        "bound": 351,
+        "visits": 12488,
+        "checks": 15864,
+        "counts": 323,
+        "edges": 145,
+        "conflicts": 6477
+      },
+      {
+        "gates": 8,
+        "bound": 351,
+        "visits": 1212,
+        "checks": 1217,
+        "counts": 8,
+        "edges": 9,
+        "conflicts": 183
+      },
+      {
+        "gates": 9,
+        "bound": 351,
+        "visits": 884,
+        "checks": 884,
+        "counts": 14,
+        "edges": 10,
+        "conflicts": 67
+      },
+      {
+        "gates": 10,
+        "bound": 351,
+        "visits": 321,
+        "checks": 321,
+        "counts": 14,
+        "edges": 11,
+        "conflicts": 48
+      },
+      {
+        "gates": 4,
+        "bound": 368,
+        "visits": 926,
+        "checks": 1707,
+        "counts": 98,
+        "edges": 23,
+        "conflicts": 419
+      },
+      {
+        "gates": 5,
+        "bound": 368,
+        "visits": 2512,
+        "checks": 4697,
+        "counts": 448,
+        "edges": 39,
+        "conflicts": 1129
+      },
+      {
+        "gates": 4,
+        "bound": 359,
+        "visits": 1107,
+        "checks": 2577,
+        "counts": 92,
+        "edges": 36,
+        "conflicts": 573
+      },
+      {
+        "gates": 5,
+        "bound": 359,
+        "visits": 8653,
+        "checks": 18704,
+        "counts": 1254,
+        "edges": 179,
+        "conflicts": 5098
+      },
+      {
+        "gates": 6,
+        "bound": 359,
+        "visits": 26841,
+        "checks": 51605,
+        "counts": 2776,
+        "edges": 483,
+        "conflicts": 17080
+      },
+      {
+        "gates": 7,
+        "bound": 359,
+        "visits": 6751,
+        "checks": 7854,
+        "counts": 235,
+        "edges": 43,
+        "conflicts": 2470
+      },
+      {
+        "gates": 8,
+        "bound": 359,
+        "visits": 1573,
+        "checks": 1578,
+        "counts": 8,
+        "edges": 9,
+        "conflicts": 248
+      },
+      {
+        "gates": 9,
+        "bound": 359,
+        "visits": 861,
+        "checks": 861,
+        "counts": 14,
+        "edges": 10,
+        "conflicts": 66
+      },
+      {
+        "gates": 4,
+        "bound": 367,
+        "visits": 676,
+        "checks": 1391,
+        "counts": 8,
+        "edges": 24,
+        "conflicts": 296
+      },
+      {
+        "gates": 5,
+        "bound": 367,
+        "visits": 9122,
+        "checks": 15788,
+        "counts": 1508,
+        "edges": 141,
+        "conflicts": 5330
+      },
+      {
+        "gates": 6,
+        "bound": 367,
+        "visits": 32515,
+        "checks": 75590,
+        "counts": 3527,
+        "edges": 717,
+        "conflicts": 19578
+      },
+      {
+        "gates": 7,
+        "bound": 367,
+        "visits": 12622,
+        "checks": 24793,
+        "counts": 389,
+        "edges": 197,
+        "conflicts": 5857
+      },
+      {
+        "gates": 8,
+        "bound": 367,
+        "visits": 1274,
+        "checks": 1279,
+        "counts": 8,
+        "edges": 9,
+        "conflicts": 82
+      },
+      {
+        "gates": 9,
+        "bound": 367,
+        "visits": 773,
+        "checks": 779,
+        "counts": 8,
+        "edges": 10,
+        "conflicts": 47
+      },
+      {
+        "gates": 10,
+        "bound": 367,
+        "visits": 89,
+        "checks": 89,
+        "counts": 14,
+        "edges": 11,
+        "conflicts": 21
+      },
+      {
+        "gates": 4,
+        "bound": 375,
+        "visits": 1227,
+        "checks": 1911,
+        "counts": 136,
+        "edges": 10,
+        "conflicts": 457
+      },
+      {
+        "gates": 5,
+        "bound": 375,
+        "visits": 3403,
+        "checks": 6507,
+        "counts": 455,
+        "edges": 60,
+        "conflicts": 1822
+      }
+    ]
+  }
+]
