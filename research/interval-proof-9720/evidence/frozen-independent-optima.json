@@ -1,5 +1,5 @@
 {
-  "bound_sha256": "43338df1fc23f9828c1d762e8b0075137acbf9dbbd5a5d099dc50c726668b22c",
+  "bound_sha256": "f87695c48d91ac93afc607e4eb5522266d295e2f2d2c19eb9706ce1c573dac9c",
   "witnesses": 219,
   "distinct": 81,
   "proved": 81,
@@ -86,5 +86,7 @@
     "1ee1": 224,
     "6996": 256
   },
-  "remaining_intervals": {}
+  "remaining_intervals": {},
+  "original_windows_sha256": "43338df1fc23f9828c1d762e8b0075137acbf9dbbd5a5d099dc50c726668b22c",
+  "digest_newlines": "LF"
 }

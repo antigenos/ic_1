@@ -101,7 +101,7 @@ def main():
         truths = [c["truth"] for c in plan["cases"]]
         assert len(set(truths)) == len(truths) == 208
         result = enumerate_bounds(truths, args.cap)
-        with args.output.open("x", encoding="utf8") as f:
+        with args.output.open("x", encoding="utf8", newline="\n") as f:
             json.dump(result, f, indent=2)
             f.write("\n")
         print(json.dumps(dict(states=result["states"], strict_cap=args.cap, functions=len(truths))))

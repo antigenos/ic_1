@@ -1,0 +1,22 @@
+{
+  "start_utc": "2026-11-21T04:05:29.077377+00:00",
+  "wall_s": 158.85575960000278,
+  "timeout_s": 300,
+  "exitcode": 0,
+  "empty_workdir": true,
+  "guarded_data_reads": true,
+  "stdout": "{\"truth\": \"0016\", \"strict_cap\": 433, \"states\": 2424925, \"lower_bound\": 406, \"logical_cpu\": 0, \"status\": \"independently_optimal\", \"witness\": {\"truth\": \"0016\", \"activity\": 406, \"gates\": 6}, \"circuit\": \"Realization of given 4-input function using 6 two-input gates complementary=0:\\n09 = 4'b0100( 06 08 )\\n08 = 4'b1000( b 07 )\\n07 = 4'b1000( c 06 )\\n06 = 4'b0010( d 05 )\\n05 = 4'b0110( a 04 )\\n04 = 4'b1110( b c )\\nSwitching Activity=406\\n\", \"cpu_s\": 134.671875}\n",
+  "stderr": "",
+  "sources": {
+    "cold_bounds.py": "5a3480e9093c9fddd4ddfbcd19e8c808c90b96974256d25c83756be8bcb6211f",
+    "construct_bounds.py": "1053d6a56a157ef3f8f57d3de3114126d472ed2f5f964390a57c25d7c9f7c3b8",
+    "family_bounds.py": "ee20bf6cf3db05a2bdabc44165292d6e0314e8d28824edbb9b001725b2d8f59a"
+  },
+  "source_local_commit": "29a5015e53d3f94ce61026e8467da2a0ad38572f",
+  "source_public_commit": "cdec8a24a23b5242917471a355722b730e5222de",
+  "historical_same_truth": {
+    "author": "timeout",
+    "support": "timeout",
+    "both": "timeout"
+  }
+}

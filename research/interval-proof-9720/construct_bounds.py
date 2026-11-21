@@ -89,7 +89,7 @@ def main():
         circuits = {t: construct(t, s, bounds["lower_bounds"][t]) for t, s in sorted(states.items())}
         data = dict(bounds=bounds, circuits=circuits)
         result = audit(data)
-        with args.artifact.open("x", encoding="utf8") as f:
+        with args.artifact.open("x", encoding="utf8", newline="\n") as f:
             json.dump(data, f, indent=2)
             f.write("\n")
     else:
