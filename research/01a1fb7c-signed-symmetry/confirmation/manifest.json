@@ -1,0 +1,110 @@
+[
+  {
+    "truth": "019b",
+    "cpu": 4,
+    "order": "FQNH",
+    "seconds": 300,
+    "difficulty": "timeout",
+    "signed_stricter": false,
+    "cell_size": 73
+  },
+  {
+    "truth": "0187",
+    "cpu": 6,
+    "order": "QHFN",
+    "seconds": 300,
+    "difficulty": "timeout",
+    "signed_stricter": false,
+    "cell_size": 73
+  },
+  {
+    "truth": "066b",
+    "cpu": 8,
+    "order": "HNQF",
+    "seconds": 300,
+    "difficulty": "timeout",
+    "signed_stricter": true,
+    "cell_size": 52
+  },
+  {
+    "truth": "0693",
+    "cpu": 10,
+    "order": "NFHQ",
+    "seconds": 300,
+    "difficulty": "timeout",
+    "signed_stricter": true,
+    "cell_size": 52
+  },
+  {
+    "truth": "011f",
+    "cpu": 12,
+    "order": "FQNH",
+    "seconds": 300,
+    "difficulty": "medium",
+    "signed_stricter": false,
+    "cell_size": 22
+  },
+  {
+    "truth": "036b",
+    "cpu": 14,
+    "order": "QHFN",
+    "seconds": 300,
+    "difficulty": "medium",
+    "signed_stricter": false,
+    "cell_size": 22
+  },
+  {
+    "truth": "036f",
+    "cpu": 16,
+    "order": "HNQF",
+    "seconds": 300,
+    "difficulty": "medium",
+    "signed_stricter": true,
+    "cell_size": 11
+  },
+  {
+    "truth": "07bc",
+    "cpu": 18,
+    "order": "NFHQ",
+    "seconds": 300,
+    "difficulty": "medium",
+    "signed_stricter": true,
+    "cell_size": 11
+  },
+  {
+    "truth": "035b",
+    "cpu": 4,
+    "order": "FQNH",
+    "seconds": 300,
+    "difficulty": "fast",
+    "signed_stricter": false,
+    "cell_size": 19
+  },
+  {
+    "truth": "01ae",
+    "cpu": 6,
+    "order": "QHFN",
+    "seconds": 300,
+    "difficulty": "fast",
+    "signed_stricter": false,
+    "cell_size": 19
+  },
+  {
+    "truth": "1be4",
+    "cpu": 8,
+    "order": "HNQF",
+    "seconds": 300,
+    "difficulty": "fast",
+    "signed_stricter": true,
+    "cell_size": 23
+  },
+  {
+    "truth": "06f9",
+    "cpu": 10,
+    "order": "NFHQ",
+    "seconds": 300,
+    "difficulty": "fast",
+    "signed_stricter": true,
+    "cell_size": 23
+  }
+]

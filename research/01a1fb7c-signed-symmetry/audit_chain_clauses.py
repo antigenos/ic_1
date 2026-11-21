@@ -9,7 +9,7 @@ from zipfile import ZipFile
 from audit_family import expected
 from audit_pair_clauses import PREFIXES
 from check_chain import least_rank, rank
-from check_symmetry import HERE, OPS, PINS, gate
+from check_symmetry import HERE, OPS, PINS, gate, stabilizer, transform
 
 
 def encoding(n):
@@ -53,7 +53,7 @@ def audit():
     with TemporaryDirectory() as tmp:
         exe=Path(tmp)/("emit.exe" if os.name=="nt" else "emit")
         subprocess.run(["gcc","-std=c11","-O2",str(HERE/"emit_clauses.c"),"-o",str(exe)],check=True)
-        for mode in ("chain","chain-first","chain-sorted","chain-orbit"):
+        for mode in ("chain","chain-unsigned","chain-first","chain-sorted","chain-orbit"):
             env={k:v for k,v in os.environ.items() if not k.startswith("REPLAY_FIRST")}
             env["REPLAY_FIRST_SYMMETRY"]=mode
             stream=subprocess.check_output([str(exe)],input="".join(f"{t:x} {n}\n" for t in targets),text=True,env=env)
@@ -70,7 +70,9 @@ def audit():
                         for lo in range(hi):
                             for op in OPS:
                                 h=gate(op,PINS[lo],PINS[hi])
-                                if rank(h)!=least_rank(t,h):
+                                best=(min(rank(transform(h,m)) for ph,m in stabilizer(t) if not ph)
+                                      if mode=="chain-unsigned" else least_rank(t,h))
+                                if rank(h)!=best:
                                     c=[2*sel[4,0,hi]+1,2*sel[4,1,lo]+1]
                                     c.extend(2*i+(op>>i&1) for i in range(1,4))
                                     required[tuple(sorted(c))]+=1

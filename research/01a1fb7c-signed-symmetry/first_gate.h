@@ -102,11 +102,11 @@ static int iso_filter(PexaMan_t *p)
     const char *mode = getenv("REPLAY_FIRST_SYMMETRY");
     if (p->nVars != 4 || p->nNodes < 2 || p->pPars->fOnlyAnd ||
         (mode && !strcmp(mode,"off"))) return 1;
-    int signed_mode = !mode || strcmp(mode,"unsigned") != 0;
+    int signed_mode = !mode || (strcmp(mode,"unsigned") && strcmp(mode,"chain-unsigned"));
     unsigned target = (unsigned)p->pTruth[0] & 65535u;
     if (target & 1) target ^= 65535u;
     int pair_mode = mode && !strcmp(mode,"orbit-prefix") ? 2 : (mode && !strcmp(mode,"sorted-prefix"));
-    int chain = mode && (!strcmp(mode,"chain") || !strcmp(mode,"chain-first") ||
+    int chain = mode && (!strcmp(mode,"chain") || !strcmp(mode,"chain-first") || !strcmp(mode,"chain-unsigned") ||
                          !strcmp(mode,"chain-sorted") || !strcmp(mode,"chain-orbit"));
     iso_colex_keys=chain;
     if (mode && !strcmp(mode,"chain-orbit")) pair_mode=3;
