@@ -1,0 +1,471 @@
+{
+  "limit": 76,
+  "tables": 16,
+  "generation_s": 2.0070306999987224,
+  "standalone_functions_checked": 128,
+  "checked_archived_circuits": 219,
+  "minimum_observed_slack": 0,
+  "cases": {
+    "0189": {
+      "choices": 12,
+      "bounds": {
+        "00f0": 288,
+        "0a0a": 272,
+        "0ff0": 320,
+        "2222": 288,
+        "5050": 288,
+        "5a5a": 284,
+        "6666": 224,
+        "8888": 264,
+        "a0a0": 264,
+        "f000": 288,
+        "fafa": 252,
+        "fff0": 288
+      },
+      "whole_queries_removed": 1,
+      "removed_query_conflicts": 1,
+      "queries": [
+        {
+          "gates": 2,
+          "budget": 150,
+          "remaining": 0,
+          "conflicts": 1
+        },
+        {
+          "gates": 3,
+          "budget": 225,
+          "remaining": 1,
+          "conflicts": 59
+        },
+        {
+          "gates": 4,
+          "budget": 225,
+          "remaining": 1,
+          "conflicts": 103
+        },
+        {
+          "gates": 5,
+          "budget": 225,
+          "remaining": 1,
+          "conflicts": 74
+        },
+        {
+          "gates": 3,
+          "budget": 300,
+          "remaining": 11,
+          "conflicts": 61
+        },
+        {
+          "gates": 4,
+          "budget": 300,
+          "remaining": 11,
+          "conflicts": 390
+        },
+        {
+          "gates": 5,
+          "budget": 300,
+          "remaining": 11,
+          "conflicts": 2021
+        },
+        {
+          "gates": 6,
+          "budget": 300,
+          "remaining": 11,
+          "conflicts": 2983
+        },
+        {
+          "gates": 7,
+          "budget": 300,
+          "remaining": 11,
+          "conflicts": 1487
+        },
+        {
+          "gates": 4,
+          "budget": 375,
+          "remaining": 12,
+          "conflicts": 402
+        },
+        {
+          "gates": 5,
+          "budget": 375,
+          "remaining": 12,
+          "conflicts": 2742
+        },
+        {
+          "gates": 4,
+          "budget": 302,
+          "remaining": 11,
+          "conflicts": 800
+        },
+        {
+          "gates": 5,
+          "budget": 302,
+          "remaining": 11,
+          "conflicts": 2681
+        },
+        {
+          "gates": 6,
+          "budget": 302,
+          "remaining": 11,
+          "conflicts": 677
+        },
+        {
+          "gates": 7,
+          "budget": 302,
+          "remaining": 11,
+          "conflicts": 22
+        },
+        {
+          "gates": 8,
+          "budget": 302,
+          "remaining": 11,
+          "conflicts": 390
+        },
+        {
+          "gates": 4,
+          "budget": 304,
+          "remaining": 11,
+          "conflicts": 1278
+        },
+        {
+          "gates": 5,
+          "budget": 304,
+          "remaining": 11,
+          "conflicts": 823
+        },
+        {
+          "gates": 4,
+          "budget": 303,
+          "remaining": 11,
+          "conflicts": 809
+        },
+        {
+          "gates": 5,
+          "budget": 303,
+          "remaining": 11,
+          "conflicts": 3596
+        },
+        {
+          "gates": 6,
+          "budget": 303,
+          "remaining": 11,
+          "conflicts": 1
+        },
+        {
+          "gates": 7,
+          "budget": 303,
+          "remaining": 11,
+          "conflicts": 22
+        },
+        {
+          "gates": 8,
+          "budget": 303,
+          "remaining": 11,
+          "conflicts": 90
+        },
+        {
+          "gates": 4,
+          "budget": 304,
+          "remaining": 11,
+          "conflicts": 289
+        },
+        {
+          "gates": 5,
+          "budget": 304,
+          "remaining": 11,
+          "conflicts": 2228
+        }
+      ]
+    },
+    "03dd": {
+      "choices": 17,
+      "bounds": {
+        "00aa": 252,
+        "00cc": 252,
+        "0a0a": 252,
+        "2222": 252,
+        "3300": 252,
+        "33cc": 272,
+        "4444": 252,
+        "5050": 252,
+        "5500": 252,
+        "55aa": 284,
+        "5a5a": 284,
+        "6666": 284,
+        "8888": 252,
+        "a0a0": 252,
+        "aa00": 252,
+        "eeee": 252,
+        "ffaa": 252
+      },
+      "whole_queries_removed": 4,
+      "removed_query_conflicts": 150,
+      "queries": [
+        {
+          "gates": 2,
+          "budget": 150,
+          "remaining": 0,
+          "conflicts": 5
+        },
+        {
+          "gates": 3,
+          "budget": 225,
+          "remaining": 0,
+          "conflicts": 49
+        },
+        {
+          "gates": 4,
+          "budget": 225,
+          "remaining": 0,
+          "conflicts": 93
+        },
+        {
+          "gates": 5,
+          "budget": 225,
+          "remaining": 0,
+          "conflicts": 3
+        },
+        {
+          "gates": 3,
+          "budget": 300,
+          "remaining": 17,
+          "conflicts": 132
+        },
+        {
+          "gates": 4,
+          "budget": 300,
+          "remaining": 17,
+          "conflicts": 538
+        },
+        {
+          "gates": 5,
+          "budget": 300,
+          "remaining": 17,
+          "conflicts": 1185
+        },
+        {
+          "gates": 6,
+          "budget": 300,
+          "remaining": 17,
+          "conflicts": 254
+        },
+        {
+          "gates": 7,
+          "budget": 300,
+          "remaining": 17,
+          "conflicts": 35
+        },
+        {
+          "gates": 4,
+          "budget": 375,
+          "remaining": 17,
+          "conflicts": 559
+        },
+        {
+          "gates": 5,
+          "budget": 375,
+          "remaining": 17,
+          "conflicts": 313
+        },
+        {
+          "gates": 4,
+          "budget": 334,
+          "remaining": 17,
+          "conflicts": 652
+        },
+        {
+          "gates": 5,
+          "budget": 334,
+          "remaining": 17,
+          "conflicts": 3914
+        },
+        {
+          "gates": 6,
+          "budget": 334,
+          "remaining": 17,
+          "conflicts": 6257
+        },
+        {
+          "gates": 7,
+          "budget": 334,
+          "remaining": 17,
+          "conflicts": 775
+        },
+        {
+          "gates": 8,
+          "budget": 334,
+          "remaining": 17,
+          "conflicts": 165
+        },
+        {
+          "gates": 9,
+          "budget": 334,
+          "remaining": 17,
+          "conflicts": 41
+        },
+        {
+          "gates": 10,
+          "budget": 334,
+          "remaining": 17,
+          "conflicts": 67
+        },
+        {
+          "gates": 4,
+          "budget": 368,
+          "remaining": 17,
+          "conflicts": 622
+        },
+        {
+          "gates": 5,
+          "budget": 368,
+          "remaining": 17,
+          "conflicts": 2861
+        },
+        {
+          "gates": 4,
+          "budget": 351,
+          "remaining": 17,
+          "conflicts": 587
+        },
+        {
+          "gates": 5,
+          "budget": 351,
+          "remaining": 17,
+          "conflicts": 4506
+        },
+        {
+          "gates": 6,
+          "budget": 351,
+          "remaining": 17,
+          "conflicts": 14912
+        },
+        {
+          "gates": 7,
+          "budget": 351,
+          "remaining": 17,
+          "conflicts": 4512
+        },
+        {
+          "gates": 8,
+          "budget": 351,
+          "remaining": 17,
+          "conflicts": 183
+        },
+        {
+          "gates": 9,
+          "budget": 351,
+          "remaining": 17,
+          "conflicts": 67
+        },
+        {
+          "gates": 10,
+          "budget": 351,
+          "remaining": 17,
+          "conflicts": 48
+        },
+        {
+          "gates": 4,
+          "budget": 368,
+          "remaining": 17,
+          "conflicts": 472
+        },
+        {
+          "gates": 5,
+          "budget": 368,
+          "remaining": 17,
+          "conflicts": 3465
+        },
+        {
+          "gates": 4,
+          "budget": 359,
+          "remaining": 17,
+          "conflicts": 460
+        },
+        {
+          "gates": 5,
+          "budget": 359,
+          "remaining": 17,
+          "conflicts": 5844
+        },
+        {
+          "gates": 6,
+          "budget": 359,
+          "remaining": 17,
+          "conflicts": 19892
+        },
+        {
+          "gates": 7,
+          "budget": 359,
+          "remaining": 17,
+          "conflicts": 3031
+        },
+        {
+          "gates": 8,
+          "budget": 359,
+          "remaining": 17,
+          "conflicts": 248
+        },
+        {
+          "gates": 9,
+          "budget": 359,
+          "remaining": 17,
+          "conflicts": 66
+        },
+        {
+          "gates": 4,
+          "budget": 367,
+          "remaining": 17,
+          "conflicts": 298
+        },
+        {
+          "gates": 5,
+          "budget": 367,
+          "remaining": 17,
+          "conflicts": 6167
+        },
+        {
+          "gates": 6,
+          "budget": 367,
+          "remaining": 17,
+          "conflicts": 17824
+        },
+        {
+          "gates": 7,
+          "budget": 367,
+          "remaining": 17,
+          "conflicts": 5857
+        },
+        {
+          "gates": 8,
+          "budget": 367,
+          "remaining": 17,
+          "conflicts": 82
+        },
+        {
+          "gates": 9,
+          "budget": 367,
+          "remaining": 17,
+          "conflicts": 47
+        },
+        {
+          "gates": 10,
+          "budget": 367,
+          "remaining": 17,
+          "conflicts": 21
+        },
+        {
+          "gates": 4,
+          "budget": 375,
+          "remaining": 17,
+          "conflicts": 544
+        },
+        {
+          "gates": 5,
+          "budget": 375,
+          "remaining": 17,
+          "conflicts": 762
+        }
+      ]
+    }
+  }
+}
