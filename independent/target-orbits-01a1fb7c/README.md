@@ -29,3 +29,7 @@ python independent/target-orbits-01a1fb7c/full.py
 ```
 
 完整批次的逐次原始输出保存在 `.local/orbit-confirmation-300`。脚本记录单核亲和性、可执行文件 SHA-256、UTC 时间、墙钟和系统清醒时间，超时计入 300 秒。重新进入同一批次会复用已核验的完成项；进程锁用于阻止重复启动。核心映射适用于本机 32 个逻辑核。
+
+条件前缀候选 03afb63 在 012d 上发现了原输入群以外的严格等价变换，独立核验 1632 条实际条件子句；0189 的两组配对均退化，012d 两版均超时。该版本与原始材料保存在 [独立候选分支](https://github.com/antigenos/ic_1/tree/codex/target-orbits-01a1fb7c-conditional/independent/target-orbits-01a1fb7c)，默认求解器只使用首门规则。
+
+阶段 14 最近方法对照。依 Haaswijk 第 2.3 节 S 规则，交换两个输入若保持目标，则要求较小输入的首次使用不迟于较大输入（同门使用合法）。在相同 TCJAP 模式 2 中单独实现该规则，比较首门版与 S。样本为 0189、6996，再加先前 20 个测试以外，历史完整时间在 [2,30) 秒、普通输入置换不能合并首门而带相位能合并的所有类；符合者为 03dd、07f2。各组 BSSB，同核，每次 60 秒。若 S 已取得同等优势，则收窄学术归因；局部时间结果不会改动已经登记的全族设置。[已有 S 规则的原始说明](https://si2.epfl.ch/~demichel/graduates/theses/winston.pdf)
