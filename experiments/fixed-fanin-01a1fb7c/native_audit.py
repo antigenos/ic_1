@@ -72,7 +72,7 @@ def work(rows, binary, dest, cpu, pristine=None):
         verify(row,(case/"solver.log").read_text())
 
 
-def archive(rows, dest, output, pristine=None):
+def archive(rows, dest, output, pristine=None, fixed=False, failed_enumerator=None):
     output.mkdir(parents=True,exist_ok=True)
     parts=[]
     for row in rows:
@@ -84,18 +84,24 @@ def archive(rows, dest, output, pristine=None):
         raw=(case/"solver.log").read_bytes()
         verify(row,raw.decode())
         assert result["experiment"]["certificate"]==sha and result["status"]=="solver_completed_verified_witness"
-        build="pristine" if old or pristine is None else "equivalent_histogram_enumerator"
+        if old:
+            build="pristine"
+        elif fixed:
+            build="fixed_topology_native_activity"
+        else:
+            build="equivalent_histogram_enumerator" if pristine else "pristine"
         parts.append(dict(result,validation_build=build,solver_output=raw.decode(),solver_log_sha256=hashlib.sha256(raw).hexdigest()))
     for start in range(0,len(parts),26):
         data=parts[start:start+26]
         (output/f"part-{start//26+1:02}.jsonl").write_text("".join(json.dumps(x,separators=(",",":"))+"\n" for x in data),encoding="utf-8")
-    if pristine:
+    for source,filename in ((pristine,"pristine-incomplete.json"),(failed_enumerator,"equivalent-enumerator-incomplete.json")):
+        if source is None: continue
         attempts=[]
-        for path in sorted(pristine.glob("*/result.json")):
+        for path in sorted(source.glob("*/result.json")):
             row=json.loads(path.read_text())
             if row["status"]!="solver_completed_verified_witness":
                 attempts.append(dict(row,solver_output=(path.parent/"solver.log").read_text()))
-        (output/"pristine-incomplete.json").write_text(json.dumps(attempts,indent=2)+"\n")
+        (output/filename).write_text(json.dumps(attempts,indent=2)+"\n")
     print("DATE CNF confirmed",len(parts),"complete circuits.",flush=True)
 
 
@@ -112,7 +118,8 @@ def verify_archive(rows, folder):
         assert hashlib.sha256(message.encode()).hexdigest()==record["solver_log_sha256"]
         verify(circuit,message)
         variant=record["validation_build"]
-        assert variant in ("pristine","equivalent_histogram_enumerator")
+        assert variant in ("pristine","equivalent_histogram_enumerator","fixed_topology_native_activity")
+        assert ("FF_FIXED_TOPOLOGY_ACTIVITY" in message)==(variant=="fixed_topology_native_activity")
         assert identities.setdefault(variant,record["binary_sha256"])==record["binary_sha256"]
     print("Verified",len(all_runs),"native logs and exact gate lists.")
 
@@ -125,6 +132,8 @@ if __name__=="__main__":
     p.add_argument("--export",type=Path)
     p.add_argument("--verify-export",type=Path)
     p.add_argument("--reuse-pristine",type=Path,help="Reuse passed original runs and use the equivalent histogram generator for pending certificates")
+    p.add_argument("--fixed",action="store_true",help="Use the original minterm CNF with pinned gates and its native activity readback for pending certificates")
+    p.add_argument("--failed-enumerator",type=Path,help="Preserve unsuccessful full-window controls in the export")
     args=p.parse_args()
     data=json.loads(args.library.read_text())
     assert check(data)==data["verified"]
@@ -134,11 +143,11 @@ if __name__=="__main__":
         sys.exit(0)
     if args.directory is None or not args.cpus:
         p.error("An output directory and --cpus are required to run the native checker")
-    kind="library-check-fast" if args.reuse_pristine else "library-check"
+    kind="library-check-fixed" if args.fixed else ("library-check-fast" if args.reuse_pristine else "library-check")
     binary=ROOT/".local/variants"/("fixed-fanin-"+kind)/("abc.exe" if os.name=="nt" else "abc")
     args.directory.mkdir(parents=True,exist_ok=True)
     assert len(set(args.cpus))==len(args.cpus)
     with ProcessPoolExecutor(max_workers=len(args.cpus)) as pool:
         jobs=[pool.submit(work,rows[i::len(args.cpus)],binary,args.directory,cpu,args.reuse_pristine) for i,cpu in enumerate(args.cpus)]
         for job in jobs: job.result()
-    if args.export: archive(rows,args.directory,args.export,args.reuse_pristine)
+    if args.export: archive(rows,args.directory,args.export,args.reuse_pristine,args.fixed,args.failed_enumerator)

@@ -30,10 +30,19 @@ static int ff_native_library(Bmc_EsPar_t *pars, word *truth, PexaMan_t **origina
     if (!p) return 0;
     PexaManFree(*original);
     *original=p;
+#ifdef FF_FIXED_TOPOLOGY_ACTIVITY
+    /* With every fanin and operator pinned, the original minterm variables
+       determine the activity uniquely. This checks a given witness only. */
+    if (!PexaManAddCnfStart(p,pars->fOnlyAnd)) return 0;
+    for (int row=1;row<(1 << p->nVars);++row)
+        if (!PexaManAddCnf(p,row)) return 0;
+    puts("FF_FIXED_TOPOLOGY_ACTIVITY");
+#else
     Comb_t query={0};
     query.act=cost;
     query.r=count-1;
     if (!ExactPowerSynthesisCnfBddRange(pars,p,&query,0)) return 0;
+#endif
     for (int i=0;i<count;++i) {
         int high_var=p->VarMarks[4+i][0][hi[i]], low_var=p->VarMarks[4+i][1][lo[i]];
         if (!high_var || !low_var) return 0;
