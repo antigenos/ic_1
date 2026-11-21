@@ -41,6 +41,8 @@ DATE 原文第 IV-C 节报告在每类三天的预算下完成 222 个 NPN 类�
 
 在最终选出的 208 个电路中，129 个以完整 DATE 活动度窗口确认，79 个以固定拓扑的原生真值 CNF 和活动度读回确认。较低预算档可能为同一最优值选出不同连线，因此只有证书哈希相同的旧日志才会复用。全部 208 个原生输出都按门码、两端连线、真值和费用逐项核过。对 102 种门数和费用组合，共 572 个进入 BDD 构造器的有序直方图索引与独立多重集枚举逐项一致。原枚举和直接枚举在 0116 的 90 秒窗口超时日志都已保存。[逐例原生输出](evidence/native-library) · [窗口输入审计](evidence/native-windows.json)
 
+另外从头编写费用优先的 C++ 复核程序，队列按累计活动度分桶，信号按第 15 行归一。它重新构造输入变换表，取字典序最大的降序状态作为代表。第一个程序按收费门数分层，按第零行归一，取字典序最小的升序状态。第二个程序只接收预算和目标真值，二进制不读取电路、分目标最优值或此前的状态。用已经获得的最大可行费用 662 作为全族核验上界，从空集开始重新算出全部 208 个最优值，单核用时 168.141 秒，展开 9829222 个状态。240、360、480、540、600、630 六个费用范围中的逐门数状态计数也逐项一致。两份程序应用相同的等价关系和门库；独立编程、不同的遍历顺序以及与原始 SAT 的电路核验分别检查了不同的错误来源。[费用优先实现](cost_order_check.cpp) · [完整费用与状态清单](evidence/cost-order-662.json)
+
 ### 复跑
 
 从仓库根目录执行。下面给出 PowerShell 命令，示例核 24 可以换成本机可分配的逻辑核。编译独立枚举器只需要支持 C++17 的 GNU C++ 和 Python 3.12。运行 DATE 原生核验时还需按[作者基线构建步骤](../../REPRODUCTION.md)准备已锁定的 ABC 和 pexact。
@@ -51,6 +53,8 @@ New-Item -ItemType Directory -Force .local | Out-Null
 g++ -O2 -std=c++17 "$study/orbit_oracle.cpp" -o .local/orbit-replay.exe
 python "$study/library.py" .local/rebuilt-690.json --binary .local/orbit-replay.exe --cap 690 --terminal --layer-limit 14000000 --cpu 24 --previous "$study/evidence/leaves-660.json"
 python "$study/audit_library_domain.py" .local/rebuilt-690.json .local/transport-690-check.json
+g++ -O2 -std=c++17 "$study/cost_order_check.cpp" -o .local/cost-order-replay.exe
+python "$study/audit_cost_order.py" .local/verified-662.json --binary .local/cost-order-replay.exe --cap 662 --cpu 24
 python "$study/build.py" library-check-fixed
 python "$study/native_audit.py" .local/rebuilt-690.json .local/check-fixed-690 --fixed --cpus 24
 python "$study/native_audit.py" "$study/evidence/leaves-690.json" --verify-export "$study/evidence/native-library"
