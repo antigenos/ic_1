@@ -15,6 +15,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--prepared", type=Path, default=ROOT,
                         help="checkout containing the pinned ABC objects and TCJAP core")
+    parser.add_argument("--build-frozen",action="store_true",help="also build the unmodified joint executable in this checkout")
     args = parser.parse_args()
     prepared = args.prepared.resolve()
     build_variant.ABC = prepared/".local/abc"
@@ -28,7 +29,7 @@ def main():
         dest.mkdir(parents=True,exist_ok=True)
         for name in ("joint_relation.c","joint_relation.h"):
             shutil.copyfile(src/name,dest/name)
-    name = "signed-symmetry-chain-01a1fb7c"
+    name = "signed-symmetry-final-01a1fb7c"
     out = ROOT/".local/variants"/name
     out.mkdir(parents=True,exist_ok=True)
     shutil.copyfile(HERE/"first_gate.h",out/"first_gate.h")
@@ -39,6 +40,8 @@ def main():
     patchdir.mkdir(exist_ok=True)
     for patch in [*patches,HERE/"first-gate.patch",ROOT/"variants/sat-trail.patch"]:
         (patchdir/patch.name).write_text(patch.read_text(), encoding="utf-8", newline="\n")
+    if args.build_frozen:
+        build_variant.build("joint",[patchdir/p.name for p in patches],patchdir/"sat-trail.patch")
     build_variant.build(name,[patchdir/p.name for p in [*patches,HERE/"first-gate.patch"]],
                         patchdir/"sat-trail.patch")
     binary = out/("abc.exe" if sys.platform == "win32" else "abc")

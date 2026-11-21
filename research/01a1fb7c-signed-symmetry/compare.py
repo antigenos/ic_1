@@ -24,7 +24,7 @@ def main():
     args = p.parse_args()
     modes = {"F":"off","O":"off","U":"unsigned","S":"signed","P":"first-use",
              "J":"combined","K":"ordered","R":"sorted-prefix","T":"orbit-prefix",
-             "Q":"chain","N":"chain-first","V":"chain-orbit"}
+             "Q":"chain","N":"chain-first","M":"chain-sorted","V":"chain-orbit"}
     if set(args.order)-set(modes):
         p.error("Unknown method")
     pin(args.cpu)
@@ -35,7 +35,7 @@ def main():
     with args.output.open("x",encoding="utf-8") as out:
         for i,key in enumerate(args.order,1):
             dest = raw/f"{i}-{key}"
-            base = args.prepared.resolve()/".local/variants/joint" if key=="F" else ROOT/".local/variants/signed-symmetry-chain-01a1fb7c"
+            base = args.prepared.resolve()/".local/variants/joint" if key=="F" else ROOT/".local/variants/signed-symmetry-final-01a1fb7c"
             binary = base/("abc.exe" if os.name=="nt" else "abc")
             env = {k:v for k,v in os.environ.items() if not k.startswith("REPLAY_")}
             env["REPLAY_FIRST_SYMMETRY"] = modes[key]

@@ -1,0 +1,134 @@
+{
+  "strata_counts": {
+    "F": {
+      "completed": 4,
+      "capped_wall_s": 721.5283616000015
+    },
+    "P": {
+      "completed": 4,
+      "capped_wall_s": 711.9987698000114
+    },
+    "J": {
+      "completed": 4,
+      "capped_wall_s": 700.6780167999968
+    }
+  },
+  "comparisons": {
+    "F": {
+      "paired_ratios": {
+        "0357": 0.9806698154239637,
+        "07f8": 0.7207987334334984,
+        "01eb": 1.149211097557857,
+        "03dd": 1.7166913302819176
+      },
+      "geometric_mean": 1.0866938569127793,
+      "gained": [],
+      "lost": []
+    },
+    "P": {
+      "paired_ratios": {
+        "0357": 1.1894181332545786,
+        "07f8": 0.6428677580567339,
+        "01eb": 1.070593981217904,
+        "03dd": 1.4789193708762358
+      },
+      "geometric_mean": 1.0489538318259815,
+      "gained": [],
+      "lost": []
+    }
+  },
+  "pilots": {
+    "pilot-0189": [
+      {
+        "arm": "F",
+        "wall_s": 1.675759099998686,
+        "status": "solver_completed_verified_witness",
+        "activity": 304
+      },
+      {
+        "arm": "U",
+        "wall_s": 1.3752082999999402,
+        "status": "solver_completed_verified_witness",
+        "activity": 304
+      },
+      {
+        "arm": "S",
+        "wall_s": 1.2120004000025801,
+        "status": "solver_completed_verified_witness",
+        "activity": 304
+      },
+      {
+        "arm": "S",
+        "wall_s": 1.1198843999991368,
+        "status": "solver_completed_verified_witness",
+        "activity": 304
+      },
+      {
+        "arm": "U",
+        "wall_s": 1.3246184999989055,
+        "status": "solver_completed_verified_witness",
+        "activity": 304
+      },
+      {
+        "arm": "F",
+        "wall_s": 2.0484426000002713,
+        "status": "solver_completed_verified_witness",
+        "activity": 304
+      },
+      {
+        "arm": "O",
+        "wall_s": 1.9281909999990603,
+        "status": "solver_completed_verified_witness",
+        "activity": 304
+      }
+    ],
+    "ordered-0189": [
+      {
+        "arm": "P",
+        "wall_s": 1.8894719000018085,
+        "status": "solver_completed_verified_witness",
+        "activity": 304
+      },
+      {
+        "arm": "J",
+        "wall_s": 1.6924839000021166,
+        "status": "solver_completed_verified_witness",
+        "activity": 304
+      },
+      {
+        "arm": "J",
+        "wall_s": 1.5480761000035272,
+        "status": "solver_completed_verified_witness",
+        "activity": 304
+      },
+      {
+        "arm": "P",
+        "wall_s": 1.7156599999980244,
+        "status": "solver_completed_verified_witness",
+        "activity": 304
+      },
+      {
+        "arm": "K",
+        "wall_s": 1.2980834000009054,
+        "status": "solver_completed_verified_witness",
+        "activity": 304
+      }
+    ],
+    "pilot-07b4": [
+      {
+        "arm": "F",
+        "wall_s": 291.2262018000001,
+        "status": "solver_completed_verified_witness",
+        "activity": 438
+      },
+      {
+        "arm": "S",
+        "wall_s": 301.11530610000045,
+        "status": "timeout",
+        "activity": null
+      }
+    ]
+  },
+  "six_case_rows": 18,
+  "verified_witnesses": 12
+}

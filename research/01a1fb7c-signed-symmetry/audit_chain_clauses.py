@@ -53,7 +53,7 @@ def audit():
     with TemporaryDirectory() as tmp:
         exe=Path(tmp)/("emit.exe" if os.name=="nt" else "emit")
         subprocess.run(["gcc","-std=c11","-O2",str(HERE/"emit_clauses.c"),"-o",str(exe)],check=True)
-        for mode in ("chain","chain-first","chain-orbit"):
+        for mode in ("chain","chain-first","chain-sorted","chain-orbit"):
             env={k:v for k,v in os.environ.items() if not k.startswith("REPLAY_FIRST")}
             env["REPLAY_FIRST_SYMMETRY"]=mode
             stream=subprocess.check_output([str(exe)],input="".join(f"{t:x} {n}\n" for t in targets),text=True,env=env)
@@ -76,7 +76,7 @@ def audit():
                                     required[tuple(sorted(c))]+=1
                 assert not required-native
                 extra=native-required
-                if mode!="chain-orbit":
+                if mode not in ("chain-orbit","chain-sorted"):
                     assert not extra
                 else:
                     killed=dict.fromkeys(masks_for,0)
@@ -92,7 +92,8 @@ def audit():
                     for i,(a,b) in enumerate(PREFIXES):
                         first,second=a[-1],b[-1]
                         if rank(first)==least_rank(t,first):
-                            assert all(bool(mask>>i & 1)==(rank(first)>least_rank(t,second)) for mask in killed.values())
+                            limit=least_rank(t,second) if mode=="chain-orbit" else rank(second)
+                            assert all(bool(mask>>i & 1)==(rank(first)>limit) for mask in killed.values())
                 total+=native.total()
             report[mode]=total
     return dict(functions=len(targets),total_gates=n,secondary_gate_ids=list(masks_for),matched_clauses=report)
