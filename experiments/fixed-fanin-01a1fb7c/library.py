@@ -71,6 +71,7 @@ if __name__=="__main__":
     p.add_argument("--cpu",type=int,default=24)
     p.add_argument("--previous",type=Path)
     p.add_argument("--terminal",action="store_true")
+    p.add_argument("--layer-limit",type=int,default=2000000)
     args=p.parse_args()
     prev=json.loads(args.previous.read_text()) if args.previous else None
     if args.binary:
@@ -80,13 +81,15 @@ if __name__=="__main__":
         start=time.perf_counter()
         command=[str(binary),str(args.cap),"--circuits"]
         if args.terminal: command.append("--terminal")
+        command.append(f"--layer-limit={args.layer_limit}")
         result=subprocess.run(command,input="\n".join(family()),
                               capture_output=True,text=True,check=True)
         elapsed=time.perf_counter()-start
         first,*lines=result.stdout.splitlines()
         tag,*layers=first.split()
         assert tag=="layers" and layers[0]=="1"
-        data=dict(cap=args.cap,cpu=args.cpu,cold_wall_s=elapsed,terminal=args.terminal,binary_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(),
+        data=dict(cap=args.cap,cpu=args.cpu,cold_wall_s=elapsed,terminal=args.terminal,layer_limit=args.layer_limit,
+                  binary_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(),
                   states_by_depth=list(map(int,layers)),circuits=list(map(json.loads,lines)))
         data["verified"]=check(data,prev)
         args.output.write_text(json.dumps(data,ensure_ascii=True,separators=(",",":"))+"\n",encoding="utf-8")

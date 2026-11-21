@@ -164,10 +164,15 @@ int main(int argc, char **argv)
 {
     if (argc < 2) return 2;
     bool circuits=false, terminal=false;
+    std::size_t layer_limit=2000000;
     for (int i=2;i<argc;++i) {
         std::string opt(argv[i]);
         if (opt=="--circuits") circuits=true;
         else if (opt=="--terminal") terminal=true;
+        else if (opt.rfind("--layer-limit=",0)==0) {
+            layer_limit=std::stoul(opt.substr(14));
+            if (!layer_limit) return 2;
+        }
         else return 2;
     }
     int cap = std::stoi(argv[1]);
@@ -214,7 +219,7 @@ int main(int argc, char **argv)
                         continue;
                     }
                     next.insert(canonical(child,depth+1));
-                    if (next.size() > 2000000) {
+                    if (next.size() > layer_limit) {
                         std::cerr << " layer size limit; proof incomplete\n";
                         return 3;
                     }

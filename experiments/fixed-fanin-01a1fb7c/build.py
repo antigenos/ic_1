@@ -13,11 +13,16 @@ def compile_variant(kind):
     name = "fixed-fanin-" + kind
     dest = ROOT / ".local/variants" / name
     dest.mkdir(parents=True, exist_ok=True)
-    if kind == "library-check":
+    if kind in ("library-check","library-check-fast"):
         (dest/"native_library.h").write_bytes((HERE/"native_library.h").read_bytes())
         patch = dest/"native_library.patch"
         patch.write_bytes((HERE/"native_library.patch").read_bytes().replace(b"\r\n", b"\n"))
-        build(name, [patch])
+        patches=[patch]
+        if kind=="library-check-fast":
+            enumeration=dest/"compositions.patch"
+            enumeration.write_bytes((ROOT/"variants/compositions.patch").read_bytes().replace(b"\r\n",b"\n"))
+            patches.insert(0,enumeration)
+        build(name, patches)
         return
     header = (ROOT / "tools/joint_trail.h").read_text()
     search_hooks = {"partition": ("partition.h", "ff_partition"),
@@ -98,5 +103,5 @@ def compile_variant(kind):
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("kind", choices=("base", "diagnostic", "candidate", "candidate-diagnostic",
-                                   "interval", "types", "types-diagnostic", "partition","xor-proof","cofactor","prefix","bounded","tail","library-check"))
+                                   "interval", "types", "types-diagnostic", "partition","xor-proof","cofactor","prefix","bounded","tail","library-check","library-check-fast"))
     compile_variant(p.parse_args().kind)
