@@ -1,0 +1,243 @@
+{
+  "target": "fe76",
+  "budget": 300,
+  "total_gates": 4,
+  "results": [
+    {
+      "primary": 0,
+      "forced_signal": "54dc",
+      "own_cost": 128,
+      "splits": [
+        {
+          "bit": 0,
+          "cofactors": [
+            "ee",
+            "0a"
+          ],
+          "optima": [
+            0,
+            0
+          ],
+          "cone_lb": 0
+        },
+        {
+          "bit": 1,
+          "cofactors": [
+            "44",
+            "5f"
+          ],
+          "optima": [
+            0,
+            0
+          ],
+          "cone_lb": 0
+        },
+        {
+          "bit": 2,
+          "cofactors": [
+            "4c",
+            "5d"
+          ],
+          "optima": [
+            24,
+            24
+          ],
+          "cone_lb": 96
+        },
+        {
+          "bit": 3,
+          "cofactors": [
+            "dc",
+            "54"
+          ],
+          "optima": [
+            24,
+            24
+          ],
+          "cone_lb": 96
+        }
+      ],
+      "old_lower": 280,
+      "combined_lower": 280,
+      "public_feasible": true,
+      "excluded_at_300": false
+    },
+    {
+      "primary": 1,
+      "forced_signal": "32ba",
+      "own_cost": 128,
+      "splits": [
+        {
+          "bit": 0,
+          "cofactors": [
+            "44",
+            "5f"
+          ],
+          "optima": [
+            0,
+            0
+          ],
+          "cone_lb": 0
+        },
+        {
+          "bit": 1,
+          "cofactors": [
+            "ee",
+            "0a"
+          ],
+          "optima": [
+            0,
+            0
+          ],
+          "cone_lb": 0
+        },
+        {
+          "bit": 2,
+          "cofactors": [
+            "2a",
+            "3b"
+          ],
+          "optima": [
+            24,
+            24
+          ],
+          "cone_lb": 96
+        },
+        {
+          "bit": 3,
+          "cofactors": [
+            "ba",
+            "32"
+          ],
+          "optima": [
+            24,
+            24
+          ],
+          "cone_lb": 96
+        }
+      ],
+      "old_lower": 280,
+      "combined_lower": 280,
+      "public_feasible": true,
+      "excluded_at_300": false
+    },
+    {
+      "primary": 2,
+      "forced_signal": "0e86",
+      "own_cost": 120,
+      "splits": [
+        {
+          "bit": 0,
+          "cofactors": [
+            "22",
+            "39"
+          ],
+          "optima": [
+            0,
+            24
+          ],
+          "cone_lb": 48
+        },
+        {
+          "bit": 1,
+          "cofactors": [
+            "22",
+            "39"
+          ],
+          "optima": [
+            0,
+            24
+          ],
+          "cone_lb": 48
+        },
+        {
+          "bit": 2,
+          "cofactors": [
+            "e6",
+            "08"
+          ],
+          "optima": [
+            54,
+            24
+          ],
+          "cone_lb": 156
+        },
+        {
+          "bit": 3,
+          "cofactors": [
+            "86",
+            "0e"
+          ],
+          "optima": [
+            78,
+            24
+          ],
+          "cone_lb": 204
+        }
+      ],
+      "old_lower": 272,
+      "combined_lower": 324,
+      "public_feasible": true,
+      "excluded_at_300": true
+    },
+    {
+      "primary": 3,
+      "forced_signal": "0176",
+      "own_cost": 120,
+      "splits": [
+        {
+          "bit": 0,
+          "cofactors": [
+            "1e",
+            "05"
+          ],
+          "optima": [
+            24,
+            0
+          ],
+          "cone_lb": 48
+        },
+        {
+          "bit": 1,
+          "cofactors": [
+            "1e",
+            "05"
+          ],
+          "optima": [
+            24,
+            0
+          ],
+          "cone_lb": 48
+        },
+        {
+          "bit": 2,
+          "cofactors": [
+            "16",
+            "07"
+          ],
+          "optima": [
+            78,
+            24
+          ],
+          "cone_lb": 204
+        },
+        {
+          "bit": 3,
+          "cofactors": [
+            "76",
+            "01"
+          ],
+          "optima": [
+            54,
+            24
+          ],
+          "cone_lb": 156
+        }
+      ],
+      "old_lower": 272,
+      "combined_lower": 324,
+      "public_feasible": true,
+      "excluded_at_300": true
+    }
+  ]
+}
