@@ -16,7 +16,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("frozen",type=Path)
     ap.add_argument("truth")
-    ap.add_argument("order",help="A frozen, B both, D domain-only, H history-only, O off")
+    ap.add_argument("order",help="A frozen, B both, C saved witness, D domain-only, H history-only, O off")
     ap.add_argument("tag")
     ap.add_argument("--cpu",type=int,required=True)
     ap.add_argument("--cap",type=int,required=True)
@@ -27,10 +27,12 @@ def main():
     dest = HERE/".local/runs"/args.tag
     dest.mkdir(parents=True,exist_ok=False)
     export = HERE/"evidence"/(args.tag+".jsonl")
-    modes = dict(A="frozen",B="both",D="domain",H="history",O="off")
+    modes = dict(A="frozen",B="both",C="both",D="domain",H="history",O="off")
     with export.open("x",encoding="utf-8") as out:
         for i,arm in enumerate(args.order,1):
             binary = args.frozen.resolve()/".local/variants/joint"/("abc"+ext) if arm=="A" else candidate
+            if arm=="C":
+                binary = HERE/".local/build-saved"/("abc"+ext)
             env = {k:v for k,v in os.environ.items() if not k.startswith(("REPLAY_","OPTWIN_"))}
             if arm!="A":
                 env["OPTWIN_MODE"] = modes[arm]

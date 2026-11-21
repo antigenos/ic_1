@@ -53,15 +53,21 @@ def generate(source):
     return replace_one(source, solve, solve + "\n        if (status == l_False) window_unsat(w, rIt, node.act, node.act + *delta);")
 
 
-def build(baseline):
+def build(baseline, saved=False):
     abc = baseline / ".local/abc"
     joint = baseline / ".local/variants/joint"
-    dest = HERE / ".local/build"
+    dest = HERE / ".local" / ("build-saved" if saved else "build")
     dest.mkdir(exist_ok=True, parents=True)
     original = (joint / "pexact.c").read_bytes().replace(b"\r\n", b"\n")
     if hashlib.sha256(original).hexdigest() != SOURCE_SHA:
         raise ValueError("Build the pinned joint variant first, see root REPRODUCTION.md")
-    (dest / "pexact.c").write_text(generate(original.decode()), encoding="utf8")
+    generated = generate(original.decode())
+    if saved:
+        header = '#include "window_proof.h"'
+        generated = replace_one(generated,header,header+'\n#include "saved_witness.h"')
+        sat = "            int actSolution = PexaManGetAct( *p );"
+        generated = replace_one(generated,sat,"            if (window_certify(w,p)) return 0;\n"+sat)
+    (dest / "pexact.c").write_text(generated, encoding="utf8")
     def rel(p):
         return Path(os.path.relpath(p, abc)).as_posix()
     if os.name == "nt":
@@ -86,4 +92,6 @@ def build(baseline):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("baseline", type=Path, help="Frozen reproduction checkout with built joint variant")
-    build(ap.parse_args().baseline.resolve())
+    ap.add_argument("--saved", action="store_true")
+    args = ap.parse_args()
+    build(args.baseline.resolve(),args.saved)

@@ -1,0 +1,23 @@
+[
+  {
+    "truth": "0189",
+    "activity": 304,
+    "strict_queries": 2,
+    "improved_incumbents": 0,
+    "remaining_cheaper_scores": 0
+  },
+  {
+    "truth": "001e",
+    "activity": 224,
+    "strict_queries": 3,
+    "improved_incumbents": 0,
+    "remaining_cheaper_scores": 0
+  },
+  {
+    "truth": "96",
+    "activity": 32,
+    "strict_queries": 1,
+    "improved_incumbents": 0,
+    "remaining_cheaper_scores": 0
+  }
+]

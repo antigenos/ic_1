@@ -1,0 +1,45 @@
+ABC command line: "pexact -I 4 -M 2 0189".
+
+Cannot open file "abc.rc".
+Cannot open file "..\abc.rc".
+Cannot open file "..\..\abc.rc".
+WINDOW r=1 lo=75 hi=150 state=-1 seconds=0.006000
+WINDOW r=1 lo=150 hi=225 state=skip seconds=0
+WINDOW r=2 lo=150 hi=225 state=-1 seconds=0.007000
+WINDOW r=3 lo=150 hi=225 state=-1 seconds=0.023000
+WINDOW r=4 lo=150 hi=225 state=-1 seconds=0.012000
+WINDOW r=1 lo=225 hi=300 state=skip seconds=0
+WINDOW r=2 lo=225 hi=300 state=-1 seconds=0.008000
+WINDOW r=3 lo=225 hi=300 state=-1 seconds=0.035000
+WINDOW r=4 lo=225 hi=300 state=-1 seconds=0.445000
+WINDOW r=5 lo=225 hi=300 state=-1 seconds=0.426000
+WINDOW r=6 lo=225 hi=300 state=-1 seconds=0.213000
+WINDOW r=1 lo=300 hi=375 state=skip seconds=0
+WINDOW r=2 lo=300 hi=375 state=skip seconds=0
+WINDOW r=3 lo=300 hi=375 state=-1 seconds=0.030000
+WINDOW r=4 lo=300 hi=375 state=1 seconds=0.137000
+INCUMBENT score=304 support=4
+STRICT r=4 lo=302 hi=302 status=-1 score=-1
+STRICT r=7 lo=302 hi=302 status=-1 score=-1
+CERTIFIED score=304
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( 05 07 )
+07 = 4'b1000( a 06 )
+06 = 4'b0100( b d )
+05 = 4'b1110( c 04 )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0111111101111111
+i=6:0011001100000000
+i=7:0001000100000000
+i=8:1001000110000000
+
+
+Switching Activity=304
+Number of Gates: r=5
+Total runtime =     1.51 sec
