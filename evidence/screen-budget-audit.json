@@ -1,0 +1,16 @@
+{
+  "interval": {
+    "verified": {
+      "sel": 1683,
+      "count": 9288
+    },
+    "raw_sha256": "f1d203e3b1c9f8f96944dd73614c56f87f697a1b414515af1ac605b99a2b80ee"
+  },
+  "holes": {
+    "verified": {
+      "sel": 1193,
+      "count": 6282
+    },
+    "raw_sha256": "9237c77e181c87556f0d621e9d5b016b5d4b541a1a7254b12dd21e7fd6961894"
+  }
+}

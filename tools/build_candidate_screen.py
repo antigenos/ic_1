@@ -3,7 +3,8 @@ import argparse
 import shutil
 from build_variant import ROOT, build
 
-MODES = ("memo", "xor", "schedule", "guide", "short", "plain", "prefix", "symmetry","windows")
+MODES = ("memo", "xor", "schedule", "guide", "short", "plain", "prefix", "symmetry","windows",
+         "interval","holes","exists")
 
 
 def replace_once(code, old, new):
@@ -15,6 +16,9 @@ def replace_once(code, old, new):
 def make(mode):
     base = (ROOT / "tools/joint_trail.h").read_text()
     source = base
+    name = "screen-" + mode
+    dest = ROOT / ".local/variants" / name
+    dest.mkdir(parents=True, exist_ok=True)
     if mode in ("memo", "xor"):
         include = '#include "screen_support.h"\n'
         if mode == "memo":
@@ -54,6 +58,29 @@ def make(mode):
                               "selector, signals, result.without_budget[0] != 0))")
         source = replace_once(source, "var, signals))",
                               "var, signals, (result.without_budget[k] >> a) & 1u))")
+    elif mode in ("interval","holes"):
+        source=replace_once(source,"static int replay_pair(",
+            f'#define SCREEN_HOLES {int(mode=="holes")}\n#include "screen_window_filter.h"\nstatic int replay_pair(')
+        source=replace_once(source,"    if (unselected_pin >= 0) {",
+            "    screen_refine(q,signals,obj,unselected_pin,ops,zeros,ones,domains,cap,charged,&result);\n    if (unselected_pin >= 0) {")
+        source=replace_once(source,"if (j != obj[0] && j != obj[1]) break;","/* Every excluded cost in an unrelated gate can affect the finite sumset. */")
+        anchor='    q->trace = getenv("REPLAY_TRACE") != NULL;'
+        source=replace_once(source,anchor,anchor+'\n    if (q->trace) printf("WINDOW_BOUND %d %d\\n",screen_lower,bound);')
+    elif mode == "exists":
+        pinned=(ROOT/".local/reference/src/joint_relation.c").read_text()
+        kernel=pinned.split("int p9_joint_support(",1)[0]
+        kernel=replace_once(kernel,"static void P9ClosedSupport(","static int ScreenExists(")
+        kernel=replace_once(kernel,"if(bs){support[0]|=1u<<minority;support[1]|=bs;}","if(bs) return 1;")
+        kernel=replace_once(kernel,"if(bs){plain[0]|=1u<<minority;plain[1]|=bs;}","")
+        kernel=kernel.rstrip()
+        assert kernel.endswith("}")
+        (dest/"screen_exists_core.h").write_text(kernel[:-1]+" return 0;\n}\n")
+        source=replace_once(source,"static int replay_pair(",'#include "screen_exists_core.h"\nstatic int replay_pair(')
+        source=replace_once(source,"    if (p9_joint_support(q->rows",
+            """    if (unselected_pin>=0) {
+        if (ScreenExists(q->rows,q->target,ops,zeros,ones,domains,NULL,NULL,cap,charged&1,(charged>>1)&1)) return 0;
+        result.supported[0]=0;
+    } else if (p9_joint_support(q->rows""")
     elif mode == "windows":
         source=replace_once(source,"static int replay_pair(",'#include "sample_joint_windows.h"\nstatic int replay_pair(')
         source=replace_once(source,"    if (unselected_pin >= 0) {","    screen_observe(q,signals,obj,unselected_pin,ops,&result);\n    if (unselected_pin >= 0) {")
@@ -77,14 +104,11 @@ def make(mode):
         source=replace_once(source,anchor,"    if (!screen_structural(p, bound)) return l_False;\n"+anchor)
     else:
         raise ValueError(mode)
-    name = "screen-" + mode
-    dest = ROOT / ".local/variants" / name
-    dest.mkdir(parents=True, exist_ok=True)
     if mode in ("plain","prefix"):
         shutil.copyfile(ROOT/".local/screen_prefix_table.h",dest/"screen_prefix_table.h")
     (dest / "joint_trail.h").write_text(source)
     patches = [ROOT / "variants" / (n + ".patch") for n in ("compositions","support","joint-trail")]
-    if mode=="windows":
+    if mode in ("windows","interval","holes"):
         patches.append(ROOT/"variants/screen-window-observation.patch")
     build(name, patches, ROOT / "variants/sat-trail.patch")
 

@@ -1,0 +1,9 @@
+{
+  "seed": 20261121,
+  "total": 6000,
+  "verdicts": {
+    "feasible": 2234,
+    "infeasible": 3766
+  },
+  "disagreements": 0
+}

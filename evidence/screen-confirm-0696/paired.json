@@ -1,0 +1,178 @@
+[
+  {
+    "start_utc": "2026-11-21T00:34:43.524223+00:00",
+    "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "baseline",
+      "truth": "0696",
+      "cpu": 6,
+      "order": 1
+    },
+    "child_affinity": [
+      6
+    ],
+    "wall_s": 5.157591800001683,
+    "capped_wall_s": 5.157591800001683,
+    "witness": {
+      "truth": "0696",
+      "activity": 344,
+      "gates": 4
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:34:48.729084+00:00",
+    "binary_sha256": "b999c57f543ba124d58ad4c1818b53d39dd1454b356b021f6fbe1b780f9f64e8",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "symmetry",
+      "truth": "0696",
+      "cpu": 6,
+      "order": 2
+    },
+    "child_affinity": [
+      6
+    ],
+    "wall_s": 3.8753589000007196,
+    "capped_wall_s": 3.8753589000007196,
+    "witness": {
+      "truth": "0696",
+      "activity": 344,
+      "gates": 4
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:34:52.658465+00:00",
+    "binary_sha256": "e79cfda4cfe56795688fc913fcd93d0fa4575f549fbcf2a3fbb540cfb86f6495",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "prefix",
+      "truth": "0696",
+      "cpu": 6,
+      "order": 3
+    },
+    "child_affinity": [
+      6
+    ],
+    "wall_s": 1.3735682000005909,
+    "capped_wall_s": 1.3735682000005909,
+    "witness": {
+      "truth": "0696",
+      "activity": 344,
+      "gates": 4
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:34:54.115006+00:00",
+    "binary_sha256": "1529810005e9c8ab491f4e3aa859da6e14989535f21e531ed4f724bdab259865",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "guide",
+      "truth": "0696",
+      "cpu": 6,
+      "order": 4
+    },
+    "child_affinity": [
+      6
+    ],
+    "wall_s": 6.951924700002564,
+    "capped_wall_s": 6.951924700002564,
+    "witness": {
+      "truth": "0696",
+      "activity": 344,
+      "gates": 4
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:35:01.116212+00:00",
+    "binary_sha256": "1529810005e9c8ab491f4e3aa859da6e14989535f21e531ed4f724bdab259865",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "guide",
+      "truth": "0696",
+      "cpu": 6,
+      "order": 5
+    },
+    "child_affinity": [
+      6
+    ],
+    "wall_s": 6.471786999998585,
+    "capped_wall_s": 6.471786999998585,
+    "witness": {
+      "truth": "0696",
+      "activity": 344,
+      "gates": 4
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:35:07.637791+00:00",
+    "binary_sha256": "e79cfda4cfe56795688fc913fcd93d0fa4575f549fbcf2a3fbb540cfb86f6495",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "prefix",
+      "truth": "0696",
+      "cpu": 6,
+      "order": 6
+    },
+    "child_affinity": [
+      6
+    ],
+    "wall_s": 1.3988831999995455,
+    "capped_wall_s": 1.3988831999995455,
+    "witness": {
+      "truth": "0696",
+      "activity": 344,
+      "gates": 4
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:35:09.086563+00:00",
+    "binary_sha256": "b999c57f543ba124d58ad4c1818b53d39dd1454b356b021f6fbe1b780f9f64e8",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "symmetry",
+      "truth": "0696",
+      "cpu": 6,
+      "order": 7
+    },
+    "child_affinity": [
+      6
+    ],
+    "wall_s": 3.7792948999995133,
+    "capped_wall_s": 3.7792948999995133,
+    "witness": {
+      "truth": "0696",
+      "activity": 344,
+      "gates": 4
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:35:12.912007+00:00",
+    "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "baseline",
+      "truth": "0696",
+      "cpu": 6,
+      "order": 8
+    },
+    "child_affinity": [
+      6
+    ],
+    "wall_s": 5.1192392999982985,
+    "capped_wall_s": 5.1192392999982985,
+    "witness": {
+      "truth": "0696",
+      "activity": 344,
+      "gates": 4
+    },
+    "status": "solver_completed_verified_witness"
+  }
+]

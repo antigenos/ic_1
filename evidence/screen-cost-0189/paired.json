@@ -1,0 +1,178 @@
+[
+  {
+    "start_utc": "2026-11-21T00:36:00.209607+00:00",
+    "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "baseline",
+      "truth": "0189",
+      "cpu": 4,
+      "order": 1
+    },
+    "child_affinity": [
+      4
+    ],
+    "wall_s": 1.7807171999993443,
+    "capped_wall_s": 1.7807171999993443,
+    "witness": {
+      "truth": "0189",
+      "activity": 304,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:36:02.042612+00:00",
+    "binary_sha256": "1a8302827974d1e0992937123314232487de7de1f3e2fe7bbb7291dead5fba38",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "interval",
+      "truth": "0189",
+      "cpu": 4,
+      "order": 2
+    },
+    "child_affinity": [
+      4
+    ],
+    "wall_s": 1.6582692000010866,
+    "capped_wall_s": 1.6582692000010866,
+    "witness": {
+      "truth": "0189",
+      "activity": 304,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:36:03.754344+00:00",
+    "binary_sha256": "ee89ca7e0792508815ec92166e639ed032137a8733375bbc8899bde280a0ad49",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "holes",
+      "truth": "0189",
+      "cpu": 4,
+      "order": 3
+    },
+    "child_affinity": [
+      4
+    ],
+    "wall_s": 1.403508099996543,
+    "capped_wall_s": 1.403508099996543,
+    "witness": {
+      "truth": "0189",
+      "activity": 304,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:36:05.205741+00:00",
+    "binary_sha256": "4cc815899ccec016bb77dcbb58356e216d01fb7818dc020ca48678d31d21239a",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "exists",
+      "truth": "0189",
+      "cpu": 4,
+      "order": 4
+    },
+    "child_affinity": [
+      4
+    ],
+    "wall_s": 1.762620199999219,
+    "capped_wall_s": 1.762620199999219,
+    "witness": {
+      "truth": "0189",
+      "activity": 304,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:36:07.007253+00:00",
+    "binary_sha256": "4cc815899ccec016bb77dcbb58356e216d01fb7818dc020ca48678d31d21239a",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "exists",
+      "truth": "0189",
+      "cpu": 4,
+      "order": 5
+    },
+    "child_affinity": [
+      4
+    ],
+    "wall_s": 1.712081900001067,
+    "capped_wall_s": 1.712081900001067,
+    "witness": {
+      "truth": "0189",
+      "activity": 304,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:36:08.766100+00:00",
+    "binary_sha256": "ee89ca7e0792508815ec92166e639ed032137a8733375bbc8899bde280a0ad49",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "holes",
+      "truth": "0189",
+      "cpu": 4,
+      "order": 6
+    },
+    "child_affinity": [
+      4
+    ],
+    "wall_s": 1.3469307000013941,
+    "capped_wall_s": 1.3469307000013941,
+    "witness": {
+      "truth": "0189",
+      "activity": 304,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:36:10.159561+00:00",
+    "binary_sha256": "1a8302827974d1e0992937123314232487de7de1f3e2fe7bbb7291dead5fba38",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "interval",
+      "truth": "0189",
+      "cpu": 4,
+      "order": 7
+    },
+    "child_affinity": [
+      4
+    ],
+    "wall_s": 1.639741300001333,
+    "capped_wall_s": 1.639741300001333,
+    "witness": {
+      "truth": "0189",
+      "activity": 304,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness"
+  },
+  {
+    "start_utc": "2026-11-21T00:36:11.846636+00:00",
+    "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+    "timeout_s": 30,
+    "experiment": {
+      "method": "baseline",
+      "truth": "0189",
+      "cpu": 4,
+      "order": 8
+    },
+    "child_affinity": [
+      4
+    ],
+    "wall_s": 1.7018768999987515,
+    "capped_wall_s": 1.7018768999987515,
+    "witness": {
+      "truth": "0189",
+      "activity": 304,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness"
+  }
+]
