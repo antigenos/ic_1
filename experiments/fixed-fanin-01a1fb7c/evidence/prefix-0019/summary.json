@@ -1,0 +1,44 @@
+[
+  {
+    "mode": "base",
+    "wall_s": 12.038200399998459,
+    "capped_s": 12.038200399998459,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "seed-cofactor",
+    "wall_s": 6.18669989999762,
+    "capped_s": 6.18669989999762,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "seed-prefix2",
+    "wall_s": 12.47285450000345,
+    "capped_s": 12.47285450000345,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "seed-prefix2",
+    "wall_s": 13.239830100006657,
+    "capped_s": 13.239830100006657,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "seed-cofactor",
+    "wall_s": 11.35112189999927,
+    "capped_s": 11.35112189999927,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  },
+  {
+    "mode": "base",
+    "wall_s": 9.039673800005403,
+    "capped_s": 9.039673800005403,
+    "status": "solver_completed_verified_witness",
+    "activity": 310
+  }
+]

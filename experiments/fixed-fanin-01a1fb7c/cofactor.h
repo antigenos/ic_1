@@ -27,7 +27,7 @@ static int ff_activity(unsigned signal, int rows)
 
 /* Record every available free output before charging a new internal signal.
    A repeated signal can use its existing wire for every subsequent fanout. */
-static void ff_enumerate3(int best[256], unsigned wires[16], int size, int cost)
+static void ff_enumerate3(int best[256], unsigned wires[16], int size, int cost, int limit)
 {
     unsigned char generated[256] = {0};
     for (int a = 0; a < size; ++a) generated[wires[a]] = 1;
@@ -41,9 +41,9 @@ static void ff_enumerate3(int best[256], unsigned wires[16], int size, int cost)
                 if (generated[output]) continue;
                 generated[output] = 1;
                 int next = cost + ff_activity(output, 8);
-                if (next <= 78) {
+                if (next <= limit) {
                     wires[size] = output;
-                    ff_enumerate3(best, wires, size + 1, next);
+                    ff_enumerate3(best, wires, size + 1, next, limit);
                 }
             }
         }
@@ -54,7 +54,7 @@ static void ff_init_restrictions(FfRestrictions *cuts)
 {
     unsigned wires[16] = {0, 0xaa, 0xcc, 0xf0};
     for (int t = 0; t < 256; ++t) cuts->opt3[t] = INT_MAX;
-    ff_enumerate3(cuts->opt3, wires, 4, 0);
+    ff_enumerate3(cuts->opt3, wires, 4, 0, 78);
     /* The 78 ceiling limits work. Any uncovered function gets the safe bound
        zero. The oracle test checks that this fallback is never needed. */
     for (int t = 0; t < 256; ++t)

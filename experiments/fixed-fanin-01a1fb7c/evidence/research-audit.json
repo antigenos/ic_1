@@ -1,6 +1,6 @@
 {
-  "timed_runs": 68,
-  "replayed_witnesses": 64,
+  "timed_runs": 80,
+  "replayed_witnesses": 76,
   "strict_optima": {
     "0189": 304,
     "0019": 310,
@@ -648,6 +648,246 @@
             0.6892310768948658
           ],
           "paired_gm": 0.7984222544932911
+        }
+      }
+    },
+    "prefix-0019": {
+      "rows": [
+        {
+          "mode": "base",
+          "wall_s": 12.038200399998459,
+          "capped_s": 12.038200399998459,
+          "status": "solver_completed_verified_witness",
+          "activity": 310,
+          "cpu": 10,
+          "truth": "0019",
+          "cap": 60,
+          "binary": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+          "log_sha256": "f0a340249fafe3655461aabd63a7a873b39c58a3879744884c76bbecfa83c9c3"
+        },
+        {
+          "mode": "seed-cofactor",
+          "wall_s": 6.18669989999762,
+          "capped_s": 6.18669989999762,
+          "status": "solver_completed_verified_witness",
+          "activity": 310,
+          "cpu": 10,
+          "truth": "0019",
+          "cap": 60,
+          "binary": "28c380bdfa396afb4b224fff94ebf9a55875c0f26d3e3ebd67fd042a869b15f0",
+          "log_sha256": "af948d2aa60ea09b71023b26f1ecaf1f18ef8e512628ead7794c81d2469f2877"
+        },
+        {
+          "mode": "seed-prefix2",
+          "wall_s": 12.47285450000345,
+          "capped_s": 12.47285450000345,
+          "status": "solver_completed_verified_witness",
+          "activity": 310,
+          "cpu": 10,
+          "truth": "0019",
+          "cap": 60,
+          "binary": "28c380bdfa396afb4b224fff94ebf9a55875c0f26d3e3ebd67fd042a869b15f0",
+          "log_sha256": "c89a4641c4627678668494ba3bb01971c372f85b628889ce20debcbb7279c0e3"
+        },
+        {
+          "mode": "seed-prefix2",
+          "wall_s": 13.239830100006657,
+          "capped_s": 13.239830100006657,
+          "status": "solver_completed_verified_witness",
+          "activity": 310,
+          "cpu": 10,
+          "truth": "0019",
+          "cap": 60,
+          "binary": "28c380bdfa396afb4b224fff94ebf9a55875c0f26d3e3ebd67fd042a869b15f0",
+          "log_sha256": "f15b99c765161e1eb5074f42c23ab8a495e633ec3b68ab55dec557cbafa0a212"
+        },
+        {
+          "mode": "seed-cofactor",
+          "wall_s": 11.35112189999927,
+          "capped_s": 11.35112189999927,
+          "status": "solver_completed_verified_witness",
+          "activity": 310,
+          "cpu": 10,
+          "truth": "0019",
+          "cap": 60,
+          "binary": "28c380bdfa396afb4b224fff94ebf9a55875c0f26d3e3ebd67fd042a869b15f0",
+          "log_sha256": "475ea8d874707293a84a55990e4861cfeefc5ffc69fcca6004b171f275efa002"
+        },
+        {
+          "mode": "base",
+          "wall_s": 9.039673800005403,
+          "capped_s": 9.039673800005403,
+          "status": "solver_completed_verified_witness",
+          "activity": 310,
+          "cpu": 10,
+          "truth": "0019",
+          "cap": 60,
+          "binary": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+          "log_sha256": "29087427ac59f7aeb176caed30e174b84d5911b81bfd3ed5fe43afa64fb9890d"
+        }
+      ],
+      "methods": {
+        "base": {
+          "completed": 2,
+          "attempts": 2,
+          "capped_total_s": 21.077874200003862,
+          "wall_s": [
+            12.038200399998459,
+            9.039673800005403
+          ],
+          "paired_ratios": [
+            1.0,
+            1.0
+          ],
+          "paired_gm": 1.0
+        },
+        "seed-cofactor": {
+          "completed": 2,
+          "attempts": 2,
+          "capped_total_s": 17.53782179999689,
+          "wall_s": [
+            6.18669989999762,
+            11.35112189999927
+          ],
+          "paired_ratios": [
+            1.945819353546321,
+            0.7963683131625944
+          ],
+          "paired_gm": 1.2448248375987738
+        },
+        "seed-prefix2": {
+          "completed": 2,
+          "attempts": 2,
+          "capped_total_s": 25.712684600010107,
+          "wall_s": [
+            12.47285450000345,
+            13.239830100006657
+          ],
+          "paired_ratios": [
+            0.9651519946773314,
+            0.6827635801762183
+          ],
+          "paired_gm": 0.8117700606083679
+        }
+      }
+    },
+    "prefix-0189": {
+      "rows": [
+        {
+          "mode": "base",
+          "wall_s": 1.9200781000035931,
+          "capped_s": 1.9200781000035931,
+          "status": "solver_completed_verified_witness",
+          "activity": 304,
+          "cpu": 10,
+          "truth": "0189",
+          "cap": 60,
+          "binary": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+          "log_sha256": "666cc39b9361f12fdd216de277e7fb7372a77b9b8fd0ff1eb693955ba08eeb8c"
+        },
+        {
+          "mode": "seed-cofactor",
+          "wall_s": 2.176985899997817,
+          "capped_s": 2.176985899997817,
+          "status": "solver_completed_verified_witness",
+          "activity": 304,
+          "cpu": 10,
+          "truth": "0189",
+          "cap": 60,
+          "binary": "28c380bdfa396afb4b224fff94ebf9a55875c0f26d3e3ebd67fd042a869b15f0",
+          "log_sha256": "385fa80d80151286e60bbeb81d13e3d45d7b765690701745bf4ee41875e4cf4d"
+        },
+        {
+          "mode": "seed-prefix2",
+          "wall_s": 6.569754500000272,
+          "capped_s": 6.569754500000272,
+          "status": "solver_completed_verified_witness",
+          "activity": 304,
+          "cpu": 10,
+          "truth": "0189",
+          "cap": 60,
+          "binary": "28c380bdfa396afb4b224fff94ebf9a55875c0f26d3e3ebd67fd042a869b15f0",
+          "log_sha256": "b740fd371332bd537527d29f7f99a322d6b391d34c1b700b0fe6fdf2a13f86d4"
+        },
+        {
+          "mode": "seed-prefix2",
+          "wall_s": 2.5233455000052345,
+          "capped_s": 2.5233455000052345,
+          "status": "solver_completed_verified_witness",
+          "activity": 304,
+          "cpu": 10,
+          "truth": "0189",
+          "cap": 60,
+          "binary": "28c380bdfa396afb4b224fff94ebf9a55875c0f26d3e3ebd67fd042a869b15f0",
+          "log_sha256": "c276eed153ebb244bff03b2c2aa1ffd2ef71aa9772c949244f205ba55787759a"
+        },
+        {
+          "mode": "seed-cofactor",
+          "wall_s": 2.0871581999963382,
+          "capped_s": 2.0871581999963382,
+          "status": "solver_completed_verified_witness",
+          "activity": 304,
+          "cpu": 10,
+          "truth": "0189",
+          "cap": 60,
+          "binary": "28c380bdfa396afb4b224fff94ebf9a55875c0f26d3e3ebd67fd042a869b15f0",
+          "log_sha256": "c8b16c6bd836779edf351f1f9b505e4d2c5f053f6816198b85996608774305a0"
+        },
+        {
+          "mode": "base",
+          "wall_s": 3.7776860000012675,
+          "capped_s": 3.7776860000012675,
+          "status": "solver_completed_verified_witness",
+          "activity": 304,
+          "cpu": 10,
+          "truth": "0189",
+          "cap": 60,
+          "binary": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+          "log_sha256": "18df1ccdc5cdea15ea92fd06efb905e320bb5428e1c17e8748639a3abea8aa04"
+        }
+      ],
+      "methods": {
+        "base": {
+          "completed": 2,
+          "attempts": 2,
+          "capped_total_s": 5.697764100004861,
+          "wall_s": [
+            1.9200781000035931,
+            3.7776860000012675
+          ],
+          "paired_ratios": [
+            1.0,
+            1.0
+          ],
+          "paired_gm": 1.0
+        },
+        "seed-cofactor": {
+          "completed": 2,
+          "attempts": 2,
+          "capped_total_s": 4.264144099994155,
+          "wall_s": [
+            2.176985899997817,
+            2.0871581999963382
+          ],
+          "paired_ratios": [
+            0.8819892218895485,
+            1.8099662977190207
+          ],
+          "paired_gm": 1.2634756691648266
+        },
+        "seed-prefix2": {
+          "completed": 2,
+          "attempts": 2,
+          "capped_total_s": 9.093100000005506,
+          "wall_s": [
+            6.569754500000272,
+            2.5233455000052345
+          ],
+          "paired_ratios": [
+            0.2922602511255959,
+            1.4970942346156841
+          ],
+          "paired_gm": 0.6614689236596544
         }
       }
     },

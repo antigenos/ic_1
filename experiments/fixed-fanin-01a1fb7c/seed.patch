@@ -1,0 +1,11 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -3199,7 +3199,7 @@
+         Abc_TtNot( pTruth, p->nWords );
+     }
+     int r = 0;
+-    int act = 0;
++    int act = ff_seed_activity(pPars->nVars, (unsigned)pTruth[0]);
+     int maxGateCount = MAJ_NOBJS - p->nVars;
+ 
+     while ( r < maxGateCount )

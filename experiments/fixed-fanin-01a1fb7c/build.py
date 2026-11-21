@@ -17,7 +17,11 @@ def compile_variant(kind):
     search_hooks = {"partition": ("partition.h", "ff_partition"),
                     "xor-proof": ("xor_proof.h", "ff_xor_search"),
                     "cofactor": ("cofactor_hook.h", "ff_cofactor_search")}
-    if kind in search_hooks:
+    if kind == "prefix":
+        for file in ("seed_hook.h", "cofactor.h", "prefix.h"):
+            (dest / file).write_bytes((HERE / file).read_bytes())
+        header += '\n#include "seed_hook.h"\n'
+    elif kind in search_hooks:
         hook = "static int replay_solve(PexaMan_t *p, int bound)"
         original = "int result = sat_solver_solve(p->pSat, NULL, NULL, 0, 0, 0, 0);"
         assert header.count(hook) == header.count(original) == 1
@@ -70,11 +74,16 @@ def compile_variant(kind):
         # The pinned source archives use LF even in a Windows autocrlf checkout.
         path.write_bytes((ROOT / "variants" / path.name).read_bytes().replace(b"\r\n", b"\n"))
         patches.append(path)
-    build(name, patches[:-1], patches[-1])
+    plugin_patches = patches[:-1]
+    if kind == "prefix":
+        patch = dest / "seed.patch"
+        patch.write_bytes((HERE / "seed.patch").read_bytes().replace(b"\r\n", b"\n"))
+        plugin_patches.append(patch)
+    build(name, plugin_patches, patches[-1])
 
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("kind", choices=("base", "diagnostic", "candidate", "candidate-diagnostic",
-                                   "interval", "types", "types-diagnostic", "partition","xor-proof","cofactor"))
+                                   "interval", "types", "types-diagnostic", "partition","xor-proof","cofactor","prefix"))
     compile_variant(p.parse_args().kind)
