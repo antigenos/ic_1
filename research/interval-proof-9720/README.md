@@ -119,3 +119,7 @@ python family.py run BASE --host-samples .local/host-resume-01
 0016 达到预登记的保留标准。候选仅展开 750,725 个状态，另外处理了 4,942,144 条通向末状态的扩展，原枚举展开 2,424,925 个不同状态。两者都从头证明最优并返回 6 门电路。0189 上两对的几何平均比为 1.640，反序的一对候选慢约 0.10 秒。该方法保留为独立的有界单目标证明程序。它对界限外的目标只能提供下界。208 类主对照继续使用已冻结的 TCJAP 重建和保存见证改进版，两组性能数字分别报告。
 
 复核纯算法可执行 `python terminal_checks.py --cpu 0`。重新测量可执行 `python terminal_compare.py .local/repeat-terminal.jsonl --cpu 0`；要在共享主机上等候核心空闲，可加 `--host-samples .local/repeat-terminal-host` 并从第二个终端运行 `./watch-host.ps1 -SampleDirectory .local/repeat-terminal-host -LaneCpus 0 -Siblings 1`。对完成的原始记录执行 `python terminal_compare.py .local/repeat-terminal.jsonl --public-csv .local/repeat-terminal.csv` 可重做独立核验并生成逐项结果。
+
+统一界限确认面板预登记。短组两个函数使用不同活动度界限，而且 0016 来源于已知的超时目标。在观察任何新目标的末状态计时前，统一使用严格界 433、每次冷启动限时 300 秒。按已冻结的独立枚举将目标分为最优值不超过 305、306 至 431、恰为 432、界内无解四层。从每层按 SHA-256 对字符串 `9720-terminal-holdout/` 加四位目标编号排序，取前两项。排除用于此前 12 例定向计时的函数，以及本研究用于开发和定向核查的 0001、0006、0016、001e、0189、018b。层内两对分别按原版先和候选先顺序运行。两个程序都只收到目标、通用界和核心编号。活动度已知的六个目标要求合法最优见证、至少四对缩短完整时间且共同完成的几何平均比大于 1，才支持耗时收益可转移至这个小面板。对界内无解的两个目标只统计完成下界证明所需的代价。额外报告全部超时与反向配对。面板不并入 208 类 A/C 的性能分母。
+
+八个函数的清单可通过 `python terminal_compare.py .local/repeat-plan.json --register-holdout` 独立生成。执行或导出本组测量时，在上述 `terminal_compare.py` 命令中加入 `--holdout` 并指定一个新输出文件名。每次运行先与已公开的清单逐项核对。[八个函数与测量顺序](evidence/terminal-holdout-plan.json)

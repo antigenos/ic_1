@@ -1,0 +1,46 @@
+{
+  "strict_cap": 433,
+  "wall_cap_s": 300,
+  "cases": [
+    {
+      "truth": "001b",
+      "stratum": 0,
+      "order": "AT"
+    },
+    {
+      "truth": "01ef",
+      "stratum": 0,
+      "order": "TA"
+    },
+    {
+      "truth": "0358",
+      "stratum": 1,
+      "order": "AT"
+    },
+    {
+      "truth": "01be",
+      "stratum": 1,
+      "order": "TA"
+    },
+    {
+      "truth": "07bc",
+      "stratum": 2,
+      "order": "AT"
+    },
+    {
+      "truth": "0676",
+      "stratum": 2,
+      "order": "TA"
+    },
+    {
+      "truth": "012c",
+      "stratum": 3,
+      "order": "AT"
+    },
+    {
+      "truth": "07e0",
+      "stratum": 3,
+      "order": "TA"
+    }
+  ]
+}

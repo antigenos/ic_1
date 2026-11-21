@@ -48,27 +48,57 @@ def sources(work, arm):
     return dest, digests
 
 
-def export(source, destination):
+def holdout_plan(bounds):
+    old = json.loads((HERE / "evidence/confirmation-plan.json").read_bytes())
+    excluded = {c["truth"] for c in old["cases"]} | {"0001", "0006", "0016", "001e", "0189", "018b"}
+    strata = [[] for _ in range(4)]
+    for truth, value in bounds["lower_bounds"].items():
+        if truth not in excluded:
+            group = 0 if value <= 305 else 1 if value < 432 else 2 if value == 432 else 3
+            strata[group].append(truth)
+    cases = []
+    for group, truths in enumerate(strata):
+        order = sorted(truths, key=lambda t: sha256(("9720-terminal-holdout/"+t).encode()).digest())
+        for truth, arms in zip(order[:2], ("AT", "TA")):
+            cases.append(dict(truth=truth, stratum=group, order=arms))
+    assert len(cases) == 8 and bounds["strict_cap"] == 433
+    return dict(strict_cap=433, wall_cap_s=300, cases=cases)
+
+
+def checked_answer(row, bounds):
+    assert row["exitcode"] == 0 and not row["stderr"] and 0 < row["wall_s"] <= 300
+    truth, cap, arm = row["truth"], row["strict_cap"], row["arm"]
+    answer = json.loads(row["stdout"])
+    assert answer["truth"] == truth and answer["strict_cap"] == cap
+    expected = min(bounds["lower_bounds"][truth], cap)
+    assert answer["lower_bound"] == expected
+    if expected < cap:
+        witness = simulate(answer["circuit"], 4, int(truth, 16))
+        assert answer["status"] == "independently_optimal" and witness == answer["witness"]
+        assert witness["activity"] == expected
+    else:
+        assert answer["status"] == "no_solution_below_cap" and "witness" not in answer and "circuit" not in answer
+    limit = cap - 30 if arm == "T" else cap
+    assert answer["states"] == sum(n for cost, n in bounds["states_by_cost"].items() if int(cost) < limit)
+    return answer
+
+
+def export(source, destination, plan, bounds):
     rows = [json.loads(s) for s in source.read_bytes().splitlines()]
-    assert [(r["truth"], r["strict_cap"], r["arm"]) for r in rows] == PLAN
-    counts = json.loads((HERE / "evidence/constructed-through-432.json").read_bytes())["bounds"]["states_by_cost"]
+    assert [(r["truth"], r["strict_cap"], r["arm"]) for r in rows] == plan
     public = []
     for i, r in enumerate(rows, 1):
-        truth, cap, arm = PLAN[i-1]
+        truth, cap, arm = plan[i-1]
         assert r["order"] == i and r["timeout_s"] == 300
         item = dict(order=i, truth=truth, method="terminal_output_matching" if arm == "T" else "full_enumeration",
                     strict_activity_cap=cap, timeout_s=300, outcome=r["status"],
                     capped_elapsed_s=min(300., r["wall_s"]), optimum="", gates="", expanded_states="", terminal_edges="")
         if r["status"] == "completed":
-            assert r["exitcode"] == 0 and not r["stderr"] and 0 < r["wall_s"] <= 300
-            answer = json.loads(r["stdout"])
-            assert answer["truth"] == truth and answer["strict_cap"] == cap
-            witness = simulate(answer["circuit"], 4, int(truth, 16))
-            assert answer["status"] == "independently_optimal" and witness == answer["witness"]
-            assert witness["activity"] == answer["lower_bound"] == (304 if truth == "0189" else 406)
-            limit = cap-30 if arm == "T" else cap
-            assert answer["states"] == sum(n for cost, n in counts.items() if int(cost) < limit)
-            item.update(optimum=witness["activity"], gates=witness["gates"], expanded_states=answer["states"],
+            answer = checked_answer(r, bounds)
+            witness = answer.get("witness", {})
+            if not witness:
+                item["outcome"] = "proved_no_solution_below_cap"
+            item.update(optimum=witness.get("activity", ""), gates=witness.get("gates", ""), expanded_states=answer["states"],
                         terminal_edges=answer.get("terminal_edges", ""))
         else:
             assert r["status"] == "timeout" and r["wall_s"] >= 299.95
@@ -85,10 +115,23 @@ def main():
     ap.add_argument("output", type=Path)
     ap.add_argument("--cpu", type=int)
     ap.add_argument("--host-samples", type=Path)
+    ap.add_argument("--holdout", action="store_true", help="Use the fixed eight-function confirmation panel")
+    ap.add_argument("--register-holdout", action="store_true", help="Write the deterministic confirmation manifest")
     ap.add_argument("--public-csv", type=Path, help="Verify a finished local run and export its scientific measurements")
     args = ap.parse_args()
+    bounds = json.loads((HERE / "evidence/constructed-through-432.json").read_bytes())["bounds"]
+    if args.register_holdout:
+        with args.output.open("x", encoding="utf8", newline="\n") as f:
+            json.dump(holdout_plan(bounds), f, indent=2)
+            f.write("\n")
+        return
+    plan = PLAN
+    if args.holdout:
+        registered = json.loads((HERE / "evidence/terminal-holdout-plan.json").read_bytes())
+        assert registered == holdout_plan(bounds)
+        plan = [(c["truth"], registered["strict_cap"], arm) for c in registered["cases"] for arm in c["order"]]
     if args.public_csv:
-        rows = export(args.output, args.public_csv)
+        rows = export(args.output, args.public_csv, plan, bounds)
         print(json.dumps(dict(verified_trials=len(rows))))
         return
     if args.cpu is None:
@@ -107,7 +150,7 @@ def main():
     wait_for_quiet_cpu(args.cpu, samples)
     (work / "correctness.json").write_text(json.dumps(check(), indent=2) + "\n", encoding="utf8")
     with args.output.open("x", encoding="utf8", newline="\n") as evidence:
-        for i, (truth, cap, arm) in enumerate(PLAN, 1):
+        for i, (truth, cap, arm) in enumerate(plan, 1):
             wait_for_quiet_cpu(args.cpu, samples)
             empty = work / f"empty-{i}"
             empty.mkdir()
@@ -138,13 +181,18 @@ def main():
             evidence.write(json.dumps(row) + "\n")
             evidence.flush()
             if row["status"] == "completed":
-                assert row["exitcode"] == 0 and not stderr and row["wall_s"] <= 300
-                answer = json.loads(stdout)
-                expected = 304 if truth == "0189" else 406
-                witness = simulate(answer["circuit"], 4, int(truth, 16))
-                assert answer["status"] == "independently_optimal" and witness == answer["witness"]
-                assert witness["activity"] == answer["lower_bound"] == expected
+                checked_answer(row, bounds)
             print(truth, arm, row["status"], round(row["wall_s"], 3), flush=True)
+    if samples is not None:
+        finished = time.time()
+        deadline = time.monotonic() + 55
+        while time.monotonic() < deadline:
+            try:
+                if json.loads((samples / "latest.json").read_bytes())["epoch"] >= finished:
+                    break
+            except (FileNotFoundError, PermissionError):
+                pass
+            time.sleep(2)
 
 
 if __name__ == "__main__":
