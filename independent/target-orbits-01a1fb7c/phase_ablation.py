@@ -6,9 +6,10 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import time
 
 from compare_orbits import HERE, ROOT
-from full import lock
+from full import awake, lock, request_awake
 from witness import simulate
 
 
@@ -84,10 +85,17 @@ def run_lanes(root,cases):
             if dest.exists():
                 # A partial case remains intact for explicit inspection on resumption.
                 check([c],load_case(root,c))
+                assert json.loads((dest/"clock.json").read_bytes())["valid"]
             else:
+                before,up=time.time(),awake()
                 subprocess.run([sys.executable,str(HERE/"compare_orbits.py"),c["truth"],str(dest),
                                 "--cpu",str(cpu),"--order",c["order"],"--cap","60"],check=True)
-    with lock(root/"batch.lock"), ThreadPoolExecutor(max_workers=2) as pool:
+                wall,active=time.time()-before,awake()-up
+                clock=dict(utc_elapsed=wall,awake_elapsed=active,valid=abs(wall-active)<5)
+                (dest/"clock.json").write_text(json.dumps(clock)+"\n")
+                if not clock["valid"]:
+                    raise ValueError(f"Clock discontinuity during {c['truth']}")
+    with lock(root/"batch.lock"), request_awake(), ThreadPoolExecutor(max_workers=2) as pool:
         list(pool.map(lane,(16,18)))
 
 
@@ -105,14 +113,20 @@ if __name__=="__main__":
     if packed.is_file():
         assert json.loads((root/"manifest.json").read_bytes())==cases
         rows=[json.loads(line) for line in packed.read_text().splitlines()]
+        clocks=json.loads((root/"clocks.json").read_bytes())
     else:
         rows=[r for case in cases for r in load_case(root,case)]
+        clocks={c["truth"]:json.loads((root/c["truth"]/"clock.json").read_bytes()) for c in cases}
+    for c in cases:
+        clock=clocks[c["truth"]]
+        assert clock["valid"] and abs(clock["utc_elapsed"]-clock["awake_elapsed"])<5
     report=check(cases,rows)
     if packed.is_file():
         assert json.loads((root/"summary.json").read_bytes())==report
     if args.export:
         args.export.mkdir(parents=True,exist_ok=False)
         (args.export/"manifest.json").write_text(json.dumps(cases,indent=2)+"\n")
+        (args.export/"clocks.json").write_text(json.dumps(clocks,indent=2)+"\n")
         (args.export/"summary.json").write_text(json.dumps(report,indent=2)+"\n")
         (args.export/"runs.jsonl").write_bytes("".join(json.dumps(r)+"\n" for r in rows).encode())
     print(json.dumps(report,indent=2))

@@ -8,7 +8,7 @@ from pathlib import Path
 from audit_pairs import HERE, audit, historical
 
 
-def breakdown(root,pause_record=None,occupancy=None):
+def breakdown(root,recovery_records=None,occupancy=None):
     manifest=json.loads((root/"manifest.json").read_bytes())
     rows=[json.loads(s) for s in (root/"runs.jsonl").read_text().splitlines()]
     family=json.loads((HERE/"orbit-check.json").read_bytes())["family"]
@@ -30,16 +30,21 @@ def breakdown(root,pause_record=None,occupancy=None):
             label="phase_removes_more"
         groups[label].append(t)
     report={name:summarize(set(ts)) for name,ts in groups.items()}
-    if pause_record:
-        recovery=json.loads(pause_record.read_bytes())
-        cutoff=datetime.fromisoformat(recovery["restart_first_request_utc"])
-        before=[r for r in rows if datetime.fromisoformat(r["start_utc"])<cutoff]
-        assert len(before)==sum(recovery["retained"].values())
-        for status,count in recovery["retained"].items():
-            assert sum(r["status"]==status for r in before)==count
-        earlier={(r["experiment"]["truth"],r["experiment"]["arm"]) for r in before}
-        crossed={t for t in family if ((t,"A") in earlier)!=((t,"B") in earlier)}
-        report["cross_pause_functions"]=sorted(crossed)
+    if recovery_records:
+        crossed=set()
+        events={}
+        for path in recovery_records:
+            recovery=json.loads(path.read_bytes())
+            cutoff=datetime.fromisoformat(recovery["restart_first_request_utc"])
+            before=[r for r in rows if datetime.fromisoformat(r["start_utc"])<cutoff]
+            assert len(before)==sum(recovery["retained"].values())
+            for status,count in recovery["retained"].items():
+                assert sum(r["status"]==status for r in before)==count
+            earlier={(r["experiment"]["truth"],r["experiment"]["arm"]) for r in before}
+            split={t for t in family if ((t,"A") in earlier)!=((t,"B") in earlier)}
+            events[cutoff.isoformat()]=sorted(split)
+            crossed.update(split)
+        report["cross_interruption_functions"]=events
         report["same_session_pairs"]=summarize(set(family)-crossed)
     if occupancy:
         samples=[json.loads(s) for s in occupancy.read_text(encoding="utf-8-sig").splitlines()]
@@ -82,7 +87,7 @@ def breakdown(root,pause_record=None,occupancy=None):
 if __name__=="__main__":
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("data",type=Path)
-    p.add_argument("--pause-record",type=Path)
+    p.add_argument("--pause-record",type=Path,action="append",help="repeat for each recorded restart")
     p.add_argument("--occupancy",type=Path)
     p.add_argument("--output",type=Path)
     args=p.parse_args()

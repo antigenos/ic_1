@@ -44,6 +44,26 @@ def awake():
     return value.value*1e-7
 
 
+@contextmanager
+def request_awake():
+    """Keep Windows awake during this run and restore the coordinator thread on exit."""
+    if os.name!="nt":
+        yield
+        return
+    set_state=ctypes.WinDLL("kernel32",use_last_error=True).SetThreadExecutionState
+    set_state.argtypes=[ctypes.c_uint32]
+    set_state.restype=ctypes.c_uint32
+    continuous,system_required=0x80000000,0x00000001
+    previous=set_state(continuous | system_required)
+    if not previous:
+        print("Idle sleep request unavailable; per-run clock validation remains active.",flush=True)
+    try:
+        yield
+    finally:
+        if previous:
+            set_state(continuous | previous)
+
+
 def digests():
     return {a:hashlib.sha256(p.read_bytes()).hexdigest() for a,p in BINS.items()}
 
@@ -92,7 +112,7 @@ def main():
         with lock(DEST/f"lane-{a.lane}.lock"):
             work(a.lane,cases,conf["binaries"])
         return
-    with lock(DEST/"batch.lock"):
+    with lock(DEST/"batch.lock"), request_awake():
         for name,data in (("manifest.json",cases),("configuration.json",conf)):
             path=DEST/name
             if path.exists():
