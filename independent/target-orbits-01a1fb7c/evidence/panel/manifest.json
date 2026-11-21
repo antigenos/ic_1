@@ -1,0 +1,98 @@
+[
+  {
+    "truth": "0006",
+    "stratum": 0,
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "0356",
+    "stratum": 0,
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "01af",
+    "stratum": 0,
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "01ab",
+    "stratum": 0,
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "03dc",
+    "stratum": 1,
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "18e7",
+    "stratum": 1,
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "07b0",
+    "stratum": 1,
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "0018",
+    "stratum": 1,
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "03d6",
+    "stratum": 2,
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "011b",
+    "stratum": 2,
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "01be",
+    "stratum": 2,
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "036b",
+    "stratum": 2,
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "169b",
+    "stratum": 3,
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "0779",
+    "stratum": 3,
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "17ac",
+    "stratum": 3,
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "1681",
+    "stratum": 3,
+    "cpu": 30,
+    "order": "AB"
+  }
+]

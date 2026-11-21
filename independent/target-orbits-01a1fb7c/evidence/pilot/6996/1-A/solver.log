@@ -1,0 +1,22 @@
+ABC command line: "pexact -I 4 -M 2 6996".
+
+Cannot open file "abc.rc".
+Cannot open file "..\abc.rc".
+Cannot open file "..\..\abc.rc".
+Realization of given 4-input function using 3 two-input gates complementary=0:
+06 = 4'b0110( a 05 )
+05 = 4'b0110( d 04 )
+04 = 4'b0110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011110000111100
+i=5:0011110011000011
+i=6:0110100110010110
+
+
+Switching Activity=256
+Number of Gates: r=3
+Total runtime =     0.15 sec
