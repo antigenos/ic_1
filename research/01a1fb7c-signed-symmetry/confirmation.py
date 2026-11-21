@@ -15,7 +15,7 @@ OUT=HERE/"confirmation"
 MANIFEST=OUT/"manifest.json"
 
 
-def plan():
+def plan(lanes=(4,6,8,10,12,14,16,18)):
     old=json.loads((HERE/"order-validation.json").read_text())["cohort"]
     excluded={"0189","07b4",*(r["truth"] for r in old)}
     cells={}
@@ -28,7 +28,6 @@ def plan():
             difficult="timeout" if r["status"]=="timeout" else ("fast" if r["wall_s"]<=10 else "medium")
             benefit=len(leaders(v,True))<len(leaders(v,False))
             cells.setdefault((difficult,benefit),[]).append(t)
-    lanes=(4,6,8,10,12,14,16,18)
     # Allocate all four timeout cases separate lanes so that one lane does not carry both.
     rows=[]
     for cell in sorted(cells,key=lambda c:(("timeout","medium","fast").index(c[0]),c[1])):
@@ -42,23 +41,26 @@ def plan():
     return rows
 
 
-def run_lane(records,prepared):
+def run_lane(records,prepared,directory,resume_id):
     for r in records:
         t=r["truth"]
-        path=OUT/f"confirm-{t}.jsonl"
-        if path.exists():
+        path=directory/f"confirm-{t}.jsonl"
+        if path.exists() and not resume_id:
             # A partial attempt is preserved for process inspection rather than duplicated.
             replay(path,t,r["order"],r["cpu"],r["seconds"])
             continue
+        options=["--resume-id",resume_id] if resume_id else []
+        if directory.resolve() != OUT.resolve():
+            options.extend(["--raw-root",str(directory/"raw")])
         subprocess.run([sys.executable,str(HERE/"compare.py"),t,r["order"],str(path),"--cpu",str(r["cpu"]),
-                        "--cap",str(r["seconds"]),"--prepared",str(prepared)],check=True)
+                        "--cap",str(r["seconds"]),"--prepared",str(prepared),*options],check=True)
 
 
-def report(manifest):
+def report(manifest,directory=OUT):
     data={}
     for r in manifest:
         t=r["truth"]
-        rows=replay(OUT/f"confirm-{t}.jsonl",t,r["order"],r["cpu"],r["seconds"])
+        rows=replay(directory/f"confirm-{t}.jsonl",t,r["order"],r["cpu"],r["seconds"])
         data[t]={row["experiment"]["arm"]:row for row in rows}
     result={"functions":len(data),"runs":4*len(data),"totals":{},"relative_to_N":{}}
     for key in "FQHN":
@@ -77,21 +79,27 @@ if __name__=="__main__":
     p=argparse.ArgumentParser()
     p.add_argument("action",choices=("plan","run","report"))
     p.add_argument("--prepared",type=Path,default=HERE.parents[1])
+    p.add_argument("--directory",type=Path,default=OUT)
+    p.add_argument("--cpus",type=int,nargs="+",default=(4,6,8,10,12,14,16,18))
+    p.add_argument("--resume-id")
     args=p.parse_args()
-    manifest=plan()
+    if len(set(args.cpus))!=len(args.cpus) or min(args.cpus)<0:
+        p.error("Supply distinct nonnegative logical CPUs")
+    manifest=plan(tuple(args.cpus))
+    destination=args.directory/"manifest.json"
     if args.action=="plan":
-        OUT.mkdir(exist_ok=True)
-        if MANIFEST.exists():
-            assert json.loads(MANIFEST.read_text())==manifest
+        args.directory.mkdir(parents=True,exist_ok=True)
+        if destination.exists():
+            assert json.loads(destination.read_text())==manifest
         else:
-            MANIFEST.write_text(json.dumps(manifest,indent=2)+"\n")
+            destination.write_text(json.dumps(manifest,indent=2)+"\n")
         print(" ".join(r["truth"] for r in manifest))
     else:
-        assert json.loads(MANIFEST.read_text())==manifest
+        assert json.loads(destination.read_text())==manifest
         if args.action=="run":
             cpus=sorted({r["cpu"] for r in manifest})
             with ThreadPoolExecutor(max_workers=len(cpus)) as pool:
-                jobs=[pool.submit(run_lane,[r for r in manifest if r["cpu"]==cpu],args.prepared.resolve()) for cpu in cpus]
+                jobs=[pool.submit(run_lane,[r for r in manifest if r["cpu"]==cpu],args.prepared.resolve(),args.directory,args.resume_id) for cpu in cpus]
                 for job in jobs: job.result()
         else:
-            print(json.dumps(report(manifest),indent=2))
+            print(json.dumps(report(manifest,args.directory),indent=2))

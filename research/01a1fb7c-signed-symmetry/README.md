@@ -39,3 +39,30 @@ Q/N/V 的实现检查。219 个已归档电路均可重新选择输入相位、�
 筛选结论。六格的 F/P/J 均完成 4/6，截断总成本 721.53/712.00/700.68 秒，共同完成的 4 例上 F/J、P/J 配对几何均值 1.087 和 1.049。整体完成数没有增加。Q/N/V 的 03dd 双向各为 Q 11.76、11.79 秒，N 7.98、7.96 秒，V 7.87、7.99 秒。进一步的 MV 对照在 0189 为 M 1.07、1.60 秒和 V 1.27、1.60 秒；03dd 的改善很小。暂存 V、T 和所有消融，独立确认采用较简单的 N。各批负载不同，不合并跨批墙钟。
 
 阶段 12 独立样本登记。在 208 类中剔除 2 个先导例、6 个已计时的分层例。沿用前述六种难度/结构条件，每格取 SHA-256("01a1fb7c-confirm-v1:"+四位小写真值) 最小的两个不同函数。只使用冻结 F 的历史难度和函数自身的有限对称，不使用候选时间选例。在每例 300 秒上限下比较 F、Q、H、N。H 采用和 N 相同的整链排序、首次出现排序和首门键，仅允许无取反的输入置换。对四种方法轮换顺序，同一例同核串行；各台账记录启停和有效性。报告所有 12 例、共同完成数、配对比、截断总成本及不利实例。若 N 只胜 F 而难以胜过 H，结果按已知方法适配解释。优先检查限时完成数和总成本，再决定是否有依据进行全族新增候选计时。
+
+归因核查登记。对开发例 0189 和 03dd 使用同一冻结编译物，分别打开 Q/H/N 和重建版原有 REPLAY_STATS。记录每个真正进入 SAT 的门数/预算、冲突和联合关系检查次数，看端到端变化是否伴随搜索量变化。该项开了统计，诊断墙钟不参与正式比较。
+
+诊断结果。对 0189，Q/H/N 各有 25 次真实 SAT 调用，冲突数为 31855、30205、24029。对 03dd，三者各有 44 次，冲突数为 170269、170269、108415。03dd 的 H 和 Q 得到相同计数，N 的联合可行性检查由 550189 降到 406754。两例均恢复同一活动度。这些确定性的搜索计数只用于解释两个开发例。[0189 原始计数](search-effort-0189.json) · [03dd 原始计数](search-effort-03dd.json)
+
+独立确认在用户暂停时保留了 011f 的四行及 036b、036f 的各一行。七个已启动但缺少完成记录的进程经 PID 检查均已退出，原始请求及部分日志保留在本地。恢复时只重跑这些中断项并继续未开始项，沿用原时间上限、CPU、方法次序及两个二进制 SHA-256，各用例的新子目录名为 resume-resume1。分析同时报告仅使用暂停后同批运行的灵敏度比较。
+
+## 如何复跑
+
+在本分支的干净检出中，从仓库根目录按 [宿主构建说明](../../REPRODUCTION.md) 准备固定 ABC、GCC 和三个来源归档。用 Python 3.12 或更高版本。以下 PowerShell 命令使用同一检出中的构建对象。另有已准备好的同版本检出时，可对构建与计时命令传入 `--prepared 路径`。
+
+```powershell
+$study = 'research/01a1fb7c-signed-symmetry'
+python "$study/build.py" --build-frozen
+python "$study/verify_reproduction.py"
+python "$study/check_symmetry.py"
+python "$study/check_chain.py"
+python "$study/audit_chain_clauses.py"
+python "$study/compare.py" 0189 QHNNHQ "$study/rerun-0189.jsonl" --cpu 14 --cap 60
+python "$study/confirmation.py" report
+$repeat = '.local/independent-confirmation'
+python "$study/confirmation.py" plan --directory $repeat --cpus 0 2
+python "$study/confirmation.py" run --directory $repeat --cpus 0 2
+python "$study/confirmation.py" report --directory $repeat --cpus 0 2
+```
+
+计时的输出名必须是新名字。复核已有确认集时用 `report` 从公开原始日志重算；独立重跑整组时使用新的计时目录及相同 manifest。核心编号按实际机器的可用核选择，并保留同例同核。F、Q、H、N 的对照含义及时间上限见上方登记；早期构建的哈希在各自的原始试验行里。历史版本可从此研究分支的提交历史恢复。上游 pexact、ABC、BSAT、TCJAP 的版权声明与许可证见 [来源说明](../../THIRD_PARTY_NOTICES.md)，Percy 对照方法另附 [作者 MIT 许可证](Percy-LICENSE.txt)。

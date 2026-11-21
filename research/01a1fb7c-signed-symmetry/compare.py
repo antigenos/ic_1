@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import sys
+from summarize import replay
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
@@ -21,6 +22,8 @@ def main():
     p.add_argument("--prepared",type=Path,default=ROOT)
     p.add_argument("--cap",type=int,default=300)
     p.add_argument("--cpu",type=int,default=14)
+    p.add_argument("--raw-root",type=Path,default=ROOT/".local"/HERE.name)
+    p.add_argument("--resume-id",help="A new alphanumeric identifier after verifying the former launcher has stopped")
     args = p.parse_args()
     modes = {"F":"off","O":"off","U":"unsigned","S":"signed","P":"first-use",
              "J":"combined","K":"ordered","R":"sorted-prefix","T":"orbit-prefix",
@@ -29,11 +32,23 @@ def main():
         p.error("Unknown method")
     pin(args.cpu)
     args.output.parent.mkdir(parents=True,exist_ok=True)
-    raw = ROOT/".local"/HERE.name/args.output.stem
+    if args.resume_id and not args.resume_id.isalnum():
+        p.error("Use an alphanumeric resume identifier")
+    raw = args.raw_root/args.output.stem
+    old = []
+    if args.resume_id and args.output.exists():
+        n = len(args.output.read_text().splitlines())
+        old = replay(args.output,args.target,args.order[:n],args.cpu,args.cap)
+        if n == len(args.order):
+            return
+    if args.resume_id:
+        raw = raw/("resume-" + args.resume_id)
     raw.mkdir(parents=True,exist_ok=False)
-    checked_activity = None
-    with args.output.open("x",encoding="utf-8") as out:
+    checked_activity = next((r["witness"]["activity"] for r in old if "witness" in r),None)
+    with args.output.open("a" if args.resume_id else "x",encoding="utf-8") as out:
         for i,key in enumerate(args.order,1):
+            if i <= len(old):
+                continue
             dest = raw/f"{i}-{key}"
             base = args.prepared.resolve()/".local/variants/joint" if key=="F" else ROOT/".local/variants/signed-symmetry-confirmed-01a1fb7c"
             binary = base/("abc.exe" if os.name=="nt" else "abc")
