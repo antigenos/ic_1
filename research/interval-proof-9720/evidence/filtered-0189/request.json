@@ -1,0 +1,10 @@
+{
+  "start_utc": "2026-11-21T00:36:36.395087+00:00",
+  "binary_sha256": "6e8df650dea7acc432f810eb71735ffa1dea062833d90d92012a1b953f8b3988",
+  "command": [
+    "abc.exe",
+    "-c",
+    "pexact -I 4 -M 2 0189"
+  ],
+  "timeout_s": 30.0
+}

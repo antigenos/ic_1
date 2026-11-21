@@ -1,0 +1,18 @@
+{
+  "seed": 9720,
+  "input_counts": [
+    2,
+    3,
+    4
+  ],
+  "charged_gates": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "modes": 4,
+  "sequential_queries": 144000,
+  "disagreements": 0,
+  "incorrectly_rejected_witnesses": 0
+}

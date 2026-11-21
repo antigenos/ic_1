@@ -1,0 +1,50 @@
+ABC command line: "pexact -I 3 -M 2 96".
+
+Cannot open file "abc.rc".
+Cannot open file "..\abc.rc".
+Cannot open file "..\..\abc.rc".
+WINDOW r=1 lo=0 hi=75 state=1 seconds=0.004000
+WINDOW r=1 lo=0 hi=16 state=skip seconds=0
+WINDOW r=2 lo=0 hi=16 state=skip seconds=0
+WINDOW r=3 lo=0 hi=16 state=skip seconds=0
+WINDOW r=4 lo=0 hi=16 state=skip seconds=0
+WINDOW r=5 lo=0 hi=16 state=skip seconds=0
+WINDOW r=1 lo=16 hi=32 state=1 seconds=0.005000
+WINDOW r=1 lo=16 hi=24 state=-1 seconds=0.004000
+WINDOW r=2 lo=16 hi=24 state=skip seconds=0
+WINDOW r=3 lo=16 hi=24 state=skip seconds=0
+WINDOW r=4 lo=16 hi=24 state=skip seconds=0
+WINDOW r=5 lo=16 hi=24 state=skip seconds=0
+WINDOW r=1 lo=24 hi=32 state=1 seconds=0.005000
+WINDOW r=1 lo=24 hi=28 state=skip seconds=0
+WINDOW r=2 lo=24 hi=28 state=skip seconds=0
+WINDOW r=3 lo=24 hi=28 state=skip seconds=0
+WINDOW r=4 lo=24 hi=28 state=skip seconds=0
+WINDOW r=5 lo=24 hi=28 state=skip seconds=0
+WINDOW r=1 lo=28 hi=32 state=1 seconds=0.004000
+WINDOW r=1 lo=28 hi=30 state=skip seconds=0
+WINDOW r=2 lo=28 hi=30 state=skip seconds=0
+WINDOW r=3 lo=28 hi=30 state=skip seconds=0
+WINDOW r=4 lo=28 hi=30 state=skip seconds=0
+WINDOW r=5 lo=28 hi=30 state=skip seconds=0
+WINDOW r=1 lo=30 hi=32 state=1 seconds=0.005000
+WINDOW r=1 lo=30 hi=31 state=skip seconds=0
+WINDOW r=2 lo=30 hi=31 state=skip seconds=0
+WINDOW r=3 lo=30 hi=31 state=skip seconds=0
+WINDOW r=4 lo=30 hi=31 state=skip seconds=0
+WINDOW r=5 lo=30 hi=31 state=skip seconds=0
+WINDOW r=1 lo=31 hi=32 state=1 seconds=0.006000
+Realization of given 3-input function using 2 two-input gates complementary=0:
+04 = 4'b0110( b 03 )
+03 = 4'b0110( a c )
+Printing overall Truth Table...
+i=0:01010101
+i=1:00110011
+i=2:00001111
+i=3:01011010
+i=4:01101001
+
+
+Switching Activity=32
+Number of Gates: r=2
+Total runtime =     0.04 sec

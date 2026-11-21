@@ -32,7 +32,25 @@ def generate(source):
     after = ('\n        if (getenv("OPTWIN_TRACE")) printf("WINDOW r=%d lo=%d hi=%d '
              'state=%d seconds=%.6f\\n", rIt, node.act, node.act + *delta, status, '
              '(double)(Abc_Clock() - begin_window) / CLOCKS_PER_SEC);')
-    return replace_one(source, solve, solve + after)
+    source = replace_one(source, solve, solve + after)
+    entry = '#include "joint_trail.h"'
+    source = replace_one(source, entry, entry + '\n#include "window_proof.h"')
+    inner = "int PexaManExactPowerSynthesisBasePowerBDDBinaryInner( Bmc_EsPar_t * pPars,"
+    source = replace_one(source, inner, inner.replace("( ", "( WindowProof *w, "))
+    scope = "    int delta = stepSize;"
+    source = replace_one(source, scope, scope + "\n    WindowProof study;\n    window_init(&study, pPars->nVars);")
+    call = "PexaManExactPowerSynthesisBasePowerBDDBinaryInner( pPars, &p,"
+    source = replace_one(source, call, call.replace("( pPars", "( &study, pPars"))
+    timer = "        abctime begin_window = Abc_Clock();"
+    test = """        if (window_skip(w, rIt, node.act, node.act + *delta)) {
+            if (w->trace) printf("WINDOW r=%d lo=%d hi=%d state=skip seconds=0\\n",
+                                 rIt, node.act, node.act + *delta);
+            continue;
+        }
+"""
+    source = replace_one(source, timer, test + timer.replace("Abc_Clock();","w->trace ? Abc_Clock() : 0;"))
+    source = source.replace('if (getenv("OPTWIN_TRACE")) printf', 'if (w->trace) printf')
+    return replace_one(source, solve, solve + "\n        if (status == l_False) window_unsat(w, rIt, node.act, node.act + *delta);")
 
 
 def build(baseline):
