@@ -56,12 +56,7 @@ def run_lane(records,prepared,directory,resume_id):
                         "--cap",str(r["seconds"]),"--prepared",str(prepared),*options],check=True)
 
 
-def report(manifest,directory=OUT):
-    data={}
-    for r in manifest:
-        t=r["truth"]
-        rows=replay(directory/f"confirm-{t}.jsonl",t,r["order"],r["cpu"],r["seconds"])
-        data[t]={row["experiment"]["arm"]:row for row in rows}
+def outcomes(data):
     result={"functions":len(data),"runs":4*len(data),"totals":{},"relative_to_N":{}}
     for key in "FQHN":
         rows=[case[key] for case in data.values()]
@@ -72,6 +67,38 @@ def report(manifest,directory=OUT):
         result["relative_to_N"][key]=dict(ratios=ratios,common=len(ratios),gm=exp(fsum(map(log,ratios.values()))/len(ratios)) if ratios else None,
             gained=[t for t,v in data.items() if "witness" in v["N"] and "witness" not in v[key]],
             lost=[t for t,v in data.items() if "witness" not in v["N"] and "witness" in v[key]])
+    return result
+
+
+def report(manifest,directory=OUT):
+    data={}
+    with ZipFile(HERE/"date-tcjap-reproduction.zip") as z:
+        archived={}
+        for method in ("author","support","both"):
+            for line in z.read(f"evidence/e14-main/{method}.jsonl").splitlines():
+                old=json.loads(line)
+                if "witness" in old:
+                    archived.setdefault(old["experiment"]["truth"],set()).add(old["witness"]["activity"])
+    by_case={}
+    for r in manifest:
+        t=r["truth"]
+        rows=replay(directory/f"confirm-{t}.jsonl",t,r["order"],r["cpu"],r["seconds"])
+        data[t]={row["experiment"]["arm"]:row for row in rows}
+        values={row["witness"]["activity"] for row in rows if "witness" in row}
+        assert len(values|archived.get(t,set()))<=1
+        assert len({data[t][arm]["binary_sha256"] for arm in "QHN"})==1
+        by_case[t]={arm:{"status":row["status"],"wall_s":row["wall_s"],
+                        "activity":row.get("witness",{}).get("activity")} for arm,row in data[t].items()}
+    result=outcomes(data)
+    result["cases"]=by_case
+    recovery=directory/"pause-recovery.json"
+    if recovery.exists():
+        old=json.loads(recovery.read_text())
+        first_epoch=old["completed_before_pause"]
+        for t,arms in first_epoch.items():
+            for arm,digest in arms.items():
+                assert data[t][arm]["solver_log_sha256"]==digest
+        result["all_four_after_resume"]=outcomes({t:v for t,v in data.items() if t not in first_epoch})
     return result
 
 

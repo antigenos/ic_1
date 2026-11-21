@@ -1,0 +1,76 @@
+{
+  "completed_before_pause": {
+    "011f": {
+      "F": "3ec49edc6041faaf370196a87485cbf61993cb9f5e3abd808ef506409b69ac19",
+      "Q": "fe828890c4a84747be44332ac369ea75b1027d6eede1780ea9c249e59ada2588",
+      "N": "1b34a59b636470406fa5f8d32170aa4f0118c6d39006f6114a7cafa2a2d30ecb",
+      "H": "5f98f57ae4416596f902e8d8c9c603cb5e5c80c501392410fd8533b5144e4e81"
+    },
+    "036b": {
+      "Q": "c9a3b6e8efd1237348bbcfff64f9d0240723374335f4d3af6e78b89f77948f64"
+    },
+    "036f": {
+      "H": "aec38a8834ff3b11ddfa4fb5031ed9fc7798b164c0e01b29f03acb4fb5b15335"
+    }
+  },
+  "interrupted_without_result": [
+    {
+      "truth": "0187",
+      "arm": "Q",
+      "start_utc": "2026-11-21T00:56:47.598846+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "partial_log_bytes": 0,
+      "partial_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "truth": "019b",
+      "arm": "F",
+      "start_utc": "2026-11-21T00:56:47.618847+00:00",
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+      "partial_log_bytes": 0,
+      "partial_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "truth": "036b",
+      "arm": "H",
+      "start_utc": "2026-11-21T00:58:55.916915+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "partial_log_bytes": 0,
+      "partial_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "truth": "036f",
+      "arm": "N",
+      "start_utc": "2026-11-21T00:58:45.364020+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "partial_log_bytes": 639,
+      "partial_log_sha256": "95ba35f501bd68a54a87e9dbefdee098e8afffbcaeb3ae6df45ee98645888982"
+    },
+    {
+      "truth": "066b",
+      "arm": "H",
+      "start_utc": "2026-11-21T00:56:47.647844+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "partial_log_bytes": 0,
+      "partial_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "truth": "0693",
+      "arm": "N",
+      "start_utc": "2026-11-21T00:56:47.749020+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "partial_log_bytes": 0,
+      "partial_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "truth": "07bc",
+      "arm": "N",
+      "start_utc": "2026-11-21T00:56:47.749020+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "partial_log_bytes": 0,
+      "partial_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "resume_id": "resume1",
+  "handling": "Each interrupted run is excluded from timed observations. Each completed pre-pause row is retained."
+}
