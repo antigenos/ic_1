@@ -1,0 +1,103 @@
+{
+  "github_commit": "375f6eb03b5bc625a1b5e7be739ac5bbe654b128",
+  "tree": "bf01aa9f3b121bf954e3189e3f07c3c780840695",
+  "test": "0189",
+  "fresh_build": true,
+  "shared_inputs": "pinned ABC objects and reference headers",
+  "runs": [
+    {
+      "start_utc": "2026-11-23T12:45:13.572847+00:00",
+      "binary_sha256": "787dc30a6ad1ceae875b806a4c4953bfed73a42ddd4e754256e5577614da4b0b",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 0189"
+      ],
+      "timeout_s": 60,
+      "experiment": {
+        "cpu": 0,
+        "arm": "F",
+        "order": 1,
+        "truth": "0189"
+      },
+      "pid": 51712,
+      "child_affinity": [
+        0
+      ],
+      "returncode": 0,
+      "wall_s": 6.796976099998574,
+      "capped_wall_s": 6.796976099998574,
+      "witness": {
+        "truth": "0189",
+        "activity": 304,
+        "gates": 5
+      },
+      "status": "solver_completed_verified_witness",
+      "solver_output": "ABC command line: \"pexact -I 4 -M 2 0189\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\nRealization of given 4-input function using 5 two-input gates complementary=1:\r\n08 = 4'b1001( 06 07 )\r\n07 = 4'b1110( c 05 )\r\n06 = 4'b1000( a 04 )\r\n05 = 4'b1110( a b )\r\n04 = 4'b0100( b d )\r\nPrinting overall Truth Table...\r\ni=0:0101010101010101\r\ni=1:0011001100110011\r\ni=2:0000111100001111\r\ni=3:0000000011111111\r\ni=4:0011001100000000\r\ni=5:0111011101110111\r\ni=6:0001000100000000\r\ni=7:0111111101111111\r\ni=8:1001000110000000\r\n\r\n\r\nSwitching Activity=304\r\nNumber of Gates: r=5\r\nTotal runtime =     5.31 sec\r\n",
+      "solver_log_sha256": "41b43f57a240932240febd6b6a921b3eb5e52e2cb1495e13c17f6dcab54ace66"
+    },
+    {
+      "start_utc": "2026-11-23T12:45:20.580499+00:00",
+      "binary_sha256": "4d1667166283aa5b5e63d61855b3a0e00bc7e52f21783d3cde9d11bbdcc5b621",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 0189"
+      ],
+      "timeout_s": 60,
+      "experiment": {
+        "cpu": 0,
+        "arm": "3",
+        "order": 2,
+        "truth": "0189"
+      },
+      "pid": 50280,
+      "child_affinity": [
+        0
+      ],
+      "returncode": 0,
+      "wall_s": 4.051278899998579,
+      "capped_wall_s": 4.051278899998579,
+      "witness": {
+        "truth": "0189",
+        "activity": 304,
+        "gates": 5
+      },
+      "status": "solver_completed_verified_witness",
+      "solver_output": "ABC command line: \"pexact -I 4 -M 2 0189\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\nRealization of given 4-input function using 5 two-input gates complementary=1:\r\n08 = 4'b1001( 06 07 )\r\n07 = 4'b1000( b 05 )\r\n06 = 4'b1110( b 04 )\r\n05 = 4'b0100( a d )\r\n04 = 4'b1110( a c )\r\nPrinting overall Truth Table...\r\ni=0:0101010101010101\r\ni=1:0011001100110011\r\ni=2:0000111100001111\r\ni=3:0000000011111111\r\ni=4:0101111101011111\r\ni=5:0101010100000000\r\ni=6:0111111101111111\r\ni=7:0001000100000000\r\ni=8:1001000110000000\r\n\r\n\r\nSwitching Activity=304\r\nNumber of Gates: r=5\r\nTotal runtime =     2.92 sec\r\n",
+      "solver_log_sha256": "4cc956e9c3e890edf4bc97964b1c19688fe811d26ece6ae6a392f3ed4d1e829a"
+    },
+    {
+      "start_utc": "2026-11-23T12:45:24.711438+00:00",
+      "binary_sha256": "4d1667166283aa5b5e63d61855b3a0e00bc7e52f21783d3cde9d11bbdcc5b621",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 0189"
+      ],
+      "timeout_s": 60,
+      "experiment": {
+        "cpu": 0,
+        "arm": "5",
+        "order": 3,
+        "truth": "0189"
+      },
+      "pid": 45824,
+      "child_affinity": [
+        0
+      ],
+      "returncode": 0,
+      "wall_s": 1.704478999999992,
+      "capped_wall_s": 1.704478999999992,
+      "witness": {
+        "truth": "0189",
+        "activity": 304,
+        "gates": 5
+      },
+      "status": "solver_completed_verified_witness",
+      "solver_output": "ABC command line: \"pexact -I 4 -M 2 0189\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\nPREFIX cap=302 states=218 score=-1\r\nPREFIX cap=366 states=2904 score=304\r\nPREFIX author_verified=pins cost=304 gates=5\r\nRealization of given 4-input function using 5 two-input gates complementary=1:\r\n08 = 4'b1011( 05 07 )\r\n07 = 4'b0010( d 06 )\r\n06 = 4'b1000( a b )\r\n05 = 4'b1110( b 04 )\r\n04 = 4'b1110( a c )\r\nPrinting overall Truth Table...\r\ni=0:0101010101010101\r\ni=1:0011001100110011\r\ni=2:0000111100001111\r\ni=3:0000000011111111\r\ni=4:0101111101011111\r\ni=5:0111111101111111\r\ni=6:0001000100010001\r\ni=7:0001000100000000\r\ni=8:1001000110000000\r\n\r\n\r\nSwitching Activity=304\r\nNumber of Gates: r=5\r\nTotal runtime =     0.03 sec\r\n",
+      "solver_log_sha256": "5c28c4fd35d1ec960535103598c154ae58b00bbc309682668b098814a71f5294"
+    }
+  ],
+  "use": "Independent clean-checkout integration check; excluded from formal performance results."
+}

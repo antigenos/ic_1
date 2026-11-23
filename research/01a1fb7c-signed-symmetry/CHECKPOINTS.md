@@ -16,3 +16,8 @@
 | 仅约化首门，上限 440 恢复原坐标 108 个电路 | 27c4bf6 | [首门轨道版本](https://github.com/antigenos/ic_1/commit/28e2514900ea5e75e919a2259936dc358f6bbfab) |
 | 上限 500 恢复 150 个电路，锁定冷启动接入方法 | f76d55f | [扩大上限](https://github.com/antigenos/ic_1/commit/2babe33db857b216aa8bad4ec4d031eb762874a4) |
 | 逐步约化，上限 560 核验 192 个电路及直接作者 SAT 对照 | 5a91a43 | [192 个电路](https://github.com/antigenos/ic_1/commit/e1f19c1ed8acd0f4c5ea6b81b387e524e1e4e1eb) |
+| 接入完整见证，锁定独立冷启动样本 | 201e07a | [确认前的代码与清单](https://github.com/antigenos/ic_1/commit/9ee861866b9eca8df4efbf72a261dd92a5c595fa) |
+| 单独运行 500 上限无约化对照，保留中断及异常计时 | 8f9375a | [无约化原始结果](https://github.com/antigenos/ic_1/commit/375f6eb03b5bc625a1b5e7be739ac5bbe654b128) |
+| 将正式程序的选择器转换核对到 60,866 张不同真值表 | 7b7c735 | [输入排列和取反的覆盖](https://github.com/antigenos/ic_1/commit/f42f08816e4cf95c1fd5c4ab25833517d59ab8a8) |
+| 确认 52 类最优 DAG 必须共享中间门 | a76784f | [无扇出公式的直接对照](https://github.com/antigenos/ic_1/commit/2488bb18efb3ddede480e8f8fa52ecce0761b782) |
+| 全部 208 类取得可行上界，逐项核对公式表的递推不等式 | 7776baf | [余下 16 类的数值区间](https://github.com/antigenos/ic_1/commit/02505092c2a14bbc8e135bb7e12049adfedefd9f) |

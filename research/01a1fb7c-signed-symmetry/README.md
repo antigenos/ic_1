@@ -66,6 +66,10 @@ Q/N/V 的实现检查。219 个已归档电路均可重新选择输入相位、�
 
 ## 如何复跑
 
+从 GitHub 提交 `375f6eb` 新克隆研究分支，只复用固定版本的 ABC 编译对象和参考头文件，重新编译、链接了重建版和启用见证传递的版本。三次独立进程在论文代表例 0189 上均返回 5 门、活动度 304；启用传递的那次另有原作者 SAT 核验标记。新构建有单独的二进制哈希，三次检查均不计入正式性能结果。[干净检出的原始输出](github-rebuild-0189.json)
+
+2026-11-23 第二次恢复时已核验并保留全族计时 236 条、冷启动确认 20 条。主机检查确认 14 个原进程均已退出，且没有尚未并入台账的已完成结果。12 个全族和 2 个确认用例按原始输入、核心和顺序补测，原来的部分日志和 PID 均已归档，无法确定的中断耗时记为未知。[全族的中断记录](family-208/interruptions-nov23.json) · [独立确认的中断记录](proof-confirm/interruptions-nov23.json)
+
 在本分支的干净检出中，从仓库根目录按 [宿主构建说明](../../REPRODUCTION.md) 准备固定 ABC、GCC 和三个来源归档。用 Python 3.12 或更高版本。以下 PowerShell 命令使用同一检出中的构建对象。另有已准备好的同版本检出时，可对构建与计时命令传入 `--prepared 路径`。
 
 ```powershell
@@ -78,6 +82,8 @@ python "$study/audit_chain_clauses.py"
 python "$study/compare.py" 0189 QHNNHQ "$study/rerun-0189.jsonl" --cpu 14 --cap 60
 python "$study/confirmation.py" report
 python "$study/verify_certificates.py"
+python "$study/audit_transfer.py" --cpu 0
+python "$study/verify_formulas.py" --cpu 0
 python "$study/build_closure.py" --witness
 python "$study/compare.py" 0189 5 "$study/rerun-certified-0189.jsonl" --cpu 0 --cap 300
 $repeat = '.local/independent-confirmation'

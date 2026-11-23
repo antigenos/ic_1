@@ -1,0 +1,338 @@
+[
+  {
+    "request": {
+      "start_utc": "2026-11-23T12:36:59.951493+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 019e"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 14,
+        "arm": "N",
+        "order": 3,
+        "truth": "019e"
+      }
+    },
+    "launch": {
+      "pid": 50788,
+      "child_affinity": [
+        14
+      ]
+    },
+    "solver_log": "ABC command line: \"pexact -I 4 -M 2 019e\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "038c2252d6c2eddd2d602726d1c638f4fc42d36160ba84a4e63030a26eeccf78",
+    "terminal_status": "interrupted",
+    "wall_s": null
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-23T12:39:38.769025+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 01ad"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 20,
+        "arm": "N",
+        "order": 2,
+        "truth": "01ad"
+      }
+    },
+    "launch": {
+      "pid": 47292,
+      "child_affinity": [
+        20
+      ]
+    },
+    "solver_log": "ABC command line: \"pexact -I 4 -M 2 01ad\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "8ecfd8b04c35bdaa5a2143aabaad7e1237ffe64490c7d21ec93df393098816d5",
+    "terminal_status": "interrupted",
+    "wall_s": null
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-23T12:38:37.687453+00:00",
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 01ea"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 4,
+        "arm": "F",
+        "order": 3,
+        "truth": "01ea"
+      }
+    },
+    "launch": {
+      "pid": 31124,
+      "child_affinity": [
+        4
+      ]
+    },
+    "solver_log": "ABC command line: \"pexact -I 4 -M 2 01ea\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "1af5401ec059842dd322e05b6068007fa7d83e08dd2f051397855701eaf8a419",
+    "terminal_status": "interrupted",
+    "wall_s": null
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-23T12:37:22.564438+00:00",
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 033d"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 6,
+        "arm": "F",
+        "order": 1,
+        "truth": "033d"
+      }
+    },
+    "launch": {
+      "pid": 19300,
+      "child_affinity": [
+        6
+      ]
+    },
+    "solver_log": "ABC command line: \"pexact -I 4 -M 2 033d\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "7f3aca7b11f024e0c73c4abbfe66f628b0bb03a4accc4ca322cd93f2fa670aa8",
+    "terminal_status": "interrupted",
+    "wall_s": null
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-23T12:37:54.139614+00:00",
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 0368"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 8,
+        "arm": "F",
+        "order": 1,
+        "truth": "0368"
+      }
+    },
+    "launch": {
+      "pid": 47616,
+      "child_affinity": [
+        8
+      ]
+    },
+    "solver_log": "ABC command line: \"pexact -I 4 -M 2 0368\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "752818f751138482288f1398033dfb40173d62e7e486656cf2cdbc4671e0999a",
+    "terminal_status": "interrupted",
+    "wall_s": null
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-23T12:39:45.234786+00:00",
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 036a"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 10,
+        "arm": "F",
+        "order": 2,
+        "truth": "036a"
+      }
+    },
+    "launch": {
+      "pid": 46480,
+      "child_affinity": [
+        10
+      ]
+    },
+    "solver_log": "ABC command line: \"pexact -I 4 -M 2 036a\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "9ff8ba6268e0acf50a086aa4dda98dc8e308455c590be5f30a7c2c5b91be83b1",
+    "terminal_status": "interrupted",
+    "wall_s": null
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-23T12:36:59.826594+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 036c"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 22,
+        "arm": "H",
+        "order": 2,
+        "truth": "036c"
+      }
+    },
+    "launch": {
+      "pid": 49352,
+      "child_affinity": [
+        22
+      ]
+    },
+    "solver_log": "ABC command line: \"pexact -I 4 -M 2 036c\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "d349b82c008170e6ec109dc4fc33d2084911cf006b87b81d3c4c83805c7ac4ab",
+    "terminal_status": "interrupted",
+    "wall_s": null
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-23T12:37:41.607446+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 036d"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 12,
+        "arm": "H",
+        "order": 1,
+        "truth": "036d"
+      }
+    },
+    "launch": {
+      "pid": 49768,
+      "child_affinity": [
+        12
+      ]
+    },
+    "solver_log": "ABC command line: \"pexact -I 4 -M 2 036d\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "aadae20bf072d71867aaec5fd15d7685e36b3f99f535dc95aa52634e5e09efc8",
+    "terminal_status": "interrupted",
+    "wall_s": null
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-23T12:39:03.687086+00:00",
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 037d"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 16,
+        "arm": "F",
+        "order": 1,
+        "truth": "037d"
+      }
+    },
+    "launch": {
+      "pid": 16568,
+      "child_affinity": [
+        16
+      ]
+    },
+    "solver_log": "ABC command line: \"pexact -I 4 -M 2 037d\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "627a60557a3c3fc7ae18bb3b6f2b23586a285a75d956915440ba0fea34b0055e",
+    "terminal_status": "interrupted",
+    "wall_s": null
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-23T12:39:23.740112+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 037e"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 18,
+        "arm": "H",
+        "order": 2,
+        "truth": "037e"
+      }
+    },
+    "launch": {
+      "pid": 17584,
+      "child_affinity": [
+        18
+      ]
+    },
+    "solver_log": "ABC command line: \"pexact -I 4 -M 2 037e\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "5a5608768a36dbf3a1c0c80ba4c14c93749dd2808d47f5602d2a98dae78b2ac3",
+    "terminal_status": "interrupted",
+    "wall_s": null
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-23T12:38:42.215878+00:00",
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 03c1"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 26,
+        "arm": "F",
+        "order": 2,
+        "truth": "03c1"
+      }
+    },
+    "launch": {
+      "pid": 41936,
+      "child_affinity": [
+        26
+      ]
+    },
+    "solver_log": "ABC command line: \"pexact -I 4 -M 2 03c1\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "2a4c72108e6ac6701328a94dbcf1743da9111b21ebdfd94d4920747e584137df",
+    "terminal_status": "interrupted",
+    "wall_s": null
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-23T12:38:50.893097+00:00",
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 03d5"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 24,
+        "arm": "F",
+        "order": 3,
+        "truth": "03d5"
+      }
+    },
+    "launch": {
+      "pid": 48508,
+      "child_affinity": [
+        24
+      ]
+    },
+    "solver_log": "ABC command line: \"pexact -I 4 -M 2 03d5\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "a6952907f07bfc9efcbf1776d25c40b5432a0aed49a720c6d3e4e075a9934454",
+    "terminal_status": "interrupted",
+    "wall_s": null
+  }
+]
