@@ -137,9 +137,7 @@ def audit(table):
             upper = outcome['activity']
             assert row.lower <= upper <= row.upper
         if key in known:
-            assert row.lower <= known[key] <= (upper if upper is not None else INF) or (
-                upper is not None and upper < known[key] and row.lower <= upper), (key,row,known[key],upper)
-            # A cheaper witness contradicts an earlier exact result and needs investigation.
+            assert row.lower <= known[key], (key,row.lower,known[key])
             assert upper is None or known[key] <= upper, (key,known[key],upper)
         results.append(dict(truth=key, lower=row.lower, uniform=row.uniform,
                             upper=upper, historical=known.get(key), circuit=w))

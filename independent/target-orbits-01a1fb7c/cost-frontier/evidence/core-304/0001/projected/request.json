@@ -1,0 +1,15 @@
+{
+  "start_utc": "2026-11-23T12:44:51.367696+00:00",
+  "binary_sha256": "e9d4333495e460b489b8b53622c32bef2756362922d142e03ef62e8fe59fc272",
+  "command": [
+    "abc.exe",
+    "-c",
+    "pexact -I 4 -M 2 0001"
+  ],
+  "timeout_s": 300,
+  "experiment": {
+    "cpu": 16,
+    "cap": 304,
+    "mode": "projected"
+  }
+}

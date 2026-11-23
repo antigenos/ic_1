@@ -210,6 +210,7 @@ struct Search {
     }
 };
 
+#ifndef FRONTIER_LIBRARY
 int main(int argc, char** argv) {
     if (argc!=5) { std::cerr<<"frontier n cap projected|uniform output.tsv\n"; return 2; }
     int n=std::stoi(argv[1]), cap=std::stoi(argv[2]);
@@ -230,3 +231,4 @@ int main(int argc, char** argv) {
     std::cout<<"setup_s="<<seconds(begin,prepared)<<" search_s="<<seconds(prepared,traversed)
              <<" report_s="<<seconds(traversed,done)<<"\n";
 }
+#endif
