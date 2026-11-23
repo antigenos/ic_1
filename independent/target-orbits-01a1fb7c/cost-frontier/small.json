@@ -1,0 +1,104 @@
+{
+  "reference_expanded": 1542,
+  "raw_targets": 128,
+  "cofactor_checks": 16384,
+  "runs": [
+    {
+      "cap": 0,
+      "labeled_states": 1,
+      "crossing_edges": 15,
+      "classes": 14,
+      "uniform_certified": 9,
+      "projected_certified": 9,
+      "strict_bounds": 4,
+      "extra": []
+    },
+    {
+      "cap": 24,
+      "labeled_states": 13,
+      "crossing_edges": 231,
+      "classes": 14,
+      "uniform_certified": 9,
+      "projected_certified": 10,
+      "strict_bounds": 4,
+      "extra": [
+        {
+          "truth": "2e",
+          "optimum": 48,
+          "uniform_lower": 46
+        }
+      ]
+    },
+    {
+      "cap": 32,
+      "labeled_states": 16,
+      "crossing_edges": 285,
+      "classes": 14,
+      "uniform_certified": 10,
+      "projected_certified": 10,
+      "strict_bounds": 2,
+      "extra": []
+    },
+    {
+      "cap": 48,
+      "labeled_states": 106,
+      "crossing_edges": 2175,
+      "classes": 14,
+      "uniform_certified": 12,
+      "projected_certified": 12,
+      "strict_bounds": 2,
+      "extra": []
+    },
+    {
+      "cap": 56,
+      "labeled_states": 202,
+      "crossing_edges": 4359,
+      "classes": 14,
+      "uniform_certified": 12,
+      "projected_certified": 14,
+      "strict_bounds": 2,
+      "extra": [
+        {
+          "truth": "16",
+          "optimum": 78,
+          "uniform_lower": 76
+        },
+        {
+          "truth": "8e",
+          "optimum": 78,
+          "uniform_lower": 76
+        }
+      ]
+    },
+    {
+      "cap": 64,
+      "labeled_states": 448,
+      "crossing_edges": 10074,
+      "classes": 14,
+      "uniform_certified": 14,
+      "projected_certified": 14,
+      "strict_bounds": 0,
+      "extra": []
+    },
+    {
+      "cap": 72,
+      "labeled_states": 956,
+      "crossing_edges": 22850,
+      "classes": 14,
+      "uniform_certified": 14,
+      "projected_certified": 14,
+      "strict_bounds": 0,
+      "extra": []
+    },
+    {
+      "cap": 80,
+      "labeled_states": 2132,
+      "crossing_edges": 54848,
+      "classes": 14,
+      "uniform_certified": 14,
+      "projected_certified": 14,
+      "strict_bounds": 0,
+      "extra": []
+    }
+  ]
+}
