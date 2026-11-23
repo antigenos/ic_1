@@ -10,6 +10,7 @@ import time
 
 from compare_orbits import HERE, ROOT
 from check_orbits import first_gate_truth, representatives
+from audit_pairs import historical
 from full import awake, lock, request_awake
 from witness import simulate
 
@@ -44,6 +45,7 @@ def load_case(root,case):
 
 def check(cases,rows):
     assert len(rows)==4*len(cases)
+    known=historical()
     hashes=set()
     report={}
     for j,case in enumerate(cases):
@@ -68,7 +70,7 @@ def check(cases,rows):
                 assert row["status"]=="timeout" and row["wall_s"]>=59.85 and "witness" not in row
             times[arm].append(row["capped_wall_s"])
             hashes.add(row["binary_sha256"])
-        assert len(values)<=1
+        assert len(values)<=1 and all(v==known[t] for v in values)
         complete={a:sum("witness" in r for r in sample if r["experiment"]["arm"]==a) for a in "BP"}
         report[t]=dict(capped_s=times,completed=complete,
                        paired_P_over_B=[p/b for p,b in zip(times["P"],times["B"])],

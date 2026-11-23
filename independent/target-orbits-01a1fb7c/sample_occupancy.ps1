@@ -1,4 +1,5 @@
-# Sample ABC affinity on the eight registered cores. Keep only aggregate counts.
+# Sample ABC affinity on the registered cores. Keep only aggregate counts.
+param([switch]$Phase)
 $ErrorActionPreference = 'Stop'
 $repo = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '../..')).Path
 $study = Join-Path $repo '.local/variants'
@@ -6,8 +7,14 @@ $owned = @((Join-Path $study 'orbit-control/abc.exe'), (Join-Path $study 'orbit-
     ForEach-Object { [IO.Path]::GetFullPath($_) }
 $directory = Join-Path $repo '.local/orbit-confirmation-300'
 $cores = @(16, 18, 20, 22, 24, 26, 28, 30)
+$worker = 'target-orbits-01a1fb7c[\\/]full\.py"?\s+--lane\s+\d+'
+if ($Phase) {
+    $directory = Join-Path $repo '.local/orbit-phase-ablation'
+    $cores = @(16, 18)
+    $worker = 'target-orbits-01a1fb7c[\\/]compare_orbits\.py"?\s+[0-9a-f]{4}\s+'
+}
 $parents = @(Get-CimInstance Win32_Process -Filter "Name='python.exe'" |
-    Where-Object { $_.CommandLine -match 'target-orbits-01a1fb7c[\\/]full\.py"?\s+--lane\s+\d+' } |
+    Where-Object { $_.CommandLine -match $worker } |
     Select-Object -ExpandProperty ParentProcessId -Unique)
 if ($parents.Count -ne 1) { throw "Expected one live coordinator for the registered lanes" }
 $coordinator = [Diagnostics.Process]::GetProcessById($parents[0])
