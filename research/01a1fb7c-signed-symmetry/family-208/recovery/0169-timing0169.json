@@ -1,0 +1,30 @@
+{
+  "reason": "timeout wall exceeded the preregistered cap plus three seconds",
+  "retained_prefix": 2,
+  "discarded": {
+    "start_utc": "2026-11-21T04:23:40.539089+00:00",
+    "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+    "command": [
+      "abc.exe",
+      "-c",
+      "pexact -I 4 -M 2 0169"
+    ],
+    "timeout_s": 300,
+    "experiment": {
+      "cpu": 6,
+      "arm": "H",
+      "order": 3,
+      "truth": "0169"
+    },
+    "pid": 14648,
+    "child_affinity": [
+      6
+    ],
+    "status": "timeout",
+    "returncode": 1,
+    "wall_s": 303.52130549999856,
+    "capped_wall_s": 300,
+    "solver_output": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

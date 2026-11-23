@@ -8,7 +8,7 @@ import os
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from family import HERE,ROOT,run_lane,source,verify_row,write_once
+from family import HERE,ROOT,run_lane,source,timing_account,verify_row,write_once
 
 
 def cohort(kind,cpus):
@@ -95,6 +95,7 @@ def export_or_check(args,m,history,exact):
             statuses[t]="author_verified_pins" if confirmed else "author_search_from_bound" if fallback else "budget_expired_before_handoff"
     stream=b"\n".join(raw)+b"\n"
     summary=summarize(entries)
+    summary["measurement_account"]=timing_account(entries,args.public)
     summary.update(runs=len(raw),raw_sha256=sha256(stream).hexdigest(),transfer_state=statuses)
     summary["by_tier"]={str(k):summarize({r["truth"]:entries[r["truth"]] for r in rows if r["tier"]==k}) for k in range(4)}
     if args.action=="export":

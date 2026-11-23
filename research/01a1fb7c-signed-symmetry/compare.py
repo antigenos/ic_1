@@ -79,11 +79,21 @@ def main():
                 env["REPLAY_COLD_CLOSURE"] = "lower" if key=="1" else "size"
             if key in "45":
                 env["REPLAY_PROOF_TRANSFER"] = "size" if key=="4" else "pins"
-            entry = run(binary,args.target,4,2,args.cap,dest,env=env,
-                        metadata=dict(cpu=args.cpu,arm=key,order=i,truth=args.target))
-            data = (dest/"solver.log").read_bytes()
-            entry.update(solver_output=data.decode("utf-8", errors="replace"),
-                         solver_log_sha256=hashlib.sha256(data).hexdigest())
+            prior = None
+            for attempt in (dest,raw/f"{i}-{key}-timing-retry"):
+                entry = run(binary,args.target,4,2,args.cap,attempt,env=env,
+                            metadata=dict(cpu=args.cpu,arm=key,order=i,truth=args.target))
+                data = (attempt/"solver.log").read_bytes()
+                entry.update(solver_output=data.decode("utf-8", errors="replace"),
+                             solver_log_sha256=hashlib.sha256(data).hexdigest())
+                if prior is None and entry["status"]=="timeout" and args.cap+3<entry["wall_s"]<=args.cap+15:
+                    # run() has killed and reaped the child. Preserve the invalid attempt.
+                    prior = entry
+                    (attempt/"discarded-timeout.json").write_text(json.dumps(entry),encoding="utf-8")
+                    continue
+                if prior is not None:
+                    entry["discarded_timeout_attempt"]=prior
+                break
             out.write(json.dumps(entry,ensure_ascii=True)+"\n")
             out.flush()
             print(key, entry["status"], round(entry["wall_s"],3), flush=True)

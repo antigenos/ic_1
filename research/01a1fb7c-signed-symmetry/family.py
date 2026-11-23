@@ -68,7 +68,26 @@ def verify_row(path,r,expected):
         assert entry["binary_sha256"]==expected[entry["experiment"]["arm"]]
         if entry["status"]=="timeout":
             assert entry["wall_s"]>=r["seconds"]-0.01
+        discarded=entry.get("discarded_timeout_attempt")
+        if discarded:
+            assert discarded["status"]=="timeout" and discarded["experiment"]==entry["experiment"]
+            assert discarded["wall_s"]>r["seconds"]+3 and discarded["binary_sha256"]==entry["binary_sha256"]
+            assert sha256(discarded["solver_output"].encode()).hexdigest()==discarded["solver_log_sha256"]
     return rows
+
+
+def timing_account(data,public):
+    kept=[e for case in data.values() for e in case.values()]
+    rejected=[e["discarded_timeout_attempt"] for e in kept if "discarded_timeout_attempt" in e]
+    for f in sorted((public/"recovery").glob("*.json")):
+        item=json.loads(f.read_bytes())["discarded"]
+        assert item["status"]=="timeout" and item["wall_s"]>item["timeout_s"]+3
+        rejected.extend([item["discarded_timeout_attempt"]] if "discarded_timeout_attempt" in item else [])
+        rejected.append(item)
+    return dict(accepted_original_wall_s=fsum(e["wall_s"] for e in kept),
+                additional_discarded_wall_s=fsum(e["wall_s"] for e in rejected),
+                discarded=[dict(truth=e["experiment"]["truth"],arm=e["experiment"]["arm"],wall_s=e["wall_s"],
+                                start_utc=e["start_utc"]) for e in rejected])
 
 
 def run_lane(rows,args,hashes):
@@ -130,6 +149,7 @@ def audit(rows,hashes,history,public,work,export):
             raw.extend(path.read_bytes().splitlines())
         stream=b"\n".join(raw)+b"\n"
     summary=metrics(data)
+    summary["measurement_account"]=timing_account(data,public)
     summary.update(verified_witnesses=sum(m["completed"] for m in summary["totals"].values()),
                    raw_sha256=sha256(stream).hexdigest(),runs=len(raw))
     for strict,key in ((True,"stricter"),(False,"identical")):
