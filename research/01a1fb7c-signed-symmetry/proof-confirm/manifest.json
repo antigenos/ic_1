@@ -1,0 +1,97 @@
+{
+  "kind": "confirm",
+  "binary_sha256": {
+    "3": "4141d290dd5ffb13d3b31e26ec2c00207f2c069b7b1378bccaa7b38876bf90e2",
+    "5": "4141d290dd5ffb13d3b31e26ec2c00207f2c069b7b1378bccaa7b38876bf90e2"
+  },
+  "cpus": [
+    28,
+    30
+  ],
+  "rows": [
+    {
+      "truth": "013d",
+      "cpu": 28,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01be",
+      "cpu": 30,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "013c",
+      "cpu": 28,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "03d5",
+      "cpu": 30,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "01ad",
+      "cpu": 28,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "016e",
+      "cpu": 30,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "0672",
+      "cpu": 28,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "06b4",
+      "cpu": 30,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "06b5",
+      "cpu": 28,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "168e",
+      "cpu": 30,
+      "order": "53",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "166a",
+      "cpu": 28,
+      "order": "53",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "169b",
+      "cpu": 30,
+      "order": "35",
+      "seconds": 300,
+      "tier": 3
+    }
+  ]
+}
