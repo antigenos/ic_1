@@ -1,0 +1,32 @@
+[
+  {
+    "truth": "03dd",
+    "cpu": 16,
+    "order": "BPPB"
+  },
+  {
+    "truth": "07f2",
+    "cpu": 18,
+    "order": "PBBP"
+  },
+  {
+    "truth": "069f",
+    "cpu": 16,
+    "order": "PBBP"
+  },
+  {
+    "truth": "06f0",
+    "cpu": 18,
+    "order": "BPPB"
+  },
+  {
+    "truth": "0696",
+    "cpu": 16,
+    "order": "BPPB"
+  },
+  {
+    "truth": "19e6",
+    "cpu": 18,
+    "order": "PBBP"
+  }
+]

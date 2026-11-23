@@ -2,6 +2,31 @@
 
 本目录从完整复现的冻结树开始，项目编号 01a1fb7c。作者原版、强化对照、TCJAP 的研究记录、构建入口、原始数据与许可证位于 [reproduction](reproduction/README.md)。对应原始本地提交为 `365a8db35e39918d10e9a16cec1495611dd5e0d0`。
 
+## 208 类主比较
+
+在同一批次对照中，把输入置换和反相下等价的首门只保留一个代表，300 秒内完成的函数从 **77 类增加到 91 类**。完整的 416 次观测均通过核验。每个输入的两个版本使用同一核，按预登记顺序交替先后。下表的秒数是逐函数进程墙钟之和，每次超时按 300 秒计。另外 23 次中断尝试单独归档，其中 8 次有可核算的墙钟，15 次缺少终态。[清单、原始求解输出与统计](evidence/full-300) · [复算程序](audit_pairs.py)
+
+| 同批版本 | 完成 / 208 | 超时 | 含超时的总成本 |
+|---|---:|---:|---:|
+| 冻结 TCJAP 重建版 A | 77 | 131 | 43,256.71 秒 |
+| 加入首门约束的 B | 91 | 117 | 39,911.33 秒 |
+
+共同完成 75 类，A/B 配对时间的几何均值为 **1.348**。B 在其中 53 类较快、22 类较慢。B 独有 16 类，A 独有 2 类，净增 14 类，总成本下降 3345.38 秒（7.73%）。例如 `1bd8` 在 B 上用 23.39 秒返回活动度 448，A 超时。反向例 `035e`、`03c1` 在 A 上分别用 234.39、266.43 秒完成，B 均超时。共同完成的 `0069` 从 0.32 秒增至 1.11 秒。所有逐例时间及不利实例均可从汇总复算。[逐例结果](evidence/full-300/summary.json)
+
+168 个返回电路逐一重放，检查了合法门、连接、全使用约束、实际真值和活动度。75 个共同解的活动度均相同。91 个 B 电路全部使用轨道代表作为首门，77 个 A 电路中有 23 个使用其他等价首门。对全部返回电路还构造并核验了 1822 次目标对称变换。各已完成实例的最优性来自精确求解，另有独立穷举下界的四个例子为三输入 `96` 与四输入 `0189`、`0017`、`018b`。[原版代表例](evidence/author-recheck) · [追加的两例证明](evidence/additional-optima)
+
+| 首门候选的变化 | 函数数 | A 完成 | B 完成 | 共同完成的 A/B 配对时间几何均值 |
+|---|---:|---:|---:|---:|
+| 没有首门可排除 | 24 | 7 | 7 | 0.962 |
+| 单靠置换已达到带相位的压缩数 | 94 | 34 | 37 | 1.260 |
+| 允许反相还能排除更多首门 | 90 | 36 | 47 | 1.528 |
+
+净增的 14 类中有 11 类来自第三组。分组描述的是 A 与 B 的效果分布。输入反相本身的增量用下文同一二进制的 B/P 消融衡量。[分组统计](evidence/full-300/breakdown.json)
+
+**计时的适用范围。** 跨三次中断分开运行的 8 对均为双超时。剔除这 8 对后，200 对中仍为 77 对 91。320 次主机采样显示八个指定核都曾有其他 ABC。两个版本的运行区间都由采样覆盖、且外部 ABC 数始终相同的 96 对中，完成数为 35 对 40，共同完成的 35 类几何均值为 1.432。其中两次运行均未观察到同核外部 ABC 的 49 对为 20 对 21，共同完成的 20 类几何均值为 1.454。采样不覆盖所有外部软件，子集也随输入和运行时长而变。这些数据支持本机固定预算下的总体收益，跨机器的加速幅度仍需独立实测。[逐次资源采样](evidence/full-300/occupancy.jsonl) · [筛选条件与代码](full_breakdown.py)
+
+**贡献比较。** 原三方复现实验中，作者原版、强化基线、TCJAP 重建分别完成 67、72、80 类，重建相对强化基线净增 8 类。本轮进一步改进独立处理首门的等价选择，净增 14 类。两项增量来自各自的批内对照。TCJAP 作者公开的 71、73、94 仅作历史参照，其完整集成与逐例计时未公开。当前证据可以量化两种办法在该任务上的技术贡献，学术影响是否相当仍需独立复核和同行评价。[三方复现](reproduction/README.md) · [作者历史统计](https://github.com/qmkkk/TCJAP/blob/59e5a0e954d6a0a6711b2bdc9898db875ede6889/data/experimental_scope.json)
+
 ## 本轮登记
 
 原项目已验收至阶段 15。单独的后续工作复用其阶段 1–7 的来源、成本分解、逐行重放和对照；本目录只发展目标内的对称化。DATE 使用 NPN 代表函数划分测试集，源码的 AddCnfSymBreakingInner 在同一门内对两个操作数排序。对同一个目标，若调换或反转某些主输入仍得到它或它的补，不同的首门功能可能描述代价完全相同的搜索分支。TCJAP 的联合关系依赖目标行和连接，未显式选取这些分支的代表。需要实际测量该重复对完整时间的影响。[DATE 作者全文](https://www.cda.cit.tum.de/files/eda/2026_date_exact_synthesis_with_optimal_switching_activity.pdf)
@@ -18,17 +43,38 @@
 
 ## 复跑
 
-从本分支仓库根目录按 reproduction/REPRODUCTION.md 准备锁定的 ABC、pexact、TCJAP 和编译工具。以下命令在仓库根目录执行；两个求解器共享相同编译选项。本机使用独立复制的 ABC 目标文件，并与三份固定归档核对。Windows 上构建脚本会统一补丁换行。
+从本研究分支的仓库根目录执行下列命令。复核已归档的结果只需 Python 3.12。第一条重放原版、强化对照和 TCJAP 重建的 624 次观察，第二条重放 416 次首门比较并核验实际首门、处理器与时限，第三条检验 24 次相位消融。
+
+```text
+python independent/target-orbits-01a1fb7c/reproduction/tools/audit_batch.py independent/target-orbits-01a1fb7c/reproduction/evidence/e14-main
+python independent/target-orbits-01a1fb7c/audit_pairs.py independent/target-orbits-01a1fb7c/evidence/full-300 --full
+python independent/target-orbits-01a1fb7c/phase_ablation.py
+python independent/target-orbits-01a1fb7c/confirm_optima.py
+```
+
+重新计时须先按[源码准备及编译说明](reproduction/REPRODUCTION.md)建立 ABC、pexact 和 TCJAP 的锁定工作树。两个求解器共享相同编译选项。本机使用与三份固定归档核对过的源码及独立复制的 ABC 目标文件，Windows 构建脚本统一补丁换行。
 
 ```text
 python independent/target-orbits-01a1fb7c/check_orbits.py
 python independent/target-orbits-01a1fb7c/build.py
 python independent/target-orbits-01a1fb7c/compare_orbits.py 0189 .local/orbit-repeat-0189 --cpu 16
-python independent/target-orbits-01a1fb7c/audit_pairs.py independent/target-orbits-01a1fb7c/evidence/panel
 python independent/target-orbits-01a1fb7c/full.py
+python independent/target-orbits-01a1fb7c/phase_ablation.py --run
 ```
 
-完整批次的逐次原始输出保存在 `.local/orbit-confirmation-300`。脚本记录单核亲和性、可执行文件 SHA-256、UTC 时间、墙钟和系统清醒时间，超时计入 300 秒。重新进入同一批次会复用已核验的完成项；进程锁用于阻止重复启动。核心映射适用于本机 32 个逻辑核。
+完整批次的逐次原始输出保存在 `.local/orbit-confirmation-300`。脚本记录单核亲和性、可执行文件 SHA-256、UTC 时间、墙钟和系统清醒时间，主比较的超时计入 300 秒。重新进入同一批次会复用已核验的完成项，进程锁防止重复启动。登记的核映射适用于本机的 32 个逻辑核。在核数较少的机器上，可用单例命令的 `--cpu` 指定可用核。
+
+### 版本与回退
+
+在独立检出中用 `git switch --detach <提交号>` 可以回到对应阶段。原作者算法、Windows 宿主适配和研究候选各有提交记录。
+
+| 对照或研究步骤 | Git 提交 |
+|---|---|
+| 作者源码锁定、宿主适配、原版见证及下界 | [f8b95ed](https://github.com/antigenos/ic_1/commit/f8b95edbbe63dcdbcd5ded0c0d4636dbc9e70e29) · [a0beadd](https://github.com/antigenos/ic_1/commit/a0beadd44d6c443d446a46030aadaa8f0d5f29ea) · [ac2ada5](https://github.com/antigenos/ic_1/commit/ac2ada57372947cc983d7260eecb3c2d0ae382c0) |
+| 计数向量直接枚举、支持度强化 | [079fd21](https://github.com/antigenos/ic_1/commit/079fd21683436ee9677dc5443e55e5b6234d8c4f) · [21e39c9](https://github.com/antigenos/ic_1/commit/21e39c909d2b647b30cd23ea471e16ae3ce6b930) |
+| 两端已选的计数传播、提前排除连接 | [c257866](https://github.com/antigenos/ic_1/commit/c257866f4373daaeb815f2183282fbe804531ae0) · [4340c20](https://github.com/antigenos/ic_1/commit/4340c20e53451fcd0c1fd5af61109b15e3ce62d2) |
+| 本目录冻结基线、接入首门约束、预登记全量比较 | [e0e144b](https://github.com/antigenos/ic_1/commit/e0e144b7f9c350b346a748cb303076c03f9a2cda) · [11df9e4](https://github.com/antigenos/ic_1/commit/11df9e4f343dfb5eeb5d155291b18ee73895ddab) · [daa9b1c](https://github.com/antigenos/ic_1/commit/daa9b1c95af0493d62c19d5278cf415cfbdd34c2) |
+| 条件前缀候选的负结果、首次使用排序对照 | [03afb63](https://github.com/antigenos/ic_1/commit/03afb632a3a051b59729eae224f721d57a6090de) · [2604203](https://github.com/antigenos/ic_1/commit/2604203a1bf32e8c7684e2a52170ea5da121d84d) |
 
 条件前缀候选 03afb63 在 012d 上发现了原输入群以外的严格等价变换，独立核验 1632 条实际条件子句；0189 的两组配对均退化，012d 两版均超时。该版本与原始材料保存在 [独立候选分支](https://github.com/antigenos/ic_1/tree/codex/target-orbits-01a1fb7c-conditional/independent/target-orbits-01a1fb7c)，默认求解器只使用首门规则。
 
@@ -71,3 +117,24 @@ S 对照结果。03dd 的首门版两次为 7.29、7.67 秒，S 为 16.57、17.1
 ### 输入反相的消融登记
 
 全量比较进行期间登记，待其结束后单独运行。B 与 P 使用同一个首门版二进制，B 容许输入置换和反相，P 只容许置换。保留此前登记的 `03dd`、`07f2`，两例只有加入相位才能压缩首门。第二组从原始重建主比较有序清单的后 104 个中选择，剔除先前试点、16 类面板、S 对照和追加证明的函数，要求冻结重建版耗时在 [2,45) 秒，且带相位后能进一步压缩。该组全部符合者为 `069f`、`06f0`、`0696`、`19e6`，四者均可从只用置换中取得一部分压缩。各类按固定顺序进行 BPPB 或 PBBP，每次 60 秒，同类四次使用同一核。比较相反顺序下两个 B/P 配对的方向、完成数、截断用时与全部见证。新增输入仅依据冻结重建版和首门计数选取。另将 208 类主比较按实际能否消除首门汇总，并单列跨暂停的配对，以检查这些条件对总体结论的影响。
+
+### 输入反相的实测增量与第 15 阶段验收
+
+24 次均在 60 秒内完成。B、P 各自返回的 12 个电路均通过独立重放、首门代表检查及历史活动度核对。两种模式的可执行文件哈希与全量比较的 B 完全相同。P 的 12 次完整时间之和为 109.18 秒，B 为 80.67 秒。下表每列给出一组相反先后顺序中的 P/B 时间比，大于 1 表示 B 较快。[每次原始输出、时限与时钟](evidence/phase-ablation/) · [复算入口](phase_ablation.py)
+
+| 函数 | 活动度 | 第一对 P/B | 反序一对 P/B |
+|---|---:|---:|---:|
+| 03dd | 368 | 2.110 | 2.122 |
+| 07f2 | 344 | 1.282 | 1.275 |
+| 069f | 320 | 1.494 | 1.034 |
+| 06f0 | 344 | 1.163 | 1.093 |
+| 0696 | 344 | 1.433 | 1.469 |
+| 19e6 | 336 | 0.908 | 0.721 |
+
+12 个配对的几何均值为 1.282。5 类在两种顺序下都从反相中获得时间收益，`19e6` 两次均变慢。4 次负载采样都在消融核 18 上观察到另一个单核 ABC，在核 16 上均未观察到。每个函数的四次运行均在同一核。该消融只覆盖预登记的 6 类。[消融负载采样](evidence/phase-ablation/occupancy.jsonl)
+
+第 15 阶段保留带相位的首门约束作为本项目交付版本。其依据是搜索空间保留等价最优解的证明、实际生成子句与返回电路的核验、全量预算内的净增和同一二进制消融。固定前缀的后续候选只保留在负结果分支。所有性能结论限于上述门库、活动度定义、四个有效输入、模式 2 和实测主机。按以下命令可重算分组结果和计时敏感性统计。
+
+```text
+python independent/target-orbits-01a1fb7c/full_breakdown.py independent/target-orbits-01a1fb7c/evidence/full-300 --occupancy independent/target-orbits-01a1fb7c/evidence/full-300/occupancy.jsonl --pause-record independent/target-orbits-01a1fb7c/evidence/full-interrupted-attempts.json --pause-record independent/target-orbits-01a1fb7c/evidence/full-suspend-attempts.json --pause-record independent/target-orbits-01a1fb7c/evidence/full-second-pause.json
+```
