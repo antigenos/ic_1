@@ -130,6 +130,10 @@ def metrics(data):
 def audit(rows,hashes,history,public,work,export):
     from tempfile import TemporaryDirectory
     data={}
+    certificate_path=HERE/"prefix-560.json"
+    certified=json.loads(certificate_path.read_bytes())["certificates"] if certificate_path.exists() else None
+    independent_matches=0
+    above_threshold=0
     with TemporaryDirectory() as folder:
         if not export:
             # Restore byte-identical per-target input for the original log verifier.
@@ -145,11 +149,21 @@ def audit(rows,hashes,history,public,work,export):
             verified=verify_row(path,r,hashes)
             vals={e["witness"]["activity"] for e in verified if "witness" in e}
             assert len(vals|history[t])<=1
+            if certified is not None and vals:
+                if certified[t] is None:
+                    assert min(vals)>560
+                    above_threshold+=1
+                else:
+                    assert vals=={certified[t]}
+                    independent_matches+=1
             data[t]={e["experiment"]["arm"]:e for e in verified}
             raw.extend(path.read_bytes().splitlines())
         stream=b"\n".join(raw)+b"\n"
     summary=metrics(data)
     summary["measurement_account"]=timing_account(data,public)
+    if certified is not None:
+        summary["distinct_solved_functions_with_independent_exact_proof"]=independent_matches
+        summary["distinct_solved_functions_above_proof_bound"]=above_threshold
     summary.update(verified_witnesses=sum(m["completed"] for m in summary["totals"].values()),
                    raw_sha256=sha256(stream).hexdigest(),runs=len(raw))
     for strict,key in ((True,"stricter"),(False,"identical")):
