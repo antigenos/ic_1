@@ -2,6 +2,8 @@
 
 本目录对应独立研究分支 `codex/01a1fb7c-signed-symmetry`。起点是已公开的 `codex/tcjap-full-study@afdbfca`。冻结复现的完整快照见 `date-tcjap-reproduction.zip`，归档对应本地提交 `365a8db35e39918d10e9a16cec1495611dd5e0d0`，其中包含源码对照、许可证、复跑入口和三个基线的原始结果。原实验每个版本在 208 个四输入函数上运行，每例 300 秒，作者版完成 67 个，强化版 72 个，TCJAP 重建版 80 个。此处复用已完成的研究。
 
+原论文的公式、约束、搜索顺序和代码在[逐项对照](../../SOURCE_MAP.md)中。新研究有两个可直接检查的成果：首门对称性在独立样本的完整求解对照，以及在活动度界内枚举电路并送回原作者 SAT 核验的方法。后者的已证活动度、完整电路和负结果见[成本枚举与原求解器](cost-certificate.md)。共享计算的覆盖数与每例 300 秒的冷启动结果分别报告。
+
 ## 独立确认和第 13 阶段判断
 
 12 个事先锁定的函数，48 次完整计时。TCJAP 重建版 F 完成 6 个，经典全链排序 Q 完成 7 个，增加普通首门对称的 H 完成 8 个，允许输入取反的 N 也完成 8 个。截断总成本依次为 1945.54、1761.54、1720.39、1627.76 秒。N 相对 F 新增完成 0187、036f，相对 H 的完成集相同。H 与 N 严格不同的六个函数中，三个共同完成，对应 H/N 配对几何平均为 1.326；同组成本为 1019.71/996.87 秒。相同首门约束的另六个函数贡献了 69.79 秒的墙钟差，这部分不能归因于多出来的带符号剪枝。01ae 的 N 慢于 H。剔除暂停前已有记录的三个函数后，其余九例 H/N 仍各完成五个，截断成本为 1476.06/1454.40 秒。[原始记录与汇总](confirmation/summary.json) · [预定样本](confirmation/manifest.json)
@@ -73,6 +75,9 @@ python "$study/check_chain.py"
 python "$study/audit_chain_clauses.py"
 python "$study/compare.py" 0189 QHNNHQ "$study/rerun-0189.jsonl" --cpu 14 --cap 60
 python "$study/confirmation.py" report
+python "$study/verify_certificates.py"
+python "$study/build_closure.py" --witness
+python "$study/compare.py" 0189 5 "$study/rerun-certified-0189.jsonl" --cpu 0 --cap 300
 $repeat = '.local/independent-confirmation'
 python "$study/confirmation.py" plan --directory $repeat --cpus 0 2
 python "$study/confirmation.py" run --directory $repeat --cpus 0 2
