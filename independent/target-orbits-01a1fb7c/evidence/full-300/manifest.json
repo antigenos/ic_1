@@ -1,0 +1,1042 @@
+[
+  {
+    "truth": "0001",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "0006",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "0007",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "0016",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "0017",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "0018",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "0019",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "001b",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "001e",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "001f",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "003d",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "0069",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "006b",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "006f",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "007e",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "007f",
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "0116",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "0117",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "0118",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "0119",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "011a",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "011b",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "011e",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "011f",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "012c",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "012d",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "012f",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "013c",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "013d",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "013e",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "013f",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "0168",
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "0169",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "016a",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "016b",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "016e",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "016f",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "017e",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "017f",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "0180",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "0181",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "0182",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "0183",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "0186",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "0187",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "0189",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "018b",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "018f",
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "0196",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "0197",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "0198",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "0199",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "019a",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "019b",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "019e",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "019f",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "01a8",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "01a9",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "01aa",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "01ab",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "01ac",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "01ad",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "01ae",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "01af",
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "01bc",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "01bd",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "01be",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "01bf",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "01e8",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "01e9",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "01ea",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "01eb",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "01ee",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "01ef",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "01fe",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "033d",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "0356",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "0357",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "0358",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "0359",
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "035a",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "035b",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "035e",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "035f",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "0368",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "0369",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "036a",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "036b",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "036c",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "036d",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "036e",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "036f",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "037c",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "037d",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "037e",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "03c1",
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "03c5",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "03c6",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "03c7",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "03d4",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "03d5",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "03d6",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "03d7",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "03d8",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "03d9",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "03db",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "03dc",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "03dd",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "03de",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "0660",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "0661",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "0662",
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "0663",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "0666",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "0667",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "0669",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "066b",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "066f",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "0672",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "0673",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "0676",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "0678",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "0679",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "067a",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "067b",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "067e",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "0690",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "0691",
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "0693",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "0696",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "0697",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "069f",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "06b0",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "06b1",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "06b2",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "06b3",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "06b4",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "06b5",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "06b6",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "06b7",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "06b9",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "06bd",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "06f0",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "06f1",
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "06f2",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "06f6",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "06f9",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "0776",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "0778",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "0779",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "077a",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "077e",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "07b0",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "07b1",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "07b4",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "07b5",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "07b6",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "07bc",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "07e0",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "07e1",
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "07e2",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "07e3",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "07e6",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "07e9",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "07f0",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "07f1",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "07f2",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "07f8",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "1668",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "1669",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "166a",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "166b",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "166e",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "167e",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "1681",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "1683",
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "1686",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "1687",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "1689",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "168b",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "168e",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "1696",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "1697",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "1698",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "1699",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "169a",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "169b",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "169e",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "16a9",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "16ac",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "16ad",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "16bc",
+    "cpu": 30,
+    "order": "AB"
+  },
+  {
+    "truth": "16e9",
+    "cpu": 16,
+    "order": "AB"
+  },
+  {
+    "truth": "177e",
+    "cpu": 18,
+    "order": "BA"
+  },
+  {
+    "truth": "178e",
+    "cpu": 20,
+    "order": "AB"
+  },
+  {
+    "truth": "1796",
+    "cpu": 22,
+    "order": "BA"
+  },
+  {
+    "truth": "1798",
+    "cpu": 24,
+    "order": "AB"
+  },
+  {
+    "truth": "179a",
+    "cpu": 26,
+    "order": "BA"
+  },
+  {
+    "truth": "17ac",
+    "cpu": 28,
+    "order": "AB"
+  },
+  {
+    "truth": "17e8",
+    "cpu": 30,
+    "order": "BA"
+  },
+  {
+    "truth": "18e7",
+    "cpu": 16,
+    "order": "BA"
+  },
+  {
+    "truth": "19e1",
+    "cpu": 18,
+    "order": "AB"
+  },
+  {
+    "truth": "19e3",
+    "cpu": 20,
+    "order": "BA"
+  },
+  {
+    "truth": "19e6",
+    "cpu": 22,
+    "order": "AB"
+  },
+  {
+    "truth": "1bd8",
+    "cpu": 24,
+    "order": "BA"
+  },
+  {
+    "truth": "1be4",
+    "cpu": 26,
+    "order": "AB"
+  },
+  {
+    "truth": "1ee1",
+    "cpu": 28,
+    "order": "BA"
+  },
+  {
+    "truth": "6996",
+    "cpu": 30,
+    "order": "AB"
+  }
+]
