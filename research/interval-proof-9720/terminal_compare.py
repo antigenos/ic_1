@@ -17,6 +17,7 @@ from terminal_checks import check
 CONTROL = "f8c6a8601ad8e07e31c438256f954dcc73cbd474"
 MODULES = ("cold_bounds.py", "construct_bounds.py", "family_bounds.py")
 PLAN = [("0189", 305, arm) for arm in "ATTA"] + [("0016", 433, arm) for arm in "TA"]
+STORAGE_PLAN = [("0016", 433, arm) for arm in "DT"] + [("012c", 433, arm) for arm in "TD"]
 BOOT = """
 import os, runpy, sys
 from pathlib import Path
@@ -33,14 +34,15 @@ runpy.run_path(script, run_name='__main__')
 """
 
 
-def sources(work, arm):
+def sources(work, arm, candidate_ref=None):
     dest = work / "source" / arm
     dest.mkdir(parents=True)
     digests = {}
     for name in MODULES:
-        if arm == "A":
+        revision = CONTROL if arm == "A" else candidate_ref
+        if revision is not None:
             path = (HERE / name).relative_to(HERE.parents[1]).as_posix()
-            data = subprocess.check_output(["git", "cat-file", "blob", f"{CONTROL}:{path}"], cwd=HERE)
+            data = subprocess.check_output(["git", "cat-file", "blob", f"{revision}:{path}"], cwd=HERE)
         else:
             data = (HERE / name).read_bytes().replace(b"\r\n", b"\n")
         (dest / name).write_bytes(data)
@@ -78,7 +80,7 @@ def checked_answer(row, bounds):
         assert witness["activity"] == expected
     else:
         assert answer["status"] == "no_solution_below_cap" and "witness" not in answer and "circuit" not in answer
-    limit = cap - 30 if arm == "T" else cap
+    limit = cap if arm == "A" else cap - 30
     assert answer["states"] == sum(n for cost, n in bounds["states_by_cost"].items() if int(cost) < limit)
     return answer
 
@@ -87,12 +89,16 @@ def export(source, destination, plan, bounds):
     rows = [json.loads(s) for s in source.read_bytes().splitlines()]
     assert [(r["truth"], r["strict_cap"], r["arm"]) for r in rows] == plan
     public = []
+    storage_control = any(arm == "D" for _, _, arm in plan)
+    names = {"A":"full_enumeration","T":"terminal_output_matching","D":"deduplicated_terminal_matching"}
     for i, r in enumerate(rows, 1):
         truth, cap, arm = plan[i-1]
         assert r["order"] == i and r["timeout_s"] == 300
-        item = dict(order=i, truth=truth, method="terminal_output_matching" if arm == "T" else "full_enumeration",
+        item = dict(order=i, truth=truth, method=names[arm],
                     strict_activity_cap=cap, timeout_s=300, outcome=r["status"],
                     capped_elapsed_s=min(300., r["wall_s"]), optimum="", gates="", expanded_states="", terminal_edges="")
+        if storage_control:
+            item.update(terminal_check_calls="", retained_terminal_states="")
         if r["status"] == "completed":
             answer = checked_answer(r, bounds)
             witness = answer.get("witness", {})
@@ -100,6 +106,11 @@ def export(source, destination, plan, bounds):
                 item["outcome"] = "proved_no_solution_below_cap"
             item.update(optimum=witness.get("activity", ""), gates=witness.get("gates", ""), expanded_states=answer["states"],
                         terminal_edges=answer.get("terminal_edges", ""))
+            if storage_control:
+                kept = answer["retained_terminal_states"]
+                assert 0 < answer["terminal_checks"] <= answer["terminal_edges"]
+                assert kept == (answer["terminal_checks"] if arm == "D" else 0)
+                item.update(terminal_check_calls=answer["terminal_checks"], retained_terminal_states=kept)
         else:
             assert r["status"] == "timeout" and r["wall_s"] >= 299.95
         public.append(item)
@@ -115,7 +126,10 @@ def main():
     ap.add_argument("output", type=Path)
     ap.add_argument("--cpu", type=int)
     ap.add_argument("--host-samples", type=Path)
-    ap.add_argument("--holdout", action="store_true", help="Use the fixed eight-function confirmation panel")
+    ap.add_argument("--candidate-ref", help="Freeze candidate solver modules from a specific Git commit")
+    group = ap.add_mutually_exclusive_group()
+    group.add_argument("--holdout", action="store_true", help="Use the fixed eight-function confirmation panel")
+    group.add_argument("--storage-control", action="store_true", help="Isolate deduplication while keeping last-gate matching fixed")
     ap.add_argument("--register-holdout", action="store_true", help="Write the deterministic confirmation manifest")
     ap.add_argument("--public-csv", type=Path, help="Verify a finished local run and export its scientific measurements")
     args = ap.parse_args()
@@ -125,7 +139,7 @@ def main():
             json.dump(holdout_plan(bounds), f, indent=2)
             f.write("\n")
         return
-    plan = PLAN
+    plan = STORAGE_PLAN if args.storage_control else PLAN
     if args.holdout:
         registered = json.loads((HERE / "evidence/terminal-holdout-plan.json").read_bytes())
         assert registered == holdout_plan(bounds)
@@ -141,14 +155,14 @@ def main():
     if args.output.exists():
         raise FileExistsError(args.output)
     work.mkdir(parents=True, exist_ok=False)
-    source = {arm: sources(work, arm) for arm in "AT"}
+    source = {arm: sources(work, arm, args.candidate_ref) for arm in sorted({a for _, _, a in plan})}
     samples = args.host_samples.resolve() if args.host_samples else None
     if samples is not None:
         samples.mkdir(parents=True, exist_ok=True)
         with (samples / "controller.json").open("x") as f:
             json.dump(dict(pid=os.getpid(), started=time.time(), cpus=[args.cpu]), f)
     wait_for_quiet_cpu(args.cpu, samples)
-    (work / "correctness.json").write_text(json.dumps(check(), indent=2) + "\n", encoding="utf8")
+    (work / "correctness.json").write_text(json.dumps(check(storage=args.storage_control), indent=2) + "\n", encoding="utf8")
     with args.output.open("x", encoding="utf8", newline="\n") as evidence:
         for i, (truth, cap, arm) in enumerate(plan, 1):
             wait_for_quiet_cpu(args.cpu, samples)
@@ -157,8 +171,10 @@ def main():
             directory, hashes = source[arm]
             cmd = [sys.executable, "-I", "-B", "-c", BOOT, str(directory), str(HERE), truth,
                    "--cap", str(cap), "--cpu", str(args.cpu)]
-            if arm == "T":
+            if arm in ("T", "D"):
                 cmd.append("--terminal")
+            if arm == "D":
+                cmd.append("--deduplicate-terminal")
             row = dict(order=i, truth=truth, arm=arm, strict_cap=cap, timeout_s=300,
                        source_sha256=hashes, start_utc=datetime.now(timezone.utc).isoformat())
             start = time.perf_counter()

@@ -19,12 +19,14 @@ def can_finish(target, signal, available):
     return False
 
 
-def enumerate_bounds(truths, cap, optimal_states=None, *, terminal=False):
+def enumerate_bounds(truths, cap, optimal_states=None, *, terminal=False, deduplicate_terminal=False):
     if not 0 < cap <= 65535:
         raise ValueError("A positive bound in 16-bit range is required")
     normalized = {int(t, 16) ^ (65535 if int(t, 16) & 1 else 0): t for t in truths}
     if terminal and len(normalized) != 1:
         raise ValueError("Terminal output matching requires one target")
+    if deduplicate_terminal and not terminal:
+        raise ValueError("Terminal deduplication requires direct output matching")
     if len(normalized) != len(truths):
         raise ValueError("Representatives coincide after output normalization")
     primary = (0, 0xaaaa, 0xcccc, 0xf0f0, 0xff00)
@@ -43,6 +45,8 @@ def enumerate_bounds(truths, cap, optimal_states=None, *, terminal=False):
     if terminal:
         target, name_of_target = next(iter(normalized.items()))
     terminal_edges = 0
+    terminal_checks = 0
+    terminal_keys = set() if deduplicate_terminal else None
     while stack:
         state, cost = stack.pop()
         by_cost[cost] += 1
@@ -63,7 +67,16 @@ def enumerate_bounds(truths, cap, optimal_states=None, *, terminal=False):
                 continue
             if terminal and following_cost + 30 >= cap:
                 terminal_edges += 1
-                if following_cost < bounds[name_of_target] and can_finish(target, signal, available):
+                if following_cost >= bounds[name_of_target]:
+                    continue
+                if terminal_keys is not None:
+                    terminal_state = tuple(sorted((*state, signal)))
+                    terminal_key = keys[len(terminal_state)].pack(*terminal_state)
+                    if terminal_key in terminal_keys:
+                        continue
+                    terminal_keys.add(terminal_key)
+                terminal_checks += 1
+                if can_finish(target, signal, available):
                     bounds[name_of_target] = following_cost
                     if optimal_states is not None:
                         optimal_states[name_of_target] = tuple(sorted((*state, signal)))
@@ -78,6 +91,8 @@ def enumerate_bounds(truths, cap, optimal_states=None, *, terminal=False):
                   lower_bounds=dict(sorted(bounds.items())))
     if terminal:
         result["terminal_edges"] = terminal_edges
+        result["terminal_checks"] = terminal_checks
+        result["retained_terminal_states"] = len(terminal_keys) if terminal_keys is not None else 0
     return result
 
 

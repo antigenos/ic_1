@@ -9,7 +9,7 @@ from family import HERE, pin
 from family_bounds import can_finish, enumerate_bounds
 
 
-def check():
+def check(storage=False):
     frozen = json.loads((HERE / "evidence/family-bounds-432.json").read_bytes())["lower_bounds"]
     rng = random.Random(9720)
     for i in range(4000):
@@ -36,18 +36,32 @@ def check():
                 solved += 1
             else:
                 assert truth not in states
+            if storage:
+                kept_states = {}
+                cached = enumerate_bounds([truth], cap, kept_states, terminal=True, deduplicate_terminal=True)
+                assert cached["lower_bounds"] == found["lower_bounds"] and cached["states"] == nonterminal
+                assert cached["terminal_edges"] == found["terminal_edges"]
+                assert cached["terminal_checks"] == cached["retained_terminal_states"] <= found["terminal_checks"]
+                if cost < cap:
+                    assert construct(truth, kept_states[truth], cost)["witness"]["activity"] == cost
+                else:
+                    assert truth not in kept_states
             checks += 1
-    return dict(single_target_bounds=checks, legal_positives=solved, strict_negative=checks-solved,
-                output_relation_tests=4000, seed=9720)
+    result = dict(single_target_bounds=checks, legal_positives=solved, strict_negative=checks-solved,
+                  output_relation_tests=4000, seed=9720)
+    if storage:
+        result["direct_vs_deduplicated_bounds"] = checks
+    return result
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cpu", type=int, required=True)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--storage-control", action="store_true")
     args = parser.parse_args()
     pin(args.cpu)
-    result = check()
+    result = check(storage=args.storage_control)
     if args.output:
         with args.output.open("x", encoding="utf8", newline="\n") as output:
             json.dump(result, output, indent=2)

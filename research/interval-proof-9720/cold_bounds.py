@@ -14,6 +14,7 @@ def main():
     cli.add_argument("--cap", type=int, required=True, help="Exclusive activity bound")
     cli.add_argument("--cpu", type=int, required=True)
     cli.add_argument("--terminal", action="store_true", help="Check the free output before storing a terminal state")
+    cli.add_argument("--deduplicate-terminal", action="store_true", help="Remember previously checked terminal states")
     args = cli.parse_args()
     target = int(args.truth, 16)
     if not 0 <= target <= 65535 or not all(
@@ -25,12 +26,15 @@ def main():
     pin(args.cpu)
     started = time.process_time()
     states = {}
-    proof = enumerate_bounds([truth], args.cap, states, terminal=args.terminal)
+    proof = enumerate_bounds([truth], args.cap, states, terminal=args.terminal,
+                             deduplicate_terminal=args.deduplicate_terminal)
     lower = proof["lower_bounds"][truth]
     result = dict(truth=truth, strict_cap=args.cap, states=proof["states"], lower_bound=lower,
                   logical_cpu=args.cpu, status="no_solution_below_cap")
     if args.terminal:
         result["terminal_edges"] = proof["terminal_edges"]
+        result["terminal_checks"] = proof["terminal_checks"]
+        result["retained_terminal_states"] = proof["retained_terminal_states"]
     if truth in states:
         result.update(construct(truth, states[truth], lower))
         result["status"] = "independently_optimal"

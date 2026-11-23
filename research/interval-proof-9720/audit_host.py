@@ -55,14 +55,18 @@ def metrics(pairs):
 def main():
     cli = ArgumentParser(description=__doc__)
     cli.add_argument("archive", type=Path)
-    cli.add_argument("samples", type=Path)
+    cli.add_argument("samples", type=Path, nargs="+", help="Chronological sample files, one per continuous controller session")
     cli.add_argument("--interruptions", type=Path, default=HERE / "evidence/family-interruptions.jsonl")
     args = cli.parse_args()
-    samples = [json.loads(line) for line in args.samples.read_bytes().splitlines()]
+    sessions = [[json.loads(line) for line in path.read_bytes().splitlines()] for path in args.samples]
+    if not all(sessions):
+        cli.error("Every host sampling session must contain observations")
+    samples = [sample for session in sessions for sample in session]
     epochs = [s["epoch"] for s in samples]
     assert epochs and all(b > a for a, b in zip(epochs, epochs[1:]))
     events = [json.loads(line) for line in args.interruptions.read_bytes().splitlines()]
-    resumed = min(timestamp(e["request"]) for e in events if e["reason"] == "shared-cpu-01")
+    resumes = [min(timestamp(e["request"]) for e in events if e["reason"] == "shared-cpu-01")]
+    resumes.extend(session[0]["epoch"] for session in sessions[1:])
     with ZipFile(args.archive) as z:
         manifest = json.loads(z.read("manifest.json"))
         rows = {k: [json.loads(line) for line in z.read(k + ".jsonl").splitlines()] for k in "AC"}
@@ -76,7 +80,7 @@ def main():
         all_pairs.append(pair)
         flags = set().union(*(exposure(row, samples, epochs) for row in pair.values()))
         starts = [timestamp(row) for row in pair.values()]
-        if min(starts) < resumed <= max(starts):
+        if any(min(starts) < resumed <= max(starts) for resumed in resumes):
             flags.add("across_pause")
         if flags:
             exclusions[truth] = sorted(flags)
