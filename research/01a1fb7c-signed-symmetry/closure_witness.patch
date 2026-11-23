@@ -1,0 +1,24 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -3205,3 +3205,21 @@
+     int maxGateCount = MAJ_NOBJS - p->nVars;
++    const char *transfer=getenv("REPLAY_PROOF_TRANSFER");
++    if (p->nVars==4 && !pPars->fOnlyAnd && transfer &&
++        (!strcmp(transfer,"size") || !strcmp(transfer,"pins")) &&
++        study_essential_four((unsigned)pTruth[0]&65535u)) {
++        int path[MAJ_NOBJS][3], gates=0;
++        const char *cap=getenv("REPLAY_PROOF_LIMIT");
++        int limit=cap ? atoi(cap) : 560;
++        act=study_extended_bound((unsigned)pTruth[0]&65535u,limit,&gates,path);
++        if (gates && study_at_known(pPars,&p,pTruth,act,gates,!strcmp(transfer,"pins") ? path : NULL)) {
++            printf("PREFIX author_verified=%s cost=%d gates=%d\n",transfer,act,gates);
++            PexaManPrintSolution(p,fCompl,true);
++            PexaManFree(p);
++            Abc_PrintTime(1,"Total runtime",Abc_Clock()-clkTotal);
++            return 0;
++        }
++        printf("PREFIX author_search_from=%d\n",act);
++        fflush(stdout);
++    }
+     const char *closure_mode = getenv("REPLAY_COLD_CLOSURE");
+     if (p->nVars==4 && !pPars->fOnlyAnd && closure_mode &&

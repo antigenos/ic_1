@@ -14,19 +14,21 @@ ROOT=HERE.parents[1]
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--prepared",type=Path,default=ROOT)
+    p.add_argument("--witness",action="store_true")
     args=p.parse_args()
     abc=args.prepared.resolve()/".local/abc"
     old=ROOT/".local/variants/signed-symmetry-confirmed-01a1fb7c"
     if not (old/"objects.rsp").exists():
         subprocess.run([sys.executable,str(HERE/"build.py"),"--prepared",str(args.prepared)],check=True)
-    out=ROOT/".local/variants/closure-01a1fb7c"
+    out=ROOT/".local/variants"/("closure-certified-01a1fb7c" if args.witness else "closure-01a1fb7c")
     out.mkdir(exist_ok=True)
     for file in ("pexact.c","first_gate.h","pair_gate.h","chain_order.h"):
         shutil.copyfile(old/file,out/file)
     shutil.copyfile(HERE/"closure_author.h",out/"closure_author.h")
-    patch=out/"closure.patch"
-    patch.write_text((HERE/"closure.patch").read_text(),encoding="utf-8",newline="\n")
-    subprocess.run(["git","apply","--directory="+out.relative_to(ROOT).as_posix(),str(patch)],cwd=ROOT,check=True)
+    for filename in (("closure.patch","closure_witness.patch") if args.witness else ("closure.patch",)):
+        patch=out/filename
+        patch.write_text((HERE/filename).read_text(),encoding="utf-8",newline="\n")
+        subprocess.run(["git","apply","--directory="+out.relative_to(ROOT).as_posix(),str(patch)],cwd=ROOT,check=True)
     if os.name=="nt":
         flags=["-DWIN32_NO_DLL","-DSIZEOF_VOID_P=8","-DSIZEOF_LONG=4","-DSIZEOF_INT=4"]
         libs=["-lm","-lws2_32","-lpsapi","-lshlwapi"]
