@@ -79,6 +79,10 @@ def summarize(source, panel, raw=None, samples=None):
             assert 0 < checks["D"] == int(d["retained_terminal_states"]) <= checks["T"]
             assert int(t["retained_terminal_states"]) == 0 and checks["T"] <= int(t["terminal_edges"])
             pair.update(check_calls=checks, stored_keys_D=checks["D"], terminal_edges=int(t["terminal_edges"]))
+        if panel == "storage" and all(r.get("peak_working_set_bytes") for r in measured.values()):
+            peak = {a: int(r["peak_working_set_bytes"]) for a,r in measured.items()}
+            assert all(n > 0 for n in peak.values())
+            pair["peak_working_set_MiB"] = {a: n/(1024**2) for a,n in peak.items()}
         pairs.append(pair)
     groups = {}
     for goal in ("optimum", "lower_bound"):

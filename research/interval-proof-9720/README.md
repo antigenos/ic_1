@@ -135,3 +135,7 @@ python family.py run BASE --host-samples .local/host-resume-01
 使用已定向测量的 0016（顺序 D、T）与已登记的界外层首例 012c（顺序 T、D），每次冷启动用严格界 433、墙钟上限 300 秒、逻辑核心 0。待确认面板结束后运行 `--storage-control`。分别报告完整秒数、终态入边数、实际匹配次数、保留的集合数、正确性与超时。两种实现的证明结果与非末状态数必须一致，独立复算所有返回电路。保留变慢的例子，两例结果只用于解释各自的时间差。
 
 用 `python terminal_report.py evidence/terminal-measurements.csv pilot` 可从公开表复算定向实验。确认面板和存储消融使用相应的 CSV，将最后的参数分别换为 `holdout`、`storage`。程序按预登记顺序核对每一对，分别报告求得最优值、证明界内无解的完整耗时与超时。配对比值以对照时间除以 T 的时间。若有本机原始文件，加 `--local-host-audit TRIALS SAMPLES` 可进一步核对每对测量的负载。定向实验在常规采样外保存了一条结束后 0.13 秒的独立观测，程序会从同目录的 `post-sample.json` 一并读取。
+
+存储消融在 Windows 上还记录每次求解进程的峰值工作集。计时结束后、子进程句柄关闭前读取系统记录的峰值字节数，覆盖解释器和算法的整个进程。公开结果包含这一资源指标，可与去重集合的条目数对照。[Microsoft 对峰值工作集的定义](https://learn.microsoft.com/en-us/windows/win32/api/psapi/ns-psapi-process_memory_counters)
+
+Knuth 官方归档已完整验过 gzip 校验和。归档为 24,981,579 字节，含 22 个条目，整体 SHA-256 为 `f4ea48a9b8cf2d2c2604cfb67a3cf7e41b6d863064a08b133cbd0563e2fe4a6a`。重新从完整归档取出的 `5chainst.w` 与前述成员校验和一致。[BOOLCHAINS 作者归档](https://cs.stanford.edu/~knuth/programs/boolchains.tgz)

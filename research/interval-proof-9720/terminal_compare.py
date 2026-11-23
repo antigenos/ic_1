@@ -34,6 +34,28 @@ runpy.run_path(script, run_name='__main__')
 """
 
 
+def peak_working_set_bytes(process):
+    """Read the Windows high-water mark through the child's still-open handle."""
+    import ctypes
+    from ctypes import wintypes
+
+    class Counters(ctypes.Structure):
+        _fields_ = [("size", wintypes.DWORD), ("faults", wintypes.DWORD),
+                    ("peak_working_set", ctypes.c_size_t), ("working_set", ctypes.c_size_t),
+                    ("peak_paged_pool", ctypes.c_size_t), ("paged_pool", ctypes.c_size_t),
+                    ("peak_nonpaged_pool", ctypes.c_size_t), ("nonpaged_pool", ctypes.c_size_t),
+                    ("pagefile", ctypes.c_size_t), ("peak_pagefile", ctypes.c_size_t)]
+
+    query = ctypes.WinDLL("psapi", use_last_error=True).GetProcessMemoryInfo
+    query.argtypes = [wintypes.HANDLE, ctypes.POINTER(Counters), wintypes.DWORD]
+    query.restype = wintypes.BOOL
+    counters = Counters()
+    counters.size = ctypes.sizeof(counters)
+    if not query(int(process._handle), ctypes.byref(counters), counters.size):
+        raise ctypes.WinError(ctypes.get_last_error())
+    return counters.peak_working_set
+
+
 def sources(work, arm, candidate_ref=None):
     dest = work / "source" / arm
     dest.mkdir(parents=True)
@@ -98,7 +120,8 @@ def export(source, destination, plan, bounds):
                     strict_activity_cap=cap, timeout_s=300, outcome=r["status"],
                     capped_elapsed_s=min(300., r["wall_s"]), optimum="", gates="", expanded_states="", terminal_edges="")
         if storage_control:
-            item.update(terminal_check_calls="", retained_terminal_states="")
+            item.update(terminal_check_calls="", retained_terminal_states="",
+                        peak_working_set_bytes=r.get("peak_working_set_bytes", ""))
         if r["status"] == "completed":
             answer = checked_answer(r, bounds)
             witness = answer.get("witness", {})
@@ -194,6 +217,8 @@ def main():
                     p.wait()
                     raise
                 row.update(wall_s=time.perf_counter()-start, exitcode=p.returncode, stdout=stdout, stderr=stderr)
+                if args.storage_control and os.name == "nt":
+                    row["peak_working_set_bytes"] = peak_working_set_bytes(p)
             evidence.write(json.dumps(row) + "\n")
             evidence.flush()
             if row["status"] == "completed":
