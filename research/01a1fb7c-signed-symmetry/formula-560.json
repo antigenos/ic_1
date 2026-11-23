@@ -1,0 +1,2183 @@
+{
+  "limit": 560,
+  "targets": 208,
+  "pairs": 602764,
+  "free_signals": 30520,
+  "finite_formulas": 188,
+  "sharing": {
+    "unnecessary": 140,
+    "required": 52,
+    "unknown_above_bound": 16
+  },
+  "enumeration_s": 0.7068800000015472,
+  "cases": {
+    "0001": {
+      "dag": 152,
+      "formula": 152,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b1110( c d )\n05 = 4'b1110( b 04 )\n06 = 4'b0001( a 05 )\nSwitching Activity=152\n",
+      "witness": {
+        "truth": "0001",
+        "activity": 152,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "0006": {
+      "dag": 208,
+      "formula": 224,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b0110( a b )\n05 = 4'b0010( d 04 )\n06 = 4'b0010( c 05 )\nSwitching Activity=224\n",
+      "witness": {
+        "truth": "0006",
+        "activity": 224,
+        "gates": 3
+      },
+      "sharing": "required"
+    },
+    "0007": {
+      "dag": 182,
+      "formula": 192,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b1000( a b )\n05 = 4'b1110( c d )\n06 = 4'b0001( 04 05 )\nSwitching Activity=192\n",
+      "witness": {
+        "truth": "0007",
+        "activity": 192,
+        "gates": 3
+      },
+      "sharing": "required"
+    },
+    "0016": {
+      "dag": 406,
+      "formula": 416,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( a b )\n05 = 4'b1110( a b )\n06 = 4'b0110( c 05 )\n07 = 4'b0010( d 06 )\n08 = 4'b0010( 04 07 )\nSwitching Activity=416\n",
+      "witness": {
+        "truth": "0016",
+        "activity": 416,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "0017": {
+      "dag": 400,
+      "formula": 422,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( a b )\n05 = 4'b1110( a b )\n06 = 4'b1000( c 05 )\n07 = 4'b1110( d 06 )\n08 = 4'b0001( 04 07 )\nSwitching Activity=422\n",
+      "witness": {
+        "truth": "0017",
+        "activity": 422,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "0018": {
+      "dag": 336,
+      "formula": 352,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( a c )\n05 = 4'b0110( a b )\n06 = 4'b0100( 04 05 )\n07 = 4'b0010( d 06 )\nSwitching Activity=352\n",
+      "witness": {
+        "truth": "0018",
+        "activity": 352,
+        "gates": 4
+      },
+      "sharing": "required"
+    },
+    "0019": {
+      "dag": 310,
+      "formula": 320,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b1000( a c )\n05 = 4'b0110( a b )\n06 = 4'b1110( d 05 )\n07 = 4'b0001( 04 06 )\nSwitching Activity=320\n",
+      "witness": {
+        "truth": "0019",
+        "activity": 320,
+        "gates": 4
+      },
+      "sharing": "required"
+    },
+    "001b": {
+      "dag": 304,
+      "formula": 304,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( c d )\n05 = 4'b0100( a 04 )\n06 = 4'b1110( b d )\n07 = 4'b1110( a 06 )\n08 = 4'b1101( 05 07 )\nSwitching Activity=304\n",
+      "witness": {
+        "truth": "001b",
+        "activity": 304,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "001e": {
+      "dag": 224,
+      "formula": 224,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b1110( a b )\n05 = 4'b0110( c 04 )\n06 = 4'b0010( d 05 )\nSwitching Activity=224\n",
+      "witness": {
+        "truth": "001e",
+        "activity": 224,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "001f": {
+      "dag": 216,
+      "formula": 216,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b1000( c 04 )\n06 = 4'b0001( d 05 )\nSwitching Activity=216\n",
+      "witness": {
+        "truth": "001f",
+        "activity": 216,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "003d": {
+      "dag": 326,
+      "formula": 336,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b0010( c 04 )\n06 = 4'b0110( b 05 )\n07 = 4'b0001( d 06 )\nSwitching Activity=336\n",
+      "witness": {
+        "truth": "003d",
+        "activity": 336,
+        "gates": 4
+      },
+      "sharing": "required"
+    },
+    "0069": {
+      "dag": 256,
+      "formula": 256,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b0110( b c )\n05 = 4'b0110( a 04 )\n06 = 4'b0001( d 05 )\nSwitching Activity=256\n",
+      "witness": {
+        "truth": "0069",
+        "activity": 256,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "006b": {
+      "dag": 432,
+      "formula": 432,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0010( a b )\n05 = 4'b0100( a b )\n06 = 4'b0100( c 05 )\n07 = 4'b0110( 04 06 )\n08 = 4'b0001( d 07 )\nSwitching Activity=432\n",
+      "witness": {
+        "truth": "006b",
+        "activity": 432,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "006f": {
+      "dag": 224,
+      "formula": 224,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b0110( a b )\n05 = 4'b0100( c 04 )\n06 = 4'b0001( d 05 )\nSwitching Activity=224\n",
+      "witness": {
+        "truth": "006f",
+        "activity": 224,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "007e": {
+      "dag": 352,
+      "formula": 352,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( a c )\n05 = 4'b0110( a b )\n06 = 4'b1110( 04 05 )\n07 = 4'b0010( d 06 )\nSwitching Activity=352\n",
+      "witness": {
+        "truth": "007e",
+        "activity": 352,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "007f": {
+      "dag": 152,
+      "formula": 152,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b1000( b c )\n05 = 4'b1000( a 04 )\n06 = 4'b0001( d 05 )\nSwitching Activity=152\n",
+      "witness": {
+        "truth": "007f",
+        "activity": 152,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "0116": {
+      "dag": 516,
+      "formula": 540,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b1110( a b )\n05 = 4'b1000( c d )\n06 = 4'b1110( 04 05 )\n07 = 4'b1000( a b )\n08 = 4'b1110( c d )\n09 = 4'b1110( 07 08 )\n10 = 4'b0110( 06 09 )\nSwitching Activity=540\n",
+      "witness": {
+        "truth": "0116",
+        "activity": 540,
+        "gates": 7
+      },
+      "sharing": "required"
+    },
+    "0117": {
+      "dag": 520,
+      "formula": 540,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b1000( c d )\n06 = 4'b1110( 04 05 )\n07 = 4'b1000( a b )\n08 = 4'b1110( c d )\n09 = 4'b1110( 07 08 )\n10 = 4'b0111( 06 09 )\nSwitching Activity=540\n",
+      "witness": {
+        "truth": "0117",
+        "activity": 540,
+        "gates": 7
+      },
+      "sharing": "required"
+    },
+    "0118": {
+      "dag": 446,
+      "formula": 462,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b1110( c d )\n05 = 4'b0100( b 04 )\n06 = 4'b1000( a 05 )\n07 = 4'b0110( c d )\n08 = 4'b0010( b 07 )\n09 = 4'b0010( a 08 )\n10 = 4'b0110( 06 09 )\nSwitching Activity=462\n",
+      "witness": {
+        "truth": "0118",
+        "activity": 462,
+        "gates": 7
+      },
+      "sharing": "required"
+    },
+    "0119": {
+      "dag": 420,
+      "formula": 452,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b1110( c d )\n05 = 4'b0100( b 04 )\n06 = 4'b1000( a 05 )\n07 = 4'b1110( a b )\n08 = 4'b1000( c d )\n09 = 4'b1110( 07 08 )\n10 = 4'b1101( 06 09 )\nSwitching Activity=452\n",
+      "witness": {
+        "truth": "0119",
+        "activity": 452,
+        "gates": 7
+      },
+      "sharing": "required"
+    },
+    "011a": {
+      "dag": 416,
+      "formula": 432,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1110( c d )\n05 = 4'b0100( a 04 )\n06 = 4'b0110( c d )\n07 = 4'b0010( b 06 )\n08 = 4'b0010( a 07 )\n09 = 4'b0110( 05 08 )\nSwitching Activity=432\n",
+      "witness": {
+        "truth": "011a",
+        "activity": 432,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "011b": {
+      "dag": 412,
+      "formula": 422,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( c d )\n05 = 4'b0100( a 04 )\n06 = 4'b1110( a b )\n07 = 4'b1000( c d )\n08 = 4'b1110( 06 07 )\n09 = 4'b1101( 05 08 )\nSwitching Activity=422\n",
+      "witness": {
+        "truth": "011b",
+        "activity": 422,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "011e": {
+      "dag": 356,
+      "formula": 366,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( c d )\n05 = 4'b1110( a b )\n06 = 4'b1000( c d )\n07 = 4'b1110( 05 06 )\n08 = 4'b0110( 04 07 )\nSwitching Activity=366\n",
+      "witness": {
+        "truth": "011e",
+        "activity": 366,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "011f": {
+      "dag": 356,
+      "formula": 366,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( c d )\n05 = 4'b1110( a b )\n06 = 4'b1000( c d )\n07 = 4'b1110( 05 06 )\n08 = 4'b0111( 04 07 )\nSwitching Activity=366\n",
+      "witness": {
+        "truth": "011f",
+        "activity": 366,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "012c": {
+      "dag": 448,
+      "formula": 448,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( b d )\n05 = 4'b0110( c 04 )\n06 = 4'b1110( a b )\n07 = 4'b0110( d 06 )\n08 = 4'b1000( 05 07 )\nSwitching Activity=448\n",
+      "witness": {
+        "truth": "012c",
+        "activity": 448,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "012d": {
+      "dag": 440,
+      "formula": 440,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b1000( d 04 )\n06 = 4'b0100( a b )\n07 = 4'b0110( c 06 )\n08 = 4'b0001( 05 07 )\nSwitching Activity=440\n",
+      "witness": {
+        "truth": "012d",
+        "activity": 440,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "012f": {
+      "dag": 432,
+      "formula": 432,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0100( a b )\n05 = 4'b0100( c 04 )\n06 = 4'b1110( a b )\n07 = 4'b1000( d 06 )\n08 = 4'b0001( 05 07 )\nSwitching Activity=432\n",
+      "witness": {
+        "truth": "012f",
+        "activity": 432,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "013c": {
+      "dag": 406,
+      "formula": 406,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0010( c d )\n05 = 4'b0010( b 04 )\n06 = 4'b0010( a 05 )\n07 = 4'b0110( b c )\n08 = 4'b0010( d 07 )\n09 = 4'b0110( 06 08 )\nSwitching Activity=406\n",
+      "witness": {
+        "truth": "013c",
+        "activity": 406,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "013d": {
+      "dag": 376,
+      "formula": 376,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1110( a 04 )\n06 = 4'b0110( b c )\n07 = 4'b0010( d 06 )\n08 = 4'b1011( 05 07 )\nSwitching Activity=376\n",
+      "witness": {
+        "truth": "013d",
+        "activity": 376,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "013e": {
+      "dag": 368,
+      "formula": 368,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( b c )\n05 = 4'b1110( a 04 )\n06 = 4'b1000( b c )\n07 = 4'b1110( d 06 )\n08 = 4'b0110( 05 07 )\nSwitching Activity=368\n",
+      "witness": {
+        "truth": "013e",
+        "activity": 368,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "013f": {
+      "dag": 368,
+      "formula": 368,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1110( a 04 )\n06 = 4'b1000( b c )\n07 = 4'b1110( d 06 )\n08 = 4'b0111( 05 07 )\nSwitching Activity=368\n",
+      "witness": {
+        "truth": "013f",
+        "activity": 368,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "0168": {
+      "dag": 480,
+      "formula": 480,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( a b )\n05 = 4'b0110( d 04 )\n06 = 4'b0110( b c )\n07 = 4'b0110( a 06 )\n08 = 4'b0100( 05 07 )\nSwitching Activity=480\n",
+      "witness": {
+        "truth": "0168",
+        "activity": 480,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "0169": {
+      "dag": 472,
+      "formula": 472,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b1000( d 04 )\n06 = 4'b0110( b c )\n07 = 4'b0110( a 06 )\n08 = 4'b0001( 05 07 )\nSwitching Activity=472\n",
+      "witness": {
+        "truth": "0169",
+        "activity": 472,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "016a": {
+      "dag": 502,
+      "formula": 502,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b0010( c d )\n05 = 4'b0010( b 04 )\n06 = 4'b0010( a 05 )\n07 = 4'b1000( b c )\n08 = 4'b0110( a 07 )\n09 = 4'b0010( d 08 )\n10 = 4'b0110( 06 09 )\nSwitching Activity=502\n",
+      "witness": {
+        "truth": "016a",
+        "activity": 502,
+        "gates": 7
+      },
+      "sharing": "unnecessary"
+    },
+    "016b": {
+      "dag": 472,
+      "formula": 472,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1110( a 04 )\n06 = 4'b1000( b c )\n07 = 4'b0110( a 06 )\n08 = 4'b0010( d 07 )\n09 = 4'b1011( 05 08 )\nSwitching Activity=472\n",
+      "witness": {
+        "truth": "016b",
+        "activity": 472,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "016e": {
+      "dag": 448,
+      "formula": 448,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( a b )\n05 = 4'b0110( d 04 )\n06 = 4'b0110( a b )\n07 = 4'b0100( c 06 )\n08 = 4'b0100( 05 07 )\nSwitching Activity=448\n",
+      "witness": {
+        "truth": "016e",
+        "activity": 448,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "016f": {
+      "dag": 440,
+      "formula": 440,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b1000( d 04 )\n06 = 4'b0110( a b )\n07 = 4'b0100( c 06 )\n08 = 4'b0001( 05 07 )\nSwitching Activity=440\n",
+      "witness": {
+        "truth": "016f",
+        "activity": 440,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "017e": {
+      "dag": 412,
+      "formula": 412,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b1110( b c )\n05 = 4'b1110( a 04 )\n06 = 4'b0100( c d )\n07 = 4'b1000( b 06 )\n08 = 4'b1000( a 07 )\n09 = 4'b0100( 05 08 )\n10 = 4'b0110( d 09 )\nSwitching Activity=412\n",
+      "witness": {
+        "truth": "017e",
+        "activity": 412,
+        "gates": 7
+      },
+      "sharing": "unnecessary"
+    },
+    "017f": {
+      "dag": 420,
+      "formula": 420,
+      "circuit": "Realization of given 4-input function using 8 two-input gates complementary=1:\n04 = 4'b0100( c d )\n05 = 4'b1000( b 04 )\n06 = 4'b1000( a 05 )\n07 = 4'b0010( c d )\n08 = 4'b0010( b 07 )\n09 = 4'b0010( a 08 )\n10 = 4'b0110( 06 09 )\n11 = 4'b1001( d 10 )\nSwitching Activity=420\n",
+      "witness": {
+        "truth": "017f",
+        "activity": 420,
+        "gates": 8
+      },
+      "sharing": "unnecessary"
+    },
+    "0180": {
+      "dag": 364,
+      "formula": 364,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b0100( c d )\n05 = 4'b1000( b 04 )\n06 = 4'b1000( a 05 )\n07 = 4'b0010( c d )\n08 = 4'b0010( b 07 )\n09 = 4'b0010( a 08 )\n10 = 4'b0110( 06 09 )\nSwitching Activity=364\n",
+      "witness": {
+        "truth": "0180",
+        "activity": 364,
+        "gates": 7
+      },
+      "sharing": "unnecessary"
+    },
+    "0181": {
+      "dag": 334,
+      "formula": 334,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1110( a 04 )\n06 = 4'b0100( c d )\n07 = 4'b1000( b 06 )\n08 = 4'b1000( a 07 )\n09 = 4'b1011( 05 08 )\nSwitching Activity=334\n",
+      "witness": {
+        "truth": "0181",
+        "activity": 334,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "0182": {
+      "dag": 438,
+      "formula": 448,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0010( a b )\n05 = 4'b0110( b c )\n06 = 4'b0110( a d )\n07 = 4'b0010( 05 06 )\n08 = 4'b0010( 04 07 )\nSwitching Activity=448\n",
+      "witness": {
+        "truth": "0182",
+        "activity": 448,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "0183": {
+      "dag": 416,
+      "formula": 432,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( a d )\n05 = 4'b0010( a b )\n06 = 4'b0100( c 05 )\n07 = 4'b0110( b 06 )\n08 = 4'b0001( 04 07 )\nSwitching Activity=432\n",
+      "witness": {
+        "truth": "0183",
+        "activity": 432,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "0186": {
+      "dag": 448,
+      "formula": 448,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( a b )\n05 = 4'b0110( d 04 )\n06 = 4'b1000( a b )\n07 = 4'b0110( c 06 )\n08 = 4'b0100( 05 07 )\nSwitching Activity=448\n",
+      "witness": {
+        "truth": "0186",
+        "activity": 448,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "0187": {
+      "dag": 440,
+      "formula": 440,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b1000( d 04 )\n06 = 4'b1000( a b )\n07 = 4'b0110( c 06 )\n08 = 4'b0001( 05 07 )\nSwitching Activity=440\n",
+      "witness": {
+        "truth": "0187",
+        "activity": 440,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "0189": {
+      "dag": 304,
+      "formula": 304,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0100( b d )\n05 = 4'b1000( a 04 )\n06 = 4'b1110( b c )\n07 = 4'b1110( a 06 )\n08 = 4'b1101( 05 07 )\nSwitching Activity=304\n",
+      "witness": {
+        "truth": "0189",
+        "activity": 304,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "018b": {
+      "dag": 412,
+      "formula": 414,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0010( a b )\n05 = 4'b0010( b c )\n06 = 4'b1000( a d )\n07 = 4'b1110( 05 06 )\n08 = 4'b1001( 04 07 )\nSwitching Activity=414\n",
+      "witness": {
+        "truth": "018b",
+        "activity": 414,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "018f": {
+      "dag": 432,
+      "formula": 432,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( a b )\n05 = 4'b0100( c 04 )\n06 = 4'b1110( a b )\n07 = 4'b1000( d 06 )\n08 = 4'b0001( 05 07 )\nSwitching Activity=432\n",
+      "witness": {
+        "truth": "018f",
+        "activity": 432,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "0196": {
+      "dag": 534,
+      "formula": 534,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b0010( c d )\n05 = 4'b0010( b 04 )\n06 = 4'b0010( a 05 )\n07 = 4'b0110( b c )\n08 = 4'b0110( a 07 )\n09 = 4'b0010( d 08 )\n10 = 4'b0110( 06 09 )\nSwitching Activity=534\n",
+      "witness": {
+        "truth": "0196",
+        "activity": 534,
+        "gates": 7
+      },
+      "sharing": "unnecessary"
+    },
+    "0197": {
+      "dag": 504,
+      "formula": 504,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1110( a 04 )\n06 = 4'b0110( b c )\n07 = 4'b0110( a 06 )\n08 = 4'b0010( d 07 )\n09 = 4'b1011( 05 08 )\nSwitching Activity=504\n",
+      "witness": {
+        "truth": "0197",
+        "activity": 504,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "0198": {
+      "dag": 352,
+      "formula": 352,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( a b )\n05 = 4'b1110( a c )\n06 = 4'b0110( d 05 )\n07 = 4'b0010( 04 06 )\nSwitching Activity=352\n",
+      "witness": {
+        "truth": "0198",
+        "activity": 352,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "0199": {
+      "dag": 344,
+      "formula": 344,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b0110( a b )\n05 = 4'b1110( a c )\n06 = 4'b1000( d 05 )\n07 = 4'b0001( 04 06 )\nSwitching Activity=344\n",
+      "witness": {
+        "truth": "0199",
+        "activity": 344,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "019a": {
+      "dag": 446,
+      "formula": 446,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( a d )\n05 = 4'b0110( c d )\n06 = 4'b0010( b 05 )\n07 = 4'b1110( 04 06 )\n08 = 4'b0110( a 07 )\nSwitching Activity=446\n",
+      "witness": {
+        "truth": "019a",
+        "activity": 446,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "019b": {
+      "dag": 472,
+      "formula": 472,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1110( a 04 )\n06 = 4'b0010( b c )\n07 = 4'b0110( a 06 )\n08 = 4'b0010( d 07 )\n09 = 4'b1011( 05 08 )\nSwitching Activity=472\n",
+      "witness": {
+        "truth": "019b",
+        "activity": 472,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "019e": {
+      "dag": 496,
+      "formula": 496,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1110( b c )\n05 = 4'b1110( a 04 )\n06 = 4'b0110( a b )\n07 = 4'b1000( c 06 )\n08 = 4'b1110( d 07 )\n09 = 4'b0110( 05 08 )\nSwitching Activity=496\n",
+      "witness": {
+        "truth": "019e",
+        "activity": 496,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "019f": {
+      "dag": 496,
+      "formula": 496,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1110( a 04 )\n06 = 4'b0110( a b )\n07 = 4'b1000( c 06 )\n08 = 4'b1110( d 07 )\n09 = 4'b0111( 05 08 )\nSwitching Activity=496\n",
+      "witness": {
+        "truth": "019f",
+        "activity": 496,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "01a8": {
+      "dag": 352,
+      "formula": 352,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( a d )\n05 = 4'b1110( b c )\n06 = 4'b0110( a 05 )\n07 = 4'b0100( 04 06 )\nSwitching Activity=352\n",
+      "witness": {
+        "truth": "01a8",
+        "activity": 352,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "01a9": {
+      "dag": 318,
+      "formula": 318,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b1000( a d )\n05 = 4'b1110( b c )\n06 = 4'b0010( 04 05 )\n07 = 4'b1001( a 06 )\nSwitching Activity=318\n",
+      "witness": {
+        "truth": "01a9",
+        "activity": 318,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "01aa": {
+      "dag": 278,
+      "formula": 278,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0100( a d )\n05 = 4'b0010( c d )\n06 = 4'b0010( b 05 )\n07 = 4'b0010( a 06 )\n08 = 4'b0110( 04 07 )\nSwitching Activity=278\n",
+      "witness": {
+        "truth": "01aa",
+        "activity": 278,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "01ab": {
+      "dag": 248,
+      "formula": 248,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b0100( a d )\n05 = 4'b1110( b c )\n06 = 4'b1110( a 05 )\n07 = 4'b1101( 04 06 )\nSwitching Activity=248\n",
+      "witness": {
+        "truth": "01ab",
+        "activity": 248,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "01ac": {
+      "dag": 476,
+      "formula": 486,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0010( a c )\n05 = 4'b1110( d 04 )\n06 = 4'b1000( a d )\n07 = 4'b1110( b c )\n08 = 4'b1110( 06 07 )\n09 = 4'b0110( 05 08 )\nSwitching Activity=486\n",
+      "witness": {
+        "truth": "01ac",
+        "activity": 486,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "01ad": {
+      "dag": 464,
+      "formula": 496,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0010( a c )\n05 = 4'b1110( d 04 )\n06 = 4'b0110( a d )\n07 = 4'b0010( c 06 )\n08 = 4'b0010( b 07 )\n09 = 4'b1001( 05 08 )\nSwitching Activity=496\n",
+      "witness": {
+        "truth": "01ad",
+        "activity": 496,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "01ae": {
+      "dag": 320,
+      "formula": 320,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0010( a c )\n05 = 4'b1110( a b )\n06 = 4'b0110( d 05 )\n07 = 4'b0010( 04 06 )\nSwitching Activity=320\n",
+      "witness": {
+        "truth": "01ae",
+        "activity": 320,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "01af": {
+      "dag": 312,
+      "formula": 312,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b0010( a c )\n05 = 4'b1110( a b )\n06 = 4'b1000( d 05 )\n07 = 4'b0001( 04 06 )\nSwitching Activity=312\n",
+      "witness": {
+        "truth": "01af",
+        "activity": 312,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "01bc": {
+      "dag": 516,
+      "formula": 548,
+      "circuit": "Realization of given 4-input function using 8 two-input gates complementary=0:\n04 = 4'b0100( c d )\n05 = 4'b1000( b 04 )\n06 = 4'b0010( a 05 )\n07 = 4'b1000( a d )\n08 = 4'b1110( b c )\n09 = 4'b1110( 07 08 )\n10 = 4'b0010( 06 09 )\n11 = 4'b0110( d 10 )\nSwitching Activity=548\n",
+      "witness": {
+        "truth": "01bc",
+        "activity": 548,
+        "gates": 8
+      },
+      "sharing": "required"
+    },
+    "01bd": {
+      "dag": 514,
+      "formula": 540,
+      "circuit": "Realization of given 4-input function using 8 two-input gates complementary=1:\n04 = 4'b0100( c d )\n05 = 4'b1000( b 04 )\n06 = 4'b0010( a 05 )\n07 = 4'b0110( a d )\n08 = 4'b0010( c 07 )\n09 = 4'b0010( b 08 )\n10 = 4'b0110( 06 09 )\n11 = 4'b1001( d 10 )\nSwitching Activity=540\n",
+      "witness": {
+        "truth": "01bd",
+        "activity": 540,
+        "gates": 8
+      },
+      "sharing": "required"
+    },
+    "01be": {
+      "dag": 388,
+      "formula": 398,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( b d )\n05 = 4'b0110( b c )\n06 = 4'b1110( a 05 )\n07 = 4'b1110( 04 06 )\n08 = 4'b0110( d 07 )\nSwitching Activity=398\n",
+      "witness": {
+        "truth": "01be",
+        "activity": 398,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "01bf": {
+      "dag": 392,
+      "formula": 408,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( b d )\n05 = 4'b0110( b c )\n06 = 4'b0100( 04 05 )\n07 = 4'b0010( a 06 )\n08 = 4'b1001( d 07 )\nSwitching Activity=408\n",
+      "witness": {
+        "truth": "01bf",
+        "activity": 408,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "01e8": {
+      "dag": 560,
+      "formula": null,
+      "sharing": "required"
+    },
+    "01e9": {
+      "dag": 542,
+      "formula": null,
+      "sharing": "required"
+    },
+    "01ea": {
+      "dag": 416,
+      "formula": 448,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( a b )\n05 = 4'b0110( d 04 )\n06 = 4'b0110( b c )\n07 = 4'b0010( a 06 )\n08 = 4'b0100( 05 07 )\nSwitching Activity=448\n",
+      "witness": {
+        "truth": "01ea",
+        "activity": 448,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "01eb": {
+      "dag": 408,
+      "formula": 440,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b1000( d 04 )\n06 = 4'b0110( b c )\n07 = 4'b0010( a 06 )\n08 = 4'b0001( 05 07 )\nSwitching Activity=440\n",
+      "witness": {
+        "truth": "01eb",
+        "activity": 440,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "01ee": {
+      "dag": 260,
+      "formula": 270,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b1110( a b )\n05 = 4'b1000( c d )\n06 = 4'b1110( 04 05 )\n07 = 4'b0110( d 06 )\nSwitching Activity=270\n",
+      "witness": {
+        "truth": "01ee",
+        "activity": 270,
+        "gates": 4
+      },
+      "sharing": "required"
+    },
+    "01ef": {
+      "dag": 264,
+      "formula": 280,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b0110( c d )\n05 = 4'b0010( b 04 )\n06 = 4'b0010( a 05 )\n07 = 4'b1001( d 06 )\nSwitching Activity=280\n",
+      "witness": {
+        "truth": "01ef",
+        "activity": 280,
+        "gates": 4
+      },
+      "sharing": "required"
+    },
+    "01fe": {
+      "dag": 152,
+      "formula": 152,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b1110( b c )\n05 = 4'b1110( a 04 )\n06 = 4'b0110( d 05 )\nSwitching Activity=152\n",
+      "witness": {
+        "truth": "01fe",
+        "activity": 152,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "033d": {
+      "dag": 468,
+      "formula": 486,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1000( c d )\n05 = 4'b1110( b 04 )\n06 = 4'b1110( a b )\n07 = 4'b1110( c d )\n08 = 4'b0100( 06 07 )\n09 = 4'b1001( 05 08 )\nSwitching Activity=486\n",
+      "witness": {
+        "truth": "033d",
+        "activity": 486,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "0356": {
+      "dag": 192,
+      "formula": 192,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b1110( b c )\n05 = 4'b1110( a d )\n06 = 4'b0110( 04 05 )\nSwitching Activity=192\n",
+      "witness": {
+        "truth": "0356",
+        "activity": 192,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "0357": {
+      "dag": 192,
+      "formula": 192,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1110( a d )\n06 = 4'b0111( 04 05 )\nSwitching Activity=192\n",
+      "witness": {
+        "truth": "0357",
+        "activity": 192,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "0358": {
+      "dag": 414,
+      "formula": 414,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( c d )\n05 = 4'b1110( b c )\n06 = 4'b1110( a d )\n07 = 4'b1000( 05 06 )\n08 = 4'b0110( 04 07 )\nSwitching Activity=414\n",
+      "witness": {
+        "truth": "0358",
+        "activity": 414,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "0359": {
+      "dag": 320,
+      "formula": 320,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b1110( a d )\n05 = 4'b0110( b d )\n06 = 4'b0010( c 05 )\n07 = 4'b1001( 04 06 )\nSwitching Activity=320\n",
+      "witness": {
+        "truth": "0359",
+        "activity": 320,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "035a": {
+      "dag": 312,
+      "formula": 312,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b1110( a d )\n05 = 4'b1000( b d )\n06 = 4'b1110( c 05 )\n07 = 4'b0110( 04 06 )\nSwitching Activity=312\n",
+      "witness": {
+        "truth": "035a",
+        "activity": 312,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "035b": {
+      "dag": 320,
+      "formula": 320,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b0110( a c )\n06 = 4'b0010( d 05 )\n07 = 4'b1011( 04 06 )\nSwitching Activity=320\n",
+      "witness": {
+        "truth": "035b",
+        "activity": 320,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "035e": {
+      "dag": 422,
+      "formula": 422,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( a d )\n05 = 4'b0100( a d )\n06 = 4'b0100( b 05 )\n07 = 4'b1110( c 06 )\n08 = 4'b0110( 04 07 )\nSwitching Activity=422\n",
+      "witness": {
+        "truth": "035e",
+        "activity": 422,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "035f": {
+      "dag": 312,
+      "formula": 312,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b1000( a c )\n05 = 4'b1110( b c )\n06 = 4'b1000( d 05 )\n07 = 4'b0001( 04 06 )\nSwitching Activity=312\n",
+      "witness": {
+        "truth": "035f",
+        "activity": 312,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "0368": {
+      "dag": 534,
+      "formula": 534,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1000( b c )\n05 = 4'b1110( d 04 )\n06 = 4'b1110( b c )\n07 = 4'b1110( a d )\n08 = 4'b1000( 06 07 )\n09 = 4'b0110( 05 08 )\nSwitching Activity=534\n",
+      "witness": {
+        "truth": "0368",
+        "activity": 534,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "0369": {
+      "dag": 416,
+      "formula": 416,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1000( b c )\n06 = 4'b0110( a 05 )\n07 = 4'b0010( d 06 )\n08 = 4'b1001( 04 07 )\nSwitching Activity=416\n",
+      "witness": {
+        "truth": "0369",
+        "activity": 416,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "036a": {
+      "dag": 448,
+      "formula": 448,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0100( a d )\n05 = 4'b0110( b d )\n06 = 4'b0110( b c )\n07 = 4'b0100( 05 06 )\n08 = 4'b0110( 04 07 )\nSwitching Activity=448\n",
+      "witness": {
+        "truth": "036a",
+        "activity": 448,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "036b": {
+      "dag": 416,
+      "formula": 416,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1000( b c )\n06 = 4'b0110( a 05 )\n07 = 4'b0010( d 06 )\n08 = 4'b1011( 04 07 )\nSwitching Activity=416\n",
+      "witness": {
+        "truth": "036b",
+        "activity": 416,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "036c": {
+      "dag": 432,
+      "formula": 432,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( c d )\n05 = 4'b1110( b 04 )\n06 = 4'b1000( a c )\n07 = 4'b1110( d 06 )\n08 = 4'b0110( 05 07 )\nSwitching Activity=432\n",
+      "witness": {
+        "truth": "036c",
+        "activity": 432,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "036d": {
+      "dag": 518,
+      "formula": 524,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0100( b d )\n05 = 4'b0100( a d )\n06 = 4'b0100( b c )\n07 = 4'b1110( 05 06 )\n08 = 4'b0110( 04 07 )\n09 = 4'b1001( c 08 )\nSwitching Activity=524\n",
+      "witness": {
+        "truth": "036d",
+        "activity": 524,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "036e": {
+      "dag": 448,
+      "formula": 448,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( a b )\n05 = 4'b0010( d 04 )\n06 = 4'b0110( b d )\n07 = 4'b0010( c 06 )\n08 = 4'b1110( 05 07 )\nSwitching Activity=448\n",
+      "witness": {
+        "truth": "036e",
+        "activity": 448,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "036f": {
+      "dag": 416,
+      "formula": 416,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1000( a c )\n06 = 4'b0110( b 05 )\n07 = 4'b0010( d 06 )\n08 = 4'b1011( 04 07 )\nSwitching Activity=416\n",
+      "witness": {
+        "truth": "036f",
+        "activity": 416,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "037c": {
+      "dag": 374,
+      "formula": 374,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( b c )\n05 = 4'b1000( b c )\n06 = 4'b1000( a 05 )\n07 = 4'b1110( d 06 )\n08 = 4'b0110( 04 07 )\nSwitching Activity=374\n",
+      "witness": {
+        "truth": "037c",
+        "activity": 374,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "037d": {
+      "dag": 480,
+      "formula": 496,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0010( c d )\n05 = 4'b0010( b 04 )\n06 = 4'b0110( b c )\n07 = 4'b0100( a 06 )\n08 = 4'b1110( d 07 )\n09 = 4'b1101( 05 08 )\nSwitching Activity=496\n",
+      "witness": {
+        "truth": "037d",
+        "activity": 496,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "037e": {
+      "dag": 440,
+      "formula": 440,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( b c )\n05 = 4'b0110( b c )\n06 = 4'b0100( a 05 )\n07 = 4'b1110( d 06 )\n08 = 4'b0110( 04 07 )\nSwitching Activity=440\n",
+      "witness": {
+        "truth": "037e",
+        "activity": 440,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "03c1": {
+      "dag": 412,
+      "formula": 422,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0100( c d )\n05 = 4'b1000( b 04 )\n06 = 4'b0100( a d )\n07 = 4'b1110( b c )\n08 = 4'b1110( 06 07 )\n09 = 4'b1101( 05 08 )\nSwitching Activity=422\n",
+      "witness": {
+        "truth": "03c1",
+        "activity": 422,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "03c5": {
+      "dag": 416,
+      "formula": 416,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b0100( a c )\n06 = 4'b0110( b 05 )\n07 = 4'b0010( d 06 )\n08 = 4'b1001( 04 07 )\nSwitching Activity=416\n",
+      "witness": {
+        "truth": "03c5",
+        "activity": 416,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "03c6": {
+      "dag": 432,
+      "formula": 432,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( c d )\n05 = 4'b0100( b 04 )\n06 = 4'b1110( a d )\n07 = 4'b0010( c 06 )\n08 = 4'b0110( 05 07 )\nSwitching Activity=432\n",
+      "witness": {
+        "truth": "03c6",
+        "activity": 432,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "03c7": {
+      "dag": 356,
+      "formula": 366,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b0100( b d )\n06 = 4'b0100( a c )\n07 = 4'b0100( 05 06 )\n08 = 4'b1011( 04 07 )\nSwitching Activity=366\n",
+      "witness": {
+        "truth": "03c7",
+        "activity": 366,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "03d4": {
+      "dag": 440,
+      "formula": 440,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( b c )\n05 = 4'b0110( b c )\n06 = 4'b1000( a 05 )\n07 = 4'b1110( d 06 )\n08 = 4'b0110( 04 07 )\nSwitching Activity=440\n",
+      "witness": {
+        "truth": "03d4",
+        "activity": 440,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "03d5": {
+      "dag": 448,
+      "formula": 448,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( a d )\n05 = 4'b0110( b d )\n06 = 4'b0110( b c )\n07 = 4'b0100( 05 06 )\n08 = 4'b1011( 04 07 )\nSwitching Activity=448\n",
+      "witness": {
+        "truth": "03d5",
+        "activity": 448,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "03d6": {
+      "dag": 422,
+      "formula": 422,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( b c )\n05 = 4'b1000( b c )\n06 = 4'b0100( a 05 )\n07 = 4'b1110( d 06 )\n08 = 4'b0110( 04 07 )\nSwitching Activity=422\n",
+      "witness": {
+        "truth": "03d6",
+        "activity": 422,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "03d7": {
+      "dag": 422,
+      "formula": 422,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1000( b c )\n06 = 4'b0100( a 05 )\n07 = 4'b1110( d 06 )\n08 = 4'b0111( 04 07 )\nSwitching Activity=422\n",
+      "witness": {
+        "truth": "03d7",
+        "activity": 422,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "03d8": {
+      "dag": 534,
+      "formula": 552,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1110( a d )\n05 = 4'b1000( b 04 )\n06 = 4'b0100( a d )\n07 = 4'b0100( c 06 )\n08 = 4'b1110( 05 07 )\n09 = 4'b0110( d 08 )\nSwitching Activity=552\n",
+      "witness": {
+        "truth": "03d8",
+        "activity": 552,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "03d9": {
+      "dag": 446,
+      "formula": 446,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0100( a d )\n05 = 4'b0110( b d )\n06 = 4'b1000( c 05 )\n07 = 4'b1110( 04 06 )\n08 = 4'b1001( b 07 )\nSwitching Activity=446\n",
+      "witness": {
+        "truth": "03d9",
+        "activity": 446,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "03db": {
+      "dag": 496,
+      "formula": 496,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b0100( c d )\n06 = 4'b0010( a 05 )\n07 = 4'b0100( b d )\n08 = 4'b1000( a 07 )\n09 = 4'b0110( 06 08 )\n10 = 4'b1011( 04 09 )\nSwitching Activity=496\n",
+      "witness": {
+        "truth": "03db",
+        "activity": 496,
+        "gates": 7
+      },
+      "sharing": "unnecessary"
+    },
+    "03dc": {
+      "dag": 326,
+      "formula": 326,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0100( a d )\n05 = 4'b0100( c 04 )\n06 = 4'b1110( b 05 )\n07 = 4'b0110( d 06 )\nSwitching Activity=326\n",
+      "witness": {
+        "truth": "03dc",
+        "activity": 326,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "03dd": {
+      "dag": 368,
+      "formula": 368,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b d )\n05 = 4'b0100( a 04 )\n06 = 4'b1110( b c )\n07 = 4'b1000( d 06 )\n08 = 4'b1001( 05 07 )\nSwitching Activity=368\n",
+      "witness": {
+        "truth": "03dd",
+        "activity": 368,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "03de": {
+      "dag": 312,
+      "formula": 312,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b1110( b c )\n05 = 4'b0100( a b )\n06 = 4'b1110( d 05 )\n07 = 4'b0110( 04 06 )\nSwitching Activity=312\n",
+      "witness": {
+        "truth": "03de",
+        "activity": 312,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "0660": {
+      "dag": 256,
+      "formula": 256,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b0110( c d )\n05 = 4'b0110( a b )\n06 = 4'b1000( 04 05 )\nSwitching Activity=256\n",
+      "witness": {
+        "truth": "0660",
+        "activity": 256,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "0661": {
+      "dag": 534,
+      "formula": 534,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b1110( c d )\n05 = 4'b1110( b 04 )\n06 = 4'b1110( a 05 )\n07 = 4'b0110( c d )\n08 = 4'b0110( a b )\n09 = 4'b1000( 07 08 )\n10 = 4'b1011( 06 09 )\nSwitching Activity=534\n",
+      "witness": {
+        "truth": "0661",
+        "activity": 534,
+        "gates": 7
+      },
+      "sharing": "unnecessary"
+    },
+    "0662": {
+      "dag": 454,
+      "formula": 464,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( a b )\n05 = 4'b0100( a c )\n06 = 4'b1110( d 05 )\n07 = 4'b0110( c 06 )\n08 = 4'b1000( 04 07 )\nSwitching Activity=464\n",
+      "witness": {
+        "truth": "0662",
+        "activity": 464,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "0663": {
+      "dag": 440,
+      "formula": 440,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( c d )\n05 = 4'b1110( c d )\n06 = 4'b0010( a 05 )\n07 = 4'b0110( b 06 )\n08 = 4'b0001( 04 07 )\nSwitching Activity=440\n",
+      "witness": {
+        "truth": "0663",
+        "activity": 440,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "0666": {
+      "dag": 224,
+      "formula": 224,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b1000( c d )\n05 = 4'b0110( a b )\n06 = 4'b0010( 04 05 )\nSwitching Activity=224\n",
+      "witness": {
+        "truth": "0666",
+        "activity": 224,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "0667": {
+      "dag": 496,
+      "formula": 496,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( c d )\n05 = 4'b1110( a 04 )\n06 = 4'b1000( c d )\n07 = 4'b0110( a b )\n08 = 4'b0010( 06 07 )\n09 = 4'b1011( 05 08 )\nSwitching Activity=496\n",
+      "witness": {
+        "truth": "0667",
+        "activity": 496,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "0669": {
+      "dag": 440,
+      "formula": 440,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( c d )\n05 = 4'b1000( c d )\n06 = 4'b0110( a b )\n07 = 4'b0010( 05 06 )\n08 = 4'b1001( 04 07 )\nSwitching Activity=440\n",
+      "witness": {
+        "truth": "0669",
+        "activity": 440,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "066b": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "066f": {
+      "dag": 440,
+      "formula": 440,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( c d )\n05 = 4'b1110( c d )\n06 = 4'b0110( a b )\n07 = 4'b0100( 05 06 )\n08 = 4'b0001( 04 07 )\nSwitching Activity=440\n",
+      "witness": {
+        "truth": "066f",
+        "activity": 440,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "0672": {
+      "dag": 536,
+      "formula": 536,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1000( a b )\n05 = 4'b1110( a c )\n06 = 4'b1110( b c )\n07 = 4'b1000( d 06 )\n08 = 4'b0110( 05 07 )\n09 = 4'b0010( 04 08 )\nSwitching Activity=536\n",
+      "witness": {
+        "truth": "0672",
+        "activity": 536,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "0673": {
+      "dag": 448,
+      "formula": 448,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b d )\n05 = 4'b0110( c d )\n06 = 4'b0110( a b )\n07 = 4'b1000( 05 06 )\n08 = 4'b1011( 04 07 )\nSwitching Activity=448\n",
+      "witness": {
+        "truth": "0673",
+        "activity": 448,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "0676": {
+      "dag": 432,
+      "formula": 432,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( c d )\n05 = 4'b0010( a c )\n06 = 4'b1110( b 05 )\n07 = 4'b0110( a 06 )\n08 = 4'b0010( 04 07 )\nSwitching Activity=432\n",
+      "witness": {
+        "truth": "0676",
+        "activity": 432,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "0678": {
+      "dag": 560,
+      "formula": 560,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1000( a b )\n05 = 4'b1110( d 04 )\n06 = 4'b0110( a b )\n07 = 4'b0100( d 06 )\n08 = 4'b1110( c 07 )\n09 = 4'b0110( 05 08 )\nSwitching Activity=560\n",
+      "witness": {
+        "truth": "0678",
+        "activity": 560,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "0679": {
+      "dag": 502,
+      "formula": 502,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0110( a b )\n05 = 4'b0010( c 04 )\n06 = 4'b1000( b c )\n07 = 4'b1000( a 06 )\n08 = 4'b1110( d 07 )\n09 = 4'b1001( 05 08 )\nSwitching Activity=502\n",
+      "witness": {
+        "truth": "0679",
+        "activity": 502,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "067a": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "067b": {
+      "dag": 536,
+      "formula": 536,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1000( a b )\n05 = 4'b1110( d 04 )\n06 = 4'b1000( a d )\n07 = 4'b0110( b 06 )\n08 = 4'b0010( c 07 )\n09 = 4'b1001( 05 08 )\nSwitching Activity=536\n",
+      "witness": {
+        "truth": "067b",
+        "activity": 536,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "067e": {
+      "dag": 544,
+      "formula": 544,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1000( c d )\n05 = 4'b0110( a b )\n06 = 4'b0100( a d )\n07 = 4'b0110( c 06 )\n08 = 4'b1110( 05 07 )\n09 = 4'b0010( 04 08 )\nSwitching Activity=544\n",
+      "witness": {
+        "truth": "067e",
+        "activity": 544,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "0690": {
+      "dag": 384,
+      "formula": 384,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( c d )\n05 = 4'b0110( b c )\n06 = 4'b0110( a 05 )\n07 = 4'b1000( 04 06 )\nSwitching Activity=384\n",
+      "witness": {
+        "truth": "0690",
+        "activity": 384,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "0691": {
+      "dag": 540,
+      "formula": null,
+      "sharing": "required"
+    },
+    "0693": {
+      "dag": 528,
+      "formula": 528,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0100( a c )\n05 = 4'b1110( a d )\n06 = 4'b1000( c d )\n07 = 4'b0100( b 06 )\n08 = 4'b0110( 05 07 )\n09 = 4'b1001( 04 08 )\nSwitching Activity=528\n",
+      "witness": {
+        "truth": "0693",
+        "activity": 528,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "0696": {
+      "dag": 344,
+      "formula": 344,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b1000( c d )\n05 = 4'b0110( a b )\n06 = 4'b1110( 04 05 )\n07 = 4'b0110( c 06 )\nSwitching Activity=344\n",
+      "witness": {
+        "truth": "0696",
+        "activity": 344,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "0697": {
+      "dag": 484,
+      "formula": 542,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0100( a c )\n05 = 4'b0100( b c )\n06 = 4'b0110( a b )\n07 = 4'b1110( d 06 )\n08 = 4'b0010( 05 07 )\n09 = 4'b1001( 04 08 )\nSwitching Activity=542\n",
+      "witness": {
+        "truth": "0697",
+        "activity": 542,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "069f": {
+      "dag": 320,
+      "formula": 352,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b0110( c d )\n05 = 4'b0110( a b )\n06 = 4'b0100( 04 05 )\n07 = 4'b1001( c 06 )\nSwitching Activity=352\n",
+      "witness": {
+        "truth": "069f",
+        "activity": 352,
+        "gates": 4
+      },
+      "sharing": "required"
+    },
+    "06b0": {
+      "dag": 524,
+      "formula": 550,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b0100( c d )\n05 = 4'b0010( a b )\n06 = 4'b0100( 04 05 )\n07 = 4'b0110( a b )\n08 = 4'b1000( d 07 )\n09 = 4'b0010( c 08 )\n10 = 4'b0110( 06 09 )\nSwitching Activity=550\n",
+      "witness": {
+        "truth": "06b0",
+        "activity": 550,
+        "gates": 7
+      },
+      "sharing": "required"
+    },
+    "06b1": {
+      "dag": 536,
+      "formula": 536,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0010( a b )\n05 = 4'b1110( d 04 )\n06 = 4'b1000( b d )\n07 = 4'b0110( a 06 )\n08 = 4'b0010( c 07 )\n09 = 4'b1001( 05 08 )\nSwitching Activity=536\n",
+      "witness": {
+        "truth": "06b1",
+        "activity": 536,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "06b2": {
+      "dag": 544,
+      "formula": 544,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0100( c d )\n05 = 4'b0110( a b )\n06 = 4'b1110( a d )\n07 = 4'b0110( c 06 )\n08 = 4'b1000( 05 07 )\n09 = 4'b0110( 04 08 )\nSwitching Activity=544\n",
+      "witness": {
+        "truth": "06b2",
+        "activity": 544,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "06b3": {
+      "dag": 528,
+      "formula": 528,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1000( c d )\n05 = 4'b0010( a d )\n06 = 4'b1000( a c )\n07 = 4'b0100( b 06 )\n08 = 4'b0110( 05 07 )\n09 = 4'b0001( 04 08 )\nSwitching Activity=528\n",
+      "witness": {
+        "truth": "06b3",
+        "activity": 528,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "06b4": {
+      "dag": 550,
+      "formula": 550,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0010( a b )\n05 = 4'b0100( a b )\n06 = 4'b1110( c 05 )\n07 = 4'b1000( d 06 )\n08 = 4'b1110( 04 07 )\n09 = 4'b0110( c 08 )\nSwitching Activity=550\n",
+      "witness": {
+        "truth": "06b4",
+        "activity": 550,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "06b5": {
+      "dag": 534,
+      "formula": 534,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0100( a c )\n05 = 4'b0100( b c )\n06 = 4'b0010( a b )\n07 = 4'b1110( d 06 )\n08 = 4'b0010( 05 07 )\n09 = 4'b1001( 04 08 )\nSwitching Activity=534\n",
+      "witness": {
+        "truth": "06b5",
+        "activity": 534,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "06b6": {
+      "dag": 484,
+      "formula": 494,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0110( a b )\n05 = 4'b0010( c 04 )\n06 = 4'b0100( c d )\n07 = 4'b0010( a b )\n08 = 4'b0100( 06 07 )\n09 = 4'b0110( 05 08 )\nSwitching Activity=494\n",
+      "witness": {
+        "truth": "06b6",
+        "activity": 494,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "06b7": {
+      "dag": 528,
+      "formula": 528,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( b d )\n05 = 4'b0100( b c )\n06 = 4'b1000( c d )\n07 = 4'b0100( a 06 )\n08 = 4'b0110( 05 07 )\n09 = 4'b1011( 04 08 )\nSwitching Activity=528\n",
+      "witness": {
+        "truth": "06b7",
+        "activity": 528,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "06b9": {
+      "dag": 454,
+      "formula": 454,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( a b )\n05 = 4'b1110( a d )\n06 = 4'b1000( c 05 )\n07 = 4'b0100( 04 06 )\n08 = 4'b1001( d 07 )\nSwitching Activity=454\n",
+      "witness": {
+        "truth": "06b9",
+        "activity": 454,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "06bd": {
+      "dag": 440,
+      "formula": 440,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0010( a b )\n05 = 4'b1110( d 04 )\n06 = 4'b0110( a b )\n07 = 4'b0010( c 06 )\n08 = 4'b1001( 05 07 )\nSwitching Activity=440\n",
+      "witness": {
+        "truth": "06bd",
+        "activity": 440,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "06f0": {
+      "dag": 344,
+      "formula": 344,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( a b )\n05 = 4'b1110( c 04 )\n06 = 4'b1000( d 05 )\n07 = 4'b0110( c 06 )\nSwitching Activity=344\n",
+      "witness": {
+        "truth": "06f0",
+        "activity": 344,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "06f1": {
+      "dag": 436,
+      "formula": 446,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0100( a d )\n05 = 4'b0100( b 04 )\n06 = 4'b0110( a 05 )\n07 = 4'b0010( c 06 )\n08 = 4'b1001( d 07 )\nSwitching Activity=446\n",
+      "witness": {
+        "truth": "06f1",
+        "activity": 446,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "06f2": {
+      "dag": 484,
+      "formula": 494,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0100( c d )\n05 = 4'b1110( a d )\n06 = 4'b0110( a b )\n07 = 4'b0010( c 06 )\n08 = 4'b1000( 05 07 )\n09 = 4'b0110( 04 08 )\nSwitching Activity=494\n",
+      "witness": {
+        "truth": "06f2",
+        "activity": 494,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "06f6": {
+      "dag": 320,
+      "formula": 320,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0100( c d )\n05 = 4'b0110( a b )\n06 = 4'b0010( c 05 )\n07 = 4'b0110( 04 06 )\nSwitching Activity=320\n",
+      "witness": {
+        "truth": "06f6",
+        "activity": 320,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "06f9": {
+      "dag": 224,
+      "formula": 224,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b0110( a b )\n05 = 4'b0010( c 04 )\n06 = 4'b1001( d 05 )\nSwitching Activity=224\n",
+      "witness": {
+        "truth": "06f9",
+        "activity": 224,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "0776": {
+      "dag": 484,
+      "formula": 484,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b1000( a b )\n05 = 4'b1000( c d )\n06 = 4'b1110( c d )\n07 = 4'b1110( b 06 )\n08 = 4'b1110( a 07 )\n09 = 4'b0010( 05 08 )\n10 = 4'b0010( 04 09 )\nSwitching Activity=484\n",
+      "witness": {
+        "truth": "0776",
+        "activity": 484,
+        "gates": 7
+      },
+      "sharing": "unnecessary"
+    },
+    "0778": {
+      "dag": 386,
+      "formula": 396,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( a b )\n05 = 4'b1000( c d )\n06 = 4'b0100( 04 05 )\n07 = 4'b0110( d 06 )\n08 = 4'b0110( c 07 )\nSwitching Activity=396\n",
+      "witness": {
+        "truth": "0778",
+        "activity": 396,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "0779": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "077a": {
+      "dag": 496,
+      "formula": 496,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1110( c d )\n05 = 4'b0100( a 04 )\n06 = 4'b1000( a b )\n07 = 4'b0110( c d )\n08 = 4'b0010( 06 07 )\n09 = 4'b0110( 05 08 )\nSwitching Activity=496\n",
+      "witness": {
+        "truth": "077a",
+        "activity": 496,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "077e": {
+      "dag": 544,
+      "formula": 544,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1000( c d )\n05 = 4'b0110( a b )\n06 = 4'b1110( c d )\n07 = 4'b0110( a 06 )\n08 = 4'b1110( 05 07 )\n09 = 4'b0010( 04 08 )\nSwitching Activity=544\n",
+      "witness": {
+        "truth": "077e",
+        "activity": 544,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "07b0": {
+      "dag": 352,
+      "formula": 352,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( c d )\n05 = 4'b0110( a c )\n06 = 4'b1000( b 05 )\n07 = 4'b0100( 04 06 )\nSwitching Activity=352\n",
+      "witness": {
+        "truth": "07b0",
+        "activity": 352,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "07b1": {
+      "dag": 560,
+      "formula": 560,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0110( a d )\n05 = 4'b0100( b 04 )\n06 = 4'b1110( a c )\n07 = 4'b0010( d 06 )\n08 = 4'b0110( c 07 )\n09 = 4'b0001( 05 08 )\nSwitching Activity=560\n",
+      "witness": {
+        "truth": "07b1",
+        "activity": 560,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "07b4": {
+      "dag": 438,
+      "formula": 438,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0010( a b )\n05 = 4'b0100( b c )\n06 = 4'b0100( d 05 )\n07 = 4'b1110( 04 06 )\n08 = 4'b0110( c 07 )\nSwitching Activity=438\n",
+      "witness": {
+        "truth": "07b4",
+        "activity": 438,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "07b5": {
+      "dag": 534,
+      "formula": 550,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( a c )\n05 = 4'b0110( c d )\n06 = 4'b1000( a c )\n07 = 4'b0100( b 06 )\n08 = 4'b0100( 05 07 )\n09 = 4'b1011( 04 08 )\nSwitching Activity=550\n",
+      "witness": {
+        "truth": "07b5",
+        "activity": 550,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "07b6": {
+      "dag": 552,
+      "formula": 560,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0010( a b )\n05 = 4'b1110( d 04 )\n06 = 4'b0110( b d )\n07 = 4'b0100( a 06 )\n08 = 4'b1110( c 07 )\n09 = 4'b0110( 05 08 )\nSwitching Activity=560\n",
+      "witness": {
+        "truth": "07b6",
+        "activity": 560,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "07bc": {
+      "dag": 432,
+      "formula": 432,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( a b )\n05 = 4'b1110( c 04 )\n06 = 4'b0010( a b )\n07 = 4'b1110( d 06 )\n08 = 4'b0110( 05 07 )\nSwitching Activity=432\n",
+      "witness": {
+        "truth": "07bc",
+        "activity": 432,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "07e0": {
+      "dag": 480,
+      "formula": 480,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( c d )\n05 = 4'b0110( a c )\n06 = 4'b0110( a b )\n07 = 4'b0100( 05 06 )\n08 = 4'b0100( 04 07 )\nSwitching Activity=480\n",
+      "witness": {
+        "truth": "07e0",
+        "activity": 480,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "07e1": {
+      "dag": 494,
+      "formula": 494,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0100( b c )\n05 = 4'b1000( a 04 )\n06 = 4'b1110( a b )\n07 = 4'b0010( d 06 )\n08 = 4'b1110( 05 07 )\n09 = 4'b1001( c 08 )\nSwitching Activity=494\n",
+      "witness": {
+        "truth": "07e1",
+        "activity": 494,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "07e2": {
+      "dag": 536,
+      "formula": 536,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1000( c d )\n05 = 4'b1110( a d )\n06 = 4'b0110( a c )\n07 = 4'b1000( b 06 )\n08 = 4'b0110( 05 07 )\n09 = 4'b0010( 04 08 )\nSwitching Activity=536\n",
+      "witness": {
+        "truth": "07e2",
+        "activity": 536,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "07e3": {
+      "dag": 552,
+      "formula": 552,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1000( a c )\n05 = 4'b1110( b 04 )\n06 = 4'b0100( a c )\n07 = 4'b0100( d 06 )\n08 = 4'b0100( 05 07 )\n09 = 4'b1001( c 08 )\nSwitching Activity=552\n",
+      "witness": {
+        "truth": "07e3",
+        "activity": 552,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "07e6": {
+      "dag": 496,
+      "formula": 496,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b1000( c d )\n05 = 4'b0100( b c )\n06 = 4'b1000( a 05 )\n07 = 4'b1110( b d )\n08 = 4'b1110( a 07 )\n09 = 4'b0010( 06 08 )\n10 = 4'b0010( 04 09 )\nSwitching Activity=496\n",
+      "witness": {
+        "truth": "07e6",
+        "activity": 496,
+        "gates": 7
+      },
+      "sharing": "unnecessary"
+    },
+    "07e9": {
+      "dag": 432,
+      "formula": 432,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b0010( d 04 )\n06 = 4'b1000( a b )\n07 = 4'b1110( c 06 )\n08 = 4'b1001( 05 07 )\nSwitching Activity=432\n",
+      "witness": {
+        "truth": "07e9",
+        "activity": 432,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "07f0": {
+      "dag": 278,
+      "formula": 278,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0100( b c )\n05 = 4'b1000( a 04 )\n06 = 4'b0100( d 05 )\n07 = 4'b0110( c 06 )\nSwitching Activity=278\n",
+      "witness": {
+        "truth": "07f0",
+        "activity": 278,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "07f1": {
+      "dag": 472,
+      "formula": 472,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( a d )\n05 = 4'b0110( a b )\n06 = 4'b1110( 04 05 )\n07 = 4'b0010( c 06 )\n08 = 4'b1001( d 07 )\nSwitching Activity=472\n",
+      "witness": {
+        "truth": "07f1",
+        "activity": 472,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "07f2": {
+      "dag": 344,
+      "formula": 344,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( b d )\n05 = 4'b0100( a 04 )\n06 = 4'b1110( c 05 )\n07 = 4'b0110( d 06 )\nSwitching Activity=344\n",
+      "witness": {
+        "truth": "07f2",
+        "activity": 344,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "07f8": {
+      "dag": 216,
+      "formula": 216,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b1000( a b )\n05 = 4'b1110( c 04 )\n06 = 4'b0110( d 05 )\nSwitching Activity=216\n",
+      "witness": {
+        "truth": "07f8",
+        "activity": 216,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "1668": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "1669": {
+      "dag": 530,
+      "formula": 530,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1000( b c )\n05 = 4'b1000( a 04 )\n06 = 4'b0100( d 05 )\n07 = 4'b0110( c 06 )\n08 = 4'b0110( b 07 )\n09 = 4'b1001( a 08 )\nSwitching Activity=530\n",
+      "witness": {
+        "truth": "1669",
+        "activity": 530,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "166a": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "166b": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "166e": {
+      "dag": 560,
+      "formula": 560,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1000( c d )\n05 = 4'b0110( c d )\n06 = 4'b0100( a 05 )\n07 = 4'b0100( b 06 )\n08 = 4'b0110( a 07 )\n09 = 4'b0110( 04 08 )\nSwitching Activity=560\n",
+      "witness": {
+        "truth": "166e",
+        "activity": 560,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "167e": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "1681": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "1683": {
+      "dag": 544,
+      "formula": 544,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b0110( a d )\n06 = 4'b1000( b c )\n07 = 4'b0110( a 06 )\n08 = 4'b0100( 05 07 )\n09 = 4'b1001( 04 08 )\nSwitching Activity=544\n",
+      "witness": {
+        "truth": "1683",
+        "activity": 544,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "1686": {
+      "dag": 472,
+      "formula": 472,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( a b )\n05 = 4'b0110( a d )\n06 = 4'b0100( c 05 )\n07 = 4'b1110( 04 06 )\n08 = 4'b0110( c 07 )\nSwitching Activity=472\n",
+      "witness": {
+        "truth": "1686",
+        "activity": 472,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "1687": {
+      "dag": 522,
+      "formula": 532,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b0010( b d )\n05 = 4'b0010( a 04 )\n06 = 4'b1000( a b )\n07 = 4'b1000( c d )\n08 = 4'b0100( 06 07 )\n09 = 4'b0110( 05 08 )\n10 = 4'b1001( c 09 )\nSwitching Activity=532\n",
+      "witness": {
+        "truth": "1687",
+        "activity": 532,
+        "gates": 7
+      },
+      "sharing": "required"
+    },
+    "1689": {
+      "dag": 560,
+      "formula": null,
+      "sharing": "required"
+    },
+    "168b": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "168e": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "1696": {
+      "dag": 404,
+      "formula": 404,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( b d )\n05 = 4'b1000( a 04 )\n06 = 4'b0100( c 05 )\n07 = 4'b0110( b 06 )\n08 = 4'b0110( a 07 )\nSwitching Activity=404\n",
+      "witness": {
+        "truth": "1696",
+        "activity": 404,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "1697": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "1698": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "1699": {
+      "dag": 452,
+      "formula": 452,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( a b )\n05 = 4'b0100( c 04 )\n06 = 4'b0100( d 05 )\n07 = 4'b0110( b 06 )\n08 = 4'b1001( a 07 )\nSwitching Activity=452\n",
+      "witness": {
+        "truth": "1699",
+        "activity": 452,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "169a": {
+      "dag": 482,
+      "formula": 492,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0010( b c )\n05 = 4'b0010( a c )\n06 = 4'b1000( b d )\n07 = 4'b0010( 05 06 )\n08 = 4'b0110( 04 07 )\n09 = 4'b0110( a 08 )\nSwitching Activity=492\n",
+      "witness": {
+        "truth": "169a",
+        "activity": 492,
+        "gates": 6
+      },
+      "sharing": "required"
+    },
+    "169b": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "169e": {
+      "dag": 464,
+      "formula": 464,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( c d )\n05 = 4'b0100( a 04 )\n06 = 4'b0100( b 05 )\n07 = 4'b0110( a 06 )\n08 = 4'b0110( c 07 )\nSwitching Activity=464\n",
+      "witness": {
+        "truth": "169e",
+        "activity": 464,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "16a9": {
+      "dag": 500,
+      "formula": 500,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( b c )\n05 = 4'b1000( b c )\n06 = 4'b0010( a 05 )\n07 = 4'b0100( d 06 )\n08 = 4'b0110( 04 07 )\n09 = 4'b1001( a 08 )\nSwitching Activity=500\n",
+      "witness": {
+        "truth": "16a9",
+        "activity": 500,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "16ac": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "16ad": {
+      "dag": 552,
+      "formula": 552,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0100( b c )\n05 = 4'b0100( a 04 )\n06 = 4'b0010( a b )\n07 = 4'b0100( d 06 )\n08 = 4'b0110( 05 07 )\n09 = 4'b1001( c 08 )\nSwitching Activity=552\n",
+      "witness": {
+        "truth": "16ad",
+        "activity": 552,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "16bc": {
+      "dag": 432,
+      "formula": 432,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( a d )\n05 = 4'b1000( a b )\n06 = 4'b0100( c 05 )\n07 = 4'b0110( b 06 )\n08 = 4'b0110( 04 07 )\nSwitching Activity=432\n",
+      "witness": {
+        "truth": "16bc",
+        "activity": 432,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "16e9": {
+      "dag": 432,
+      "formula": 432,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b1000( a b )\n06 = 4'b1110( c 05 )\n07 = 4'b0110( 04 06 )\n08 = 4'b1001( d 07 )\nSwitching Activity=432\n",
+      "witness": {
+        "truth": "16e9",
+        "activity": 432,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "177e": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "178e": {
+      "dag": 448,
+      "formula": 480,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( a b )\n05 = 4'b0110( c d )\n06 = 4'b0110( a 05 )\n07 = 4'b1110( 04 06 )\n08 = 4'b0110( c 07 )\nSwitching Activity=480\n",
+      "witness": {
+        "truth": "178e",
+        "activity": 480,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "1796": {
+      "dag": 472,
+      "formula": 472,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( b c )\n05 = 4'b0110( a b )\n06 = 4'b0100( d 05 )\n07 = 4'b1110( 04 06 )\n08 = 4'b0110( a 07 )\nSwitching Activity=472\n",
+      "witness": {
+        "truth": "1796",
+        "activity": 472,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "1798": {
+      "dag": 542,
+      "formula": 542,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1000( a b )\n05 = 4'b1110( a b )\n06 = 4'b0110( d 05 )\n07 = 4'b0100( c 06 )\n08 = 4'b1110( 04 07 )\n09 = 4'b0110( d 08 )\nSwitching Activity=542\n",
+      "witness": {
+        "truth": "1798",
+        "activity": 542,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "179a": {
+      "dag": null,
+      "formula": null,
+      "sharing": "unknown_above_bound"
+    },
+    "17ac": {
+      "dag": 528,
+      "formula": 528,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0010( a c )\n05 = 4'b1110( b c )\n06 = 4'b0010( a b )\n07 = 4'b0100( d 06 )\n08 = 4'b0110( 05 07 )\n09 = 4'b0110( 04 08 )\nSwitching Activity=528\n",
+      "witness": {
+        "truth": "17ac",
+        "activity": 528,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "17e8": {
+      "dag": 440,
+      "formula": 440,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( a b )\n05 = 4'b1110( a b )\n06 = 4'b1000( c 05 )\n07 = 4'b1110( 04 06 )\n08 = 4'b0110( d 07 )\nSwitching Activity=440\n",
+      "witness": {
+        "truth": "17e8",
+        "activity": 440,
+        "gates": 5
+      },
+      "sharing": "unnecessary"
+    },
+    "18e7": {
+      "dag": 352,
+      "formula": 352,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b0110( a c )\n05 = 4'b0110( a b )\n06 = 4'b0100( 04 05 )\n07 = 4'b1001( d 06 )\nSwitching Activity=352\n",
+      "witness": {
+        "truth": "18e7",
+        "activity": 352,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "19e1": {
+      "dag": 484,
+      "formula": 484,
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b0100( c d )\n06 = 4'b0010( c d )\n07 = 4'b1000( b 06 )\n08 = 4'b1000( a 07 )\n09 = 4'b0110( 05 08 )\n10 = 4'b1001( 04 09 )\nSwitching Activity=484\n",
+      "witness": {
+        "truth": "19e1",
+        "activity": 484,
+        "gates": 7
+      },
+      "sharing": "unnecessary"
+    },
+    "19e3": {
+      "dag": 536,
+      "formula": 536,
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b1110( a c )\n06 = 4'b0100( b c )\n07 = 4'b0110( d 06 )\n08 = 4'b0100( 05 07 )\n09 = 4'b1001( 04 08 )\nSwitching Activity=536\n",
+      "witness": {
+        "truth": "19e3",
+        "activity": 536,
+        "gates": 6
+      },
+      "sharing": "unnecessary"
+    },
+    "19e6": {
+      "dag": 336,
+      "formula": 336,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b1000( a c )\n05 = 4'b0100( b 04 )\n06 = 4'b0110( a 05 )\n07 = 4'b0110( d 06 )\nSwitching Activity=336\n",
+      "witness": {
+        "truth": "19e6",
+        "activity": 336,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "1bd8": {
+      "dag": 448,
+      "formula": 480,
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( b c )\n05 = 4'b0110( a d )\n06 = 4'b1110( 04 05 )\n07 = 4'b0110( b 06 )\n08 = 4'b0110( a 07 )\nSwitching Activity=480\n",
+      "witness": {
+        "truth": "1bd8",
+        "activity": 480,
+        "gates": 5
+      },
+      "sharing": "required"
+    },
+    "1be4": {
+      "dag": 320,
+      "formula": 320,
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0010( a b )\n05 = 4'b1000( a c )\n06 = 4'b0110( 04 05 )\n07 = 4'b0110( d 06 )\nSwitching Activity=320\n",
+      "witness": {
+        "truth": "1be4",
+        "activity": 320,
+        "gates": 4
+      },
+      "sharing": "unnecessary"
+    },
+    "1ee1": {
+      "dag": 224,
+      "formula": 224,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b1110( a b )\n05 = 4'b0110( d 04 )\n06 = 4'b1001( c 05 )\nSwitching Activity=224\n",
+      "witness": {
+        "truth": "1ee1",
+        "activity": 224,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    },
+    "6996": {
+      "dag": 256,
+      "formula": 256,
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b0110( c d )\n05 = 4'b0110( b 04 )\n06 = 4'b0110( a 05 )\nSwitching Activity=256\n",
+      "witness": {
+        "truth": "6996",
+        "activity": 256,
+        "gates": 3
+      },
+      "sharing": "unnecessary"
+    }
+  }
+}
