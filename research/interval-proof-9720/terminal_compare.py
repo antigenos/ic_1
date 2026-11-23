@@ -107,6 +107,27 @@ def checked_answer(row, bounds):
     return answer
 
 
+def verified_prefix(previous, plan, sources_by_arm, cpu, bounds):
+    if previous is None:
+        return [], ""
+    raw = previous.read_bytes()
+    if raw and not raw.endswith(b"\n"):
+        raise ValueError("The final record is incomplete; preserve and inspect the interrupted file")
+    rows = [json.loads(line) for line in raw.splitlines()]
+    if len(rows) > len(plan):
+        raise ValueError("Previous records exceed the registered plan")
+    for i, row in enumerate(rows):
+        truth, cap, arm = plan[i]
+        assert (row["order"], row["truth"], row["strict_cap"], row["arm"]) == (i+1, truth, cap, arm)
+        assert row["source_sha256"] == sources_by_arm[arm][1] and row["child_affinity"] == [cpu]
+        assert row["timeout_s"] == 300
+        if row["status"] == "completed":
+            checked_answer(row, bounds)
+        else:
+            assert row["status"] == "timeout" and row["wall_s"] >= 299.95
+    return rows, raw.decode("utf8")
+
+
 def export(source, destination, plan, bounds):
     rows = [json.loads(s) for s in source.read_bytes().splitlines()]
     assert [(r["truth"], r["strict_cap"], r["arm"]) for r in rows] == plan
@@ -150,6 +171,7 @@ def main():
     ap.add_argument("--cpu", type=int)
     ap.add_argument("--host-samples", type=Path)
     ap.add_argument("--candidate-ref", help="Freeze candidate solver modules from a specific Git commit")
+    ap.add_argument("--continue-from", type=Path, help="Copy the verified prefix of an interrupted panel into a new run")
     group = ap.add_mutually_exclusive_group()
     group.add_argument("--holdout", action="store_true", help="Use the fixed eight-function confirmation panel")
     group.add_argument("--storage-control", action="store_true", help="Isolate deduplication while keeping last-gate matching fixed")
@@ -179,6 +201,7 @@ def main():
         raise FileExistsError(args.output)
     work.mkdir(parents=True, exist_ok=False)
     source = {arm: sources(work, arm, args.candidate_ref) for arm in sorted({a for _, _, a in plan})}
+    prefix, prior_text = verified_prefix(args.continue_from, plan, source, args.cpu, bounds)
     samples = args.host_samples.resolve() if args.host_samples else None
     if samples is not None:
         samples.mkdir(parents=True, exist_ok=True)
@@ -187,7 +210,9 @@ def main():
     wait_for_quiet_cpu(args.cpu, samples)
     (work / "correctness.json").write_text(json.dumps(check(storage=args.storage_control), indent=2) + "\n", encoding="utf8")
     with args.output.open("x", encoding="utf8", newline="\n") as evidence:
-        for i, (truth, cap, arm) in enumerate(plan, 1):
+        evidence.write(prior_text)
+        evidence.flush()
+        for i, (truth, cap, arm) in enumerate(plan[len(prefix):], len(prefix)+1):
             wait_for_quiet_cpu(args.cpu, samples)
             empty = work / f"empty-{i}"
             empty.mkdir()

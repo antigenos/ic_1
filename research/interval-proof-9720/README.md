@@ -139,3 +139,7 @@ python family.py run BASE --host-samples .local/host-resume-01
 存储消融在 Windows 上还记录每次求解进程的峰值工作集。计时结束后、子进程句柄关闭前读取系统记录的峰值字节数，覆盖解释器和算法的整个进程。公开结果包含这一资源指标，可与去重集合的条目数对照。[Microsoft 对峰值工作集的定义](https://learn.microsoft.com/en-us/windows/win32/api/psapi/ns-psapi-process_memory_counters)
 
 Knuth 官方归档已完整验过 gzip 校验和。归档为 24,981,579 字节，含 22 个条目，整体 SHA-256 为 `f4ea48a9b8cf2d2c2604cfb67a3cf7e41b6d863064a08b133cbd0563e2fe4a6a`。重新从完整归档取出的 `5chainst.w` 与前述成员校验和一致。[BOOLCHAINS 作者归档](https://cs.stanford.edu/~knuth/programs/boolchains.tgz)
+
+2026-11-23 12:41 UTC 核对宿主时，上一轮两项实验的控制进程均已结束。主对照已验收 36 条，逐个检查启动目录，均有完整结果。确认面板的前 12 条构成六个完整配对，第 13 条 012c A 只留下启动记录。该次中断留在本地，完成数、超时数和配对用时都只使用实际写完的调用。恢复程序逐项检查已有前缀的顺序、严格界、CPU 亲和性、三份源码摘要以及独立复算的电路与活动度，再将这 12 行原样写入新运行。已验证四种错误前缀均会被拒绝。两种程序继续在同一核心完成剩余的两个 012c、07e0 配对。
+
+Windows 可用 `run_terminal_series.ps1 -RunId TAG -StorageRevision SHA` 顺序运行留出面板和存储消融。恢复时加 `-ContinueHoldoutFrom PATH` 指向已核实停止的旧面板记录。每组的源码、原始行和主机采样保存在本地，前一组结束且 16 条记录通过独立检查后才开始后一组。两组各自产生可公开的测量表。
