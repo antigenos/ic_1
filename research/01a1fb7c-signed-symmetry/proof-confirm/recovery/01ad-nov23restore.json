@@ -1,0 +1,30 @@
+{
+  "reason": "elapsed time exceeded the allowed measurement window",
+  "retained_prefix": 0,
+  "discarded": {
+    "start_utc": "2026-11-21T04:36:41.977712+00:00",
+    "binary_sha256": "4141d290dd5ffb13d3b31e26ec2c00207f2c069b7b1378bccaa7b38876bf90e2",
+    "command": [
+      "abc.exe",
+      "-c",
+      "pexact -I 4 -M 2 01ad"
+    ],
+    "timeout_s": 300,
+    "experiment": {
+      "cpu": 28,
+      "arm": "3",
+      "order": 1,
+      "truth": "01ad"
+    },
+    "pid": 27836,
+    "child_affinity": [
+      28
+    ],
+    "status": "timeout",
+    "returncode": 1,
+    "wall_s": 446.4622615999979,
+    "capped_wall_s": 300,
+    "solver_output": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

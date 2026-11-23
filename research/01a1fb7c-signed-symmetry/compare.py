@@ -97,7 +97,7 @@ def main():
             out.write(json.dumps(entry,ensure_ascii=True)+"\n")
             out.flush()
             print(key, entry["status"], round(entry["wall_s"],3), flush=True)
-            if entry["wall_s"]>args.cap+3 or entry["status"]=="unverified":
+            if entry["wall_s"]>args.cap+(3 if entry["status"]=="timeout" else 0) or entry["status"]=="unverified":
                 raise RuntimeError("Invalid timing or witness, inspect the preserved run")
             if "witness" in entry:
                 score = entry["witness"]["activity"]

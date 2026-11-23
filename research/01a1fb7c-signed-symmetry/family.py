@@ -81,7 +81,9 @@ def timing_account(data,public):
     rejected=[e["discarded_timeout_attempt"] for e in kept if "discarded_timeout_attempt" in e]
     for f in sorted((public/"recovery").glob("*.json")):
         item=json.loads(f.read_bytes())["discarded"]
-        assert item["status"]=="timeout" and item["wall_s"]>item["timeout_s"]+3
+        assert item["status"] in ("timeout","solver_completed_verified_witness")
+        assert item["wall_s"]>item["timeout_s"]+(3 if item["status"]=="timeout" else 0)
+        assert sha256(item["solver_output"].encode()).hexdigest()==item["solver_log_sha256"]
         rejected.extend([item["discarded_timeout_attempt"]] if "discarded_timeout_attempt" in item else [])
         rejected.append(item)
     return dict(accepted_original_wall_s=fsum(e["wall_s"] for e in kept),

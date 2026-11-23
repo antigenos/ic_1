@@ -15,6 +15,7 @@ def main():
     p=argparse.ArgumentParser()
     p.add_argument("truth")
     p.add_argument("--resume-id",required=True)
+    p.add_argument("--prepare-only",action="store_true",help="Archive an invalid measurement and leave its lane stopped")
     p.add_argument("--prepared",type=Path,default=ROOT)
     p.add_argument("--public",type=Path,default=PUBLIC)
     p.add_argument("--work",type=Path,default=WORK)
@@ -30,12 +31,14 @@ def main():
     lines=path.read_bytes().splitlines(keepends=True)
     bad=json.loads(lines[-1])
     assert b"Invalid timing or witness" in (args.work/(args.truth+".launcher.log")).read_bytes()
-    assert bad["status"]=="timeout" and bad["wall_s"]>bad["timeout_s"]+3
+    assert bad["status"] in ("timeout","solver_completed_verified_witness")
+    limit=bad["timeout_s"]+(3 if bad["status"]=="timeout" else 0)
+    assert bad["wall_s"]>limit
     assert bad["experiment"]==dict(truth=args.truth,cpu=target["cpu"],arm=target["order"][len(lines)-1],order=len(lines))
     raw=args.work/"raw"/args.truth
     matches=[json.loads(q.read_bytes()) for q in raw.rglob("result.json")]
     assert any(r["pid"]==bad["pid"] and r["start_utc"]==bad["start_utc"] and r["returncode"]==bad["returncode"]
-               and r["status"]=="timeout" for r in matches)
+               and r["status"]==bad["status"] and r["wall_s"]==bad["wall_s"] for r in matches)
     if os.name=="nt":
         cmd=f"Get-Process -Id {int(bad['pid'])} -ErrorAction SilentlyContinue | Select-Object -ExpandProperty StartTime | ForEach-Object {{ $_.ToUniversalTime().ToString('o') }}"
         info=subprocess.run(["powershell","-NoProfile","-Command",cmd],capture_output=True,text=True).stdout.strip()
@@ -46,13 +49,14 @@ def main():
     backup=args.work/"recovery"/args.resume_id/path.name
     write_once(backup,path.read_bytes())
     write_once(args.public/"recovery"/(args.truth+"-"+args.resume_id+".json"),
-               (json.dumps(dict(reason="timeout wall exceeded the preregistered cap plus three seconds",
+               (json.dumps(dict(reason="elapsed time exceeded the allowed measurement window",
                                 retained_prefix=len(lines)-1,discarded=bad),indent=2)+"\n").encode())
     tmp=path.with_suffix("."+args.resume_id+".tmp")
     write_once(tmp,b"".join(lines[:-1]))
     replay(tmp,args.truth,target["order"][:len(lines)-1],target["cpu"],target["seconds"])
     os.replace(tmp,path)
-    run_lane(lane[lane.index(target):],args,m["binary_sha256"])
+    if not args.prepare_only:
+        run_lane(lane[lane.index(target):],args,m["binary_sha256"])
 
 
 if __name__=="__main__":

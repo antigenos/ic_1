@@ -1,0 +1,35 @@
+{
+  "reason": "elapsed time exceeded the allowed measurement window",
+  "retained_prefix": 1,
+  "discarded": {
+    "start_utc": "2026-11-21T04:38:20.426418+00:00",
+    "binary_sha256": "4141d290dd5ffb13d3b31e26ec2c00207f2c069b7b1378bccaa7b38876bf90e2",
+    "command": [
+      "abc.exe",
+      "-c",
+      "pexact -I 4 -M 2 016e"
+    ],
+    "timeout_s": 300,
+    "experiment": {
+      "cpu": 30,
+      "arm": "3",
+      "order": 2,
+      "truth": "016e"
+    },
+    "pid": 17280,
+    "child_affinity": [
+      30
+    ],
+    "returncode": 0,
+    "wall_s": 354.7166806000023,
+    "capped_wall_s": 300,
+    "witness": {
+      "truth": "016e",
+      "activity": 448,
+      "gates": 5
+    },
+    "status": "solver_completed_verified_witness",
+    "solver_output": "ABC command line: \"pexact -I 4 -M 2 016e\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\nRealization of given 4-input function using 5 two-input gates complementary=0:\r\n08 = 4'b0010( 06 07 )\r\n07 = 4'b0110( d 05 )\r\n06 = 4'b0100( c 04 )\r\n05 = 4'b1110( a b )\r\n04 = 4'b0110( a b )\r\nPrinting overall Truth Table...\r\ni=0:0101010101010101\r\ni=1:0011001100110011\r\ni=2:0000111100001111\r\ni=3:0000000011111111\r\ni=4:0110011001100110\r\ni=5:0111011101110111\r\ni=6:0000100100001001\r\ni=7:0111011110001000\r\ni=8:0111011010000000\r\n\r\n\r\nSwitching Activity=448\r\nNumber of Gates: r=5\r\nTotal runtime =   354.43 sec\r\n",
+    "solver_log_sha256": "f92354203feafac33533e51f01f5c5b91f97865afd40a757a598aa6d5799b03d"
+  }
+}

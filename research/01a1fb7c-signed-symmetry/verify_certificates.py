@@ -12,7 +12,7 @@ def main():
         history[t].update(row["activity"] for row in group.values() if row["activity"] is not None)
     limits={}
     details={}
-    for name in ("closure-302","closure-366","closure-440","orbit-440","orbit-500",
+    for name in ("closure-302","closure-366","closure-440","raw-500","orbit-440","orbit-500",
                  "prefix-302","prefix-440","prefix-500","prefix-560"):
         data=json.loads((HERE/(name+".json")).read_bytes())
         limit=data["limit"]

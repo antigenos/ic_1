@@ -1,0 +1,1424 @@
+{
+  "limit": 500,
+  "states": 26444135,
+  "enumeration_s": 92.1466992,
+  "process_s": 105.91329979999864,
+  "compile_s": 3.720383600000787,
+  "cpu": 28,
+  "source_sha256": "ce8619fd56513230484ac03f2fd22895593272588ad55b6f5e5419083534e7a6",
+  "witnessed_minima_matched": 82,
+  "finite_minima": 150,
+  "certificates": {
+    "0001": 152,
+    "0006": 208,
+    "0007": 182,
+    "0016": 406,
+    "0017": 400,
+    "0018": 336,
+    "0019": 310,
+    "001b": 304,
+    "001e": 224,
+    "001f": 216,
+    "003d": 326,
+    "0069": 256,
+    "006b": 432,
+    "006f": 224,
+    "007e": 352,
+    "007f": 152,
+    "0116": null,
+    "0117": null,
+    "0118": 446,
+    "0119": 420,
+    "011a": 416,
+    "011b": 412,
+    "011e": 356,
+    "011f": 356,
+    "012c": 448,
+    "012d": 440,
+    "012f": 432,
+    "013c": 406,
+    "013d": 376,
+    "013e": 368,
+    "013f": 368,
+    "0168": 480,
+    "0169": 472,
+    "016a": null,
+    "016b": 472,
+    "016e": 448,
+    "016f": 440,
+    "017e": 412,
+    "017f": 420,
+    "0180": 364,
+    "0181": 334,
+    "0182": 438,
+    "0183": 416,
+    "0186": 448,
+    "0187": 440,
+    "0189": 304,
+    "018b": 412,
+    "018f": 432,
+    "0196": null,
+    "0197": null,
+    "0198": 352,
+    "0199": 344,
+    "019a": 446,
+    "019b": 472,
+    "019e": 496,
+    "019f": 496,
+    "01a8": 352,
+    "01a9": 318,
+    "01aa": 278,
+    "01ab": 248,
+    "01ac": 476,
+    "01ad": 464,
+    "01ae": 320,
+    "01af": 312,
+    "01bc": null,
+    "01bd": null,
+    "01be": 388,
+    "01bf": 392,
+    "01e8": null,
+    "01e9": null,
+    "01ea": 416,
+    "01eb": 408,
+    "01ee": 260,
+    "01ef": 264,
+    "01fe": 152,
+    "033d": 468,
+    "0356": 192,
+    "0357": 192,
+    "0358": 414,
+    "0359": 320,
+    "035a": 312,
+    "035b": 320,
+    "035e": 422,
+    "035f": 312,
+    "0368": null,
+    "0369": 416,
+    "036a": 448,
+    "036b": 416,
+    "036c": 432,
+    "036d": null,
+    "036e": 448,
+    "036f": 416,
+    "037c": 374,
+    "037d": 480,
+    "037e": 440,
+    "03c1": 412,
+    "03c5": 416,
+    "03c6": 432,
+    "03c7": 356,
+    "03d4": 440,
+    "03d5": 448,
+    "03d6": 422,
+    "03d7": 422,
+    "03d8": null,
+    "03d9": 446,
+    "03db": 496,
+    "03dc": 326,
+    "03dd": 368,
+    "03de": 312,
+    "0660": 256,
+    "0661": null,
+    "0662": 454,
+    "0663": 440,
+    "0666": 224,
+    "0667": 496,
+    "0669": 440,
+    "066b": null,
+    "066f": 440,
+    "0672": null,
+    "0673": 448,
+    "0676": 432,
+    "0678": null,
+    "0679": null,
+    "067a": null,
+    "067b": null,
+    "067e": null,
+    "0690": 384,
+    "0691": null,
+    "0693": null,
+    "0696": 344,
+    "0697": 484,
+    "069f": 320,
+    "06b0": null,
+    "06b1": null,
+    "06b2": null,
+    "06b3": null,
+    "06b4": null,
+    "06b5": null,
+    "06b6": 484,
+    "06b7": null,
+    "06b9": 454,
+    "06bd": 440,
+    "06f0": 344,
+    "06f1": 436,
+    "06f2": 484,
+    "06f6": 320,
+    "06f9": 224,
+    "0776": 484,
+    "0778": 386,
+    "0779": null,
+    "077a": 496,
+    "077e": null,
+    "07b0": 352,
+    "07b1": null,
+    "07b4": 438,
+    "07b5": null,
+    "07b6": null,
+    "07bc": 432,
+    "07e0": 480,
+    "07e1": 494,
+    "07e2": null,
+    "07e3": null,
+    "07e6": 496,
+    "07e9": 432,
+    "07f0": 278,
+    "07f1": 472,
+    "07f2": 344,
+    "07f8": 216,
+    "1668": null,
+    "1669": null,
+    "166a": null,
+    "166b": null,
+    "166e": null,
+    "167e": null,
+    "1681": null,
+    "1683": null,
+    "1686": 472,
+    "1687": null,
+    "1689": null,
+    "168b": null,
+    "168e": null,
+    "1696": 404,
+    "1697": null,
+    "1698": null,
+    "1699": 452,
+    "169a": 482,
+    "169b": null,
+    "169e": 464,
+    "16a9": 500,
+    "16ac": null,
+    "16ad": null,
+    "16bc": 432,
+    "16e9": 432,
+    "177e": null,
+    "178e": 448,
+    "1796": 472,
+    "1798": null,
+    "179a": null,
+    "17ac": null,
+    "17e8": 440,
+    "18e7": 352,
+    "19e1": 484,
+    "19e3": null,
+    "19e6": 336,
+    "1bd8": 448,
+    "1be4": 320,
+    "1ee1": 224,
+    "6996": 256
+  },
+  "mode": "raw",
+  "verified_circuits": {
+    "0001": {
+      "witness": {
+        "truth": "0001",
+        "activity": 152,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b1110( 04 c )\n06 = 4'b0001( 05 d )\nSwitching Activity=152\n"
+    },
+    "0006": {
+      "witness": {
+        "truth": "0006",
+        "activity": 208,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b1110( d c )\n05 = 4'b0010( 04 a )\n06 = 4'b0010( 04 b )\n07 = 4'b0110( 06 05 )\nSwitching Activity=208\n"
+    },
+    "0007": {
+      "witness": {
+        "truth": "0007",
+        "activity": 182,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b1110( d c )\n05 = 4'b0010( 04 a )\n06 = 4'b1000( 05 b )\n07 = 4'b1001( 04 06 )\nSwitching Activity=182\n"
+    },
+    "0016": {
+      "witness": {
+        "truth": "0016",
+        "activity": 406,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1110( b a )\n05 = 4'b0110( 04 c )\n06 = 4'b0100( 05 d )\n07 = 4'b1000( 06 a )\n08 = 4'b1000( 07 b )\n09 = 4'b0100( 06 08 )\nSwitching Activity=406\n"
+    },
+    "0017": {
+      "witness": {
+        "truth": "0017",
+        "activity": 400,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( d a )\n05 = 4'b1110( d b )\n06 = 4'b1110( 04 b )\n07 = 4'b0110( 05 04 )\n08 = 4'b0100( 07 c )\n09 = 4'b1011( 06 08 )\nSwitching Activity=400\n"
+    },
+    "0018": {
+      "witness": {
+        "truth": "0018",
+        "activity": 336,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b1110( 04 d )\n06 = 4'b0010( 05 a )\n07 = 4'b0010( 05 c )\n08 = 4'b0110( 07 06 )\nSwitching Activity=336\n"
+    },
+    "0019": {
+      "witness": {
+        "truth": "0019",
+        "activity": 310,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b1110( 04 d )\n06 = 4'b0010( 05 a )\n07 = 4'b1000( 06 c )\n08 = 4'b1001( 05 07 )\nSwitching Activity=310\n"
+    },
+    "001b": {
+      "witness": {
+        "truth": "001b",
+        "activity": 304,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b0010( c a )\n06 = 4'b0100( 05 d )\n07 = 4'b1110( 04 d )\n08 = 4'b1011( 07 06 )\nSwitching Activity=304\n"
+    },
+    "001e": {
+      "witness": {
+        "truth": "001e",
+        "activity": 224,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b1110( b a )\n05 = 4'b0110( 04 c )\n06 = 4'b0100( 05 d )\nSwitching Activity=224\n"
+    },
+    "001f": {
+      "witness": {
+        "truth": "001f",
+        "activity": 216,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b1000( 04 c )\n06 = 4'b0001( 05 d )\nSwitching Activity=216\n"
+    },
+    "003d": {
+      "witness": {
+        "truth": "003d",
+        "activity": 326,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( d b )\n05 = 4'b1110( d c )\n06 = 4'b1110( 04 a )\n07 = 4'b0010( 05 06 )\n08 = 4'b1001( 04 07 )\nSwitching Activity=326\n"
+    },
+    "0069": {
+      "witness": {
+        "truth": "0069",
+        "activity": 256,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b0110( 04 c )\n06 = 4'b0001( 05 d )\nSwitching Activity=256\n"
+    },
+    "006b": {
+      "witness": {
+        "truth": "006b",
+        "activity": 432,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0100( b a )\n05 = 4'b0010( b a )\n06 = 4'b0010( 05 c )\n07 = 4'b0110( 06 04 )\n08 = 4'b0001( 07 d )\nSwitching Activity=432\n"
+    },
+    "006f": {
+      "witness": {
+        "truth": "006f",
+        "activity": 224,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b0010( 04 c )\n06 = 4'b0001( 05 d )\nSwitching Activity=224\n"
+    },
+    "007e": {
+      "witness": {
+        "truth": "007e",
+        "activity": 352,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0110( c a )\n06 = 4'b1110( 04 05 )\n07 = 4'b0100( 06 d )\nSwitching Activity=352\n"
+    },
+    "007f": {
+      "witness": {
+        "truth": "007f",
+        "activity": 152,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b1000( 04 c )\n06 = 4'b0001( 05 d )\nSwitching Activity=152\n"
+    },
+    "0118": {
+      "witness": {
+        "truth": "0118",
+        "activity": 446,
+        "gates": 8
+      },
+      "circuit": "Realization of given 4-input function using 8 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b0100( 04 c )\n07 = 4'b0100( 06 d )\n08 = 4'b0010( 05 c )\n09 = 4'b0010( 05 d )\n10 = 4'b0110( 09 08 )\n11 = 4'b0110( 10 07 )\nSwitching Activity=446\n"
+    },
+    "0119": {
+      "witness": {
+        "truth": "0119",
+        "activity": 420,
+        "gates": 8
+      },
+      "circuit": "Realization of given 4-input function using 8 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b0100( 04 c )\n07 = 4'b0100( 06 d )\n08 = 4'b0010( 05 c )\n09 = 4'b1000( 08 d )\n10 = 4'b0110( 09 07 )\n11 = 4'b1001( 05 10 )\nSwitching Activity=420\n"
+    },
+    "011a": {
+      "witness": {
+        "truth": "011a",
+        "activity": 416,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b1110( b a )\n05 = 4'b0010( c a )\n06 = 4'b0100( 05 d )\n07 = 4'b0010( 04 c )\n08 = 4'b0010( 04 d )\n09 = 4'b0110( 08 07 )\n10 = 4'b0110( 09 06 )\nSwitching Activity=416\n"
+    },
+    "011b": {
+      "witness": {
+        "truth": "011b",
+        "activity": 412,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b0010( c a )\n06 = 4'b0100( 05 d )\n07 = 4'b0010( 04 c )\n08 = 4'b1000( 07 d )\n09 = 4'b0110( 08 06 )\n10 = 4'b1001( 04 09 )\nSwitching Activity=412\n"
+    },
+    "011e": {
+      "witness": {
+        "truth": "011e",
+        "activity": 356,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1110( b a )\n05 = 4'b1110( d c )\n06 = 4'b0010( 04 c )\n07 = 4'b1000( 06 d )\n08 = 4'b0110( 04 07 )\n09 = 4'b0110( 05 08 )\nSwitching Activity=356\n"
+    },
+    "011f": {
+      "witness": {
+        "truth": "011f",
+        "activity": 356,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b1110( d c )\n06 = 4'b0010( 04 c )\n07 = 4'b1000( 06 d )\n08 = 4'b0110( 04 07 )\n09 = 4'b0111( 05 08 )\nSwitching Activity=356\n"
+    },
+    "012c": {
+      "witness": {
+        "truth": "012c",
+        "activity": 448,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0010( b a )\n05 = 4'b1110( b a )\n06 = 4'b0110( 04 c )\n07 = 4'b0110( 05 d )\n08 = 4'b0010( 06 07 )\nSwitching Activity=448\n"
+    },
+    "012d": {
+      "witness": {
+        "truth": "012d",
+        "activity": 440,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0010( b a )\n05 = 4'b1110( b a )\n06 = 4'b0110( 04 c )\n07 = 4'b1000( 05 d )\n08 = 4'b0001( 07 06 )\nSwitching Activity=440\n"
+    },
+    "012f": {
+      "witness": {
+        "truth": "012f",
+        "activity": 432,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0010( b a )\n05 = 4'b1110( b a )\n06 = 4'b0010( 04 c )\n07 = 4'b1000( 05 d )\n08 = 4'b0001( 07 06 )\nSwitching Activity=432\n"
+    },
+    "013c": {
+      "witness": {
+        "truth": "013c",
+        "activity": 406,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1110( b a )\n05 = 4'b0110( c b )\n06 = 4'b0100( 05 d )\n07 = 4'b1110( 04 c )\n08 = 4'b0010( 07 d )\n09 = 4'b0110( 08 06 )\nSwitching Activity=406\n"
+    },
+    "013d": {
+      "witness": {
+        "truth": "013d",
+        "activity": 376,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b0110( c b )\n06 = 4'b0100( 05 d )\n07 = 4'b1110( 04 c )\n08 = 4'b1011( 07 06 )\nSwitching Activity=376\n"
+    },
+    "013e": {
+      "witness": {
+        "truth": "013e",
+        "activity": 368,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( b a )\n05 = 4'b1000( c b )\n06 = 4'b1110( 05 d )\n07 = 4'b1110( 04 c )\n08 = 4'b0110( 06 07 )\nSwitching Activity=368\n"
+    },
+    "013f": {
+      "witness": {
+        "truth": "013f",
+        "activity": 368,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b1000( c b )\n06 = 4'b1110( 05 d )\n07 = 4'b1110( 04 c )\n08 = 4'b0111( 06 07 )\nSwitching Activity=368\n"
+    },
+    "0168": {
+      "witness": {
+        "truth": "0168",
+        "activity": 480,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b1110( b a )\n06 = 4'b0110( 04 c )\n07 = 4'b0110( 05 d )\n08 = 4'b0010( 06 07 )\nSwitching Activity=480\n"
+    },
+    "0169": {
+      "witness": {
+        "truth": "0169",
+        "activity": 472,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b1110( b a )\n06 = 4'b0110( 04 c )\n07 = 4'b1000( 05 d )\n08 = 4'b0001( 07 06 )\nSwitching Activity=472\n"
+    },
+    "016b": {
+      "witness": {
+        "truth": "016b",
+        "activity": 472,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b1000( c b )\n06 = 4'b0110( 05 a )\n07 = 4'b0100( 06 d )\n08 = 4'b1110( 04 c )\n09 = 4'b1011( 08 07 )\nSwitching Activity=472\n"
+    },
+    "016e": {
+      "witness": {
+        "truth": "016e",
+        "activity": 448,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b1110( b a )\n06 = 4'b0010( 04 c )\n07 = 4'b0110( 05 d )\n08 = 4'b0010( 06 07 )\nSwitching Activity=448\n"
+    },
+    "016f": {
+      "witness": {
+        "truth": "016f",
+        "activity": 440,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b1110( b a )\n06 = 4'b0010( 04 c )\n07 = 4'b1000( 05 d )\n08 = 4'b0001( 07 06 )\nSwitching Activity=440\n"
+    },
+    "017e": {
+      "witness": {
+        "truth": "017e",
+        "activity": 412,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b1000( 04 c )\n07 = 4'b0100( 06 d )\n08 = 4'b1110( 05 c )\n09 = 4'b0100( 08 07 )\n10 = 4'b0110( 09 d )\nSwitching Activity=412\n"
+    },
+    "017f": {
+      "witness": {
+        "truth": "017f",
+        "activity": 420,
+        "gates": 8
+      },
+      "circuit": "Realization of given 4-input function using 8 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b1000( 04 c )\n07 = 4'b0100( 06 d )\n08 = 4'b1110( 05 c )\n09 = 4'b0010( 08 d )\n10 = 4'b0110( 09 07 )\n11 = 4'b1001( 10 d )\nSwitching Activity=420\n"
+    },
+    "0180": {
+      "witness": {
+        "truth": "0180",
+        "activity": 364,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b1000( 04 c )\n07 = 4'b0100( 06 d )\n08 = 4'b1110( 05 c )\n09 = 4'b0010( 08 d )\n10 = 4'b0110( 09 07 )\nSwitching Activity=364\n"
+    },
+    "0181": {
+      "witness": {
+        "truth": "0181",
+        "activity": 334,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b1000( 04 c )\n07 = 4'b0100( 06 d )\n08 = 4'b1110( 05 c )\n09 = 4'b1011( 08 07 )\nSwitching Activity=334\n"
+    },
+    "0182": {
+      "witness": {
+        "truth": "0182",
+        "activity": 438,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0110( c b )\n05 = 4'b0110( d a )\n06 = 4'b0100( 05 04 )\n07 = 4'b0100( 06 a )\n08 = 4'b1000( 07 b )\n09 = 4'b0100( 06 08 )\nSwitching Activity=438\n"
+    },
+    "0183": {
+      "witness": {
+        "truth": "0183",
+        "activity": 416,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b0010( d a )\n06 = 4'b0100( 05 b )\n07 = 4'b1000( 05 c )\n08 = 4'b0110( 07 06 )\n09 = 4'b1110( 04 c )\n10 = 4'b1011( 09 08 )\nSwitching Activity=416\n"
+    },
+    "0186": {
+      "witness": {
+        "truth": "0186",
+        "activity": 448,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b0110( 04 c )\n07 = 4'b0110( 05 d )\n08 = 4'b0010( 06 07 )\nSwitching Activity=448\n"
+    },
+    "0187": {
+      "witness": {
+        "truth": "0187",
+        "activity": 440,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b0110( 04 c )\n07 = 4'b1000( 05 d )\n08 = 4'b0001( 07 06 )\nSwitching Activity=440\n"
+    },
+    "0189": {
+      "witness": {
+        "truth": "0189",
+        "activity": 304,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b0100( 04 d )\n07 = 4'b1110( 05 c )\n08 = 4'b1011( 07 06 )\nSwitching Activity=304\n"
+    },
+    "018b": {
+      "witness": {
+        "truth": "018b",
+        "activity": 412,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b1110( c b )\n06 = 4'b0100( 04 d )\n07 = 4'b0010( 05 a )\n08 = 4'b1000( 07 d )\n09 = 4'b0110( 08 06 )\n10 = 4'b1001( 05 09 )\nSwitching Activity=412\n"
+    },
+    "018f": {
+      "witness": {
+        "truth": "018f",
+        "activity": 432,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b0010( 04 c )\n07 = 4'b1000( 05 d )\n08 = 4'b0001( 07 06 )\nSwitching Activity=432\n"
+    },
+    "0198": {
+      "witness": {
+        "truth": "0198",
+        "activity": 352,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b1110( c a )\n06 = 4'b0110( 05 d )\n07 = 4'b0010( 04 06 )\nSwitching Activity=352\n"
+    },
+    "0199": {
+      "witness": {
+        "truth": "0199",
+        "activity": 344,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b1110( c a )\n06 = 4'b1000( 05 d )\n07 = 4'b0001( 06 04 )\nSwitching Activity=344\n"
+    },
+    "019a": {
+      "witness": {
+        "truth": "019a",
+        "activity": 446,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( d a )\n05 = 4'b0110( d c )\n06 = 4'b0100( 05 b )\n07 = 4'b1110( 04 06 )\n08 = 4'b0110( 07 a )\nSwitching Activity=446\n"
+    },
+    "019b": {
+      "witness": {
+        "truth": "019b",
+        "activity": 472,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b0100( c b )\n06 = 4'b0110( 05 a )\n07 = 4'b0100( 06 d )\n08 = 4'b1110( 04 c )\n09 = 4'b1011( 08 07 )\nSwitching Activity=472\n"
+    },
+    "019e": {
+      "witness": {
+        "truth": "019e",
+        "activity": 496,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b1110( b a )\n06 = 4'b1000( 04 c )\n07 = 4'b1110( 06 d )\n08 = 4'b1110( 05 c )\n09 = 4'b0110( 07 08 )\nSwitching Activity=496\n"
+    },
+    "019f": {
+      "witness": {
+        "truth": "019f",
+        "activity": 496,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b1110( b a )\n06 = 4'b1000( 04 c )\n07 = 4'b1110( 06 d )\n08 = 4'b1110( 05 c )\n09 = 4'b0111( 07 08 )\nSwitching Activity=496\n"
+    },
+    "01a8": {
+      "witness": {
+        "truth": "01a8",
+        "activity": 352,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b1110( c b )\n05 = 4'b0110( d a )\n06 = 4'b0110( 04 a )\n07 = 4'b0010( 06 05 )\nSwitching Activity=352\n"
+    },
+    "01a9": {
+      "witness": {
+        "truth": "01a9",
+        "activity": 318,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b1110( c b )\n05 = 4'b1000( d a )\n06 = 4'b0100( 04 05 )\n07 = 4'b1001( 06 a )\nSwitching Activity=318\n"
+    },
+    "01aa": {
+      "witness": {
+        "truth": "01aa",
+        "activity": 278,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( b a )\n05 = 4'b0010( d a )\n06 = 4'b1110( 04 c )\n07 = 4'b0010( 06 d )\n08 = 4'b0110( 07 05 )\nSwitching Activity=278\n"
+    },
+    "01ab": {
+      "witness": {
+        "truth": "01ab",
+        "activity": 248,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b0010( d a )\n06 = 4'b1110( 04 c )\n07 = 4'b1011( 06 05 )\nSwitching Activity=248\n"
+    },
+    "01ac": {
+      "witness": {
+        "truth": "01ac",
+        "activity": 476,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b0100( c a )\n05 = 4'b1110( c b )\n06 = 4'b1110( 04 d )\n07 = 4'b0010( 05 a )\n08 = 4'b1000( 07 d )\n09 = 4'b0110( 05 08 )\n10 = 4'b0110( 06 09 )\nSwitching Activity=476\n"
+    },
+    "01ad": {
+      "witness": {
+        "truth": "01ad",
+        "activity": 464,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0100( c a )\n05 = 4'b1110( c b )\n06 = 4'b1110( 04 d )\n07 = 4'b1110( 05 a )\n08 = 4'b0010( 06 05 )\n09 = 4'b1011( 07 08 )\nSwitching Activity=464\n"
+    },
+    "01ae": {
+      "witness": {
+        "truth": "01ae",
+        "activity": 320,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b1110( b a )\n05 = 4'b0100( c a )\n06 = 4'b0110( 04 d )\n07 = 4'b0010( 05 06 )\nSwitching Activity=320\n"
+    },
+    "01af": {
+      "witness": {
+        "truth": "01af",
+        "activity": 312,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b0100( c a )\n06 = 4'b1000( 04 d )\n07 = 4'b0001( 06 05 )\nSwitching Activity=312\n"
+    },
+    "01be": {
+      "witness": {
+        "truth": "01be",
+        "activity": 388,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0110( c b )\n05 = 4'b1110( 04 a )\n06 = 4'b0010( 05 b )\n07 = 4'b1000( 06 d )\n08 = 4'b0110( 05 07 )\n09 = 4'b0110( 08 d )\nSwitching Activity=388\n"
+    },
+    "01bf": {
+      "witness": {
+        "truth": "01bf",
+        "activity": 392,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0110( c b )\n05 = 4'b1110( 04 a )\n06 = 4'b0010( 05 b )\n07 = 4'b0010( 05 d )\n08 = 4'b0110( 07 06 )\n09 = 4'b1001( 08 d )\nSwitching Activity=392\n"
+    },
+    "01ea": {
+      "witness": {
+        "truth": "01ea",
+        "activity": 416,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( b a )\n05 = 4'b1110( c a )\n06 = 4'b0110( 04 d )\n07 = 4'b0110( 05 04 )\n08 = 4'b0010( 07 06 )\nSwitching Activity=416\n"
+    },
+    "01eb": {
+      "witness": {
+        "truth": "01eb",
+        "activity": 408,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b1110( c a )\n06 = 4'b1000( 04 d )\n07 = 4'b0110( 05 04 )\n08 = 4'b0001( 06 07 )\nSwitching Activity=408\n"
+    },
+    "01ee": {
+      "witness": {
+        "truth": "01ee",
+        "activity": 260,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( b a )\n05 = 4'b0010( 04 c )\n06 = 4'b1000( 05 d )\n07 = 4'b0110( 04 06 )\n08 = 4'b0110( 07 d )\nSwitching Activity=260\n"
+    },
+    "01ef": {
+      "witness": {
+        "truth": "01ef",
+        "activity": 264,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b0010( 04 c )\n06 = 4'b0010( 04 d )\n07 = 4'b0110( 06 05 )\n08 = 4'b1001( 07 d )\nSwitching Activity=264\n"
+    },
+    "01fe": {
+      "witness": {
+        "truth": "01fe",
+        "activity": 152,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b1110( b a )\n05 = 4'b1110( 04 c )\n06 = 4'b0110( 05 d )\nSwitching Activity=152\n"
+    },
+    "033d": {
+      "witness": {
+        "truth": "033d",
+        "activity": 468,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1000( c b )\n05 = 4'b1110( c b )\n06 = 4'b1110( 04 d )\n07 = 4'b1110( 06 a )\n08 = 4'b0100( 07 05 )\n09 = 4'b1001( 06 08 )\nSwitching Activity=468\n"
+    },
+    "0356": {
+      "witness": {
+        "truth": "0356",
+        "activity": 192,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b1110( c b )\n05 = 4'b1110( d a )\n06 = 4'b0110( 05 04 )\nSwitching Activity=192\n"
+    },
+    "0357": {
+      "witness": {
+        "truth": "0357",
+        "activity": 192,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b1110( c b )\n05 = 4'b1110( d a )\n06 = 4'b0111( 05 04 )\nSwitching Activity=192\n"
+    },
+    "0358": {
+      "witness": {
+        "truth": "0358",
+        "activity": 414,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1110( c b )\n05 = 4'b1110( d a )\n06 = 4'b1110( d c )\n07 = 4'b1000( 05 04 )\n08 = 4'b0110( 06 07 )\nSwitching Activity=414\n"
+    },
+    "0359": {
+      "witness": {
+        "truth": "0359",
+        "activity": 320,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b0110( c a )\n05 = 4'b1110( c b )\n06 = 4'b0100( 04 d )\n07 = 4'b1001( 05 06 )\nSwitching Activity=320\n"
+    },
+    "035a": {
+      "witness": {
+        "truth": "035a",
+        "activity": 312,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b1110( d a )\n05 = 4'b1000( d b )\n06 = 4'b1110( 05 c )\n07 = 4'b0110( 04 06 )\nSwitching Activity=312\n"
+    },
+    "035b": {
+      "witness": {
+        "truth": "035b",
+        "activity": 320,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b0110( c a )\n05 = 4'b1110( c b )\n06 = 4'b0100( 04 d )\n07 = 4'b1011( 05 06 )\nSwitching Activity=320\n"
+    },
+    "035e": {
+      "witness": {
+        "truth": "035e",
+        "activity": 422,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0010( c b )\n05 = 4'b1110( c b )\n06 = 4'b0010( 04 a )\n07 = 4'b1110( 06 d )\n08 = 4'b0110( 07 05 )\nSwitching Activity=422\n"
+    },
+    "035f": {
+      "witness": {
+        "truth": "035f",
+        "activity": 312,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b1000( c a )\n05 = 4'b1110( c b )\n06 = 4'b1110( 04 d )\n07 = 4'b0111( 06 05 )\nSwitching Activity=312\n"
+    },
+    "0369": {
+      "witness": {
+        "truth": "0369",
+        "activity": 416,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( c b )\n05 = 4'b1110( c b )\n06 = 4'b0110( 04 a )\n07 = 4'b0100( 06 d )\n08 = 4'b1001( 05 07 )\nSwitching Activity=416\n"
+    },
+    "036a": {
+      "witness": {
+        "truth": "036a",
+        "activity": 448,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b1110( c b )\n06 = 4'b0110( 04 c )\n07 = 4'b1110( 06 d )\n08 = 4'b0110( 07 05 )\nSwitching Activity=448\n"
+    },
+    "036b": {
+      "witness": {
+        "truth": "036b",
+        "activity": 416,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( c b )\n05 = 4'b1110( c b )\n06 = 4'b0110( 04 a )\n07 = 4'b0100( 06 d )\n08 = 4'b1011( 05 07 )\nSwitching Activity=416\n"
+    },
+    "036c": {
+      "witness": {
+        "truth": "036c",
+        "activity": 432,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( c a )\n05 = 4'b1000( d c )\n06 = 4'b1110( 04 d )\n07 = 4'b1110( 05 b )\n08 = 4'b0110( 06 07 )\nSwitching Activity=432\n"
+    },
+    "036e": {
+      "witness": {
+        "truth": "036e",
+        "activity": 448,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0110( d b )\n06 = 4'b0100( 05 c )\n07 = 4'b0100( 04 d )\n08 = 4'b1110( 06 07 )\nSwitching Activity=448\n"
+    },
+    "036f": {
+      "witness": {
+        "truth": "036f",
+        "activity": 416,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( c a )\n05 = 4'b1110( c b )\n06 = 4'b0110( 04 b )\n07 = 4'b0100( 06 d )\n08 = 4'b1011( 05 07 )\nSwitching Activity=416\n"
+    },
+    "037c": {
+      "witness": {
+        "truth": "037c",
+        "activity": 374,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b1110( c b )\n06 = 4'b1000( 04 c )\n07 = 4'b1110( 06 d )\n08 = 4'b0110( 07 05 )\nSwitching Activity=374\n"
+    },
+    "037d": {
+      "witness": {
+        "truth": "037d",
+        "activity": 480,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b1110( c b )\n05 = 4'b0010( d a )\n06 = 4'b0100( 05 b )\n07 = 4'b1000( 05 c )\n08 = 4'b0110( 07 06 )\n09 = 4'b1000( 04 d )\n10 = 4'b1001( 09 08 )\nSwitching Activity=480\n"
+    },
+    "037e": {
+      "witness": {
+        "truth": "037e",
+        "activity": 440,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( c b )\n05 = 4'b1110( c b )\n06 = 4'b0010( 04 a )\n07 = 4'b1110( 06 d )\n08 = 4'b0110( 07 05 )\nSwitching Activity=440\n"
+    },
+    "03c1": {
+      "witness": {
+        "truth": "03c1",
+        "activity": 412,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b1000( c b )\n05 = 4'b1110( c b )\n06 = 4'b0100( 04 d )\n07 = 4'b0010( 05 a )\n08 = 4'b0100( 07 d )\n09 = 4'b0110( 06 08 )\n10 = 4'b1001( 05 09 )\nSwitching Activity=412\n"
+    },
+    "03c5": {
+      "witness": {
+        "truth": "03c5",
+        "activity": 416,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0010( c a )\n05 = 4'b1110( c b )\n06 = 4'b0110( 04 b )\n07 = 4'b0100( 06 d )\n08 = 4'b1001( 05 07 )\nSwitching Activity=416\n"
+    },
+    "03c6": {
+      "witness": {
+        "truth": "03c6",
+        "activity": 432,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0010( c a )\n05 = 4'b1000( d c )\n06 = 4'b1110( 04 d )\n07 = 4'b1110( 05 b )\n08 = 4'b0110( 06 07 )\nSwitching Activity=432\n"
+    },
+    "03c7": {
+      "witness": {
+        "truth": "03c7",
+        "activity": 356,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1110( c b )\n05 = 4'b0010( d b )\n06 = 4'b1000( 05 a )\n07 = 4'b0100( 06 c )\n08 = 4'b0100( 05 07 )\n09 = 4'b1011( 04 08 )\nSwitching Activity=356\n"
+    },
+    "03d4": {
+      "witness": {
+        "truth": "03d4",
+        "activity": 440,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( c b )\n05 = 4'b1110( c b )\n06 = 4'b1000( 04 a )\n07 = 4'b1110( 06 d )\n08 = 4'b0110( 07 05 )\nSwitching Activity=440\n"
+    },
+    "03d5": {
+      "witness": {
+        "truth": "03d5",
+        "activity": 448,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( c b )\n05 = 4'b1110( d a )\n06 = 4'b0110( d b )\n07 = 4'b0010( 04 06 )\n08 = 4'b1011( 05 07 )\nSwitching Activity=448\n"
+    },
+    "03d6": {
+      "witness": {
+        "truth": "03d6",
+        "activity": 422,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( c b )\n05 = 4'b1110( c b )\n06 = 4'b0010( 04 a )\n07 = 4'b1110( 06 d )\n08 = 4'b0110( 07 05 )\nSwitching Activity=422\n"
+    },
+    "03d7": {
+      "witness": {
+        "truth": "03d7",
+        "activity": 422,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( c b )\n05 = 4'b1110( c b )\n06 = 4'b0010( 04 a )\n07 = 4'b1110( 06 d )\n08 = 4'b0111( 07 05 )\nSwitching Activity=422\n"
+    },
+    "03d9": {
+      "witness": {
+        "truth": "03d9",
+        "activity": 446,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0010( d a )\n05 = 4'b0110( d b )\n06 = 4'b1000( 05 c )\n07 = 4'b1110( 06 04 )\n08 = 4'b1001( 07 b )\nSwitching Activity=446\n"
+    },
+    "03db": {
+      "witness": {
+        "truth": "03db",
+        "activity": 496,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b0100( c a )\n06 = 4'b1110( c b )\n07 = 4'b0100( 05 d )\n08 = 4'b0100( 04 d )\n09 = 4'b0110( 08 07 )\n10 = 4'b1011( 06 09 )\nSwitching Activity=496\n"
+    },
+    "03dc": {
+      "witness": {
+        "truth": "03dc",
+        "activity": 326,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0010( d a )\n05 = 4'b0010( 04 c )\n06 = 4'b1110( 05 b )\n07 = 4'b0110( 06 d )\nSwitching Activity=326\n"
+    },
+    "03dd": {
+      "witness": {
+        "truth": "03dd",
+        "activity": 368,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0010( b a )\n05 = 4'b1110( c b )\n06 = 4'b0100( 04 d )\n07 = 4'b1000( 05 d )\n08 = 4'b1001( 07 06 )\nSwitching Activity=368\n"
+    },
+    "03de": {
+      "witness": {
+        "truth": "03de",
+        "activity": 312,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0010( b a )\n05 = 4'b1110( c b )\n06 = 4'b1110( 04 d )\n07 = 4'b0110( 06 05 )\nSwitching Activity=312\n"
+    },
+    "0660": {
+      "witness": {
+        "truth": "0660",
+        "activity": 256,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0110( d c )\n06 = 4'b1000( 04 05 )\nSwitching Activity=256\n"
+    },
+    "0662": {
+      "witness": {
+        "truth": "0662",
+        "activity": 454,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0100( 04 c )\n06 = 4'b1000( 05 a )\n07 = 4'b0100( 04 d )\n08 = 4'b0010( 06 07 )\n09 = 4'b0110( 05 08 )\nSwitching Activity=454\n"
+    },
+    "0663": {
+      "witness": {
+        "truth": "0663",
+        "activity": 440,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( d c )\n05 = 4'b1000( d c )\n06 = 4'b0100( 04 a )\n07 = 4'b1110( 05 b )\n08 = 4'b1001( 07 06 )\nSwitching Activity=440\n"
+    },
+    "0666": {
+      "witness": {
+        "truth": "0666",
+        "activity": 224,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b1000( d c )\n06 = 4'b0010( 05 04 )\nSwitching Activity=224\n"
+    },
+    "0667": {
+      "witness": {
+        "truth": "0667",
+        "activity": 496,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b1110( c a )\n06 = 4'b1000( d c )\n07 = 4'b0010( 06 04 )\n08 = 4'b1110( 05 d )\n09 = 4'b1011( 08 07 )\nSwitching Activity=496\n"
+    },
+    "0669": {
+      "witness": {
+        "truth": "0669",
+        "activity": 440,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b1000( d c )\n06 = 4'b1110( d c )\n07 = 4'b0010( 05 04 )\n08 = 4'b1001( 06 07 )\nSwitching Activity=440\n"
+    },
+    "066f": {
+      "witness": {
+        "truth": "066f",
+        "activity": 440,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b1000( d c )\n06 = 4'b1110( d c )\n07 = 4'b0010( 05 04 )\n08 = 4'b1011( 06 07 )\nSwitching Activity=440\n"
+    },
+    "0673": {
+      "witness": {
+        "truth": "0673",
+        "activity": 448,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b1110( d b )\n06 = 4'b0110( d c )\n07 = 4'b1000( 04 06 )\n08 = 4'b1011( 05 07 )\nSwitching Activity=448\n"
+    },
+    "0676": {
+      "witness": {
+        "truth": "0676",
+        "activity": 432,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0100( c a )\n05 = 4'b1000( d c )\n06 = 4'b1110( 04 b )\n07 = 4'b0110( 06 a )\n08 = 4'b0010( 05 07 )\nSwitching Activity=432\n"
+    },
+    "0690": {
+      "witness": {
+        "truth": "0690",
+        "activity": 384,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0110( d c )\n06 = 4'b0110( 04 c )\n07 = 4'b1000( 06 05 )\nSwitching Activity=384\n"
+    },
+    "0696": {
+      "witness": {
+        "truth": "0696",
+        "activity": 344,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b1000( d c )\n06 = 4'b1110( 05 04 )\n07 = 4'b0110( 06 c )\nSwitching Activity=344\n"
+    },
+    "0697": {
+      "witness": {
+        "truth": "0697",
+        "activity": 484,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b0100( 04 c )\n06 = 4'b1110( 04 d )\n07 = 4'b0010( 06 a )\n08 = 4'b0100( 07 c )\n09 = 4'b0110( 06 08 )\n10 = 4'b1011( 09 05 )\nSwitching Activity=484\n"
+    },
+    "069f": {
+      "witness": {
+        "truth": "069f",
+        "activity": 320,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b0100( 04 c )\n06 = 4'b1110( 04 d )\n07 = 4'b1011( 06 05 )\nSwitching Activity=320\n"
+    },
+    "06b6": {
+      "witness": {
+        "truth": "06b6",
+        "activity": 484,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0010( d c )\n06 = 4'b0100( 05 a )\n07 = 4'b1000( 06 b )\n08 = 4'b0100( 05 07 )\n09 = 4'b0100( 04 c )\n10 = 4'b0110( 09 08 )\nSwitching Activity=484\n"
+    },
+    "06b9": {
+      "witness": {
+        "truth": "06b9",
+        "activity": 454,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b1110( d a )\n06 = 4'b1000( 05 c )\n07 = 4'b0010( 06 04 )\n08 = 4'b1001( 07 d )\nSwitching Activity=454\n"
+    },
+    "06bd": {
+      "witness": {
+        "truth": "06bd",
+        "activity": 440,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0100( b a )\n05 = 4'b0110( b a )\n06 = 4'b1110( 04 d )\n07 = 4'b0100( 05 c )\n08 = 4'b1001( 06 07 )\nSwitching Activity=440\n"
+    },
+    "06f0": {
+      "witness": {
+        "truth": "06f0",
+        "activity": 344,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b1110( 04 c )\n06 = 4'b1000( 05 d )\n07 = 4'b0110( 06 c )\nSwitching Activity=344\n"
+    },
+    "06f1": {
+      "witness": {
+        "truth": "06f1",
+        "activity": 436,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0010( c a )\n05 = 4'b0010( c b )\n06 = 4'b0100( 04 d )\n07 = 4'b0100( 05 06 )\n08 = 4'b0110( 07 04 )\n09 = 4'b1001( 08 d )\nSwitching Activity=436\n"
+    },
+    "06f2": {
+      "witness": {
+        "truth": "06f2",
+        "activity": 484,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0010( d c )\n06 = 4'b0100( 04 c )\n07 = 4'b0100( 06 a )\n08 = 4'b0100( 07 d )\n09 = 4'b0100( 06 08 )\n10 = 4'b0110( 09 05 )\nSwitching Activity=484\n"
+    },
+    "06f6": {
+      "witness": {
+        "truth": "06f6",
+        "activity": 320,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0010( d c )\n06 = 4'b0100( 04 c )\n07 = 4'b0110( 06 05 )\nSwitching Activity=320\n"
+    },
+    "06f9": {
+      "witness": {
+        "truth": "06f9",
+        "activity": 224,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b0100( 04 c )\n06 = 4'b1001( 05 d )\nSwitching Activity=224\n"
+    },
+    "0776": {
+      "witness": {
+        "truth": "0776",
+        "activity": 484,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b1000( d c )\n07 = 4'b1110( 05 c )\n08 = 4'b1110( 07 d )\n09 = 4'b0100( 08 04 )\n10 = 4'b0010( 06 09 )\nSwitching Activity=484\n"
+    },
+    "0778": {
+      "witness": {
+        "truth": "0778",
+        "activity": 386,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b1000( 04 c )\n06 = 4'b1000( 05 d )\n07 = 4'b0100( 04 06 )\n08 = 4'b0110( 07 c )\n09 = 4'b0110( 08 d )\nSwitching Activity=386\n"
+    },
+    "077a": {
+      "witness": {
+        "truth": "077a",
+        "activity": 496,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b0010( c a )\n06 = 4'b0110( d c )\n07 = 4'b0100( 05 d )\n08 = 4'b0010( 04 06 )\n09 = 4'b0110( 08 07 )\nSwitching Activity=496\n"
+    },
+    "07b0": {
+      "witness": {
+        "truth": "07b0",
+        "activity": 352,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( c a )\n05 = 4'b0110( d c )\n06 = 4'b1000( 04 b )\n07 = 4'b0010( 06 05 )\nSwitching Activity=352\n"
+    },
+    "07b4": {
+      "witness": {
+        "truth": "07b4",
+        "activity": 438,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0100( b a )\n05 = 4'b0010( c b )\n06 = 4'b0010( 05 d )\n07 = 4'b1110( 06 04 )\n08 = 4'b0110( 07 c )\nSwitching Activity=438\n"
+    },
+    "07bc": {
+      "witness": {
+        "truth": "07bc",
+        "activity": 432,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0100( b a )\n05 = 4'b1000( b a )\n06 = 4'b1110( 04 d )\n07 = 4'b1110( 05 c )\n08 = 4'b0110( 06 07 )\nSwitching Activity=432\n"
+    },
+    "07e0": {
+      "witness": {
+        "truth": "07e0",
+        "activity": 480,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0110( c a )\n06 = 4'b0110( d c )\n07 = 4'b0010( 04 05 )\n08 = 4'b0010( 07 06 )\nSwitching Activity=480\n"
+    },
+    "07e1": {
+      "witness": {
+        "truth": "07e1",
+        "activity": 494,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b0100( 04 c )\n07 = 4'b0100( 05 d )\n08 = 4'b1110( 06 07 )\n09 = 4'b1001( 08 c )\nSwitching Activity=494\n"
+    },
+    "07e6": {
+      "witness": {
+        "truth": "07e6",
+        "activity": 496,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b1000( d c )\n07 = 4'b0100( 04 c )\n08 = 4'b1110( 05 d )\n09 = 4'b0100( 08 07 )\n10 = 4'b0100( 09 06 )\nSwitching Activity=496\n"
+    },
+    "07e9": {
+      "witness": {
+        "truth": "07e9",
+        "activity": 432,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b1110( 04 c )\n07 = 4'b0100( 05 d )\n08 = 4'b1001( 06 07 )\nSwitching Activity=432\n"
+    },
+    "07f0": {
+      "witness": {
+        "truth": "07f0",
+        "activity": 278,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b0100( 04 c )\n06 = 4'b0010( 05 d )\n07 = 4'b0110( 06 c )\nSwitching Activity=278\n"
+    },
+    "07f1": {
+      "witness": {
+        "truth": "07f1",
+        "activity": 472,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b0110( d a )\n06 = 4'b1110( 04 05 )\n07 = 4'b0100( 06 c )\n08 = 4'b1001( 07 d )\nSwitching Activity=472\n"
+    },
+    "07f2": {
+      "witness": {
+        "truth": "07f2",
+        "activity": 344,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0110( d b )\n05 = 4'b0010( 04 a )\n06 = 4'b1110( 05 c )\n07 = 4'b0110( 06 d )\nSwitching Activity=344\n"
+    },
+    "07f8": {
+      "witness": {
+        "truth": "07f8",
+        "activity": 216,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b1110( 04 c )\n06 = 4'b0110( 05 d )\nSwitching Activity=216\n"
+    },
+    "1686": {
+      "witness": {
+        "truth": "1686",
+        "activity": 472,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0110( d a )\n06 = 4'b0010( 05 c )\n07 = 4'b1110( 06 04 )\n08 = 4'b0110( 07 c )\nSwitching Activity=472\n"
+    },
+    "1696": {
+      "witness": {
+        "truth": "1696",
+        "activity": 404,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b1000( 04 d )\n06 = 4'b0010( 05 c )\n07 = 4'b0110( 06 a )\n08 = 4'b0110( 07 b )\nSwitching Activity=404\n"
+    },
+    "1699": {
+      "witness": {
+        "truth": "1699",
+        "activity": 452,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b0010( 04 c )\n06 = 4'b0010( 05 d )\n07 = 4'b0110( 06 a )\n08 = 4'b1001( 07 b )\nSwitching Activity=452\n"
+    },
+    "169a": {
+      "witness": {
+        "truth": "169a",
+        "activity": 482,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=0:\n04 = 4'b0100( c b )\n05 = 4'b1000( d b )\n06 = 4'b0100( 05 a )\n07 = 4'b1000( 06 c )\n08 = 4'b0100( 05 07 )\n09 = 4'b0110( 08 a )\n10 = 4'b0110( 04 09 )\nSwitching Activity=482\n"
+    },
+    "169e": {
+      "witness": {
+        "truth": "169e",
+        "activity": 464,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( d c )\n05 = 4'b0010( 04 a )\n06 = 4'b0010( 05 b )\n07 = 4'b0110( 06 a )\n08 = 4'b0110( 07 c )\nSwitching Activity=464\n"
+    },
+    "16a9": {
+      "witness": {
+        "truth": "16a9",
+        "activity": 500,
+        "gates": 6
+      },
+      "circuit": "Realization of given 4-input function using 6 two-input gates complementary=1:\n04 = 4'b0100( b a )\n05 = 4'b1110( c b )\n06 = 4'b1000( 04 c )\n07 = 4'b0010( 06 d )\n08 = 4'b0110( 07 a )\n09 = 4'b1001( 05 08 )\nSwitching Activity=500\n"
+    },
+    "16bc": {
+      "witness": {
+        "truth": "16bc",
+        "activity": 432,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b1000( d a )\n06 = 4'b0010( 04 c )\n07 = 4'b0110( 06 b )\n08 = 4'b0110( 07 05 )\nSwitching Activity=432\n"
+    },
+    "16e9": {
+      "witness": {
+        "truth": "16e9",
+        "activity": 432,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b1110( 04 c )\n07 = 4'b0110( 06 05 )\n08 = 4'b1001( 07 d )\nSwitching Activity=432\n"
+    },
+    "178e": {
+      "witness": {
+        "truth": "178e",
+        "activity": 448,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0110( d a )\n06 = 4'b0100( 04 c )\n07 = 4'b0010( 04 05 )\n08 = 4'b0110( 07 06 )\nSwitching Activity=448\n"
+    },
+    "1796": {
+      "witness": {
+        "truth": "1796",
+        "activity": 472,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0110( c a )\n06 = 4'b0010( 05 d )\n07 = 4'b1110( 06 04 )\n08 = 4'b0110( 07 c )\nSwitching Activity=472\n"
+    },
+    "17e8": {
+      "witness": {
+        "truth": "17e8",
+        "activity": 440,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b1110( 04 c )\n07 = 4'b1000( 06 05 )\n08 = 4'b0110( 07 d )\nSwitching Activity=440\n"
+    },
+    "18e7": {
+      "witness": {
+        "truth": "18e7",
+        "activity": 352,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=1:\n04 = 4'b0110( b a )\n05 = 4'b0110( c a )\n06 = 4'b0010( 04 05 )\n07 = 4'b1001( 06 d )\nSwitching Activity=352\n"
+    },
+    "19e1": {
+      "witness": {
+        "truth": "19e1",
+        "activity": 484,
+        "gates": 7
+      },
+      "circuit": "Realization of given 4-input function using 7 two-input gates complementary=1:\n04 = 4'b1000( b a )\n05 = 4'b1110( b a )\n06 = 4'b0010( d c )\n07 = 4'b0100( 04 c )\n08 = 4'b1000( 07 d )\n09 = 4'b0110( 08 06 )\n10 = 4'b1001( 05 09 )\nSwitching Activity=484\n"
+    },
+    "19e6": {
+      "witness": {
+        "truth": "19e6",
+        "activity": 336,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b1000( c a )\n05 = 4'b0010( 04 b )\n06 = 4'b0110( 05 a )\n07 = 4'b0110( 06 d )\nSwitching Activity=336\n"
+    },
+    "1bd8": {
+      "witness": {
+        "truth": "1bd8",
+        "activity": 448,
+        "gates": 5
+      },
+      "circuit": "Realization of given 4-input function using 5 two-input gates complementary=0:\n04 = 4'b0110( c b )\n05 = 4'b0100( 04 a )\n06 = 4'b0110( 05 b )\n07 = 4'b0010( 04 d )\n08 = 4'b0110( 06 07 )\nSwitching Activity=448\n"
+    },
+    "1be4": {
+      "witness": {
+        "truth": "1be4",
+        "activity": 320,
+        "gates": 4
+      },
+      "circuit": "Realization of given 4-input function using 4 two-input gates complementary=0:\n04 = 4'b0100( b a )\n05 = 4'b1000( c a )\n06 = 4'b0110( 04 d )\n07 = 4'b0110( 06 05 )\nSwitching Activity=320\n"
+    },
+    "1ee1": {
+      "witness": {
+        "truth": "1ee1",
+        "activity": 224,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=1:\n04 = 4'b1110( b a )\n05 = 4'b0110( d c )\n06 = 4'b1001( 04 05 )\nSwitching Activity=224\n"
+    },
+    "6996": {
+      "witness": {
+        "truth": "6996",
+        "activity": 256,
+        "gates": 3
+      },
+      "circuit": "Realization of given 4-input function using 3 two-input gates complementary=0:\n04 = 4'b0110( b a )\n05 = 4'b0110( d c )\n06 = 4'b0110( 04 05 )\nSwitching Activity=256\n"
+    }
+  }
+}

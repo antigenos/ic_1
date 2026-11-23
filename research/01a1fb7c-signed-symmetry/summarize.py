@@ -25,6 +25,7 @@ def replay(path,target,order,cpu,cap):
         if row["status"]=="timeout":
             assert "witness" not in row
         else:
+            assert row["wall_s"]<=cap
             assert row["returncode"]==0 and row["status"]=="solver_completed_verified_witness"
             w=simulate(text,4,int(target,16))
             assert w==row["witness"]
