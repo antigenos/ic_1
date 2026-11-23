@@ -64,20 +64,27 @@ def shared(text):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--cpu", type=int, required=True)
+    parser.add_argument("--cap", type=int, default=560)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     pin(args.cpu)
     dag = json.loads((HERE/"prefix-560.json").read_bytes())
+    if args.cap < dag["limit"] or args.cap % 2:
+        parser.error("Use an even cap at least as high as the stored DAG certificate")
+    selected = dag["certificates"]
+    if args.cap > dag["limit"]:
+        previous = json.loads((HERE/"formula-560.json").read_bytes())
+        selected = {t:v for t,v in selected.items() if previous["cases"][t]["formula"] is None}
     start = perf_counter()
-    values, parents, pairs = formulas(dag["limit"])
+    values, parents, pairs = formulas(args.cap)
     enum_s = perf_counter()-start
     cases = {}
-    for key, exact in dag["certificates"].items():
+    for key, exact in selected.items():
         target = int(key,16)
         tree = values.get(norm(target))
         case = dict(dag=exact, formula=tree)
         if tree is not None:
-            assert exact is not None and exact <= tree
+            assert (exact <= tree if exact is not None else tree > dag["limit"])
             text = circuit(target, tree, parents)
             case.update(circuit=text, witness=simulate(text, 4, target))
             assert not shared(text)
@@ -87,11 +94,15 @@ def main():
                 assert exact == tree
         case["sharing"] = ("unknown_above_bound" if exact is None else
                            "unnecessary" if tree == exact else "required")
+        if args.cap > dag["limit"]:
+            case["dag_interval"] = ([exact, exact] if exact is not None else [dag["limit"]+2, tree])
         cases[key] = case
-    summary = dict(limit=dag["limit"], targets=len(cases), pairs=pairs, free_signals=len(values),
+    summary = dict(limit=args.cap, targets=len(cases), pairs=pairs, free_signals=len(values),
                    finite_formulas=sum(c["formula"] is not None for c in cases.values()),
                    sharing=dict(Counter(c["sharing"] for c in cases.values())))
     result = dict(**summary, enumeration_s=enum_s, cases=cases)
+    if args.cap > dag["limit"]:
+        result["dag_certificate_cap"] = dag["limit"]
     if args.output:
         write_once(args.output,(json.dumps(result,indent=2)+"\n").encode())
     print(json.dumps(dict(**summary,enumeration_s=enum_s)))

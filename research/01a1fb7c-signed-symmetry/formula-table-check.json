@@ -1,0 +1,18 @@
+[
+  {
+    "cap": 560,
+    "finite": 30520,
+    "constructed": 30515,
+    "pairs_with_repetition": 603283,
+    "gate_inequalities": 3016415,
+    "normalized_value_sha256": "389661f97515397654b9a4515d194bdf864e74f65d3897f0f72018cc07828f81"
+  },
+  {
+    "cap": 720,
+    "finite": 32768,
+    "constructed": 32763,
+    "pairs_with_repetition": 5293069,
+    "gate_inequalities": 26465345,
+    "normalized_value_sha256": "dcd66564838323f8e3a69d29fd7e936eb4ebfe45eb8e4c6c801a9e4a1232f8bd"
+  }
+]
