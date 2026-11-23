@@ -9,6 +9,7 @@ import sys
 import time
 
 from compare_orbits import HERE, ROOT
+from check_orbits import first_gate_truth, representatives
 from full import awake, lock, request_awake
 from witness import simulate
 
@@ -61,6 +62,7 @@ def check(cases,rows):
                 assert row["returncode"]==0 and "Total runtime" in text
                 w=simulate(text,4,int(t,16))
                 assert w==row["witness"]
+                assert first_gate_truth(text) in representatives(4,int(t,16),signed=arm=="B")
                 values.add(w["activity"])
             else:
                 assert row["status"]=="timeout" and row["wall_s"]>=59.85 and "witness" not in row

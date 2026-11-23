@@ -82,6 +82,7 @@ def read_raw(root):
 
 
 def audit_full(manifest, rows, conf):
+    from check_orbits import check_witness, first_gate_truth, representatives
     family=json.loads((HERE/"reproduction/evidence/npn-family.json").read_text())["essential"]
     cpus=list(range(16,32,2))
     assert conf["cap"]==300 and conf["cpus"]==cpus and len(family)==len(set(family))==208
@@ -92,6 +93,7 @@ def audit_full(manifest, rows, conf):
     assert len(rows)==len(by_key)==416
     last_end={}
     max_skew=0
+    first_gates={a:{"witnesses":0,"canonical":0,"checked_images":0} for a in "AB"}
     for case in manifest:
         truth,cpu=case["truth"],case["cpu"]
         for pos,arm in enumerate(case["order"],1):
@@ -110,13 +112,22 @@ def audit_full(manifest, rows, conf):
             assert ("witness" in r)==(r["status"]=="solver_completed_verified_witness")
             if r["status"]=="solver_completed_verified_witness":
                 assert "Total runtime" in r["solver_output"]
+                target=int(truth,16)
+                h=first_gate_truth(r["solver_output"])
+                canonical=h in representatives(4,target)
+                assert arm!="B" or canonical, (truth,"noncanonical first gate",h)
+                first_gates[arm]["witnesses"]+=1
+                first_gates[arm]["canonical"]+=int(canonical)
+                first_gates[arm]["checked_images"]+=check_witness(
+                    r["solver_output"],target,r["witness"]["activity"])
             start=datetime.fromisoformat(r["start_utc"])
             assert start.utcoffset() is not None
             epoch=start.timestamp()
             assert epoch>=last_end.get(cpu,0)-0.1
             last_end[cpu]=epoch+r["wall_s"]
             max_skew=max(max_skew,skew)
-    return dict(accepted=len(rows),cpu_lanes=len(cpus),cap_s=conf["cap"],max_wall_awake_gap_s=max_skew)
+    return dict(accepted=len(rows),cpu_lanes=len(cpus),cap_s=conf["cap"],
+                max_wall_awake_gap_s=max_skew,first_gates=first_gates)
 
 
 if __name__=="__main__":

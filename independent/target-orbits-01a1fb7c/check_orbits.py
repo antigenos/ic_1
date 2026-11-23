@@ -19,6 +19,15 @@ def op(code, a, b):
     return {2: b & ~a, 4: a & ~b, 6: a ^ b, 8: a & b, 14: a | b}[code]
 
 
+def first_gate_truth(text):
+    """Decode the first internal signal from a full-support four-input witness."""
+    gates=GATE.findall(text.replace("\r",""))
+    i,code,x,y=min(gates,key=lambda g:int(g[0]))
+    inputs=dict(zip("abcd",pins(4)))
+    assert int(i)==4 and x in inputs and y in inputs
+    return op(int(code,2),inputs[x],inputs[y])
+
+
 def normal(t, mask):
     return t ^ (mask if t & 1 else 0)
 
