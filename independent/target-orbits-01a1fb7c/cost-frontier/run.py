@@ -34,16 +34,21 @@ if __name__ == '__main__':
     p.add_argument('exe', type=Path)
     p.add_argument('n', type=int)
     p.add_argument('cap', type=int)
-    p.add_argument('mode', choices=['projected','uniform'])
+    p.add_argument('mode', choices=['projected','uniform','direct'])
     p.add_argument('directory', type=Path)
     args = p.parse_args()
     args.directory.mkdir(parents=True, exist_ok=False)
     table = args.directory / 'table.tsv'
-    cmd = [str(args.exe.resolve()), str(args.n), str(args.cap), args.mode, str(table.resolve())]
-    launch = dict(command=[args.exe.name, *cmd[1:4], table.name], binary=digest(args.exe),
+    switches = [str(args.n), str(args.cap)]
+    if args.mode != 'direct':
+        switches.append(args.mode)
+    cmd = [str(args.exe.resolve()), *switches, str(table.resolve())]
+    launch = dict(command=[args.exe.name, *switches, table.name], binary=digest(args.exe),
                   source=digest(Path(__file__).with_name('frontier.cpp')),
                   started=datetime.now(timezone.utc).isoformat(), host=platform.platform(),
                   processor=platform.processor())
+    if args.mode=='direct':
+        launch['direct_source']=digest(Path(__file__).with_name('direct.cpp'))
     start = time.perf_counter()
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     (args.directory/'launch.json').write_text(json.dumps(dict(launch, pid=proc.pid), indent=2))
