@@ -1,0 +1,35 @@
+{
+  "kind": "profile",
+  "cases": [
+    "0019"
+  ],
+  "source_commit": "d58f5aed7ba5cf80b4dc76f1d4cad2a98ad44536",
+  "outer": "5400328802c98c1870fb7f61ff2475f698ee48ea",
+  "cpu": 30,
+  "physical": [
+    30,
+    31
+  ],
+  "methods": [
+    "joint",
+    "interval",
+    "holes"
+  ],
+  "binaries": {
+    "joint": "624c982446f02d92c731ec3a796120d0561777c0f96f45e1bea4a1a98e8a5e65",
+    "interval": "cacd92722b3b0105caa1ee4996d3230996a26a6f1fd6b80f7bf9fa452b7413c5",
+    "holes": "bc1b254b917e34a0cdb53b49944b83e38aaea4754cb75da183c882da3ef82b9f"
+  },
+  "cap": 120,
+  "env": {
+    "OPTWIN_MODE": "both",
+    "REPLAY_RULES": "both",
+    "REPLAY_BUDGET": "1",
+    "OPTWIN_TRACE": "1",
+    "REPLAY_STATS": "1"
+  },
+  "reference": {
+    "0019": 310
+  },
+  "order": "forward then reverse; alternate first direction across functions"
+}

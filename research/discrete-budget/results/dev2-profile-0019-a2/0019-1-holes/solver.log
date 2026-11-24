@@ -1,0 +1,119 @@
+ABC command line: "pexact -I 4 -M 2 0019".
+
+Cannot open file "abc.rc".
+Cannot open file "..\abc.rc".
+Cannot open file "..\..\abc.rc".
+COST lo=75 hi=150 calls=27 builds=27 fixed=30 membership=30 domain_ticks=14 kernel_ticks=39 reason_ticks=80 reason_attempts=3 frequency=10000000 decisions=27 propagations=206
+JOINT gates=2 bound=150 visits=30 checks=30 counts=0 edges=3 conflicts=3
+WINDOW r=1 lo=75 hi=150 state=-1 seconds=0.004000
+WINDOW r=1 lo=150 hi=225 state=skip seconds=0
+COST lo=150 hi=225 calls=645 builds=645 fixed=735 membership=758 domain_ticks=360 kernel_ticks=1441 reason_ticks=251 reason_attempts=31 frequency=10000000 decisions=496 propagations=14757
+JOINT gates=3 bound=225 visits=529 checks=754 counts=20 edges=11 conflicts=229
+WINDOW r=2 lo=150 hi=225 state=-1 seconds=0.008000
+COST lo=150 hi=225 calls=1135 builds=1135 fixed=1593 membership=1957 domain_ticks=820 kernel_ticks=3187 reason_ticks=895 reason_attempts=152 frequency=10000000 decisions=1079 propagations=72270
+JOINT gates=4 bound=225 visits=1235 checks=1403 counts=136 edges=16 conflicts=604
+WINDOW r=3 lo=150 hi=225 state=-1 seconds=0.016000
+COST lo=150 hi=225 calls=2354 builds=2354 fixed=2354 membership=2354 domain_ticks=2790 kernel_ticks=5455 reason_ticks=889 reason_attempts=174 frequency=10000000 decisions=2809 propagations=97425
+JOINT gates=5 bound=225 visits=2989 checks=3608 counts=143 edges=31 conflicts=1137
+WINDOW r=4 lo=150 hi=225 state=-1 seconds=0.025000
+WINDOW r=1 lo=225 hi=300 state=skip seconds=0
+COST lo=225 hi=300 calls=764 builds=764 fixed=1052 membership=903 domain_ticks=422 kernel_ticks=1768 reason_ticks=660 reason_attempts=123 frequency=10000000 decisions=492 propagations=27595
+JOINT gates=3 bound=300 visits=617 checks=834 counts=82 edges=41 conflicts=256
+WINDOW r=2 lo=225 hi=300 state=-1 seconds=0.009000
+COST lo=225 hi=300 calls=5485 builds=5485 fixed=10026 membership=11447 domain_ticks=5387 kernel_ticks=17457 reason_ticks=2706 reason_attempts=466 frequency=10000000 decisions=2430 propagations=192581
+JOINT gates=4 bound=300 visits=2905 checks=5636 counts=385 edges=81 conflicts=1572
+WINDOW r=3 lo=225 hi=300 state=-1 seconds=0.045000
+COST lo=225 hi=300 calls=18959 builds=18959 fixed=39628 membership=56633 domain_ticks=29982 kernel_ticks=79748 reason_ticks=12129 reason_attempts=1820 frequency=10000000 decisions=14279 propagations=1437284
+JOINT gates=5 bound=300 visits=16143 checks=20171 counts=1701 edges=119 conflicts=10206
+WINDOW r=4 lo=225 hi=300 state=-1 seconds=0.351000
+COST lo=225 hi=300 calls=36519 builds=36519 fixed=44089 membership=47100 domain_ticks=78596 kernel_ticks=92991 reason_ticks=14512 reason_attempts=2090 frequency=10000000 decisions=20578 propagations=2734903
+JOINT gates=6 bound=300 visits=22720 checks=39202 counts=1465 edges=625 conflicts=12371
+WINDOW r=5 lo=225 hi=300 state=-1 seconds=0.565000
+COST lo=225 hi=300 calls=44758 builds=44758 fixed=48441 membership=48441 domain_ticks=95583 kernel_ticks=106739 reason_ticks=12518 reason_attempts=943 frequency=10000000 decisions=27092 propagations=2612360
+JOINT gates=7 bound=300 visits=28096 checks=48058 counts=469 edges=474 conflicts=15370
+WINDOW r=6 lo=225 hi=300 state=-1 seconds=0.619000
+WINDOW r=1 lo=300 hi=375 state=skip seconds=0
+WINDOW r=2 lo=300 hi=375 state=skip seconds=0
+COST lo=300 hi=375 calls=2004 builds=2004 fixed=3642 membership=4756 domain_ticks=1891 kernel_ticks=7834 reason_ticks=724 reason_attempts=119 frequency=10000000 decisions=870 propagations=34414
+JOINT gates=4 bound=375 visits=992 checks=2061 counts=96 edges=23 conflicts=441
+WINDOW r=3 lo=300 hi=375 state=1 seconds=0.015000
+WINDOW r=1 lo=300 hi=310 state=skip seconds=0
+WINDOW r=2 lo=300 hi=310 state=skip seconds=0
+COST lo=300 hi=310 calls=4265 builds=4265 fixed=6674 membership=6218 domain_ticks=4132 kernel_ticks=13573 reason_ticks=1766 reason_attempts=300 frequency=10000000 decisions=1734 propagations=124339
+JOINT gates=4 bound=310 visits=2040 checks=4437 counts=247 edges=53 conflicts=1082
+WINDOW r=3 lo=300 hi=310 state=-1 seconds=0.030000
+COST lo=300 hi=310 calls=25213 builds=25213 fixed=37690 membership=52670 domain_ticks=50637 kernel_ticks=77771 reason_ticks=11887 reason_attempts=1691 frequency=10000000 decisions=11423 propagations=1740140
+JOINT gates=5 bound=310 visits=13150 checks=25989 counts=1423 edges=268 conflicts=8793
+WINDOW r=4 lo=300 hi=310 state=1 seconds=0.402000
+WINDOW r=1 lo=300 hi=305 state=skip seconds=0
+WINDOW r=2 lo=300 hi=305 state=skip seconds=0
+WINDOW r=3 lo=300 hi=305 state=skip seconds=0
+COST lo=300 hi=305 calls=12638 builds=12638 fixed=27403 membership=41680 domain_ticks=20342 kernel_ticks=56902 reason_ticks=7256 reason_attempts=1064 frequency=10000000 decisions=10503 propagations=1321769
+JOINT gates=5 bound=305 visits=11599 checks=13601 counts=998 edges=66 conflicts=8139
+WINDOW r=4 lo=300 hi=305 state=-1 seconds=0.332000
+WINDOW r=5 lo=300 hi=305 state=skip seconds=0
+COST lo=300 hi=305 calls=2527 builds=2527 fixed=2532 membership=2532 domain_ticks=5302 kernel_ticks=4761 reason_ticks=125 reason_attempts=18 frequency=10000000 decisions=3802 propagations=136290
+JOINT gates=7 bound=305 visits=3827 checks=3830 counts=10 edges=8 conflicts=1281
+WINDOW r=6 lo=300 hi=305 state=-1 seconds=0.032000
+COST lo=300 hi=305 calls=12273 builds=12273 fixed=12273 membership=12273 domain_ticks=27743 kernel_ticks=23084 reason_ticks=984 reason_attempts=140 frequency=10000000 decisions=13106 propagations=330188
+JOINT gates=8 bound=305 visits=13266 checks=13730 counts=114 edges=26 conflicts=3991
+WINDOW r=7 lo=300 hi=305 state=-1 seconds=0.089000
+WINDOW r=8 lo=300 hi=305 state=skip seconds=0
+WINDOW r=9 lo=300 hi=305 state=skip seconds=0
+WINDOW r=1 lo=305 hi=310 state=skip seconds=0
+WINDOW r=2 lo=305 hi=310 state=skip seconds=0
+WINDOW r=3 lo=305 hi=310 state=skip seconds=0
+COST lo=305 hi=310 calls=3433 builds=3433 fixed=4734 membership=4850 domain_ticks=5901 kernel_ticks=9153 reason_ticks=1734 reason_attempts=268 frequency=10000000 decisions=1235 propagations=95491
+JOINT gates=5 bound=310 visits=1507 checks=3553 counts=235 edges=33 conflicts=571
+WINDOW r=4 lo=305 hi=310 state=1 seconds=0.031000
+WINDOW r=1 lo=305 hi=307 state=skip seconds=0
+WINDOW r=2 lo=305 hi=307 state=skip seconds=0
+WINDOW r=3 lo=305 hi=307 state=skip seconds=0
+WINDOW r=4 lo=305 hi=307 state=skip seconds=0
+COST lo=305 hi=307 calls=897 builds=897 fixed=906 membership=911 domain_ticks=1363 kernel_ticks=1510 reason_ticks=79 reason_attempts=15 frequency=10000000 decisions=1032 propagations=16686
+JOINT gates=6 bound=307 visits=1048 checks=1051 counts=8 edges=7 conflicts=151
+WINDOW r=5 lo=305 hi=307 state=-1 seconds=0.009000
+WINDOW r=6 lo=305 hi=307 state=skip seconds=0
+WINDOW r=7 lo=305 hi=307 state=skip seconds=0
+WINDOW r=8 lo=305 hi=307 state=skip seconds=0
+WINDOW r=9 lo=305 hi=307 state=skip seconds=0
+WINDOW r=1 lo=307 hi=309 state=skip seconds=0
+WINDOW r=2 lo=307 hi=309 state=skip seconds=0
+WINDOW r=3 lo=307 hi=309 state=skip seconds=0
+COST lo=307 hi=309 calls=32648 builds=32648 fixed=38506 membership=39873 domain_ticks=54753 kernel_ticks=76426 reason_ticks=6803 reason_attempts=952 frequency=10000000 decisions=14183 propagations=2282001
+JOINT gates=5 bound=309 visits=15177 checks=33511 counts=583 edges=369 conflicts=9760
+WINDOW r=4 lo=307 hi=309 state=-1 seconds=0.416000
+COST lo=307 hi=309 calls=32910 builds=32910 fixed=46772 membership=49675 domain_ticks=77657 kernel_ticks=101814 reason_ticks=12432 reason_attempts=1754 frequency=10000000 decisions=18888 propagations=1795346
+JOINT gates=6 bound=309 visits=20687 checks=35127 counts=1213 edges=541 conflicts=10573
+WINDOW r=5 lo=307 hi=309 state=-1 seconds=0.465000
+WINDOW r=6 lo=307 hi=309 state=skip seconds=0
+WINDOW r=7 lo=307 hi=309 state=skip seconds=0
+WINDOW r=8 lo=307 hi=309 state=skip seconds=0
+WINDOW r=9 lo=307 hi=309 state=skip seconds=0
+WINDOW r=1 lo=309 hi=311 state=skip seconds=0
+WINDOW r=2 lo=309 hi=311 state=skip seconds=0
+WINDOW r=3 lo=309 hi=311 state=skip seconds=0
+COST lo=309 hi=311 calls=3108 builds=3108 fixed=5467 membership=6656 domain_ticks=6479 kernel_ticks=15037 reason_ticks=10882 reason_attempts=314 frequency=10000000 decisions=2349 propagations=184964
+JOINT gates=5 bound=311 visits=2672 checks=3545 counts=267 edges=47 conflicts=1415
+WINDOW r=4 lo=309 hi=311 state=1 seconds=0.049000
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( 05 07 )
+07 = 4'b1000( c 06 )
+06 = 4'b0100( b 05 )
+05 = 4'b1110( d 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0110011011111111
+i=6:0001000100000000
+i=7:0000000100000000
+i=8:1001100000000000
+
+
+Switching Activity=310
+Number of Gates: r=5
+Total runtime =     3.51 sec

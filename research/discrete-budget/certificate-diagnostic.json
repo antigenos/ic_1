@@ -1,0 +1,10 @@
+{
+  "entered": {
+    "eligible": 580,
+    "minimum_certifies_all": 375
+  },
+  "skipped": {
+    "eligible": 193,
+    "minimum_certifies_all": 88
+  }
+}

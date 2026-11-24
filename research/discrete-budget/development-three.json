@@ -1,0 +1,146 @@
+{
+  "blocks": {
+    "0019": {
+      "cpu": 30,
+      "physical": [
+        30,
+        31
+      ],
+      "source": "d58f5aed7ba5cf80b4dc76f1d4cad2a98ad44536",
+      "folder": "dev2-three-0019-a3",
+      "observed_max_gap": 0.23497462272644043
+    },
+    "0189": {
+      "cpu": 30,
+      "physical": [
+        30,
+        31
+      ],
+      "source": "d58f5aed7ba5cf80b4dc76f1d4cad2a98ad44536",
+      "folder": "dev2-three-0189-a2",
+      "observed_max_gap": 0.2319624423980713
+    }
+  },
+  "methods": {
+    "holes": {
+      "functions_both_orders": 2,
+      "functions": 2,
+      "completed_runs": 4,
+      "runs": 4,
+      "capped_s": 8.942034999999805
+    },
+    "interval": {
+      "functions_both_orders": 2,
+      "functions": 2,
+      "completed_runs": 4,
+      "runs": 4,
+      "capped_s": 9.84626759999992
+    },
+    "joint": {
+      "functions_both_orders": 2,
+      "functions": 2,
+      "completed_runs": 4,
+      "runs": 4,
+      "capped_s": 9.397597199999836
+    }
+  },
+  "pairs": {
+    "joint/interval": {
+      "common_pairs": 4,
+      "common_function_both_orders": 2,
+      "first_s": 9.397597199999836,
+      "second_s": 9.84626759999992,
+      "gm": 0.9912693727061397,
+      "both_orders_faster": [
+        "0189"
+      ],
+      "per_order_wall_seconds": {
+        "0019": [
+          [
+            3.4193189999998594,
+            3.7350588999997854
+          ],
+          [
+            3.412967199999912,
+            3.718082400000185
+          ]
+        ],
+        "0189": [
+          [
+            1.2952353000000585,
+            1.2003941999998915
+          ],
+          [
+            1.2700757000000067,
+            1.1927321000000575
+          ]
+        ]
+      }
+    },
+    "joint/holes": {
+      "common_pairs": 4,
+      "common_function_both_orders": 2,
+      "first_s": 9.397597199999836,
+      "second_s": 8.942034999999805,
+      "gm": 1.1101919524479213,
+      "both_orders_faster": [
+        "0189"
+      ],
+      "per_order_wall_seconds": {
+        "0019": [
+          [
+            3.4193189999998594,
+            3.4290198999999575
+          ],
+          [
+            3.412967199999912,
+            3.442318699999987
+          ]
+        ],
+        "0189": [
+          [
+            1.2952353000000585,
+            1.0717176999999083
+          ],
+          [
+            1.2700757000000067,
+            0.9989786999999524
+          ]
+        ]
+      }
+    },
+    "interval/holes": {
+      "common_pairs": 4,
+      "common_function_both_orders": 2,
+      "first_s": 9.84626759999992,
+      "second_s": 8.942034999999805,
+      "gm": 1.1199699930374385,
+      "both_orders_faster": [
+        "0019",
+        "0189"
+      ],
+      "per_order_wall_seconds": {
+        "0019": [
+          [
+            3.7350588999997854,
+            3.4290198999999575
+          ],
+          [
+            3.718082400000185,
+            3.442318699999987
+          ]
+        ],
+        "0189": [
+          [
+            1.2003941999998915,
+            1.0717176999999083
+          ],
+          [
+            1.1927321000000575,
+            0.9989786999999524
+          ]
+        ]
+      }
+    }
+  }
+}

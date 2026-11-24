@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "C:\Users\15533\Documents\ChatGPT\抽奖\discrete-budget-verify\research\discrete-budget\panel.py", line 126, in <module>
+    panel(args.kind,args.label,args.cpu,args.truth)
+  File "C:\Users\15533\Documents\ChatGPT\抽奖\discrete-budget-verify\research\discrete-budget\panel.py", line 76, in panel
+    raise RuntimeError(("Physical lane busy",core,competing))
+RuntimeError: ('Physical lane busy', [0, 1], [[13580, 'python.exe', 1], [31888, 'python.exe', 1], [2948, 'abc.exe', 1]])
