@@ -22,11 +22,11 @@ def exposure(row, samples, epochs):
     right = bisect_left(epochs, end)
     cpu = row["experiment"]["cpu"]
     flags = set()
-    if str(cpu) not in samples[0]["consecutive_free"]:
-        flags.add("unmonitored_cpu")
     if left < 0 or right == len(samples):
         flags.add("missing_boundary")
     window = samples[max(0, left):right + 1]
+    if any(str(cpu) not in sample["consecutive_free"] for sample in window):
+        flags.add("unmonitored_cpu")
     if any(b["epoch"] - a["epoch"] > 45 for a, b in zip(window, window[1:])):
         flags.add("sampling_gap")
     for sample in window:
@@ -74,10 +74,14 @@ def main():
         assert primary == json.loads(z.read("summary.json"))
     indexed = {k: {r["experiment"]["truth"]: r for r in group} for k, group in rows.items()}
     all_pairs, clear, exclusions = [], [], {}
+    base = json.loads((HERE/"evidence/family-plan.json").read_bytes())
+    original_cpu = {c["truth"]: c["cpu"] for c in base["cases"]}
+    groups = {"original_assignment": [], "spare_core": []}
     for case in manifest["cases"]:
         truth = case["truth"]
         pair = {k: indexed[k][truth] for k in "AC"}
         all_pairs.append(pair)
+        groups["original_assignment" if case["cpu"] == original_cpu[truth] else "spare_core"].append(pair)
         flags = set().union(*(exposure(row, samples, epochs) for row in pair.values()))
         starts = [timestamp(row) for row in pair.values()]
         if any(min(starts) < resumed <= max(starts) for resumed in resumes):
@@ -88,6 +92,7 @@ def main():
             clear.append(pair)
     counts = Counter(flag for flags in exclusions.values() for flag in flags)
     result = dict(all_pairs=metrics(all_pairs), clear_pairs=metrics(clear),
+                  by_assignment={label: metrics(group) for label, group in groups.items()},
                   excluded_counts=counts, excluded_pairs=exclusions)
     print(json.dumps(result, indent=2))
 

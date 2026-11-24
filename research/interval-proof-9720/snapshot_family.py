@@ -8,6 +8,7 @@ from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 
 from family import HERE, check_plan, reused, validate
+from reserve_plan import BASE, known_manifest
 
 FILES = ("request.json", "launch.json", "solver.log", "result.json", "verified.json")
 FIELDS = {"request.json": {"start_utc", "binary_sha256", "command", "timeout_s", "experiment"},
@@ -18,7 +19,7 @@ def verify(archive):
     with ZipFile(archive) as z:
         manifest = json.loads(z.read("manifest.json"))
         check_plan(manifest)
-        assert manifest == json.loads((HERE / "evidence/family-plan.json").read_bytes())
+        assert known_manifest(manifest)
         checkpoint = json.loads(z.read("checkpoint.json"))
         selected = {tuple(x) for x in checkpoint["new_trials"]}
         assert len(selected) == len(checkpoint["new_trials"])
@@ -67,11 +68,11 @@ def verify(archive):
                     compared_with_independent_optimum=known_witnesses)
 
 
-def save(archive, work, host_samples):
+def save(archive, work, host_samples, source=BASE):
     if archive.exists():
         raise FileExistsError(archive)
-    source = HERE / "evidence/family-plan.json"
     manifest = json.loads(source.read_bytes())
+    assert known_manifest(manifest)
     check_plan(manifest)
     trials = [(case["truth"], arm) for case in manifest["cases"] if case["source"] == "new"
               for arm in case["order"] if (work / case["truth"] / arm / "verified.json").is_file()]
@@ -99,7 +100,8 @@ if __name__ == "__main__":
     parser.add_argument("action", choices=("save", "verify"))
     parser.add_argument("archive", type=Path)
     parser.add_argument("--work", type=Path, default=HERE / ".local/full-300")
+    parser.add_argument("--manifest", type=Path, default=BASE)
     parser.add_argument("--samples", type=Path, help="Include complete host load samples up to the checkpoint")
     args = parser.parse_args()
-    result = save(args.archive, args.work, args.samples) if args.action == "save" else verify(args.archive)
+    result = save(args.archive, args.work, args.samples, args.manifest) if args.action == "save" else verify(args.archive)
     print(json.dumps(result))
