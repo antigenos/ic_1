@@ -15,7 +15,7 @@ pins={"joint":"8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d"
 def save(p,data):
     p.write_text(json.dumps(data,indent=2)+"\n",encoding="utf-8")
 
-def run_panel(kind,label):
+def run_panel(kind,label,selected=cases):
     diag=kind!="timed"
     binaries={role:(CACHE/(role+"-diag")/"abc.exe" if diag else
               CACHE/"online/abc.exe" if role=="online" else
@@ -29,7 +29,7 @@ def run_panel(kind,label):
     env.update(REPLAY_RULES="both",REPLAY_BUDGET="1")
     if diag: env["REPLAY_STATS"]="1"
     if kind=="trace": env["REPLAY_TRACE"]="1"
-    save(dest/"manifest.json",dict(commit=commit,binaries=hashes,cases=cases,kind=kind,
+    save(dest/"manifest.json",dict(commit=commit,binaries=hashes,cases=selected,kind=kind,
          methods=roles,timeout=300 if diag else 60,strict_bounds=truth_bounds,
          order="joint,short,online; then online,short,joint in timed panel",
          oracle_commit="5400328802c98c1870fb7f61ff2475f698ee48ea",
@@ -49,7 +49,7 @@ def run_panel(kind,label):
         while not (dest/"guard.jsonl").exists():
             if watcher.poll() is not None: raise RuntimeError("guard failed")
             time.sleep(.05)
-        for truth in cases:
+        for truth in selected:
             for i,role in enumerate(roles if diag else roles+roles[::-1],1):
                 if watcher.poll() is not None or competitors(mask,os.getpid()):
                     raise RuntimeError("Physical core occupied; retain invalid panel")
@@ -87,5 +87,6 @@ if __name__=="__main__":
     p=argparse.ArgumentParser()
     p.add_argument("kind",choices=["trace","profile","timed"])
     p.add_argument("label")
+    p.add_argument("--only",choices=cases)
     a=p.parse_args()
-    run_panel(a.kind,a.label)
+    run_panel(a.kind,a.label,(a.only,) if a.only else cases)

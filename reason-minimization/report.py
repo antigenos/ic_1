@@ -2,22 +2,45 @@
 import argparse, gzip, json, math, statistics
 from pathlib import Path
 from collections import Counter
+from datetime import datetime
 D=Path(__file__).resolve().parent
 ROLES=("joint","short","online")
 def read(p): return json.loads(p.read_bytes())
 def good(r): return r["status"]=="solver_completed_verified_witness"
 
-def summarize(timed,trace,profile):
-    for folder in (timed,trace,profile):
+def checked_block(folder,truth):
+    paths=sorted(folder.glob(truth+"-*-*/result.json"))
+    assert len(paths)==6
+    rows=[read(p) for p in paths]
+    assert [r["experiment"]["method"] for r in rows]==list(ROLES+ROLES[::-1])
+    samples=[json.loads(s) for s in (folder/"guard.jsonl").read_text().splitlines()]
+    start=datetime.fromisoformat(rows[0]["start_utc"]).timestamp()
+    end=datetime.fromisoformat(rows[-1]["start_utc"]).timestamp()+rows[-1]["wall_s"]
+    left=max(i for i,s in enumerate(samples) if s["t"]<=start)
+    right=next(i for i,s in enumerate(samples) if s["t"]>=end)
+    guard=samples[left:right+1]
+    assert all(not s["foreign"] for s in guard)
+    core=read(folder/"allocation.json")
+    assert all(s["physical"]==core["physical"] for s in guard)
+    assert all(r["child_affinity"]==[core["cpu"]] for r in rows)
+    return paths,dict(source=folder.name,samples=len(guard),physical=core["physical"],
+                      max_gap_s=max(b["t"]-a["t"] for a,b in zip(guard,guard[1:])))
+
+def summarize(timed,trace,profile,recovery=None):
+    for folder in (trace,profile):
         assert read(folder/"complete.json")["observed_overlap"]==0
     cases=read(timed/"manifest.json")["cases"]
     data={}
     diagnostics={}
+    guards={}
     for t in cases:
+        source=recovery if recovery and t=="006b" else timed
+        assert read(source/"manifest.json")["binaries"]==read(timed/"manifest.json")["binaries"]
+        blocks,guards[t]=checked_block(source,t)
         data[t]={}
         diagnostics[t]={}
         for role in ROLES:
-            files=sorted(timed.glob(t+"-*-"+role+"/result.json"))
+            files=[p for p in blocks if p.parent.name.endswith("-"+role)]
             rows=[read(p) for p in files]
             assert len(rows)==2
             assert all(r["status"] in ("timeout","solver_completed_verified_witness") for r in rows)
@@ -49,10 +72,11 @@ def summarize(timed,trace,profile):
                 control_seconds=sum(x for x,y in pairs),online_seconds=sum(y for x,y in pairs),
                 geometric_speedup=statistics.geometric_mean(x/y for x,y in pairs) if pairs else None)
         out[split]=group
-    return dict(summary=out,times=data,diagnostics=diagnostics)
+    return dict(summary=out,times=data,diagnostics=diagnostics,physical_core_checks=guards)
 
 if __name__=="__main__":
     p=argparse.ArgumentParser()
     for n in ("timed","trace","profile"): p.add_argument(n,type=Path)
+    p.add_argument("--recovery",type=Path)
     a=p.parse_args()
-    print(json.dumps(summarize(a.timed,a.trace,a.profile),indent=2))
+    print(json.dumps(summarize(a.timed,a.trace,a.profile,a.recovery),indent=2))

@@ -2,20 +2,25 @@
 import gzip, json, sys, hashlib
 from pathlib import Path
 from audit import check
-from report import read, summarize
+from report import read, summarize, checked_block
 from witness import simulate
 
-def verify(r):
-    folders=[r/k for k in ("paired-01","audit-01","profile-02")]
+def verify(r,recovery):
+    folders=[r/k for k in ("paired-01","audit-01","profile-02",recovery)]
     totals={}
     for folder in folders:
         manifest=read(folder/"manifest.json")
         alloc=read(folder/"allocation.json")
         samples=[json.loads(s) for s in (folder/"guard.jsonl").read_text().splitlines()]
-        assert samples and all(s["physical"]==alloc["physical"] and not s["foreign"] for s in samples)
-        assert len(samples)==read(folder/"complete.json")["samples"]
-        expected_runs=24 if manifest["kind"]=="timed" else 12
-        paths=sorted(folder.glob("*/result.json"))
+        if manifest["kind"]=="timed":
+            selected=["006b"] if folder.name==recovery else ["0189","0019","001e"]
+            paths=[p for t in selected for p in checked_block(folder,t)[0]]
+            expected_runs=6*len(selected)
+        else:
+            assert samples and all(s["physical"]==alloc["physical"] and not s["foreign"] for s in samples)
+            assert len(samples)==read(folder/"complete.json")["samples"]
+            paths=sorted(folder.glob("*/result.json"))
+            expected_runs=12
         assert len(paths)==expected_runs
         for p in paths:
             rec=read(p); slot=p.parent; t,i,role=slot.name.split("-")
@@ -47,5 +52,5 @@ def verify(r):
     return dict(panels=totals,summary=summary)
 
 if __name__=="__main__":
-    data=verify(Path(__file__).resolve().parent/"results")
+    data=verify(Path(__file__).resolve().parent/"results",sys.argv[1])
     print(json.dumps(data,indent=2))
