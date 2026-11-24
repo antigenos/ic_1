@@ -17,12 +17,13 @@ TEST = list(BOUNDS)[3:]
 def read(path):
     return json.loads(path.read_bytes())
 
-def examine(batch,ts,diagnostic):
+def examine(batch,ts,diagnostic,full_order=None):
     host = read(batch/'host.json')
     assert host['returncode']==0 and host['scans'] and not host['clashes']
     meta = read(batch/'freeze.json')
     output = {}
     for i,t in enumerate(ts):
+        if full_order is not None: i=full_order.index(t)
         order = 'ABC'[i%3:]+'ABC'[:i%3]
         order = order if diagnostic else order+order[::-1]
         arms = {m:[] for m in 'ABC'}

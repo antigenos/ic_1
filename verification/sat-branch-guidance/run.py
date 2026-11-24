@@ -24,6 +24,7 @@ def worker(args,binaries,batch):
     pin(args.cpu)
     env = {k:v for k,v in os.environ.items() if not k.startswith(('REPLAY_','GUIDE_'))}
     for i,t in enumerate(DEV if args.part=='dev' else TEST):
+        if args.only and t != args.only: continue
         order = 'ABC'[i%3:] + 'ABC'[:i%3]
         arms = order if args.diag else order + order[::-1]
         for j,m in enumerate(arms):
@@ -48,6 +49,7 @@ if __name__ == '__main__':
     p.add_argument('--cpu',type=int,default=12)
     p.add_argument('--batch',default='1')
     p.add_argument('--worker',action='store_true')
+    p.add_argument('--only',choices=DEV+TEST)
     args = p.parse_args()
     base = args.ref.resolve()/'.local/variants'
     bins = dict(A=base/'joint/abc.exe',B=base/'screen-guide/abc.exe',
