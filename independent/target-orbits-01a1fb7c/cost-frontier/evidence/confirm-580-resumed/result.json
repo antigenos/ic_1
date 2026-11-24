@@ -1,0 +1,20 @@
+{
+  "command": [
+    "frontier-v2.exe",
+    "4",
+    "580",
+    "projected",
+    "table.tsv"
+  ],
+  "binary": "050098e3f85a0e70fe9f2d76c2ffcb4597ec3d07b0b8aa0d4370e28d28ec256b",
+  "source": "64e615d9d7de36a5b037737a3700d50295fa8fde2dea4243bb71b2f0460faf68",
+  "started": "2026-11-24T05:38:06.053255+00:00",
+  "host": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+  "wall_s": 37.528959000000015,
+  "peak_working_bytes": 120184832,
+  "exit_code": 0,
+  "stdout": "setup_s=0.0893842 search_s=37.2951 report_s=0.0294597",
+  "stderr": "",
+  "table_sha256": "38c67f1f27a500ef224ea217ed671e35e83a2710d01765079c54a9cc0453deb7"
+}

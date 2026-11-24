@@ -1,0 +1,15 @@
+{
+  "command": [
+    "direct-budget.exe",
+    "4",
+    "576",
+    "table.tsv"
+  ],
+  "binary": "b98c86b2275f866e19c1b044f5614a27aec39693430aff4b7cfeca5a07f73e7e",
+  "source": "64e615d9d7de36a5b037737a3700d50295fa8fde2dea4243bb71b2f0460faf68",
+  "started": "2026-11-23T12:49:34.364912+00:00",
+  "host": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+  "direct_source": "919a74876419e54b5c5798af7a9c4c708bcb2cbb52a15e9d743fece6376668e2",
+  "pid": 12988
+}
