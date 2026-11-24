@@ -9,6 +9,7 @@ import sys
 import time
 from build import HERE
 from guard import cores,competitors
+from panel import D,V
 
 
 def run(kind,label,preferred):
@@ -21,6 +22,7 @@ def run(kind,label,preferred):
         raise ValueError("Invalid physical core")
     seen={}
     attempt=0
+    pending=list(V if kind=="holdout" else D)
     with log.open("x",buffering=1) as f:
         while True:
             free=[]
@@ -31,21 +33,23 @@ def run(kind,label,preferred):
                 else:
                     seen[k]=seen.get(k,0)+1
                     free.append(k)
-            eligible=[k for k in free if seen[k]>=3]
+            eligible=[k for k in free if seen[k]>=4]
             f.write(json.dumps(dict(t=datetime.now(timezone.utc).isoformat(),free=free))+"\n")
             if eligible:
                 cpu=max(eligible)
                 attempt+=1
-                tag=label+"-a"+str(attempt)
+                tag=label+"-"+pending[0]+"-a"+str(attempt)
                 dest=HERE/"results"/tag
                 print("Starting",tag,"on",cpu,flush=True)
-                proc=subprocess.run([sys.executable,str(HERE/"panel.py"),kind,tag,"--cpu",str(cpu)],
-                                     stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
+                proc=subprocess.run([sys.executable,str(HERE/"panel.py"),kind,tag,"--cpu",str(cpu),"--truth",pending[0]],
+                                     stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding="utf8",errors="replace")
                 (dest/"controller.log").write_text(proc.stdout,encoding="utf8")
                 print(proc.stdout,flush=True)
                 if proc.returncode==0:
-                    return
-                if not any(k in proc.stdout for k in ("Physical lane busy","foreign lane","competing timer")):
+                    pending.pop(0)
+                    if not pending:
+                        return
+                elif not any(k in proc.stdout for k in ("Physical lane busy","foreign lane","competing timer")):
                     raise RuntimeError("Review error in "+str(dest))
                 seen.clear()
             time.sleep(3)

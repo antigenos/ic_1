@@ -1,0 +1,295 @@
+{
+  "total": {
+    "observations": 862,
+    "two_sides_new_pending_literals": 42,
+    "holes_new_pending_literals": 220,
+    "total_new_pending_literals": 262,
+    "holes_observations": 104,
+    "total_observations": 111,
+    "two_sides_observations": 23
+  },
+  "by_outer_status_and_victim": {
+    "entered-connection": {
+      "counts": {
+        "observations": 265,
+        "two_sides_new_pending_literals": 0,
+        "holes_new_pending_literals": 11,
+        "total_new_pending_literals": 11,
+        "holes_observations": 11,
+        "total_observations": 11
+      },
+      "distinct_snapshots": 260,
+      "examples": {
+        "holes": {
+          "snapshot": "WINDOW 65142 5 300 302 7 5 1 31 8 4 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 1,0,272,272 1,1152,340,340 1,0,490,490 1,0,488,488",
+          "old": [
+            8,
+            4
+          ],
+          "new": [
+            0,
+            0
+          ],
+          "remaining_sums": [
+            126,
+            158,
+            174,
+            206,
+            216,
+            222,
+            224,
+            238,
+            248,
+            254,
+            256
+          ],
+          "extra": 1
+        },
+        "total": {
+          "snapshot": "WINDOW 65142 5 300 302 7 5 1 31 8 4 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 1,0,272,272 1,1152,340,340 1,0,490,490 1,0,488,488",
+          "old": [
+            8,
+            4
+          ],
+          "new": [
+            0,
+            0
+          ],
+          "remaining_sums": [
+            126,
+            158,
+            174,
+            206,
+            216,
+            222,
+            224,
+            238,
+            248,
+            254,
+            256
+          ],
+          "extra": 1
+        }
+      }
+    },
+    "entered-count": {
+      "counts": {
+        "observations": 363,
+        "two_sides_new_pending_literals": 16,
+        "holes_new_pending_literals": 97,
+        "total_new_pending_literals": 113,
+        "two_sides_observations": 5,
+        "total_observations": 40,
+        "holes_observations": 37
+      },
+      "distinct_snapshots": 363,
+      "examples": {
+        "two_sides": {
+          "snapshot": "WINDOW 65142 3 225 300 5 4 -1 20 336 272 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 8433,7168,272,272 129,8304,336,336",
+          "old": [
+            336,
+            272
+          ],
+          "new": [
+            320,
+            256
+          ],
+          "remaining_sums": [
+            0
+          ],
+          "extra": 2
+        },
+        "total": {
+          "snapshot": "WINDOW 65142 3 225 300 5 4 -1 20 336 272 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 8433,7168,272,272 129,8304,336,336",
+          "old": [
+            336,
+            272
+          ],
+          "new": [
+            320,
+            256
+          ],
+          "remaining_sums": [
+            0
+          ],
+          "extra": 2
+        },
+        "holes": {
+          "snapshot": "WINDOW 65142 5 300 302 7 4 -1 20 112 16 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 1433,0,16,0 393,21616,340,340 257,65272,510,510 393,21616,112,112",
+          "old": [
+            112,
+            16
+          ],
+          "new": [
+            64,
+            16
+          ],
+          "remaining_sums": [
+            86,
+            112,
+            126,
+            134,
+            150,
+            152,
+            158,
+            166,
+            174,
+            176,
+            182,
+            184,
+            192,
+            198,
+            206,
+            216,
+            222,
+            224,
+            230,
+            238,
+            240,
+            246,
+            248,
+            254,
+            256
+          ],
+          "extra": 2
+        }
+      }
+    },
+    "skipped-connection": {
+      "counts": {
+        "observations": 87,
+        "two_sides_new_pending_literals": 1,
+        "holes_new_pending_literals": 33,
+        "holes_observations": 33,
+        "total_new_pending_literals": 34,
+        "total_observations": 34,
+        "two_sides_observations": 1
+      },
+      "distinct_snapshots": 83,
+      "examples": {
+        "holes": {
+          "snapshot": "WINDOW 65142 4 300 302 6 0 1 31 256 256 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 1,0,272,272 1,0,340,340 1,0,510,510",
+          "old": [
+            256,
+            256
+          ],
+          "new": [
+            0,
+            0
+          ],
+          "remaining_sums": [
+            152,
+            184,
+            192,
+            216,
+            224,
+            248,
+            256
+          ],
+          "extra": 1
+        },
+        "total": {
+          "snapshot": "WINDOW 65142 4 300 302 6 0 1 31 256 256 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 1,0,272,272 1,0,340,340 1,0,510,510",
+          "old": [
+            256,
+            256
+          ],
+          "new": [
+            0,
+            0
+          ],
+          "remaining_sums": [
+            152,
+            184,
+            192,
+            216,
+            224,
+            248,
+            256
+          ],
+          "extra": 1
+        },
+        "two_sides": {
+          "snapshot": "WINDOW 65142 5 302 303 7 5 1 31 4 4 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 1,0,272,272 1,0,324,324 1,0,2,0 1,368,452,452",
+          "old": [
+            4,
+            4
+          ],
+          "new": [
+            0,
+            0
+          ],
+          "remaining_sums": [
+            126,
+            158
+          ],
+          "extra": 1
+        }
+      }
+    },
+    "skipped-count": {
+      "counts": {
+        "observations": 147,
+        "two_sides_new_pending_literals": 25,
+        "holes_new_pending_literals": 79,
+        "total_new_pending_literals": 104,
+        "holes_observations": 23,
+        "total_observations": 26,
+        "two_sides_observations": 17
+      },
+      "distinct_snapshots": 147,
+      "examples": {
+        "holes": {
+          "snapshot": "WINDOW 65142 4 300 302 6 4 -1 22 496 272 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 137,5636,272,272 8333,5746,84,84 5773,114,496,496",
+          "old": [
+            496,
+            272
+          ],
+          "new": [
+            32,
+            16
+          ],
+          "remaining_sums": [
+            56,
+            96,
+            120
+          ],
+          "extra": 5
+        },
+        "total": {
+          "snapshot": "WINDOW 65142 4 300 302 6 4 -1 22 496 272 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 137,5636,272,272 8333,5746,84,84 5773,114,496,496",
+          "old": [
+            496,
+            272
+          ],
+          "new": [
+            32,
+            16
+          ],
+          "remaining_sums": [
+            56,
+            96,
+            120
+          ],
+          "extra": 5
+        },
+        "two_sides": {
+          "snapshot": "WINDOW 65142 4 300 302 6 5 -1 22 126 84 21845,43690,256,0 13107,52428,256,0 3855,61680,256,0 255,65280,256,0 771,0,272,272 257,2,84,84 259,512,126,126",
+          "old": [
+            126,
+            84
+          ],
+          "new": [
+            124,
+            84
+          ],
+          "remaining_sums": [
+            96,
+            128
+          ],
+          "extra": 1
+        }
+      }
+    }
+  }
+}

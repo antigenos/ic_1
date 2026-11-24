@@ -77,7 +77,10 @@ def watch(folder,cpu,owner):
     target=folder/"guard.jsonl"
     with target.open("x",encoding="utf8",buffering=1) as f:
         while not (folder/"guard.stop").exists():
-            f.write(json.dumps(dict(t=time.time(),physical=physical,foreign=competitors(mask,owner)))+"\n")
+            foreign=competitors(mask,owner)
+            f.write(json.dumps(dict(t=time.time(),physical=physical,foreign=foreign))+"\n")
+            if foreign:
+                (folder/"contended").touch()
             time.sleep(0.2)
 
 

@@ -2,6 +2,7 @@
 import argparse
 import gzip
 import hashlib
+import inspect
 import json
 import os
 from pathlib import Path
@@ -12,7 +13,7 @@ from build import HERE, ROOT, OUTER, gitfile
 from guard import cores, competitors
 sys.path.insert(0,str(ROOT/"tools"))
 from repeat_0189 import pin
-from run_case import run
+import run_case
 
 D=("0189","0019")
 V=("003d","001b","013e","0199")
@@ -21,12 +22,38 @@ FOUR=THREE+["trigger"]
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 
 
-def panel(kind,label,cpu):
+def guarded_wait(process, start, timeout, dest):
+    while True:
+        if (dest.parent/"contended").exists():
+            raise RuntimeError("Active foreign lane; stop our own child")
+        remaining=timeout-(time.perf_counter()-start)
+        if remaining<=0:
+            raise subprocess.TimeoutExpired(process.args,timeout)
+        try:
+            process.wait(timeout=min(remaining,.12))
+            return
+        except subprocess.TimeoutExpired:
+            pass
+
+
+# Retain the frozen runner's launch, affinity, timer, kill/reap and witness logic.
+code=inspect.getsource(run_case.run)
+anchor="p.wait(timeout=max(0, timeout - (time.perf_counter() - start)))"
+assert code.count(anchor)==1
+scope=dict(vars(run_case),guarded_wait=guarded_wait)
+exec(compile(code.replace(anchor,"guarded_wait(p, start, timeout, dest)"),"guarded_run_case","exec"),scope)
+run=scope["run"]
+
+
+def panel(kind,label,cpu,truth=None):
     folder=HERE/"results"/label
     folder.mkdir(parents=True,exist_ok=False)
     diagnostic=kind in ("profile","trace","trigger-profile","trigger-trace")
     methods=(["trigger"] if kind.startswith("trigger-") else FOUR if kind in ("holdout","four") else THREE)
     truths=V if kind=="holdout" else D
+    if truth is not None:
+        assert truth in truths
+        truths=(truth,)
     suffix="-profile" if kind.endswith("profile") else ""
     bounds=json.loads(gitfile("evidence/family-bounds-432.json"))["lower_bounds"]
     env={k:v for k,v in os.environ.items() if not k.startswith(("OPTWIN_","REPLAY_"))}
@@ -59,10 +86,11 @@ def panel(kind,label,cpu):
         else:
             raise RuntimeError("Guard did not start")
         for n,t in enumerate(truths):
-            order=methods[::-1] if n%2 else methods[:]
+            index=(V if kind=="holdout" else D).index(t)
+            order=methods[::-1] if index%2 else methods[:]
             order=order if diagnostic else order+order[::-1]
             for i,m in enumerate(order,1):
-                if watcher.poll() is not None or competitors(mask,os.getpid()):
+                if watcher.poll() is not None or (folder/"contended").exists() or competitors(mask,os.getpid()):
                     raise RuntimeError("Active foreign lane; preserve this attempt")
                 dest=folder/(t+"-"+str(i)+"-"+m)
                 r=run(binaries[m],t,4,2,manifest["cap"],dest,env=env,
@@ -93,5 +121,6 @@ if __name__=="__main__":
     p.add_argument("kind",choices=("three","four","holdout","profile","trace","trigger-profile","trigger-trace"))
     p.add_argument("label")
     p.add_argument("--cpu",type=int,default=0)
+    p.add_argument("--truth")
     args=p.parse_args()
-    panel(args.kind,args.label,args.cpu)
+    panel(args.kind,args.label,args.cpu,args.truth)
