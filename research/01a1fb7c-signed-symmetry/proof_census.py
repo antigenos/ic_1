@@ -1,14 +1,43 @@
 """Balanced cold-process confirmation of proof transfer against the identical ABC binary."""
 import argparse
 from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timezone
 from hashlib import sha256
 import json
 from math import exp,fsum,log
 import os
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from time import sleep
 
 from family import HERE,ROOT,run_lane,source,timing_account,verify_row,write_once
+
+
+def run_after_family(rows,args,hashes,prior):
+    cpu=rows[0]["cpu"]
+    if prior is not None:
+        previous=[r for r in prior["rows"] if r["cpu"]==cpu]
+        work=ROOT/".local"/HERE.name/"family-208"
+        if previous:
+            # The family driver processes each core's list in order. Wait for the last complete row.
+            last=previous[-1]
+            path=work/(last["truth"]+".jsonl")
+            while True:
+                try:
+                    raw=path.read_bytes()
+                except FileNotFoundError:
+                    raw=b""
+                if raw.endswith(b"\n") and len(raw.splitlines())==len(last["order"]):
+                    break
+                sleep(30)
+            for row in previous:
+                verify_row(work/(row["truth"]+".jsonl"),row,prior["binary_sha256"])
+        release=args.work/f"release-cpu-{cpu}.json"
+        if not release.exists():
+            event=dict(cpu=cpu,verified_prior_functions=len(previous),released_utc=datetime.now(timezone.utc).isoformat())
+            write_once(release,(json.dumps(event)+"\n").encode())
+        print(f"Released CPU {cpu} after {len(previous)} verified prior functions",flush=True)
+    run_lane(rows,args,hashes)
 
 
 def cohort(kind,cpus):
@@ -115,7 +144,10 @@ def main():
     p.add_argument("--public",type=Path)
     p.add_argument("--prepared",type=Path,default=ROOT)
     p.add_argument("--resume-id")
+    p.add_argument("--after-family",action="store_true",help="Release each CPU after its earlier F/H/N lane verifies")
     args=p.parse_args()
+    if args.after_family and (args.action!="run" or args.kind!="full"):
+        p.error("--after-family applies only to a full run")
     if len(set(args.cpus))!=len(args.cpus) or min(args.cpus)<0: p.error("Invalid CPU list")
     label="proof-"+args.kind
     args.public=args.public or HERE/label
@@ -132,8 +164,10 @@ def main():
             return
         assert json.loads(manifest.read_bytes())==m
         args.work.mkdir(parents=True,exist_ok=True)
+        prior=json.loads((HERE/"family-208/manifest.json").read_bytes()) if args.after_family else None
         with ThreadPoolExecutor(max_workers=len(args.cpus)) as pool:
-            jobs=[pool.submit(run_lane,[r for r in rows if r["cpu"]==c],args,m["binary_sha256"]) for c in args.cpus]
+            jobs=[pool.submit(run_after_family,[r for r in rows if r["cpu"]==c],args,m["binary_sha256"],prior)
+                  for c in args.cpus if any(r["cpu"]==c for r in rows)]
             for job in jobs: job.result()
         print("Verified",2*len(rows),"timed rows",flush=True)
     else:

@@ -1,0 +1,1481 @@
+{
+  "kind": "full",
+  "binary_sha256": {
+    "3": "4141d290dd5ffb13d3b31e26ec2c00207f2c069b7b1378bccaa7b38876bf90e2",
+    "5": "4141d290dd5ffb13d3b31e26ec2c00207f2c069b7b1378bccaa7b38876bf90e2"
+  },
+  "cpus": [
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30
+  ],
+  "rows": [
+    {
+      "truth": "0001",
+      "cpu": 4,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0006",
+      "cpu": 6,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0007",
+      "cpu": 8,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0016",
+      "cpu": 10,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0017",
+      "cpu": 12,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0018",
+      "cpu": 14,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0019",
+      "cpu": 16,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "001b",
+      "cpu": 18,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "001e",
+      "cpu": 20,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "001f",
+      "cpu": 22,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "003d",
+      "cpu": 24,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0069",
+      "cpu": 26,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "006b",
+      "cpu": 28,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "006f",
+      "cpu": 30,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "007e",
+      "cpu": 4,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "007f",
+      "cpu": 6,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0116",
+      "cpu": 8,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "0117",
+      "cpu": 10,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "0118",
+      "cpu": 12,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "0119",
+      "cpu": 14,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "011a",
+      "cpu": 16,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "011b",
+      "cpu": 18,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "011e",
+      "cpu": 20,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "011f",
+      "cpu": 22,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "012c",
+      "cpu": 24,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "012d",
+      "cpu": 26,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "012f",
+      "cpu": 28,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "013c",
+      "cpu": 30,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "013d",
+      "cpu": 4,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "013e",
+      "cpu": 6,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "013f",
+      "cpu": 8,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0168",
+      "cpu": 10,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "0169",
+      "cpu": 12,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "016a",
+      "cpu": 14,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "016b",
+      "cpu": 16,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "016e",
+      "cpu": 18,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "016f",
+      "cpu": 20,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "017e",
+      "cpu": 22,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "017f",
+      "cpu": 24,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0180",
+      "cpu": 26,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0181",
+      "cpu": 28,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0182",
+      "cpu": 30,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0183",
+      "cpu": 4,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0186",
+      "cpu": 6,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "0187",
+      "cpu": 8,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0189",
+      "cpu": 10,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "018b",
+      "cpu": 12,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "018f",
+      "cpu": 14,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0196",
+      "cpu": 16,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "0197",
+      "cpu": 18,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "0198",
+      "cpu": 20,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0199",
+      "cpu": 22,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "019a",
+      "cpu": 24,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "019b",
+      "cpu": 26,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "019e",
+      "cpu": 28,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "019f",
+      "cpu": 30,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "01a8",
+      "cpu": 4,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01a9",
+      "cpu": 6,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01aa",
+      "cpu": 8,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01ab",
+      "cpu": 10,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01ac",
+      "cpu": 12,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "01ad",
+      "cpu": 14,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "01ae",
+      "cpu": 16,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01af",
+      "cpu": 18,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01bc",
+      "cpu": 20,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "01bd",
+      "cpu": 22,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "01be",
+      "cpu": 24,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01bf",
+      "cpu": 26,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01e8",
+      "cpu": 28,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "01e9",
+      "cpu": 30,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "01ea",
+      "cpu": 4,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01eb",
+      "cpu": 6,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01ee",
+      "cpu": 8,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01ef",
+      "cpu": 10,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "01fe",
+      "cpu": 12,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "033d",
+      "cpu": 14,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "0356",
+      "cpu": 16,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0357",
+      "cpu": 18,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0358",
+      "cpu": 20,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0359",
+      "cpu": 22,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "035a",
+      "cpu": 24,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "035b",
+      "cpu": 26,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "035e",
+      "cpu": 28,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "035f",
+      "cpu": 30,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0368",
+      "cpu": 4,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "0369",
+      "cpu": 6,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "036a",
+      "cpu": 8,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "036b",
+      "cpu": 10,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "036c",
+      "cpu": 12,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "036d",
+      "cpu": 14,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "036e",
+      "cpu": 16,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "036f",
+      "cpu": 18,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "037c",
+      "cpu": 20,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "037d",
+      "cpu": 22,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "037e",
+      "cpu": 24,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "03c1",
+      "cpu": 26,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "03c5",
+      "cpu": 28,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "03c6",
+      "cpu": 30,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "03c7",
+      "cpu": 4,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "03d4",
+      "cpu": 6,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "03d5",
+      "cpu": 8,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "03d6",
+      "cpu": 10,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "03d7",
+      "cpu": 12,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "03d8",
+      "cpu": 14,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "03d9",
+      "cpu": 16,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "03db",
+      "cpu": 18,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "03dc",
+      "cpu": 20,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "03dd",
+      "cpu": 22,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "03de",
+      "cpu": 24,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0660",
+      "cpu": 26,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0661",
+      "cpu": 28,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "0662",
+      "cpu": 30,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "0663",
+      "cpu": 4,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0666",
+      "cpu": 6,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0667",
+      "cpu": 8,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "0669",
+      "cpu": 10,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "066b",
+      "cpu": 12,
+      "order": "35",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "066f",
+      "cpu": 14,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0672",
+      "cpu": 16,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "0673",
+      "cpu": 18,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "0676",
+      "cpu": 20,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0678",
+      "cpu": 22,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "0679",
+      "cpu": 24,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "067a",
+      "cpu": 26,
+      "order": "53",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "067b",
+      "cpu": 28,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "067e",
+      "cpu": 30,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "0690",
+      "cpu": 4,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0691",
+      "cpu": 6,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "0693",
+      "cpu": 8,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "0696",
+      "cpu": 10,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0697",
+      "cpu": 12,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "069f",
+      "cpu": 14,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "06b0",
+      "cpu": 16,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "06b1",
+      "cpu": 18,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "06b2",
+      "cpu": 20,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "06b3",
+      "cpu": 22,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "06b4",
+      "cpu": 24,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "06b5",
+      "cpu": 26,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "06b6",
+      "cpu": 28,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "06b7",
+      "cpu": 30,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "06b9",
+      "cpu": 4,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "06bd",
+      "cpu": 6,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "06f0",
+      "cpu": 8,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "06f1",
+      "cpu": 10,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "06f2",
+      "cpu": 12,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "06f6",
+      "cpu": 14,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "06f9",
+      "cpu": 16,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0776",
+      "cpu": 18,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "0778",
+      "cpu": 20,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "0779",
+      "cpu": 22,
+      "order": "53",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "077a",
+      "cpu": 24,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "077e",
+      "cpu": 26,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "07b0",
+      "cpu": 28,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "07b1",
+      "cpu": 30,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "07b4",
+      "cpu": 4,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "07b5",
+      "cpu": 6,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "07b6",
+      "cpu": 8,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "07bc",
+      "cpu": 10,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "07e0",
+      "cpu": 12,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "07e1",
+      "cpu": 14,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "07e2",
+      "cpu": 16,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "07e3",
+      "cpu": 18,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "07e6",
+      "cpu": 20,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "07e9",
+      "cpu": 22,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "07f0",
+      "cpu": 24,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "07f1",
+      "cpu": 26,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "07f2",
+      "cpu": 28,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "07f8",
+      "cpu": 30,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "1668",
+      "cpu": 4,
+      "order": "35",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "1669",
+      "cpu": 6,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "166a",
+      "cpu": 8,
+      "order": "35",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "166b",
+      "cpu": 10,
+      "order": "53",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "166e",
+      "cpu": 12,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "167e",
+      "cpu": 14,
+      "order": "53",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "1681",
+      "cpu": 16,
+      "order": "35",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "1683",
+      "cpu": 18,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "1686",
+      "cpu": 20,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "1687",
+      "cpu": 22,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "1689",
+      "cpu": 24,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "168b",
+      "cpu": 26,
+      "order": "53",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "168e",
+      "cpu": 28,
+      "order": "35",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "1696",
+      "cpu": 30,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "1697",
+      "cpu": 4,
+      "order": "53",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "1698",
+      "cpu": 6,
+      "order": "35",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "1699",
+      "cpu": 8,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "169a",
+      "cpu": 10,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "169b",
+      "cpu": 12,
+      "order": "53",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "169e",
+      "cpu": 14,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "16a9",
+      "cpu": 16,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "16ac",
+      "cpu": 18,
+      "order": "35",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "16ad",
+      "cpu": 20,
+      "order": "53",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "16bc",
+      "cpu": 22,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "16e9",
+      "cpu": 24,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "177e",
+      "cpu": 26,
+      "order": "35",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "178e",
+      "cpu": 28,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "1796",
+      "cpu": 30,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "1798",
+      "cpu": 4,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "179a",
+      "cpu": 6,
+      "order": "53",
+      "seconds": 300,
+      "tier": 3
+    },
+    {
+      "truth": "17ac",
+      "cpu": 8,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "17e8",
+      "cpu": 10,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "18e7",
+      "cpu": 12,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "19e1",
+      "cpu": 14,
+      "order": "53",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "19e3",
+      "cpu": 16,
+      "order": "35",
+      "seconds": 300,
+      "tier": 2
+    },
+    {
+      "truth": "19e6",
+      "cpu": 18,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "1bd8",
+      "cpu": 20,
+      "order": "35",
+      "seconds": 300,
+      "tier": 1
+    },
+    {
+      "truth": "1be4",
+      "cpu": 22,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "1ee1",
+      "cpu": 24,
+      "order": "35",
+      "seconds": 300,
+      "tier": 0
+    },
+    {
+      "truth": "6996",
+      "cpu": 26,
+      "order": "53",
+      "seconds": 300,
+      "tier": 0
+    }
+  ]
+}

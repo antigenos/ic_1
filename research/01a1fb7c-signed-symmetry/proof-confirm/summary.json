@@ -1,0 +1,150 @@
+{
+  "functions": 12,
+  "totals": {
+    "3": {
+      "completed": 4,
+      "capped_s": 2907.064097699993
+    },
+    "5": {
+      "completed": 9,
+      "capped_s": 1005.9267346000015
+    }
+  },
+  "common": 4,
+  "ratios": {
+    "013d": 16.686301023279267,
+    "01be": 23.011085000675976,
+    "013c": 190.9391569509321,
+    "016e": 38.498971516150284
+  },
+  "gm": 40.988339502837455,
+  "gained": [
+    "03d5",
+    "01ad",
+    "0672",
+    "06b4",
+    "06b5"
+  ],
+  "lost": [],
+  "measurement_account": {
+    "accepted_original_wall_s": 3916.380109599992,
+    "additional_discarded_wall_s": 801.1789422000002,
+    "discarded": [
+      {
+        "truth": "016e",
+        "arm": "3",
+        "wall_s": 354.7166806000023,
+        "start_utc": "2026-11-21T04:38:20.426418+00:00"
+      },
+      {
+        "truth": "01ad",
+        "arm": "3",
+        "wall_s": 446.4622615999979,
+        "start_utc": "2026-11-21T04:36:41.977712+00:00"
+      }
+    ]
+  },
+  "runs": 24,
+  "raw_sha256": "7158bb17b399c31d86018e29c974822dc1937eedd506e48f537dc8bb5c4742bb",
+  "transfer_state": {
+    "013d": "author_verified_pins",
+    "01be": "author_verified_pins",
+    "013c": "author_verified_pins",
+    "03d5": "author_verified_pins",
+    "01ad": "author_verified_pins",
+    "016e": "author_verified_pins",
+    "0672": "author_verified_pins",
+    "06b4": "author_verified_pins",
+    "06b5": "author_verified_pins",
+    "168e": "author_search_from_bound",
+    "166a": "author_search_from_bound",
+    "169b": "author_search_from_bound"
+  },
+  "by_tier": {
+    "0": {
+      "functions": 3,
+      "totals": {
+        "3": {
+          "completed": 3,
+          "capped_s": 326.47356869999203
+        },
+        "5": {
+          "completed": 3,
+          "capped_s": 4.6088493000061135
+        }
+      },
+      "common": 3,
+      "ratios": {
+        "013d": 16.686301023279267,
+        "01be": 23.011085000675976,
+        "013c": 190.9391569509321
+      },
+      "gm": 41.853398046313195,
+      "gained": [],
+      "lost": []
+    },
+    "1": {
+      "functions": 3,
+      "totals": {
+        "3": {
+          "completed": 1,
+          "capped_s": 780.590529000001
+        },
+        "5": {
+          "completed": 3,
+          "capped_s": 13.985501800001657
+        }
+      },
+      "common": 1,
+      "ratios": {
+        "016e": 38.498971516150284
+      },
+      "gm": 38.49897151615028,
+      "gained": [
+        "03d5",
+        "01ad"
+      ],
+      "lost": []
+    },
+    "2": {
+      "functions": 3,
+      "totals": {
+        "3": {
+          "completed": 0,
+          "capped_s": 900.0
+        },
+        "5": {
+          "completed": 3,
+          "capped_s": 87.33238349999374
+        }
+      },
+      "common": 0,
+      "ratios": {},
+      "gm": null,
+      "gained": [
+        "0672",
+        "06b4",
+        "06b5"
+      ],
+      "lost": []
+    },
+    "3": {
+      "functions": 3,
+      "totals": {
+        "3": {
+          "completed": 0,
+          "capped_s": 900.0
+        },
+        "5": {
+          "completed": 0,
+          "capped_s": 900.0
+        }
+      },
+      "common": 0,
+      "ratios": {},
+      "gm": null,
+      "gained": [],
+      "lost": []
+    }
+  }
+}
