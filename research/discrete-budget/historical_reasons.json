@@ -1,0 +1,154 @@
+{
+  "interval": {
+    "counts": {
+      "entered/joint/sel": 1136,
+      "entered/joint/count": 6153,
+      "entered/interval/count": 96,
+      "entered/interval/sel": 3,
+      "skipped/joint/sel": 516,
+      "skipped/joint/count": 2780,
+      "skipped/interval/count": 259,
+      "skipped/interval/sel": 28
+    },
+    "examples": {
+      "entered/joint/sel": {
+        "r": 1,
+        "L": 75,
+        "H": 150,
+        "clause": "REASON 4 2 fe76 150 4 2 1 43 37 468 470 472 476 478 480"
+      },
+      "entered/joint/count": {
+        "r": 2,
+        "L": 150,
+        "H": 225,
+        "clause": "REASON 4 3 fe76 225 5 4 -1 847 15 73 63 103 210 247 96 204 240 586 588 590 594 596 598 844 848 852 856"
+      },
+      "entered/interval/count": {
+        "r": 2,
+        "L": 225,
+        "H": 300,
+        "clause": "REASON 4 3 fe76 300 5 4 -1 851 73 63 15 247 283 301 319 240 259 276 294 312 586 588 590 592 594 596 598 844 846 848 852 856"
+      },
+      "entered/interval/sel": {
+        "r": 3,
+        "L": 300,
+        "H": 375,
+        "clause": "REASON 4 4 fe76 375 6 5 1 105 188 22 123 147 93 708 710 712 716 718 720 966 970 974 978"
+      },
+      "skipped/joint/sel": {
+        "r": 3,
+        "L": 300,
+        "H": 302,
+        "clause": "REASON 4 4 fe76 302 6 0 1 95 968 708 710 712 716 718 720 722 966 93 970 974 978"
+      },
+      "skipped/joint/count": {
+        "r": 3,
+        "L": 300,
+        "H": 302,
+        "clause": "REASON 4 4 fe76 302 6 4 -1 1225 103 93 23 123 146 170 195 219 243 266 135 158 254 708 710 712 716 718 720 966 970 974 978"
+      },
+      "skipped/interval/count": {
+        "r": 3,
+        "L": 300,
+        "H": 302,
+        "clause": "REASON 4 4 fe76 302 6 4 -1 715 290 103 23 123 146 170 195 219 243 266 93 314 338 362 386 410 434 458 135 158 254 278 303 327 351 375 399 423 447 708 710 712 716 718 720 966 968 970 974 976 978 980 1224 1226 1228 1232 1234 1236 1238"
+      },
+      "skipped/interval/sel": {
+        "r": 3,
+        "L": 300,
+        "H": 302,
+        "clause": "REASON 4 4 fe76 302 6 5 1 105 165 123 170 195 219 266 290 315 339 93 708 710 712 716 718 720 966 970 974 978"
+      }
+    }
+  },
+  "holes": {
+    "counts": {
+      "entered/joint/sel": 741,
+      "entered/joint/count": 4281,
+      "entered/interval/count": 87,
+      "entered/interval/sel": 2,
+      "skipped/holes/sel": 122,
+      "skipped/joint/sel": 262,
+      "skipped/joint/count": 1292,
+      "skipped/holes/count": 296,
+      "skipped/interval/count": 154,
+      "entered/holes/sel": 58,
+      "entered/holes/count": 172,
+      "skipped/interval/sel": 8
+    },
+    "examples": {
+      "entered/joint/sel": {
+        "r": 1,
+        "L": 75,
+        "H": 150,
+        "clause": "REASON 4 2 fe76 150 4 2 1 43 37 468 470 472 476 478 480"
+      },
+      "entered/joint/count": {
+        "r": 2,
+        "L": 150,
+        "H": 225,
+        "clause": "REASON 4 3 fe76 225 5 4 -1 847 15 73 63 103 210 247 96 204 240 586 588 590 594 596 598 844 848 852 856"
+      },
+      "entered/interval/count": {
+        "r": 2,
+        "L": 225,
+        "H": 300,
+        "clause": "REASON 4 3 fe76 300 5 4 -1 851 73 63 15 247 283 301 319 240 259 276 294 312 586 588 590 592 594 596 598 844 846 848 852 856"
+      },
+      "entered/interval/sel": {
+        "r": 3,
+        "L": 300,
+        "H": 375,
+        "clause": "REASON 4 4 fe76 375 6 5 1 105 188 22 123 147 93 708 710 712 716 718 720 966 970 974 978"
+      },
+      "skipped/holes/sel": {
+        "r": 3,
+        "L": 300,
+        "H": 302,
+        "clause": "REASON 4 4 fe76 302 6 0 1 95 93 708 710 712 716 718 720 966 970 974 978"
+      },
+      "skipped/joint/sel": {
+        "r": 3,
+        "L": 300,
+        "H": 302,
+        "clause": "REASON 4 4 fe76 302 6 4 1 103 291 93 315 339 363 387 411 435 459 708 710 712 716 718 720 722 966 968 970 974 976 978 980 1224 1226 1228 1230 1234 1236 1238"
+      },
+      "skipped/joint/count": {
+        "r": 3,
+        "L": 300,
+        "H": 302,
+        "clause": "REASON 4 4 fe76 302 6 5 -1 1225 105 93 23 123 146 195 141 708 710 712 716 718 720 966 970 974 978"
+      },
+      "skipped/holes/count": {
+        "r": 3,
+        "L": 300,
+        "H": 302,
+        "clause": "REASON 4 4 fe76 302 6 5 -1 1227 105 93 23 123 146 195 141 708 710 712 716 718 720 966 970 974 978 1224"
+      },
+      "skipped/interval/count": {
+        "r": 3,
+        "L": 300,
+        "H": 302,
+        "clause": "REASON 4 4 fe76 302 6 5 -1 969 105 93 23 123 146 195 141 708 710 712 716 718 720 966 970 974 978 1224 1226 1230 1234 1236 1238"
+      },
+      "entered/holes/sel": {
+        "r": 4,
+        "L": 300,
+        "H": 302,
+        "clause": "REASON 4 5 fe76 302 7 5 1 139 1350 834 836 838 842 844 846 848 1092 1096 1098 1100 1102 1104 1106 127"
+      },
+      "entered/holes/count": {
+        "r": 4,
+        "L": 300,
+        "H": 302,
+        "clause": "REASON 4 5 fe76 302 7 4 -1 1611 137 127 834 836 838 842 844 846 848 1092 1096 1098 1100 1102 1104 1106 1350"
+      },
+      "skipped/interval/sel": {
+        "r": 3,
+        "L": 302,
+        "H": 304,
+        "clause": "REASON 4 4 fe76 304 6 4 1 103 968 110 135 159 182 206 231 255 708 710 712 716 718 720 966 93 970 974 976 978 980"
+      }
+    }
+  }
+}
