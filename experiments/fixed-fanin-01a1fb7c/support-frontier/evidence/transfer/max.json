@@ -1,0 +1,94 @@
+{
+  "source_sha256": "9a7c45c95cec2afbfd418468d8b5ff6a33161c591892e34ba34ff6ed3fbbb1a9",
+  "cut_sha256": "661f101119d6a18d30a5993bc57f141660f0564de44d8b26092a12fda274b988",
+  "cuts": 146,
+  "size_changes": 43,
+  "sharing_changes": 24,
+  "cpu": 24,
+  "areas": [
+    2865,
+    2865,
+    2889
+  ],
+  "depths": [
+    287,
+    287,
+    287
+  ],
+  "training_savings": [
+    [
+      3046,
+      2670,
+      2986,
+      2808
+    ],
+    [
+      3944,
+      4048,
+      4135,
+      3944
+    ]
+  ],
+  "training_counts": [
+    2406213,
+    2394703,
+    2378632
+  ],
+  "panels": [
+    [
+      1204568,
+      1199568,
+      1191401
+    ],
+    [
+      1207787,
+      1202499,
+      1194287
+    ],
+    [
+      1202221,
+      1197303,
+      1188677
+    ],
+    [
+      1204472,
+      1199866,
+      1191467
+    ],
+    [
+      1203071,
+      1198067,
+      1189456
+    ],
+    [
+      1205977,
+      1200491,
+      1192385
+    ],
+    [
+      1202679,
+      1197682,
+      1189630
+    ],
+    [
+      1202906,
+      1197656,
+      1189350
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 1.1806594999999334,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/max.aig\" \"max-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.63 sec",
+      "sha256": "9f59628d1b69df93c1d4910a3762ccd8bbc880a75d158f8e40b1e746ea70d68b"
+    },
+    {
+      "wall_s": 1.098003800000015,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/max.aig\" \"max-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.62 sec",
+      "sha256": "d5bf1b33d011382ea30d2d0ac4cfee675c7e1d5ce0834d1390c6ac7260d6b343"
+    }
+  ],
+  "fit_s": 0.1174549999999499,
+  "total_s": 2.8764042000000245
+}

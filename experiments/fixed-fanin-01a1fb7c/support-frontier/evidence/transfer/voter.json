@@ -1,0 +1,94 @@
+{
+  "source_sha256": "10ea098f4fca120ba55dd1abd5fab34d6a4df6099c4f411bc8592a27f9caf324",
+  "cut_sha256": "3615943715a9ff61a21f26732307e8e0e250fe3749627cfde50d070920952dc5",
+  "cuts": 5,
+  "size_changes": 1,
+  "sharing_changes": 0,
+  "cpu": 24,
+  "areas": [
+    13758,
+    13758,
+    13758
+  ],
+  "depths": [
+    70,
+    70,
+    70
+  ],
+  "training_savings": [
+    [
+      60,
+      66,
+      40,
+      78
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "training_counts": [
+    10356028,
+    10355784,
+    10355784
+  ],
+  "panels": [
+    [
+      5183342,
+      5183212,
+      5183212
+    ],
+    [
+      5183721,
+      5183581,
+      5183581
+    ],
+    [
+      5184994,
+      5184885,
+      5184885
+    ],
+    [
+      5180378,
+      5180225,
+      5180225
+    ],
+    [
+      5178247,
+      5178148,
+      5178148
+    ],
+    [
+      5184224,
+      5184108,
+      5184108
+    ],
+    [
+      5174844,
+      5174706,
+      5174706
+    ],
+    [
+      5187596,
+      5187473,
+      5187473
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 0.6441707000001315,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/voter.aig\" \"voter-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.09 sec",
+      "sha256": "094d3b8b8e548bf449856f59e40de93745c3fd58e771750f0fe4295b55021bd7"
+    },
+    {
+      "wall_s": 0.5984573999999157,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/voter.aig\" \"voter-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.14 sec",
+      "sha256": "094d3b8b8e548bf449856f59e40de93745c3fd58e771750f0fe4295b55021bd7"
+    }
+  ],
+  "fit_s": 0.10210240000014892,
+  "total_s": 2.7928518999999596
+}

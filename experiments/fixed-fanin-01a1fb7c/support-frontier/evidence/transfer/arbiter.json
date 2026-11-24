@@ -1,0 +1,94 @@
+{
+  "source_sha256": "0eacc0a97717bbc91f732ce6814bbfcdefa8a0b65b13ade6f002e35d0e585d82",
+  "cut_sha256": "5b37f618665ef5f365c9593ad12a363c04ee5f17cf8794b90ec59755d4fb9cc0",
+  "cuts": 128,
+  "size_changes": 0,
+  "sharing_changes": 128,
+  "cpu": 24,
+  "areas": [
+    11839,
+    11839,
+    11967
+  ],
+  "depths": [
+    87,
+    87,
+    87
+  ],
+  "training_savings": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      7173,
+      7034,
+      7090,
+      7134
+    ]
+  ],
+  "training_counts": [
+    6941326,
+    6941326,
+    6912895
+  ],
+  "panels": [
+    [
+      3455606,
+      3455606,
+      3441558
+    ],
+    [
+      3457554,
+      3457554,
+      3443348
+    ],
+    [
+      3483567,
+      3483567,
+      3469092
+    ],
+    [
+      3470800,
+      3470800,
+      3456660
+    ],
+    [
+      3502722,
+      3502722,
+      3488319
+    ],
+    [
+      3466808,
+      3466808,
+      3452540
+    ],
+    [
+      3462470,
+      3462470,
+      3447957
+    ],
+    [
+      3458057,
+      3458057,
+      3444113
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 0.7027702000000318,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/arbiter.aig\" \"arbiter-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent after structural hashing.  Time =     0.02 sec",
+      "sha256": "274195d31afb958c03decd08096150f2f2a824d727d4b6d4c1c0b41a2e19995c"
+    },
+    {
+      "wall_s": 0.8750781999999617,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/arbiter.aig\" \"arbiter-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.09 sec",
+      "sha256": "499590c83c9738636f5bd3727d0ba16207129a615148354b89b90963b75f49e5"
+    }
+  ],
+  "fit_s": 0.2746197999999822,
+  "total_s": 4.725962499999923
+}

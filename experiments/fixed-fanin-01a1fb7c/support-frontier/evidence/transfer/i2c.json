@@ -1,0 +1,94 @@
+{
+  "source_sha256": "3f6ab413a3f745c87811fa6565d972146f1f4e6ede78fae71fcb16e469b9b213",
+  "cut_sha256": "9ddd35a7106c0c583c5c6d28784f42fb8826fc5dc260bd0903b2cd3797bad983",
+  "cuts": 82,
+  "size_changes": 46,
+  "sharing_changes": 15,
+  "cpu": 24,
+  "areas": [
+    1342,
+    1342,
+    1357
+  ],
+  "depths": [
+    20,
+    20,
+    20
+  ],
+  "training_savings": [
+    [
+      4565,
+      4848,
+      3856,
+      4005
+    ],
+    [
+      2025,
+      1966,
+      1909,
+      1931
+    ]
+  ],
+  "training_counts": [
+    765809,
+    748535,
+    740704
+  ],
+  "panels": [
+    [
+      384139,
+      375272,
+      371390
+    ],
+    [
+      383906,
+      375137,
+      371415
+    ],
+    [
+      380996,
+      371952,
+      367774
+    ],
+    [
+      386549,
+      377671,
+      373775
+    ],
+    [
+      382305,
+      373529,
+      369978
+    ],
+    [
+      383715,
+      374884,
+      370919
+    ],
+    [
+      380207,
+      371859,
+      367952
+    ],
+    [
+      389165,
+      379267,
+      375134
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 0.729240000000118,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/i2c.aig\" \"i2c-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.05 sec",
+      "sha256": "821dddbf54b91b11d632a27cac83baf3fd68b26f47aa9b17f3e42fcaa570d465"
+    },
+    {
+      "wall_s": 0.6021154999998544,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/i2c.aig\" \"i2c-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.02 sec",
+      "sha256": "04fb7001870cb77c0433ad0834ff76c58e30e1872c2162f4102387aacb3b28e1"
+    }
+  ],
+  "fit_s": 0.07035309999992023,
+  "total_s": 1.6751383999999234
+}

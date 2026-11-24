@@ -1,0 +1,94 @@
+{
+  "source_sha256": "fe8d13d4efe05fc3400ab8c94c0d1ce07ee24dd2ec106f7ae3d24e962e80efbd",
+  "cut_sha256": "57b60e90d95b337bbcb32f58734371645533d6b7e73ae03cf5a1b2a277c920c4",
+  "cuts": 2,
+  "size_changes": 1,
+  "sharing_changes": 1,
+  "cpu": 24,
+  "areas": [
+    257,
+    257,
+    258
+  ],
+  "depths": [
+    54,
+    54,
+    54
+  ],
+  "training_savings": [
+    [
+      15,
+      14,
+      16,
+      11
+    ],
+    [
+      252,
+      296,
+      283,
+      202
+    ]
+  ],
+  "training_counts": [
+    112430,
+    112374,
+    111341
+  ],
+  "panels": [
+    [
+      56259,
+      56217,
+      55658
+    ],
+    [
+      55991,
+      55959,
+      55437
+    ],
+    [
+      56250,
+      56211,
+      55753
+    ],
+    [
+      56201,
+      56167,
+      55716
+    ],
+    [
+      56032,
+      56004,
+      55587
+    ],
+    [
+      55991,
+      55961,
+      55358
+    ],
+    [
+      56788,
+      56765,
+      56258
+    ],
+    [
+      56328,
+      56294,
+      55833
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 1.1438144000001103,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/router.aig\" \"router-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.03 sec",
+      "sha256": "0b74cefd770fd2af34ebc2d52e0b7ff64b65e1e932f8115341d0ad9dfdd2d4d7"
+    },
+    {
+      "wall_s": 1.1956915000000663,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/router.aig\" \"router-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.01 sec",
+      "sha256": "8006d8e2d4afd1100e30593a8f04e56995d791a8d09da22432eb048f51fc5a85"
+    }
+  ],
+  "fit_s": 0.0077014999999391875,
+  "total_s": 2.4083914000000277
+}

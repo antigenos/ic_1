@@ -1,0 +1,94 @@
+{
+  "source_sha256": "e65955ae0931e5c7ed91a6210f0f6e6b7bd95eaeef1ffddcfb3e7ec633ed5d82",
+  "cut_sha256": "a2c27f7e3b4e45a8ac4571397bda6948ae164ea8f6e105058b9cd5d683f39cbe",
+  "cuts": 1720,
+  "size_changes": 85,
+  "sharing_changes": 1618,
+  "cpu": 24,
+  "areas": [
+    57247,
+    57247,
+    58865
+  ],
+  "depths": [
+    4372,
+    4372,
+    4372
+  ],
+  "training_savings": [
+    [
+      15694,
+      15697,
+      15991,
+      15727
+    ],
+    [
+      414127,
+      415342,
+      415188,
+      413196
+    ]
+  ],
+  "training_counts": [
+    45820875,
+    45757766,
+    44099913
+  ],
+  "panels": [
+    [
+      22940512,
+      22909681,
+      22081992
+    ],
+    [
+      22803983,
+      22773028,
+      21946425
+    ],
+    [
+      22915924,
+      22884153,
+      22055542
+    ],
+    [
+      22889222,
+      22857566,
+      22030500
+    ],
+    [
+      22890045,
+      22858796,
+      22029855
+    ],
+    [
+      22774122,
+      22742385,
+      21911546
+    ],
+    [
+      22904831,
+      22873974,
+      22046072
+    ],
+    [
+      22913525,
+      22881817,
+      22054355
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 5.3795233000000735,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/div.aig\" \"div-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     4.91 sec",
+      "sha256": "063498eecc1ef1b8e6067da21ac748f5b04812c24c94b66b7ddea52cd2524e5d"
+    },
+    {
+      "wall_s": 7.402621500000009,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/div.aig\" \"div-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     6.77 sec",
+      "sha256": "6d7a55e2f949349c1c903882cc38160ddacef4c6695804d059559bd37c7f0bd5"
+    }
+  ],
+  "fit_s": 1.2524310000000014,
+  "total_s": 22.96407039999997
+}

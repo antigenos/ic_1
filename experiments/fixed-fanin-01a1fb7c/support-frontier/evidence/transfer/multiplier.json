@@ -1,0 +1,94 @@
+{
+  "source_sha256": "543555652101e587c1d1b18a38eb18dfebcb5f85e63e35c781361aa26888946e",
+  "cut_sha256": "65b70b9e1b04c678781168d7dca5338842aef8ae1770f64180c2f4cdcb97cbd5",
+  "cuts": 1329,
+  "size_changes": 1139,
+  "sharing_changes": 0,
+  "cpu": 24,
+  "areas": [
+    27062,
+    27062,
+    27062
+  ],
+  "depths": [
+    274,
+    274,
+    274
+  ],
+  "training_savings": [
+    [
+      36147,
+      34995,
+      39082,
+      40615
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "training_counts": [
+    20414133,
+    20263294,
+    20263294
+  ],
+  "panels": [
+    [
+      10229944,
+      10168841,
+      10168841
+    ],
+    [
+      10199952,
+      10134053,
+      10134053
+    ],
+    [
+      10205995,
+      10140582,
+      10140582
+    ],
+    [
+      10208930,
+      10144394,
+      10144394
+    ],
+    [
+      10216386,
+      10150554,
+      10150554
+    ],
+    [
+      10222268,
+      10158752,
+      10158752
+    ],
+    [
+      10214719,
+      10157596,
+      10157596
+    ],
+    [
+      10202399,
+      10139294,
+      10139294
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 2.4970402999999806,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/multiplier.aig\" \"multiplier-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     1.98 sec",
+      "sha256": "d111f145a424985941bfb159cd229fb7011e90c8e749fde578045d18f54e4d9f"
+    },
+    {
+      "wall_s": 2.735913099999948,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/multiplier.aig\" \"multiplier-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     2.21 sec",
+      "sha256": "d111f145a424985941bfb159cd229fb7011e90c8e749fde578045d18f54e4d9f"
+    }
+  ],
+  "fit_s": 0.983703300000002,
+  "total_s": 9.273336500000028
+}

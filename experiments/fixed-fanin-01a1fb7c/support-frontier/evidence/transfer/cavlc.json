@@ -1,0 +1,94 @@
+{
+  "source_sha256": "125e0fdeb41ccadac5e6ada71f3c416fd026cfcbc8e75ad1c6b57ddc2b100f31",
+  "cut_sha256": "8184dbcafaa7fa56fbe7d69f596c794a4d52d1e280a3ab416618c506f878bfed",
+  "cuts": 49,
+  "size_changes": 27,
+  "sharing_changes": 11,
+  "cpu": 24,
+  "areas": [
+    693,
+    693,
+    704
+  ],
+  "depths": [
+    16,
+    16,
+    16
+  ],
+  "training_savings": [
+    [
+      1701,
+      1812,
+      2011,
+      1791
+    ],
+    [
+      1255,
+      1279,
+      1302,
+      1129
+    ]
+  ],
+  "training_counts": [
+    468822,
+    461507,
+    456542
+  ],
+  "panels": [
+    [
+      232860,
+      229343,
+      227096
+    ],
+    [
+      232488,
+      228900,
+      226680
+    ],
+    [
+      234181,
+      230723,
+      228462
+    ],
+    [
+      235895,
+      232225,
+      229879
+    ],
+    [
+      232958,
+      229306,
+      227041
+    ],
+    [
+      233872,
+      230441,
+      228236
+    ],
+    [
+      232799,
+      229304,
+      227019
+    ],
+    [
+      234052,
+      230539,
+      228171
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 0.6161994999999933,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/cavlc.aig\" \"cavlc-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.05 sec",
+      "sha256": "95b2ef1203c2184b9964089c9281d447d21677783598e9e26e29e82be536b8f4"
+    },
+    {
+      "wall_s": 0.6544561999999132,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/cavlc.aig\" \"cavlc-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.07 sec",
+      "sha256": "56c6bba11f913a00736c64f0ffe35ba286cb8f07f135d25244ab57c581f0bd0c"
+    }
+  ],
+  "fit_s": 0.04994469999996909,
+  "total_s": 1.4269414999998844
+}

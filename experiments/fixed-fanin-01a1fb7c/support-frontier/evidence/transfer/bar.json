@@ -1,0 +1,94 @@
+{
+  "source_sha256": "28a3d895fe2821d4dcd04230751a059cb31ff5e28285a61ff7778cf71fb61da3",
+  "cut_sha256": "e8fa210ee52a0a6a5f1bc7ce4a6c7033a26bb5204010e4d1062d3bfd4f94f9cc",
+  "cuts": 384,
+  "size_changes": 0,
+  "sharing_changes": 0,
+  "cpu": 24,
+  "areas": [
+    3336,
+    3336,
+    3336
+  ],
+  "depths": [
+    12,
+    12,
+    12
+  ],
+  "training_savings": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "training_counts": [
+    2195496,
+    2195496,
+    2195496
+  ],
+  "panels": [
+    [
+      1100842,
+      1100842,
+      1100842
+    ],
+    [
+      1102024,
+      1102024,
+      1102024
+    ],
+    [
+      1098164,
+      1098164,
+      1098164
+    ],
+    [
+      1094308,
+      1094308,
+      1094308
+    ],
+    [
+      1097922,
+      1097922,
+      1097922
+    ],
+    [
+      1100162,
+      1100162,
+      1100162
+    ],
+    [
+      1100272,
+      1100272,
+      1100272
+    ],
+    [
+      1103908,
+      1103908,
+      1103908
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 0.7418469000000414,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/bar.aig\" \"bar-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent after structural hashing.  Time =     0.00 sec",
+      "sha256": "ca91c06a0331dbebc944cdea02e7e0e6716fe9c46630f65593606016f21616cc"
+    },
+    {
+      "wall_s": 0.579405999999949,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/bar.aig\" \"bar-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent after structural hashing.  Time =     0.04 sec",
+      "sha256": "ca91c06a0331dbebc944cdea02e7e0e6716fe9c46630f65593606016f21616cc"
+    }
+  ],
+  "fit_s": 0.21110929999997552,
+  "total_s": 2.182939499999975
+}

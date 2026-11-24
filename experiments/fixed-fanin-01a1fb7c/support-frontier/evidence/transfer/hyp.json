@@ -1,0 +1,94 @@
+{
+  "source_sha256": "b0be478cd838b5fb7bb91ee695aae9e5e8a6ddb3035f965461bb709c21386549",
+  "cut_sha256": "8e2247d4bf3660320691b1011911c0b61e8a2583a4c5647e3261e6963a0ca6dd",
+  "cuts": 228,
+  "size_changes": 65,
+  "sharing_changes": 0,
+  "cpu": 24,
+  "areas": [
+    214335,
+    214335,
+    214335
+  ],
+  "depths": [
+    24801,
+    24801,
+    24801
+  ],
+  "training_savings": [
+    [
+      2635,
+      2694,
+      2737,
+      2359
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "training_counts": [
+    167229369,
+    167218944,
+    167218944
+  ],
+  "panels": [
+    [
+      83566670,
+      83562864,
+      83562864
+    ],
+    [
+      83613006,
+      83608898,
+      83608898
+    ],
+    [
+      83525407,
+      83521356,
+      83521356
+    ],
+    [
+      83558555,
+      83553723,
+      83553723
+    ],
+    [
+      83548471,
+      83543551,
+      83543551
+    ],
+    [
+      83653293,
+      83649184,
+      83649184
+    ],
+    [
+      83528877,
+      83524312,
+      83524312
+    ],
+    [
+      83544656,
+      83540461,
+      83540461
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 7.170344399999976,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/hyp.aig\" \"hyp-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     5.24 sec",
+      "sha256": "cd0857a23e8c129a927884bd4b0d5ff41913121c731d5c2e44a6a7eb72561039"
+    },
+    {
+      "wall_s": 6.856821300000092,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/hyp.aig\" \"hyp-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     5.70 sec",
+      "sha256": "cd0857a23e8c129a927884bd4b0d5ff41913121c731d5c2e44a6a7eb72561039"
+    }
+  ],
+  "fit_s": 1.4643108000000211,
+  "total_s": 37.33133069999997
+}

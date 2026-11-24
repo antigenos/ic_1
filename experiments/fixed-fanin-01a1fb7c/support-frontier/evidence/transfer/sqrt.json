@@ -1,0 +1,94 @@
+{
+  "source_sha256": "2fdf59877a0f1ceba46a2a3aca5457e05c47ac24ceb69839a4c12d071cf62300",
+  "cut_sha256": "b36c64ea67baf450aff5c22f9ad81d7430a2f4926eb343db51d249f436285ca7",
+  "cuts": 123,
+  "size_changes": 30,
+  "sharing_changes": 0,
+  "cpu": 24,
+  "areas": [
+    24618,
+    24618,
+    24618
+  ],
+  "depths": [
+    5058,
+    5058,
+    5058
+  ],
+  "training_savings": [
+    [
+      630,
+      675,
+      823,
+      795
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "training_counts": [
+    21199300,
+    21196377,
+    21196377
+  ],
+  "panels": [
+    [
+      10608945,
+      10608051,
+      10608051
+    ],
+    [
+      10592503,
+      10591377,
+      10591377
+    ],
+    [
+      10606962,
+      10606299,
+      10606299
+    ],
+    [
+      10593890,
+      10593025,
+      10593025
+    ],
+    [
+      10650017,
+      10648995,
+      10648995
+    ],
+    [
+      10603685,
+      10602775,
+      10602775
+    ],
+    [
+      10627408,
+      10626422,
+      10626422
+    ],
+    [
+      10608750,
+      10607669,
+      10607669
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 1.4617441000000326,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/sqrt.aig\" \"sqrt-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     1.02 sec",
+      "sha256": "6b09c8b2eb3d673214b46d3aa8b5a907162bedf9278205c8274ba0275e0128bd"
+    },
+    {
+      "wall_s": 1.7424707000000126,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/sqrt.aig\" \"sqrt-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     1.00 sec",
+      "sha256": "6b09c8b2eb3d673214b46d3aa8b5a907162bedf9278205c8274ba0275e0128bd"
+    }
+  ],
+  "fit_s": 0.26347260000000006,
+  "total_s": 6.3160877000000255
+}

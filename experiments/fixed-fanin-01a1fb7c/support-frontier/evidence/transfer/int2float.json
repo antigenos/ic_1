@@ -1,0 +1,94 @@
+{
+  "source_sha256": "ad280bdb8331591998b8184ff70ad00d31184649c245796965fc6777e3016bab",
+  "cut_sha256": "0d1c4bde7c3be82b4b0c4c9216ad7877192b1d2c6acce3c2969c2495367184a2",
+  "cuts": 26,
+  "size_changes": 11,
+  "sharing_changes": 5,
+  "cpu": 24,
+  "areas": [
+    260,
+    260,
+    265
+  ],
+  "depths": [
+    16,
+    16,
+    16
+  ],
+  "training_savings": [
+    [
+      1333,
+      1273,
+      1412,
+      1268
+    ],
+    [
+      665,
+      673,
+      838,
+      737
+    ]
+  ],
+  "training_counts": [
+    170942,
+    165656,
+    162743
+  ],
+  "panels": [
+    [
+      85123,
+      82599,
+      81081
+    ],
+    [
+      85257,
+      82866,
+      81321
+    ],
+    [
+      84855,
+      82474,
+      80985
+    ],
+    [
+      85104,
+      82503,
+      80811
+    ],
+    [
+      84241,
+      82029,
+      80454
+    ],
+    [
+      84996,
+      82588,
+      81180
+    ],
+    [
+      85113,
+      82789,
+      81350
+    ],
+    [
+      85621,
+      83381,
+      81980
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 0.6925647000000481,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/int2float.aig\" \"int2float-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.05 sec",
+      "sha256": "6661dd64f065512d84cef418ea91eac4449de9ee51a0cb9b6b74e6c9a2b091c6"
+    },
+    {
+      "wall_s": 0.5515765999998621,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/int2float.aig\" \"int2float-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.03 sec",
+      "sha256": "420a03d8c73c3ea0eb586af646e77b86f9558c2564595647c6d407a8cee80494"
+    }
+  ],
+  "fit_s": 0.014858599999797661,
+  "total_s": 1.3340630999998666
+}

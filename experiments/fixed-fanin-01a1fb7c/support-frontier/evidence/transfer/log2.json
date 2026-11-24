@@ -1,0 +1,94 @@
+{
+  "source_sha256": "146f031921372d0dc47c73ad2c82ce4e7413caff725204b7938a4cf61b1f15cb",
+  "cut_sha256": "4a936cb2d12255543a2ff7d2a4a87e5a04b33583a9d089d723ddabd728ac4490",
+  "cuts": 1307,
+  "size_changes": 756,
+  "sharing_changes": 0,
+  "cpu": 24,
+  "areas": [
+    32060,
+    32060,
+    32060
+  ],
+  "depths": [
+    444,
+    444,
+    444
+  ],
+  "training_savings": [
+    [
+      28488,
+      28233,
+      27089,
+      26014
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "training_counts": [
+    21903977,
+    21794153,
+    21794153
+  ],
+  "panels": [
+    [
+      10915005,
+      10869758,
+      10869758
+    ],
+    [
+      10950932,
+      10903325,
+      10903325
+    ],
+    [
+      10977719,
+      10931365,
+      10931365
+    ],
+    [
+      10973073,
+      10926772,
+      10926772
+    ],
+    [
+      10962787,
+      10919475,
+      10919475
+    ],
+    [
+      10976120,
+      10930481,
+      10930481
+    ],
+    [
+      10945206,
+      10896461,
+      10896461
+    ],
+    [
+      10945784,
+      10899434,
+      10899434
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 5.777397400000041,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/log2.aig\" \"log2-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     4.95 sec",
+      "sha256": "69ef8f5b33b9df9e5ec0b94961abc2d4e86d935fea2ac571d0b34c46ae9f6664"
+    },
+    {
+      "wall_s": 7.117766099999926,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/log2.aig\" \"log2-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     6.31 sec",
+      "sha256": "69ef8f5b33b9df9e5ec0b94961abc2d4e86d935fea2ac571d0b34c46ae9f6664"
+    }
+  ],
+  "fit_s": 0.9987444999999298,
+  "total_s": 18.508806800000002
+}

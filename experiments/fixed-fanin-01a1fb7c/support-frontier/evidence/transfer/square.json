@@ -1,0 +1,94 @@
+{
+  "source_sha256": "c3fe8598cf501743043cf573b7226478a06be9dfb180d17bca77cdfbe667d784",
+  "cut_sha256": "81320e793330419b5fd0488018842b3cad5dc2f6cbb36dc90dce4b08568b5249",
+  "cuts": 15,
+  "size_changes": 13,
+  "sharing_changes": 0,
+  "cpu": 24,
+  "areas": [
+    18484,
+    18484,
+    18484
+  ],
+  "depths": [
+    250,
+    250,
+    250
+  ],
+  "training_savings": [
+    [
+      2076,
+      2019,
+      1900,
+      1986
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "training_counts": [
+    13122575,
+    13114594,
+    13114594
+  ],
+  "panels": [
+    [
+      6545434,
+      6541342,
+      6541342
+    ],
+    [
+      6540441,
+      6536345,
+      6536345
+    ],
+    [
+      6554480,
+      6550456,
+      6550456
+    ],
+    [
+      6517330,
+      6513393,
+      6513393
+    ],
+    [
+      6559017,
+      6554875,
+      6554875
+    ],
+    [
+      6554923,
+      6550743,
+      6550743
+    ],
+    [
+      6562071,
+      6558173,
+      6558173
+    ],
+    [
+      6567515,
+      6563552,
+      6563552
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 5.4868492999999035,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/square.aig\" \"square-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     4.42 sec",
+      "sha256": "fa2f8fd606522ad0a672ff74d76022af0bfe31e292f63ed12f1e69c0a0a17d48"
+    },
+    {
+      "wall_s": 5.448472999999922,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/square.aig\" \"square-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     5.03 sec",
+      "sha256": "fa2f8fd606522ad0a672ff74d76022af0bfe31e292f63ed12f1e69c0a0a17d48"
+    }
+  ],
+  "fit_s": 0.17604749999998148,
+  "total_s": 13.42574860000002
+}

@@ -1,0 +1,94 @@
+{
+  "source_sha256": "390d601836717129b903a5ecc8fd96b41d322d26895d666b303c64b796bd0d1d",
+  "cut_sha256": "3e8bdc047cdf75c1ec4fedf37a85f1e687dd215a2161baf44491043b5cb683f0",
+  "cuts": 5291,
+  "size_changes": 2506,
+  "sharing_changes": 829,
+  "cpu": 24,
+  "areas": [
+    46836,
+    46836,
+    47665
+  ],
+  "depths": [
+    114,
+    114,
+    114
+  ],
+  "training_savings": [
+    [
+      349556,
+      351697,
+      348358,
+      343046
+    ],
+    [
+      110788,
+      110671,
+      108864,
+      110394
+    ]
+  ],
+  "training_counts": [
+    31932719,
+    30540062,
+    30099345
+  ],
+  "panels": [
+    [
+      15894548,
+      15207377,
+      14990980
+    ],
+    [
+      15959393,
+      15274555,
+      15061164
+    ],
+    [
+      15946476,
+      15259174,
+      15041028
+    ],
+    [
+      15931245,
+      15248799,
+      15034891
+    ],
+    [
+      15870644,
+      15191916,
+      14978206
+    ],
+    [
+      15912535,
+      15237169,
+      15024853
+    ],
+    [
+      15915119,
+      15235182,
+      15020430
+    ],
+    [
+      15978146,
+      15287832,
+      15067904
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 5.623836900000015,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/mem_ctrl.aig\" \"mem_ctrl-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     4.74 sec",
+      "sha256": "39b55b602dde82949c751455ee7dcb979b17f3604140ea9c20cbc5fbdf448546"
+    },
+    {
+      "wall_s": 5.918956700000081,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/mem_ctrl.aig\" \"mem_ctrl-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     5.39 sec",
+      "sha256": "5af3b3475b57977e6c28a7eff42dc3f36ed494f21724d868f1bdc5977c42e492"
+    }
+  ],
+  "fit_s": 3.5741577999999663,
+  "total_s": 24.29250950000005
+}

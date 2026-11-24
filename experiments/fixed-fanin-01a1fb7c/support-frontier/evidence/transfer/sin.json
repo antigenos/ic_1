@@ -1,0 +1,94 @@
+{
+  "source_sha256": "e1a649d2eca27337787cb4aed79abe120f49597975beaed8bffd6a329c2664b3",
+  "cut_sha256": "b3e2909e711e59e702ec259dd51104298f55da09215dd16d22bf92b4922f55e3",
+  "cuts": 202,
+  "size_changes": 134,
+  "sharing_changes": 0,
+  "cpu": 24,
+  "areas": [
+    5416,
+    5416,
+    5416
+  ],
+  "depths": [
+    225,
+    221,
+    221
+  ],
+  "training_savings": [
+    [
+      9097,
+      8511,
+      8478,
+      8651
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "training_counts": [
+    3651175,
+    3616438,
+    3616438
+  ],
+  "panels": [
+    [
+      1826763,
+      1811457,
+      1811457
+    ],
+    [
+      1826423,
+      1810216,
+      1810216
+    ],
+    [
+      1830481,
+      1814133,
+      1814133
+    ],
+    [
+      1828243,
+      1812093,
+      1812093
+    ],
+    [
+      1825455,
+      1809208,
+      1809208
+    ],
+    [
+      1831808,
+      1815463,
+      1815463
+    ],
+    [
+      1824924,
+      1808390,
+      1808390
+    ],
+    [
+      1829320,
+      1813379,
+      1813379
+    ]
+  ],
+  "pairs_per_panel": 1024,
+  "equivalence": [
+    {
+      "wall_s": 1.609671599999956,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/sin.aig\" \"sin-control.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     1.12 sec",
+      "sha256": "23daf9509116879f8f601bd3b0add7a92bbb72bc688cd478c4869f5c45e6d777"
+    },
+    {
+      "wall_s": 1.5191014999999197,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/sin.aig\" \"sin-sharing.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     1.09 sec",
+      "sha256": "23daf9509116879f8f601bd3b0add7a92bbb72bc688cd478c4869f5c45e6d777"
+    }
+  ],
+  "fit_s": 0.13523720000000594,
+  "total_s": 4.014381599999979
+}
