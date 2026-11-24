@@ -1,0 +1,104 @@
+{
+  "inputs": 3,
+  "target": "02",
+  "paid_gates": 2,
+  "free_output": true,
+  "operation_order": [
+    "x & ~y",
+    "y & ~x",
+    "x XOR y",
+    "x AND y",
+    "x OR y"
+  ],
+  "enumerated_target_realizations": 96,
+  "branch": "Output x0 & ~j, with second paid gate j of folded count 2",
+  "hull": [
+    48,
+    56
+  ],
+  "branch_costs": {
+    "48": {
+      "cost": 48,
+      "net": [
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          0,
+          4,
+          0
+        ]
+      ],
+      "truths": [
+        "0x30",
+        "0xfc",
+        "0x2"
+      ]
+    },
+    "56": {
+      "cost": 56,
+      "net": [
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          4,
+          0
+        ]
+      ],
+      "truths": [
+        "0x3c",
+        "0xfc",
+        "0x2"
+      ]
+    }
+  },
+  "window_54_global_witness": {
+    "cost": 54,
+    "net": [
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        0,
+        3,
+        3
+      ],
+      [
+        0,
+        4,
+        2
+      ]
+    ],
+    "truths": [
+      "0xfc",
+      "0xa8",
+      "0x2"
+    ]
+  },
+  "interval_sufficient_window": [
+    57,
+    62
+  ],
+  "hit_window": [
+    48,
+    48
+  ]
+}
