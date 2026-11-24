@@ -50,11 +50,12 @@ if __name__ == '__main__':
     p.add_argument('--batch',default='1')
     p.add_argument('--worker',action='store_true')
     p.add_argument('--only',choices=DEV+TEST)
+    p.add_argument('--raw-dir',type=Path,default=HERE/'raw')
     args = p.parse_args()
     base = args.ref.resolve()/'.local/variants'
     bins = dict(A=base/'joint/abc.exe',B=base/'screen-guide/abc.exe',
                 C=HERE/'.local/conditional/abc.exe',audit=HERE/'.local/audit/abc.exe')
-    batch = HERE/'raw'/f'{args.part}-{"audit" if args.diag else "timed"}-{args.batch}'
+    batch = args.raw_dir.resolve()/f'{args.part}-{"audit" if args.diag else "timed"}-{args.batch}'
     if args.worker:
         worker(args,bins,batch)
     else:

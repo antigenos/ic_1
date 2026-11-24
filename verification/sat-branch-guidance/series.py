@@ -7,6 +7,7 @@ import sys
 import time
 from datetime import datetime,timezone
 import hashlib
+import argparse
 from host import physical_mask,conflicts
 from run import HERE,ROOT,DEV,TEST,dump
 from audit_results import examine,diagnostic_summary,timing_summary
@@ -23,7 +24,7 @@ def idle():
             if streak[mask]>=4: return cpu,mask
         time.sleep(4)
 
-def series(ref,part,kind):
+def series(ref,part,kind,raw):
     diag=kind=='audit'
     cases=DEV if part=='dev' else TEST
     result={}
@@ -32,7 +33,7 @@ def series(ref,part,kind):
         while True:
             n+=1
             label=f'core-{t}-{n}'
-            path=HERE/'raw'/f'{part}-{kind}-{label}'
+            path=raw/f'{part}-{kind}-{label}'
             if path.exists():
                 if (path/'host.json').exists():
                     h=json.loads((path/'host.json').read_bytes())
@@ -45,7 +46,7 @@ def series(ref,part,kind):
             dump(path/'freeze.json',dict(cpu=cpu,physical_mask=mask,revision=subprocess.check_output(
                 ['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),hashes={k:hashlib.sha256(v.read_bytes()).hexdigest() for k,v in binaries.items()},
                 start_utc=datetime.now(timezone.utc).isoformat()))
-            cmd=[sys.executable,str(HERE/'run.py'),str(ref),part,'--worker','--only',t,'--cpu',str(cpu),'--batch',label]
+            cmd=[sys.executable,str(HERE/'run.py'),str(ref),part,'--worker','--only',t,'--cpu',str(cpu),'--batch',label,'--raw-dir',str(raw)]
             if diag: cmd.append('--diag')
             clashes=[]
             scans=0
@@ -68,11 +69,15 @@ def series(ref,part,kind):
         result.update(examine(path,[t],diag,full_order=cases))
         print(part,kind,t,'accepted',flush=True)
     summary=diagnostic_summary(result) if diag else timing_summary(result)
-    dump(HERE/'raw'/f'{part}-{kind}-summary.json',summary)
+    dump(raw/f'{part}-{kind}-summary.json',summary)
     return summary
 
 if __name__=='__main__':
-    ref=Path(sys.argv[1]).resolve()
+    p=argparse.ArgumentParser()
+    p.add_argument('ref',type=Path)
+    p.add_argument('--raw-dir',type=Path,default=HERE/'raw')
+    args=p.parse_args()
+    ref=args.ref.resolve()
     for part in ('dev','holdout'):
-        series(ref,part,'audit')
-        series(ref,part,'timed')
+        series(ref,part,'audit',args.raw_dir.resolve())
+        series(ref,part,'timed',args.raw_dir.resolve())
