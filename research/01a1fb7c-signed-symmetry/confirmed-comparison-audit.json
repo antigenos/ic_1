@@ -1,0 +1,49 @@
+{
+  "groups": {
+    "e14-main": {
+      "runs": 624,
+      "witness_rows": 219,
+      "independently_proved_witness_rows": 219,
+      "checked_completed_prefix_enumerations": 0
+    },
+    "e14-ablation": {
+      "runs": 15,
+      "witness_rows": 8,
+      "independently_proved_witness_rows": 8,
+      "checked_completed_prefix_enumerations": 0
+    },
+    "confirmation": {
+      "runs": 48,
+      "witness_rows": 29,
+      "independently_proved_witness_rows": 29,
+      "checked_completed_prefix_enumerations": 0
+    },
+    "proof-confirm": {
+      "runs": 24,
+      "witness_rows": 13,
+      "independently_proved_witness_rows": 13,
+      "checked_completed_prefix_enumerations": 51
+    }
+  },
+  "independent_intervals": 208,
+  "distinct_solver_values": 90,
+  "distinct_solver_values_equal_independent_lower": 90,
+  "solver_values_with_open_independent_interval": {},
+  "observed_prefix_state_counts": {
+    "302": [
+      218
+    ],
+    "366": [
+      2904
+    ],
+    "440": [
+      55429
+    ],
+    "500": [
+      577078
+    ],
+    "560": [
+      6414113
+    ]
+  }
+}

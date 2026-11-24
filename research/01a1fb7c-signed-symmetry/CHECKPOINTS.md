@@ -21,3 +21,5 @@
 | 将正式程序的选择器转换核对到 60,866 张不同真值表 | 7b7c735 | [输入排列和取反的覆盖](https://github.com/antigenos/ic_1/commit/f42f08816e4cf95c1fd5c4ab25833517d59ab8a8) |
 | 确认 52 类最优 DAG 必须共享中间门 | a76784f | [无扇出公式的直接对照](https://github.com/antigenos/ic_1/commit/2488bb18efb3ddede480e8f8fa52ecce0761b782) |
 | 全部 208 类取得可行上界，逐项核对公式表的递推不等式 | 7776baf | [余下 16 类的数值区间](https://github.com/antigenos/ic_1/commit/02505092c2a14bbc8e135bb7e12049adfedefd9f) |
+| 从 GitHub 干净检出重建并复核 0189 | 993dc99 | [干净构建](https://github.com/antigenos/ic_1/commit/2a5488437b02612840e7e0f880afcd18df25f91d) |
+| 独立十二例由 4 类提升至 9 类，锁定 416 条全族冷启动配置 | f360706 | [全族冷启动计时前](https://github.com/antigenos/ic_1/commit/ef13891f26446a05f207c51c7a3506ec4161e57d) |
