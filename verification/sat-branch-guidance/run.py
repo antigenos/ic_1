@@ -57,7 +57,10 @@ if __name__ == '__main__':
         worker(args,bins,batch)
     else:
         mask = physical_mask(args.cpu)
-        while conflicts(mask,0): time.sleep(2)
+        clean = 0
+        while clean < 3:
+            clean = 0 if conflicts(mask,0) else clean + 1
+            if clean < 3: time.sleep(5)
         batch.mkdir(parents=True,exist_ok=False)
         plan=dict(cpu=args.cpu,physical_mask=mask,revision=subprocess.check_output(
             ['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),hashes={

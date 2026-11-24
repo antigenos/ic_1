@@ -38,14 +38,16 @@ def conflicts(mask,owner):
         more = k.Process32FirstW(w.HANDLE(snap),c.byref(item))
         if not more: raise c.WinError(c.get_last_error())
         while more:
-            if item.exe.lower() == 'abc.exe' and item.ppid != owner:
+            name = item.exe.lower()
+            if name in ('abc.exe','python.exe','pythonw.exe') and item.pid not in (owner,os.getpid()) and item.ppid != owner:
                 h = k.OpenProcess(0x1000,False,item.pid)
                 affinity,system = size_t(),size_t()
                 if h:
                     try: ok = k.GetProcessAffinityMask(w.HANDLE(h),c.byref(affinity),c.byref(system))
                     finally: k.CloseHandle(w.HANDLE(h))
                 else: ok = False
-                if not ok or affinity.value & mask:
+                pinned = ok and bool(affinity.value) and affinity.value & (affinity.value-1) == 0
+                if (name == 'abc.exe' and not ok) or (ok and affinity.value & mask and (name == 'abc.exe' or pinned)):
                     result.append([item.pid,item.ppid,affinity.value if ok else None])
             more = k.Process32NextW(w.HANDLE(snap),c.byref(item))
     finally: k.CloseHandle(w.HANDLE(snap))
