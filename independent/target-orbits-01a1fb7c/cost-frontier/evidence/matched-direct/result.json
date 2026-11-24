@@ -1,0 +1,21 @@
+{
+  "command": [
+    "direct-controlled.exe",
+    "4",
+    "662",
+    "table.tsv"
+  ],
+  "binary": "4b1ab61000a36763e1e9a7d04e245958a2c3821dcae498f06753121c6a483b53",
+  "source": "64e615d9d7de36a5b037737a3700d50295fa8fde2dea4243bb71b2f0460faf68",
+  "started": "2026-11-24T05:50:11.441272+00:00",
+  "host": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+  "direct_source": "6d30ef0b11f5d5c8d232a522745f889368210bb6496799cf8daa313f834e2eaa",
+  "cpu": 20,
+  "wall_s": 220.2240723000001,
+  "peak_working_bytes": 474460160,
+  "exit_code": 0,
+  "stdout": "removed_states=2719689 elapsed_s=219.89",
+  "stderr": "",
+  "table_sha256": "03954bfe4e18e99e2b79a9e46e231c3e9ab75c53ad40376c222c1d9f5fdd9ebb"
+}

@@ -9,7 +9,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 ABC = ROOT/'.local/abc'
 BASE = ROOT/'.local/variants/orbit-signed'
-DEST = ROOT/'.local/variants/orbit-frontier-complete'
+DEST = ROOT/'.local/variants/orbit-frontier-fixed'
 ANCHOR = '''    int maxGateCount = MAJ_NOBJS - p->nVars;
 
     while ( r < maxGateCount )'''

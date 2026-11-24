@@ -23,22 +23,25 @@ if __name__=='__main__':
     p.add_argument('audit',type=Path)
     p.add_argument('out',type=Path)
     p.add_argument('--cpu',type=int,default=18)
+    p.add_argument('--range',action='store_true',help='use the general activity-range BDD to verify fixed wires')
     args=p.parse_args()
     pin(args.cpu)
     args.out.mkdir(parents=True,exist_ok=False)
-    exe=ROOT/'.local/variants/orbit-frontier-complete'/('abc.exe' if os.name=='nt' else 'abc')
+    exe=ROOT/'.local/variants/orbit-frontier-fixed'/('abc.exe' if os.name=='nt' else 'abc')
     family=json.loads((STUDY/'reproduction/evidence/npn-family.json').read_text())['essential']
     reference={r['truth']:r for r in json.loads(args.audit.read_text())['targets']}
     assert len(family)==len(set(family))==len(reference)==208
     script=args.out/'batch.abc'
     script.write_text(''.join(f'echo CF_BEGIN_{t}\npexact -I 4 -M 2 {t}\necho CF_END_{t}\n' for t in family))
     env=dict(os.environ,PEXACT_FRONTIER_CAP='520',PEXACT_FRONTIER_MODE='projected',
-             PEXACT_FRONTIER_COMPLETE='1',PEXACT_FRONTIER_TRACE='1')
+             PEXACT_FRONTIER_COMPLETE='1',PEXACT_FRONTIER_TRACE='1',
+             PEXACT_FRONTIER_VERIFY='range' if args.range else 'fixed')
     start=time.perf_counter()
     with (args.out/'solver.log').open('wb') as log:
         p=subprocess.Popen([str(exe),'-f',script.name],cwd=args.out,env=env,stdout=log,stderr=subprocess.STDOUT)
         launch=dict(started=datetime.now(timezone.utc).isoformat(),cpu=child_cpus(p),pid=p.pid,
-                    sha256=sha256(exe.read_bytes()).hexdigest(),count=len(family),seed=520)
+                    sha256=sha256(exe.read_bytes()).hexdigest(),count=len(family),seed=520,
+                    witness_verification=env['PEXACT_FRONTIER_VERIFY'])
         assert launch['cpu']==[args.cpu]
         (args.out/'launch.json').write_text(json.dumps(launch,indent=2))
         result=p.wait()
@@ -57,7 +60,8 @@ if __name__=='__main__':
         assert w['activity']==reference[t]['lower']==reference[t]['upper']==lower
         assert w['gates']==charged+1
         verified.append(w)
-    report=dict(launch,wall_s=wall,peak_bytes=memory,exit_code=result,
+    report=dict(launch,wall_s=wall,including_scalar_audit_s=time.perf_counter()-start,
+                peak_bytes=memory,exit_code=result,
                 table_audit_sha256=sha256(args.audit.read_bytes()).hexdigest(),
                 log_sha256=sha256((args.out/'solver.log').read_bytes()).hexdigest(),
                 verified=len(verified),witnesses=verified)

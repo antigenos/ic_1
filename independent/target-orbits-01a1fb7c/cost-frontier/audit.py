@@ -96,6 +96,10 @@ class Entry:
 
 def read_table(path):
     rows = {}
+    receipt = path.with_name('result.json')
+    program = json.loads(receipt.read_text())['command'][0].lower() if receipt.is_file() else ''
+    direct = program.startswith('direct')
+    residual = program.startswith('refine')
     for line in path.read_text().splitlines():
         parts = line.split()
         if parts[0] == 'target':
@@ -104,7 +108,10 @@ def read_table(path):
                 raise ValueError('duplicate representative')
             rows[target] = Entry(upper, lower, uniform, raw, state)
         elif parts[0] == 'meta':
-            meta = dict(zip(('n','cap','states','edges','crossings','first_crossing'),map(int,parts[1:])))
+            keys = ('n','cap','states','edges','terminal_edges','budget_plus_one') if direct or residual else (
+                'n','cap','states','edges','crossings','first_crossing')
+            meta = dict(zip(keys,map(int,parts[1:])))
+            meta['method'] = 'end-pruned direct' if direct else 'residual completion' if residual else 'first crossing'
     if meta['n'] != 4 or len(rows) != 222:
         raise ValueError('expected the entire four-input library')
     return meta, rows
@@ -139,7 +146,8 @@ def audit(table):
         if key in known:
             assert row.lower <= known[key], (key,row.lower,known[key])
             assert upper is None or known[key] <= upper, (key,known[key],upper)
-        results.append(dict(truth=key, lower=row.lower, uniform=row.uniform,
+        results.append(dict(truth=key, lower=row.lower,
+                            uniform=row.uniform if meta['method']=='first crossing' else None,
                             upper=upper, historical=known.get(key), circuit=w))
     return meta, results
 
@@ -150,12 +158,13 @@ if __name__ == '__main__':
     p.add_argument('--out', type=Path)
     args = p.parse_args()
     meta, results = audit(args.table)
-    extra = [r['truth'] for r in results if r['lower']==r['upper'] and r['upper']!=r['uniform']]
+    comparable=meta['method']=='first crossing'
+    extra = [r['truth'] for r in results if comparable and r['lower']==r['upper'] and r['upper']!=r['uniform']]
     summary = dict(meta, targets=len(results), historical=sum(r['historical'] is not None for r in results),
                    witnesses=sum(r['upper'] is not None for r in results),
-                   uniform=sum(r['uniform']==r['upper'] for r in results),
+                   uniform=sum(r['uniform']==r['upper'] for r in results) if comparable else None,
                    certified=sum(r['lower']==r['upper'] for r in results),
-                   strict_bounds=sum(r['lower']>r['uniform'] for r in results), extra=extra,
+                   strict_bounds=sum(r['lower']>r['uniform'] for r in results) if comparable else None, extra=extra,
                    holdouts=[{k:r[k] for k in ('truth','lower','upper','historical')}
                              for r in results if r['truth'] in ('0017','018b')])
     if args.out:

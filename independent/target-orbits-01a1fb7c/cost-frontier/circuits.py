@@ -1,13 +1,14 @@
 """Map three EPFL designs, expand their four-input LUTs and verify whole-netlist equivalence."""
 import argparse
 from collections import Counter
-from hashlib import sha256
+from hashlib import sha1, sha256
 import json
 import os
 from pathlib import Path
 import re
 import subprocess
 import time
+import urllib.request
 
 from audit import HERE, PINS, normal, read_table, rebuild, representative, simulate
 from witness import GATE
@@ -84,6 +85,14 @@ def run_one(name, rows, local):
     begin=time.perf_counter()
     source=ROOT/f'.local/downloads/epfl-{name}.aig'
     category,expected=SOURCES[name]
+    url=f'https://raw.githubusercontent.com/lsils/benchmarks/{REV}/{category}/{name}.aig'
+    if not source.exists():
+        with urllib.request.urlopen(url,timeout=45) as response:
+            data=response.read()
+        blob_id=sha1(f'blob {len(data)}\0'.encode()+data).hexdigest()
+        if blob_id!=expected: raise ValueError(f'{name} downloaded blob {blob_id}')
+        source.parent.mkdir(parents=True,exist_ok=True)
+        source.write_bytes(data)
     blob=subprocess.check_output(['git','hash-object','--',str(source)],cwd=ROOT,text=True).strip()
     if blob!=expected: raise ValueError(f'{name} input hash {blob}')
     mapped=local/f'{name}-mapped.blif'

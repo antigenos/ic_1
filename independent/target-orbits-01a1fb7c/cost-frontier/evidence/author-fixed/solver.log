@@ -1,0 +1,5209 @@
+ABC command line: "source batch.abc".
+
+Cannot open file "abc.rc".
+Cannot open file "..\abc.rc".
+Cannot open file "..\..\abc.rc".
+CF_BEGIN_0001 
+FRONTIER lower=152 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=1:
+06 = 4'b0001( b 05 )
+05 = 4'b1110( c 04 )
+04 = 4'b1110( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101010111111111
+i=5:0101111111111111
+i=6:1000000000000000
+
+
+Switching Activity=152
+Number of Gates: r=3
+Total runtime =    64.51 sec
+CF_END_0001 
+CF_BEGIN_0006 
+FRONTIER lower=208 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0110( 05 06 )
+06 = 4'b0100( b 04 )
+05 = 4'b0100( a 04 )
+04 = 4'b1110( c d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000111111111111
+i=5:0101000000000000
+i=6:0011000000000000
+i=7:0110000000000000
+
+
+Switching Activity=208
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_0006 
+CF_BEGIN_0007 
+FRONTIER lower=182 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=1:
+07 = 4'b1001( 04 06 )
+06 = 4'b1000( a 05 )
+05 = 4'b0100( b 04 )
+04 = 4'b1110( c d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000111111111111
+i=5:0011000000000000
+i=6:0001000000000000
+i=7:1110000000000000
+
+
+Switching Activity=182
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_0007 
+CF_BEGIN_0016 
+FRONTIER lower=406 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0100( 06 08 )
+08 = 4'b1000( b 07 )
+07 = 4'b1000( a 06 )
+06 = 4'b0010( d 05 )
+05 = 4'b0110( c 04 )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0111100001111000
+i=6:0111100000000000
+i=7:0101000000000000
+i=8:0001000000000000
+i=9:0110100000000000
+
+
+Switching Activity=406
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_0016 
+CF_BEGIN_0017 
+FRONTIER lower=400 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1011( 06 08 )
+08 = 4'b0010( c 07 )
+07 = 4'b0110( 04 05 )
+06 = 4'b1110( 04 05 )
+05 = 4'b1110( b d )
+04 = 4'b1110( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101010111111111
+i=5:0011001111111111
+i=6:0111011111111111
+i=7:0110011000000000
+i=8:0110000000000000
+i=9:1110100000000000
+
+
+Switching Activity=400
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_0017 
+CF_BEGIN_0018 
+FRONTIER lower=336 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 06 07 )
+07 = 4'b1110( c 05 )
+06 = 4'b1110( b 05 )
+05 = 4'b1110( d 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0110011011111111
+i=6:0111011111111111
+i=7:0110111111111111
+i=8:0001100000000000
+
+
+Switching Activity=336
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_0018 
+CF_BEGIN_0019 
+FRONTIER lower=310 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( 05 07 )
+07 = 4'b1000( a 06 )
+06 = 4'b0100( c 05 )
+05 = 4'b1110( d 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0110011011111111
+i=6:0000100100000000
+i=7:0000000100000000
+i=8:1001100000000000
+
+
+Switching Activity=310
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_0019 
+CF_BEGIN_001b 
+FRONTIER lower=304 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1011( 06 07 )
+07 = 4'b0010( c 05 )
+06 = 4'b1110( b 04 )
+05 = 4'b0010( d 04 )
+04 = 4'b1110( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101010111111111
+i=5:0101010100000000
+i=6:0111011111111111
+i=7:0101000000000000
+i=8:1101100000000000
+
+
+Switching Activity=304
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_001b 
+CF_BEGIN_001e 
+FRONTIER lower=224 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=0:
+06 = 4'b0010( d 05 )
+05 = 4'b0110( c 04 )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0111100001111000
+i=6:0111100000000000
+
+
+Switching Activity=224
+Number of Gates: r=3
+Total runtime =     0.03 sec
+CF_END_001e 
+CF_BEGIN_001f 
+FRONTIER lower=216 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=1:
+06 = 4'b0001( d 05 )
+05 = 4'b1000( c 04 )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000011100000111
+i=6:1111100000000000
+
+
+Switching Activity=216
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_001f 
+CF_BEGIN_003d 
+FRONTIER lower=326 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( 04 07 )
+07 = 4'b0010( 05 06 )
+06 = 4'b1110( a 04 )
+05 = 4'b1110( c d )
+04 = 4'b1110( b d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011001111111111
+i=5:0000111111111111
+i=6:0111011111111111
+i=7:0111000000000000
+i=8:1011110000000000
+
+
+Switching Activity=326
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_003d 
+CF_BEGIN_0069 
+FRONTIER lower=256 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=1:
+06 = 4'b0001( d 05 )
+05 = 4'b0110( a 04 )
+04 = 4'b0110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011110000111100
+i=5:0110100101101001
+i=6:1001011000000000
+
+
+Switching Activity=256
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_0069 
+CF_BEGIN_006b 
+FRONTIER lower=432 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b0001( d 07 )
+07 = 4'b0110( 04 06 )
+06 = 4'b0100( c 05 )
+05 = 4'b0100( a b )
+04 = 4'b0010( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0010001000100010
+i=5:0100010001000100
+i=6:0000101100001011
+i=7:0010100100101001
+i=8:1101011000000000
+
+
+Switching Activity=432
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_006b 
+CF_BEGIN_006f 
+FRONTIER lower=224 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=1:
+06 = 4'b0001( d 05 )
+05 = 4'b0100( c 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000100100001001
+i=6:1111011000000000
+
+
+Switching Activity=224
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_006f 
+CF_BEGIN_007e 
+FRONTIER lower=352 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0010( d 06 )
+06 = 4'b1110( 04 05 )
+05 = 4'b0110( b c )
+04 = 4'b0110( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101101001011010
+i=5:0011110000111100
+i=6:0111111001111110
+i=7:0111111000000000
+
+
+Switching Activity=352
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_007e 
+CF_BEGIN_007f 
+FRONTIER lower=152 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=1:
+06 = 4'b0001( d 05 )
+05 = 4'b1000( b 04 )
+04 = 4'b1000( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000010100000101
+i=5:0000000100000001
+i=6:1111111000000000
+
+
+Switching Activity=152
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_007f 
+CF_BEGIN_0116 
+FRONTIER lower=516 paid_wires=8 projected=1
+Realization of given 4-input function using 9 two-input gates complementary=0:
+12 = 4'b0110( 04 11 )
+11 = 4'b0110( 05 10 )
+10 = 4'b0110( 08 09 )
+09 = 4'b1000( c 07 )
+08 = 4'b1000( a 06 )
+07 = 4'b0100( b 05 )
+06 = 4'b0100( d 04 )
+05 = 4'b1110( a d )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0101010111111111
+i=6:0000000011000000
+i=7:0010001000000000
+i=8:0000000001000000
+i=9:0000001000000000
+i=10:0000001001000000
+i=11:0101011110111111
+i=12:0110100010000000
+
+
+Switching Activity=516
+Number of Gates: r=9
+Total runtime =     0.00 sec
+CF_END_0116 
+CF_BEGIN_0117 
+FRONTIER lower=520 paid_wires=8 projected=1
+Realization of given 4-input function using 9 two-input gates complementary=1:
+12 = 4'b0111( 10 11 )
+11 = 4'b0110( 05 09 )
+10 = 4'b0110( 04 08 )
+09 = 4'b1000( b 07 )
+08 = 4'b1000( d 06 )
+07 = 4'b0100( a 05 )
+06 = 4'b0100( c 04 )
+05 = 4'b1110( c d )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000111111111111
+i=6:0000100000001000
+i=7:0101000000000000
+i=8:0000000000001000
+i=9:0001000000000000
+i=10:0111011101111111
+i=11:0001111111111111
+i=12:1110100010000000
+
+
+Switching Activity=520
+Number of Gates: r=9
+Total runtime =     0.04 sec
+CF_END_0117 
+CF_BEGIN_0118 
+FRONTIER lower=446 paid_wires=7 projected=1
+Realization of given 4-input function using 8 two-input gates complementary=0:
+11 = 4'b0110( 09 10 )
+10 = 4'b1000( b 08 )
+09 = 4'b0110( 06 07 )
+08 = 4'b0010( d 05 )
+07 = 4'b1110( d 04 )
+06 = 4'b1110( c 04 )
+05 = 4'b0100( a c )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0101000001010000
+i=6:0111111101111111
+i=7:0111011111111111
+i=8:0101000000000000
+i=9:0000100010000000
+i=10:0001000000000000
+i=11:0001100010000000
+
+
+Switching Activity=446
+Number of Gates: r=8
+Total runtime =     0.00 sec
+CF_END_0118 
+CF_BEGIN_0119 
+FRONTIER lower=420 paid_wires=7 projected=1
+Realization of given 4-input function using 8 two-input gates complementary=1:
+11 = 4'b1001( 04 10 )
+10 = 4'b0110( 08 09 )
+09 = 4'b1000( b 07 )
+08 = 4'b1000( c 06 )
+07 = 4'b0010( c 05 )
+06 = 4'b0100( d 04 )
+05 = 4'b0100( a d )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0101010100000000
+i=6:0000000010001000
+i=7:0101000000000000
+i=8:0000000000001000
+i=9:0001000000000000
+i=10:0001000000001000
+i=11:1001100010000000
+
+
+Switching Activity=420
+Number of Gates: r=8
+Total runtime =     0.00 sec
+CF_END_0119 
+CF_BEGIN_011a 
+FRONTIER lower=416 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0110( 08 09 )
+09 = 4'b0110( 06 07 )
+08 = 4'b0100( a 05 )
+07 = 4'b1110( d 04 )
+06 = 4'b1110( c 04 )
+05 = 4'b1110( c d )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000111111111111
+i=6:0111111101111111
+i=7:0111011111111111
+i=8:0101000000000000
+i=9:0000100010000000
+i=10:0101100010000000
+
+
+Switching Activity=416
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_011a 
+CF_BEGIN_011b 
+FRONTIER lower=412 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=1:
+10 = 4'b1001( 04 09 )
+09 = 4'b0110( 07 08 )
+08 = 4'b1000( c 06 )
+07 = 4'b0100( a 05 )
+06 = 4'b0100( d 04 )
+05 = 4'b1110( c d )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000111111111111
+i=6:0000000010001000
+i=7:0101000000000000
+i=8:0000000000001000
+i=9:0101000000001000
+i=10:1101100010000000
+
+
+Switching Activity=412
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_011b 
+CF_BEGIN_011e 
+FRONTIER lower=356 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 05 08 )
+08 = 4'b0110( 04 07 )
+07 = 4'b1000( d 06 )
+06 = 4'b0100( c 04 )
+05 = 4'b1110( c d )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000111111111111
+i=6:0000100000001000
+i=7:0000000000001000
+i=8:0111011101111111
+i=9:0111100010000000
+
+
+Switching Activity=356
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_011e 
+CF_BEGIN_011f 
+FRONTIER lower=356 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b0111( 05 08 )
+08 = 4'b0110( 04 07 )
+07 = 4'b1000( d 06 )
+06 = 4'b0100( c 04 )
+05 = 4'b1110( c d )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000111111111111
+i=6:0000100000001000
+i=7:0000000000001000
+i=8:0111011101111111
+i=9:1111100010000000
+
+
+Switching Activity=356
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_011f 
+CF_BEGIN_012c 
+FRONTIER lower=448 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0100( 06 07 )
+07 = 4'b0110( c 05 )
+06 = 4'b0110( d 04 )
+05 = 4'b0010( b 04 )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0100010001000100
+i=6:0111011110001000
+i=7:0100101101001011
+i=8:0011010010000000
+
+
+Switching Activity=448
+Number of Gates: r=5
+Total runtime =     0.04 sec
+CF_END_012c 
+CF_BEGIN_012d 
+FRONTIER lower=440 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b0001( 06 07 )
+07 = 4'b0110( c 05 )
+06 = 4'b1000( d 04 )
+05 = 4'b0100( a b )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0100010001000100
+i=6:0000000001110111
+i=7:0100101101001011
+i=8:1011010010000000
+
+
+Switching Activity=440
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_012d 
+CF_BEGIN_012f 
+FRONTIER lower=432 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b0001( 06 07 )
+07 = 4'b0100( c 05 )
+06 = 4'b1000( d 04 )
+05 = 4'b0100( a b )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0100010001000100
+i=6:0000000001110111
+i=7:0000101100001011
+i=8:1111010010000000
+
+
+Switching Activity=432
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_012f 
+CF_BEGIN_013c 
+FRONTIER lower=406 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 07 08 )
+08 = 4'b0100( d 06 )
+07 = 4'b0010( d 05 )
+06 = 4'b1110( a 04 )
+05 = 4'b0110( b c )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0011110000111100
+i=6:0111111101111111
+i=7:0011110000000000
+i=8:0000000010000000
+i=9:0011110010000000
+
+
+Switching Activity=406
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_013c 
+CF_BEGIN_013d 
+FRONTIER lower=376 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1011( 06 07 )
+07 = 4'b0010( d 05 )
+06 = 4'b1110( 04 05 )
+05 = 4'b0110( b c )
+04 = 4'b1110( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101111101011111
+i=5:0011110000111100
+i=6:0111111101111111
+i=7:0011110000000000
+i=8:1011110010000000
+
+
+Switching Activity=376
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_013d 
+CF_BEGIN_013e 
+FRONTIER lower=368 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 06 07 )
+07 = 4'b1110( d 05 )
+06 = 4'b1110( c 04 )
+05 = 4'b1000( b c )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000001100000011
+i=6:0111111101111111
+i=7:0000001111111111
+i=8:0111110010000000
+
+
+Switching Activity=368
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_013e 
+CF_BEGIN_013f 
+FRONTIER lower=368 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b0111( 06 07 )
+07 = 4'b1110( d 05 )
+06 = 4'b1110( c 04 )
+05 = 4'b1000( b c )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000001100000011
+i=6:0111111101111111
+i=7:0000001111111111
+i=8:1111110010000000
+
+
+Switching Activity=368
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_013f 
+CF_BEGIN_0168 
+FRONTIER lower=480 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0100( 06 07 )
+07 = 4'b0110( a 05 )
+06 = 4'b0110( d 04 )
+05 = 4'b0110( b c )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0011110000111100
+i=6:0011111111000000
+i=7:0110100101101001
+i=8:0001011010000000
+
+
+Switching Activity=480
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_0168 
+CF_BEGIN_0169 
+FRONTIER lower=472 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b0001( 06 07 )
+07 = 4'b0110( c 05 )
+06 = 4'b1000( d 04 )
+05 = 4'b0110( a b )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0110011001100110
+i=6:0000000001110111
+i=7:0110100101101001
+i=8:1001011010000000
+
+
+Switching Activity=472
+Number of Gates: r=5
+Total runtime =     0.04 sec
+CF_END_0169 
+CF_BEGIN_016a 
+FRONTIER lower=502 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0110( 08 09 )
+09 = 4'b0010( d 07 )
+08 = 4'b0100( d 06 )
+07 = 4'b0110( a 05 )
+06 = 4'b1110( c 04 )
+05 = 4'b1000( b c )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000001100000011
+i=6:0111111101111111
+i=7:0101011001010110
+i=8:0000000010000000
+i=9:0101011000000000
+i=10:0101011010000000
+
+
+Switching Activity=502
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_016a 
+CF_BEGIN_016b 
+FRONTIER lower=472 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1011( 07 08 )
+08 = 4'b0010( d 06 )
+07 = 4'b1110( a 05 )
+06 = 4'b0110( a 04 )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0101011001010110
+i=7:0111111101111111
+i=8:0101011000000000
+i=9:1101011010000000
+
+
+Switching Activity=472
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_016b 
+CF_BEGIN_016e 
+FRONTIER lower=448 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0100( 06 07 )
+07 = 4'b0100( c 05 )
+06 = 4'b0110( d 04 )
+05 = 4'b0110( a b )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0110011001100110
+i=6:0111011110001000
+i=7:0000100100001001
+i=8:0111011010000000
+
+
+Switching Activity=448
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_016e 
+CF_BEGIN_016f 
+FRONTIER lower=440 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b0001( 06 07 )
+07 = 4'b0100( c 05 )
+06 = 4'b1000( d 04 )
+05 = 4'b0110( a b )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0110011001100110
+i=6:0000000001110111
+i=7:0000100100001001
+i=8:1111011010000000
+
+
+Switching Activity=440
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_016f 
+CF_BEGIN_017e 
+FRONTIER lower=412 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0110( d 09 )
+09 = 4'b0100( 06 08 )
+08 = 4'b1000( a 07 )
+07 = 4'b1000( c 05 )
+06 = 4'b1110( b 04 )
+05 = 4'b0100( b d )
+04 = 4'b1110( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101111101011111
+i=5:0011001100000000
+i=6:0111111101111111
+i=7:0000001100000000
+i=8:0000000100000000
+i=9:0111111001111111
+i=10:0111111010000000
+
+
+Switching Activity=412
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_017e 
+CF_BEGIN_017f 
+FRONTIER lower=420 paid_wires=7 projected=1
+Realization of given 4-input function using 8 two-input gates complementary=1:
+11 = 4'b1001( d 10 )
+10 = 4'b0110( 08 09 )
+09 = 4'b0010( a 07 )
+08 = 4'b1000( c 06 )
+07 = 4'b0010( b 05 )
+06 = 4'b1000( a 04 )
+05 = 4'b0010( c d )
+04 = 4'b0100( b d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011001100000000
+i=5:0000000011110000
+i=6:0001000100000000
+i=7:0000000011000000
+i=8:0000000100000000
+i=9:0000000010000000
+i=10:0000000110000000
+i=11:1111111010000000
+
+
+Switching Activity=420
+Number of Gates: r=8
+Total runtime =     0.00 sec
+CF_END_017f 
+CF_BEGIN_0180 
+FRONTIER lower=364 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0110( 08 09 )
+09 = 4'b1000( b 07 )
+08 = 4'b0100( d 06 )
+07 = 4'b1000( c 05 )
+06 = 4'b1110( a 04 )
+05 = 4'b0100( a d )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0101010100000000
+i=6:0111111101111111
+i=7:0000010100000000
+i=8:0000000010000000
+i=9:0000000100000000
+i=10:0000000110000000
+
+
+Switching Activity=364
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_0180 
+CF_BEGIN_0181 
+FRONTIER lower=334 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1011( 06 08 )
+08 = 4'b1000( b 07 )
+07 = 4'b0010( d 05 )
+06 = 4'b1110( c 04 )
+05 = 4'b1000( a c )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000010100000101
+i=6:0111111101111111
+i=7:0000010100000000
+i=8:0000000100000000
+i=9:1000000110000000
+
+
+Switching Activity=334
+Number of Gates: r=6
+Total runtime =     0.03 sec
+CF_END_0181 
+CF_BEGIN_0182 
+FRONTIER lower=438 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0100( 06 08 )
+08 = 4'b0010( a 07 )
+07 = 4'b1000( b 06 )
+06 = 4'b0010( 04 05 )
+05 = 4'b0110( a d )
+04 = 4'b0110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011110000111100
+i=5:0101010110101010
+i=6:0100000110000010
+i=7:0000000100000010
+i=8:0000000000000010
+i=9:0100000110000000
+
+
+Switching Activity=438
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_0182 
+CF_BEGIN_0183 
+FRONTIER lower=416 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=1:
+10 = 4'b1011( 06 09 )
+09 = 4'b0110( 07 08 )
+08 = 4'b1000( c 05 )
+07 = 4'b0010( b 05 )
+06 = 4'b1110( a 04 )
+05 = 4'b0100( a d )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0101010100000000
+i=6:0111111101111111
+i=7:0100010000000000
+i=8:0000010100000000
+i=9:0100000100000000
+i=10:1100000110000000
+
+
+Switching Activity=416
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_0183 
+CF_BEGIN_0186 
+FRONTIER lower=448 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0010( 06 07 )
+07 = 4'b0110( d 05 )
+06 = 4'b0110( c 04 )
+05 = 4'b1110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0111011101110111
+i=6:0001111000011110
+i=7:0111011110001000
+i=8:0110000110000000
+
+
+Switching Activity=448
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_0186 
+CF_BEGIN_0187 
+FRONTIER lower=440 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b0001( 06 07 )
+07 = 4'b1000( d 05 )
+06 = 4'b0110( c 04 )
+05 = 4'b1110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0111011101110111
+i=6:0001111000011110
+i=7:0000000001110111
+i=8:1110000110000000
+
+
+Switching Activity=440
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_0187 
+CF_BEGIN_0189 
+FRONTIER lower=304 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1101( 06 07 )
+07 = 4'b1110( c 05 )
+06 = 4'b0010( d 04 )
+05 = 4'b1110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0111011101110111
+i=6:0001000100000000
+i=7:0111111101111111
+i=8:1001000110000000
+
+
+Switching Activity=304
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_0189 
+CF_BEGIN_018b 
+FRONTIER lower=412 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=1:
+10 = 4'b1001( 05 09 )
+09 = 4'b0100( 06 08 )
+08 = 4'b1000( c 07 )
+07 = 4'b0010( b 05 )
+06 = 4'b1110( c 04 )
+05 = 4'b0100( a d )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0101010100000000
+i=6:0111111101111111
+i=7:0100010000000000
+i=8:0000010000000000
+i=9:0111101101111111
+i=10:1101000110000000
+
+
+Switching Activity=412
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_018b 
+CF_BEGIN_018f 
+FRONTIER lower=432 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b0001( 06 07 )
+07 = 4'b1000( d 05 )
+06 = 4'b0100( c 04 )
+05 = 4'b1110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0111011101110111
+i=6:0000111000001110
+i=7:0000000001110111
+i=8:1111000110000000
+
+
+Switching Activity=432
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_018f 
+CF_BEGIN_0196 
+FRONTIER lower=534 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0110( 08 09 )
+09 = 4'b0100( d 07 )
+08 = 4'b0010( d 06 )
+07 = 4'b1110( a 05 )
+06 = 4'b0110( c 04 )
+05 = 4'b1110( c 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0110111101101111
+i=6:0110100101101001
+i=7:0111111101111111
+i=8:0110100100000000
+i=9:0000000010000000
+i=10:0110100110000000
+
+
+Switching Activity=534
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_0196 
+CF_BEGIN_0197 
+FRONTIER lower=504 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1011( 07 08 )
+08 = 4'b0010( d 06 )
+07 = 4'b1110( a 05 )
+06 = 4'b0110( c 04 )
+05 = 4'b1110( c 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0110111101101111
+i=6:0110100101101001
+i=7:0111111101111111
+i=8:0110100100000000
+i=9:1110100110000000
+
+
+Switching Activity=504
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_0197 
+CF_BEGIN_0198 
+FRONTIER lower=352 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0010( 04 06 )
+06 = 4'b0110( d 05 )
+05 = 4'b1110( b c )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0011111100111111
+i=6:0011111111000000
+i=7:0001100110000000
+
+
+Switching Activity=352
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_0198 
+CF_BEGIN_0199 
+FRONTIER lower=344 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=1:
+07 = 4'b0001( 04 06 )
+06 = 4'b1000( d 05 )
+05 = 4'b1110( a c )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0101111101011111
+i=6:0000000001011111
+i=7:1001100110000000
+
+
+Switching Activity=344
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_0199 
+CF_BEGIN_019a 
+FRONTIER lower=446 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( a 07 )
+07 = 4'b1110( 04 06 )
+06 = 4'b0010( b 05 )
+05 = 4'b0110( c d )
+04 = 4'b1000( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000000001010101
+i=5:0000111111110000
+i=6:0000110011000000
+i=7:0000110011010101
+i=8:0101100110000000
+
+
+Switching Activity=446
+Number of Gates: r=5
+Total runtime =     0.01 sec
+CF_END_019a 
+CF_BEGIN_019b 
+FRONTIER lower=472 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1011( 07 08 )
+08 = 4'b0010( c 06 )
+07 = 4'b1110( d 05 )
+06 = 4'b0010( b 05 )
+05 = 4'b0110( a 04 )
+04 = 4'b1110( b d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011001111111111
+i=5:0110011010101010
+i=6:0100010010001000
+i=7:0110011011111111
+i=8:0100000010000000
+i=9:1101100110000000
+
+
+Switching Activity=472
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_019b 
+CF_BEGIN_019e 
+FRONTIER lower=496 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 07 08 )
+08 = 4'b1110( b 06 )
+07 = 4'b1110( d 05 )
+06 = 4'b1110( c 04 )
+05 = 4'b1000( c 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000011000000110
+i=6:0110111101101111
+i=7:0000011011111111
+i=8:0111111101111111
+i=9:0111100110000000
+
+
+Switching Activity=496
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_019e 
+CF_BEGIN_019f 
+FRONTIER lower=496 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b0111( 07 08 )
+08 = 4'b1110( b 06 )
+07 = 4'b1110( d 05 )
+06 = 4'b1110( c 04 )
+05 = 4'b1000( c 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000011000000110
+i=6:0110111101101111
+i=7:0000011011111111
+i=8:0111111101111111
+i=9:1111100110000000
+
+
+Switching Activity=496
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_019f 
+CF_BEGIN_01a8 
+FRONTIER lower=352 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b1000( 05 06 )
+06 = 4'b0110( d 04 )
+05 = 4'b0110( a d )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0101010110101010
+i=6:0011111111000000
+i=7:0001010110000000
+
+
+Switching Activity=352
+Number of Gates: r=4
+Total runtime =     0.04 sec
+CF_END_01a8 
+CF_BEGIN_01a9 
+FRONTIER lower=318 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=1:
+07 = 4'b1001( a 06 )
+06 = 4'b0100( 04 05 )
+05 = 4'b1000( a d )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0000000001010101
+i=6:0011111100101010
+i=7:1001010110000000
+
+
+Switching Activity=318
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_01a9 
+CF_BEGIN_01aa 
+FRONTIER lower=278 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 05 07 )
+07 = 4'b0100( d 06 )
+06 = 4'b1110( b 04 )
+05 = 4'b0100( a d )
+04 = 4'b1110( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101111101011111
+i=5:0101010100000000
+i=6:0111111101111111
+i=7:0000000010000000
+i=8:0101010110000000
+
+
+Switching Activity=278
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_01aa 
+CF_BEGIN_01ab 
+FRONTIER lower=248 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=1:
+07 = 4'b1101( 05 06 )
+06 = 4'b1110( a 04 )
+05 = 4'b0100( a d )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0101010100000000
+i=6:0111111101111111
+i=7:1101010110000000
+
+
+Switching Activity=248
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_01ab 
+CF_BEGIN_01ac 
+FRONTIER lower=476 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0110( 06 09 )
+09 = 4'b0110( 05 08 )
+08 = 4'b1000( d 07 )
+07 = 4'b0100( a 05 )
+06 = 4'b1110( d 04 )
+05 = 4'b1110( b c )
+04 = 4'b0010( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000101000001010
+i=5:0011111100111111
+i=6:0000101011111111
+i=7:0100000001000000
+i=8:0000000001000000
+i=9:0011111101111111
+i=10:0011010110000000
+
+
+Switching Activity=476
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_01ac 
+CF_BEGIN_01ad 
+FRONTIER lower=464 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1011( 07 08 )
+08 = 4'b0100( 05 06 )
+07 = 4'b1110( a 05 )
+06 = 4'b1110( d 04 )
+05 = 4'b1110( b c )
+04 = 4'b0010( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000101000001010
+i=5:0011111100111111
+i=6:0000101011111111
+i=7:0111111101111111
+i=8:0011010100000000
+i=9:1011010110000000
+
+
+Switching Activity=464
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_01ad 
+CF_BEGIN_01ae 
+FRONTIER lower=320 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0010( 05 06 )
+06 = 4'b0110( d 04 )
+05 = 4'b0010( a c )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000101000001010
+i=6:0111011110001000
+i=7:0111010110000000
+
+
+Switching Activity=320
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_01ae 
+CF_BEGIN_01af 
+FRONTIER lower=312 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=1:
+07 = 4'b0001( 05 06 )
+06 = 4'b1000( d 04 )
+05 = 4'b0010( a c )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000101000001010
+i=6:0000000001110111
+i=7:1111010110000000
+
+
+Switching Activity=312
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_01af 
+CF_BEGIN_01bc 
+FRONTIER lower=516 paid_wires=8 projected=1
+Realization of given 4-input function using 9 two-input gates complementary=0:
+12 = 4'b0110( d 11 )
+11 = 4'b0110( 05 10 )
+10 = 4'b0110( 08 09 )
+09 = 4'b1000( a 07 )
+08 = 4'b0010( d 06 )
+07 = 4'b0100( d 05 )
+06 = 4'b0010( a 04 )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0000001000000010
+i=7:0000000011000000
+i=8:0000001000000000
+i=9:0000000001000000
+i=10:0000001001000000
+i=11:0011110101111111
+i=12:0011110110000000
+
+
+Switching Activity=516
+Number of Gates: r=9
+Total runtime =     0.04 sec
+CF_END_01bc 
+CF_BEGIN_01bd 
+FRONTIER lower=514 paid_wires=7 projected=1
+Realization of given 4-input function using 8 two-input gates complementary=1:
+11 = 4'b1001( 06 10 )
+10 = 4'b0100( 05 09 )
+09 = 4'b1000( b 08 )
+08 = 4'b1000( c 07 )
+07 = 4'b0010( a 06 )
+06 = 4'b0010( d 04 )
+05 = 4'b1110( a 04 )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0111111101111111
+i=6:0011111100000000
+i=7:0010101000000000
+i=8:0000101000000000
+i=9:0000001000000000
+i=10:0111110101111111
+i=11:1011110110000000
+
+
+Switching Activity=514
+Number of Gates: r=8
+Total runtime =     0.00 sec
+CF_END_01bd 
+CF_BEGIN_01be 
+FRONTIER lower=388 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( d 08 )
+08 = 4'b0110( 05 07 )
+07 = 4'b1000( d 06 )
+06 = 4'b0100( b 05 )
+05 = 4'b1110( a 04 )
+04 = 4'b0110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011110000111100
+i=5:0111110101111101
+i=6:0000001000000010
+i=7:0000000000000010
+i=8:0111110101111111
+i=9:0111110110000000
+
+
+Switching Activity=388
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_01be 
+CF_BEGIN_01bf 
+FRONTIER lower=392 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( d 08 )
+08 = 4'b0110( 06 07 )
+07 = 4'b0010( c 05 )
+06 = 4'b0010( d 05 )
+05 = 4'b0010( a 04 )
+04 = 4'b0110( b d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011001111001100
+i=5:0010001010001000
+i=6:0010001000000000
+i=7:0010000010000000
+i=8:0000001010000000
+i=9:1111110110000000
+
+
+Switching Activity=392
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_01bf 
+CF_BEGIN_01e8 
+FRONTIER lower=560 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0100( 07 08 )
+08 = 4'b0110( 05 06 )
+07 = 4'b0110( d 05 )
+06 = 4'b1110( c 04 )
+05 = 4'b1110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0111011101110111
+i=6:0001111100011111
+i=7:0111011110001000
+i=8:0110100001101000
+i=9:0001011110000000
+
+
+Switching Activity=560
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_01e8 
+CF_BEGIN_01e9 
+FRONTIER lower=542 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b0001( 07 08 )
+08 = 4'b0110( 05 06 )
+07 = 4'b1000( d 06 )
+06 = 4'b1110( a 04 )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0101011101010111
+i=7:0000000001010111
+i=8:0110100001101000
+i=9:1001011110000000
+
+
+Switching Activity=542
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_01e9 
+CF_BEGIN_01ea 
+FRONTIER lower=416 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0100( 06 07 )
+07 = 4'b0110( 04 05 )
+06 = 4'b0110( d 05 )
+05 = 4'b1110( a c )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0101111101011111
+i=6:0101111110100000
+i=7:0010100000101000
+i=8:0101011110000000
+
+
+Switching Activity=416
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_01ea 
+CF_BEGIN_01eb 
+FRONTIER lower=408 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b0001( 06 07 )
+07 = 4'b0110( 04 05 )
+06 = 4'b1000( d 04 )
+05 = 4'b1110( a c )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0101111101011111
+i=6:0000000001110111
+i=7:0010100000101000
+i=8:1101011110000000
+
+
+Switching Activity=408
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_01eb 
+CF_BEGIN_01ee 
+FRONTIER lower=260 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( d 07 )
+07 = 4'b0110( 04 06 )
+06 = 4'b1000( c 05 )
+05 = 4'b0100( d 04 )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000000010001000
+i=6:0000000000001000
+i=7:0111011101111111
+i=8:0111011110000000
+
+
+Switching Activity=260
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_01ee 
+CF_BEGIN_01ef 
+FRONTIER lower=264 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( d 07 )
+07 = 4'b0110( 05 06 )
+06 = 4'b0100( d 04 )
+05 = 4'b0100( c 04 )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000100000001000
+i=6:0000000010001000
+i=7:0000100010000000
+i=8:1111011110000000
+
+
+Switching Activity=264
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_01ef 
+CF_BEGIN_01fe 
+FRONTIER lower=152 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=0:
+06 = 4'b0110( d 05 )
+05 = 4'b1110( b 04 )
+04 = 4'b1110( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101111101011111
+i=5:0111111101111111
+i=6:0111111110000000
+
+
+Switching Activity=152
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_01fe 
+CF_BEGIN_033d 
+FRONTIER lower=468 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 06 08 )
+08 = 4'b0010( 05 07 )
+07 = 4'b1110( a 06 )
+06 = 4'b1110( d 04 )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0000001111111111
+i=7:0101011111111111
+i=8:0100000011000000
+i=9:1011110011000000
+
+
+Switching Activity=468
+Number of Gates: r=6
+Total runtime =     0.04 sec
+CF_END_033d 
+CF_BEGIN_0356 
+FRONTIER lower=192 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=0:
+06 = 4'b0110( 04 05 )
+05 = 4'b1110( a d )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0101010111111111
+i=6:0110101011000000
+
+
+Switching Activity=192
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_0356 
+CF_BEGIN_0357 
+FRONTIER lower=192 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=1:
+06 = 4'b0111( 04 05 )
+05 = 4'b1110( a d )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0101010111111111
+i=6:1110101011000000
+
+
+Switching Activity=192
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_0357 
+CF_BEGIN_0358 
+FRONTIER lower=414 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 06 07 )
+07 = 4'b1000( 04 05 )
+06 = 4'b1110( c d )
+05 = 4'b1110( a d )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0101010111111111
+i=6:0000111111111111
+i=7:0001010100111111
+i=8:0001101011000000
+
+
+Switching Activity=414
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_0358 
+CF_BEGIN_0359 
+FRONTIER lower=320 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=1:
+07 = 4'b1001( 04 06 )
+06 = 4'b0010( c 05 )
+05 = 4'b0110( b d )
+04 = 4'b1110( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101010111111111
+i=5:0011001111001100
+i=6:0011000011000000
+i=7:1001101011000000
+
+
+Switching Activity=320
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_0359 
+CF_BEGIN_035a 
+FRONTIER lower=312 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0110( 04 06 )
+06 = 4'b1110( c 05 )
+05 = 4'b1000( b d )
+04 = 4'b1110( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101010111111111
+i=5:0000000000110011
+i=6:0000111100111111
+i=7:0101101011000000
+
+
+Switching Activity=312
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_035a 
+CF_BEGIN_035b 
+FRONTIER lower=320 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=1:
+07 = 4'b1011( 05 06 )
+06 = 4'b0010( d 04 )
+05 = 4'b1110( b c )
+04 = 4'b0110( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101101001011010
+i=5:0011111100111111
+i=6:0101101000000000
+i=7:1101101011000000
+
+
+Switching Activity=320
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_035b 
+CF_BEGIN_035e 
+FRONTIER lower=422 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 04 07 )
+07 = 4'b1110( d 06 )
+06 = 4'b0100( a 05 )
+05 = 4'b0010( c 04 )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0011000000110000
+i=6:0100010101000101
+i=7:0100010111111111
+i=8:0111101011000000
+
+
+Switching Activity=422
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_035e 
+CF_BEGIN_035f 
+FRONTIER lower=312 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=1:
+07 = 4'b0111( 05 06 )
+06 = 4'b1110( d 04 )
+05 = 4'b1110( b c )
+04 = 4'b1000( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000010100000101
+i=5:0011111100111111
+i=6:0000010111111111
+i=7:1111101011000000
+
+
+Switching Activity=312
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_035f 
+CF_BEGIN_0368 
+FRONTIER lower=534 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 07 08 )
+08 = 4'b1000( 05 06 )
+07 = 4'b1110( d 04 )
+06 = 4'b1110( a d )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0101010111111111
+i=7:0000001111111111
+i=8:0001010100111111
+i=9:0001011011000000
+
+
+Switching Activity=534
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_0368 
+CF_BEGIN_0369 
+FRONTIER lower=416 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( 05 07 )
+07 = 4'b0010( d 06 )
+06 = 4'b0110( a 04 )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0101011001010110
+i=7:0101011000000000
+i=8:1001011011000000
+
+
+Switching Activity=416
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_0369 
+CF_BEGIN_036a 
+FRONTIER lower=448 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 04 07 )
+07 = 4'b1110( d 06 )
+06 = 4'b0110( a 05 )
+05 = 4'b0110( b c )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0011110000111100
+i=6:0110100101101001
+i=7:0110100111111111
+i=8:0101011011000000
+
+
+Switching Activity=448
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_036a 
+CF_BEGIN_036b 
+FRONTIER lower=416 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1011( 05 07 )
+07 = 4'b0010( d 06 )
+06 = 4'b0110( a 04 )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0101011001010110
+i=7:0101011000000000
+i=8:1101011011000000
+
+
+Switching Activity=416
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_036b 
+CF_BEGIN_036c 
+FRONTIER lower=432 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 06 07 )
+07 = 4'b1110( b 05 )
+06 = 4'b1110( d 04 )
+05 = 4'b1000( c d )
+04 = 4'b1000( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000010100000101
+i=5:0000000000001111
+i=6:0000010111111111
+i=7:0011001100111111
+i=8:0011011011000000
+
+
+Switching Activity=432
+Number of Gates: r=5
+Total runtime =     0.03 sec
+CF_END_036c 
+CF_BEGIN_036d 
+FRONTIER lower=518 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 07 08 )
+08 = 4'b1110( c 06 )
+07 = 4'b0110( 04 05 )
+06 = 4'b0100( b 04 )
+05 = 4'b0100( b d )
+04 = 4'b0100( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101010100000000
+i=5:0011001100000000
+i=6:0010001000110011
+i=7:0110011000000000
+i=8:0010111100111111
+i=9:1011011011000000
+
+
+Switching Activity=518
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_036d 
+CF_BEGIN_036e 
+FRONTIER lower=448 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b1110( 06 07 )
+07 = 4'b0010( c 05 )
+06 = 4'b0010( d 04 )
+05 = 4'b0110( b d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0011001111001100
+i=6:0110011000000000
+i=7:0011000011000000
+i=8:0111011011000000
+
+
+Switching Activity=448
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_036e 
+CF_BEGIN_036f 
+FRONTIER lower=416 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( 06 07 )
+07 = 4'b1000( d 05 )
+06 = 4'b0100( c 05 )
+05 = 4'b0110( b 04 )
+04 = 4'b1000( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000010100000101
+i=5:0011011000110110
+i=6:0000100100001001
+i=7:0000000000110110
+i=8:1111011011000000
+
+
+Switching Activity=416
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_036f 
+CF_BEGIN_037c 
+FRONTIER lower=374 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 05 07 )
+07 = 4'b1110( d 06 )
+06 = 4'b1000( c 04 )
+05 = 4'b1110( b c )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0011111100111111
+i=6:0000000100000001
+i=7:0000000111111111
+i=8:0011111011000000
+
+
+Switching Activity=374
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_037c 
+CF_BEGIN_037d 
+FRONTIER lower=480 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=1:
+10 = 4'b1001( 06 09 )
+09 = 4'b0110( 07 08 )
+08 = 4'b0010( c 05 )
+07 = 4'b1000( b 05 )
+06 = 4'b1000( d 04 )
+05 = 4'b0100( a d )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0101010100000000
+i=6:0000000000111111
+i=7:0001000100000000
+i=8:0101000000000000
+i=9:0100000100000000
+i=10:1011111011000000
+
+
+Switching Activity=480
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_037d 
+CF_BEGIN_037e 
+FRONTIER lower=440 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 04 07 )
+07 = 4'b1110( d 06 )
+06 = 4'b0100( a 05 )
+05 = 4'b0110( b c )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0011110000111100
+i=6:0100000101000001
+i=7:0100000111111111
+i=8:0111111011000000
+
+
+Switching Activity=440
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_037e 
+CF_BEGIN_03c1 
+FRONTIER lower=412 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=1:
+10 = 4'b1001( 05 09 )
+09 = 4'b0110( 06 08 )
+08 = 4'b0100( a 07 )
+07 = 4'b1110( d 05 )
+06 = 4'b0010( d 04 )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0000001100000000
+i=7:0011111111111111
+i=8:0100000000000000
+i=9:0100001100000000
+i=10:1000001111000000
+
+
+Switching Activity=412
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_03c1 
+CF_BEGIN_03c5 
+FRONTIER lower=416 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( 05 07 )
+07 = 4'b0010( d 06 )
+06 = 4'b0110( b 04 )
+05 = 4'b1110( b c )
+04 = 4'b0100( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101000001010000
+i=5:0011111100111111
+i=6:0110001101100011
+i=7:0110001100000000
+i=8:1010001111000000
+
+
+Switching Activity=416
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_03c5 
+CF_BEGIN_03c6 
+FRONTIER lower=432 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 06 07 )
+07 = 4'b1110( b 05 )
+06 = 4'b1110( d 04 )
+05 = 4'b1000( c d )
+04 = 4'b0100( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101000001010000
+i=5:0000000000001111
+i=6:0101000011111111
+i=7:0011001100111111
+i=8:0110001111000000
+
+
+Switching Activity=432
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_03c6 
+CF_BEGIN_03c7 
+FRONTIER lower=356 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1011( 04 08 )
+08 = 4'b0100( 05 07 )
+07 = 4'b0010( c 06 )
+06 = 4'b1000( a 05 )
+05 = 4'b0100( b d )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0011001100000000
+i=6:0001000100000000
+i=7:0001000000000000
+i=8:0010001100000000
+i=9:1110001111000000
+
+
+Switching Activity=356
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_03c7 
+CF_BEGIN_03d4 
+FRONTIER lower=440 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 04 07 )
+07 = 4'b1110( d 06 )
+06 = 4'b1000( a 05 )
+05 = 4'b0110( b c )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0011110000111100
+i=6:0001010000010100
+i=7:0001010011111111
+i=8:0010101111000000
+
+
+Switching Activity=440
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_03d4 
+CF_BEGIN_03d5 
+FRONTIER lower=448 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1011( 05 07 )
+07 = 4'b0010( 04 06 )
+06 = 4'b0110( c d )
+05 = 4'b1110( a d )
+04 = 4'b0110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011110000111100
+i=5:0101010111111111
+i=6:0000111111110000
+i=7:0000001111000000
+i=8:1010101111000000
+
+
+Switching Activity=448
+Number of Gates: r=5
+Total runtime =     0.03 sec
+CF_END_03d5 
+CF_BEGIN_03d6 
+FRONTIER lower=422 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 05 07 )
+07 = 4'b1110( d 06 )
+06 = 4'b0100( a 04 )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0101010001010100
+i=7:0101010011111111
+i=8:0110101111000000
+
+
+Switching Activity=422
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_03d6 
+CF_BEGIN_03d7 
+FRONTIER lower=422 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b0111( 05 07 )
+07 = 4'b1110( d 06 )
+06 = 4'b0100( a 04 )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0101010001010100
+i=7:0101010011111111
+i=8:1110101111000000
+
+
+Switching Activity=422
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_03d7 
+CF_BEGIN_03d8 
+FRONTIER lower=534 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 05 08 )
+08 = 4'b1110( d 07 )
+07 = 4'b1000( a 06 )
+06 = 4'b0110( b 05 )
+05 = 4'b1110( c 04 )
+04 = 4'b1000( b d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000000000110011
+i=5:0000111100111111
+i=6:0011110000001100
+i=7:0001010000000100
+i=8:0001010011111111
+i=9:0001101111000000
+
+
+Switching Activity=534
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_03d8 
+CF_BEGIN_03d9 
+FRONTIER lower=446 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( b 07 )
+07 = 4'b1110( 04 06 )
+06 = 4'b1000( c 05 )
+05 = 4'b0110( b d )
+04 = 4'b0100( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101010100000000
+i=5:0011001111001100
+i=6:0000001100001100
+i=7:0101011100001100
+i=8:1001101111000000
+
+
+Switching Activity=446
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_03d9 
+CF_BEGIN_03db 
+FRONTIER lower=496 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=1:
+10 = 4'b1011( 06 09 )
+09 = 4'b0110( 07 08 )
+08 = 4'b0010( d 05 )
+07 = 4'b0010( d 04 )
+06 = 4'b1110( b c )
+05 = 4'b0010( a c )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0000101000001010
+i=6:0011111100111111
+i=7:0001000100000000
+i=8:0000101000000000
+i=9:0001101100000000
+i=10:1101101111000000
+
+
+Switching Activity=496
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_03db 
+CF_BEGIN_03dc 
+FRONTIER lower=326 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0110( d 06 )
+06 = 4'b1110( b 05 )
+05 = 4'b0100( c 04 )
+04 = 4'b0100( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101010100000000
+i=5:0000101000001111
+i=6:0011101100111111
+i=7:0011101111000000
+
+
+Switching Activity=326
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_03dc 
+CF_BEGIN_03dd 
+FRONTIER lower=368 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1011( 06 07 )
+07 = 4'b0010( c 05 )
+06 = 4'b1110( d 04 )
+05 = 4'b0010( b d )
+04 = 4'b0100( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0100010001000100
+i=5:0000000011001100
+i=6:0100010011111111
+i=7:0000000011000000
+i=8:1011101111000000
+
+
+Switching Activity=368
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_03dd 
+CF_BEGIN_03de 
+FRONTIER lower=312 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0110( 05 06 )
+06 = 4'b1110( d 04 )
+05 = 4'b1110( b c )
+04 = 4'b0100( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0100010001000100
+i=5:0011111100111111
+i=6:0100010011111111
+i=7:0111101111000000
+
+
+Switching Activity=312
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_03de 
+CF_BEGIN_0660 
+FRONTIER lower=256 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=0:
+06 = 4'b1000( 04 05 )
+05 = 4'b0110( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000111111110000
+i=6:0000011001100000
+
+
+Switching Activity=256
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_0660 
+CF_BEGIN_0661 
+FRONTIER lower=534 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=1:
+10 = 4'b1101( 07 09 )
+09 = 4'b1110( a 08 )
+08 = 4'b1110( c 06 )
+07 = 4'b1000( 04 05 )
+06 = 4'b1110( d 04 )
+05 = 4'b0110( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000111111110000
+i=6:0110011011111111
+i=7:0000011001100000
+i=8:0110111111111111
+i=9:0111111111111111
+i=10:1000011001100000
+
+
+Switching Activity=534
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_0661 
+CF_BEGIN_0662 
+FRONTIER lower=454 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 05 08 )
+08 = 4'b0100( 06 07 )
+07 = 4'b0010( b 05 )
+06 = 4'b0010( d 04 )
+05 = 4'b0010( c 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0110000001100000
+i=6:0110011000000000
+i=7:0100000001000000
+i=8:0010011000000000
+i=9:0100011001100000
+
+
+Switching Activity=454
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_0662 
+CF_BEGIN_0663 
+FRONTIER lower=440 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( 06 07 )
+07 = 4'b0010( a 05 )
+06 = 4'b1110( b 04 )
+05 = 4'b0110( c d )
+04 = 4'b1000( c d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000000000001111
+i=5:0000111111110000
+i=6:0011001100111111
+i=7:0000101010100000
+i=8:1100011001100000
+
+
+Switching Activity=440
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_0663 
+CF_BEGIN_0666 
+FRONTIER lower=224 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=0:
+06 = 4'b0100( 04 05 )
+05 = 4'b1000( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000000000001111
+i=6:0110011001100000
+
+
+Switching Activity=224
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_0666 
+CF_BEGIN_0667 
+FRONTIER lower=496 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1011( 07 08 )
+08 = 4'b0100( 04 06 )
+07 = 4'b1110( c 05 )
+06 = 4'b1000( c d )
+05 = 4'b1110( a d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0101010111111111
+i=6:0000000000001111
+i=7:0101111111111111
+i=8:0110011001100000
+i=9:1110011001100000
+
+
+Switching Activity=496
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_0667 
+CF_BEGIN_0669 
+FRONTIER lower=440 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( 06 07 )
+07 = 4'b0100( 04 05 )
+06 = 4'b1110( c d )
+05 = 4'b1000( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000000000001111
+i=6:0000111111111111
+i=7:0110011001100000
+i=8:1001011001100000
+
+
+Switching Activity=440
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_0669 
+CF_BEGIN_066b 
+FRONTIER lower=596 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=1:
+10 = 4'b1001( 07 09 )
+09 = 4'b1110( 06 08 )
+08 = 4'b0010( b 07 )
+07 = 4'b0100( 04 05 )
+06 = 4'b1110( c d )
+05 = 4'b1000( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000000000001111
+i=6:0000111111111111
+i=7:0110011001100000
+i=8:0100010001000000
+i=9:0100111111111111
+i=10:1101011001100000
+
+
+Switching Activity=596
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_066b 
+CF_BEGIN_066f 
+FRONTIER lower=440 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1011( 06 07 )
+07 = 4'b0100( 04 05 )
+06 = 4'b1110( c d )
+05 = 4'b1000( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000000000001111
+i=6:0000111111111111
+i=7:0110011001100000
+i=8:1111011001100000
+
+
+Switching Activity=440
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_066f 
+CF_BEGIN_0672 
+FRONTIER lower=536 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 04 08 )
+08 = 4'b1110( 06 07 )
+07 = 4'b1000( b 05 )
+06 = 4'b1000( c d )
+05 = 4'b1110( a d )
+04 = 4'b1110( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101111101011111
+i=5:0101010111111111
+i=6:0000000000001111
+i=7:0001000100110011
+i=8:0001000100111111
+i=9:0100111001100000
+
+
+Switching Activity=536
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_0672 
+CF_BEGIN_0673 
+FRONTIER lower=448 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1011( 05 07 )
+07 = 4'b1000( 04 06 )
+06 = 4'b0110( c d )
+05 = 4'b1110( b d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0011001111111111
+i=6:0000111111110000
+i=7:0000011001100000
+i=8:1100111001100000
+
+
+Switching Activity=448
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_0673 
+CF_BEGIN_0676 
+FRONTIER lower=432 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0010( 05 07 )
+07 = 4'b0110( a 06 )
+06 = 4'b1110( b 04 )
+05 = 4'b1000( c d )
+04 = 4'b0010( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000101000001010
+i=5:0000000000001111
+i=6:0011101100111011
+i=7:0110111001101110
+i=8:0110111001100000
+
+
+Switching Activity=432
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_0676 
+CF_BEGIN_0678 
+FRONTIER lower=560 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 06 08 )
+08 = 4'b1110( c 07 )
+07 = 4'b0100( d 05 )
+06 = 4'b1110( d 04 )
+05 = 4'b0110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0110011001100110
+i=6:0001000111111111
+i=7:0000000010011001
+i=8:0000111110011111
+i=9:0001111001100000
+
+
+Switching Activity=560
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_0678 
+CF_BEGIN_0679 
+FRONTIER lower=502 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 07 08 )
+08 = 4'b1110( d 06 )
+07 = 4'b0010( c 05 )
+06 = 4'b1000( c 04 )
+05 = 4'b0110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0110011001100110
+i=6:0000000100000001
+i=7:0110000001100000
+i=8:0000000111111111
+i=9:1001111001100000
+
+
+Switching Activity=502
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_0679 
+CF_BEGIN_067a 
+FRONTIER lower=574 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( a 08 )
+08 = 4'b1110( 06 07 )
+07 = 4'b1000( b 05 )
+06 = 4'b0100( c 04 )
+05 = 4'b0110( c d )
+04 = 4'b0110( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101010110101010
+i=5:0000111111110000
+i=6:0000101000000101
+i=7:0000001100110000
+i=8:0000101100110101
+i=9:0101111001100000
+
+
+Switching Activity=574
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_067a 
+CF_BEGIN_067b 
+FRONTIER lower=536 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 07 08 )
+08 = 4'b1110( d 06 )
+07 = 4'b0010( c 05 )
+06 = 4'b1000( a 05 )
+05 = 4'b0110( b 04 )
+04 = 4'b1000( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000000001010101
+i=5:0011001101100110
+i=6:0001000101000100
+i=7:0011000001100000
+i=8:0001000111111111
+i=9:1101111001100000
+
+
+Switching Activity=536
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_067b 
+CF_BEGIN_067e 
+FRONTIER lower=544 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0010( 06 08 )
+08 = 4'b1110( 04 07 )
+07 = 4'b0110( c 05 )
+06 = 4'b1000( c d )
+05 = 4'b0100( b d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0011001100000000
+i=6:0000000000001111
+i=7:0011110000001111
+i=8:0111111001101111
+i=9:0111111001100000
+
+
+Switching Activity=544
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_067e 
+CF_BEGIN_0690 
+FRONTIER lower=384 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b1000( 05 06 )
+06 = 4'b0110( c 04 )
+05 = 4'b0110( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000111111110000
+i=6:0110100101101001
+i=7:0000100101100000
+
+
+Switching Activity=384
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_0690 
+CF_BEGIN_0691 
+FRONTIER lower=540 paid_wires=7 projected=1
+Realization of given 4-input function using 8 two-input gates complementary=1:
+11 = 4'b1001( 06 10 )
+10 = 4'b0110( 07 09 )
+09 = 4'b0010( c 08 )
+08 = 4'b0100( a 06 )
+07 = 4'b0010( c 05 )
+06 = 4'b1110( d 04 )
+05 = 4'b1000( d 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000000001100110
+i=6:0110011011111111
+i=7:0000000001100000
+i=8:0001000100000000
+i=9:0001000000000000
+i=10:0001000001100000
+i=11:1000100101100000
+
+
+Switching Activity=540
+Number of Gates: r=8
+Total runtime =     0.00 sec
+CF_END_0691 
+CF_BEGIN_0693 
+FRONTIER lower=528 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 04 08 )
+08 = 4'b0110( 05 07 )
+07 = 4'b0100( b 06 )
+06 = 4'b1000( c d )
+05 = 4'b1110( a d )
+04 = 4'b0100( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101000001010000
+i=5:0101010111111111
+i=6:0000000000001111
+i=7:0011001100110000
+i=8:0110011011001111
+i=9:1100100101100000
+
+
+Switching Activity=528
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_0693 
+CF_BEGIN_0696 
+FRONTIER lower=344 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0110( c 06 )
+06 = 4'b1110( 04 05 )
+05 = 4'b1000( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000000000001111
+i=6:0110011001101111
+i=7:0110100101100000
+
+
+Switching Activity=344
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_0696 
+CF_BEGIN_0697 
+FRONTIER lower=484 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=1:
+10 = 4'b1101( 05 09 )
+09 = 4'b0110( 06 08 )
+08 = 4'b0100( a 07 )
+07 = 4'b1110( c 06 )
+06 = 4'b1110( d 04 )
+05 = 4'b0010( c 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0110000001100000
+i=6:0110011011111111
+i=7:0110111111111111
+i=8:0001000000000000
+i=9:0111011011111111
+i=10:1110100101100000
+
+
+Switching Activity=484
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_0697 
+CF_BEGIN_069f 
+FRONTIER lower=320 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=1:
+07 = 4'b1101( 05 06 )
+06 = 4'b1110( d 04 )
+05 = 4'b0010( c 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0110000001100000
+i=6:0110011011111111
+i=7:1111100101100000
+
+
+Switching Activity=320
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_069f 
+CF_BEGIN_06b0 
+FRONTIER lower=524 paid_wires=8 projected=1
+Realization of given 4-input function using 9 two-input gates complementary=0:
+12 = 4'b0110( 05 11 )
+11 = 4'b0110( 09 10 )
+10 = 4'b0010( a 08 )
+09 = 4'b0110( 06 07 )
+08 = 4'b1000( b 05 )
+07 = 4'b0010( b 04 )
+06 = 4'b0010( a 04 )
+05 = 4'b0100( c d )
+04 = 4'b0010( c d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000000011110000
+i=5:0000111100000000
+i=6:0000000010100000
+i=7:0000000011000000
+i=8:0000001100000000
+i=9:0000000001100000
+i=10:0000001000000000
+i=11:0000001001100000
+i=12:0000110101100000
+
+
+Switching Activity=524
+Number of Gates: r=9
+Total runtime =     0.01 sec
+CF_END_06b0 
+CF_BEGIN_06b1 
+FRONTIER lower=536 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 07 08 )
+08 = 4'b1110( d 06 )
+07 = 4'b0010( c 05 )
+06 = 4'b0100( b 05 )
+05 = 4'b0110( a 04 )
+04 = 4'b1000( b d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000000000110011
+i=5:0101010101100110
+i=6:0010001000010001
+i=7:0101000001100000
+i=8:0010001011111111
+i=9:1000110101100000
+
+
+Switching Activity=536
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_06b1 
+CF_BEGIN_06b2 
+FRONTIER lower=544 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 06 08 )
+08 = 4'b0100( 04 07 )
+07 = 4'b0110( c 05 )
+06 = 4'b0100( c d )
+05 = 4'b0100( b d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0011001100000000
+i=6:0000111100000000
+i=7:0011110000001111
+i=8:0100001001100000
+i=9:0100110101100000
+
+
+Switching Activity=544
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_06b2 
+CF_BEGIN_06b3 
+FRONTIER lower=528 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b0001( 06 08 )
+08 = 4'b0110( 05 07 )
+07 = 4'b0100( b 04 )
+06 = 4'b1000( c d )
+05 = 4'b0010( a d )
+04 = 4'b1000( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000010100000101
+i=5:0000000010101010
+i=6:0000000000001111
+i=7:0011001000110010
+i=8:0011001010011000
+i=9:1100110101100000
+
+
+Switching Activity=528
+Number of Gates: r=6
+Total runtime =     0.04 sec
+CF_END_06b3 
+CF_BEGIN_06b4 
+FRONTIER lower=550 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( c 08 )
+08 = 4'b1110( 04 07 )
+07 = 4'b1000( d 06 )
+06 = 4'b1110( c 05 )
+05 = 4'b0100( a b )
+04 = 4'b0010( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0010001000100010
+i=5:0100010001000100
+i=6:0100111101001111
+i=7:0000000001001111
+i=8:0010001001101111
+i=9:0010110101100000
+
+
+Switching Activity=550
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_06b4 
+CF_BEGIN_06b5 
+FRONTIER lower=534 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 05 08 )
+08 = 4'b0010( 06 07 )
+07 = 4'b1110( d 04 )
+06 = 4'b0100( b c )
+05 = 4'b0100( a c )
+04 = 4'b0010( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0010001000100010
+i=5:0101000001010000
+i=6:0011000000110000
+i=7:0010001011111111
+i=8:0000001011001111
+i=9:1010110101100000
+
+
+Switching Activity=534
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_06b5 
+CF_BEGIN_06b6 
+FRONTIER lower=484 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0110( 06 09 )
+09 = 4'b0100( 05 08 )
+08 = 4'b1000( b 07 )
+07 = 4'b0010( a 05 )
+06 = 4'b0010( c 04 )
+05 = 4'b0100( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000111100000000
+i=6:0110000001100000
+i=7:0000101000000000
+i=8:0000001000000000
+i=9:0000110100000000
+i=10:0110110101100000
+
+
+Switching Activity=484
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_06b6 
+CF_BEGIN_06b7 
+FRONTIER lower=528 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1011( 05 08 )
+08 = 4'b0110( 04 07 )
+07 = 4'b0100( a 06 )
+06 = 4'b1000( c d )
+05 = 4'b1110( b d )
+04 = 4'b0100( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011000000110000
+i=5:0011001111111111
+i=6:0000000000001111
+i=7:0101010101010000
+i=8:0110010101100000
+i=9:1110110101100000
+
+
+Switching Activity=528
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_06b7 
+CF_BEGIN_06b9 
+FRONTIER lower=454 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( d 07 )
+07 = 4'b0100( 04 06 )
+06 = 4'b1000( c 05 )
+05 = 4'b1110( a d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0101010111111111
+i=6:0000010100001111
+i=7:0110001001100000
+i=8:1001110101100000
+
+
+Switching Activity=454
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_06b9 
+CF_BEGIN_06bd 
+FRONTIER lower=440 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( 06 07 )
+07 = 4'b1110( d 05 )
+06 = 4'b0010( c 04 )
+05 = 4'b1000( b 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0010001000100010
+i=6:0110000001100000
+i=7:0010001011111111
+i=8:1011110101100000
+
+
+Switching Activity=440
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_06bd 
+CF_BEGIN_06f0 
+FRONTIER lower=344 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0110( c 06 )
+06 = 4'b1000( d 05 )
+05 = 4'b1110( c 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0110111101101111
+i=6:0000000001101111
+i=7:0000111101100000
+
+
+Switching Activity=344
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_06f0 
+CF_BEGIN_06f1 
+FRONTIER lower=436 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( d 08 )
+08 = 4'b0110( 05 07 )
+07 = 4'b0100( 04 06 )
+06 = 4'b0010( d 05 )
+05 = 4'b0100( b c )
+04 = 4'b0100( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101000001010000
+i=5:0011000000110000
+i=6:0011000000000000
+i=7:0100000001010000
+i=8:0111000001100000
+i=9:1000111101100000
+
+
+Switching Activity=436
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_06f1 
+CF_BEGIN_06f2 
+FRONTIER lower=484 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0110( 05 09 )
+09 = 4'b0100( 06 08 )
+08 = 4'b1000( b 07 )
+07 = 4'b0010( d 06 )
+06 = 4'b0010( c 04 )
+05 = 4'b0100( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000111100000000
+i=6:0110000001100000
+i=7:0110000000000000
+i=8:0010000000000000
+i=9:0100000001100000
+i=10:0100111101100000
+
+
+Switching Activity=484
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_06f2 
+CF_BEGIN_06f6 
+FRONTIER lower=320 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0110( 05 06 )
+06 = 4'b0010( c 04 )
+05 = 4'b0100( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000111100000000
+i=6:0110000001100000
+i=7:0110111101100000
+
+
+Switching Activity=320
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_06f6 
+CF_BEGIN_06f9 
+FRONTIER lower=224 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=1:
+06 = 4'b1001( d 05 )
+05 = 4'b0010( c 04 )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0110000001100000
+i=6:1001111101100000
+
+
+Switching Activity=224
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_06f9 
+CF_BEGIN_0776 
+FRONTIER lower=484 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0010( 06 09 )
+09 = 4'b0010( 04 08 )
+08 = 4'b1110( c 07 )
+07 = 4'b1110( a 05 )
+06 = 4'b1000( c d )
+05 = 4'b1110( b d )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0011001111111111
+i=6:0000000000001111
+i=7:0111011111111111
+i=8:0111111111111111
+i=9:0110111011101110
+i=10:0110111011100000
+
+
+Switching Activity=484
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_0776 
+CF_BEGIN_0778 
+FRONTIER lower=386 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( c 08 )
+08 = 4'b0110( d 07 )
+07 = 4'b0100( 04 06 )
+06 = 4'b1000( c 05 )
+05 = 4'b1000( d 04 )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0000000000010001
+i=6:0000000000000001
+i=7:0001000100010000
+i=8:0001000111101111
+i=9:0001111011100000
+
+
+Switching Activity=386
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_0778 
+CF_BEGIN_0779 
+FRONTIER lower=562 paid_wires=7 projected=1
+Realization of given 4-input function using 8 two-input gates complementary=1:
+11 = 4'b0001( 05 10 )
+10 = 4'b0110( 04 09 )
+09 = 4'b0010( 06 08 )
+08 = 4'b1110( b 07 )
+07 = 4'b1110( a 06 )
+06 = 4'b1110( c d )
+05 = 4'b1000( c d )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0000000000001111
+i=6:0000111111111111
+i=7:0101111111111111
+i=8:0111111111111111
+i=9:0111000000000000
+i=10:0110000100010001
+i=11:1001111011100000
+
+
+Switching Activity=562
+Number of Gates: r=8
+Total runtime =     0.00 sec
+CF_END_0779 
+CF_BEGIN_077a 
+FRONTIER lower=496 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0100( 07 08 )
+08 = 4'b1000( b 06 )
+07 = 4'b1110( 04 05 )
+06 = 4'b1000( a 05 )
+05 = 4'b0110( c d )
+04 = 4'b0100( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101000001010000
+i=5:0000111111110000
+i=6:0000010101010000
+i=7:0101111111110000
+i=8:0000000100010000
+i=9:0101111011100000
+
+
+Switching Activity=496
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_077a 
+CF_BEGIN_077e 
+FRONTIER lower=544 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0010( 05 08 )
+08 = 4'b1110( 04 07 )
+07 = 4'b0110( b 06 )
+06 = 4'b1110( c d )
+05 = 4'b1000( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000000000001111
+i=6:0000111111111111
+i=7:0011110011001100
+i=8:0111111011101110
+i=9:0111111011100000
+
+
+Switching Activity=544
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_077e 
+CF_BEGIN_07b0 
+FRONTIER lower=352 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0100( 05 06 )
+06 = 4'b0100( b 04 )
+05 = 4'b0110( c d )
+04 = 4'b0110( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101010110101010
+i=5:0000111111110000
+i=6:0010001000010001
+i=7:0000110111100000
+
+
+Switching Activity=352
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_07b0 
+CF_BEGIN_07b1 
+FRONTIER lower=560 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b0001( 07 08 )
+08 = 4'b0110( d 06 )
+07 = 4'b0100( b 05 )
+06 = 4'b0010( c 04 )
+05 = 4'b0110( a d )
+04 = 4'b1110( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101010111111111
+i=5:0101010110101010
+i=6:0101000011110000
+i=7:0010001000010001
+i=8:0101000000001111
+i=9:1000110111100000
+
+
+Switching Activity=560
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_07b1 
+CF_BEGIN_07b4 
+FRONTIER lower=438 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( c 07 )
+07 = 4'b1110( 04 06 )
+06 = 4'b0100( d 05 )
+05 = 4'b0100( b c )
+04 = 4'b0010( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0010001000100010
+i=5:0011000000110000
+i=6:0000000011001111
+i=7:0010001011101111
+i=8:0010110111100000
+
+
+Switching Activity=438
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_07b4 
+CF_BEGIN_07b5 
+FRONTIER lower=534 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b0001( 07 08 )
+08 = 4'b1000( b 06 )
+07 = 4'b0110( c 05 )
+06 = 4'b0110( a 05 )
+05 = 4'b0010( d 04 )
+04 = 4'b1110( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101111101011111
+i=5:0101111100000000
+i=6:0000101001010101
+i=7:0101000000001111
+i=8:0000001000010001
+i=9:1010110111100000
+
+
+Switching Activity=534
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_07b5 
+CF_BEGIN_07b6 
+FRONTIER lower=552 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 05 08 )
+08 = 4'b1110( c 07 )
+07 = 4'b0100( a 06 )
+06 = 4'b0110( b 05 )
+05 = 4'b1110( d 04 )
+04 = 4'b0010( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0010001000100010
+i=5:0010001011111111
+i=6:0001000111001100
+i=7:0100010000010001
+i=8:0100111100011111
+i=9:0110110111100000
+
+
+Switching Activity=552
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_07b6 
+CF_BEGIN_07bc 
+FRONTIER lower=432 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 06 07 )
+07 = 4'b1110( d 05 )
+06 = 4'b1110( c 04 )
+05 = 4'b0100( b 04 )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0010001000100010
+i=6:0001111100011111
+i=7:0010001011111111
+i=8:0011110111100000
+
+
+Switching Activity=432
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_07bc 
+CF_BEGIN_07e0 
+FRONTIER lower=480 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b1000( 06 07 )
+07 = 4'b1110( 04 05 )
+06 = 4'b0110( c d )
+05 = 4'b0110( b d )
+04 = 4'b0110( a d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101010110101010
+i=5:0011001111001100
+i=6:0000111111110000
+i=7:0111011111101110
+i=8:0000011111100000
+
+
+Switching Activity=480
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_07e0 
+CF_BEGIN_07e1 
+FRONTIER lower=494 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 06 08 )
+08 = 4'b1110( c 07 )
+07 = 4'b1000( b 05 )
+06 = 4'b0010( d 04 )
+05 = 4'b1000( a d )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000000001010101
+i=6:0111011100000000
+i=7:0000000000010001
+i=8:0000111100011111
+i=9:1000011111100000
+
+
+Switching Activity=494
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_07e1 
+CF_BEGIN_07e2 
+FRONTIER lower=536 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0010( 06 08 )
+08 = 4'b0110( 04 07 )
+07 = 4'b1110( a 05 )
+06 = 4'b1000( c d )
+05 = 4'b0110( b d )
+04 = 4'b0100( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011000000110000
+i=5:0011001111001100
+i=6:0000000000001111
+i=7:0111011111011101
+i=8:0100011111101101
+i=9:0100011111100000
+
+
+Switching Activity=536
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_07e2 
+CF_BEGIN_07e3 
+FRONTIER lower=552 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 05 08 )
+08 = 4'b1110( c 07 )
+07 = 4'b1000( a 06 )
+06 = 4'b0110( b 05 )
+05 = 4'b0010( d 04 )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0111011100000000
+i=6:0100010000110011
+i=7:0100010000010001
+i=8:0100111100011111
+i=9:1100011111100000
+
+
+Switching Activity=552
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_07e3 
+CF_BEGIN_07e6 
+FRONTIER lower=496 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0010( 06 09 )
+09 = 4'b0010( 07 08 )
+08 = 4'b1110( d 05 )
+07 = 4'b0010( c 04 )
+06 = 4'b1000( c d )
+05 = 4'b1110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0111011101110111
+i=6:0000000000001111
+i=7:0001000000010000
+i=8:0111011111111111
+i=9:0110011111101111
+i=10:0110011111100000
+
+
+Switching Activity=496
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_07e6 
+CF_BEGIN_07e9 
+FRONTIER lower=432 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( 06 07 )
+07 = 4'b0010( d 05 )
+06 = 4'b1110( c 04 )
+05 = 4'b1110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0111011101110111
+i=6:0001111100011111
+i=7:0111011100000000
+i=8:1001011111100000
+
+
+Switching Activity=432
+Number of Gates: r=5
+Total runtime =     0.03 sec
+CF_END_07e9 
+CF_BEGIN_07f0 
+FRONTIER lower=278 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0110( c 06 )
+06 = 4'b0100( d 05 )
+05 = 4'b1000( b 04 )
+04 = 4'b0100( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101000001010000
+i=5:0001000000010000
+i=6:0000000011101111
+i=7:0000111111100000
+
+
+Switching Activity=278
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_07f0 
+CF_BEGIN_07f1 
+FRONTIER lower=472 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( d 07 )
+07 = 4'b0010( c 06 )
+06 = 4'b1110( 04 05 )
+05 = 4'b0110( b d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0011001111001100
+i=6:0111011111101110
+i=7:0111000011100000
+i=8:1000111111100000
+
+
+Switching Activity=472
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_07f1 
+CF_BEGIN_07f2 
+FRONTIER lower=344 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0110( d 06 )
+06 = 4'b1110( c 05 )
+05 = 4'b0100( a 04 )
+04 = 4'b0110( b d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011001111001100
+i=5:0100010000010001
+i=6:0100111100011111
+i=7:0100111111100000
+
+
+Switching Activity=344
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_07f2 
+CF_BEGIN_07f8 
+FRONTIER lower=216 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=0:
+06 = 4'b0110( d 05 )
+05 = 4'b1110( c 04 )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0001111100011111
+i=6:0001111111100000
+
+
+Switching Activity=216
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_07f8 
+CF_BEGIN_1668 
+FRONTIER lower=600 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 05 08 )
+08 = 4'b0010( 04 07 )
+07 = 4'b1110( 05 06 )
+06 = 4'b0110( c d )
+05 = 4'b0110( b d )
+04 = 4'b0110( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101101001011010
+i=5:0011001111001100
+i=6:0000111111110000
+i=7:0011111111111100
+i=8:0010010110100100
+i=9:0001011001101000
+
+
+Switching Activity=600
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_1668 
+CF_BEGIN_1669 
+FRONTIER lower=530 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( b 08 )
+08 = 4'b0110( a 07 )
+07 = 4'b0110( c 06 )
+06 = 4'b0100( d 05 )
+05 = 4'b1000( b 04 )
+04 = 4'b1000( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000010100000101
+i=5:0000000100000001
+i=6:0000000011111110
+i=7:0000111111110001
+i=8:0101101010100100
+i=9:1001011001101000
+
+
+Switching Activity=530
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_1669 
+CF_BEGIN_166a 
+FRONTIER lower=594 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0110( 06 09 )
+09 = 4'b0110( a 08 )
+08 = 4'b0100( 04 07 )
+07 = 4'b1000( a 06 )
+06 = 4'b1000( d 05 )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0000000000111111
+i=7:0000000000010101
+i=8:0000001100000010
+i=9:0101011001010111
+i=10:0101011001101000
+
+
+Switching Activity=594
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_166a 
+CF_BEGIN_166b 
+FRONTIER lower=592 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( b 08 )
+08 = 4'b0110( a 07 )
+07 = 4'b1110( 05 06 )
+06 = 4'b0100( a 04 )
+05 = 4'b0110( c d )
+04 = 4'b0110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011110000111100
+i=5:0000111111110000
+i=6:0100000101000001
+i=7:0100111111110001
+i=8:0001101010100100
+i=9:1101011001101000
+
+
+Switching Activity=592
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_166b 
+CF_BEGIN_166e 
+FRONTIER lower=560 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 04 08 )
+08 = 4'b0110( a 07 )
+07 = 4'b0100( b 06 )
+06 = 4'b0100( a 05 )
+05 = 4'b0110( c d )
+04 = 4'b1000( c d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000000000001111
+i=5:0000111111110000
+i=6:0101000000000101
+i=7:0010001100110010
+i=8:0111011001100111
+i=9:0111011001101000
+
+
+Switching Activity=560
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_166e 
+CF_BEGIN_167e 
+FRONTIER lower=576 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0100( 07 08 )
+08 = 4'b0100( d 06 )
+07 = 4'b1110( 04 05 )
+06 = 4'b0110( a 05 )
+05 = 4'b0110( b c )
+04 = 4'b0110( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101101001011010
+i=5:0011110000111100
+i=6:0110100101101001
+i=7:0111111001111110
+i=8:0000000010010110
+i=9:0111111001101000
+
+
+Switching Activity=576
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_167e 
+CF_BEGIN_1681 
+FRONTIER lower=662 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=1:
+10 = 4'b1001( 08 09 )
+09 = 4'b1110( 05 07 )
+08 = 4'b1110( 04 06 )
+07 = 4'b0100( c d )
+06 = 4'b0010( c d )
+05 = 4'b0110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0110011001100110
+i=6:0000000011110000
+i=7:0000111100000000
+i=8:0001000111110001
+i=9:0110111101100110
+i=10:1000000101101000
+
+
+Switching Activity=662
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_1681 
+CF_BEGIN_1683 
+FRONTIER lower=544 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 05 08 )
+08 = 4'b1000( 06 07 )
+07 = 4'b0110( d 04 )
+06 = 4'b0110( a d )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0101010110101010
+i=7:0000001111111100
+i=8:0000000110101000
+i=9:1100000101101000
+
+
+Switching Activity=544
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_1683 
+CF_BEGIN_1686 
+FRONTIER lower=472 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( c 07 )
+07 = 4'b1110( 04 06 )
+06 = 4'b0100( c 05 )
+05 = 4'b0110( a d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0101010110101010
+i=6:0000101000000101
+i=7:0110111001100111
+i=8:0110000101101000
+
+
+Switching Activity=472
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_1686 
+CF_BEGIN_1687 
+FRONTIER lower=522 paid_wires=7 projected=1
+Realization of given 4-input function using 8 two-input gates complementary=1:
+11 = 4'b1001( c 10 )
+10 = 4'b0110( 04 09 )
+09 = 4'b0110( 07 08 )
+08 = 4'b1000( c 06 )
+07 = 4'b0100( d 05 )
+06 = 4'b1000( d 04 )
+05 = 4'b1110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0111011101110111
+i=6:0000000000010001
+i=7:0000000010001000
+i=8:0000000000000001
+i=9:0000000010001001
+i=10:0001000110011000
+i=11:1110000101101000
+
+
+Switching Activity=522
+Number of Gates: r=8
+Total runtime =     0.00 sec
+CF_END_1687 
+CF_BEGIN_1689 
+FRONTIER lower=560 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 07 08 )
+08 = 4'b1110( a 06 )
+07 = 4'b0010( 04 05 )
+06 = 4'b0100( c 05 )
+05 = 4'b0110( b d )
+04 = 4'b0010( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000110000001100
+i=5:0011001111001100
+i=6:0000110000000011
+i=7:0011001111000000
+i=8:0101110101010111
+i=9:1001000101101000
+
+
+Switching Activity=560
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_1689 
+CF_BEGIN_168b 
+FRONTIER lower=618 paid_wires=8 projected=1
+Realization of given 4-input function using 9 two-input gates complementary=1:
+12 = 4'b1001( 04 11 )
+11 = 4'b0110( 05 10 )
+10 = 4'b0110( 08 09 )
+09 = 4'b1000( b 07 )
+08 = 4'b1000( b 06 )
+07 = 4'b1000( c 05 )
+06 = 4'b0100( a d )
+05 = 4'b0010( a d )
+04 = 4'b1110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011111100111111
+i=5:0000000010101010
+i=6:0101010100000000
+i=7:0000000000001010
+i=8:0001000100000000
+i=9:0000000000000010
+i=10:0001000100000010
+i=11:0001000110101000
+i=12:1101000101101000
+
+
+Switching Activity=618
+Number of Gates: r=9
+Total runtime =     0.00 sec
+CF_END_168b 
+CF_BEGIN_168e 
+FRONTIER lower=612 paid_wires=7 projected=1
+Realization of given 4-input function using 8 two-input gates complementary=0:
+11 = 4'b0110( 06 10 )
+10 = 4'b0100( 07 09 )
+09 = 4'b0010( a 08 )
+08 = 4'b0010( c 07 )
+07 = 4'b0010( 04 05 )
+06 = 4'b0010( c 04 )
+05 = 4'b0110( b d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0011001111001100
+i=6:0110000001100000
+i=7:0001000110001000
+i=8:0001000010000000
+i=9:0000000010000000
+i=10:0001000100001000
+i=11:0111000101101000
+
+
+Switching Activity=612
+Number of Gates: r=8
+Total runtime =     0.04 sec
+CF_END_168e 
+CF_BEGIN_1696 
+FRONTIER lower=404 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( a 07 )
+07 = 4'b0110( b 06 )
+06 = 4'b0100( c 05 )
+05 = 4'b1000( d 04 )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0000000000010001
+i=6:0000111100001110
+i=7:0011110000111101
+i=8:0110100101101000
+
+
+Switching Activity=404
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_1696 
+CF_BEGIN_1697 
+FRONTIER lower=600 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( b 08 )
+08 = 4'b0010( 04 07 )
+07 = 4'b1110( 05 06 )
+06 = 4'b0110( c d )
+05 = 4'b0110( b c )
+04 = 4'b0110( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101101001011010
+i=5:0011110000111100
+i=6:0000111111110000
+i=7:0011111111111100
+i=8:0010010110100100
+i=9:1110100101101000
+
+
+Switching Activity=600
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_1697 
+CF_BEGIN_1698 
+FRONTIER lower=630 paid_wires=8 projected=1
+Realization of given 4-input function using 9 two-input gates complementary=0:
+12 = 4'b0110( 10 11 )
+11 = 4'b0010( 04 09 )
+10 = 4'b0110( 07 08 )
+09 = 4'b1000( 05 06 )
+08 = 4'b0100( c 05 )
+07 = 4'b0010( d 04 )
+06 = 4'b0010( c d )
+05 = 4'b1110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0111011101110111
+i=6:0000000011110000
+i=7:0001000100000000
+i=8:0000100000001000
+i=9:0000000001110000
+i=10:0001100100001000
+i=11:0000000001100000
+i=12:0001100101101000
+
+
+Switching Activity=630
+Number of Gates: r=9
+Total runtime =     0.00 sec
+CF_END_1698 
+CF_BEGIN_1699 
+FRONTIER lower=452 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( a 07 )
+07 = 4'b0110( b 06 )
+06 = 4'b0100( d 05 )
+05 = 4'b0100( c 04 )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0000111000001110
+i=6:0000000011110001
+i=7:0011001111000010
+i=8:1001100101101000
+
+
+Switching Activity=452
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_1699 
+CF_BEGIN_169a 
+FRONTIER lower=482 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0110( 04 09 )
+09 = 4'b0110( a 08 )
+08 = 4'b0100( 05 07 )
+07 = 4'b0010( a 06 )
+06 = 4'b1000( c 05 )
+05 = 4'b1000( b d )
+04 = 4'b0010( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000110000001100
+i=5:0000000000110011
+i=6:0000000000000011
+i=7:0000000000000010
+i=8:0000000000110001
+i=9:0101010101100100
+i=10:0101100101101000
+
+
+Switching Activity=482
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_169a 
+CF_BEGIN_169b 
+FRONTIER lower=616 paid_wires=7 projected=1
+Realization of given 4-input function using 8 two-input gates complementary=1:
+11 = 4'b1001( 09 10 )
+10 = 4'b0110( 07 08 )
+09 = 4'b0100( b 06 )
+08 = 4'b0100( d 05 )
+07 = 4'b1000( c 04 )
+06 = 4'b0100( a d )
+05 = 4'b1110( a c )
+04 = 4'b0100( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0100010001000100
+i=5:0101111101011111
+i=6:0101010100000000
+i=7:0000010000000100
+i=8:0000000010100000
+i=9:0010001000110011
+i=10:0000010010100100
+i=11:1101100101101000
+
+
+Switching Activity=616
+Number of Gates: r=8
+Total runtime =     0.00 sec
+CF_END_169b 
+CF_BEGIN_169e 
+FRONTIER lower=464 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( c 07 )
+07 = 4'b0110( a 06 )
+06 = 4'b0100( b 05 )
+05 = 4'b0100( a 04 )
+04 = 4'b0110( c d )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000111111110000
+i=5:0101000000000101
+i=6:0010001100110010
+i=7:0111011001100111
+i=8:0111100101101000
+
+
+Switching Activity=464
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_169e 
+CF_BEGIN_16a9 
+FRONTIER lower=500 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 05 08 )
+08 = 4'b0110( a 07 )
+07 = 4'b0100( d 06 )
+06 = 4'b0010( a 04 )
+05 = 4'b1110( b c )
+04 = 4'b1000( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000001100000011
+i=5:0011111100111111
+i=6:0000001000000010
+i=7:0000000011111101
+i=8:0101010110101000
+i=9:1001010101101000
+
+
+Switching Activity=500
+Number of Gates: r=6
+Total runtime =     0.04 sec
+CF_END_16a9 
+CF_BEGIN_16ac 
+FRONTIER lower=572 paid_wires=7 projected=1
+Realization of given 4-input function using 8 two-input gates complementary=0:
+11 = 4'b0100( 08 10 )
+10 = 4'b0100( 04 09 )
+09 = 4'b1000( d 07 )
+08 = 4'b0110( 05 06 )
+07 = 4'b0010( b 04 )
+06 = 4'b1000( a d )
+05 = 4'b1110( b c )
+04 = 4'b0010( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000101000001010
+i=5:0011111100111111
+i=6:0000000001010101
+i=7:0000100000001000
+i=8:0011111101101010
+i=9:0000000000001000
+i=10:0000101000000010
+i=11:0011010101101000
+
+
+Switching Activity=572
+Number of Gates: r=8
+Total runtime =     0.00 sec
+CF_END_16ac 
+CF_BEGIN_16ad 
+FRONTIER lower=552 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 06 08 )
+08 = 4'b0110( c 07 )
+07 = 4'b0100( a 05 )
+06 = 4'b0100( d 04 )
+05 = 4'b0100( b c )
+04 = 4'b0010( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0010001000100010
+i=5:0011000000110000
+i=6:0000000011011101
+i=7:0100010101000101
+i=8:0100101001001010
+i=9:1011010101101000
+
+
+Switching Activity=552
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_16ad 
+CF_BEGIN_16bc 
+FRONTIER lower=432 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 05 07 )
+07 = 4'b0110( b 06 )
+06 = 4'b0100( c 04 )
+05 = 4'b1000( a d )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0000000001010101
+i=6:0000111000001110
+i=7:0011110100111101
+i=8:0011110101101000
+
+
+Switching Activity=432
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_16bc 
+CF_BEGIN_16e9 
+FRONTIER lower=432 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( d 07 )
+07 = 4'b0110( 05 06 )
+06 = 4'b1110( c 04 )
+05 = 4'b1110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0111011101110111
+i=6:0001111100011111
+i=7:0110100001101000
+i=8:1001011101101000
+
+
+Switching Activity=432
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_16e9 
+CF_BEGIN_177e 
+FRONTIER lower=576 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 04 08 )
+08 = 4'b1110( 06 07 )
+07 = 4'b0110( c 05 )
+06 = 4'b0110( c d )
+05 = 4'b0110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0110011001100110
+i=6:0000111111110000
+i=7:0110100101101001
+i=8:0110111111111001
+i=9:0111111011101000
+
+
+Switching Activity=576
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_177e 
+CF_BEGIN_178e 
+FRONTIER lower=448 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( 06 07 )
+07 = 4'b0010( 04 05 )
+06 = 4'b0010( c 04 )
+05 = 4'b0110( b d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0011001111001100
+i=6:0110000001100000
+i=7:0001000110001000
+i=8:0111000111101000
+
+
+Switching Activity=448
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_178e 
+CF_BEGIN_1796 
+FRONTIER lower=472 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( a 07 )
+07 = 4'b1110( 05 06 )
+06 = 4'b0100( d 04 )
+05 = 4'b0110( b c )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0011110000111100
+i=6:0000000010011001
+i=7:0011110010111101
+i=8:0110100111101000
+
+
+Switching Activity=472
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_1796 
+CF_BEGIN_1798 
+FRONTIER lower=542 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( d 08 )
+08 = 4'b1110( 04 07 )
+07 = 4'b0100( c 06 )
+06 = 4'b0110( d 05 )
+05 = 4'b1110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0111011101110111
+i=6:0111011110001000
+i=7:0000100000000111
+i=8:0001100100010111
+i=9:0001100111101000
+
+
+Switching Activity=542
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_1798 
+CF_BEGIN_179a 
+FRONTIER lower=584 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=0:
+10 = 4'b0110( 07 09 )
+09 = 4'b0110( 04 08 )
+08 = 4'b0100( a 06 )
+07 = 4'b0010( c 05 )
+06 = 4'b1000( b d )
+05 = 4'b0010( a d )
+04 = 4'b0010( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000110000001100
+i=5:0000000010101010
+i=6:0000000000110011
+i=7:0000000010100000
+i=8:0101010101000100
+i=9:0101100101001000
+i=10:0101100111101000
+
+
+Switching Activity=584
+Number of Gates: r=7
+Total runtime =     0.03 sec
+CF_END_179a 
+CF_BEGIN_17ac 
+FRONTIER lower=528 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=0:
+09 = 4'b0110( 06 08 )
+08 = 4'b0110( 05 07 )
+07 = 4'b0100( d 04 )
+06 = 4'b0100( b c )
+05 = 4'b1000( a c )
+04 = 4'b0010( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0010001000100010
+i=5:0000010100000101
+i=6:0011000000110000
+i=7:0000000011011101
+i=8:0000010111011000
+i=9:0011010111101000
+
+
+Switching Activity=528
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_17ac 
+CF_BEGIN_17e8 
+FRONTIER lower=440 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( d 07 )
+07 = 4'b1000( 05 06 )
+06 = 4'b1110( c 04 )
+05 = 4'b1110( a b )
+04 = 4'b1000( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0001000100010001
+i=5:0111011101110111
+i=6:0001111100011111
+i=7:0001011100010111
+i=8:0001011111101000
+
+
+Switching Activity=440
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_17e8 
+CF_BEGIN_18e7 
+FRONTIER lower=352 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=1:
+07 = 4'b1001( d 06 )
+06 = 4'b1000( 04 05 )
+05 = 4'b0110( b c )
+04 = 4'b0110( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0101101001011010
+i=5:0011110000111100
+i=6:0001100000011000
+i=7:1110011100011000
+
+
+Switching Activity=352
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_18e7 
+CF_BEGIN_19e1 
+FRONTIER lower=484 paid_wires=6 projected=1
+Realization of given 4-input function using 7 two-input gates complementary=1:
+10 = 4'b1001( 06 09 )
+09 = 4'b0100( 04 08 )
+08 = 4'b0010( c 07 )
+07 = 4'b1000( a 05 )
+06 = 4'b0100( c d )
+05 = 4'b1000( b d )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0000000000110011
+i=6:0000111100000000
+i=7:0000000000010001
+i=8:0000000000010000
+i=9:0111011101100111
+i=10:1000011110011000
+
+
+Switching Activity=484
+Number of Gates: r=7
+Total runtime =     0.00 sec
+CF_END_19e1 
+CF_BEGIN_19e3 
+FRONTIER lower=536 paid_wires=5 projected=1
+Realization of given 4-input function using 6 two-input gates complementary=1:
+09 = 4'b1001( 04 08 )
+08 = 4'b0100( 05 07 )
+07 = 4'b0110( d 06 )
+06 = 4'b0100( b c )
+05 = 4'b1110( a c )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0101111101011111
+i=6:0011000000110000
+i=7:0011000011001111
+i=8:0100111100010000
+i=9:1100011110011000
+
+
+Switching Activity=536
+Number of Gates: r=6
+Total runtime =     0.00 sec
+CF_END_19e3 
+CF_BEGIN_19e6 
+FRONTIER lower=336 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0110( d 06 )
+06 = 4'b0110( a 05 )
+05 = 4'b0100( b 04 )
+04 = 4'b1000( a c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0000010100000101
+i=5:0011001000110010
+i=6:0110011101100111
+i=7:0110011110011000
+
+
+Switching Activity=336
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_19e6 
+CF_BEGIN_1bd8 
+FRONTIER lower=448 paid_wires=4 projected=1
+Realization of given 4-input function using 5 two-input gates complementary=0:
+08 = 4'b0110( b 07 )
+07 = 4'b0010( 05 06 )
+06 = 4'b1110( d 04 )
+05 = 4'b1000( a 04 )
+04 = 4'b0110( b c )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0011110000111100
+i=5:0001010000010100
+i=6:0011110011111111
+i=7:0010100011101011
+i=8:0001101111011000
+
+
+Switching Activity=448
+Number of Gates: r=5
+Total runtime =     0.00 sec
+CF_END_1bd8 
+CF_BEGIN_1be4 
+FRONTIER lower=320 paid_wires=3 projected=1
+Realization of given 4-input function using 4 two-input gates complementary=0:
+07 = 4'b0110( d 06 )
+06 = 4'b0100( 04 05 )
+05 = 4'b0100( a c )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0101000001010000
+i=6:0010011100100111
+i=7:0010011111011000
+
+
+Switching Activity=320
+Number of Gates: r=4
+Total runtime =     0.00 sec
+CF_END_1be4 
+CF_BEGIN_1ee1 
+FRONTIER lower=224 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=1:
+06 = 4'b1001( c 05 )
+05 = 4'b0110( d 04 )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0111011110001000
+i=6:1000011101111000
+
+
+Switching Activity=224
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_1ee1 
+CF_BEGIN_6996 
+FRONTIER lower=256 paid_wires=2 projected=1
+Realization of given 4-input function using 3 two-input gates complementary=0:
+06 = 4'b0110( 04 05 )
+05 = 4'b0110( c d )
+04 = 4'b0110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0110011001100110
+i=5:0000111111110000
+i=6:0110100110010110
+
+
+Switching Activity=256
+Number of Gates: r=3
+Total runtime =     0.00 sec
+CF_END_6996 

@@ -1,0 +1,91 @@
+{
+  "essential": 208,
+  "baseline_completed": 91,
+  "additional": 117,
+  "max_optimum": 662,
+  "final_two": {
+    "1681": 662,
+    "1698": 630
+  },
+  "runs": {
+    "direct-662": {
+      "cap": 662,
+      "states": 8069747,
+      "wall_s": 126.37822620000003,
+      "peak_bytes": 474324992,
+      "sha256": "03954bfe4e18e99e2b79a9e46e231c3e9ab75c53ad40376c222c1d9f5fdd9ebb"
+    },
+    "residual-projected": {
+      "cap": 670,
+      "states": 1427146,
+      "wall_s": 73.57662220000003,
+      "peak_bytes": 121438208,
+      "sha256": "d5b542a8fe6a6886010f35a277e51ac0822800d249fffd12982d61a0c39247f0"
+    },
+    "residual-uniform": {
+      "cap": 670,
+      "states": 10765482,
+      "wall_s": 340.59389250000004,
+      "peak_bytes": 617922560,
+      "sha256": "db62487a1928722e2de0bd2481e74947a9e08946ce51ba15502850c7e9959df9"
+    },
+    "matched-direct": {
+      "cap": 662,
+      "states": 8069747,
+      "wall_s": 220.2240723000001,
+      "peak_bytes": 474460160,
+      "sha256": "03954bfe4e18e99e2b79a9e46e231c3e9ab75c53ad40376c222c1d9f5fdd9ebb"
+    },
+    "matched-projected": {
+      "cap": 670,
+      "states": 1427146,
+      "wall_s": 59.04957890000014,
+      "peak_bytes": 121327616,
+      "sha256": "d5b542a8fe6a6886010f35a277e51ac0822800d249fffd12982d61a0c39247f0"
+    }
+  },
+  "causal_time_ratio": 4.629104766105991,
+  "causal_state_ratio": 7.543364168767597,
+  "matched_time_ratio": 3.7294774391693344,
+  "matched_memory_ratio": 3.9105702035717904,
+  "author": {
+    "count": 208,
+    "wall_s": 66.53627749999987,
+    "peak_bytes": 125849600,
+    "including_scalar_audit_s": 67.83081809999999
+  },
+  "superseded": {
+    "completed_verified": 64,
+    "last_complete": "01af",
+    "last_started": "01bc"
+  },
+  "circuits": [
+    {
+      "name": "adder",
+      "luts": 128,
+      "area_score": 46990,
+      "optimum_score": 41740,
+      "area_gates": 554,
+      "optimum_gates": 639,
+      "stable_change": 0.05452989013750223
+    },
+    {
+      "name": "priority",
+      "luts": 198,
+      "area_score": 49824,
+      "optimum_score": 44590,
+      "area_gates": 721,
+      "optimum_gates": 848,
+      "stable_change": -0.10535817041176723
+    },
+    {
+      "name": "router",
+      "luts": 53,
+      "area_score": 10664,
+      "optimum_score": 9934,
+      "area_gates": 164,
+      "optimum_gates": 177,
+      "stable_change": -0.17315967879250055
+    }
+  ]
+}

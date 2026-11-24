@@ -1,0 +1,24 @@
+{
+  "command": [
+    "refine-controlled.exe",
+    "4",
+    "520",
+    "auto",
+    "projected",
+    "table.tsv"
+  ],
+  "binary": "7d5fc1da0c10d4ae10ed0e0e47931f47756b711ee80652d0e5d57a5d18960e4e",
+  "source": "64e615d9d7de36a5b037737a3700d50295fa8fde2dea4243bb71b2f0460faf68",
+  "started": "2026-11-24T05:53:54.577659+00:00",
+  "host": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+  "direct_source": "6d30ef0b11f5d5c8d232a522745f889368210bb6496799cf8daa313f834e2eaa",
+  "refine_source": "42e30c0104e99283278c3ccc60aa0777987a54702e60c9e94b69ac75fce2215b",
+  "cpu": 20,
+  "wall_s": 59.04957890000014,
+  "peak_working_bytes": 121327616,
+  "exit_code": 0,
+  "stdout": "seed=520 open=18 seed_s=6.45064\nbudget=670 open=0 states=1427146 edges=26603165 projected_terminal=17689086 end_pruned=59934 search_s=52.1865\nelapsed_s=58.6443",
+  "stderr": "",
+  "table_sha256": "d5b542a8fe6a6886010f35a277e51ac0822800d249fffd12982d61a0c39247f0"
+}

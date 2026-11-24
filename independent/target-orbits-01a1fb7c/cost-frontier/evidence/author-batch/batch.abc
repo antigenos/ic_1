@@ -1,0 +1,624 @@
+echo CF_BEGIN_0001
+pexact -I 4 -M 2 0001
+echo CF_END_0001
+echo CF_BEGIN_0006
+pexact -I 4 -M 2 0006
+echo CF_END_0006
+echo CF_BEGIN_0007
+pexact -I 4 -M 2 0007
+echo CF_END_0007
+echo CF_BEGIN_0016
+pexact -I 4 -M 2 0016
+echo CF_END_0016
+echo CF_BEGIN_0017
+pexact -I 4 -M 2 0017
+echo CF_END_0017
+echo CF_BEGIN_0018
+pexact -I 4 -M 2 0018
+echo CF_END_0018
+echo CF_BEGIN_0019
+pexact -I 4 -M 2 0019
+echo CF_END_0019
+echo CF_BEGIN_001b
+pexact -I 4 -M 2 001b
+echo CF_END_001b
+echo CF_BEGIN_001e
+pexact -I 4 -M 2 001e
+echo CF_END_001e
+echo CF_BEGIN_001f
+pexact -I 4 -M 2 001f
+echo CF_END_001f
+echo CF_BEGIN_003d
+pexact -I 4 -M 2 003d
+echo CF_END_003d
+echo CF_BEGIN_0069
+pexact -I 4 -M 2 0069
+echo CF_END_0069
+echo CF_BEGIN_006b
+pexact -I 4 -M 2 006b
+echo CF_END_006b
+echo CF_BEGIN_006f
+pexact -I 4 -M 2 006f
+echo CF_END_006f
+echo CF_BEGIN_007e
+pexact -I 4 -M 2 007e
+echo CF_END_007e
+echo CF_BEGIN_007f
+pexact -I 4 -M 2 007f
+echo CF_END_007f
+echo CF_BEGIN_0116
+pexact -I 4 -M 2 0116
+echo CF_END_0116
+echo CF_BEGIN_0117
+pexact -I 4 -M 2 0117
+echo CF_END_0117
+echo CF_BEGIN_0118
+pexact -I 4 -M 2 0118
+echo CF_END_0118
+echo CF_BEGIN_0119
+pexact -I 4 -M 2 0119
+echo CF_END_0119
+echo CF_BEGIN_011a
+pexact -I 4 -M 2 011a
+echo CF_END_011a
+echo CF_BEGIN_011b
+pexact -I 4 -M 2 011b
+echo CF_END_011b
+echo CF_BEGIN_011e
+pexact -I 4 -M 2 011e
+echo CF_END_011e
+echo CF_BEGIN_011f
+pexact -I 4 -M 2 011f
+echo CF_END_011f
+echo CF_BEGIN_012c
+pexact -I 4 -M 2 012c
+echo CF_END_012c
+echo CF_BEGIN_012d
+pexact -I 4 -M 2 012d
+echo CF_END_012d
+echo CF_BEGIN_012f
+pexact -I 4 -M 2 012f
+echo CF_END_012f
+echo CF_BEGIN_013c
+pexact -I 4 -M 2 013c
+echo CF_END_013c
+echo CF_BEGIN_013d
+pexact -I 4 -M 2 013d
+echo CF_END_013d
+echo CF_BEGIN_013e
+pexact -I 4 -M 2 013e
+echo CF_END_013e
+echo CF_BEGIN_013f
+pexact -I 4 -M 2 013f
+echo CF_END_013f
+echo CF_BEGIN_0168
+pexact -I 4 -M 2 0168
+echo CF_END_0168
+echo CF_BEGIN_0169
+pexact -I 4 -M 2 0169
+echo CF_END_0169
+echo CF_BEGIN_016a
+pexact -I 4 -M 2 016a
+echo CF_END_016a
+echo CF_BEGIN_016b
+pexact -I 4 -M 2 016b
+echo CF_END_016b
+echo CF_BEGIN_016e
+pexact -I 4 -M 2 016e
+echo CF_END_016e
+echo CF_BEGIN_016f
+pexact -I 4 -M 2 016f
+echo CF_END_016f
+echo CF_BEGIN_017e
+pexact -I 4 -M 2 017e
+echo CF_END_017e
+echo CF_BEGIN_017f
+pexact -I 4 -M 2 017f
+echo CF_END_017f
+echo CF_BEGIN_0180
+pexact -I 4 -M 2 0180
+echo CF_END_0180
+echo CF_BEGIN_0181
+pexact -I 4 -M 2 0181
+echo CF_END_0181
+echo CF_BEGIN_0182
+pexact -I 4 -M 2 0182
+echo CF_END_0182
+echo CF_BEGIN_0183
+pexact -I 4 -M 2 0183
+echo CF_END_0183
+echo CF_BEGIN_0186
+pexact -I 4 -M 2 0186
+echo CF_END_0186
+echo CF_BEGIN_0187
+pexact -I 4 -M 2 0187
+echo CF_END_0187
+echo CF_BEGIN_0189
+pexact -I 4 -M 2 0189
+echo CF_END_0189
+echo CF_BEGIN_018b
+pexact -I 4 -M 2 018b
+echo CF_END_018b
+echo CF_BEGIN_018f
+pexact -I 4 -M 2 018f
+echo CF_END_018f
+echo CF_BEGIN_0196
+pexact -I 4 -M 2 0196
+echo CF_END_0196
+echo CF_BEGIN_0197
+pexact -I 4 -M 2 0197
+echo CF_END_0197
+echo CF_BEGIN_0198
+pexact -I 4 -M 2 0198
+echo CF_END_0198
+echo CF_BEGIN_0199
+pexact -I 4 -M 2 0199
+echo CF_END_0199
+echo CF_BEGIN_019a
+pexact -I 4 -M 2 019a
+echo CF_END_019a
+echo CF_BEGIN_019b
+pexact -I 4 -M 2 019b
+echo CF_END_019b
+echo CF_BEGIN_019e
+pexact -I 4 -M 2 019e
+echo CF_END_019e
+echo CF_BEGIN_019f
+pexact -I 4 -M 2 019f
+echo CF_END_019f
+echo CF_BEGIN_01a8
+pexact -I 4 -M 2 01a8
+echo CF_END_01a8
+echo CF_BEGIN_01a9
+pexact -I 4 -M 2 01a9
+echo CF_END_01a9
+echo CF_BEGIN_01aa
+pexact -I 4 -M 2 01aa
+echo CF_END_01aa
+echo CF_BEGIN_01ab
+pexact -I 4 -M 2 01ab
+echo CF_END_01ab
+echo CF_BEGIN_01ac
+pexact -I 4 -M 2 01ac
+echo CF_END_01ac
+echo CF_BEGIN_01ad
+pexact -I 4 -M 2 01ad
+echo CF_END_01ad
+echo CF_BEGIN_01ae
+pexact -I 4 -M 2 01ae
+echo CF_END_01ae
+echo CF_BEGIN_01af
+pexact -I 4 -M 2 01af
+echo CF_END_01af
+echo CF_BEGIN_01bc
+pexact -I 4 -M 2 01bc
+echo CF_END_01bc
+echo CF_BEGIN_01bd
+pexact -I 4 -M 2 01bd
+echo CF_END_01bd
+echo CF_BEGIN_01be
+pexact -I 4 -M 2 01be
+echo CF_END_01be
+echo CF_BEGIN_01bf
+pexact -I 4 -M 2 01bf
+echo CF_END_01bf
+echo CF_BEGIN_01e8
+pexact -I 4 -M 2 01e8
+echo CF_END_01e8
+echo CF_BEGIN_01e9
+pexact -I 4 -M 2 01e9
+echo CF_END_01e9
+echo CF_BEGIN_01ea
+pexact -I 4 -M 2 01ea
+echo CF_END_01ea
+echo CF_BEGIN_01eb
+pexact -I 4 -M 2 01eb
+echo CF_END_01eb
+echo CF_BEGIN_01ee
+pexact -I 4 -M 2 01ee
+echo CF_END_01ee
+echo CF_BEGIN_01ef
+pexact -I 4 -M 2 01ef
+echo CF_END_01ef
+echo CF_BEGIN_01fe
+pexact -I 4 -M 2 01fe
+echo CF_END_01fe
+echo CF_BEGIN_033d
+pexact -I 4 -M 2 033d
+echo CF_END_033d
+echo CF_BEGIN_0356
+pexact -I 4 -M 2 0356
+echo CF_END_0356
+echo CF_BEGIN_0357
+pexact -I 4 -M 2 0357
+echo CF_END_0357
+echo CF_BEGIN_0358
+pexact -I 4 -M 2 0358
+echo CF_END_0358
+echo CF_BEGIN_0359
+pexact -I 4 -M 2 0359
+echo CF_END_0359
+echo CF_BEGIN_035a
+pexact -I 4 -M 2 035a
+echo CF_END_035a
+echo CF_BEGIN_035b
+pexact -I 4 -M 2 035b
+echo CF_END_035b
+echo CF_BEGIN_035e
+pexact -I 4 -M 2 035e
+echo CF_END_035e
+echo CF_BEGIN_035f
+pexact -I 4 -M 2 035f
+echo CF_END_035f
+echo CF_BEGIN_0368
+pexact -I 4 -M 2 0368
+echo CF_END_0368
+echo CF_BEGIN_0369
+pexact -I 4 -M 2 0369
+echo CF_END_0369
+echo CF_BEGIN_036a
+pexact -I 4 -M 2 036a
+echo CF_END_036a
+echo CF_BEGIN_036b
+pexact -I 4 -M 2 036b
+echo CF_END_036b
+echo CF_BEGIN_036c
+pexact -I 4 -M 2 036c
+echo CF_END_036c
+echo CF_BEGIN_036d
+pexact -I 4 -M 2 036d
+echo CF_END_036d
+echo CF_BEGIN_036e
+pexact -I 4 -M 2 036e
+echo CF_END_036e
+echo CF_BEGIN_036f
+pexact -I 4 -M 2 036f
+echo CF_END_036f
+echo CF_BEGIN_037c
+pexact -I 4 -M 2 037c
+echo CF_END_037c
+echo CF_BEGIN_037d
+pexact -I 4 -M 2 037d
+echo CF_END_037d
+echo CF_BEGIN_037e
+pexact -I 4 -M 2 037e
+echo CF_END_037e
+echo CF_BEGIN_03c1
+pexact -I 4 -M 2 03c1
+echo CF_END_03c1
+echo CF_BEGIN_03c5
+pexact -I 4 -M 2 03c5
+echo CF_END_03c5
+echo CF_BEGIN_03c6
+pexact -I 4 -M 2 03c6
+echo CF_END_03c6
+echo CF_BEGIN_03c7
+pexact -I 4 -M 2 03c7
+echo CF_END_03c7
+echo CF_BEGIN_03d4
+pexact -I 4 -M 2 03d4
+echo CF_END_03d4
+echo CF_BEGIN_03d5
+pexact -I 4 -M 2 03d5
+echo CF_END_03d5
+echo CF_BEGIN_03d6
+pexact -I 4 -M 2 03d6
+echo CF_END_03d6
+echo CF_BEGIN_03d7
+pexact -I 4 -M 2 03d7
+echo CF_END_03d7
+echo CF_BEGIN_03d8
+pexact -I 4 -M 2 03d8
+echo CF_END_03d8
+echo CF_BEGIN_03d9
+pexact -I 4 -M 2 03d9
+echo CF_END_03d9
+echo CF_BEGIN_03db
+pexact -I 4 -M 2 03db
+echo CF_END_03db
+echo CF_BEGIN_03dc
+pexact -I 4 -M 2 03dc
+echo CF_END_03dc
+echo CF_BEGIN_03dd
+pexact -I 4 -M 2 03dd
+echo CF_END_03dd
+echo CF_BEGIN_03de
+pexact -I 4 -M 2 03de
+echo CF_END_03de
+echo CF_BEGIN_0660
+pexact -I 4 -M 2 0660
+echo CF_END_0660
+echo CF_BEGIN_0661
+pexact -I 4 -M 2 0661
+echo CF_END_0661
+echo CF_BEGIN_0662
+pexact -I 4 -M 2 0662
+echo CF_END_0662
+echo CF_BEGIN_0663
+pexact -I 4 -M 2 0663
+echo CF_END_0663
+echo CF_BEGIN_0666
+pexact -I 4 -M 2 0666
+echo CF_END_0666
+echo CF_BEGIN_0667
+pexact -I 4 -M 2 0667
+echo CF_END_0667
+echo CF_BEGIN_0669
+pexact -I 4 -M 2 0669
+echo CF_END_0669
+echo CF_BEGIN_066b
+pexact -I 4 -M 2 066b
+echo CF_END_066b
+echo CF_BEGIN_066f
+pexact -I 4 -M 2 066f
+echo CF_END_066f
+echo CF_BEGIN_0672
+pexact -I 4 -M 2 0672
+echo CF_END_0672
+echo CF_BEGIN_0673
+pexact -I 4 -M 2 0673
+echo CF_END_0673
+echo CF_BEGIN_0676
+pexact -I 4 -M 2 0676
+echo CF_END_0676
+echo CF_BEGIN_0678
+pexact -I 4 -M 2 0678
+echo CF_END_0678
+echo CF_BEGIN_0679
+pexact -I 4 -M 2 0679
+echo CF_END_0679
+echo CF_BEGIN_067a
+pexact -I 4 -M 2 067a
+echo CF_END_067a
+echo CF_BEGIN_067b
+pexact -I 4 -M 2 067b
+echo CF_END_067b
+echo CF_BEGIN_067e
+pexact -I 4 -M 2 067e
+echo CF_END_067e
+echo CF_BEGIN_0690
+pexact -I 4 -M 2 0690
+echo CF_END_0690
+echo CF_BEGIN_0691
+pexact -I 4 -M 2 0691
+echo CF_END_0691
+echo CF_BEGIN_0693
+pexact -I 4 -M 2 0693
+echo CF_END_0693
+echo CF_BEGIN_0696
+pexact -I 4 -M 2 0696
+echo CF_END_0696
+echo CF_BEGIN_0697
+pexact -I 4 -M 2 0697
+echo CF_END_0697
+echo CF_BEGIN_069f
+pexact -I 4 -M 2 069f
+echo CF_END_069f
+echo CF_BEGIN_06b0
+pexact -I 4 -M 2 06b0
+echo CF_END_06b0
+echo CF_BEGIN_06b1
+pexact -I 4 -M 2 06b1
+echo CF_END_06b1
+echo CF_BEGIN_06b2
+pexact -I 4 -M 2 06b2
+echo CF_END_06b2
+echo CF_BEGIN_06b3
+pexact -I 4 -M 2 06b3
+echo CF_END_06b3
+echo CF_BEGIN_06b4
+pexact -I 4 -M 2 06b4
+echo CF_END_06b4
+echo CF_BEGIN_06b5
+pexact -I 4 -M 2 06b5
+echo CF_END_06b5
+echo CF_BEGIN_06b6
+pexact -I 4 -M 2 06b6
+echo CF_END_06b6
+echo CF_BEGIN_06b7
+pexact -I 4 -M 2 06b7
+echo CF_END_06b7
+echo CF_BEGIN_06b9
+pexact -I 4 -M 2 06b9
+echo CF_END_06b9
+echo CF_BEGIN_06bd
+pexact -I 4 -M 2 06bd
+echo CF_END_06bd
+echo CF_BEGIN_06f0
+pexact -I 4 -M 2 06f0
+echo CF_END_06f0
+echo CF_BEGIN_06f1
+pexact -I 4 -M 2 06f1
+echo CF_END_06f1
+echo CF_BEGIN_06f2
+pexact -I 4 -M 2 06f2
+echo CF_END_06f2
+echo CF_BEGIN_06f6
+pexact -I 4 -M 2 06f6
+echo CF_END_06f6
+echo CF_BEGIN_06f9
+pexact -I 4 -M 2 06f9
+echo CF_END_06f9
+echo CF_BEGIN_0776
+pexact -I 4 -M 2 0776
+echo CF_END_0776
+echo CF_BEGIN_0778
+pexact -I 4 -M 2 0778
+echo CF_END_0778
+echo CF_BEGIN_0779
+pexact -I 4 -M 2 0779
+echo CF_END_0779
+echo CF_BEGIN_077a
+pexact -I 4 -M 2 077a
+echo CF_END_077a
+echo CF_BEGIN_077e
+pexact -I 4 -M 2 077e
+echo CF_END_077e
+echo CF_BEGIN_07b0
+pexact -I 4 -M 2 07b0
+echo CF_END_07b0
+echo CF_BEGIN_07b1
+pexact -I 4 -M 2 07b1
+echo CF_END_07b1
+echo CF_BEGIN_07b4
+pexact -I 4 -M 2 07b4
+echo CF_END_07b4
+echo CF_BEGIN_07b5
+pexact -I 4 -M 2 07b5
+echo CF_END_07b5
+echo CF_BEGIN_07b6
+pexact -I 4 -M 2 07b6
+echo CF_END_07b6
+echo CF_BEGIN_07bc
+pexact -I 4 -M 2 07bc
+echo CF_END_07bc
+echo CF_BEGIN_07e0
+pexact -I 4 -M 2 07e0
+echo CF_END_07e0
+echo CF_BEGIN_07e1
+pexact -I 4 -M 2 07e1
+echo CF_END_07e1
+echo CF_BEGIN_07e2
+pexact -I 4 -M 2 07e2
+echo CF_END_07e2
+echo CF_BEGIN_07e3
+pexact -I 4 -M 2 07e3
+echo CF_END_07e3
+echo CF_BEGIN_07e6
+pexact -I 4 -M 2 07e6
+echo CF_END_07e6
+echo CF_BEGIN_07e9
+pexact -I 4 -M 2 07e9
+echo CF_END_07e9
+echo CF_BEGIN_07f0
+pexact -I 4 -M 2 07f0
+echo CF_END_07f0
+echo CF_BEGIN_07f1
+pexact -I 4 -M 2 07f1
+echo CF_END_07f1
+echo CF_BEGIN_07f2
+pexact -I 4 -M 2 07f2
+echo CF_END_07f2
+echo CF_BEGIN_07f8
+pexact -I 4 -M 2 07f8
+echo CF_END_07f8
+echo CF_BEGIN_1668
+pexact -I 4 -M 2 1668
+echo CF_END_1668
+echo CF_BEGIN_1669
+pexact -I 4 -M 2 1669
+echo CF_END_1669
+echo CF_BEGIN_166a
+pexact -I 4 -M 2 166a
+echo CF_END_166a
+echo CF_BEGIN_166b
+pexact -I 4 -M 2 166b
+echo CF_END_166b
+echo CF_BEGIN_166e
+pexact -I 4 -M 2 166e
+echo CF_END_166e
+echo CF_BEGIN_167e
+pexact -I 4 -M 2 167e
+echo CF_END_167e
+echo CF_BEGIN_1681
+pexact -I 4 -M 2 1681
+echo CF_END_1681
+echo CF_BEGIN_1683
+pexact -I 4 -M 2 1683
+echo CF_END_1683
+echo CF_BEGIN_1686
+pexact -I 4 -M 2 1686
+echo CF_END_1686
+echo CF_BEGIN_1687
+pexact -I 4 -M 2 1687
+echo CF_END_1687
+echo CF_BEGIN_1689
+pexact -I 4 -M 2 1689
+echo CF_END_1689
+echo CF_BEGIN_168b
+pexact -I 4 -M 2 168b
+echo CF_END_168b
+echo CF_BEGIN_168e
+pexact -I 4 -M 2 168e
+echo CF_END_168e
+echo CF_BEGIN_1696
+pexact -I 4 -M 2 1696
+echo CF_END_1696
+echo CF_BEGIN_1697
+pexact -I 4 -M 2 1697
+echo CF_END_1697
+echo CF_BEGIN_1698
+pexact -I 4 -M 2 1698
+echo CF_END_1698
+echo CF_BEGIN_1699
+pexact -I 4 -M 2 1699
+echo CF_END_1699
+echo CF_BEGIN_169a
+pexact -I 4 -M 2 169a
+echo CF_END_169a
+echo CF_BEGIN_169b
+pexact -I 4 -M 2 169b
+echo CF_END_169b
+echo CF_BEGIN_169e
+pexact -I 4 -M 2 169e
+echo CF_END_169e
+echo CF_BEGIN_16a9
+pexact -I 4 -M 2 16a9
+echo CF_END_16a9
+echo CF_BEGIN_16ac
+pexact -I 4 -M 2 16ac
+echo CF_END_16ac
+echo CF_BEGIN_16ad
+pexact -I 4 -M 2 16ad
+echo CF_END_16ad
+echo CF_BEGIN_16bc
+pexact -I 4 -M 2 16bc
+echo CF_END_16bc
+echo CF_BEGIN_16e9
+pexact -I 4 -M 2 16e9
+echo CF_END_16e9
+echo CF_BEGIN_177e
+pexact -I 4 -M 2 177e
+echo CF_END_177e
+echo CF_BEGIN_178e
+pexact -I 4 -M 2 178e
+echo CF_END_178e
+echo CF_BEGIN_1796
+pexact -I 4 -M 2 1796
+echo CF_END_1796
+echo CF_BEGIN_1798
+pexact -I 4 -M 2 1798
+echo CF_END_1798
+echo CF_BEGIN_179a
+pexact -I 4 -M 2 179a
+echo CF_END_179a
+echo CF_BEGIN_17ac
+pexact -I 4 -M 2 17ac
+echo CF_END_17ac
+echo CF_BEGIN_17e8
+pexact -I 4 -M 2 17e8
+echo CF_END_17e8
+echo CF_BEGIN_18e7
+pexact -I 4 -M 2 18e7
+echo CF_END_18e7
+echo CF_BEGIN_19e1
+pexact -I 4 -M 2 19e1
+echo CF_END_19e1
+echo CF_BEGIN_19e3
+pexact -I 4 -M 2 19e3
+echo CF_END_19e3
+echo CF_BEGIN_19e6
+pexact -I 4 -M 2 19e6
+echo CF_END_19e6
+echo CF_BEGIN_1bd8
+pexact -I 4 -M 2 1bd8
+echo CF_END_1bd8
+echo CF_BEGIN_1be4
+pexact -I 4 -M 2 1be4
+echo CF_END_1be4
+echo CF_BEGIN_1ee1
+pexact -I 4 -M 2 1ee1
+echo CF_END_1ee1
+echo CF_BEGIN_6996
+pexact -I 4 -M 2 6996
+echo CF_END_6996
