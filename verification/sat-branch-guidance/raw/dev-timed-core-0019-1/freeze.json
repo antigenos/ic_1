@@ -1,0 +1,12 @@
+{
+  "cpu": 12,
+  "physical_mask": 12288,
+  "revision": "b99d03b929960a62c9298bc19059433ebcb7a2d3",
+  "hashes": {
+    "A": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+    "B": "1529810005e9c8ab491f4e3aa859da6e14989535f21e531ed4f724bdab259865",
+    "C": "ea7137cff60e10fe0f8d484629d0a9a54f4c2e9ffa4b20d8db785e757bcd3099",
+    "audit": "e7036d9359e8a3a804fd94c7be787698ea9611834a86d182156fb58383b6ed1d"
+  },
+  "start_utc": "2026-11-24T06:03:56.205245+00:00"
+}

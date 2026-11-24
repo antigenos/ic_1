@@ -1,0 +1,50 @@
+ABC command line: "pexact -I 4 -M 2 01ef".
+
+Cannot open file "abc.rc".
+Cannot open file "..\abc.rc".
+Cannot open file "..\..\abc.rc".
+QUERY gates=2 cap=150 enabled=1 result=-1 decisions=0 conflicts=1 first_joint=0 first_conflict=0 feature_ticks=0 injection_ticks=9 hz=10000000
+QUERY gates=3 cap=225 enabled=1 result=-1 decisions=230 conflicts=82 first_joint=1 first_conflict=64 feature_ticks=0 injection_ticks=9 hz=10000000
+QUERY gates=4 cap=225 enabled=1 result=-1 decisions=392 conflicts=118 first_joint=0 first_conflict=4 feature_ticks=1 injection_ticks=8 hz=10000000
+QUERY gates=5 cap=225 enabled=1 result=-1 decisions=44 conflicts=3 first_joint=0 first_conflict=24 feature_ticks=0 injection_ticks=10 hz=10000000
+QUERY gates=3 cap=300 enabled=1 result=-1 decisions=238 conflicts=59 first_joint=1 first_conflict=3 feature_ticks=0 injection_ticks=6 hz=10000000
+QUERY gates=4 cap=300 enabled=1 result=1 decisions=376 conflicts=180 first_joint=1 first_conflict=54 feature_ticks=0 injection_ticks=9 hz=10000000
+QUERY gates=3 cap=252 enabled=1 result=-1 decisions=213 conflicts=70 first_joint=1 first_conflict=3 feature_ticks=1 injection_ticks=8 hz=10000000
+QUERY gates=4 cap=252 enabled=1 result=-1 decisions=378 conflicts=192 first_joint=0 first_conflict=12 feature_ticks=0 injection_ticks=11 hz=10000000
+QUERY gates=5 cap=252 enabled=1 result=-1 decisions=2160 conflicts=842 first_joint=0 first_conflict=22 feature_ticks=1 injection_ticks=15 hz=10000000
+QUERY gates=6 cap=252 enabled=1 result=-1 decisions=1480 conflicts=64 first_joint=0 first_conflict=50 feature_ticks=2 injection_ticks=16 hz=10000000
+QUERY gates=7 cap=252 enabled=1 result=-1 decisions=780 conflicts=16 first_joint=0 first_conflict=147 feature_ticks=1 injection_ticks=17 hz=10000000
+QUERY gates=3 cap=279 enabled=1 result=-1 decisions=232 conflicts=53 first_joint=0 first_conflict=79 feature_ticks=1 injection_ticks=7 hz=10000000
+QUERY gates=4 cap=279 enabled=1 result=1 decisions=426 conflicts=63 first_joint=0 first_conflict=81 feature_ticks=1 injection_ticks=10 hz=10000000
+QUERY gates=3 cap=262 enabled=1 result=-1 decisions=232 conflicts=53 first_joint=0 first_conflict=79 feature_ticks=2 injection_ticks=8 hz=10000000
+QUERY gates=4 cap=262 enabled=1 result=-1 decisions=2104 conflicts=1234 first_joint=0 first_conflict=5 feature_ticks=1 injection_ticks=9 hz=10000000
+QUERY gates=5 cap=262 enabled=1 result=-1 decisions=141 conflicts=42 first_joint=0 first_conflict=46 feature_ticks=0 injection_ticks=11 hz=10000000
+QUERY gates=6 cap=262 enabled=1 result=-1 decisions=38 conflicts=4 first_joint=0 first_conflict=38 feature_ticks=0 injection_ticks=10 hz=10000000
+QUERY gates=7 cap=262 enabled=1 result=-1 decisions=580 conflicts=30 first_joint=0 first_conflict=208 feature_ticks=1 injection_ticks=15 hz=10000000
+QUERY gates=4 cap=272 enabled=1 result=1 decisions=521 conflicts=258 first_joint=0 first_conflict=5 feature_ticks=0 injection_ticks=12 hz=10000000
+QUERY gates=4 cap=267 enabled=1 result=-1 decisions=486 conflicts=287 first_joint=0 first_conflict=4 feature_ticks=1 injection_ticks=9 hz=10000000
+QUERY gates=5 cap=267 enabled=1 result=1 decisions=1135 conflicts=473 first_joint=0 first_conflict=118 feature_ticks=1 injection_ticks=16 hz=10000000
+QUERY gates=4 cap=263 enabled=1 result=-1 decisions=483 conflicts=262 first_joint=0 first_conflict=5 feature_ticks=4 injection_ticks=10 hz=10000000
+QUERY gates=5 cap=263 enabled=1 result=-1 decisions=25 conflicts=13 first_joint=0 first_conflict=9 feature_ticks=1 injection_ticks=11 hz=10000000
+QUERY gates=5 cap=264 enabled=1 result=1 decisions=1021 conflicts=413 first_joint=0 first_conflict=12 feature_ticks=1 injection_ticks=11 hz=10000000
+Realization of given 4-input function using 5 two-input gates complementary=1:
+08 = 4'b1001( d 07 )
+07 = 4'b0110( 05 06 )
+06 = 4'b1110( c 04 )
+05 = 4'b1110( d 04 )
+04 = 4'b1110( a b )
+Printing overall Truth Table...
+i=0:0101010101010101
+i=1:0011001100110011
+i=2:0000111100001111
+i=3:0000000011111111
+i=4:0111011101110111
+i=5:0111011111111111
+i=6:0111111101111111
+i=7:0000100010000000
+i=8:1111011110000000
+
+
+Switching Activity=264
+Number of Gates: r=5
+Total runtime =     0.38 sec
