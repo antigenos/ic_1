@@ -7,7 +7,7 @@ from pathlib import Path
 import subprocess
 import sys
 
-from family import PUBLIC,ROOT,WORK,run_lane,write_once
+from family import PUBLIC,ROOT,WORK,discard_reason,run_lane,write_once
 from summarize import replay
 
 
@@ -30,10 +30,9 @@ def main():
     path=args.work/(args.truth+".jsonl")
     lines=path.read_bytes().splitlines(keepends=True)
     bad=json.loads(lines[-1])
-    assert b"Invalid timing or witness" in (args.work/(args.truth+".launcher.log")).read_bytes()
-    assert bad["status"] in ("timeout","solver_completed_verified_witness")
-    limit=bad["timeout_s"]+(3 if bad["status"]=="timeout" else 0)
-    assert bad["wall_s"]>limit
+    reason=discard_reason(bad)
+    if bad["status"]!="unverified":
+        assert b"Invalid timing or witness" in (args.work/(args.truth+".launcher.log")).read_bytes()
     assert bad["experiment"]==dict(truth=args.truth,cpu=target["cpu"],arm=target["order"][len(lines)-1],order=len(lines))
     raw=args.work/"raw"/args.truth
     matches=[json.loads(q.read_bytes()) for q in raw.rglob("result.json")]
@@ -49,7 +48,7 @@ def main():
     backup=args.work/"recovery"/args.resume_id/path.name
     write_once(backup,path.read_bytes())
     write_once(args.public/"recovery"/(args.truth+"-"+args.resume_id+".json"),
-               (json.dumps(dict(reason="elapsed time exceeded the allowed measurement window",
+               (json.dumps(dict(reason=reason,
                                 retained_prefix=len(lines)-1,discarded=bad),indent=2)+"\n").encode())
     tmp=path.with_suffix("."+args.resume_id+".tmp")
     write_once(tmp,b"".join(lines[:-1]))

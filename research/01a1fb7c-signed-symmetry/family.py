@@ -76,13 +76,21 @@ def verify_row(path,r,expected):
     return rows
 
 
+def discard_reason(row):
+    if row["status"]=="unverified" and row["returncode"]==0xC000013A and "witness" not in row:
+        return "Windows interrupted the process before a completed result"
+    if row["status"] in ("timeout","solver_completed_verified_witness"):
+        if row["wall_s"]>row["timeout_s"]+(3 if row["status"]=="timeout" else 0):
+            return "elapsed time exceeded the allowed measurement window"
+    raise ValueError("This row is not a recognized interruption or timing overrun")
+
+
 def timing_account(data,public):
     kept=[e for case in data.values() for e in case.values()]
     rejected=[e["discarded_timeout_attempt"] for e in kept if "discarded_timeout_attempt" in e]
     for f in sorted((public/"recovery").glob("*.json")):
         item=json.loads(f.read_bytes())["discarded"]
-        assert item["status"] in ("timeout","solver_completed_verified_witness")
-        assert item["wall_s"]>item["timeout_s"]+(3 if item["status"]=="timeout" else 0)
+        discard_reason(item)
         assert sha256(item["solver_output"].encode()).hexdigest()==item["solver_log_sha256"]
         rejected.extend([item["discarded_timeout_attempt"]] if "discarded_timeout_attempt" in item else [])
         rejected.append(item)

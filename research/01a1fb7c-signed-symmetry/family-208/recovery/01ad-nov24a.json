@@ -1,0 +1,31 @@
+{
+  "reason": "Windows interrupted the process before a completed result",
+  "retained_prefix": 2,
+  "discarded": {
+    "start_utc": "2026-11-23T12:48:19.845503+00:00",
+    "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+    "command": [
+      "abc.exe",
+      "-c",
+      "pexact -I 4 -M 2 01ad"
+    ],
+    "timeout_s": 300,
+    "experiment": {
+      "cpu": 20,
+      "arm": "F",
+      "order": 3,
+      "truth": "01ad"
+    },
+    "pid": 8792,
+    "child_affinity": [
+      20
+    ],
+    "returncode": 3221225786,
+    "wall_s": 121.82608659999823,
+    "capped_wall_s": 121.82608659999823,
+    "status": "unverified",
+    "reason": "Author search did not report a completed run",
+    "solver_output": "ABC command line: \"pexact -I 4 -M 2 01ad\".\r\n\r\nCannot open file \"abc.rc\".\r\nCannot open file \"..\\abc.rc\".\r\nCannot open file \"..\\..\\abc.rc\".\r\n",
+    "solver_log_sha256": "8ecfd8b04c35bdaa5a2143aabaad7e1237ffe64490c7d21ec93df393098816d5"
+  }
+}
