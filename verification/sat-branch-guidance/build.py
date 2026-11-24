@@ -18,6 +18,9 @@ os.environ['PATH'] = r'C:\msys64\ucrt64\bin' + os.pathsep + os.environ['PATH']
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
+def rel(path):
+    return Path(os.path.relpath(path, ABC)).as_posix()
+
 def edit(source, old, new):
     if source.count(old) != 1:
         raise ValueError(old)
@@ -26,9 +29,9 @@ def edit(source, old, new):
 def compile_unit(dest, filename):
     subprocess.run(['gcc', '-std=gnu11', '-O2', '-DABC_USE_STDINT_H=1', '-DABC_USE_CUDD=1',
                     '-DWIN32_NO_DLL', '-DSIZEOF_VOID_P=8', '-DSIZEOF_LONG=4', '-DSIZEOF_INT=4',
-                    '-Isrc', '-Isrc/ext-pexact', '-Isrc/sat/bsat', '-I' + str(ROOT/'tools'),
-                    '-I../reference/src', '-I'+str(HERE), '-c', str(dest/(filename+'.c')),
-                    '-o', str(dest/(filename+'.o'))], cwd=ABC, check=True)
+                    '-Isrc', '-Isrc/ext-pexact', '-Isrc/sat/bsat', '-I' + rel(ROOT/'tools'),
+                    '-I../reference/src', '-I'+rel(HERE), '-c', rel(dest/(filename+'.c')),
+                    '-o', rel(dest/(filename+'.o'))], cwd=ABC, check=True)
 
 def assemble(diag):
     name = 'audit' if diag else 'conditional'
@@ -65,10 +68,10 @@ def assemble(diag):
     compile_unit(dest,'pexact')
     rsp = (BASE/'objects.rsp').read_text()
     for unit in (['pexact','satSolver'] if diag else ['pexact']):
-        rsp = edit(rsp, '../variants/joint/'+unit+'.o', (dest/(unit+'.o')).as_posix())
+        rsp = edit(rsp, '../variants/joint/'+unit+'.o', rel(dest/(unit+'.o')))
     (dest/'objects.rsp').write_text(rsp)
     binary = dest/'abc.exe'
-    subprocess.run(['g++','-o',str(binary),'@'+str(dest/'objects.rsp'),'-lm','-lws2_32','-lpsapi','-lshlwapi'],cwd=ABC,check=True)
+    subprocess.run(['g++','-o',rel(binary),'@'+rel(dest/'objects.rsp'),'-lm','-lws2_32','-lpsapi','-lshlwapi'],cwd=ABC,check=True)
     return sha(binary)
 
 if __name__ == '__main__':
