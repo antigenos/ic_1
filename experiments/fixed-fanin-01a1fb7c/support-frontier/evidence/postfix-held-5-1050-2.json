@@ -1,0 +1,16 @@
+{
+  "n": 5,
+  "cap": 1050,
+  "cpu": 24,
+  "binary_sha256": "b7e5cac28ee3b8ad472396fc64d1e6c0fb340739749ca29f436416b11ef158f6",
+  "reference_sha256": "a67bd9b037d56dfa7ff6a351bf48df17a995a82e7c98e4682a955d7a88e28134",
+  "timeout_s": 300,
+  "solver_wall_s": 24.434517000001506,
+  "visits": 250924444,
+  "live_expressions": 2354720,
+  "total_wall_s": 24.5186543000018,
+  "status": "all_optima_identical",
+  "represented_labeled_outputs": 2336,
+  "classes": 16,
+  "stdout_sha256": "ee4899547c4fdaf5a0dc5a044a1147dfa985f0a6972c298418b07b5f3b9bcfe5"
+}

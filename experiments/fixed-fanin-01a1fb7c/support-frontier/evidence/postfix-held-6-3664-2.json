@@ -1,0 +1,16 @@
+{
+  "n": 6,
+  "cap": 3664,
+  "cpu": 24,
+  "binary_sha256": "b7e5cac28ee3b8ad472396fc64d1e6c0fb340739749ca29f436416b11ef158f6",
+  "reference_sha256": "354591a42c0f4002980919916f4289140fd4e1b32c25674c53eb73c00b681cfe",
+  "timeout_s": 300,
+  "solver_wall_s": 24.20376699999906,
+  "visits": 222178967,
+  "live_expressions": 2737152,
+  "total_wall_s": 25.499709699997766,
+  "status": "all_optima_identical",
+  "represented_labeled_outputs": 5216,
+  "classes": 16,
+  "stdout_sha256": "891472edb5e9fd99c7b2f97ccf7c964532045fa810776e91ca06f3915a7f6576"
+}

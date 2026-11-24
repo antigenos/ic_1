@@ -1,0 +1,179 @@
+{
+  "all_four_tables": 65536,
+  "recognized_four": {
+    "minterm": 32,
+    "puncture": 320,
+    "parity": 64
+  },
+  "independent_tree_cases": 80,
+  "splits": [
+    {
+      "n": 4,
+      "q": 2,
+      "k": 2,
+      "tree": 192,
+      "dag": 182
+    },
+    {
+      "n": 4,
+      "q": 1,
+      "k": 3,
+      "tree": 152,
+      "dag": 152
+    },
+    {
+      "n": 5,
+      "q": 3,
+      "k": 2,
+      "tree": 992,
+      "dag": 790
+    },
+    {
+      "n": 5,
+      "q": 2,
+      "k": 3,
+      "tree": 992,
+      "dag": 790
+    },
+    {
+      "n": 5,
+      "q": 1,
+      "k": 4,
+      "tree": 728,
+      "dag": 728
+    },
+    {
+      "n": 6,
+      "q": 4,
+      "k": 2,
+      "tree": 4448,
+      "dag": 3286
+    },
+    {
+      "n": 6,
+      "q": 3,
+      "k": 3,
+      "tree": 4864,
+      "dag": 3286
+    },
+    {
+      "n": 6,
+      "q": 2,
+      "k": 4,
+      "tree": 4448,
+      "dag": 3286
+    },
+    {
+      "n": 6,
+      "q": 1,
+      "k": 5,
+      "tree": 3160,
+      "dag": 3160
+    },
+    {
+      "n": 7,
+      "q": 5,
+      "k": 2,
+      "tree": 18784,
+      "dag": 13398
+    },
+    {
+      "n": 7,
+      "q": 4,
+      "k": 3,
+      "tree": 21376,
+      "dag": 13398
+    },
+    {
+      "n": 7,
+      "q": 3,
+      "k": 4,
+      "tree": 21376,
+      "dag": 13398
+    },
+    {
+      "n": 7,
+      "q": 2,
+      "k": 5,
+      "tree": 18784,
+      "dag": 13398
+    },
+    {
+      "n": 7,
+      "q": 1,
+      "k": 6,
+      "tree": 13144,
+      "dag": 13144
+    },
+    {
+      "n": 8,
+      "q": 6,
+      "k": 2,
+      "tree": 77152,
+      "dag": 54102
+    },
+    {
+      "n": 8,
+      "q": 5,
+      "k": 3,
+      "tree": 89472,
+      "dag": 54102
+    },
+    {
+      "n": 8,
+      "q": 4,
+      "k": 4,
+      "tree": 93184,
+      "dag": 54102
+    },
+    {
+      "n": 8,
+      "q": 3,
+      "k": 5,
+      "tree": 89472,
+      "dag": 54102
+    },
+    {
+      "n": 8,
+      "q": 2,
+      "k": 6,
+      "tree": 77152,
+      "dag": 54102
+    },
+    {
+      "n": 8,
+      "q": 1,
+      "k": 7,
+      "tree": 53592,
+      "dag": 53592
+    }
+  ],
+  "heldout_labels": {
+    "5": [
+      "1",
+      "7",
+      "7f",
+      "7fff",
+      "1fffe"
+    ],
+    "6": [
+      "1",
+      "7",
+      "7f",
+      "7fff",
+      "7fffffff",
+      "1fffffffe"
+    ]
+  },
+  "native": {
+    "0001/activity": "ABC command line: \"pexact -I 4 -M 2 0001\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\nFF_ORIGINAL_CNF verified\nRealization of given 4-input function using 3 two-input gates complementary=1:\n06 = 4'b0001( d 05 )\n05 = 4'b1110( c 04 )\n04 = 4'b1110( a b )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0111011101110111\ni=5:0111111101111111\ni=6:1000000000000000\n\n\nSwitching Activity=152\nNumber of Gates: r=3\nTotal runtime =     0.00 sec\n",
+    "0007/size": "ABC command line: \"pexact -I 4 -M 2 0007\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\nFF_ORIGINAL_CNF verified\nRealization of given 4-input function using 3 two-input gates complementary=1:\n06 = 4'b0001( 04 05 )\n05 = 4'b1000( a b )\n04 = 4'b1110( c d )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0000111111111111\ni=5:0001000100010001\ni=6:1110000000000000\n\n\nSwitching Activity=192\nNumber of Gates: r=3\nTotal runtime =     0.00 sec\n",
+    "0007/activity": "ABC command line: \"pexact -I 4 -M 2 0007\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\nFF_ORIGINAL_CNF verified\nRealization of given 4-input function using 4 two-input gates complementary=1:\n07 = 4'b0001( 04 06 )\n06 = 4'b1000( b 05 )\n05 = 4'b0100( a 04 )\n04 = 4'b1110( c d )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0000111111111111\ni=5:0101000000000000\ni=6:0001000000000000\ni=7:1110000000000000\n\n\nSwitching Activity=182\nNumber of Gates: r=4\nTotal runtime =     0.00 sec\n",
+    "fff8/size": "ABC command line: \"pexact -I 4 -M 2 fff8\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\nFF_ORIGINAL_CNF verified\nRealization of given 4-input function using 3 two-input gates complementary=0:\n06 = 4'b1110( 04 05 )\n05 = 4'b1000( a b )\n04 = 4'b1110( c d )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0000111111111111\ni=5:0001000100010001\ni=6:0001111111111111\n\n\nSwitching Activity=192\nNumber of Gates: r=3\nTotal runtime =     0.00 sec\n",
+    "fff8/activity": "ABC command line: \"pexact -I 4 -M 2 fff8\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\nFF_ORIGINAL_CNF verified\nRealization of given 4-input function using 4 two-input gates complementary=0:\n07 = 4'b1110( 04 06 )\n06 = 4'b1000( b 05 )\n05 = 4'b0100( a 04 )\n04 = 4'b1110( c d )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0000111111111111\ni=5:0101000000000000\ni=6:0001000000000000\ni=7:0001111111111111\n\n\nSwitching Activity=182\nNumber of Gates: r=4\nTotal runtime =     0.00 sec\n",
+    "007f/activity": "ABC command line: \"pexact -I 4 -M 2 007f\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\nFF_ORIGINAL_CNF verified\nRealization of given 4-input function using 3 two-input gates complementary=1:\n06 = 4'b0001( d 05 )\n05 = 4'b1000( c 04 )\n04 = 4'b1000( a b )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0001000100010001\ni=5:0000000100000001\ni=6:1111111000000000\n\n\nSwitching Activity=152\nNumber of Gates: r=3\nTotal runtime =     0.00 sec\n",
+    "01fe/activity": "ABC command line: \"pexact -I 4 -M 2 01fe\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\nFF_ORIGINAL_CNF verified\nRealization of given 4-input function using 3 two-input gates complementary=0:\n06 = 4'b0110( d 05 )\n05 = 4'b1110( c 04 )\n04 = 4'b1110( a b )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0111011101110111\ni=5:0111111101111111\ni=6:0111111110000000\n\n\nSwitching Activity=152\nNumber of Gates: r=3\nTotal runtime =     0.00 sec\n"
+  },
+  "native_outside_fallback": "ABC command line: \"pexact -I 4 -M 2 0006\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 4-input function using 4 two-input gates complementary=0:\n07 = 4'b0110( 05 06 )\n06 = 4'b1110( b 04 )\n05 = 4'b1110( a 04 )\n04 = 4'b1110( c d )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0000111111111111\ni=5:0101111111111111\ni=6:0011111111111111\ni=7:0110000000000000\n\n\nSwitching Activity=208\nNumber of Gates: r=4\nTotal runtime =     0.89 sec\n",
+  "total_wall_s": 11.674044599996705
+}
