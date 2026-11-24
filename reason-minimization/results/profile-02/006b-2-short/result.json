@@ -1,0 +1,26 @@
+{
+  "start_utc": "2026-11-24T05:58:24.268269+00:00",
+  "binary_sha256": "51ac438ac24965d6675c144b1043a9e082d6bf4c9944fe5f06fdb17da5f37dcc",
+  "command": [
+    "abc.exe",
+    "-c",
+    "pexact -I 4 -M 2 006b"
+  ],
+  "timeout_s": 300,
+  "experiment": {
+    "truth": "006b",
+    "method": "short",
+    "cpu": 0,
+    "order": 2,
+    "diagnostic": "profile"
+  },
+  "pid": 3228,
+  "child_affinity": [
+    0
+  ],
+  "returncode": 77,
+  "wall_s": 0.8885822000002008,
+  "capped_wall_s": 0.8885822000002008,
+  "status": "unverified",
+  "reason": "Author search did not report a completed run"
+}
