@@ -102,7 +102,7 @@ def diagnostic(prefix):
             truth,_,method=dest.name.split("-")
             key=truth+"-"+method
             assert key not in result
-            path=dest/("solver.log.gz" if plan["kind"].endswith("trace") else "solver.log")
+            path=dest/("solver.log.gz" if (dest/"solver.log.gz").exists() else "solver.log")
             data=assess(path,method)
             seq=[{k:v for k,v in (field.split("=") for field in l.split()[1:]) if k!="seconds"}
                  for l in read_querylog(path) if l.startswith("WINDOW ")]

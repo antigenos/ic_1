@@ -22,7 +22,7 @@ def run(kind,label,preferred):
         raise ValueError("Invalid physical core")
     seen={}
     attempt=0
-    pending=list(V if kind=="holdout" else D)
+    pending=list(V if kind in ("holdout","confirm-audit") else D)
     with log.open("x",buffering=1) as f:
         while True:
             free=[]

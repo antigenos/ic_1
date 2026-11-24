@@ -48,19 +48,21 @@ run=scope["run"]
 def panel(kind,label,cpu,truth=None):
     folder=HERE/"results"/label
     folder.mkdir(parents=True,exist_ok=False)
-    diagnostic=kind in ("profile","trace","trigger-profile","trigger-trace")
-    methods=(["trigger"] if kind.startswith("trigger-") else FOUR if kind in ("holdout","four") else THREE)
-    truths=V if kind=="holdout" else D
+    confirm=kind in ("holdout","confirm-audit")
+    diagnostic=kind in ("profile","trace","trigger-profile","trigger-trace","confirm-audit")
+    trace=kind.endswith("trace") or kind=="confirm-audit"
+    methods=(["trigger"] if kind.startswith("trigger-") else FOUR if confirm or kind=="four" else THREE)
+    truths=V if confirm else D
     if truth is not None:
         assert truth in truths
         truths=(truth,)
-    suffix="-profile" if kind.endswith("profile") else ""
+    suffix="-profile" if kind.endswith("profile") or kind=="confirm-audit" else ""
     bounds=json.loads(gitfile("evidence/family-bounds-432.json"))["lower_bounds"]
     env={k:v for k,v in os.environ.items() if not k.startswith(("OPTWIN_","REPLAY_"))}
     env.update(OPTWIN_MODE="both",REPLAY_RULES="both",REPLAY_BUDGET="1")
     if diagnostic:
         env.update(OPTWIN_TRACE="1",REPLAY_STATS="1")
-        if kind.endswith("trace"):
+        if trace:
             env["REPLAY_TRACE"]="1"
     binaries={m:HERE/".local"/(m+suffix)/"abc.exe" for m in methods}
     commit=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip()
@@ -86,7 +88,7 @@ def panel(kind,label,cpu,truth=None):
         else:
             raise RuntimeError("Guard did not start")
         for n,t in enumerate(truths):
-            index=(V if kind=="holdout" else D).index(t)
+            index=(V if confirm else D).index(t)
             order=methods[::-1] if index%2 else methods[:]
             order=order if diagnostic else order+order[::-1]
             for i,m in enumerate(order,1):
@@ -100,7 +102,7 @@ def panel(kind,label,cpu,truth=None):
                         raise ValueError(("Optimum/witness mismatch",dest,r))
                 elif diagnostic:
                     raise RuntimeError(("Incomplete diagnostic",dest))
-                if kind.endswith("trace"):
+                if trace:
                     with (dest/"solver.log.gz").open("wb") as f:
                         f.write(gzip.compress((dest/"solver.log").read_bytes(),mtime=0))
                     (dest/"solver.log").unlink()  # Lossless gzip in the dedicated new run directory.
@@ -118,7 +120,7 @@ def panel(kind,label,cpu,truth=None):
 
 if __name__=="__main__":
     p=argparse.ArgumentParser()
-    p.add_argument("kind",choices=("three","four","holdout","profile","trace","trigger-profile","trigger-trace"))
+    p.add_argument("kind",choices=("three","four","holdout","profile","trace","trigger-profile","trigger-trace","confirm-audit"))
     p.add_argument("label")
     p.add_argument("--cpu",type=int,default=0)
     p.add_argument("--truth")
