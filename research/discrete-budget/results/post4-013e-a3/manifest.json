@@ -1,0 +1,38 @@
+{
+  "kind": "confirm-audit",
+  "cases": [
+    "013e"
+  ],
+  "source_commit": "652106e8e47655a5cff73e0e1fa6078815c39d9b",
+  "outer": "5400328802c98c1870fb7f61ff2475f698ee48ea",
+  "cpu": 30,
+  "physical": [
+    30,
+    31
+  ],
+  "methods": [
+    "joint",
+    "interval",
+    "holes",
+    "trigger"
+  ],
+  "binaries": {
+    "joint": "624c982446f02d92c731ec3a796120d0561777c0f96f45e1bea4a1a98e8a5e65",
+    "interval": "cacd92722b3b0105caa1ee4996d3230996a26a6f1fd6b80f7bf9fa452b7413c5",
+    "holes": "bc1b254b917e34a0cdb53b49944b83e38aaea4754cb75da183c882da3ef82b9f",
+    "trigger": "5715ed944db677e70ec68874f726baec483a9982d071ef58e5976361177156ce"
+  },
+  "cap": 120,
+  "env": {
+    "OPTWIN_MODE": "both",
+    "REPLAY_RULES": "both",
+    "REPLAY_BUDGET": "1",
+    "OPTWIN_TRACE": "1",
+    "REPLAY_STATS": "1",
+    "REPLAY_TRACE": "1"
+  },
+  "reference": {
+    "013e": 368
+  },
+  "order": "forward then reverse; alternate first direction across functions"
+}
