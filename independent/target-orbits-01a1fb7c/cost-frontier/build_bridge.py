@@ -1,6 +1,7 @@
 """Relink the preserved author/TCJAP binary using its original objects and one replacement unit."""
 from hashlib import sha256
 import os
+import platform
 from pathlib import Path
 import subprocess
 
@@ -8,7 +9,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 ABC = ROOT/'.local/abc'
 BASE = ROOT/'.local/variants/orbit-signed'
-DEST = ROOT/'.local/variants/orbit-frontier'
+DEST = ROOT/'.local/variants/orbit-frontier-complete'
 ANCHOR = '''    int maxGateCount = MAJ_NOBJS - p->nVars;
 
     while ( r < maxGateCount )'''
@@ -68,12 +69,13 @@ def build():
     run(['gcc','-std=gnu11','-O2','-DABC_USE_STDINT_H=1','-DABC_USE_CUDD=1',*flags,
          '-Isrc','-Isrc/ext-pexact','-Isrc/sat/bsat','-I../../tools','-I../reference/src',
          '-I'+rel(BASE),'-I'+rel(HERE),'-c',rel(DEST/'pexact.c'),'-o',rel(DEST/'pexact.o')])
-    run(['g++','-std=c++20','-O3','-DNDEBUG','-c',rel(HERE/'bridge.cpp'),'-o',rel(DEST/'bridge.o')])
+    arch=['-march=x86-64-v2'] if platform.machine().lower() in ('amd64','x86_64') else []
+    run(['g++','-std=c++20','-O3','-DNDEBUG',*arch,'-c',rel(HERE/'bridge.cpp'),'-o',rel(DEST/'bridge.o')])
     rsp=(BASE/'objects.rsp').read_text()
     key='../variants/orbit-signed/pexact.o'
     if rsp.count(key)!=1:
         raise ValueError('unexpected object list')
-    rsp=rsp.replace(key,'../variants/orbit-frontier/pexact.o')+'\n"../variants/orbit-frontier/bridge.o"\n'
+    rsp=rsp.replace(key,f'../variants/{DEST.name}/pexact.o')+f'\n"../variants/{DEST.name}/bridge.o"\n'
     (DEST/'objects.rsp').write_text(rsp)
     binary=DEST/('abc.exe' if os.name=='nt' else 'abc')
     run(['g++','-o',rel(binary),'@'+rel(DEST/'objects.rsp'),*libs])

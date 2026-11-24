@@ -75,6 +75,7 @@ struct Completion {
     }
 };
 
+#ifndef REFINE_LIBRARY
 int main(int argc,char** argv) {
     if (argc!=6) { std::cerr<<"refine n seed auto|budget projected|uniform output.tsv\n"; return 2; }
     int n=std::stoi(argv[1]), seed=std::stoi(argv[2]);
@@ -109,3 +110,4 @@ int main(int argc,char** argv) {
     std::cout<<"elapsed_s="<<seconds(start,Clock::now())<<"\n";
     return out ? 0 : 3;
 }
+#endif

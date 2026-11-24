@@ -1,6 +1,7 @@
 // Compiled into the same ABC process as the pinned pexact plugin.
-#define FRONTIER_LIBRARY
-#include "frontier.cpp"
+#define REFINE_LIBRARY
+#include "refine.cpp"
+#include <cstdlib>
 #include <memory>
 
 extern "C" int frontier_bound(unsigned raw, int cap, int projected,
@@ -15,15 +16,33 @@ extern "C" int frontier_bound(unsigned raw, int cap, int projected,
     }
     try {
         static std::unique_ptr<Search> shared;
-        if (!shared || shared->cap!=cap) {
+        static std::unique_ptr<Completion> completed;
+        static int saved_seed=-1, saved_projection=-1;
+        const char* flag=std::getenv("PEXACT_FRONTIER_COMPLETE");
+        bool full=flag && std::string(flag)=="1";
+        if (full) {
+            if (!completed || saved_seed!=cap || saved_projection!=projected) {
+                auto ready=std::make_unique<Completion>(4,cap);
+                int budget=ready->next_budget();
+                while (ready->open_count()) {
+                    ready->finish(budget,projected!=0);
+                    if (ready->open_count())
+                        budget=std::max(budget+ready->engine.price(1),ready->next_budget());
+                }
+                completed=std::move(ready);
+                saved_seed=cap;
+                saved_projection=projected;
+            }
+        } else if (!shared || shared->cap!=cap) {
             auto ready=std::make_unique<Search>(4,cap);
             ready->run();
             shared=std::move(ready);
         }
-        const Search& lib=*shared;
+        const Search& lib=full ? static_cast<const Search&>(completed->engine) : *shared;
         Wire f=lib.rep[raw];
         const auto& witness=lib.best[f];
-        int lower=std::min(witness.cost, projected ? lib.unseen(f) : lib.boundary+lib.price(1));
+        int lower=full ? completed->lower[f] :
+            std::min(witness.cost, projected ? lib.unseen(f) : lib.boundary+lib.price(1));
         if (lower!=witness.cost || lower>=infinity || int(witness.state.size())>capacity)
             return lower;
         // Under a signed variable transformation primary pins normalize back to pins.

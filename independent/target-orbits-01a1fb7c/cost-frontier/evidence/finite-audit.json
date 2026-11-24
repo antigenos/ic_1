@@ -1,0 +1,30 @@
+{
+  "group_actions": 384,
+  "normalized_truths_per_action": 32768,
+  "checked_images": 12582912,
+  "partner_cells": 49062,
+  "tested_operand_pairs": 7241507,
+  "classes": 222,
+  "bounds": [
+    {
+      "cap": 304,
+      "verified": 222,
+      "sha256": "c07d04957eaa8dfeb114b00e63ecfcf6c4d19fe4a3f2633fec7b230fa9ea9ea9"
+    },
+    {
+      "cap": 420,
+      "verified": 222,
+      "sha256": "332942e78c4d4196a57743e5fe0864415107eb8a0b3c4ba8f30e481223359abb"
+    },
+    {
+      "cap": 520,
+      "verified": 222,
+      "sha256": "3586b0b7b57a7435eae2ed6b58615531ce7781fec1a5fb9f807387d6593021ea"
+    },
+    {
+      "cap": 580,
+      "verified": 222,
+      "sha256": "38c67f1f27a500ef224ea217ed671e35e83a2710d01765079c54a9cc0453deb7"
+    }
+  ]
+}

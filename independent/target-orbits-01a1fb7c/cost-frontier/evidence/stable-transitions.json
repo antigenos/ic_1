@@ -1,0 +1,32 @@
+[
+  {
+    "design": "adder",
+    "vectors": 65536,
+    "transitions_per_wire": 65535,
+    "area_first": 22859848,
+    "activity_first": 24106393,
+    "relative_change": 0.05452989013750223,
+    "shared_boundary_toggles": 10331136,
+    "outputs_matched": 129
+  },
+  {
+    "design": "priority",
+    "vectors": 65536,
+    "transitions_per_wire": 65535,
+    "area_first": 14161569,
+    "activity_first": 12669532,
+    "relative_change": -0.10535817041176723,
+    "shared_boundary_toggles": 5484438,
+    "outputs_matched": 8
+  },
+  {
+    "design": "router",
+    "vectors": 65536,
+    "transitions_per_wire": 65535,
+    "area_first": 3695306,
+    "activity_first": 3055428,
+    "relative_change": -0.17315967879250055,
+    "shared_boundary_toggles": 1663586,
+    "outputs_matched": 30
+  }
+]

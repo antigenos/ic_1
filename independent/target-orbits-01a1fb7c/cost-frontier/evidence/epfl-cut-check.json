@@ -1,0 +1,600 @@
+{
+  "table_sha256": "d5b542a8fe6a6886010f35a277e51ac0822800d249fffd12982d61a0c39247f0",
+  "abc_sha256": "f95f2200f86b76b546e7d2c4b619c2fd207b18dd0658fe3847746493c1a2c6bf",
+  "designs": [
+    {
+      "benchmark": "adder",
+      "source": "https://github.com/lsils/benchmarks/blob/82d8cc6910419298e713a46644ed59fd3df53038/arithmetic/adder.aig",
+      "blob": "08d4902faaaa4f55616d0e5288e4d583a8e219c4",
+      "command": "read_aiger .local/downloads/epfl-adder.aig; strash; if -K 4; write_blif .local/epfl-cut-check/adder-mapped.blif",
+      "mapping_s": 0.4087140999999974,
+      "lookup_nodes": 339,
+      "essential_4lut": 128,
+      "distinct_truths": 6,
+      "distinct_classes": 3,
+      "arms": {
+        "activity": {
+          "expansion_s": 0.020867500000008476,
+          "cec_s": 0.43995219999999335,
+          "charged_activity": 41740,
+          "two_input_gates": 639,
+          "cec": "ABC command line: \"cec .local/downloads/epfl-adder.aig .local/epfl-cut-check/adder-activity.blif\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.04 sec",
+          "netlist_sha256": "3d8c2a4acf4c3490179b3309f1e2cebba6dbcb8e2d3a6f3a257cb5aada6ff621",
+          "per_truth": {
+            "8778": {
+              "copies": 1,
+              "truth": "8778",
+              "activity": 224,
+              "gates": 3
+            },
+            "1777": {
+              "copies": 1,
+              "truth": "1777",
+              "activity": 356,
+              "gates": 6
+            },
+            "e11e": {
+              "copies": 42,
+              "truth": "e11e",
+              "activity": 224,
+              "gates": 3
+            },
+            "00d4": {
+              "copies": 42,
+              "truth": "00d4",
+              "activity": 400,
+              "gates": 6
+            },
+            "1117": {
+              "copies": 41,
+              "truth": "1117",
+              "activity": 356,
+              "gates": 6
+            },
+            "eee8": {
+              "copies": 1,
+              "truth": "eee8",
+              "activity": 356,
+              "gates": 6
+            }
+          }
+        },
+        "area": {
+          "expansion_s": 3.049729300000081,
+          "cec_s": 0.3383740999998963,
+          "charged_activity": 46990,
+          "two_input_gates": 554,
+          "cec": "ABC command line: \"cec .local/downloads/epfl-adder.aig .local/epfl-cut-check/adder-area.blif\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.04 sec",
+          "netlist_sha256": "afe555d66b588280bd87ad2779550bc9f9d79a9ab5e5fb9c4f99bdd1c2ca1fd1",
+          "per_truth": {
+            "8778": {
+              "copies": 1,
+              "truth": "8778",
+              "activity": 224,
+              "gates": 3
+            },
+            "1777": {
+              "copies": 1,
+              "truth": "1777",
+              "activity": 398,
+              "gates": 5
+            },
+            "e11e": {
+              "copies": 42,
+              "truth": "e11e",
+              "activity": 224,
+              "gates": 3
+            },
+            "00d4": {
+              "copies": 42,
+              "truth": "00d4",
+              "activity": 440,
+              "gates": 5
+            },
+            "1117": {
+              "copies": 41,
+              "truth": "1117",
+              "activity": 440,
+              "gates": 5
+            },
+            "eee8": {
+              "copies": 1,
+              "truth": "eee8",
+              "activity": 440,
+              "gates": 5
+            }
+          }
+        }
+      },
+      "combined_audit_wall_s": 4.278571399999919
+    },
+    {
+      "benchmark": "priority",
+      "source": "https://github.com/lsils/benchmarks/blob/82d8cc6910419298e713a46644ed59fd3df53038/random_control/priority.aig",
+      "blob": "6d25253a36a3a378c4a25a522f9406409f091fda",
+      "command": "read_aiger .local/downloads/epfl-priority.aig; strash; if -K 4; write_blif .local/epfl-cut-check/priority-mapped.blif",
+      "mapping_s": 0.5789802000000464,
+      "lookup_nodes": 327,
+      "essential_4lut": 198,
+      "distinct_truths": 14,
+      "distinct_classes": 6,
+      "arms": {
+        "activity": {
+          "expansion_s": 0.038931800000000294,
+          "cec_s": 0.4875216000000364,
+          "charged_activity": 44590,
+          "two_input_gates": 848,
+          "cec": "ABC command line: \"cec .local/downloads/epfl-priority.aig .local/epfl-cut-check/priority-activity.blif\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.17 sec",
+          "netlist_sha256": "be6fa244d7041388465a8d6506ee41998dd5916fb41b9ceb53ba8d1ed29549f9",
+          "per_truth": {
+            "3335": {
+              "copies": 2,
+              "truth": "3335",
+              "activity": 264,
+              "gates": 5
+            },
+            "00f4": {
+              "copies": 1,
+              "truth": "00f4",
+              "activity": 216,
+              "gates": 3
+            },
+            "cacc": {
+              "copies": 60,
+              "truth": "cacc",
+              "activity": 264,
+              "gates": 5
+            },
+            "c5cc": {
+              "copies": 1,
+              "truth": "c5cc",
+              "activity": 264,
+              "gates": 5
+            },
+            "333a": {
+              "copies": 56,
+              "truth": "333a",
+              "activity": 264,
+              "gates": 5
+            },
+            "f044": {
+              "copies": 1,
+              "truth": "f044",
+              "activity": 248,
+              "gates": 4
+            },
+            "0007": {
+              "copies": 1,
+              "truth": "0007",
+              "activity": 182,
+              "gates": 4
+            },
+            "fe00": {
+              "copies": 1,
+              "truth": "fe00",
+              "activity": 152,
+              "gates": 3
+            },
+            "3a33": {
+              "copies": 7,
+              "truth": "3a33",
+              "activity": 264,
+              "gates": 5
+            },
+            "0001": {
+              "copies": 30,
+              "truth": "0001",
+              "activity": 152,
+              "gates": 3
+            },
+            "8f00": {
+              "copies": 3,
+              "truth": "8f00",
+              "activity": 216,
+              "gates": 3
+            },
+            "0100": {
+              "copies": 33,
+              "truth": "0100",
+              "activity": 152,
+              "gates": 3
+            },
+            "1000": {
+              "copies": 1,
+              "truth": "1000",
+              "activity": 152,
+              "gates": 3
+            },
+            "4000": {
+              "copies": 1,
+              "truth": "4000",
+              "activity": 152,
+              "gates": 3
+            }
+          }
+        },
+        "area": {
+          "expansion_s": 4.856300999999917,
+          "cec_s": 0.8192142000000331,
+          "charged_activity": 49824,
+          "two_input_gates": 721,
+          "cec": "ABC command line: \"cec .local/downloads/epfl-priority.aig .local/epfl-cut-check/priority-area.blif\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.24 sec",
+          "netlist_sha256": "9d632334d5f6e7ffad81c3e3bc3079bb3596fc9ad39b5763475654c5b855d0bd",
+          "per_truth": {
+            "3335": {
+              "copies": 2,
+              "truth": "3335",
+              "activity": 344,
+              "gates": 4
+            },
+            "00f4": {
+              "copies": 1,
+              "truth": "00f4",
+              "activity": 216,
+              "gates": 3
+            },
+            "cacc": {
+              "copies": 60,
+              "truth": "cacc",
+              "activity": 272,
+              "gates": 4
+            },
+            "c5cc": {
+              "copies": 1,
+              "truth": "c5cc",
+              "activity": 272,
+              "gates": 4
+            },
+            "333a": {
+              "copies": 56,
+              "truth": "333a",
+              "activity": 344,
+              "gates": 4
+            },
+            "f044": {
+              "copies": 1,
+              "truth": "f044",
+              "activity": 248,
+              "gates": 4
+            },
+            "0007": {
+              "copies": 1,
+              "truth": "0007",
+              "activity": 192,
+              "gates": 3
+            },
+            "fe00": {
+              "copies": 1,
+              "truth": "fe00",
+              "activity": 152,
+              "gates": 3
+            },
+            "3a33": {
+              "copies": 7,
+              "truth": "3a33",
+              "activity": 272,
+              "gates": 4
+            },
+            "0001": {
+              "copies": 30,
+              "truth": "0001",
+              "activity": 152,
+              "gates": 3
+            },
+            "8f00": {
+              "copies": 3,
+              "truth": "8f00",
+              "activity": 216,
+              "gates": 3
+            },
+            "0100": {
+              "copies": 33,
+              "truth": "0100",
+              "activity": 152,
+              "gates": 3
+            },
+            "1000": {
+              "copies": 1,
+              "truth": "1000",
+              "activity": 152,
+              "gates": 3
+            },
+            "4000": {
+              "copies": 1,
+              "truth": "4000",
+              "activity": 192,
+              "gates": 3
+            }
+          }
+        }
+      },
+      "combined_audit_wall_s": 6.80278629999998
+    },
+    {
+      "benchmark": "router",
+      "source": "https://github.com/lsils/benchmarks/blob/82d8cc6910419298e713a46644ed59fd3df53038/random_control/router.aig",
+      "blob": "46f1176a3707c7926e6a236701f01c7d330c18a4",
+      "command": "read_aiger .local/downloads/epfl-router.aig; strash; if -K 4; write_blif .local/epfl-cut-check/router-mapped.blif",
+      "mapping_s": 0.5185940000000073,
+      "lookup_nodes": 130,
+      "essential_4lut": 53,
+      "distinct_truths": 21,
+      "distinct_classes": 9,
+      "arms": {
+        "activity": {
+          "expansion_s": 0.06024810000008074,
+          "cec_s": 0.36635599999999613,
+          "charged_activity": 9934,
+          "two_input_gates": 177,
+          "cec": "ABC command line: \"cec .local/downloads/epfl-router.aig .local/epfl-cut-check/router-activity.blif\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.02 sec",
+          "netlist_sha256": "b861b34f81414148f236db3c4e8d8c7624e73bb108ad828e5c03a0838dd78c71",
+          "per_truth": {
+            "007f": {
+              "copies": 3,
+              "truth": "007f",
+              "activity": 152,
+              "gates": 3
+            },
+            "8000": {
+              "copies": 5,
+              "truth": "8000",
+              "activity": 152,
+              "gates": 3
+            },
+            "4000": {
+              "copies": 7,
+              "truth": "4000",
+              "activity": 152,
+              "gates": 3
+            },
+            "2c00": {
+              "copies": 1,
+              "truth": "2c00",
+              "activity": 310,
+              "gates": 5
+            },
+            "1000": {
+              "copies": 7,
+              "truth": "1000",
+              "activity": 152,
+              "gates": 3
+            },
+            "1400": {
+              "copies": 2,
+              "truth": "1400",
+              "activity": 208,
+              "gates": 4
+            },
+            "b000": {
+              "copies": 2,
+              "truth": "b000",
+              "activity": 182,
+              "gates": 4
+            },
+            "00bf": {
+              "copies": 1,
+              "truth": "00bf",
+              "activity": 152,
+              "gates": 3
+            },
+            "001f": {
+              "copies": 3,
+              "truth": "001f",
+              "activity": 216,
+              "gates": 3
+            },
+            "f800": {
+              "copies": 2,
+              "truth": "f800",
+              "activity": 216,
+              "gates": 3
+            },
+            "1fe0": {
+              "copies": 2,
+              "truth": "1fe0",
+              "activity": 216,
+              "gates": 3
+            },
+            "d02f": {
+              "copies": 1,
+              "truth": "d02f",
+              "activity": 216,
+              "gates": 3
+            },
+            "4200": {
+              "copies": 2,
+              "truth": "4200",
+              "activity": 336,
+              "gates": 5
+            },
+            "1800": {
+              "copies": 2,
+              "truth": "1800",
+              "activity": 336,
+              "gates": 5
+            },
+            "9000": {
+              "copies": 2,
+              "truth": "9000",
+              "activity": 208,
+              "gates": 4
+            },
+            "0100": {
+              "copies": 3,
+              "truth": "0100",
+              "activity": 152,
+              "gates": 3
+            },
+            "0001": {
+              "copies": 2,
+              "truth": "0001",
+              "activity": 152,
+              "gates": 3
+            },
+            "00fe": {
+              "copies": 1,
+              "truth": "00fe",
+              "activity": 152,
+              "gates": 3
+            },
+            "0007": {
+              "copies": 2,
+              "truth": "0007",
+              "activity": 182,
+              "gates": 4
+            },
+            "7f80": {
+              "copies": 1,
+              "truth": "7f80",
+              "activity": 152,
+              "gates": 3
+            },
+            "07f8": {
+              "copies": 2,
+              "truth": "07f8",
+              "activity": 216,
+              "gates": 3
+            }
+          }
+        },
+        "area": {
+          "expansion_s": 5.878012100000092,
+          "cec_s": 0.49233229999993,
+          "charged_activity": 10664,
+          "two_input_gates": 164,
+          "cec": "ABC command line: \"cec .local/downloads/epfl-router.aig .local/epfl-cut-check/router-area.blif\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.02 sec",
+          "netlist_sha256": "bc88dfc8b098913b654eff3b74337e6a42db1606a9706eb9b52d460b01188710",
+          "per_truth": {
+            "007f": {
+              "copies": 3,
+              "truth": "007f",
+              "activity": 152,
+              "gates": 3
+            },
+            "8000": {
+              "copies": 5,
+              "truth": "8000",
+              "activity": 192,
+              "gates": 3
+            },
+            "4000": {
+              "copies": 7,
+              "truth": "4000",
+              "activity": 192,
+              "gates": 3
+            },
+            "2c00": {
+              "copies": 1,
+              "truth": "2c00",
+              "activity": 344,
+              "gates": 4
+            },
+            "1000": {
+              "copies": 7,
+              "truth": "1000",
+              "activity": 152,
+              "gates": 3
+            },
+            "1400": {
+              "copies": 2,
+              "truth": "1400",
+              "activity": 224,
+              "gates": 3
+            },
+            "b000": {
+              "copies": 2,
+              "truth": "b000",
+              "activity": 216,
+              "gates": 3
+            },
+            "00bf": {
+              "copies": 1,
+              "truth": "00bf",
+              "activity": 152,
+              "gates": 3
+            },
+            "001f": {
+              "copies": 3,
+              "truth": "001f",
+              "activity": 216,
+              "gates": 3
+            },
+            "f800": {
+              "copies": 2,
+              "truth": "f800",
+              "activity": 216,
+              "gates": 3
+            },
+            "1fe0": {
+              "copies": 2,
+              "truth": "1fe0",
+              "activity": 216,
+              "gates": 3
+            },
+            "d02f": {
+              "copies": 1,
+              "truth": "d02f",
+              "activity": 216,
+              "gates": 3
+            },
+            "4200": {
+              "copies": 2,
+              "truth": "4200",
+              "activity": 352,
+              "gates": 4
+            },
+            "1800": {
+              "copies": 2,
+              "truth": "1800",
+              "activity": 352,
+              "gates": 4
+            },
+            "9000": {
+              "copies": 2,
+              "truth": "9000",
+              "activity": 224,
+              "gates": 3
+            },
+            "0100": {
+              "copies": 3,
+              "truth": "0100",
+              "activity": 152,
+              "gates": 3
+            },
+            "0001": {
+              "copies": 2,
+              "truth": "0001",
+              "activity": 152,
+              "gates": 3
+            },
+            "00fe": {
+              "copies": 1,
+              "truth": "00fe",
+              "activity": 152,
+              "gates": 3
+            },
+            "0007": {
+              "copies": 2,
+              "truth": "0007",
+              "activity": 192,
+              "gates": 3
+            },
+            "7f80": {
+              "copies": 1,
+              "truth": "7f80",
+              "activity": 152,
+              "gates": 3
+            },
+            "07f8": {
+              "copies": 2,
+              "truth": "07f8",
+              "activity": 216,
+              "gates": 3
+            }
+          }
+        }
+      },
+      "combined_audit_wall_s": 7.323825700000043
+    }
+  ]
+}
