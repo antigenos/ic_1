@@ -33,13 +33,22 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('exe', type=Path)
     p.add_argument('n', type=int)
-    p.add_argument('cap', type=int)
+    p.add_argument('cap', help='total budget, or auto for residual completion')
     p.add_argument('mode', choices=['projected','uniform','direct'])
     p.add_argument('directory', type=Path)
+    p.add_argument('--seed', type=int, help='use the two-pass executable and this prefix budget')
+    p.add_argument('--cpu', type=int)
     args = p.parse_args()
+    if args.cpu is not None:
+        import sys
+        sys.path.insert(0,str(Path(__file__).resolve().parents[3]/'tools'))
+        from repeat_0189 import pin
+        pin(args.cpu)
     args.directory.mkdir(parents=True, exist_ok=False)
     table = args.directory / 'table.tsv'
     switches = [str(args.n), str(args.cap)]
+    if args.seed is not None:
+        switches.insert(1,str(args.seed))
     if args.mode != 'direct':
         switches.append(args.mode)
     cmd = [str(args.exe.resolve()), *switches, str(table.resolve())]
@@ -47,8 +56,12 @@ if __name__ == '__main__':
                   source=digest(Path(__file__).with_name('frontier.cpp')),
                   started=datetime.now(timezone.utc).isoformat(), host=platform.platform(),
                   processor=platform.processor())
-    if args.mode=='direct':
+    if args.mode=='direct' or args.seed is not None:
         launch['direct_source']=digest(Path(__file__).with_name('direct.cpp'))
+    if args.seed is not None:
+        launch['refine_source']=digest(Path(__file__).with_name('refine.cpp'))
+    if args.cpu is not None:
+        launch['cpu']=args.cpu
     start = time.perf_counter()
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     (args.directory/'launch.json').write_text(json.dumps(dict(launch, pid=proc.pid), indent=2))

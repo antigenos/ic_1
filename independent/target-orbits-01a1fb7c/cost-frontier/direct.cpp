@@ -30,9 +30,9 @@ Bits removable(const Recipes& recipes) {
 
 struct Direct : Search {
     using Search::Search;
-    uint64_t rejected=0, fringe=0;
+    uint64_t rejected=0, fringe=0, terminal_cuts=0;
 
-    void direct() {
+    void direct(const std::vector<int>* operand_ceiling=nullptr, int two_ceiling=-1) {
         using Level=std::unordered_set<State, StateHash>;
         Level level, next;
         level.insert(State{});
@@ -46,6 +46,9 @@ struct Direct : Search {
                 State a=pins;
                 a.insert(a.end(),s.begin(),s.end());
                 int cost=0;
+                int ceiling=two_ceiling;
+                if (operand_ceiling)
+                    for (Wire v : a) ceiling=std::max(ceiling,(*operand_ceiling)[rep[v]]);
                 for (size_t i=0; i<s.size(); ++i) {
                     index[s[i]]=i;
                     cost+=weights[s[i]];
@@ -96,7 +99,10 @@ struct Direct : Search {
                 for (Wire v : choices) {
                     ++edges;
                     int b=cost+weights[v];
-                    if (b+price(1)>cap) {
+                    bool terminal=operand_ceiling &&
+                        b>std::max(ceiling,(*operand_ceiling)[rep[v]]);
+                    if (b+price(1)>cap || terminal) {
+                        if (terminal && b+price(1)<=cap) ++terminal_cuts;
                         ++fringe;
                         for (Wire x : a) for (Wire f : combine(x,v)) offer(f,b,s,v);
                     } else {
@@ -112,6 +118,7 @@ struct Direct : Search {
     }
 };
 
+#ifndef DIRECT_LIBRARY
 int main(int argc,char** argv) {
     if (argc!=4) return 2;
     int n=std::stoi(argv[1]), cap=std::stoi(argv[2]);
@@ -134,3 +141,4 @@ int main(int argc,char** argv) {
              <<std::chrono::duration<double>(Clock::now()-start).count()<<"\n";
     return out ? 0 : 3;
 }
+#endif
