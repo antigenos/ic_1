@@ -107,6 +107,21 @@ def checked_answer(row, bounds):
     return answer
 
 
+def record_result(row, bounds, work, evidence):
+    try:
+        if row["status"] == "completed":
+            checked_answer(row, bounds)
+        elif row["status"] != "timeout" or row["wall_s"] < 299.95:
+            raise ValueError(f"Unexpected outcome at position {row['order']}")
+    except Exception:
+        failed = dict(row, status="invalid_execution")
+        with (work / f"failed-{row['order']}.json").open("x", encoding="utf8") as f:
+            json.dump(failed, f)
+        raise
+    evidence.write(json.dumps(row) + "\n")
+    evidence.flush()
+
+
 def verified_prefix(previous, plan, sources_by_arm, cpu, bounds):
     if previous is None:
         return [], ""
@@ -232,7 +247,7 @@ def main():
                     assert row["child_affinity"] == [args.cpu]
                     (work / f"launch-{i}.json").write_text(json.dumps(row))
                     stdout, stderr = p.communicate(timeout=max(0, 300-(time.perf_counter()-start)))
-                    row["status"] = "completed"
+                    row["status"] = "completed" if p.returncode == 0 else "invalid_execution"
                 except subprocess.TimeoutExpired:
                     p.kill()
                     stdout, stderr = p.communicate()
@@ -244,10 +259,7 @@ def main():
                 row.update(wall_s=time.perf_counter()-start, exitcode=p.returncode, stdout=stdout, stderr=stderr)
                 if args.storage_control and os.name == "nt":
                     row["peak_working_set_bytes"] = peak_working_set_bytes(p)
-            evidence.write(json.dumps(row) + "\n")
-            evidence.flush()
-            if row["status"] == "completed":
-                checked_answer(row, bounds)
+            record_result(row, bounds, work, evidence)
             print(truth, arm, row["status"], round(row["wall_s"], 3), flush=True)
     if samples is not None:
         finished = time.time()

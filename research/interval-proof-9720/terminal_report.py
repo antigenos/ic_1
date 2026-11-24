@@ -5,7 +5,7 @@ import json
 from math import exp, fsum, log
 from pathlib import Path
 
-from audit_host import exposure
+from audit_host import exposure, timestamp
 from family import HERE
 from terminal_compare import PLAN, STORAGE_PLAN, holdout_plan
 
@@ -13,12 +13,17 @@ from terminal_compare import PLAN, STORAGE_PLAN, holdout_plan
 METHOD = {"A": "full_enumeration", "T": "terminal_output_matching", "D": "deduplicated_terminal_matching"}
 
 
-def host_exposures(raw, sample_file, plan, rows):
+def host_exposures(raw, sample_files, plan, rows):
     records = [json.loads(line) for line in raw.read_bytes().splitlines()]
-    samples = [json.loads(line) for line in sample_file.read_bytes().splitlines()]
-    post = sample_file.with_name("post-sample.json")
-    if post.is_file():
-        samples.append(json.loads(post.read_bytes()))
+    samples, starts = [], []
+    for sample_file in sample_files:
+        segment = [json.loads(line) for line in sample_file.read_bytes().splitlines()]
+        assert segment
+        starts.append(segment[0]["epoch"])
+        samples.extend(segment)
+        post = sample_file.with_name("post-sample.json")
+        if post.is_file():
+            samples.append(json.loads(post.read_bytes()))
     epochs = [s["epoch"] for s in samples]
     assert epochs and all(b > a for a, b in zip(epochs, epochs[1:]))
     assert [(r["truth"], r["strict_cap"], r["arm"]) for r in records] == plan
@@ -29,10 +34,14 @@ def host_exposures(raw, sample_file, plan, rows):
         assert (row["outcome"] == "timeout") == (r["status"] == "timeout")
         cpu, = r["child_affinity"]
         flags.append(exposure(dict(r, experiment={"cpu": cpu}), samples, epochs))
+    for i in range(0, len(records), 2):
+        first, second = timestamp(records[i]), timestamp(records[i+1])
+        if any(first < start <= second for start in starts[1:]):
+            flags[i+1].add("across_session")
     return flags
 
 
-def summarize(source, panel, raw=None, samples=None):
+def summarize(source, panel, raw=None, *samples):
     bounds = json.loads((HERE / "evidence/constructed-through-432.json").read_bytes())["bounds"]
     if panel == "holdout":
         register = json.loads((HERE / "evidence/terminal-holdout-plan.json").read_bytes())
@@ -102,6 +111,9 @@ if __name__ == "__main__":
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument("measurements", type=Path)
     cli.add_argument("panel", choices=("pilot", "holdout", "storage"))
-    cli.add_argument("--local-host-audit", type=Path, nargs=2, metavar=("TRIALS", "SAMPLES"))
+    cli.add_argument("--local-host-audit", type=Path, nargs="+", metavar="FILE",
+                     help="Local trials followed by chronological host sampling files")
     args = cli.parse_args()
+    if args.local_host_audit and len(args.local_host_audit) < 2:
+        cli.error("Supply the local trials and at least one host sampling file")
     print(json.dumps(summarize(args.measurements, args.panel, *(args.local_host_audit or ())), indent=2))
