@@ -1,0 +1,101 @@
+{
+  "tests": 496825,
+  "kinds": {
+    "upper_rejection": 146932,
+    "hit": 239358,
+    "interval_rejection": 110034,
+    "hole": 501
+  },
+  "examples": {
+    "upper_rejection": {
+      "op": 2,
+      "target": 0,
+      "charged": 1,
+      "pair": [
+        1,
+        2
+      ],
+      "other_domains": [
+        [
+          1
+        ]
+      ],
+      "other_sums": [
+        6
+      ],
+      "window": [
+        0,
+        0
+      ],
+      "used": 6
+    },
+    "hit": {
+      "op": 2,
+      "target": 0,
+      "charged": 1,
+      "pair": [
+        1,
+        2
+      ],
+      "other_domains": [
+        [
+          1
+        ]
+      ],
+      "other_sums": [
+        6
+      ],
+      "window": [
+        0,
+        12
+      ],
+      "used": 6
+    },
+    "interval_rejection": {
+      "op": 2,
+      "target": 0,
+      "charged": 1,
+      "pair": [
+        1,
+        2
+      ],
+      "other_domains": [
+        [
+          1
+        ]
+      ],
+      "other_sums": [
+        6
+      ],
+      "window": [
+        13,
+        13
+      ],
+      "used": 6
+    },
+    "hole": {
+      "op": 2,
+      "target": 0,
+      "charged": 1,
+      "pair": [
+        1,
+        2
+      ],
+      "other_domains": [
+        [
+          1,
+          2
+        ]
+      ],
+      "other_sums": [
+        6,
+        8
+      ],
+      "window": [
+        13,
+        13
+      ],
+      "used": 6
+    }
+  }
+}
