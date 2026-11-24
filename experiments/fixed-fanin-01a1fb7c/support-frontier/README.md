@@ -71,6 +71,8 @@ python "$study/workload.py" $epfl $abc .local/fresh-profiled-aigs .local/fresh-u
 
 ## 检查点
 
+阶段 15 从 GitHub 干净检出提交 `945662e`，重新编译两套 C++ 搜索，从零复算六输入保留集和独立证明，重新检查树形最优与关联输入动态规划，并重新运行全部 20 个整机留出实验。所有面板计数、电路指纹和逻辑深度与归档一致。复算复用了已记录指纹的公开 EPFL 输入和已构建的 ABC 核验程序，20 个整机实验合计用时 130.12 秒。[干净检出的验收记录](evidence/public-recompute.json) · [可重跑的验收程序](confirm_release.py)
+
 GitHub 专用分支为 `codex/support-frontier-01a1fb7c`。下列提交分别保留理论预登记、独立证明核验、原始反向结果和修正后的方法，便于按阶段恢复工作。
 
 | 可回退状态 | GitHub 提交 |

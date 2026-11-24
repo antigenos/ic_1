@@ -1,0 +1,49 @@
+{
+  "commit": "945662e5c8867186021b48f139a35c950bb0f594",
+  "tree": "fc0e1282d2c3c0996912954cfd3d34c82caccc5b",
+  "steps": {
+    "archive_audit": {
+      "wall_s": 3.4469087999998465,
+      "stdout_sha256": "452c95de196a118338800d0f46cd62961767ad059dd99868b633e2ec671d72f6"
+    },
+    "rebuild_frontier": {
+      "wall_s": 5.591650200000004,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "rebuild_postfix": {
+      "wall_s": 5.60243370000012,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "fresh_six_forward": {
+      "wall_s": 4.678698999999824,
+      "stdout_sha256": "ee98181e27c1ec8742b6fda6948a3f089ec3890a01e4f47c6970bc60c92751b3"
+    },
+    "fresh_six_postfix": {
+      "wall_s": 25.965252599999985,
+      "stdout_sha256": "314b53285bf3635d85ba575bd22bbbc2342a7a93a6a5d1cfc1ca8e417fa028e2"
+    },
+    "tree_and_native": {
+      "wall_s": 9.566501799999969,
+      "stdout_sha256": "cd33466564919cf26fea60bb350249febedf4d50cd3555cfa74f0e9d34b73b53"
+    },
+    "fresh_joint_dp": {
+      "wall_s": 0.7370215000000826,
+      "stdout_sha256": "1dacd6e86993ecbe1040678e6e91b477324c1d3e8f203f2f50fe457b09a5ba43"
+    },
+    "all_twenty_heldout": {
+      "wall_s": 130.11524830000008,
+      "stdout_sha256": "67de1ed329b7b295d70cdb0eefdd9ecb8b5dadc9b06580e8095e8e76731a446f"
+    }
+  },
+  "clean": true,
+  "six_classes": 16,
+  "empirical_deadline_checks": 394,
+  "designs": 20,
+  "heldout_transitions": [
+    1400374454,
+    1393414464,
+    1384819938
+  ],
+  "matched_all_panels_topologies_depths": true,
+  "reused_inputs": "Pinned EPFL AIGs by blob hash and previously built pinned ABC validators"
+}
