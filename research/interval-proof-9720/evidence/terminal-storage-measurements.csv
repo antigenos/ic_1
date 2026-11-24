@@ -1,0 +1,5 @@
+order,truth,method,strict_activity_cap,timeout_s,outcome,capped_elapsed_s,optimum,gates,expanded_states,terminal_edges,terminal_check_calls,retained_terminal_states,peak_working_set_bytes
+1,0016,deduplicated_terminal_matching,433,300,completed,64.19368710000003,406,6,750725,4942144,139725,139725,115339264
+2,0016,terminal_output_matching,433,300,completed,66.75513569999987,406,6,750725,4942144,381094,0,104849408
+3,012c,terminal_output_matching,433,300,proved_no_solution_below_cap,93.95682229999989,,,750725,4942144,4942144,0,104505344
+4,012c,deduplicated_terminal_matching,433,300,proved_no_solution_below_cap,84.48254640000005,,,750725,4942144,1674200,1674200,241733632

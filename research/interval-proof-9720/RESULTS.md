@@ -12,3 +12,14 @@
 方法利用了非平凡内部信号的最低活动度代价 30。当新信号加入后的活动度再加 30 已达到严格界时，仍可能用最后一个免费输出门命中目标。父状态已检查旧信号对，故此处只需检查新信号与各个旧信号的五种输出。直接匹配末级五种运算有 Knuth 的 BOOLCHAINS 源码先例。本实验考察活动度界下跳过末状态展开与存储的效果。[Knuth 作者程序页](https://cs.stanford.edu/~knuth/programs.html) · [DATE 原文](https://www.cda.cit.tum.de/files/eda/2026_date_exact_synthesis_with_optimal_switching_activity.pdf)
 
 在本目录运行 `python terminal_report.py evidence/terminal-holdout-measurements.csv holdout` 可从公开测量表复算配对比、截断时间和验收判据。八例按已知活动度分层抽取，表中加速比适用于这个有界证明面板。另行登记的 208 类主对照衡量 TCJAP 重建版与保存见证的 SAT 版本在完整优化上的完成数。
+
+## 终态存储的独立作用
+
+在同一份直接末级匹配代码中，只切换是否保存已检查的末状态集合。两个函数均展开了 750,725 个非末状态，经过 4,942,144 条末状态入边。0016 的两版均得到活动度 406 的六门最优电路，012c 的两版均证明活动度至少为 433。按预登记采用相反的运行顺序，四次均在时限内结束。[消融测量](evidence/terminal-storage-measurements.csv) · [428 项界限检查](evidence/terminal-storage-checks.json)
+
+| 函数 | 保存末状态去重 | 逐条匹配入边 | 实际匹配次数（去重 / 逐条） | 峰值工作集（去重 / 逐条） |
+|---|---:|---:|---:|---:|
+| 0016 | 64.19 秒 | 66.76 秒 | 139,725 / 381,094 | 110.0 / 100.0 MiB |
+| 012c | 84.48 秒 | 93.96 秒 | 1,674,200 / 4,942,144 | 230.5 / 99.7 MiB |
+
+**两个函数上，去重都缩短了时间，逐条匹配都降低了内存。** 界外函数 012c 的两版相差 130.9 MiB。八例面板的 2.807 倍描述了从完整枚举切换至有界末级匹配的整体时间变化。单独撤去终态存储所能归因的收益是这两例的内存下降。复算命令为 `python terminal_report.py evidence/terminal-storage-measurements.csv storage`。
