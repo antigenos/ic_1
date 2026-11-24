@@ -29,3 +29,11 @@
 在新增全族计时前登记如下判据。沿用确认面板中冻结的逐条匹配版本，每个目标从初始输入开始，用严格界 433 和 300 秒墙钟上限单独运行。成功须在时限内返回合法电路并穷尽所有更低代价。界内无解和超时均计入未取得最优电路的分母。报告 208 个目标的实际用时总和，并另报将每个未解决目标计满 300 秒的总成本。与三组冻结对照逐函数核对完成数、仅一方完成的目标及共同解的活动度。只有精确完成数超过本机 TCJAP 重建版的 80，才支持该预算下覆盖数增加。
 
 沿用相同源码、界限、单核冷启动和时限的定向实验 0016 与八例确认面板，共 9 个目标，其余 199 个全部按 `SHA256("9720-terminal-433/" + truth)` 的升序测量。此前的跨目标共享枚举为 95 个函数构造了最优电路，此数仅用来核查数学结果。各冷启动子进程禁止读取该枚举、目标清单与其他函数的结果。从头复跑全部目标可用 `terminal_compare.py --terminal-family full`，复用两组既有测量时用 `--terminal-family remaining`，再用 `audit_terminal_family.py` 核对并合并三个来源。这个覆盖验证与保存见证的 SAT 主对照各自保留分母。
+
+在本目录可用以下命令独立复跑 208 个函数。第一行的编号指定本机可用的逻辑核心。第二行从原始结果复核源码摘要、上下界、返回电路、活动度和时限，导出逐函数科学测量。第三行只读结果表和仓库中的冻结证据，重算完成数、成本及新增和丢失的函数。
+
+```text
+python terminal_compare.py .local/family-fresh.jsonl --terminal-family full --cpu 0
+python audit_terminal_family.py --full .local/family-fresh.jsonl --output .local/family-fresh.csv
+python audit_terminal_family.py --summary-csv .local/family-fresh.csv
+```
