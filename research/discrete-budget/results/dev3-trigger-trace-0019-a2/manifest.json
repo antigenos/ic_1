@@ -1,0 +1,32 @@
+{
+  "kind": "trigger-trace",
+  "cases": [
+    "0019"
+  ],
+  "source_commit": "4bca56b17fa7028163ad11aa685b9d76d81f205c",
+  "outer": "5400328802c98c1870fb7f61ff2475f698ee48ea",
+  "cpu": 30,
+  "physical": [
+    30,
+    31
+  ],
+  "methods": [
+    "trigger"
+  ],
+  "binaries": {
+    "trigger": "d0ff1386945ae58fe44f03b684e6ba7e4cf104546e401c5158ba857771f30f85"
+  },
+  "cap": 120,
+  "env": {
+    "OPTWIN_MODE": "both",
+    "REPLAY_RULES": "both",
+    "REPLAY_BUDGET": "1",
+    "OPTWIN_TRACE": "1",
+    "REPLAY_STATS": "1",
+    "REPLAY_TRACE": "1"
+  },
+  "reference": {
+    "0019": 310
+  },
+  "order": "forward then reverse; alternate first direction across functions"
+}

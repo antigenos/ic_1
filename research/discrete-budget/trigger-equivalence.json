@@ -1,0 +1,82 @@
+{
+  "0189": {
+    "identical_records": 5412,
+    "semantic_sha256": "a29085e19550f3efa77beadf3d9df9a6f653a99b4550e53e27bcc6003cca0b97",
+    "holes": {
+      "calls": 71256,
+      "builds": 71256,
+      "fixed": 108819,
+      "membership": 130562,
+      "domain_ticks": 125792,
+      "kernel_ticks": 229667,
+      "reason_ticks": 37404,
+      "reason_attempts": 5341,
+      "decisions": 51644,
+      "propagations": 4081705,
+      "frequency": 10000000
+    },
+    "trigger": {
+      "calls": 18210,
+      "builds": 18210,
+      "fixed": 39005,
+      "membership": 58020,
+      "domain_ticks": 24367,
+      "kernel_ticks": 87107,
+      "reason_ticks": 34214,
+      "reason_attempts": 5341,
+      "decisions": 51644,
+      "propagations": 4081705,
+      "trigger_considered": 71256,
+      "trigger_ticks": 29872,
+      "frequency": 10000000
+    },
+    "clauses": {
+      "joint_sel": 741,
+      "joint_count": 4281,
+      "interval_count": 87,
+      "interval_sel": 2,
+      "holes_sel": 58,
+      "holes_count": 172
+    }
+  },
+  "0019": {
+    "identical_records": 12530,
+    "semantic_sha256": "5a91dc4f092b8b1c0203a2d3715d9ff5181e79d0e55e7d4e4613b182f10ed41a",
+    "holes": {
+      "calls": 242562,
+      "builds": 242562,
+      "fixed": 334547,
+      "membership": 391717,
+      "domain_ticks": 470154,
+      "kernel_ticks": 696690,
+      "reason_ticks": 99312,
+      "reason_attempts": 12437,
+      "decisions": 148407,
+      "propagations": 15251009,
+      "frequency": 10000000
+    },
+    "trigger": {
+      "calls": 89065,
+      "builds": 89065,
+      "fixed": 159878,
+      "membership": 209931,
+      "domain_ticks": 157125,
+      "kernel_ticks": 350591,
+      "reason_ticks": 83067,
+      "reason_attempts": 12437,
+      "decisions": 148407,
+      "propagations": 15251009,
+      "trigger_considered": 242562,
+      "trigger_ticks": 100948,
+      "frequency": 10000000
+    },
+    "clauses": {
+      "joint_sel": 2462,
+      "joint_count": 8815,
+      "interval_sel": 42,
+      "interval_count": 131,
+      "holes_sel": 338,
+      "holes_count": 649
+    }
+  }
+}

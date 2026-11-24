@@ -9,6 +9,7 @@ from screen_cost_window import measure
 
 
 def main():
+    (HERE/".local").mkdir(exist_ok=True)
     groups=defaultdict(set)
     for line in gitfile("evidence/filtered-0189/solver.log").decode().splitlines():
         if line.startswith("WINDOW "):

@@ -1,0 +1,31 @@
+{
+  "kind": "trigger-profile",
+  "cases": [
+    "0189"
+  ],
+  "source_commit": "4e9b7ca8e3c5f29ee35e21f2a8bcb7f407c9fa0c",
+  "outer": "5400328802c98c1870fb7f61ff2475f698ee48ea",
+  "cpu": 30,
+  "physical": [
+    30,
+    31
+  ],
+  "methods": [
+    "trigger"
+  ],
+  "binaries": {
+    "trigger": "5715ed944db677e70ec68874f726baec483a9982d071ef58e5976361177156ce"
+  },
+  "cap": 120,
+  "env": {
+    "OPTWIN_MODE": "both",
+    "REPLAY_RULES": "both",
+    "REPLAY_BUDGET": "1",
+    "OPTWIN_TRACE": "1",
+    "REPLAY_STATS": "1"
+  },
+  "reference": {
+    "0189": 304
+  },
+  "order": "forward then reverse; alternate first direction across functions"
+}

@@ -1,5 +1,6 @@
 """Check trigger/H equivalence for actual searches, including emitted clauses in order."""
 import gzip
+import argparse
 import hashlib
 import json
 from build import HERE
@@ -16,13 +17,19 @@ def trace(prefix,truth,mode):
 
 
 def main():
-    hp=json.loads((HERE/"development-profile.json").read_text())
-    tp=diagnostic("dev3-trigger-profile")
-    tr=diagnostic("dev3-trigger-trace")
+    p=argparse.ArgumentParser()
+    p.add_argument("--base-profile",default="dev2-profile")
+    p.add_argument("--base-trace",default="dev2-trace")
+    p.add_argument("--trigger-profile",default="dev3-trigger-profile")
+    p.add_argument("--trigger-trace",default="dev3-trigger-trace")
+    args=p.parse_args()
+    hp=diagnostic(args.base_profile)
+    tp=diagnostic(args.trigger_profile)
+    tr=diagnostic(args.trigger_trace)
     out={}
     for truth in ("0189","0019"):
-        a=trace("dev2-trace",truth,"holes")
-        b=trace("dev3-trigger-trace",truth,"trigger")
+        a=trace(args.base_trace,truth,"holes")
+        b=trace(args.trigger_trace,truth,"trigger")
         assert a==b
         h=hp[truth+"-holes"]
         t=tp[truth+"-trigger"]
