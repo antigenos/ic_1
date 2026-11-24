@@ -1,0 +1,85 @@
+{
+  "version": "82d8cc6910419298e713a46644ed59fd3df53038",
+  "input_sha256": "9123187c4169189f53f17a84367c4bd5f749b13298f9619ef601c5de4ee90678",
+  "git_blob": "6d25253a36a3a378c4a25a522f9406409f091fda",
+  "cpu": 24,
+  "abc_sha256": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+  "cuts": 8,
+  "cut_sha256": "923d3f3212090cfa57d13661fe158a23db5b72bdaa2821cb550fff0cebab0eec",
+  "examined": 293,
+  "eligible": 8,
+  "widths": {
+    "4": 8
+  },
+  "area": [
+    978,
+    978,
+    986
+  ],
+  "depth": [
+    250,
+    249,
+    250
+  ],
+  "equivalence": {
+    "size": {
+      "wall_s": 0.17949290000001383,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/priority.aig\" \"priority-size.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.02 sec",
+      "sha256": "3902c77e6a9a4f1b91f14a43169c0bf3b3cd491ea29eded53e1de179b1ae7925"
+    },
+    "activity": {
+      "wall_s": 0.1767578000000185,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/priority.aig\" \"priority-activity.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.02 sec",
+      "sha256": "744110fe1ca41ed122b29cf4218838ec6254cdc2fdd961496cfc1a63197a0807"
+    }
+  },
+  "local_uniform_sum": [
+    6.75,
+    6.0,
+    5.6875
+  ],
+  "panels": [
+    [
+      137313,
+      137388,
+      137612
+    ],
+    [
+      139273,
+      139371,
+      139636
+    ],
+    [
+      134903,
+      134997,
+      135258
+    ],
+    [
+      136359,
+      136439,
+      136719
+    ],
+    [
+      139138,
+      139239,
+      139516
+    ],
+    [
+      132939,
+      133029,
+      133264
+    ],
+    [
+      137071,
+      137178,
+      137429
+    ],
+    [
+      141424,
+      141505,
+      141753
+    ]
+  ],
+  "pairs_per_panel": 512,
+  "wall_s": 0.5581717000000026
+}

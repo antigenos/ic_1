@@ -1,0 +1,85 @@
+{
+  "version": "82d8cc6910419298e713a46644ed59fd3df53038",
+  "input_sha256": "9da22b9ba9917569878d750926623d3920a4cd985a0980cc65763c5d3ac0e78b",
+  "git_blob": "cf5e22920632f26db84e83d60488b61bc818ec95",
+  "cpu": 24,
+  "abc_sha256": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+  "cuts": 2,
+  "cut_sha256": "8684cdca10cbdd8d8bb189b272d71ec3f7cbe321e2b3422a631d319b99047ec2",
+  "examined": 66,
+  "eligible": 2,
+  "widths": {
+    "4": 2
+  },
+  "area": [
+    174,
+    174,
+    176
+  ],
+  "depth": [
+    10,
+    10,
+    10
+  ],
+  "equivalence": {
+    "size": {
+      "wall_s": 0.259499500000004,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/ctrl.aig\" \"ctrl-size.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.02 sec",
+      "sha256": "a27b3acecd563b4ffdd649131f3759eabfe8576e033d109ba842b5e721367ab1"
+    },
+    "activity": {
+      "wall_s": 0.1804546999999843,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/ctrl.aig\" \"ctrl-activity.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.01 sec",
+      "sha256": "6bc973961a7726f8446dff0434f75d74bd61a5d8b474ee950133ee525a1e2e96"
+    }
+  },
+  "local_uniform_sum": [
+    1.59375,
+    1.5,
+    1.421875
+  ],
+  "panels": [
+    [
+      30598,
+      30613,
+      30820
+    ],
+    [
+      29907,
+      29904,
+      30093
+    ],
+    [
+      31128,
+      31121,
+      31322
+    ],
+    [
+      30898,
+      30885,
+      31103
+    ],
+    [
+      31707,
+      31704,
+      31912
+    ],
+    [
+      30882,
+      30873,
+      31095
+    ],
+    [
+      30252,
+      30268,
+      30439
+    ],
+    [
+      31142,
+      31140,
+      31323
+    ]
+  ],
+  "pairs_per_panel": 512,
+  "wall_s": 0.5695900000000051
+}

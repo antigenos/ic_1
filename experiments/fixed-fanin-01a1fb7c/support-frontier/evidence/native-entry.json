@@ -1,0 +1,162 @@
+{
+  "cpu": 24,
+  "targets": 416,
+  "batches_wall_s": [
+    1.1868461999999909,
+    0.316135700000018,
+    0.2598134999999502,
+    0.24542630000007648,
+    0.2701343999999608,
+    0.2325501999999915,
+    0.2904555000000073,
+    0.2642035000000078,
+    0.2722003000000086,
+    0.32330849999993916,
+    0.2556349000000182,
+    0.25871910000000753,
+    0.24278369999990446
+  ],
+  "batch_transcript_sha256": "4ed3210f3f88e61787f31f80c44867c8463a8db101441fdf1ff89b1ed59a576e",
+  "frozen_sha256": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+  "candidate_sha256": "19c7d892be29eb7871d06906ec2b8aa769a8f29e134e9dae2c9aa7398566067d",
+  "pairs": [
+    {
+      "truth": "0001",
+      "observations": {
+        "frozen": {
+          "wall_s": 0.3401410000000169,
+          "witness": {
+            "truth": "0001",
+            "activity": 152,
+            "gates": 3
+          },
+          "stdout": "ABC command line: \"pexact -I 4 -M 2 0001\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 4-input function using 3 two-input gates complementary=1:\n06 = 4'b0001( a 05 )\n05 = 4'b1110( b 04 )\n04 = 4'b1110( c d )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0000111111111111\ni=5:0011111111111111\ni=6:1000000000000000\n\n\nSwitching Activity=152\nNumber of Gates: r=3\nTotal runtime =     0.07 sec\n"
+        },
+        "candidate": {
+          "wall_s": 0.18568419999996877,
+          "witness": {
+            "truth": "0001",
+            "activity": 152,
+            "gates": 3
+          },
+          "stdout": "ABC command line: \"pexact -I 4 -M 2 0001\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\nPARETO_CERTIFIED\nRealization of given 4-input function using 3 two-input gates complementary=1:\n06 = 4'b0001( d 05 )\n05 = 4'b1110( c 04 )\n04 = 4'b1110( a b )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0111011101110111\ni=5:0111111101111111\ni=6:1000000000000000\n\n\nSwitching Activity=152\nNumber of Gates: r=3\nTotal runtime =     0.00 sec\n"
+        }
+      }
+    },
+    {
+      "truth": "0007",
+      "observations": {
+        "candidate": {
+          "wall_s": 0.19135230000006231,
+          "witness": {
+            "truth": "0007",
+            "activity": 182,
+            "gates": 4
+          },
+          "stdout": "ABC command line: \"pexact -I 4 -M 2 0007\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\nPARETO_CERTIFIED\nRealization of given 4-input function using 4 two-input gates complementary=1:\n07 = 4'b0001( 04 06 )\n06 = 4'b1000( b 05 )\n05 = 4'b0100( a 04 )\n04 = 4'b1110( c d )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0000111111111111\ni=5:0101000000000000\ni=6:0001000000000000\ni=7:1110000000000000\n\n\nSwitching Activity=182\nNumber of Gates: r=4\nTotal runtime =     0.00 sec\n"
+        },
+        "frozen": {
+          "wall_s": 0.5145633999999291,
+          "witness": {
+            "truth": "0007",
+            "activity": 182,
+            "gates": 4
+          },
+          "stdout": "ABC command line: \"pexact -I 4 -M 2 0007\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 4-input function using 4 two-input gates complementary=1:\n07 = 4'b0001( 04 06 )\n06 = 4'b1000( a 05 )\n05 = 4'b0100( b 04 )\n04 = 4'b1110( c d )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0000111111111111\ni=5:0011000000000000\ni=6:0001000000000000\ni=7:1110000000000000\n\n\nSwitching Activity=182\nNumber of Gates: r=4\nTotal runtime =     0.26 sec\n"
+        }
+      }
+    },
+    {
+      "truth": "007f",
+      "observations": {
+        "frozen": {
+          "wall_s": 0.3466775999999072,
+          "witness": {
+            "truth": "007f",
+            "activity": 152,
+            "gates": 3
+          },
+          "stdout": "ABC command line: \"pexact -I 4 -M 2 007f\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 4-input function using 3 two-input gates complementary=1:\n06 = 4'b0001( d 05 )\n05 = 4'b1000( c 04 )\n04 = 4'b1000( a b )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0001000100010001\ni=5:0000000100000001\ni=6:1111111000000000\n\n\nSwitching Activity=152\nNumber of Gates: r=3\nTotal runtime =     0.05 sec\n"
+        },
+        "candidate": {
+          "wall_s": 0.316854899999953,
+          "witness": {
+            "truth": "007f",
+            "activity": 152,
+            "gates": 3
+          },
+          "stdout": "ABC command line: \"pexact -I 4 -M 2 007f\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\nPARETO_CERTIFIED\nRealization of given 4-input function using 3 two-input gates complementary=1:\n06 = 4'b0001( d 05 )\n05 = 4'b1000( c 04 )\n04 = 4'b1000( a b )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0001000100010001\ni=5:0000000100000001\ni=6:1111111000000000\n\n\nSwitching Activity=152\nNumber of Gates: r=3\nTotal runtime =     0.00 sec\n"
+        }
+      }
+    },
+    {
+      "truth": "01fe",
+      "observations": {
+        "candidate": {
+          "wall_s": 0.24353400000006786,
+          "witness": {
+            "truth": "01fe",
+            "activity": 152,
+            "gates": 3
+          },
+          "stdout": "ABC command line: \"pexact -I 4 -M 2 01fe\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nFF_FIXED_TOPOLOGY_ACTIVITY\nPARETO_CERTIFIED\nRealization of given 4-input function using 3 two-input gates complementary=0:\n06 = 4'b0110( d 05 )\n05 = 4'b1110( c 04 )\n04 = 4'b1110( a b )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0111011101110111\ni=5:0111111101111111\ni=6:0111111110000000\n\n\nSwitching Activity=152\nNumber of Gates: r=3\nTotal runtime =     0.00 sec\n"
+        },
+        "frozen": {
+          "wall_s": 0.27008009999997284,
+          "witness": {
+            "truth": "01fe",
+            "activity": 152,
+            "gates": 3
+          },
+          "stdout": "ABC command line: \"pexact -I 4 -M 2 01fe\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 4-input function using 3 two-input gates complementary=0:\n06 = 4'b0110( d 05 )\n05 = 4'b1110( c 04 )\n04 = 4'b1110( a b )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0111011101110111\ni=5:0111111101111111\ni=6:0111111110000000\n\n\nSwitching Activity=152\nNumber of Gates: r=3\nTotal runtime =     0.05 sec\n"
+        }
+      }
+    },
+    {
+      "truth": "0006",
+      "observations": {
+        "frozen": {
+          "wall_s": 0.3630332999999837,
+          "witness": {
+            "truth": "0006",
+            "activity": 208,
+            "gates": 4
+          },
+          "stdout": "ABC command line: \"pexact -I 4 -M 2 0006\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 4-input function using 4 two-input gates complementary=0:\n07 = 4'b0110( 05 06 )\n06 = 4'b0100( a 04 )\n05 = 4'b0100( b 04 )\n04 = 4'b1110( c d )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0000111111111111\ni=5:0011000000000000\ni=6:0101000000000000\ni=7:0110000000000000\n\n\nSwitching Activity=208\nNumber of Gates: r=4\nTotal runtime =     0.18 sec\n"
+        },
+        "candidate": {
+          "wall_s": 0.48257539999997334,
+          "witness": {
+            "truth": "0006",
+            "activity": 208,
+            "gates": 4
+          },
+          "stdout": "ABC command line: \"pexact -I 4 -M 2 0006\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 4-input function using 4 two-input gates complementary=0:\n07 = 4'b0110( 05 06 )\n06 = 4'b0100( a 04 )\n05 = 4'b0100( b 04 )\n04 = 4'b1110( c d )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0000111111111111\ni=5:0011000000000000\ni=6:0101000000000000\ni=7:0110000000000000\n\n\nSwitching Activity=208\nNumber of Gates: r=4\nTotal runtime =     0.21 sec\n"
+        }
+      }
+    },
+    {
+      "truth": "001b",
+      "observations": {
+        "candidate": {
+          "wall_s": 2.5229044999999815,
+          "witness": {
+            "truth": "001b",
+            "activity": 304,
+            "gates": 5
+          },
+          "stdout": "ABC command line: \"pexact -I 4 -M 2 001b\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 4-input function using 5 two-input gates complementary=1:\n08 = 4'b1001( 05 07 )\n07 = 4'b0100( a 06 )\n06 = 4'b1110( c d )\n05 = 4'b1110( d 04 )\n04 = 4'b1110( a b )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0111011101110111\ni=5:0111011111111111\ni=6:0000111111111111\ni=7:0101000000000000\ni=8:1101100000000000\n\n\nSwitching Activity=304\nNumber of Gates: r=5\nTotal runtime =     2.27 sec\n"
+        },
+        "frozen": {
+          "wall_s": 2.301682600000049,
+          "witness": {
+            "truth": "001b",
+            "activity": 304,
+            "gates": 5
+          },
+          "stdout": "ABC command line: \"pexact -I 4 -M 2 001b\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nRealization of given 4-input function using 5 two-input gates complementary=1:\n08 = 4'b1001( 05 07 )\n07 = 4'b0100( a 06 )\n06 = 4'b1110( c d )\n05 = 4'b1110( d 04 )\n04 = 4'b1110( a b )\nPrinting overall Truth Table...\ni=0:0101010101010101\ni=1:0011001100110011\ni=2:0000111100001111\ni=3:0000000011111111\ni=4:0111011101110111\ni=5:0111011111111111\ni=6:0000111111111111\ni=7:0101000000000000\ni=8:1101100000000000\n\n\nSwitching Activity=304\nNumber of Gates: r=5\nTotal runtime =     2.06 sec\n"
+        }
+      }
+    }
+  ]
+}

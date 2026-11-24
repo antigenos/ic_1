@@ -1,0 +1,85 @@
+{
+  "version": "82d8cc6910419298e713a46644ed59fd3df53038",
+  "input_sha256": "28a3d895fe2821d4dcd04230751a059cb31ff5e28285a61ff7778cf71fb61da3",
+  "git_blob": "0e422f16676ff8affa9bee0563c6321c66bd2fd6",
+  "cpu": 24,
+  "abc_sha256": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+  "cuts": 384,
+  "cut_sha256": "e8fa210ee52a0a6a5f1bc7ce4a6c7033a26bb5204010e4d1062d3bfd4f94f9cc",
+  "examined": 1664,
+  "eligible": 384,
+  "widths": {
+    "4": 384
+  },
+  "area": [
+    3336,
+    3336,
+    3720
+  ],
+  "depth": [
+    12,
+    15,
+    21
+  ],
+  "equivalence": {
+    "size": {
+      "wall_s": 4.054155700000024,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/bar.aig\" \"bar-size.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     1.99 sec",
+      "sha256": "59dfd1fa3a1a9d23b99846fc1be111de8fbea78ea962fbe142fc1a8414e3c5c4"
+    },
+    "activity": {
+      "wall_s": 4.003651999999988,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/bar.aig\" \"bar-activity.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     2.63 sec",
+      "sha256": "28ee8919d88ae4ee45e0a22f61e7e48fbd7b4548c65dca4fd7cdf15d3e6985eb"
+    }
+  },
+  "local_uniform_sum": [
+    324.0,
+    288.0,
+    273.0
+  ],
+  "panels": [
+    [
+      553192,
+      574089,
+      657212
+    ],
+    [
+      549518,
+      568528,
+      646681
+    ],
+    [
+      548668,
+      566957,
+      645529
+    ],
+    [
+      550984,
+      569869,
+      651092
+    ],
+    [
+      549104,
+      570028,
+      649921
+    ],
+    [
+      549116,
+      566031,
+      644111
+    ],
+    [
+      546422,
+      565019,
+      643089
+    ],
+    [
+      549544,
+      568406,
+      647062
+    ]
+  ],
+  "pairs_per_panel": 512,
+  "wall_s": 9.001677400000005
+}

@@ -1,0 +1,86 @@
+{
+  "version": "82d8cc6910419298e713a46644ed59fd3df53038",
+  "input_sha256": "fe8d13d4efe05fc3400ab8c94c0d1ce07ee24dd2ec106f7ae3d24e962e80efbd",
+  "git_blob": "46f1176a3707c7926e6a236701f01c7d330c18a4",
+  "cpu": 24,
+  "abc_sha256": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+  "cuts": 2,
+  "cut_sha256": "57b60e90d95b337bbcb32f58734371645533d6b7e73ae03cf5a1b2a277c920c4",
+  "examined": 503,
+  "eligible": 3,
+  "widths": {
+    "8": 1,
+    "5": 1
+  },
+  "area": [
+    257,
+    257,
+    259
+  ],
+  "depth": [
+    54,
+    51,
+    54
+  ],
+  "equivalence": {
+    "size": {
+      "wall_s": 0.16414009999999735,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/router.aig\" \"router-size.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.01 sec",
+      "sha256": "f521776da64c2bd2b2a6390a27a925cc661fdfce79de7f6a1082f46c40917251"
+    },
+    "activity": {
+      "wall_s": 0.15682639999999992,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/router.aig\" \"router-activity.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.01 sec",
+      "sha256": "cda720bdbd97e2431ba47d5d78cd1c1c638617a8d2c60d87f57675ed037d6506"
+    }
+  },
+  "local_uniform_sum": [
+    2.5394287109375,
+    2.14599609375,
+    1.597015380859375
+  ],
+  "panels": [
+    [
+      28462,
+      28520,
+      28294
+    ],
+    [
+      28059,
+      28062,
+      27805
+    ],
+    [
+      28188,
+      28176,
+      27902
+    ],
+    [
+      28169,
+      28187,
+      27934
+    ],
+    [
+      28298,
+      28299,
+      28015
+    ],
+    [
+      28032,
+      28078,
+      27845
+    ],
+    [
+      28274,
+      28278,
+      28033
+    ],
+    [
+      28251,
+      28197,
+      27894
+    ]
+  ],
+  "pairs_per_panel": 512,
+  "wall_s": 0.452088099999969
+}

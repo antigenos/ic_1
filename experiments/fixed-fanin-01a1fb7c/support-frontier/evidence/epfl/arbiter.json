@@ -1,0 +1,85 @@
+{
+  "version": "82d8cc6910419298e713a46644ed59fd3df53038",
+  "input_sha256": "0eacc0a97717bbc91f732ce6814bbfcdefa8a0b65b13ade6f002e35d0e585d82",
+  "git_blob": "b27c3bc4e9c28f4deada482721082510a9b5d9ef",
+  "cpu": 24,
+  "abc_sha256": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+  "cuts": 128,
+  "cut_sha256": "5b37f618665ef5f365c9593ad12a363c04ee5f17cf8794b90ec59755d4fb9cc0",
+  "examined": 51291,
+  "eligible": 128,
+  "widths": {
+    "4": 128
+  },
+  "area": [
+    11839,
+    11839,
+    11967
+  ],
+  "depth": [
+    87,
+    87,
+    88
+  ],
+  "equivalence": {
+    "size": {
+      "wall_s": 0.1792583999999806,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/arbiter.aig\" \"arbiter-size.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent after structural hashing.  Time =     0.01 sec",
+      "sha256": "8dc3a093419c4315defed9c19f0d158a2098079718cc3927c6e6c066f7a332af"
+    },
+    "activity": {
+      "wall_s": 0.2241025999999806,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/arbiter.aig\" \"arbiter-activity.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.04 sec",
+      "sha256": "420b812d3548dbbaf835fb2fe9076b136feba72229e2fed72825e43e70263c6f"
+    }
+  },
+  "local_uniform_sum": [
+    96.0,
+    96.0,
+    91.0
+  ],
+  "panels": [
+    [
+      1733480,
+      1733480,
+      1727137
+    ],
+    [
+      1737983,
+      1737983,
+      1731569
+    ],
+    [
+      1729667,
+      1729667,
+      1723453
+    ],
+    [
+      1736200,
+      1736200,
+      1729834
+    ],
+    [
+      1718712,
+      1718712,
+      1712551
+    ],
+    [
+      1726191,
+      1726191,
+      1720110
+    ],
+    [
+      1735752,
+      1735752,
+      1729365
+    ],
+    [
+      1733363,
+      1733363,
+      1727278
+    ]
+  ],
+  "pairs_per_panel": 512,
+  "wall_s": 2.4514725999999882
+}

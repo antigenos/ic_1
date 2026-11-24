@@ -1,0 +1,88 @@
+{
+  "version": "82d8cc6910419298e713a46644ed59fd3df53038",
+  "input_sha256": "125e0fdeb41ccadac5e6ada71f3c416fd026cfcbc8e75ad1c6b57ddc2b100f31",
+  "git_blob": "1be72b483badbb7d79d7a04ddbf7ce3fdff10e7f",
+  "cpu": 24,
+  "abc_sha256": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+  "cuts": 49,
+  "cut_sha256": "8184dbcafaa7fa56fbe7d69f596c794a4d52d1e280a3ab416618c506f878bfed",
+  "examined": 913,
+  "eligible": 53,
+  "widths": {
+    "4": 38,
+    "5": 7,
+    "6": 3,
+    "8": 1
+  },
+  "area": [
+    693,
+    693,
+    742
+  ],
+  "depth": [
+    16,
+    18,
+    25
+  ],
+  "equivalence": {
+    "size": {
+      "wall_s": 0.18732849999997825,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/cavlc.aig\" \"cavlc-size.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.03 sec",
+      "sha256": "151e2a254e5056696a3adb97a4339f390ccf3891a12191da4487413b955ff5de"
+    },
+    "activity": {
+      "wall_s": 0.278489699999966,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/random_control/cavlc.aig\" \"cavlc-activity.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.03 sec",
+      "sha256": "15d498b6f8d9185a4a392da29493c5914d193ff3b2f580ea72a58f724790ca41"
+    }
+  },
+  "local_uniform_sum": [
+    45.1195068359375,
+    39.91943359375,
+    35.648284912109375
+  ],
+  "panels": [
+    [
+      115439,
+      115752,
+      118914
+    ],
+    [
+      116535,
+      116987,
+      120343
+    ],
+    [
+      117650,
+      118251,
+      121644
+    ],
+    [
+      114909,
+      115317,
+      118396
+    ],
+    [
+      116681,
+      117220,
+      120622
+    ],
+    [
+      116181,
+      116686,
+      120162
+    ],
+    [
+      116002,
+      116434,
+      119679
+    ],
+    [
+      117401,
+      117864,
+      121244
+    ]
+  ],
+  "pairs_per_panel": 512,
+  "wall_s": 0.6794573999999898
+}

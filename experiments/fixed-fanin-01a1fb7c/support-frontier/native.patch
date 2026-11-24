@@ -1,0 +1,12 @@
+--- a/pexact.c
++++ b/pexact.c
+@@ -3200,4 +3200,9 @@
+     }
+     int r = 0;
+     int act = 0;
++    if (pareto_emit(pPars,pTruth,fCompl)) {
++        PexaManFree(p);
++        Abc_PrintTime(1, "Total runtime", Abc_Clock() - clkTotal);
++        return 0;
++    }
+     int maxGateCount = MAJ_NOBJS - p->nVars;

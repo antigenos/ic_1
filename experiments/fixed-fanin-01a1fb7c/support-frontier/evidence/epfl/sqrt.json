@@ -1,0 +1,87 @@
+{
+  "version": "82d8cc6910419298e713a46644ed59fd3df53038",
+  "input_sha256": "2fdf59877a0f1ceba46a2a3aca5457e05c47ac24ceb69839a4c12d071cf62300",
+  "git_blob": "fbe77dfca04070925f9b32999af48dbf38fcfafc",
+  "cpu": 24,
+  "abc_sha256": "86c3e07b703b17dc8703a3edf4ff968fd10e4c8d9baa9287ed979799fa46d833",
+  "cuts": 123,
+  "cut_sha256": "b36c64ea67baf450aff5c22f9ad81d7430a2f4926eb343db51d249f436285ca7",
+  "examined": 8564,
+  "eligible": 126,
+  "widths": {
+    "4": 61,
+    "5": 59,
+    "6": 3
+  },
+  "area": [
+    24618,
+    24618,
+    24741
+  ],
+  "depth": [
+    5058,
+    5181,
+    5308
+  ],
+  "equivalence": {
+    "size": {
+      "wall_s": 0.7851167999999689,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/sqrt.aig\" \"sqrt-size.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.53 sec",
+      "sha256": "8c703b19d349670048c39c37272fbfe7416e802670423de884aef02836c27610"
+    },
+    "activity": {
+      "wall_s": 1.2722376000000395,
+      "output": "ABC command line: \"cec -n -T 60 \"../epfl-inputs/arithmetic/sqrt.aig\" \"sqrt-activity.aig\"\".\n\nCannot open file \"abc.rc\".\nCannot open file \"..\\abc.rc\".\nCannot open file \"..\\..\\abc.rc\".\nNetworks are equivalent.  Time =     0.95 sec",
+      "sha256": "2f14e2310e7a1f190fa9f23ee6488bab9323b4f2cd650f129b814b37d3de7555"
+    }
+  },
+  "local_uniform_sum": [
+    117.712890625,
+    106.3671875,
+    91.29150390625
+  ],
+  "panels": [
+    [
+      5312489,
+      5314802,
+      5330216
+    ],
+    [
+      5294001,
+      5295877,
+      5311637
+    ],
+    [
+      5319974,
+      5321494,
+      5337193
+    ],
+    [
+      5299367,
+      5300969,
+      5316346
+    ],
+    [
+      5302372,
+      5304155,
+      5319535
+    ],
+    [
+      5286743,
+      5287929,
+      5302852
+    ],
+    [
+      5304043,
+      5306022,
+      5321837
+    ],
+    [
+      5318303,
+      5320051,
+      5336264
+    ]
+  ],
+  "pairs_per_panel": 512,
+  "wall_s": 4.558914999999956
+}
