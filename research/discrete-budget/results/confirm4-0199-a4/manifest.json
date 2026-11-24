@@ -1,0 +1,35 @@
+{
+  "kind": "holdout",
+  "cases": [
+    "0199"
+  ],
+  "source_commit": "652106e8e47655a5cff73e0e1fa6078815c39d9b",
+  "outer": "5400328802c98c1870fb7f61ff2475f698ee48ea",
+  "cpu": 30,
+  "physical": [
+    30,
+    31
+  ],
+  "methods": [
+    "joint",
+    "interval",
+    "holes",
+    "trigger"
+  ],
+  "binaries": {
+    "joint": "1a787fcbfe0c212489682bd69835983933c6db1c9cb8f0756c27936f3470e7c5",
+    "interval": "c9fee84f152e14505ea5d9d00b6bb561658ed2ccfcd079398bab8e758dc7def4",
+    "holes": "cd8383f38ad946c41d2db4c95c9d556e35afb53539c978d66ecf63a863ff6c99",
+    "trigger": "d0ff1386945ae58fe44f03b684e6ba7e4cf104546e401c5158ba857771f30f85"
+  },
+  "cap": 30,
+  "env": {
+    "OPTWIN_MODE": "both",
+    "REPLAY_RULES": "both",
+    "REPLAY_BUDGET": "1"
+  },
+  "reference": {
+    "0199": 344
+  },
+  "order": "forward then reverse; alternate first direction across functions"
+}
