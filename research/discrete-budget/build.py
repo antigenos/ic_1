@@ -62,17 +62,18 @@ def make(base, mode, profile):
         trail=once(trail,"    if (unselected_pin >= 0) {",line+"\n    if (unselected_pin >= 0) {")
         trail=once(trail,"if (j != obj[0] && j != obj[1]) break;", "/* All remaining cost-domain exclusions are premises. */")
     if profile:
-        start="#include <windows.h>\nstatic long long stamp(void){LARGE_INTEGER t; QueryPerformanceCounter(&t); return t.QuadPart;}\n"
+        start="#define DB_PROFILE 1\n#include <windows.h>\nstatic long long stamp(void){LARGE_INTEGER t; QueryPerformanceCounter(&t); return t.QuadPart;}\n"
+        start+="static long long trigger_considered,trigger_ticks;\n"
         start+="static long long calls,dp_builds,fixed_calls,domain_ticks,kernel_ticks,reason_ticks,attempts,membership;\n"
         trail=start+trail
         key="    if (!replay_imply(s, clause, size)) return 0;"
         trail=once(trail, "    int clause[", "    ++attempts; long long start_reason=stamp();\n    int clause[")
         trail=once(trail,key,"    int admitted=replay_imply(s,clause,size);\n    reason_ticks+=stamp()-start_reason;\n    if (!admitted) return 0;")
-        trail=once(trail,point, "    calls=dp_builds=fixed_calls=domain_ticks=kernel_ticks=reason_ticks=attempts=membership=0;\n"+point)
+        trail=once(trail,point, "    trigger_considered=trigger_ticks=calls=dp_builds=fixed_calls=domain_ticks=kernel_ticks=reason_ticks=attempts=membership=0;\n"+point)
         trail=once(trail,"    replay_at_fixpoint = NULL;", r'''    replay_at_fixpoint = NULL;
     LARGE_INTEGER freq; QueryPerformanceFrequency(&freq);
-    printf("COST lo=%d hi=%d calls=%lld builds=%lld fixed=%lld membership=%lld domain_ticks=%lld kernel_ticks=%lld reason_ticks=%lld reason_attempts=%lld frequency=%lld decisions=%lld propagations=%lld\n",
-        screen_lower,bound,calls,dp_builds,fixed_calls,membership,domain_ticks,kernel_ticks,reason_ticks,attempts,freq.QuadPart,(long long)p->pSat->stats.decisions,(long long)p->pSat->stats.propagations);''')
+    printf("COST lo=%d hi=%d calls=%lld builds=%lld fixed=%lld membership=%lld domain_ticks=%lld kernel_ticks=%lld reason_ticks=%lld reason_attempts=%lld frequency=%lld decisions=%lld propagations=%lld trigger_considered=%lld trigger_ticks=%lld\n",
+        screen_lower,bound,calls,dp_builds,fixed_calls,membership,domain_ticks,kernel_ticks,reason_ticks,attempts,freq.QuadPart,(long long)p->pSat->stats.decisions,(long long)p->pSat->stats.propagations,trigger_considered,trigger_ticks);''')
     (dest/"joint_trail.h").write_text(trail)
     (dest/"pexact.c").write_text(source)
     rel=lambda p: Path(os.path.relpath(p,abc)).as_posix()
