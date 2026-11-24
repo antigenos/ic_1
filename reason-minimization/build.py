@@ -15,6 +15,8 @@ def sha(p):
 def build(role, diag):
     frozen = REF/".local/variants"/("screen-short" if role=="short" else "joint")
     abc = REF/".local/abc"
+    def rel(p):
+        return Path(os.path.relpath(p,abc)).as_posix()
     dst = CACHE/(role+("-diag" if diag else ""))
     dst.mkdir(parents=True,exist_ok=True)
     base = (ROOT/"tools/joint_trail.h").read_text()
@@ -50,6 +52,12 @@ static void rm_finish_attempt(int edge,long long start,int fallback){
         (long long)p->pSat->stats.conflicts,(long long)p->pSat->stats.decisions,
         (long long)p->pSat->stats.propagations,rm_tries[0],rm_tries[1],rm_ticks[0],rm_ticks[1],
         rm_frequency(),rm_fallback[0],rm_fallback[1]);""")
+        src=rep(src,"    return result;", """    static unsigned long long prefix_events;
+    prefix_events+=q->counts+q->edges;
+    if(getenv("RM_QUERY_PREFIX") && prefix_events>=2048){
+        puts("DIAGNOSTIC_PREFIX"); fflush(stdout); exit(77);
+    }
+    return result;""")
         trail=(ROOT/"tools/trail_clause.h").read_text()
         trail=rep(trail,"    check(sat_solver_enqueue", '    if(getenv("REPLAY_TRACE")) printf("HANDLE %d\\n",reason);\n    check(sat_solver_enqueue')
         (dst/"trail_clause.h").write_text(trail)
@@ -75,17 +83,17 @@ static void rm_finish_attempt(int edge,long long start,int fallback){
     (dst/"joint_trail.h").write_text(src)
     flags = ["-std=gnu11","-O2","-DABC_USE_STDINT_H=1","-DABC_USE_CUDD=1","-DWIN32_NO_DLL",
              "-DSIZEOF_VOID_P=8","-DSIZEOF_LONG=4","-DSIZEOF_INT=4","-Isrc","-Isrc/ext-pexact",
-             "-Isrc/sat/bsat","-I"+str(ROOT/"tools"),"-I"+str(REF/".local/reference/src")]
+             "-Isrc/sat/bsat","-I"+rel(ROOT/"tools"),"-I"+rel(REF/".local/reference/src")]
     units=["pexact","satSolver"] if diag else ["pexact"]
     if diag:
         flags.append("-DRM_DIAG")
         (dst/"timer.c").write_text('#include <windows.h>\nlong long rm_tick(void){LARGE_INTEGER v; QueryPerformanceCounter(&v);return v.QuadPart;}\nlong long rm_frequency(void){LARGE_INTEGER v;QueryPerformanceFrequency(&v);return v.QuadPart;}\n')
         units.append("timer")
     for unit in units:
-        subprocess.run(["gcc",*flags,"-c",dst/(unit+".c"),"-o",dst/(unit+".o")],cwd=abc,check=True)
+        subprocess.run(["gcc",*flags,"-c",rel(dst/(unit+".c")),"-o",rel(dst/(unit+".o"))],cwd=abc,check=True)
     objects=(frozen/"objects.rsp").read_text().splitlines()
     for unit in units:
-        entry='"'+(dst/(unit+".o")).as_posix()+'"'
+        entry='"'+rel(dst/(unit+".o"))+'"'
         if unit=="timer":
             objects.append(entry)
         else:
@@ -93,7 +101,7 @@ static void rm_finish_attempt(int edge,long long start,int fallback){
             objects[idx]=entry
     rsp=dst/"objects.rsp"
     rsp.write_text("\n".join(objects)+"\n",encoding="utf-8")
-    subprocess.run(["g++","-o",dst/"abc.exe","@"+str(rsp),"-lm","-lws2_32","-lpsapi","-lshlwapi"],cwd=abc,check=True)
+    subprocess.run(["g++","-o",rel(dst/"abc.exe"),"@"+rel(rsp),"-lm","-lws2_32","-lpsapi","-lshlwapi"],cwd=abc,check=True)
     return sha(dst/"abc.exe")
 
 if __name__=="__main__":
