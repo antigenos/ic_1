@@ -1,0 +1,11 @@
+{
+  "optimum_deadline_checks": 394,
+  "variable_counts": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "scenarios_per_split": 4,
+  "all_matched": true
+}
