@@ -1,0 +1,17 @@
+order,truth,method,strict_activity_cap,timeout_s,outcome,capped_elapsed_s,optimum,gates,expanded_states,terminal_edges
+1,001b,full_enumeration,433,300,completed,169.90146749999985,304,5,2424925,
+2,001b,terminal_output_matching,433,300,completed,54.28690799999822,304,5,750725,4942144
+3,01ef,terminal_output_matching,433,300,completed,46.07562300000063,264,5,750725,4942144
+4,01ef,full_enumeration,433,300,completed,164.12610490000225,264,5,2424925,
+5,0358,full_enumeration,433,300,completed,133.40505259999918,414,5,2424925,
+6,0358,terminal_output_matching,433,300,completed,45.602890100002696,414,5,750725,4942144
+7,01be,terminal_output_matching,433,300,completed,45.90638190000027,388,6,750725,4942144
+8,01be,full_enumeration,433,300,completed,126.9479281999993,388,6,2424925,
+9,07bc,full_enumeration,433,300,completed,118.06601999999839,432,5,2424925,
+10,07bc,terminal_output_matching,433,300,completed,55.282769800000096,432,5,750725,4942144
+11,0676,terminal_output_matching,433,300,completed,57.81834030000027,432,5,750725,4942144
+12,0676,full_enumeration,433,300,completed,146.96618019999732,432,5,2424925,
+13,012c,full_enumeration,433,300,proved_no_solution_below_cap,245.12004629999865,,,2424925,
+14,012c,terminal_output_matching,433,300,proved_no_solution_below_cap,79.22215920000002,,,750725,4942144
+15,07e0,terminal_output_matching,433,300,proved_no_solution_below_cap,83.37679429999997,,,750725,4942144
+16,07e0,full_enumeration,433,300,proved_no_solution_below_cap,211.37460339999996,,,2424925,
