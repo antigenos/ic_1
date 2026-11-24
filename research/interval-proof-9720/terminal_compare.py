@@ -15,6 +15,7 @@ from run_case import child_cpus
 from terminal_checks import check
 
 CONTROL = "f8c6a8601ad8e07e31c438256f954dcc73cbd474"
+TERMINAL_REVISION = "053b9fdf2141a33d87f015720767970e0d57db09"
 MODULES = ("cold_bounds.py", "construct_bounds.py", "family_bounds.py")
 PLAN = [("0189", 305, arm) for arm in "ATTA"] + [("0016", 433, arm) for arm in "TA"]
 STORAGE_PLAN = [("0016", 433, arm) for arm in "DT"] + [("012c", 433, arm) for arm in "TD"]
@@ -87,6 +88,19 @@ def holdout_plan(bounds):
             cases.append(dict(truth=truth, stratum=group, order=arms))
     assert len(cases) == 8 and bounds["strict_cap"] == 433
     return dict(strict_cap=433, wall_cap_s=300, cases=cases)
+
+
+def terminal_family_plan(bounds, remaining=False):
+    cases = json.loads((HERE/"evidence/family-plan.json").read_bytes())["cases"]
+    truths = {c["truth"] for c in cases}
+    assert truths == set(bounds["lower_bounds"]) and len(truths) == 208
+    if remaining:
+        known = {t for t, cap, arm in PLAN if cap == 433 and arm == "T"}
+        known.update(case["truth"] for case in holdout_plan(bounds)["cases"])
+        assert len(known) == 9 and known <= truths
+        truths -= known
+    ordered = sorted(truths, key=lambda t: sha256(("9720-terminal-433/"+t).encode()).digest())
+    return [(t,433,"T") for t in ordered]
 
 
 def checked_answer(row, bounds):
@@ -190,6 +204,7 @@ def main():
     group = ap.add_mutually_exclusive_group()
     group.add_argument("--holdout", action="store_true", help="Use the fixed eight-function confirmation panel")
     group.add_argument("--storage-control", action="store_true", help="Isolate deduplication while keeping last-gate matching fixed")
+    group.add_argument("--terminal-family", choices=("full","remaining"), help="Run all 208 bounded proofs or the 199 outside the two qualifying prior panels")
     ap.add_argument("--register-holdout", action="store_true", help="Write the deterministic confirmation manifest")
     ap.add_argument("--public-csv", type=Path, help="Verify a finished local run and export its scientific measurements")
     args = ap.parse_args()
@@ -200,6 +215,9 @@ def main():
             f.write("\n")
         return
     plan = STORAGE_PLAN if args.storage_control else PLAN
+    if args.terminal_family:
+        plan = terminal_family_plan(bounds, remaining=args.terminal_family == "remaining")
+        args.candidate_ref = args.candidate_ref or TERMINAL_REVISION
     if args.holdout:
         registered = json.loads((HERE / "evidence/terminal-holdout-plan.json").read_bytes())
         assert registered == holdout_plan(bounds)
