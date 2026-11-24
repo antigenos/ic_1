@@ -1,0 +1,28 @@
+{
+  "commit": "96a62d6846a5f8731800faad263704533a5ea15c",
+  "binaries": {
+    "joint": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+    "short": "6dd89d1fc89d74d955bad801b3742dff30ab4486caff791c85a47dfa14a12d3e",
+    "online": "05b49a194b6babe32a2a13613f722f66038b14f633d043872271e1e7cab07f3a"
+  },
+  "cases": [
+    "006b"
+  ],
+  "kind": "timed",
+  "methods": [
+    "joint",
+    "short",
+    "online"
+  ],
+  "timeout": 60,
+  "strict_bounds": {
+    "0189": 304,
+    "0019": 310,
+    "001e": 224,
+    "006b": 432
+  },
+  "order": "joint,short,online; then online,short,joint in timed panel",
+  "oracle_commit": "5400328802c98c1870fb7f61ff2475f698ee48ea",
+  "guard_source": "3705fbc086f28aedd996061f6c7a7d6f8d340632",
+  "host": "ANTIGENOS"
+}
