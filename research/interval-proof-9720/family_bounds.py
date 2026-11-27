@@ -145,7 +145,8 @@ def main():
             f.write("\n")
         print(json.dumps(dict(states=result["states"], strict_cap=args.cap, functions=len(truths))))
         return
-    bounds = json.loads(args.bounds.read_bytes())
+    data = json.loads(args.bounds.read_bytes())
+    bounds = data.get("bounds", data)
     with ZipFile(HERE / "final-reproduction.zip") as z:
         rows = [json.loads(line) for arm in ("author", "support", "both")
                 for line in z.read("evidence/e14-main/" + arm + ".jsonl").splitlines()]

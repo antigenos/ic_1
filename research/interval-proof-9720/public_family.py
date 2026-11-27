@@ -7,13 +7,14 @@ from pathlib import Path
 from zipfile import ZipFile
 
 from family import HERE, VERIFIED, summarize
+from construct_bounds import audit as audit_constructed
 from snapshot_family import verify
 
 FIELDS = ("truth", "method", "outcome", "time_limit_s", "capped_elapsed_s", "activity",
           "gate_count", "independently_proved_optimum", "reused_trial")
 
 
-def measurements(source):
+def measurements(source, proof_path=None):
     with ZipFile(source) as z:
         manifest = json.loads(z.read("manifest.json"))
         if "checkpoint.json" in z.namelist():
@@ -27,7 +28,15 @@ def measurements(source):
             assert summarize(grouped, manifest) == json.loads(z.read("summary.json"))
             rows = grouped["A"] + grouped["C"]
     reused_cases = {c["truth"] for c in manifest["cases"] if c["source"] != "new"}
-    proofs = json.loads((HERE / "evidence/constructed-through-432.json").read_bytes())["circuits"]
+    reference = json.loads((HERE / "evidence/constructed-through-432.json").read_bytes())
+    if proof_path is not None:
+        additional = json.loads(proof_path.read_bytes())
+        if additional["bounds"]["strict_cap"] < reference["bounds"]["strict_cap"]:
+            raise ValueError("A supplementary artifact must cover the original strict bound")
+        audit_constructed(additional, reference["bounds"])
+        proofs = additional["circuits"]
+    else:
+        proofs = reference["circuits"]
     for row in sorted(rows, key=lambda r: (r["experiment"]["truth"], r["experiment"]["arm"])):
         truth = row["experiment"]["truth"]
         witness = row.get("witness", {})
@@ -90,15 +99,16 @@ if __name__ == "__main__":
     parser.add_argument("source", type=Path)
     parser.add_argument("output", type=Path, nargs="?")
     parser.add_argument("--summary", action="store_true", help="Recompute the comparison directly from a public CSV")
+    parser.add_argument("--proofs", type=Path, help="Audit an extended independent proof before flagging exact returned activities")
     args = parser.parse_args()
     if args.summary:
-        if args.output is not None:
+        if args.output is not None or args.proofs is not None:
             parser.error("--summary reads only the source CSV and prints JSON")
         print(json.dumps(summarize_csv(args.source), indent=2))
         raise SystemExit(0)
     if args.output is None:
         parser.error("Export requires an output CSV path")
-    rows = list(measurements(args.source))
+    rows = list(measurements(args.source, args.proofs))
     with args.output.open("x", encoding="utf8", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader()

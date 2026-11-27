@@ -46,7 +46,7 @@ def construct(truth, state, activity):
     return dict(witness=witness, circuit=circuit)
 
 
-def audit(data):
+def audit(data, reference=None):
     frozen = set()
     with ZipFile(HERE / "final-reproduction.zip") as z:
         for arm in ("author", "support", "both"):
@@ -56,11 +56,14 @@ def audit(data):
                     frozen.add(row["experiment"]["truth"])
     bounds = data["bounds"]
     circuits = data["circuits"]
-    old = json.loads((HERE / "evidence/family-bounds-432.json").read_bytes())
+    old = reference if reference is not None else json.loads((HERE / "evidence/family-bounds-432.json").read_bytes())
     assert len(bounds["lower_bounds"]) == len(old["lower_bounds"]) == 208
     assert set(bounds["lower_bounds"]) == set(old["lower_bounds"])
     cutoff = min(bounds["strict_cap"], old["strict_cap"])
     assert all(min(v, cutoff) == min(old["lower_bounds"][t], cutoff) for t, v in bounds["lower_bounds"].items())
+    new_counts = {int(k): n for k, n in bounds["states_by_cost"].items() if int(k) < cutoff}
+    old_counts = {int(k): n for k, n in old["states_by_cost"].items() if int(k) < cutoff}
+    assert new_counts == old_counts
     assert sum(bounds["states_by_cost"].values()) == bounds["states"]
     assert set(circuits) == {t for t, v in bounds["lower_bounds"].items() if v < bounds["strict_cap"]}
     for truth, proof in circuits.items():
@@ -76,7 +79,12 @@ def main():
     cli.add_argument("artifact", type=Path)
     cli.add_argument("--cap", type=int)
     cli.add_argument("--cpu", type=int)
+    cli.add_argument("--reference", type=Path, help="Cross-check overlapping lower bounds and state counts against this earlier artifact")
     args = cli.parse_args()
+    reference = None
+    if args.reference:
+        ref = json.loads(args.reference.read_bytes())
+        reference = ref.get("bounds", ref)
     if args.action == "build":
         if args.cap is None or args.cpu is None:
             cli.error("build requires --cap and --cpu")
@@ -88,12 +96,12 @@ def main():
         bounds = enumerate_bounds([c["truth"] for c in plan["cases"]], args.cap, states)
         circuits = {t: construct(t, s, bounds["lower_bounds"][t]) for t, s in sorted(states.items())}
         data = dict(bounds=bounds, circuits=circuits)
-        result = audit(data)
+        result = audit(data, reference)
         with args.artifact.open("x", encoding="utf8", newline="\n") as f:
             json.dump(data, f, indent=2)
             f.write("\n")
     else:
-        result = audit(json.loads(args.artifact.read_bytes()))
+        result = audit(json.loads(args.artifact.read_bytes()), reference)
     print(json.dumps(result))
 
 

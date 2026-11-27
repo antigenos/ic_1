@@ -37,3 +37,16 @@ python terminal_compare.py .local/family-fresh.jsonl --terminal-family full --cp
 python audit_terminal_family.py --full .local/family-fresh.jsonl --output .local/family-fresh.csv
 python audit_terminal_family.py --summary-csv .local/family-fresh.csv
 ```
+
+## SAT 主对照中活动度为 448 的两项证明
+
+在下列两个同核配对上，冻结的 TCJAP 重建版均达到 300 秒时限。保存可行电路并只查询尚未排除的严格低价区间后，求解器在时限内得到了两个函数的最优电路。两项均为完整的五门电路，已按每个输入组合重算输出与活动度。每个函数两版在同一运行时段内依序执行，规定的负载采样均覆盖两次调用。[逐函数测量](evidence/activity-448-pairs.csv)
+
+| 函数 | 冻结 TCJAP 重建版 | 保存见证的 SAT 版 | 独立证明的最优活动度 |
+|---|---:|---:|---:|
+| 178e | 300 秒超时 | 180.992 秒 | 448 |
+| 1bd8 | 300 秒超时 | 203.553 秒 | 448 |
+
+这两个函数因返回分值超出既有独立证明范围而被选中核查。独立检查器从四个输入重新枚举严格界 449 以内的 3,727,363 个状态，分别构造出同分电路，并排除所有更便宜的实现。208 个函数与旧界重合部分的下界、各个活动度的状态数全部一致。此离线检查共证明 120 个函数的最优值，其中 25 个超出先前 95 个函数的集合。全族单目标计时仍使用已登记的严格界 433。SAT 全族完成数及仅一方完成的函数将按完整配对汇总。[扩展的独立界限与电路](evidence/constructed-through-448.json)
+
+可用 `python construct_bounds.py audit evidence/constructed-through-448.json --reference evidence/constructed-through-432.json` 复核重合区间和全部见证。从头生成同一证明可用 `python construct_bounds.py build .local/check-449.json --cap 449 --cpu 0`。SAT 逐函数结果导出时，`public_family.py` 可用 `--proofs evidence/constructed-through-448.json` 明确指定独立核验范围。

@@ -1,0 +1,3 @@
+truth,limit_s,frozen_outcome,frozen_capped_s,candidate_outcome,candidate_capped_s,candidate_gates,independent_optimum
+178e,300,timeout,300,verified_optimum,180.99239020000005,5,448
+1bd8,300,timeout,300,verified_optimum,203.5529732,5,448
