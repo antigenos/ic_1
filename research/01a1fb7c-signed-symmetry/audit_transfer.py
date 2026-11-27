@@ -1,8 +1,9 @@
-"""Check native pexact pin ordering and both output polarities on the proved NPN classes."""
+"""Check native pexact pin ordering and both output polarities on certified witnesses."""
 import argparse
 from collections import Counter
 from hashlib import sha256
 import json
+from math import comb
 import os
 from pathlib import Path
 import subprocess
@@ -10,6 +11,7 @@ from tempfile import TemporaryDirectory
 
 from check_symmetry import GATE, HERE, MAPS, MASK, PINS, gate, norm, transform
 from family import write_once
+from function_family import support
 from repeat_0189 import pin
 from witness import simulate
 
@@ -49,10 +51,21 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--cpu", type=int, required=True)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--formula-boundary", action="store_true",
+                        help="Verify feasible formula upper bounds for the classes left open at 560")
     args = parser.parse_args()
     pin(args.cpu)
-    source = (HERE/"prefix-560.json").read_bytes().replace(b"\r\n", b"\n")
-    records = json.loads(source)["verified_circuits"]
+    name = "formula-720.json" if args.formula_boundary else "prefix-560.json"
+    source = (HERE/name).read_bytes().replace(b"\r\n", b"\n")
+    if args.formula_boundary:
+        prefix = json.loads((HERE/"prefix-560.json").read_bytes())
+        records = {t:r for t,r in json.loads(source)["cases"].items() if r["dag"] is None}
+        assert set(records)=={t for t,v in prefix["certificates"].items() if v is None}
+        for r in records.values():
+            lo,hi = r["dag_interval"]
+            assert 560 < lo <= hi == r["formula"] == r["witness"]["activity"]
+    else:
+        records = json.loads(source)["verified_circuits"]
     expected = {}
     requests = []
     for key, record in records.items():
@@ -80,6 +93,21 @@ def main():
     summary = dict(classes=len(records), normalized_targets=len(visited), verified_truth_tables=2*len(visited),
                    source_sha256=sha256(source).hexdigest(), pins_sha256=sha256(run.stdout.encode()).hexdigest(),
                    truth_tables_per_class=dict(sizes))
+    if args.formula_boundary:
+        # Check the partition in concrete truth tables, independently of the published orbit sizes.
+        exact_sizes = json.loads((HERE/"transfer-orbits.json").read_bytes())["truth_tables_per_class"]
+        assert set(exact_sizes)==set(prefix["verified_circuits"])
+        closed = set()
+        for name,size in exact_sizes.items():
+            orbit = {transform(int(name,16),rows) for _,rows in MAPS}
+            assert len(orbit)*2==size and closed.isdisjoint(orbit)
+            closed.update(orbit)
+        essential = {t for t in range(0,65536,2) if len(support(t))==4}
+        inclusion_exclusion = sum((-1)**i*comb(4,i)*2**(2**(4-i)) for i in range(5))
+        assert closed.isdisjoint(visited) and closed | visited == essential
+        assert len(essential)*2 == inclusion_exclusion
+        summary.update(cost_role="feasible upper bound", essential_truth_tables=inclusion_exclusion,
+                       independently_optimal_truth_tables=2*len(closed))
     if args.output:
         write_once(args.output, (json.dumps(summary, indent=2)+"\n").encode())
     print(json.dumps({k:v for k,v in summary.items() if k != "truth_tables_per_class"}))

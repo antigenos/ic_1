@@ -93,6 +93,7 @@ python "$study/compare.py" 0189 QHNNHQ "$study/rerun-0189.jsonl" --cpu 14 --cap 
 python "$study/confirmation.py" report
 python "$study/verify_certificates.py"
 python "$study/audit_transfer.py" --cpu 0
+python "$study/audit_transfer.py" --cpu 0 --formula-boundary
 python "$study/verify_formulas.py" --cpu 0
 python "$study/build_closure.py" --witness
 python "$study/compare.py" 0189 5 "$study/rerun-certified-0189.jsonl" --cpu 0 --cap 300

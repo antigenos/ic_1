@@ -14,6 +14,10 @@
 
 ## 与论文和作者代码的对应
 
+### 四输入真值表的覆盖范围
+
+四个输入全部有效时，一共有 64,594 张带输入标号的真值表。可从 65,536 张表出发，对“至少忽略一个输入”的四个集合做容斥，也可以直接遍历全部输出极性归一的真值表，逐一检查输入依赖性。192 个已证最优类覆盖其中 60,866 张，余下 16 类覆盖 3,728 张。对这 16 类，我们把活动度上界对应的具体公式电路也送入正式程序的选择器转换，枚举输入置换、输入取反和两种输出极性。3,728 个还原结果逐门验证了功能、拓扑、全部输入及中间门的使用和上界活动度。两组轨道无交集，并覆盖全部 64,594 张真值表。余下 16 类的一般 DAG 最优性仍取决于各自的上下界，正式计时的分母仍为 208 个代表。[上界电路的选择器核验](transfer-boundary.json) · [最优电路的选择器核验](transfer-orbits.json) · [复核程序](audit_transfer.py)
+
 ### 已有低活动度树综合覆盖了哪些电路
 
 ICCAD 1997 已有两类与本研究直接相关的最优性结果。Narayanan 与 Liu 在固定极性 Reed–Muller 表达下构造低活动度的 XOR 树和 AND 树。Zhou 与 Wong 给定多输入 AND 门及各输入的概率，精确求解由二输入 AND 门构成的最低活动度分解树。Martino、Riener 与 Fey 后来使用非同构图结构枚举，在给定门库中寻找最小电路。这些工作分别给出了树形功耗优化和精确结构枚举的先例。[Narayanan 与 Liu，ICCAD 1997 第 10A.1 篇](https://cecs.uci.edu/~papers/compendium94-03/papers/1997/iccad97/htmfiles/sun_sgi/frames/iccadabs.htm) · [Zhou 与 Wong 的问题定义，第 2 节](https://doi.org/10.1109/ICCAD.1997.643597) · [Martino 等，DSD 2020](https://tore.tuhh.de/entities/publication/4986440b-3169-46cc-9c56-fd1a28dfb1cb)

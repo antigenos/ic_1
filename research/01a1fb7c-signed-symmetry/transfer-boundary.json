@@ -1,0 +1,28 @@
+{
+  "classes": 16,
+  "normalized_targets": 1864,
+  "verified_truth_tables": 3728,
+  "source_sha256": "0cb9064dc7f2248cc289a527819e79761795e8a305cc61ad51cf5b3c5c2258bb",
+  "pins_sha256": "aa7b54bb68236add9b1f530a6b0fd968a0b8fcec7bb925954806ea849e58c1ec",
+  "truth_tables_per_class": {
+    "066b": 192,
+    "067a": 768,
+    "0779": 192,
+    "1668": 16,
+    "166a": 128,
+    "166b": 64,
+    "167e": 128,
+    "1681": 32,
+    "168b": 384,
+    "168e": 384,
+    "1697": 64,
+    "1698": 192,
+    "169b": 384,
+    "16ac": 384,
+    "177e": 32,
+    "179a": 384
+  },
+  "cost_role": "feasible upper bound",
+  "essential_truth_tables": 64594,
+  "independently_optimal_truth_tables": 60866
+}
