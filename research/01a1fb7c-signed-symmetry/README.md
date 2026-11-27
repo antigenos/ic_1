@@ -110,7 +110,7 @@ $cores = @(4,6,8,10,12,14,16,18,20,22,24,26,28,30)
 python "$study/proof_census.py" verify --kind confirm --cpus 28 30
 python "$study/family.py" verify
 python "$study/proof_census.py" verify --kind full --cpus $cores
-python "$study/audit_comparison.py"
+python "$study/audit_comparison.py" --case-table "$study/case-results.tsv"
 python "$study/resource_report.py"
 ```
 
