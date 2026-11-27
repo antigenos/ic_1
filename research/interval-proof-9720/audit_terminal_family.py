@@ -6,6 +6,7 @@ from hashlib import sha256
 import json
 from math import fsum
 from pathlib import Path
+from statistics import median
 import subprocess
 from zipfile import ZipFile
 
@@ -39,6 +40,11 @@ def audit(pilot=None, holdout=None, remaining=None, *, full=None):
     complete = full is not None or remaining is not None
     assert len({r["truth"] for r,_ in inputs}) == len(inputs) == (208 if complete else 9)
     assert len({tuple(r["child_affinity"]) for r,_ in inputs}) == 1 and len(inputs[0][0]["child_affinity"])==1
+    with (HERE/"evidence/terminal-holdout-measurements.csv").open(encoding="utf8", newline="") as stream:
+        workloads = {(int(row["expanded_states"]), int(row["terminal_edges"])) for row in csv.DictReader(stream)
+                     if row["method"] == "terminal_output_matching"}
+    if len(workloads) != 1:
+        raise ValueError("The frozen confirmation panel does not identify a single traversal workload")
     results = []
     for r,origin in sorted(inputs,key=lambda pair:pair[0]["truth"]):
         assert r["source_sha256"]==hashes and r["timeout_s"]==300 and r["arm"]=="T" and r["strict_cap"]==433
@@ -47,6 +53,8 @@ def audit(pilot=None, holdout=None, remaining=None, *, full=None):
         witness = {}
         if r["status"]=="completed":
             proof=checked_answer(r,bounds)
+            if (proof["states"], proof["terminal_edges"]) not in workloads:
+                raise ValueError(f"Traversal counters differ from the frozen panel for {r['truth']}")
             outcome=proof["status"]
             witness=proof.get("witness",{})
         else:
@@ -74,10 +82,16 @@ def summarize_results(results, complete):
                 assert all(exact[t]==previously[t] for t in common)
                 summary["frozen_comparisons"][arm]=dict(completed=len(previously),common=len(common),
                     gained=sorted(exact.keys()-previously.keys()),lost=sorted(previously.keys()-exact.keys()))
+        times = sorted(r["capped_elapsed_s"] for r in results if r["truth"] in exact)
+        threshold = summary["frozen_comparisons"]["both"]["completed"] + 1
+        summary["uniform_time_stretch"] = dict(
+            preserve_all_exact=300 / times[-1] if times else None,
+            exact_needed_to_exceed_frozen=threshold,
+            still_exceed_frozen=300 / times[threshold-1] if len(times) >= threshold else None)
     return summary
 
 
-def summarize_csv(path):
+def summarize_csv(path, session_starts=None):
     bounds = json.loads((HERE / "evidence/constructed-through-432.json").read_bytes())["bounds"]
     expected = bounds["lower_bounds"]
     origins = {truth: "new" for truth in expected}
@@ -111,7 +125,21 @@ def summarize_csv(path):
             if not (valid_lower or valid_timeout):
                 raise ValueError(f"Invalid unresolved outcome for {truth}")
         row.update(capped_elapsed_s=elapsed, budget_cost_s=cost)
-    return summarize_results(rows, complete=True)
+    summary = summarize_results(rows, complete=True)
+    if session_starts is not None:
+        plan = terminal_family_plan(bounds, remaining=not fresh)
+        if sorted(set(session_starts)) != session_starts or any(i < 2 or i > len(plan) for i in session_starts):
+            raise ValueError("Session starts must be increasing one-based positions after the first trial")
+        indexed = {row["truth"]: row for row in rows}
+        starts = [1, *session_starts, len(plan)+1]
+        sessions = []
+        for start, stop in zip(starts, starts[1:]):
+            group = [indexed[t] for t, _, _ in plan[start-1:stop-1]]
+            bound_only = [r["capped_elapsed_s"] for r in group if r["outcome"] == "no_solution_below_cap"]
+            sessions.append(dict(first=start, last=stop-1, outcomes=Counter(r["outcome"] for r in group),
+                                 bound_only_median_s=median(bound_only) if bound_only else None))
+        summary["timed_sessions"] = sessions
+    return summary
 
 
 if __name__=="__main__":
@@ -122,14 +150,18 @@ if __name__=="__main__":
     mode.add_argument("--full",type=Path,help="Audit one fresh 208-function raw run")
     mode.add_argument("--summary-csv",type=Path,help="Recompute statistics from a complete public CSV")
     cli.add_argument("--remaining",type=Path)
+    cli.add_argument("--session-starts", type=int, nargs="+",
+                     help="With --summary-csv, give the first trial number after each restart in the new-run sequence")
     cli.add_argument("--output",type=Path)
     args=cli.parse_args()
+    if args.session_starts and not args.summary_csv:
+        cli.error("--session-starts requires --summary-csv")
     if (args.full or args.summary_csv) and (args.pilot or args.holdout or args.remaining):
         cli.error("Choose a fresh run, a public CSV, or the original paired panels")
     if args.summary_csv:
         if args.output:
             cli.error("--summary-csv prints the statistics and takes no output CSV")
-        print(json.dumps(summarize_csv(args.summary_csv),indent=2))
+        print(json.dumps(summarize_csv(args.summary_csv, args.session_starts),indent=2))
         raise SystemExit(0)
     if not args.full and (not args.pilot or not args.holdout):
         cli.error("The combined audit requires both prior panel files")
