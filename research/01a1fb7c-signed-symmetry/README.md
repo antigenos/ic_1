@@ -6,6 +6,8 @@
 
 ## 独立确认和第 13 阶段判断
 
+2026-11-27 恢复全族计时前，重新逐条验证了 F/H/N 的 339 条记录和成本枚举对照的 20 条记录，包括比对二进制、同核设置、计时上限和返回电路。上次主动暂停留下 12 次 F/H/N 求解和 2 次冷启动求解的部分日志，总用时未知。两批继续采用原清单、原顺序和相同程序，从各函数缺失的位置接续。[F/H/N 中断记录](family-208/interruptions-pause-nov24.json) · [成本枚举中断记录](proof-full/interruptions-pause-nov24.json)
+
 跨批次核验覆盖了冻结复现的主比较、消融及两批十二例确认。711 条正式计时中有 269 条返回电路，涉及的 90 个不同最优值均由独立成本下界与可行电路共同证实。对冷启动日志的 51 次完整有界枚举，逐项比对其阈值、目标成本和转交给原搜索的预算。全族比较结束后，同一个核验器会把两个 208 类批次及最后 16 类的独立上下界纳入核对。[确认阶段的核验数据](confirmed-comparison-audit.json) · [跨批次核验入口](audit_comparison.py)
 
 **成本枚举与见证传递通过第 13 阶段。** 新的 12 类确认使用同一 ABC 二进制、逐例冷启动及 300 秒上限。关闭枚举时完成 4 类，开启后完成 9 类。新增 03d5、01ad、0672、06b4、06b5，完成集没有损失。截断总成本从 2,907.06 秒降至 1,005.93 秒。4 个共同完成例的配对时间几何平均比为 40.99。9 个完成例均由原作者 SAT 核验了见证；超出 560 的 168e、166a、169b 均回到原搜索，双方在 300 秒内都没有完成。剔除同例两次运行之间空闲超过 30 秒的三组后，剩余 9 类是 3 对 8，新增的 5 类相同。该抽样每个活动度层各取三类，全体完成率需在 208 类上另算。[24 条原始计时](proof-confirm/runs.jsonl) · [按活动度分层的结果](proof-confirm/summary.json) · [暂停影响和不利实例](proof-confirm/paired-costs.json)
@@ -98,6 +100,36 @@ $repeat = '.local/independent-confirmation'
 python "$study/confirmation.py" plan --directory $repeat --cpus 0 2
 python "$study/confirmation.py" run --directory $repeat --cpus 0 2
 python "$study/confirmation.py" report --directory $repeat --cpus 0 2
+```
+
+复核公开的完整批次时，从仓库根目录执行以下命令。每个 `verify` 从归档里的逐例日志重建输入，再重算返回电路、程序哈希、核心和计时。全量导出完成后可直接核验，无需重跑 300 秒计时。
+
+```powershell
+$study = 'research/01a1fb7c-signed-symmetry'
+$cores = @(4,6,8,10,12,14,16,18,20,22,24,26,28,30)
+python "$study/proof_census.py" verify --kind confirm --cpus 28 30
+python "$study/family.py" verify
+python "$study/proof_census.py" verify --kind full --cpus $cores
+python "$study/audit_comparison.py"
+python "$study/resource_report.py"
+```
+
+独立复测全量的 208 类时，先用上方的构建命令生成本机的 F/H/N 和见证传递程序。下例将新程序的哈希、原始日志和结果写入新的实验目录，以本次实际可用的逻辑核心替换示例中的 0、2。同例在一个核心上串行，两批依次执行。复测的耗时与完成数独立报告。
+
+```powershell
+$study = 'research/01a1fb7c-signed-symmetry'
+$repeat = '.local/independent-full'
+$cores = @(0,2)
+foreach ($step in 'plan','run','export','verify') {
+    python "$study/family.py" $step --cpus $cores --public "$repeat/family" --work "$repeat/family-raw"
+    if ($LASTEXITCODE) { throw "F/H/N $step failed" }
+}
+foreach ($step in 'plan','run','export','verify') {
+    python "$study/proof_census.py" $step --kind full --cpus $cores --public "$repeat/cold" --work "$repeat/cold-raw"
+    if ($LASTEXITCODE) { throw "Cold comparison $step failed" }
+}
+python "$study/paired_costs.py" "$repeat/family" --output "$repeat/family/paired-costs.json"
+python "$study/paired_costs.py" "$repeat/cold" --output "$repeat/cold/paired-costs.json"
 ```
 
 计时的输出名必须是新名字。复核已有确认集时用 `report` 从公开原始日志重算；独立重跑整组时使用新的计时目录及相同 manifest。核心编号按实际机器的可用核选择，并保留同例同核。F、Q、H、N 的对照含义及时间上限见上方登记；早期构建的哈希在各自的原始试验行里。历史版本可从此研究分支的提交历史恢复。上游 pexact、ABC、BSAT、TCJAP 的版权声明与许可证见 [来源说明](../../THIRD_PARTY_NOTICES.md)，Percy 对照方法另附 [作者 MIT 许可证](Percy-LICENSE.txt)。

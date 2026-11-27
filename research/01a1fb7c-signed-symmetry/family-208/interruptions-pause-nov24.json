@@ -1,0 +1,338 @@
+[
+  {
+    "request": {
+      "start_utc": "2026-11-24T06:00:30.915547+00:00",
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 03c6"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 20,
+        "arm": "F",
+        "order": 3,
+        "truth": "03c6"
+      }
+    },
+    "launch": {
+      "pid": 30272,
+      "child_affinity": [
+        20
+      ]
+    },
+    "solver_log": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_s": null,
+    "terminal_status": "interrupted_by_requested_pause"
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-24T06:00:29.229974+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 03d4"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 22,
+        "arm": "H",
+        "order": 3,
+        "truth": "03d4"
+      }
+    },
+    "launch": {
+      "pid": 45216,
+      "child_affinity": [
+        22
+      ]
+    },
+    "solver_log": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_s": null,
+    "terminal_status": "interrupted_by_requested_pause"
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-24T05:59:44.913106+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 03d9"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 6,
+        "arm": "N",
+        "order": 1,
+        "truth": "03d9"
+      }
+    },
+    "launch": {
+      "pid": 47280,
+      "child_affinity": [
+        6
+      ]
+    },
+    "solver_log": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_s": null,
+    "terminal_status": "interrupted_by_requested_pause"
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-24T06:00:14.748336+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 03db"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 8,
+        "arm": "H",
+        "order": 3,
+        "truth": "03db"
+      }
+    },
+    "launch": {
+      "pid": 49884,
+      "child_affinity": [
+        8
+      ]
+    },
+    "solver_log": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_s": null,
+    "terminal_status": "interrupted_by_requested_pause"
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-24T05:57:07.513182+00:00",
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 0662"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 12,
+        "arm": "F",
+        "order": 1,
+        "truth": "0662"
+      }
+    },
+    "launch": {
+      "pid": 28472,
+      "child_affinity": [
+        12
+      ]
+    },
+    "solver_log": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_s": null,
+    "terminal_status": "interrupted_by_requested_pause"
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-24T06:01:33.920218+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 0663"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 14,
+        "arm": "H",
+        "order": 2,
+        "truth": "0663"
+      }
+    },
+    "launch": {
+      "pid": 42984,
+      "child_affinity": [
+        14
+      ]
+    },
+    "solver_log": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_s": null,
+    "terminal_status": "interrupted_by_requested_pause"
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-24T05:59:28.250677+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 0667"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 16,
+        "arm": "N",
+        "order": 3,
+        "truth": "0667"
+      }
+    },
+    "launch": {
+      "pid": 51028,
+      "child_affinity": [
+        16
+      ]
+    },
+    "solver_log": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_s": null,
+    "terminal_status": "interrupted_by_requested_pause"
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-24T06:00:15.254498+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 0676"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 4,
+        "arm": "H",
+        "order": 2,
+        "truth": "0676"
+      }
+    },
+    "launch": {
+      "pid": 34160,
+      "child_affinity": [
+        4
+      ]
+    },
+    "solver_log": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_s": null,
+    "terminal_status": "interrupted_by_requested_pause"
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-24T05:58:46.163556+00:00",
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 067a"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 10,
+        "arm": "F",
+        "order": 1,
+        "truth": "067a"
+      }
+    },
+    "launch": {
+      "pid": 22200,
+      "child_affinity": [
+        10
+      ]
+    },
+    "solver_log": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_s": null,
+    "terminal_status": "interrupted_by_requested_pause"
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-24T05:59:01.224837+00:00",
+      "binary_sha256": "8a9b38bb96df8f8b1a74b9a73e30dd692958de8d6b46d87011710630df89ce6d",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 0693"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 18,
+        "arm": "F",
+        "order": 2,
+        "truth": "0693"
+      }
+    },
+    "launch": {
+      "pid": 30540,
+      "child_affinity": [
+        18
+      ]
+    },
+    "solver_log": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_s": null,
+    "terminal_status": "interrupted_by_requested_pause"
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-24T05:59:27.656427+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 06b1"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 24,
+        "arm": "N",
+        "order": 2,
+        "truth": "06b1"
+      }
+    },
+    "launch": {
+      "pid": 33964,
+      "child_affinity": [
+        24
+      ]
+    },
+    "solver_log": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_s": null,
+    "terminal_status": "interrupted_by_requested_pause"
+  },
+  {
+    "request": {
+      "start_utc": "2026-11-24T06:01:43.083893+00:00",
+      "binary_sha256": "a40a13294f0708af2a0885f774fd318bbf05ace8cdd0b891c4e2a7c909b46854",
+      "command": [
+        "abc.exe",
+        "-c",
+        "pexact -I 4 -M 2 06b2"
+      ],
+      "timeout_s": 300,
+      "experiment": {
+        "cpu": 26,
+        "arm": "N",
+        "order": 1,
+        "truth": "06b2"
+      }
+    },
+    "launch": {
+      "pid": 43968,
+      "child_affinity": [
+        26
+      ]
+    },
+    "solver_log": "",
+    "solver_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wall_s": null,
+    "terminal_status": "interrupted_by_requested_pause"
+  }
+]
